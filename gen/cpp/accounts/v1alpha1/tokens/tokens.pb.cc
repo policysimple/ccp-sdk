@@ -22,7 +22,8 @@ namespace tokens {
 namespace v1 {
 constexpr GetOneTokenCCPRequest::GetOneTokenCCPRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , log_(nullptr){}
 struct GetOneTokenCCPRequestDefaultTypeInternal {
   constexpr GetOneTokenCCPRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -106,7 +107,8 @@ constexpr Log::Log(
   , system_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , client_web_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , ip_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , date_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , date_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct LogDefaultTypeInternal {
   constexpr LogDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -232,6 +234,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2ftokens_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::GetOneTokenCCPRequest, token_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::GetOneTokenCCPRequest, log_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::GetOneTokenCCPResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -280,6 +283,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2ftokens_2
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::Log, client_web_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::Log, ip_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::Log, date_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::Log, token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::SaveLogsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -335,20 +339,20 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2ftokens_2
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::accounts::v1alpha1::tokens::v1::GetOneTokenCCPRequest)},
-  { 6, -1, sizeof(::accounts::v1alpha1::tokens::v1::GetOneTokenCCPResponse)},
-  { 17, -1, sizeof(::accounts::v1alpha1::tokens::v1::CreateTokenCCPRequest)},
-  { 23, -1, sizeof(::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse)},
-  { 32, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogoutTokenRequest)},
-  { 38, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogoutTokenResponse)},
-  { 44, -1, sizeof(::accounts::v1alpha1::tokens::v1::Log)},
-  { 54, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsRequest)},
-  { 60, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsResponse)},
-  { 66, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsRequest)},
-  { 72, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsResponse)},
-  { 78, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest)},
-  { 84, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse)},
-  { 91, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFARequest)},
-  { 98, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFAResponse)},
+  { 7, -1, sizeof(::accounts::v1alpha1::tokens::v1::GetOneTokenCCPResponse)},
+  { 18, -1, sizeof(::accounts::v1alpha1::tokens::v1::CreateTokenCCPRequest)},
+  { 24, -1, sizeof(::accounts::v1alpha1::tokens::v1::CreateTokenCCPResponse)},
+  { 33, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogoutTokenRequest)},
+  { 39, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogoutTokenResponse)},
+  { 45, -1, sizeof(::accounts::v1alpha1::tokens::v1::Log)},
+  { 56, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsRequest)},
+  { 62, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsResponse)},
+  { 68, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsRequest)},
+  { 74, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsResponse)},
+  { 80, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest)},
+  { 86, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse)},
+  { 93, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFARequest)},
+  { 100, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFAResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -371,42 +375,44 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n%accounts/v1alpha1/tokens/tokens.proto\022"
-  "\033accounts.v1alpha1.tokens.v1\"-\n\025GetOneTo"
-  "kenCCPRequest\022\024\n\005token\030\001 \001(\tR\005token\"\303\001\n\026"
-  "GetOneTokenCCPResponse\022\027\n\007user_id\030\001 \001(\rR"
-  "\006userId\022\024\n\005token\030\002 \001(\tR\005token\022\024\n\005email\030\003"
-  " \001(\tR\005email\022\036\n\013user_id_dex\030\004 \001(\tR\tuserId"
-  "Dex\022\035\n\nfirst_name\030\005 \001(\tR\tfirstName\022%\n\016em"
-  "ail_verified\030\006 \001(\010R\remailVerified\"4\n\025Cre"
-  "ateTokenCCPRequest\022\033\n\ttoken_dex\030\001 \001(\tR\010t"
-  "okenDex\"\220\001\n\026CreateTokenCCPResponse\022\033\n\tto"
-  "ken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003ms"
-  "g\022.\n\023time_expiration_mfa\030\005 \001(\003R\021timeExpi"
-  "rationMfa\022\027\n\007user_id\030\006 \001(\tR\006userId\"1\n\022Lo"
-  "goutTokenRequest\022\033\n\ttoken_ccp\030\001 \001(\tR\010tok"
-  "enCcp\"\'\n\023LogoutTokenResponse\022\020\n\003msg\030\001 \001("
-  "\tR\003msg\"y\n\003Log\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026"
-  "\n\006system\030\002 \001(\tR\006system\022\035\n\nclient_web\030\003 \001"
-  "(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002ip\022\022\n\004date\030\005 "
-  "\001(\tR\004date\"E\n\017SaveLogsRequest\0222\n\003log\030\001 \001("
-  "\0132 .accounts.v1alpha1.tokens.v1.LogR\003log"
-  "\"$\n\020SaveLogsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"&"
-  "\n\013LogsRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D"
-  "\n\014LogsResponse\0224\n\004logs\030\001 \003(\0132 .accounts."
-  "v1alpha1.tokens.v1.LogR\004logs\"4\n\031EnableOr"
-  "DisableMFARequest\022\027\n\007user_id\030\001 \001(\tR\006user"
-  "Id\"D\n\032EnableOrDisableMFAResponse\022\020\n\003msg\030"
-  "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\?\n\nMFAR"
-  "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030\n\007numbe"
-  "rs\030\003 \003(\005R\007numbers\"R\n\013MFAResponse\022\033\n\ttoke"
-  "n_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022"
-  "\024\n\005error\030\003 \001(\tR\005errorB;Z9github.com/cuem"
-  "by/ccp-sdk/gen/go/accounts/v1alpha1/toke"
-  "nsb\006proto3"
+  "\033accounts.v1alpha1.tokens.v1\"a\n\025GetOneTo"
+  "kenCCPRequest\022\024\n\005token\030\001 \001(\tR\005token\0222\n\003l"
+  "og\030\002 \001(\0132 .accounts.v1alpha1.tokens.v1.L"
+  "ogR\003log\"\303\001\n\026GetOneTokenCCPResponse\022\027\n\007us"
+  "er_id\030\001 \001(\rR\006userId\022\024\n\005token\030\002 \001(\tR\005toke"
+  "n\022\024\n\005email\030\003 \001(\tR\005email\022\036\n\013user_id_dex\030\004"
+  " \001(\tR\tuserIdDex\022\035\n\nfirst_name\030\005 \001(\tR\tfir"
+  "stName\022%\n\016email_verified\030\006 \001(\010R\remailVer"
+  "ified\"4\n\025CreateTokenCCPRequest\022\033\n\ttoken_"
+  "dex\030\001 \001(\tR\010tokenDex\"\220\001\n\026CreateTokenCCPRe"
+  "sponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003m"
+  "sg\030\002 \001(\tR\003msg\022.\n\023time_expiration_mfa\030\005 \001"
+  "(\003R\021timeExpirationMfa\022\027\n\007user_id\030\006 \001(\tR\006"
+  "userId\"1\n\022LogoutTokenRequest\022\033\n\ttoken_cc"
+  "p\030\001 \001(\tR\010tokenCcp\"\'\n\023LogoutTokenResponse"
+  "\022\020\n\003msg\030\001 \001(\tR\003msg\"\217\001\n\003Log\022\027\n\007user_id\030\001 "
+  "\001(\tR\006userId\022\026\n\006system\030\002 \001(\tR\006system\022\035\n\nc"
+  "lient_web\030\003 \001(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002"
+  "ip\022\022\n\004date\030\005 \001(\tR\004date\022\024\n\005token\030\006 \001(\tR\005t"
+  "oken\"E\n\017SaveLogsRequest\0222\n\003log\030\001 \001(\0132 .a"
+  "ccounts.v1alpha1.tokens.v1.LogR\003log\"$\n\020S"
+  "aveLogsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013Log"
+  "sRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n\014Log"
+  "sResponse\0224\n\004logs\030\001 \003(\0132 .accounts.v1alp"
+  "ha1.tokens.v1.LogR\004logs\"4\n\031EnableOrDisab"
+  "leMFARequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n"
+  "\032EnableOrDisableMFAResponse\022\020\n\003msg\030\001 \001(\t"
+  "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"\?\n\nMFAReques"
+  "t\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030\n\007numbers\030\003 "
+  "\003(\005R\007numbers\"R\n\013MFAResponse\022\033\n\ttoken_ccp"
+  "\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005er"
+  "ror\030\003 \001(\tR\005errorB;Z9github.com/cuemby/cc"
+  "p-sdk/gen/go/accounts/v1alpha1/tokensb\006p"
+  "roto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto = {
-  false, false, 1290, descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, "accounts/v1alpha1/tokens/tokens.proto", 
+  false, false, 1365, descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, "accounts/v1alpha1/tokens/tokens.proto", 
   &descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto_once, nullptr, 0, 15,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto,
@@ -426,8 +432,13 @@ namespace v1 {
 
 class GetOneTokenCCPRequest::_Internal {
  public:
+  static const ::accounts::v1alpha1::tokens::v1::Log& log(const GetOneTokenCCPRequest* msg);
 };
 
+const ::accounts::v1alpha1::tokens::v1::Log&
+GetOneTokenCCPRequest::_Internal::log(const GetOneTokenCCPRequest* msg) {
+  return *msg->log_;
+}
 GetOneTokenCCPRequest::GetOneTokenCCPRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -445,11 +456,17 @@ GetOneTokenCCPRequest::GetOneTokenCCPRequest(const GetOneTokenCCPRequest& from)
     token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_log()) {
+    log_ = new ::accounts::v1alpha1::tokens::v1::Log(*from.log_);
+  } else {
+    log_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest)
 }
 
 inline void GetOneTokenCCPRequest::SharedCtor() {
 token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+log_ = nullptr;
 }
 
 GetOneTokenCCPRequest::~GetOneTokenCCPRequest() {
@@ -462,6 +479,7 @@ GetOneTokenCCPRequest::~GetOneTokenCCPRequest() {
 inline void GetOneTokenCCPRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete log_;
 }
 
 void GetOneTokenCCPRequest::ArenaDtor(void* object) {
@@ -481,6 +499,10 @@ void GetOneTokenCCPRequest::Clear() {
   (void) cached_has_bits;
 
   token_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && log_ != nullptr) {
+    delete log_;
+  }
+  log_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -496,6 +518,13 @@ const char* GetOneTokenCCPRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           auto str = _internal_mutable_token();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.token"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_log(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -538,6 +567,14 @@ failure:
         1, this->_internal_token(), target);
   }
 
+  // .accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];
+  if (this->_internal_has_log()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::log(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -559,6 +596,13 @@ size_t GetOneTokenCCPRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_token());
+  }
+
+  // .accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];
+  if (this->_internal_has_log()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *log_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -592,6 +636,9 @@ void GetOneTokenCCPRequest::MergeFrom(const GetOneTokenCCPRequest& from) {
   if (!from._internal_token().empty()) {
     _internal_set_token(from._internal_token());
   }
+  if (from._internal_has_log()) {
+    _internal_mutable_log()->::accounts::v1alpha1::tokens::v1::Log::MergeFrom(from._internal_log());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -614,6 +661,7 @@ void GetOneTokenCCPRequest::InternalSwap(GetOneTokenCCPRequest* other) {
       &token_, GetArenaForAllocation(),
       &other->token_, other->GetArenaForAllocation()
   );
+  swap(log_, other->log_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOneTokenCCPRequest::GetMetadata() const {
@@ -1962,6 +2010,11 @@ Log::Log(const Log& from)
     date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_date(), 
       GetArenaForAllocation());
   }
+  token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_token().empty()) {
+    token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.tokens.v1.Log)
 }
 
@@ -1971,6 +2024,7 @@ system_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlrea
 client_web_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Log::~Log() {
@@ -1987,6 +2041,7 @@ inline void Log::SharedDtor() {
   client_web_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ip_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   date_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Log::ArenaDtor(void* object) {
@@ -2010,6 +2065,7 @@ void Log::Clear() {
   client_web_.ClearToEmpty();
   ip_.ClearToEmpty();
   date_.ClearToEmpty();
+  token_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2061,6 +2117,15 @@ const char* Log::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
           auto str = _internal_mutable_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.tokens.v1.Log.date"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string token = 6 [json_name = "token"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.tokens.v1.Log.token"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2143,6 +2208,16 @@ failure:
         5, this->_internal_date(), target);
   }
 
+  // string token = 6 [json_name = "token"];
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.tokens.v1.Log.token");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_token(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2194,6 +2269,13 @@ size_t Log::ByteSizeLong() const {
         this->_internal_date());
   }
 
+  // string token = 6 [json_name = "token"];
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -2237,6 +2319,9 @@ void Log::MergeFrom(const Log& from) {
   if (!from._internal_date().empty()) {
     _internal_set_date(from._internal_date());
   }
+  if (!from._internal_token().empty()) {
+    _internal_set_token(from._internal_token());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2278,6 +2363,11 @@ void Log::InternalSwap(Log* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &date_, GetArenaForAllocation(),
       &other->date_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &token_, GetArenaForAllocation(),
+      &other->token_, other->GetArenaForAllocation()
   );
 }
 

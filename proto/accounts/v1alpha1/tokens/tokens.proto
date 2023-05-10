@@ -11,6 +11,7 @@ package accounts.v1alpha1.tokens.v1;
 
 message GetOneTokenCCPRequest {
     string token = 1;
+    Log log = 2;
 }
 
 message GetOneTokenCCPResponse {
@@ -53,6 +54,7 @@ message Log{
     string client_web = 3;
     string ip = 4;
     string date = 5;
+    string token = 6;
 }
 message SaveLogsRequest {
     Log log = 1;

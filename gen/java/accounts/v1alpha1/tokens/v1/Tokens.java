@@ -29,6 +29,21 @@ public final class Tokens {
      */
     com.google.protobuf.ByteString
         getTokenBytes();
+
+    /**
+     * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+     * @return Whether the log field is set.
+     */
+    boolean hasLog();
+    /**
+     * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+     * @return The log.
+     */
+    accounts.v1alpha1.tokens.v1.Tokens.Log getLog();
+    /**
+     * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+     */
+    accounts.v1alpha1.tokens.v1.Tokens.LogOrBuilder getLogOrBuilder();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest}
@@ -80,6 +95,19 @@ public final class Tokens {
               java.lang.String s = input.readStringRequireUtf8();
 
               token_ = s;
+              break;
+            }
+            case 18: {
+              accounts.v1alpha1.tokens.v1.Tokens.Log.Builder subBuilder = null;
+              if (log_ != null) {
+                subBuilder = log_.toBuilder();
+              }
+              log_ = input.readMessage(accounts.v1alpha1.tokens.v1.Tokens.Log.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(log_);
+                log_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -152,6 +180,32 @@ public final class Tokens {
       }
     }
 
+    public static final int LOG_FIELD_NUMBER = 2;
+    private accounts.v1alpha1.tokens.v1.Tokens.Log log_;
+    /**
+     * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+     * @return Whether the log field is set.
+     */
+    @java.lang.Override
+    public boolean hasLog() {
+      return log_ != null;
+    }
+    /**
+     * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+     * @return The log.
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.tokens.v1.Tokens.Log getLog() {
+      return log_ == null ? accounts.v1alpha1.tokens.v1.Tokens.Log.getDefaultInstance() : log_;
+    }
+    /**
+     * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+     */
+    @java.lang.Override
+    public accounts.v1alpha1.tokens.v1.Tokens.LogOrBuilder getLogOrBuilder() {
+      return getLog();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -169,6 +223,9 @@ public final class Tokens {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
       }
+      if (log_ != null) {
+        output.writeMessage(2, getLog());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -180,6 +237,10 @@ public final class Tokens {
       size = 0;
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
+      if (log_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getLog());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -198,6 +259,11 @@ public final class Tokens {
 
       if (!getToken()
           .equals(other.getToken())) return false;
+      if (hasLog() != other.hasLog()) return false;
+      if (hasLog()) {
+        if (!getLog()
+            .equals(other.getLog())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,6 +277,10 @@ public final class Tokens {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
+      if (hasLog()) {
+        hash = (37 * hash) + LOG_FIELD_NUMBER;
+        hash = (53 * hash) + getLog().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,6 +416,12 @@ public final class Tokens {
         super.clear();
         token_ = "";
 
+        if (logBuilder_ == null) {
+          log_ = null;
+        } else {
+          log_ = null;
+          logBuilder_ = null;
+        }
         return this;
       }
 
@@ -373,6 +449,11 @@ public final class Tokens {
       public accounts.v1alpha1.tokens.v1.Tokens.GetOneTokenCCPRequest buildPartial() {
         accounts.v1alpha1.tokens.v1.Tokens.GetOneTokenCCPRequest result = new accounts.v1alpha1.tokens.v1.Tokens.GetOneTokenCCPRequest(this);
         result.token_ = token_;
+        if (logBuilder_ == null) {
+          result.log_ = log_;
+        } else {
+          result.log_ = logBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -424,6 +505,9 @@ public final class Tokens {
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
           onChanged();
+        }
+        if (other.hasLog()) {
+          mergeLog(other.getLog());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -528,6 +612,125 @@ public final class Tokens {
         token_ = value;
         onChanged();
         return this;
+      }
+
+      private accounts.v1alpha1.tokens.v1.Tokens.Log log_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          accounts.v1alpha1.tokens.v1.Tokens.Log, accounts.v1alpha1.tokens.v1.Tokens.Log.Builder, accounts.v1alpha1.tokens.v1.Tokens.LogOrBuilder> logBuilder_;
+      /**
+       * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+       * @return Whether the log field is set.
+       */
+      public boolean hasLog() {
+        return logBuilder_ != null || log_ != null;
+      }
+      /**
+       * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+       * @return The log.
+       */
+      public accounts.v1alpha1.tokens.v1.Tokens.Log getLog() {
+        if (logBuilder_ == null) {
+          return log_ == null ? accounts.v1alpha1.tokens.v1.Tokens.Log.getDefaultInstance() : log_;
+        } else {
+          return logBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+       */
+      public Builder setLog(accounts.v1alpha1.tokens.v1.Tokens.Log value) {
+        if (logBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          log_ = value;
+          onChanged();
+        } else {
+          logBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+       */
+      public Builder setLog(
+          accounts.v1alpha1.tokens.v1.Tokens.Log.Builder builderForValue) {
+        if (logBuilder_ == null) {
+          log_ = builderForValue.build();
+          onChanged();
+        } else {
+          logBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+       */
+      public Builder mergeLog(accounts.v1alpha1.tokens.v1.Tokens.Log value) {
+        if (logBuilder_ == null) {
+          if (log_ != null) {
+            log_ =
+              accounts.v1alpha1.tokens.v1.Tokens.Log.newBuilder(log_).mergeFrom(value).buildPartial();
+          } else {
+            log_ = value;
+          }
+          onChanged();
+        } else {
+          logBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+       */
+      public Builder clearLog() {
+        if (logBuilder_ == null) {
+          log_ = null;
+          onChanged();
+        } else {
+          log_ = null;
+          logBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+       */
+      public accounts.v1alpha1.tokens.v1.Tokens.Log.Builder getLogBuilder() {
+        
+        onChanged();
+        return getLogFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+       */
+      public accounts.v1alpha1.tokens.v1.Tokens.LogOrBuilder getLogOrBuilder() {
+        if (logBuilder_ != null) {
+          return logBuilder_.getMessageOrBuilder();
+        } else {
+          return log_ == null ?
+              accounts.v1alpha1.tokens.v1.Tokens.Log.getDefaultInstance() : log_;
+        }
+      }
+      /**
+       * <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          accounts.v1alpha1.tokens.v1.Tokens.Log, accounts.v1alpha1.tokens.v1.Tokens.Log.Builder, accounts.v1alpha1.tokens.v1.Tokens.LogOrBuilder> 
+          getLogFieldBuilder() {
+        if (logBuilder_ == null) {
+          logBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              accounts.v1alpha1.tokens.v1.Tokens.Log, accounts.v1alpha1.tokens.v1.Tokens.Log.Builder, accounts.v1alpha1.tokens.v1.Tokens.LogOrBuilder>(
+                  getLog(),
+                  getParentForChildren(),
+                  isClean());
+          log_ = null;
+        }
+        return logBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4467,6 +4670,18 @@ public final class Tokens {
      */
     com.google.protobuf.ByteString
         getDateBytes();
+
+    /**
+     * <code>string token = 6 [json_name = "token"];</code>
+     * @return The token.
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 6 [json_name = "token"];</code>
+     * @return The bytes for token.
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.tokens.v1.Log}
@@ -4486,6 +4701,7 @@ public final class Tokens {
       clientWeb_ = "";
       ip_ = "";
       date_ = "";
+      token_ = "";
     }
 
     @java.lang.Override
@@ -4546,6 +4762,12 @@ public final class Tokens {
               java.lang.String s = input.readStringRequireUtf8();
 
               date_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
               break;
             }
             default: {
@@ -4770,6 +4992,44 @@ public final class Tokens {
       }
     }
 
+    public static final int TOKEN_FIELD_NUMBER = 6;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>string token = 6 [json_name = "token"];</code>
+     * @return The token.
+     */
+    @java.lang.Override
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 6 [json_name = "token"];</code>
+     * @return The bytes for token.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4799,6 +5059,9 @@ public final class Tokens {
       if (!getDateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, date_);
       }
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, token_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4822,6 +5085,9 @@ public final class Tokens {
       }
       if (!getDateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, date_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, token_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4848,6 +5114,8 @@ public final class Tokens {
           .equals(other.getIp())) return false;
       if (!getDate()
           .equals(other.getDate())) return false;
+      if (!getToken()
+          .equals(other.getToken())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4869,6 +5137,8 @@ public final class Tokens {
       hash = (53 * hash) + getIp().hashCode();
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5012,6 +5282,8 @@ public final class Tokens {
 
         date_ = "";
 
+        token_ = "";
+
         return this;
       }
 
@@ -5043,6 +5315,7 @@ public final class Tokens {
         result.clientWeb_ = clientWeb_;
         result.ip_ = ip_;
         result.date_ = date_;
+        result.token_ = token_;
         onBuilt();
         return result;
       }
@@ -5109,6 +5382,10 @@ public final class Tokens {
         }
         if (!other.getDate().isEmpty()) {
           date_ = other.date_;
+          onChanged();
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5516,6 +5793,82 @@ public final class Tokens {
   checkByteStringIsUtf8(value);
         
         date_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 6 [json_name = "token"];</code>
+       * @return The token.
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 6 [json_name = "token"];</code>
+       * @return The bytes for token.
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 6 [json_name = "token"];</code>
+       * @param value The token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 6 [json_name = "token"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 6 [json_name = "token"];</code>
+       * @param value The bytes for token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
         onChanged();
         return this;
       }
@@ -11126,38 +11479,40 @@ public final class Tokens {
   static {
     java.lang.String[] descriptorData = {
       "\n%accounts/v1alpha1/tokens/tokens.proto\022" +
-      "\033accounts.v1alpha1.tokens.v1\"-\n\025GetOneTo" +
-      "kenCCPRequest\022\024\n\005token\030\001 \001(\tR\005token\"\303\001\n\026" +
-      "GetOneTokenCCPResponse\022\027\n\007user_id\030\001 \001(\rR" +
-      "\006userId\022\024\n\005token\030\002 \001(\tR\005token\022\024\n\005email\030\003" +
-      " \001(\tR\005email\022\036\n\013user_id_dex\030\004 \001(\tR\tuserId" +
-      "Dex\022\035\n\nfirst_name\030\005 \001(\tR\tfirstName\022%\n\016em" +
-      "ail_verified\030\006 \001(\010R\remailVerified\"4\n\025Cre" +
-      "ateTokenCCPRequest\022\033\n\ttoken_dex\030\001 \001(\tR\010t" +
-      "okenDex\"\220\001\n\026CreateTokenCCPResponse\022\033\n\tto" +
-      "ken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003ms" +
-      "g\022.\n\023time_expiration_mfa\030\005 \001(\003R\021timeExpi" +
-      "rationMfa\022\027\n\007user_id\030\006 \001(\tR\006userId\"1\n\022Lo" +
-      "goutTokenRequest\022\033\n\ttoken_ccp\030\001 \001(\tR\010tok" +
-      "enCcp\"\'\n\023LogoutTokenResponse\022\020\n\003msg\030\001 \001(" +
-      "\tR\003msg\"y\n\003Log\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026" +
-      "\n\006system\030\002 \001(\tR\006system\022\035\n\nclient_web\030\003 \001" +
-      "(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002ip\022\022\n\004date\030\005 " +
-      "\001(\tR\004date\"E\n\017SaveLogsRequest\0222\n\003log\030\001 \001(" +
-      "\0132 .accounts.v1alpha1.tokens.v1.LogR\003log" +
-      "\"$\n\020SaveLogsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"&" +
-      "\n\013LogsRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D" +
-      "\n\014LogsResponse\0224\n\004logs\030\001 \003(\0132 .accounts." +
-      "v1alpha1.tokens.v1.LogR\004logs\"4\n\031EnableOr" +
-      "DisableMFARequest\022\027\n\007user_id\030\001 \001(\tR\006user" +
-      "Id\"D\n\032EnableOrDisableMFAResponse\022\020\n\003msg\030" +
-      "\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"?\n\nMFAR" +
-      "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030\n\007numbe" +
-      "rs\030\003 \003(\005R\007numbers\"R\n\013MFAResponse\022\033\n\ttoke" +
-      "n_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022" +
-      "\024\n\005error\030\003 \001(\tR\005errorB;Z9github.com/cuem" +
-      "by/ccp-sdk/gen/go/accounts/v1alpha1/toke" +
-      "nsb\006proto3"
+      "\033accounts.v1alpha1.tokens.v1\"a\n\025GetOneTo" +
+      "kenCCPRequest\022\024\n\005token\030\001 \001(\tR\005token\0222\n\003l" +
+      "og\030\002 \001(\0132 .accounts.v1alpha1.tokens.v1.L" +
+      "ogR\003log\"\303\001\n\026GetOneTokenCCPResponse\022\027\n\007us" +
+      "er_id\030\001 \001(\rR\006userId\022\024\n\005token\030\002 \001(\tR\005toke" +
+      "n\022\024\n\005email\030\003 \001(\tR\005email\022\036\n\013user_id_dex\030\004" +
+      " \001(\tR\tuserIdDex\022\035\n\nfirst_name\030\005 \001(\tR\tfir" +
+      "stName\022%\n\016email_verified\030\006 \001(\010R\remailVer" +
+      "ified\"4\n\025CreateTokenCCPRequest\022\033\n\ttoken_" +
+      "dex\030\001 \001(\tR\010tokenDex\"\220\001\n\026CreateTokenCCPRe" +
+      "sponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003m" +
+      "sg\030\002 \001(\tR\003msg\022.\n\023time_expiration_mfa\030\005 \001" +
+      "(\003R\021timeExpirationMfa\022\027\n\007user_id\030\006 \001(\tR\006" +
+      "userId\"1\n\022LogoutTokenRequest\022\033\n\ttoken_cc" +
+      "p\030\001 \001(\tR\010tokenCcp\"\'\n\023LogoutTokenResponse" +
+      "\022\020\n\003msg\030\001 \001(\tR\003msg\"\217\001\n\003Log\022\027\n\007user_id\030\001 " +
+      "\001(\tR\006userId\022\026\n\006system\030\002 \001(\tR\006system\022\035\n\nc" +
+      "lient_web\030\003 \001(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002" +
+      "ip\022\022\n\004date\030\005 \001(\tR\004date\022\024\n\005token\030\006 \001(\tR\005t" +
+      "oken\"E\n\017SaveLogsRequest\0222\n\003log\030\001 \001(\0132 .a" +
+      "ccounts.v1alpha1.tokens.v1.LogR\003log\"$\n\020S" +
+      "aveLogsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013Log" +
+      "sRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n\014Log" +
+      "sResponse\0224\n\004logs\030\001 \003(\0132 .accounts.v1alp" +
+      "ha1.tokens.v1.LogR\004logs\"4\n\031EnableOrDisab" +
+      "leMFARequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n" +
+      "\032EnableOrDisableMFAResponse\022\020\n\003msg\030\001 \001(\t" +
+      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"?\n\nMFAReques" +
+      "t\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030\n\007numbers\030\003 " +
+      "\003(\005R\007numbers\"R\n\013MFAResponse\022\033\n\ttoken_ccp" +
+      "\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005er" +
+      "ror\030\003 \001(\tR\005errorB;Z9github.com/cuemby/cc" +
+      "p-sdk/gen/go/accounts/v1alpha1/tokensb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11168,7 +11523,7 @@ public final class Tokens {
     internal_static_accounts_v1alpha1_tokens_v1_GetOneTokenCCPRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_GetOneTokenCCPRequest_descriptor,
-        new java.lang.String[] { "Token", });
+        new java.lang.String[] { "Token", "Log", });
     internal_static_accounts_v1alpha1_tokens_v1_GetOneTokenCCPResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_accounts_v1alpha1_tokens_v1_GetOneTokenCCPResponse_fieldAccessorTable = new
@@ -11204,7 +11559,7 @@ public final class Tokens {
     internal_static_accounts_v1alpha1_tokens_v1_Log_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_Log_descriptor,
-        new java.lang.String[] { "UserId", "System", "ClientWeb", "Ip", "Date", });
+        new java.lang.String[] { "UserId", "System", "ClientWeb", "Ip", "Date", "Token", });
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsRequest_fieldAccessorTable = new
