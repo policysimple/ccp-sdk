@@ -377,7 +377,8 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.prototype.toObject = fun
  */
 proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: jspb.Message.getFieldWithDefault(msg, 1, "")
+    token: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    log: (f = msg.getLog()) && proto.accounts.v1alpha1.tokens.v1.Log.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -418,6 +419,11 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.deserializeBinaryFromRea
       var value = /** @type {string} */ (reader.readString());
       msg.setToken(value);
       break;
+    case 2:
+      var value = new proto.accounts.v1alpha1.tokens.v1.Log;
+      reader.readMessage(value,proto.accounts.v1alpha1.tokens.v1.Log.deserializeBinaryFromReader);
+      msg.setLog(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -454,6 +460,14 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.serializeBinaryToWriter 
       f
     );
   }
+  f = message.getLog();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.accounts.v1alpha1.tokens.v1.Log.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -472,6 +486,43 @@ proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.prototype.getToken = fun
  */
 proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.prototype.setToken = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional Log log = 2;
+ * @return {?proto.accounts.v1alpha1.tokens.v1.Log}
+ */
+proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.prototype.getLog = function() {
+  return /** @type{?proto.accounts.v1alpha1.tokens.v1.Log} */ (
+    jspb.Message.getWrapperField(this, proto.accounts.v1alpha1.tokens.v1.Log, 2));
+};
+
+
+/**
+ * @param {?proto.accounts.v1alpha1.tokens.v1.Log|undefined} value
+ * @return {!proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest} returns this
+*/
+proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.prototype.setLog = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest} returns this
+ */
+proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.prototype.clearLog = function() {
+  return this.setLog(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.prototype.hasLog = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1401,7 +1452,8 @@ proto.accounts.v1alpha1.tokens.v1.Log.toObject = function(includeInstance, msg) 
     system: jspb.Message.getFieldWithDefault(msg, 2, ""),
     clientWeb: jspb.Message.getFieldWithDefault(msg, 3, ""),
     ip: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    date: jspb.Message.getFieldWithDefault(msg, 5, "")
+    date: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    token: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1457,6 +1509,10 @@ proto.accounts.v1alpha1.tokens.v1.Log.deserializeBinaryFromReader = function(msg
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDate(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToken(value);
       break;
     default:
       reader.skipField();
@@ -1519,6 +1575,13 @@ proto.accounts.v1alpha1.tokens.v1.Log.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getToken();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -1612,6 +1675,24 @@ proto.accounts.v1alpha1.tokens.v1.Log.prototype.getDate = function() {
  */
 proto.accounts.v1alpha1.tokens.v1.Log.prototype.setDate = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string token = 6;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.tokens.v1.Log.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.tokens.v1.Log} returns this
+ */
+proto.accounts.v1alpha1.tokens.v1.Log.prototype.setToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

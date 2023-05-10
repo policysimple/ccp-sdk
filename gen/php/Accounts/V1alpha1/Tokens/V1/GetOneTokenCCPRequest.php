@@ -17,6 +17,10 @@ class GetOneTokenCCPRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string token = 1 [json_name = "token"];</code>
      */
     protected $token = '';
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+     */
+    protected $log = null;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class GetOneTokenCCPRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $token
+     *     @type \Accounts\V1alpha1\Tokens\V1\Log $log
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,38 @@ class GetOneTokenCCPRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->token = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+     * @return \Accounts\V1alpha1\Tokens\V1\Log|null
+     */
+    public function getLog()
+    {
+        return $this->log;
+    }
+
+    public function hasLog()
+    {
+        return isset($this->log);
+    }
+
+    public function clearLog()
+    {
+        unset($this->log);
+    }
+
+    /**
+     * Generated from protobuf field <code>.accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];</code>
+     * @param \Accounts\V1alpha1\Tokens\V1\Log $var
+     * @return $this
+     */
+    public function setLog($var)
+    {
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\Tokens\V1\Log::class);
+        $this->log = $var;
 
         return $this;
     }

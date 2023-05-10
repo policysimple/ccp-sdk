@@ -33,6 +33,10 @@ class Log extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string date = 5 [json_name = "date"];</code>
      */
     protected $date = '';
+    /**
+     * Generated from protobuf field <code>string token = 6 [json_name = "token"];</code>
+     */
+    protected $token = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class Log extends \Google\Protobuf\Internal\Message
      *     @type string $client_web
      *     @type string $ip
      *     @type string $date
+     *     @type string $token
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class Log extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->date = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token = 6 [json_name = "token"];</code>
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token = 6 [json_name = "token"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token = $var;
 
         return $this;
     }

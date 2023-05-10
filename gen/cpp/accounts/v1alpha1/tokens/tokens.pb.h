@@ -246,6 +246,7 @@ class GetOneTokenCCPRequest final :
 
   enum : int {
     kTokenFieldNumber = 1,
+    kLogFieldNumber = 2,
   };
   // string token = 1 [json_name = "token"];
   void clear_token();
@@ -261,6 +262,24 @@ class GetOneTokenCCPRequest final :
   std::string* _internal_mutable_token();
   public:
 
+  // .accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];
+  bool has_log() const;
+  private:
+  bool _internal_has_log() const;
+  public:
+  void clear_log();
+  const ::accounts::v1alpha1::tokens::v1::Log& log() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::tokens::v1::Log* release_log();
+  ::accounts::v1alpha1::tokens::v1::Log* mutable_log();
+  void set_allocated_log(::accounts::v1alpha1::tokens::v1::Log* log);
+  private:
+  const ::accounts::v1alpha1::tokens::v1::Log& _internal_log() const;
+  ::accounts::v1alpha1::tokens::v1::Log* _internal_mutable_log();
+  public:
+  void unsafe_arena_set_allocated_log(
+      ::accounts::v1alpha1::tokens::v1::Log* log);
+  ::accounts::v1alpha1::tokens::v1::Log* unsafe_arena_release_log();
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest)
  private:
   class _Internal;
@@ -269,6 +288,7 @@ class GetOneTokenCCPRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+  ::accounts::v1alpha1::tokens::v1::Log* log_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto;
 };
@@ -1227,6 +1247,7 @@ class Log final :
     kClientWebFieldNumber = 3,
     kIpFieldNumber = 4,
     kDateFieldNumber = 5,
+    kTokenFieldNumber = 6,
   };
   // string user_id = 1 [json_name = "userId"];
   void clear_user_id();
@@ -1298,6 +1319,20 @@ class Log final :
   std::string* _internal_mutable_date();
   public:
 
+  // string token = 6 [json_name = "token"];
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_MUST_USE_RESULT std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.tokens.v1.Log)
  private:
   class _Internal;
@@ -1310,6 +1345,7 @@ class Log final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_web_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr date_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto;
 };
@@ -2603,6 +2639,96 @@ inline void GetOneTokenCCPRequest::set_allocated_token(std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.token)
 }
 
+// .accounts.v1alpha1.tokens.v1.Log log = 2 [json_name = "log"];
+inline bool GetOneTokenCCPRequest::_internal_has_log() const {
+  return this != internal_default_instance() && log_ != nullptr;
+}
+inline bool GetOneTokenCCPRequest::has_log() const {
+  return _internal_has_log();
+}
+inline void GetOneTokenCCPRequest::clear_log() {
+  if (GetArenaForAllocation() == nullptr && log_ != nullptr) {
+    delete log_;
+  }
+  log_ = nullptr;
+}
+inline const ::accounts::v1alpha1::tokens::v1::Log& GetOneTokenCCPRequest::_internal_log() const {
+  const ::accounts::v1alpha1::tokens::v1::Log* p = log_;
+  return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::tokens::v1::Log&>(
+      ::accounts::v1alpha1::tokens::v1::_Log_default_instance_);
+}
+inline const ::accounts::v1alpha1::tokens::v1::Log& GetOneTokenCCPRequest::log() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.log)
+  return _internal_log();
+}
+inline void GetOneTokenCCPRequest::unsafe_arena_set_allocated_log(
+    ::accounts::v1alpha1::tokens::v1::Log* log) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(log_);
+  }
+  log_ = log;
+  if (log) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.log)
+}
+inline ::accounts::v1alpha1::tokens::v1::Log* GetOneTokenCCPRequest::release_log() {
+  
+  ::accounts::v1alpha1::tokens::v1::Log* temp = log_;
+  log_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::accounts::v1alpha1::tokens::v1::Log* GetOneTokenCCPRequest::unsafe_arena_release_log() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.log)
+  
+  ::accounts::v1alpha1::tokens::v1::Log* temp = log_;
+  log_ = nullptr;
+  return temp;
+}
+inline ::accounts::v1alpha1::tokens::v1::Log* GetOneTokenCCPRequest::_internal_mutable_log() {
+  
+  if (log_ == nullptr) {
+    auto* p = CreateMaybeMessage<::accounts::v1alpha1::tokens::v1::Log>(GetArenaForAllocation());
+    log_ = p;
+  }
+  return log_;
+}
+inline ::accounts::v1alpha1::tokens::v1::Log* GetOneTokenCCPRequest::mutable_log() {
+  ::accounts::v1alpha1::tokens::v1::Log* _msg = _internal_mutable_log();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.log)
+  return _msg;
+}
+inline void GetOneTokenCCPRequest::set_allocated_log(::accounts::v1alpha1::tokens::v1::Log* log) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete log_;
+  }
+  if (log) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::accounts::v1alpha1::tokens::v1::Log>::GetOwningArena(log);
+    if (message_arena != submessage_arena) {
+      log = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, log, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  log_ = log;
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.GetOneTokenCCPRequest.log)
+}
+
 // -------------------------------------------------------------------
 
 // GetOneTokenCCPResponse
@@ -3375,6 +3501,52 @@ inline void Log::set_allocated_date(std::string* date) {
   date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), date,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.Log.date)
+}
+
+// string token = 6 [json_name = "token"];
+inline void Log::clear_token() {
+  token_.ClearToEmpty();
+}
+inline const std::string& Log::token() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.tokens.v1.Log.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Log::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.tokens.v1.Log.token)
+}
+inline std::string* Log::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.tokens.v1.Log.token)
+  return _s;
+}
+inline const std::string& Log::_internal_token() const {
+  return token_.Get();
+}
+inline void Log::_internal_set_token(const std::string& value) {
+  
+  token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Log::_internal_mutable_token() {
+  
+  return token_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Log::release_token() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.tokens.v1.Log.token)
+  return token_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Log::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), token,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.Log.token)
 }
 
 // -------------------------------------------------------------------
