@@ -84,7 +84,7 @@ func EnableOrDisableMFA(userId string) (*accountpkgv1.EnableOrDisableMFAResponse
 	return response, nil
 }
 
-func GetOneTokenCCP(token string) (*accountpkgv1.GetOneTokenCCPResponse, error) {
+func GetOneTokenCCP(token string, log *accountpkgv1.Log) (*accountpkgv1.GetOneTokenCCPResponse, error) {
 	bylogs.LogInfo("GetOneTokenCCP Client Sdk")
 	d, err := time.ParseDuration(accountServiceTimeout)
 	if err != nil {
@@ -97,7 +97,7 @@ func GetOneTokenCCP(token string) (*accountpkgv1.GetOneTokenCCPResponse, error) 
 		return nil, status.Error(codes.InvalidArgument, "Token is required")
 	}
 
-	response, err := client.GetOneTokenCCP(ctx, &accountpkgv1.GetOneTokenCCPRequest{Token: token})
+	response, err := client.GetOneTokenCCP(ctx, &accountpkgv1.GetOneTokenCCPRequest{Token: token, Log: log})
 
 	if err != nil {
 		bylogs.LogErr("GetOneTokenCCP Client Sdk", err)
