@@ -16,7 +16,7 @@ class Tokens
         }
         $pool->internalAddGeneratedFile(
             '
-’
+Ì
 
 %accounts/v1alpha1/tokens/tokens.protoaccounts.v1alpha1.tokens.v1"a
 GetOneTokenCCPRequest
@@ -40,7 +40,7 @@ first_name (	R	firstName%
 LogoutTokenRequest
 	token_ccp (	RtokenCcp"\'
 LogoutTokenResponse
-msg (	Rmsg"è
+msg (	Rmsg"ß
 Log
 user_id (	RuserId
 system (	Rsystem
@@ -48,7 +48,8 @@ first_name (	R	firstName%
 client_web (	R	clientWeb
 ip (	Rip
 date (	Rdate
-token (	Rtoken"E
+token (	Rtoken
+status (Rstatus"E
 SaveLogsRequest2
 log (2 .accounts.v1alpha1.tokens.v1.LogRlog"$
 SaveLogsResponse

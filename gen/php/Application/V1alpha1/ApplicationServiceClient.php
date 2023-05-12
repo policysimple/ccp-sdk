@@ -4,7 +4,6 @@
 namespace Application\V1alpha1;
 
 /**
- * import "application.proto";
  */
 class ApplicationServiceClient extends \Grpc\BaseStub {
 

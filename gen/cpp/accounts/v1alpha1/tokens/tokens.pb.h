@@ -1248,6 +1248,7 @@ class Log final :
     kIpFieldNumber = 4,
     kDateFieldNumber = 5,
     kTokenFieldNumber = 6,
+    kStatusFieldNumber = 7,
   };
   // string user_id = 1 [json_name = "userId"];
   void clear_user_id();
@@ -1333,6 +1334,15 @@ class Log final :
   std::string* _internal_mutable_token();
   public:
 
+  // bool status = 7 [json_name = "status"];
+  void clear_status();
+  bool status() const;
+  void set_status(bool value);
+  private:
+  bool _internal_status() const;
+  void _internal_set_status(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.tokens.v1.Log)
  private:
   class _Internal;
@@ -1346,6 +1356,7 @@ class Log final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr date_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+  bool status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto;
 };
@@ -3547,6 +3558,26 @@ inline void Log::set_allocated_token(std::string* token) {
   token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), token,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.Log.token)
+}
+
+// bool status = 7 [json_name = "status"];
+inline void Log::clear_status() {
+  status_ = false;
+}
+inline bool Log::_internal_status() const {
+  return status_;
+}
+inline bool Log::status() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.tokens.v1.Log.status)
+  return _internal_status();
+}
+inline void Log::_internal_set_status(bool value) {
+  
+  status_ = value;
+}
+inline void Log::set_status(bool value) {
+  _internal_set_status(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.tokens.v1.Log.status)
 }
 
 // -------------------------------------------------------------------

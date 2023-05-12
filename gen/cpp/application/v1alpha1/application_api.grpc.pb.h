@@ -28,7 +28,6 @@ class ServerContext;
 namespace application {
 namespace v1alpha1 {
 
-// import "application.proto";
 class ApplicationService final {
  public:
   static constexpr char const* service_full_name() {

@@ -1453,7 +1453,8 @@ proto.accounts.v1alpha1.tokens.v1.Log.toObject = function(includeInstance, msg) 
     clientWeb: jspb.Message.getFieldWithDefault(msg, 3, ""),
     ip: jspb.Message.getFieldWithDefault(msg, 4, ""),
     date: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    token: jspb.Message.getFieldWithDefault(msg, 6, "")
+    token: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    status: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -1513,6 +1514,10 @@ proto.accounts.v1alpha1.tokens.v1.Log.deserializeBinaryFromReader = function(msg
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setToken(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -1582,6 +1587,13 @@ proto.accounts.v1alpha1.tokens.v1.Log.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -1693,6 +1705,24 @@ proto.accounts.v1alpha1.tokens.v1.Log.prototype.getToken = function() {
  */
 proto.accounts.v1alpha1.tokens.v1.Log.prototype.setToken = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional bool status = 7;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.tokens.v1.Log.prototype.getStatus = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.tokens.v1.Log} returns this
+ */
+proto.accounts.v1alpha1.tokens.v1.Log.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
