@@ -182,7 +182,6 @@ function deserialize_application_v1alpha1_UpdateApplicationResponse(buffer_arg) 
 }
 
 
-// import "application.proto";
 var ApplicationServiceService = exports.ApplicationServiceService = {
   // Application
   createApplication: {

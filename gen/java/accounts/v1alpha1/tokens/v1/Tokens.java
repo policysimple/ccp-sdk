@@ -4682,6 +4682,12 @@ public final class Tokens {
      */
     com.google.protobuf.ByteString
         getTokenBytes();
+
+    /**
+     * <code>bool status = 7 [json_name = "status"];</code>
+     * @return The status.
+     */
+    boolean getStatus();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.tokens.v1.Log}
@@ -4768,6 +4774,11 @@ public final class Tokens {
               java.lang.String s = input.readStringRequireUtf8();
 
               token_ = s;
+              break;
+            }
+            case 56: {
+
+              status_ = input.readBool();
               break;
             }
             default: {
@@ -5030,6 +5041,17 @@ public final class Tokens {
       }
     }
 
+    public static final int STATUS_FIELD_NUMBER = 7;
+    private boolean status_;
+    /**
+     * <code>bool status = 7 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public boolean getStatus() {
+      return status_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5062,6 +5084,9 @@ public final class Tokens {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, token_);
       }
+      if (status_ != false) {
+        output.writeBool(7, status_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5088,6 +5113,10 @@ public final class Tokens {
       }
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, token_);
+      }
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, status_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5116,6 +5145,8 @@ public final class Tokens {
           .equals(other.getDate())) return false;
       if (!getToken()
           .equals(other.getToken())) return false;
+      if (getStatus()
+          != other.getStatus()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5139,6 +5170,9 @@ public final class Tokens {
       hash = (53 * hash) + getDate().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStatus());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5284,6 +5318,8 @@ public final class Tokens {
 
         token_ = "";
 
+        status_ = false;
+
         return this;
       }
 
@@ -5316,6 +5352,7 @@ public final class Tokens {
         result.ip_ = ip_;
         result.date_ = date_;
         result.token_ = token_;
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -5387,6 +5424,9 @@ public final class Tokens {
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
           onChanged();
+        }
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5869,6 +5909,37 @@ public final class Tokens {
   checkByteStringIsUtf8(value);
         
         token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean status_ ;
+      /**
+       * <code>bool status = 7 [json_name = "status"];</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <code>bool status = 7 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(boolean value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool status = 7 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = false;
         onChanged();
         return this;
       }
@@ -11494,25 +11565,25 @@ public final class Tokens {
       "(\003R\021timeExpirationMfa\022\027\n\007user_id\030\006 \001(\tR\006" +
       "userId\"1\n\022LogoutTokenRequest\022\033\n\ttoken_cc" +
       "p\030\001 \001(\tR\010tokenCcp\"\'\n\023LogoutTokenResponse" +
-      "\022\020\n\003msg\030\001 \001(\tR\003msg\"\217\001\n\003Log\022\027\n\007user_id\030\001 " +
+      "\022\020\n\003msg\030\001 \001(\tR\003msg\"\247\001\n\003Log\022\027\n\007user_id\030\001 " +
       "\001(\tR\006userId\022\026\n\006system\030\002 \001(\tR\006system\022\035\n\nc" +
       "lient_web\030\003 \001(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002" +
       "ip\022\022\n\004date\030\005 \001(\tR\004date\022\024\n\005token\030\006 \001(\tR\005t" +
-      "oken\"E\n\017SaveLogsRequest\0222\n\003log\030\001 \001(\0132 .a" +
-      "ccounts.v1alpha1.tokens.v1.LogR\003log\"$\n\020S" +
-      "aveLogsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013Log" +
-      "sRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n\014Log" +
-      "sResponse\0224\n\004logs\030\001 \003(\0132 .accounts.v1alp" +
-      "ha1.tokens.v1.LogR\004logs\"4\n\031EnableOrDisab" +
-      "leMFARequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"D\n" +
-      "\032EnableOrDisableMFAResponse\022\020\n\003msg\030\001 \001(\t" +
-      "R\003msg\022\024\n\005error\030\002 \001(\tR\005error\"?\n\nMFAReques" +
-      "t\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030\n\007numbers\030\003 " +
-      "\003(\005R\007numbers\"R\n\013MFAResponse\022\033\n\ttoken_ccp" +
-      "\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005er" +
-      "ror\030\003 \001(\tR\005errorB;Z9github.com/cuemby/cc" +
-      "p-sdk/gen/go/accounts/v1alpha1/tokensb\006p" +
-      "roto3"
+      "oken\022\026\n\006status\030\007 \001(\010R\006status\"E\n\017SaveLogs" +
+      "Request\0222\n\003log\030\001 \001(\0132 .accounts.v1alpha1" +
+      ".tokens.v1.LogR\003log\"$\n\020SaveLogsResponse\022" +
+      "\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013LogsRequest\022\027\n\007user" +
+      "_id\030\001 \001(\tR\006userId\"D\n\014LogsResponse\0224\n\004log" +
+      "s\030\001 \003(\0132 .accounts.v1alpha1.tokens.v1.Lo" +
+      "gR\004logs\"4\n\031EnableOrDisableMFARequest\022\027\n\007" +
+      "user_id\030\001 \001(\tR\006userId\"D\n\032EnableOrDisable" +
+      "MFAResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
+      " \001(\tR\005error\"?\n\nMFARequest\022\027\n\007user_id\030\001 \001" +
+      "(\tR\006userId\022\030\n\007numbers\030\003 \003(\005R\007numbers\"R\n\013" +
+      "MFAResponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp" +
+      "\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005error" +
+      "B;Z9github.com/cuemby/ccp-sdk/gen/go/acc" +
+      "ounts/v1alpha1/tokensb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11559,7 +11630,7 @@ public final class Tokens {
     internal_static_accounts_v1alpha1_tokens_v1_Log_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_Log_descriptor,
-        new java.lang.String[] { "UserId", "System", "ClientWeb", "Ip", "Date", "Token", });
+        new java.lang.String[] { "UserId", "System", "ClientWeb", "Ip", "Date", "Token", "Status", });
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsRequest_fieldAccessorTable = new

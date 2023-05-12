@@ -5,8 +5,8 @@ from application.v1alpha1 import application_api_pb2 as application_dot_v1alpha1
 
 
 class ApplicationServiceStub(object):
-  """import "application.proto";
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def __init__(self, channel):
     """Constructor.
@@ -57,8 +57,8 @@ class ApplicationServiceStub(object):
 
 
 class ApplicationServiceServicer(object):
-  """import "application.proto";
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def CreateApplication(self, request, context):
     """Application

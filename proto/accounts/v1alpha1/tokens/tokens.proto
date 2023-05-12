@@ -55,6 +55,7 @@ message Log{
     string ip = 4;
     string date = 5;
     string token = 6;
+    bool status = 7;
 }
 message SaveLogsRequest {
     Log log = 1;

@@ -3,8 +3,8 @@ syntax = "proto3";
 package application.v1alpha1;
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/application/v1alpha1";
 
-// import "application/v1alpha1/application.proto";
-import "application.proto";
+import "application/v1alpha1/application.proto";
+//import "application.proto";
 
 service ApplicationService {
     //Application
