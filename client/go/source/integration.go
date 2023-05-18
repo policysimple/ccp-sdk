@@ -53,6 +53,23 @@ func CreateIntegration(req *sourcepkgv1.CreateIntegrationRequest) (*sourcepkgv1.
 	return response, nil
 }
 
+func CreateIntegrationWithExternalProvider(req *sourcepkgv1.CreateIntegrationWithExternalProviderRequest) (*sourcepkgv1.CreateIntegrationWithExternalProviderResponse, error) {
+	log.Println("CreateIntegrationWithExternalProvider")
+	d, err := time.ParseDuration(sourceServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.CreateIntegrationWithExternalProvider(ctx, req)
+	if err != nil {
+		return nil, fmt.Errorf("[CreateIntegrationWithExternalProvider] %w", err)
+	}
+
+	return response, nil
+}
+
 func DeleteIntegration(req *sourcepkgv1.DeleteIntegrationRequest) (*sourcepkgv1.DeleteIntegrationResponse, error) {
 	d, err := time.ParseDuration(sourceServiceTimeout)
 	if err != nil {
