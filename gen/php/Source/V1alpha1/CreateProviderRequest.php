@@ -26,9 +26,9 @@ class CreateProviderRequest extends \Google\Protobuf\Internal\Message
      */
     protected $logo = '';
     /**
-     * Generated from protobuf field <code>map<string, string> data = 5 [json_name = "data"];</code>
+     * Generated from protobuf field <code>map<string, string> provider_data = 5 [json_name = "providerData"];</code>
      */
-    private $data;
+    private $provider_data;
     /**
      * Generated from protobuf field <code>map<string, string> metadata = 6 [json_name = "metadata"];</code>
      */
@@ -43,7 +43,7 @@ class CreateProviderRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $description
      *     @type string $logo
-     *     @type array|\Google\Protobuf\Internal\MapField $data
+     *     @type array|\Google\Protobuf\Internal\MapField $provider_data
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      * }
      */
@@ -119,23 +119,23 @@ class CreateProviderRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> data = 5 [json_name = "data"];</code>
+     * Generated from protobuf field <code>map<string, string> provider_data = 5 [json_name = "providerData"];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
-    public function getData()
+    public function getProviderData()
     {
-        return $this->data;
+        return $this->provider_data;
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> data = 5 [json_name = "data"];</code>
+     * Generated from protobuf field <code>map<string, string> provider_data = 5 [json_name = "providerData"];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setData($var)
+    public function setProviderData($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->data = $arr;
+        $this->provider_data = $arr;
 
         return $this;
     }

@@ -438,4 +438,10 @@ public interface PipelineOrBuilder extends
    */
   io.cuemby.pipelines.tekton.v1alpha1.TaskOrBuilder getAfterDeployTasksOrBuilder(
       int index);
+
+  /**
+   * <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
+   * @return The isExistDockerfile.
+   */
+  boolean getIsExistDockerfile();
 }

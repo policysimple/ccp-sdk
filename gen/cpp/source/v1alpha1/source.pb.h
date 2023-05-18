@@ -49,7 +49,7 @@ struct TableStruct_source_2fv1alpha1_2fsource_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[57]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[61]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -88,15 +88,27 @@ extern CreateIntegrationRequest_MetadataEntry_DoNotUseDefaultTypeInternal _Creat
 class CreateIntegrationResponse;
 struct CreateIntegrationResponseDefaultTypeInternal;
 extern CreateIntegrationResponseDefaultTypeInternal _CreateIntegrationResponse_default_instance_;
+class CreateIntegrationWithExternalProviderRequest;
+struct CreateIntegrationWithExternalProviderRequestDefaultTypeInternal;
+extern CreateIntegrationWithExternalProviderRequestDefaultTypeInternal _CreateIntegrationWithExternalProviderRequest_default_instance_;
+class CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse;
+struct CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUseDefaultTypeInternal;
+extern CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUseDefaultTypeInternal _CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse_default_instance_;
+class CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse;
+struct CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUseDefaultTypeInternal;
+extern CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUseDefaultTypeInternal _CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse_default_instance_;
+class CreateIntegrationWithExternalProviderResponse;
+struct CreateIntegrationWithExternalProviderResponseDefaultTypeInternal;
+extern CreateIntegrationWithExternalProviderResponseDefaultTypeInternal _CreateIntegrationWithExternalProviderResponse_default_instance_;
 class CreateProviderRequest;
 struct CreateProviderRequestDefaultTypeInternal;
 extern CreateProviderRequestDefaultTypeInternal _CreateProviderRequest_default_instance_;
-class CreateProviderRequest_DataEntry_DoNotUse;
-struct CreateProviderRequest_DataEntry_DoNotUseDefaultTypeInternal;
-extern CreateProviderRequest_DataEntry_DoNotUseDefaultTypeInternal _CreateProviderRequest_DataEntry_DoNotUse_default_instance_;
 class CreateProviderRequest_MetadataEntry_DoNotUse;
 struct CreateProviderRequest_MetadataEntry_DoNotUseDefaultTypeInternal;
 extern CreateProviderRequest_MetadataEntry_DoNotUseDefaultTypeInternal _CreateProviderRequest_MetadataEntry_DoNotUse_default_instance_;
+class CreateProviderRequest_ProviderDataEntry_DoNotUse;
+struct CreateProviderRequest_ProviderDataEntry_DoNotUseDefaultTypeInternal;
+extern CreateProviderRequest_ProviderDataEntry_DoNotUseDefaultTypeInternal _CreateProviderRequest_ProviderDataEntry_DoNotUse_default_instance_;
 class CreateProviderResponse;
 struct CreateProviderResponseDefaultTypeInternal;
 extern CreateProviderResponseDefaultTypeInternal _CreateProviderResponse_default_instance_;
@@ -242,9 +254,13 @@ template<> ::source::v1alpha1::CreateIntegrationRequest* Arena::CreateMaybeMessa
 template<> ::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateIntegrationRequest_DataEntry_DoNotUse>(Arena*);
 template<> ::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateIntegrationRequest_MetadataEntry_DoNotUse>(Arena*);
 template<> ::source::v1alpha1::CreateIntegrationResponse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateIntegrationResponse>(Arena*);
+template<> ::source::v1alpha1::CreateIntegrationWithExternalProviderRequest* Arena::CreateMaybeMessage<::source::v1alpha1::CreateIntegrationWithExternalProviderRequest>(Arena*);
+template<> ::source::v1alpha1::CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse>(Arena*);
+template<> ::source::v1alpha1::CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse>(Arena*);
+template<> ::source::v1alpha1::CreateIntegrationWithExternalProviderResponse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateIntegrationWithExternalProviderResponse>(Arena*);
 template<> ::source::v1alpha1::CreateProviderRequest* Arena::CreateMaybeMessage<::source::v1alpha1::CreateProviderRequest>(Arena*);
-template<> ::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateProviderRequest_DataEntry_DoNotUse>(Arena*);
 template<> ::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateProviderRequest_MetadataEntry_DoNotUse>(Arena*);
+template<> ::source::v1alpha1::CreateProviderRequest_ProviderDataEntry_DoNotUse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateProviderRequest_ProviderDataEntry_DoNotUse>(Arena*);
 template<> ::source::v1alpha1::CreateProviderResponse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateProviderResponse>(Arena*);
 template<> ::source::v1alpha1::CreateRepositoryRequest* Arena::CreateMaybeMessage<::source::v1alpha1::CreateRepositoryRequest>(Arena*);
 template<> ::source::v1alpha1::CreateRepositoryResponse* Arena::CreateMaybeMessage<::source::v1alpha1::CreateRepositoryResponse>(Arena*);
@@ -295,6 +311,503 @@ namespace v1alpha1 {
 
 // ===================================================================
 
+class CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse();
+  explicit constexpr CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse& other);
+  static const CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse*>(&_CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "source.v1alpha1.CreateIntegrationWithExternalProviderRequest.DataEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "source.v1alpha1.CreateIntegrationWithExternalProviderRequest.DataEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse();
+  explicit constexpr CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse& other);
+  static const CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse*>(&_CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "source.v1alpha1.CreateIntegrationWithExternalProviderRequest.MetadataEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "source.v1alpha1.CreateIntegrationWithExternalProviderRequest.MetadataEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class CreateIntegrationWithExternalProviderRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.CreateIntegrationWithExternalProviderRequest) */ {
+ public:
+  inline CreateIntegrationWithExternalProviderRequest() : CreateIntegrationWithExternalProviderRequest(nullptr) {}
+  ~CreateIntegrationWithExternalProviderRequest() override;
+  explicit constexpr CreateIntegrationWithExternalProviderRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateIntegrationWithExternalProviderRequest(const CreateIntegrationWithExternalProviderRequest& from);
+  CreateIntegrationWithExternalProviderRequest(CreateIntegrationWithExternalProviderRequest&& from) noexcept
+    : CreateIntegrationWithExternalProviderRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateIntegrationWithExternalProviderRequest& operator=(const CreateIntegrationWithExternalProviderRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateIntegrationWithExternalProviderRequest& operator=(CreateIntegrationWithExternalProviderRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateIntegrationWithExternalProviderRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateIntegrationWithExternalProviderRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateIntegrationWithExternalProviderRequest*>(
+               &_CreateIntegrationWithExternalProviderRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(CreateIntegrationWithExternalProviderRequest& a, CreateIntegrationWithExternalProviderRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateIntegrationWithExternalProviderRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateIntegrationWithExternalProviderRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateIntegrationWithExternalProviderRequest* New() const final {
+    return new CreateIntegrationWithExternalProviderRequest();
+  }
+
+  CreateIntegrationWithExternalProviderRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateIntegrationWithExternalProviderRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateIntegrationWithExternalProviderRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateIntegrationWithExternalProviderRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateIntegrationWithExternalProviderRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.CreateIntegrationWithExternalProviderRequest";
+  }
+  protected:
+  explicit CreateIntegrationWithExternalProviderRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 5,
+    kMetadataFieldNumber = 6,
+    kNameFieldNumber = 3,
+    kUserIdFieldNumber = 7,
+    kProviderIdFieldNumber = 8,
+    kOrganizationIdFieldNumber = 10,
+    kProviderFieldNumber = 1,
+    kAccountFieldNumber = 9,
+  };
+  // map<string, string> data = 5 [json_name = "data"];
+  int data_size() const;
+  private:
+  int _internal_data_size() const;
+  public:
+  void clear_data();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_data() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_data();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      data() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_data();
+
+  // map<string, string> metadata = 6 [json_name = "metadata"];
+  int metadata_size() const;
+  private:
+  int _internal_metadata_size() const;
+  public:
+  void clear_metadata();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_metadata() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_metadata();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      metadata() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_metadata();
+
+  // string name = 3 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string user_id = 7 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // string provider_id = 8 [json_name = "providerId"];
+  void clear_provider_id();
+  const std::string& provider_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_provider_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_provider_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_provider_id();
+  void set_allocated_provider_id(std::string* provider_id);
+  private:
+  const std::string& _internal_provider_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_provider_id(const std::string& value);
+  std::string* _internal_mutable_provider_id();
+  public:
+
+  // string organization_id = 10 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // .source.v1alpha1.CreateProviderRequest provider = 1 [json_name = "provider"];
+  bool has_provider() const;
+  private:
+  bool _internal_has_provider() const;
+  public:
+  void clear_provider();
+  const ::source::v1alpha1::CreateProviderRequest& provider() const;
+  PROTOBUF_MUST_USE_RESULT ::source::v1alpha1::CreateProviderRequest* release_provider();
+  ::source::v1alpha1::CreateProviderRequest* mutable_provider();
+  void set_allocated_provider(::source::v1alpha1::CreateProviderRequest* provider);
+  private:
+  const ::source::v1alpha1::CreateProviderRequest& _internal_provider() const;
+  ::source::v1alpha1::CreateProviderRequest* _internal_mutable_provider();
+  public:
+  void unsafe_arena_set_allocated_provider(
+      ::source::v1alpha1::CreateProviderRequest* provider);
+  ::source::v1alpha1::CreateProviderRequest* unsafe_arena_release_provider();
+
+  // .source.v1alpha1.AccountIntegration account = 9 [json_name = "account"];
+  bool has_account() const;
+  private:
+  bool _internal_has_account() const;
+  public:
+  void clear_account();
+  const ::source::v1alpha1::AccountIntegration& account() const;
+  PROTOBUF_MUST_USE_RESULT ::source::v1alpha1::AccountIntegration* release_account();
+  ::source::v1alpha1::AccountIntegration* mutable_account();
+  void set_allocated_account(::source::v1alpha1::AccountIntegration* account);
+  private:
+  const ::source::v1alpha1::AccountIntegration& _internal_account() const;
+  ::source::v1alpha1::AccountIntegration* _internal_mutable_account();
+  public:
+  void unsafe_arena_set_allocated_account(
+      ::source::v1alpha1::AccountIntegration* account);
+  ::source::v1alpha1::AccountIntegration* unsafe_arena_release_account();
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.CreateIntegrationWithExternalProviderRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      CreateIntegrationWithExternalProviderRequest_DataEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> data_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      CreateIntegrationWithExternalProviderRequest_MetadataEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr provider_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::source::v1alpha1::CreateProviderRequest* provider_;
+  ::source::v1alpha1::AccountIntegration* account_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateIntegrationWithExternalProviderResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.CreateIntegrationWithExternalProviderResponse) */ {
+ public:
+  inline CreateIntegrationWithExternalProviderResponse() : CreateIntegrationWithExternalProviderResponse(nullptr) {}
+  ~CreateIntegrationWithExternalProviderResponse() override;
+  explicit constexpr CreateIntegrationWithExternalProviderResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateIntegrationWithExternalProviderResponse(const CreateIntegrationWithExternalProviderResponse& from);
+  CreateIntegrationWithExternalProviderResponse(CreateIntegrationWithExternalProviderResponse&& from) noexcept
+    : CreateIntegrationWithExternalProviderResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateIntegrationWithExternalProviderResponse& operator=(const CreateIntegrationWithExternalProviderResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateIntegrationWithExternalProviderResponse& operator=(CreateIntegrationWithExternalProviderResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateIntegrationWithExternalProviderResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateIntegrationWithExternalProviderResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateIntegrationWithExternalProviderResponse*>(
+               &_CreateIntegrationWithExternalProviderResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(CreateIntegrationWithExternalProviderResponse& a, CreateIntegrationWithExternalProviderResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateIntegrationWithExternalProviderResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateIntegrationWithExternalProviderResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateIntegrationWithExternalProviderResponse* New() const final {
+    return new CreateIntegrationWithExternalProviderResponse();
+  }
+
+  CreateIntegrationWithExternalProviderResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateIntegrationWithExternalProviderResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateIntegrationWithExternalProviderResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateIntegrationWithExternalProviderResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateIntegrationWithExternalProviderResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "source.v1alpha1.CreateIntegrationWithExternalProviderResponse";
+  }
+  protected:
+  explicit CreateIntegrationWithExternalProviderResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+    kIntegrationFieldNumber = 2,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // .source.v1alpha1.Integration integration = 2 [json_name = "integration"];
+  bool has_integration() const;
+  private:
+  bool _internal_has_integration() const;
+  public:
+  void clear_integration();
+  const ::source::v1alpha1::Integration& integration() const;
+  PROTOBUF_MUST_USE_RESULT ::source::v1alpha1::Integration* release_integration();
+  ::source::v1alpha1::Integration* mutable_integration();
+  void set_allocated_integration(::source::v1alpha1::Integration* integration);
+  private:
+  const ::source::v1alpha1::Integration& _internal_integration() const;
+  ::source::v1alpha1::Integration* _internal_mutable_integration();
+  public:
+  void unsafe_arena_set_allocated_integration(
+      ::source::v1alpha1::Integration* integration);
+  ::source::v1alpha1::Integration* unsafe_arena_release_integration();
+
+  // @@protoc_insertion_point(class_scope:source.v1alpha1.CreateIntegrationWithExternalProviderResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::source::v1alpha1::Integration* integration_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
+};
+// -------------------------------------------------------------------
+
 class AccountProvider final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:source.v1alpha1.AccountProvider) */ {
  public:
@@ -339,7 +852,7 @@ class AccountProvider final :
                &_AccountProvider_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    4;
 
   friend void swap(AccountProvider& a, AccountProvider& b) {
     a.Swap(&b);
@@ -499,7 +1012,7 @@ class AccountsProvidersRequest final :
                &_AccountsProvidersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    5;
 
   friend void swap(AccountsProvidersRequest& a, AccountsProvidersRequest& b) {
     a.Swap(&b);
@@ -654,7 +1167,7 @@ class AccountsProvidersResponse final :
                &_AccountsProvidersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    6;
 
   friend void swap(AccountsProvidersResponse& a, AccountsProvidersResponse& b) {
     a.Swap(&b);
@@ -824,7 +1337,7 @@ class DeleteIntegrationsByOrganizationRequest final :
                &_DeleteIntegrationsByOrganizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    7;
 
   friend void swap(DeleteIntegrationsByOrganizationRequest& a, DeleteIntegrationsByOrganizationRequest& b) {
     a.Swap(&b);
@@ -968,7 +1481,7 @@ class DeleteIntegrationsByOrganizationResponse final :
                &_DeleteIntegrationsByOrganizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    8;
 
   friend void swap(DeleteIntegrationsByOrganizationResponse& a, DeleteIntegrationsByOrganizationResponse& b) {
     a.Swap(&b);
@@ -1112,7 +1625,7 @@ class GetOneProviderByNameRequest final :
                &_GetOneProviderByNameRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    9;
 
   friend void swap(GetOneProviderByNameRequest& a, GetOneProviderByNameRequest& b) {
     a.Swap(&b);
@@ -1256,7 +1769,7 @@ class GetOneProviderByNameResponse final :
                &_GetOneProviderByNameResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    10;
 
   friend void swap(GetOneProviderByNameResponse& a, GetOneProviderByNameResponse& b) {
     a.Swap(&b);
@@ -1404,7 +1917,7 @@ class Branch final :
                &_Branch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    11;
 
   friend void swap(Branch& a, Branch& b) {
     a.Swap(&b);
@@ -1580,7 +2093,7 @@ class ListRepositoriesProviderRequest final :
                &_ListRepositoriesProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    12;
 
   friend void swap(ListRepositoriesProviderRequest& a, ListRepositoriesProviderRequest& b) {
     a.Swap(&b);
@@ -1735,7 +2248,7 @@ class ListRepositoriesProviderResponse final :
                &_ListRepositoriesProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    13;
 
   friend void swap(ListRepositoriesProviderResponse& a, ListRepositoriesProviderResponse& b) {
     a.Swap(&b);
@@ -1905,7 +2418,7 @@ class GetRepositoryProviderRequest final :
                &_GetRepositoryProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(GetRepositoryProviderRequest& a, GetRepositoryProviderRequest& b) {
     a.Swap(&b);
@@ -2065,7 +2578,7 @@ class GetRepositoryProviderResponse final :
                &_GetRepositoryProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(GetRepositoryProviderResponse& a, GetRepositoryProviderResponse& b) {
     a.Swap(&b);
@@ -2213,7 +2726,7 @@ class DetailRepository final :
                &_DetailRepository_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    16;
 
   friend void swap(DetailRepository& a, DetailRepository& b) {
     a.Swap(&b);
@@ -2517,7 +3030,7 @@ class ListRepository final :
                &_ListRepository_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    17;
 
   friend void swap(ListRepository& a, ListRepository& b) {
     a.Swap(&b);
@@ -2784,7 +3297,7 @@ class CreateDetailRepository final :
                &_CreateDetailRepository_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    18;
 
   friend void swap(CreateDetailRepository& a, CreateDetailRepository& b) {
     a.Swap(&b);
@@ -3046,7 +3559,7 @@ class CreateRepositoryRequest final :
                &_CreateRepositoryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    19;
 
   friend void swap(CreateRepositoryRequest& a, CreateRepositoryRequest& b) {
     a.Swap(&b);
@@ -3226,7 +3739,7 @@ class CreateRepositoryResponse final :
                &_CreateRepositoryResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    20;
 
   friend void swap(CreateRepositoryResponse& a, CreateRepositoryResponse& b) {
     a.Swap(&b);
@@ -3370,7 +3883,7 @@ class ListRepositoriesRequest final :
                &_ListRepositoriesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    21;
 
   friend void swap(ListRepositoriesRequest& a, ListRepositoriesRequest& b) {
     a.Swap(&b);
@@ -3530,7 +4043,7 @@ class ListRepositoriesResponse final :
                &_ListRepositoriesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    22;
 
   friend void swap(ListRepositoriesResponse& a, ListRepositoriesResponse& b) {
     a.Swap(&b);
@@ -3678,7 +4191,7 @@ class GetRepositoryRequest final :
                &_GetRepositoryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    23;
 
   friend void swap(GetRepositoryRequest& a, GetRepositoryRequest& b) {
     a.Swap(&b);
@@ -3822,7 +4335,7 @@ class GetRepositoryResponse final :
                &_GetRepositoryResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    24;
 
   friend void swap(GetRepositoryResponse& a, GetRepositoryResponse& b) {
     a.Swap(&b);
@@ -3970,7 +4483,7 @@ class DeleteRepositoryRequest final :
                &_DeleteRepositoryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    25;
 
   friend void swap(DeleteRepositoryRequest& a, DeleteRepositoryRequest& b) {
     a.Swap(&b);
@@ -4114,7 +4627,7 @@ class DeleteRepositoryResponse final :
                &_DeleteRepositoryResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    26;
 
   friend void swap(DeleteRepositoryResponse& a, DeleteRepositoryResponse& b) {
     a.Swap(&b);
@@ -4258,7 +4771,7 @@ class UpdateRepositoryRequest final :
                &_UpdateRepositoryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    27;
 
   friend void swap(UpdateRepositoryRequest& a, UpdateRepositoryRequest& b) {
     a.Swap(&b);
@@ -4422,7 +4935,7 @@ class UpdateRepositoryResponse final :
                &_UpdateRepositoryResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    28;
 
   friend void swap(UpdateRepositoryResponse& a, UpdateRepositoryResponse& b) {
     a.Swap(&b);
@@ -4620,7 +5133,7 @@ class Integration final :
                &_Integration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    31;
 
   friend void swap(Integration& a, Integration& b) {
     a.Swap(&b);
@@ -4899,7 +5412,7 @@ class Repository final :
                &_Repository_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    32;
 
   friend void swap(Repository& a, Repository& b) {
     a.Swap(&b);
@@ -5129,7 +5642,7 @@ class AccountIntegration final :
                &_AccountIntegration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    33;
 
   friend void swap(AccountIntegration& a, AccountIntegration& b) {
     a.Swap(&b);
@@ -5343,7 +5856,7 @@ class CreateIntegrationRequest final :
                &_CreateIntegrationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    36;
 
   friend void swap(CreateIntegrationRequest& a, CreateIntegrationRequest& b) {
     a.Swap(&b);
@@ -5602,7 +6115,7 @@ class CreateIntegrationResponse final :
                &_CreateIntegrationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    37;
 
   friend void swap(CreateIntegrationResponse& a, CreateIntegrationResponse& b) {
     a.Swap(&b);
@@ -5762,7 +6275,7 @@ class ListIntegrationsRequest final :
                &_ListIntegrationsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    38;
 
   friend void swap(ListIntegrationsRequest& a, ListIntegrationsRequest& b) {
     a.Swap(&b);
@@ -5922,7 +6435,7 @@ class ListIntegrationsResponse final :
                &_ListIntegrationsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    39;
 
   friend void swap(ListIntegrationsResponse& a, ListIntegrationsResponse& b) {
     a.Swap(&b);
@@ -6086,7 +6599,7 @@ class GetIntegrationRequest final :
                &_GetIntegrationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    40;
 
   friend void swap(GetIntegrationRequest& a, GetIntegrationRequest& b) {
     a.Swap(&b);
@@ -6230,7 +6743,7 @@ class GetIntegrationResponse final :
                &_GetIntegrationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    41;
 
   friend void swap(GetIntegrationResponse& a, GetIntegrationResponse& b) {
     a.Swap(&b);
@@ -6378,7 +6891,7 @@ class UpdateIntegrationRequest final :
                &_UpdateIntegrationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    42;
 
   friend void swap(UpdateIntegrationRequest& a, UpdateIntegrationRequest& b) {
     a.Swap(&b);
@@ -6542,7 +7055,7 @@ class UpdateIntegrationResponse final :
                &_UpdateIntegrationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    43;
 
   friend void swap(UpdateIntegrationResponse& a, UpdateIntegrationResponse& b) {
     a.Swap(&b);
@@ -6686,7 +7199,7 @@ class DeleteIntegrationRequest final :
                &_DeleteIntegrationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    44;
 
   friend void swap(DeleteIntegrationRequest& a, DeleteIntegrationRequest& b) {
     a.Swap(&b);
@@ -6830,7 +7343,7 @@ class DeleteIntegrationResponse final :
                &_DeleteIntegrationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    45;
 
   friend void swap(DeleteIntegrationResponse& a, DeleteIntegrationResponse& b) {
     a.Swap(&b);
@@ -7028,7 +7541,7 @@ class Provider final :
                &_Provider_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    48;
 
   friend void swap(Provider& a, Provider& b) {
     a.Swap(&b);
@@ -7267,7 +7780,7 @@ class DeleteProviderRequest final :
                &_DeleteProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    49;
 
   friend void swap(DeleteProviderRequest& a, DeleteProviderRequest& b) {
     a.Swap(&b);
@@ -7411,7 +7924,7 @@ class DeleteProviderResponse final :
                &_DeleteProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    50;
 
   friend void swap(DeleteProviderResponse& a, DeleteProviderResponse& b) {
     a.Swap(&b);
@@ -7555,7 +8068,7 @@ class UpdateProviderRequest final :
                &_UpdateProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    51;
 
   friend void swap(UpdateProviderRequest& a, UpdateProviderRequest& b) {
     a.Swap(&b);
@@ -7719,7 +8232,7 @@ class UpdateProviderResponse final :
                &_UpdateProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    52;
 
   friend void swap(UpdateProviderResponse& a, UpdateProviderResponse& b) {
     a.Swap(&b);
@@ -7863,7 +8376,7 @@ class GetProviderRequest final :
                &_GetProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    53;
 
   friend void swap(GetProviderRequest& a, GetProviderRequest& b) {
     a.Swap(&b);
@@ -8007,7 +8520,7 @@ class GetProviderResponse final :
                &_GetProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    54;
 
   friend void swap(GetProviderResponse& a, GetProviderResponse& b) {
     a.Swap(&b);
@@ -8111,26 +8624,26 @@ class GetProviderResponse final :
 };
 // -------------------------------------------------------------------
 
-class CreateProviderRequest_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CreateProviderRequest_DataEntry_DoNotUse, 
+class CreateProviderRequest_ProviderDataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CreateProviderRequest_ProviderDataEntry_DoNotUse, 
     std::string, std::string,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
 public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CreateProviderRequest_DataEntry_DoNotUse, 
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<CreateProviderRequest_ProviderDataEntry_DoNotUse, 
     std::string, std::string,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
-  CreateProviderRequest_DataEntry_DoNotUse();
-  explicit constexpr CreateProviderRequest_DataEntry_DoNotUse(
+  CreateProviderRequest_ProviderDataEntry_DoNotUse();
+  explicit constexpr CreateProviderRequest_ProviderDataEntry_DoNotUse(
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit CreateProviderRequest_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const CreateProviderRequest_DataEntry_DoNotUse& other);
-  static const CreateProviderRequest_DataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const CreateProviderRequest_DataEntry_DoNotUse*>(&_CreateProviderRequest_DataEntry_DoNotUse_default_instance_); }
+  explicit CreateProviderRequest_ProviderDataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const CreateProviderRequest_ProviderDataEntry_DoNotUse& other);
+  static const CreateProviderRequest_ProviderDataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const CreateProviderRequest_ProviderDataEntry_DoNotUse*>(&_CreateProviderRequest_ProviderDataEntry_DoNotUse_default_instance_); }
   static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "source.v1alpha1.CreateProviderRequest.DataEntry.key");
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "source.v1alpha1.CreateProviderRequest.ProviderDataEntry.key");
  }
   static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "source.v1alpha1.CreateProviderRequest.DataEntry.value");
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "source.v1alpha1.CreateProviderRequest.ProviderDataEntry.value");
  }
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
   ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
@@ -8209,7 +8722,7 @@ class CreateProviderRequest final :
                &_CreateProviderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    57;
 
   friend void swap(CreateProviderRequest& a, CreateProviderRequest& b) {
     a.Swap(&b);
@@ -8281,28 +8794,28 @@ class CreateProviderRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDataFieldNumber = 5,
+    kProviderDataFieldNumber = 5,
     kMetadataFieldNumber = 6,
     kNameFieldNumber = 1,
     kDescriptionFieldNumber = 2,
     kLogoFieldNumber = 3,
   };
-  // map<string, string> data = 5 [json_name = "data"];
-  int data_size() const;
+  // map<string, string> provider_data = 5 [json_name = "providerData"];
+  int provider_data_size() const;
   private:
-  int _internal_data_size() const;
+  int _internal_provider_data_size() const;
   public:
-  void clear_data();
+  void clear_provider_data();
   private:
   const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      _internal_data() const;
+      _internal_provider_data() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      _internal_mutable_data();
+      _internal_mutable_provider_data();
   public:
   const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      data() const;
+      provider_data() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      mutable_data();
+      mutable_provider_data();
 
   // map<string, string> metadata = 6 [json_name = "metadata"];
   int metadata_size() const;
@@ -8371,10 +8884,10 @@ class CreateProviderRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      CreateProviderRequest_DataEntry_DoNotUse,
+      CreateProviderRequest_ProviderDataEntry_DoNotUse,
       std::string, std::string,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> data_;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> provider_data_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
       CreateProviderRequest_MetadataEntry_DoNotUse,
       std::string, std::string,
@@ -8432,7 +8945,7 @@ class CreateProviderResponse final :
                &_CreateProviderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    58;
 
   friend void swap(CreateProviderResponse& a, CreateProviderResponse& b) {
     a.Swap(&b);
@@ -8576,7 +9089,7 @@ class ListProvidersRequest final :
                &_ListProvidersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    59;
 
   friend void swap(ListProvidersRequest& a, ListProvidersRequest& b) {
     a.Swap(&b);
@@ -8702,7 +9215,7 @@ class ListProvidersResponse final :
                &_ListProvidersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    60;
 
   friend void swap(ListProvidersResponse& a, ListProvidersResponse& b) {
     a.Swap(&b);
@@ -8835,6 +9348,576 @@ class ListProvidersResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// CreateIntegrationWithExternalProviderRequest
+
+// .source.v1alpha1.CreateProviderRequest provider = 1 [json_name = "provider"];
+inline bool CreateIntegrationWithExternalProviderRequest::_internal_has_provider() const {
+  return this != internal_default_instance() && provider_ != nullptr;
+}
+inline bool CreateIntegrationWithExternalProviderRequest::has_provider() const {
+  return _internal_has_provider();
+}
+inline void CreateIntegrationWithExternalProviderRequest::clear_provider() {
+  if (GetArenaForAllocation() == nullptr && provider_ != nullptr) {
+    delete provider_;
+  }
+  provider_ = nullptr;
+}
+inline const ::source::v1alpha1::CreateProviderRequest& CreateIntegrationWithExternalProviderRequest::_internal_provider() const {
+  const ::source::v1alpha1::CreateProviderRequest* p = provider_;
+  return p != nullptr ? *p : reinterpret_cast<const ::source::v1alpha1::CreateProviderRequest&>(
+      ::source::v1alpha1::_CreateProviderRequest_default_instance_);
+}
+inline const ::source::v1alpha1::CreateProviderRequest& CreateIntegrationWithExternalProviderRequest::provider() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider)
+  return _internal_provider();
+}
+inline void CreateIntegrationWithExternalProviderRequest::unsafe_arena_set_allocated_provider(
+    ::source::v1alpha1::CreateProviderRequest* provider) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(provider_);
+  }
+  provider_ = provider;
+  if (provider) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider)
+}
+inline ::source::v1alpha1::CreateProviderRequest* CreateIntegrationWithExternalProviderRequest::release_provider() {
+  
+  ::source::v1alpha1::CreateProviderRequest* temp = provider_;
+  provider_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::source::v1alpha1::CreateProviderRequest* CreateIntegrationWithExternalProviderRequest::unsafe_arena_release_provider() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider)
+  
+  ::source::v1alpha1::CreateProviderRequest* temp = provider_;
+  provider_ = nullptr;
+  return temp;
+}
+inline ::source::v1alpha1::CreateProviderRequest* CreateIntegrationWithExternalProviderRequest::_internal_mutable_provider() {
+  
+  if (provider_ == nullptr) {
+    auto* p = CreateMaybeMessage<::source::v1alpha1::CreateProviderRequest>(GetArenaForAllocation());
+    provider_ = p;
+  }
+  return provider_;
+}
+inline ::source::v1alpha1::CreateProviderRequest* CreateIntegrationWithExternalProviderRequest::mutable_provider() {
+  ::source::v1alpha1::CreateProviderRequest* _msg = _internal_mutable_provider();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider)
+  return _msg;
+}
+inline void CreateIntegrationWithExternalProviderRequest::set_allocated_provider(::source::v1alpha1::CreateProviderRequest* provider) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete provider_;
+  }
+  if (provider) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::source::v1alpha1::CreateProviderRequest>::GetOwningArena(provider);
+    if (message_arena != submessage_arena) {
+      provider = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, provider, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  provider_ = provider;
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider)
+}
+
+// string name = 3 [json_name = "name"];
+inline void CreateIntegrationWithExternalProviderRequest::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& CreateIntegrationWithExternalProviderRequest::name() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateIntegrationWithExternalProviderRequest::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.name)
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.name)
+  return _s;
+}
+inline const std::string& CreateIntegrationWithExternalProviderRequest::_internal_name() const {
+  return name_.Get();
+}
+inline void CreateIntegrationWithExternalProviderRequest::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::release_name() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateIntegrationWithExternalProviderRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.name)
+}
+
+// map<string, string> data = 5 [json_name = "data"];
+inline int CreateIntegrationWithExternalProviderRequest::_internal_data_size() const {
+  return data_.size();
+}
+inline int CreateIntegrationWithExternalProviderRequest::data_size() const {
+  return _internal_data_size();
+}
+inline void CreateIntegrationWithExternalProviderRequest::clear_data() {
+  data_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+CreateIntegrationWithExternalProviderRequest::_internal_data() const {
+  return data_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+CreateIntegrationWithExternalProviderRequest::data() const {
+  // @@protoc_insertion_point(field_map:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.data)
+  return _internal_data();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+CreateIntegrationWithExternalProviderRequest::_internal_mutable_data() {
+  return data_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+CreateIntegrationWithExternalProviderRequest::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_map:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.data)
+  return _internal_mutable_data();
+}
+
+// map<string, string> metadata = 6 [json_name = "metadata"];
+inline int CreateIntegrationWithExternalProviderRequest::_internal_metadata_size() const {
+  return metadata_.size();
+}
+inline int CreateIntegrationWithExternalProviderRequest::metadata_size() const {
+  return _internal_metadata_size();
+}
+inline void CreateIntegrationWithExternalProviderRequest::clear_metadata() {
+  metadata_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+CreateIntegrationWithExternalProviderRequest::_internal_metadata() const {
+  return metadata_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+CreateIntegrationWithExternalProviderRequest::metadata() const {
+  // @@protoc_insertion_point(field_map:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.metadata)
+  return _internal_metadata();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+CreateIntegrationWithExternalProviderRequest::_internal_mutable_metadata() {
+  return metadata_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+CreateIntegrationWithExternalProviderRequest::mutable_metadata() {
+  // @@protoc_insertion_point(field_mutable_map:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.metadata)
+  return _internal_mutable_metadata();
+}
+
+// string user_id = 7 [json_name = "userId"];
+inline void CreateIntegrationWithExternalProviderRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& CreateIntegrationWithExternalProviderRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateIntegrationWithExternalProviderRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.user_id)
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.user_id)
+  return _s;
+}
+inline const std::string& CreateIntegrationWithExternalProviderRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void CreateIntegrationWithExternalProviderRequest::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateIntegrationWithExternalProviderRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.user_id)
+}
+
+// string provider_id = 8 [json_name = "providerId"];
+inline void CreateIntegrationWithExternalProviderRequest::clear_provider_id() {
+  provider_id_.ClearToEmpty();
+}
+inline const std::string& CreateIntegrationWithExternalProviderRequest::provider_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider_id)
+  return _internal_provider_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateIntegrationWithExternalProviderRequest::set_provider_id(ArgT0&& arg0, ArgT... args) {
+ 
+ provider_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider_id)
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::mutable_provider_id() {
+  std::string* _s = _internal_mutable_provider_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider_id)
+  return _s;
+}
+inline const std::string& CreateIntegrationWithExternalProviderRequest::_internal_provider_id() const {
+  return provider_id_.Get();
+}
+inline void CreateIntegrationWithExternalProviderRequest::_internal_set_provider_id(const std::string& value) {
+  
+  provider_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::_internal_mutable_provider_id() {
+  
+  return provider_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::release_provider_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider_id)
+  return provider_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateIntegrationWithExternalProviderRequest::set_allocated_provider_id(std::string* provider_id) {
+  if (provider_id != nullptr) {
+    
+  } else {
+    
+  }
+  provider_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), provider_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.provider_id)
+}
+
+// .source.v1alpha1.AccountIntegration account = 9 [json_name = "account"];
+inline bool CreateIntegrationWithExternalProviderRequest::_internal_has_account() const {
+  return this != internal_default_instance() && account_ != nullptr;
+}
+inline bool CreateIntegrationWithExternalProviderRequest::has_account() const {
+  return _internal_has_account();
+}
+inline void CreateIntegrationWithExternalProviderRequest::clear_account() {
+  if (GetArenaForAllocation() == nullptr && account_ != nullptr) {
+    delete account_;
+  }
+  account_ = nullptr;
+}
+inline const ::source::v1alpha1::AccountIntegration& CreateIntegrationWithExternalProviderRequest::_internal_account() const {
+  const ::source::v1alpha1::AccountIntegration* p = account_;
+  return p != nullptr ? *p : reinterpret_cast<const ::source::v1alpha1::AccountIntegration&>(
+      ::source::v1alpha1::_AccountIntegration_default_instance_);
+}
+inline const ::source::v1alpha1::AccountIntegration& CreateIntegrationWithExternalProviderRequest::account() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.account)
+  return _internal_account();
+}
+inline void CreateIntegrationWithExternalProviderRequest::unsafe_arena_set_allocated_account(
+    ::source::v1alpha1::AccountIntegration* account) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(account_);
+  }
+  account_ = account;
+  if (account) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.account)
+}
+inline ::source::v1alpha1::AccountIntegration* CreateIntegrationWithExternalProviderRequest::release_account() {
+  
+  ::source::v1alpha1::AccountIntegration* temp = account_;
+  account_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::source::v1alpha1::AccountIntegration* CreateIntegrationWithExternalProviderRequest::unsafe_arena_release_account() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.account)
+  
+  ::source::v1alpha1::AccountIntegration* temp = account_;
+  account_ = nullptr;
+  return temp;
+}
+inline ::source::v1alpha1::AccountIntegration* CreateIntegrationWithExternalProviderRequest::_internal_mutable_account() {
+  
+  if (account_ == nullptr) {
+    auto* p = CreateMaybeMessage<::source::v1alpha1::AccountIntegration>(GetArenaForAllocation());
+    account_ = p;
+  }
+  return account_;
+}
+inline ::source::v1alpha1::AccountIntegration* CreateIntegrationWithExternalProviderRequest::mutable_account() {
+  ::source::v1alpha1::AccountIntegration* _msg = _internal_mutable_account();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.account)
+  return _msg;
+}
+inline void CreateIntegrationWithExternalProviderRequest::set_allocated_account(::source::v1alpha1::AccountIntegration* account) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete account_;
+  }
+  if (account) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::source::v1alpha1::AccountIntegration>::GetOwningArena(account);
+    if (message_arena != submessage_arena) {
+      account = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, account, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  account_ = account;
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.account)
+}
+
+// string organization_id = 10 [json_name = "organizationId"];
+inline void CreateIntegrationWithExternalProviderRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& CreateIntegrationWithExternalProviderRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateIntegrationWithExternalProviderRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.organization_id)
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.organization_id)
+  return _s;
+}
+inline const std::string& CreateIntegrationWithExternalProviderRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void CreateIntegrationWithExternalProviderRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateIntegrationWithExternalProviderRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderRequest.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// CreateIntegrationWithExternalProviderResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void CreateIntegrationWithExternalProviderResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& CreateIntegrationWithExternalProviderResponse::msg() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateIntegrationWithExternalProviderResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.msg)
+}
+inline std::string* CreateIntegrationWithExternalProviderResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.msg)
+  return _s;
+}
+inline const std::string& CreateIntegrationWithExternalProviderResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void CreateIntegrationWithExternalProviderResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateIntegrationWithExternalProviderResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateIntegrationWithExternalProviderResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.msg)
+}
+
+// .source.v1alpha1.Integration integration = 2 [json_name = "integration"];
+inline bool CreateIntegrationWithExternalProviderResponse::_internal_has_integration() const {
+  return this != internal_default_instance() && integration_ != nullptr;
+}
+inline bool CreateIntegrationWithExternalProviderResponse::has_integration() const {
+  return _internal_has_integration();
+}
+inline void CreateIntegrationWithExternalProviderResponse::clear_integration() {
+  if (GetArenaForAllocation() == nullptr && integration_ != nullptr) {
+    delete integration_;
+  }
+  integration_ = nullptr;
+}
+inline const ::source::v1alpha1::Integration& CreateIntegrationWithExternalProviderResponse::_internal_integration() const {
+  const ::source::v1alpha1::Integration* p = integration_;
+  return p != nullptr ? *p : reinterpret_cast<const ::source::v1alpha1::Integration&>(
+      ::source::v1alpha1::_Integration_default_instance_);
+}
+inline const ::source::v1alpha1::Integration& CreateIntegrationWithExternalProviderResponse::integration() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.integration)
+  return _internal_integration();
+}
+inline void CreateIntegrationWithExternalProviderResponse::unsafe_arena_set_allocated_integration(
+    ::source::v1alpha1::Integration* integration) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(integration_);
+  }
+  integration_ = integration;
+  if (integration) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.integration)
+}
+inline ::source::v1alpha1::Integration* CreateIntegrationWithExternalProviderResponse::release_integration() {
+  
+  ::source::v1alpha1::Integration* temp = integration_;
+  integration_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::source::v1alpha1::Integration* CreateIntegrationWithExternalProviderResponse::unsafe_arena_release_integration() {
+  // @@protoc_insertion_point(field_release:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.integration)
+  
+  ::source::v1alpha1::Integration* temp = integration_;
+  integration_ = nullptr;
+  return temp;
+}
+inline ::source::v1alpha1::Integration* CreateIntegrationWithExternalProviderResponse::_internal_mutable_integration() {
+  
+  if (integration_ == nullptr) {
+    auto* p = CreateMaybeMessage<::source::v1alpha1::Integration>(GetArenaForAllocation());
+    integration_ = p;
+  }
+  return integration_;
+}
+inline ::source::v1alpha1::Integration* CreateIntegrationWithExternalProviderResponse::mutable_integration() {
+  ::source::v1alpha1::Integration* _msg = _internal_mutable_integration();
+  // @@protoc_insertion_point(field_mutable:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.integration)
+  return _msg;
+}
+inline void CreateIntegrationWithExternalProviderResponse::set_allocated_integration(::source::v1alpha1::Integration* integration) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete integration_;
+  }
+  if (integration) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::source::v1alpha1::Integration>::GetOwningArena(integration);
+    if (message_arena != submessage_arena) {
+      integration = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, integration, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  integration_ = integration;
+  // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateIntegrationWithExternalProviderResponse.integration)
+}
+
+// -------------------------------------------------------------------
+
 // AccountProvider
 
 // string name = 1 [json_name = "name"];
@@ -14504,33 +15587,33 @@ inline void CreateProviderRequest::set_allocated_logo(std::string* logo) {
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.CreateProviderRequest.logo)
 }
 
-// map<string, string> data = 5 [json_name = "data"];
-inline int CreateProviderRequest::_internal_data_size() const {
-  return data_.size();
+// map<string, string> provider_data = 5 [json_name = "providerData"];
+inline int CreateProviderRequest::_internal_provider_data_size() const {
+  return provider_data_.size();
 }
-inline int CreateProviderRequest::data_size() const {
-  return _internal_data_size();
+inline int CreateProviderRequest::provider_data_size() const {
+  return _internal_provider_data_size();
 }
-inline void CreateProviderRequest::clear_data() {
-  data_.Clear();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-CreateProviderRequest::_internal_data() const {
-  return data_.GetMap();
+inline void CreateProviderRequest::clear_provider_data() {
+  provider_data_.Clear();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-CreateProviderRequest::data() const {
-  // @@protoc_insertion_point(field_map:source.v1alpha1.CreateProviderRequest.data)
-  return _internal_data();
+CreateProviderRequest::_internal_provider_data() const {
+  return provider_data_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+CreateProviderRequest::provider_data() const {
+  // @@protoc_insertion_point(field_map:source.v1alpha1.CreateProviderRequest.provider_data)
+  return _internal_provider_data();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-CreateProviderRequest::_internal_mutable_data() {
-  return data_.MutableMap();
+CreateProviderRequest::_internal_mutable_provider_data() {
+  return provider_data_.MutableMap();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-CreateProviderRequest::mutable_data() {
-  // @@protoc_insertion_point(field_mutable_map:source.v1alpha1.CreateProviderRequest.data)
-  return _internal_mutable_data();
+CreateProviderRequest::mutable_provider_data() {
+  // @@protoc_insertion_point(field_mutable_map:source.v1alpha1.CreateProviderRequest.provider_data)
+  return _internal_mutable_provider_data();
 }
 
 // map<string, string> metadata = 6 [json_name = "metadata"];
@@ -14703,6 +15786,14 @@ inline void ListProvidersResponse::set_count(::PROTOBUF_NAMESPACE_ID::uint32 val
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

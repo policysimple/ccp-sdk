@@ -176,7 +176,8 @@ constexpr Pipeline::Pipeline(
   , traffic_type_(0)
   , is_default_(false)
   , active_(false)
-  , custom_pipeline_(false){}
+  , custom_pipeline_(false)
+  , is_exist_dockerfile_(false){}
 struct PipelineDefaultTypeInternal {
   constexpr PipelineDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -442,6 +443,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, custom_pipeline_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, before_deploy_tasks_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, after_deploy_tasks_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::Pipeline, is_exist_dockerfile_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TektonTask, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -529,14 +531,14 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 79, 86, sizeof(::pipelines::tekton::v1alpha1::Pipeline_ExtraArgsEntry_DoNotUse)},
   { 88, 95, sizeof(::pipelines::tekton::v1alpha1::Pipeline_InstanceTypeEntry_DoNotUse)},
   { 97, -1, sizeof(::pipelines::tekton::v1alpha1::Pipeline)},
-  { 125, -1, sizeof(::pipelines::tekton::v1alpha1::TektonTask)},
-  { 132, -1, sizeof(::pipelines::tekton::v1alpha1::TektonTaskList)},
-  { 138, -1, sizeof(::pipelines::tekton::v1alpha1::CustomPipeline)},
-  { 153, -1, sizeof(::pipelines::tekton::v1alpha1::PipelineSpec)},
-  { 162, -1, sizeof(::pipelines::tekton::v1alpha1::CustomPipelineResponse)},
-  { 170, -1, sizeof(::pipelines::tekton::v1alpha1::CustomPipelineList)},
-  { 176, -1, sizeof(::pipelines::tekton::v1alpha1::TaskToCustomize)},
-  { 190, -1, sizeof(::pipelines::tekton::v1alpha1::TaskParamsToCustomize)},
+  { 126, -1, sizeof(::pipelines::tekton::v1alpha1::TektonTask)},
+  { 133, -1, sizeof(::pipelines::tekton::v1alpha1::TektonTaskList)},
+  { 139, -1, sizeof(::pipelines::tekton::v1alpha1::CustomPipeline)},
+  { 154, -1, sizeof(::pipelines::tekton::v1alpha1::PipelineSpec)},
+  { 163, -1, sizeof(::pipelines::tekton::v1alpha1::CustomPipelineResponse)},
+  { 171, -1, sizeof(::pipelines::tekton::v1alpha1::CustomPipelineList)},
+  { 177, -1, sizeof(::pipelines::tekton::v1alpha1::TaskToCustomize)},
+  { 191, -1, sizeof(::pipelines::tekton::v1alpha1::TaskParamsToCustomize)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -584,7 +586,7 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "ton.v1alpha1.TaskParamsR\ntaskParams\022 \n\013d"
   "escription\030\010 \001(\tR\013description\022#\n\rbefore_"
   "deploy\030\t \001(\010R\014beforeDeploy\022!\n\014after_depl"
-  "oy\030\n \001(\010R\013afterDeploy\"\323\014\n\010Pipeline\022\016\n\002id"
+  "oy\030\n \001(\010R\013afterDeploy\"\203\r\n\010Pipeline\022\016\n\002id"
   "\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022!\n\014traffi"
   "c_type\030\003 \001(\005R\013trafficType\022\'\n\017organizatio"
   "n_id\030\004 \001(\tR\016organizationId\022\035\n\nproject_id"
@@ -615,67 +617,68 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "s\030\026 \003(\0132\037.pipelines.tekton.v1alpha1.Task"
   "R\021beforeDeployTasks\022M\n\022after_deploy_task"
   "s\030\027 \003(\0132\037.pipelines.tekton.v1alpha1.Task"
-  "R\020afterDeployTasks\032>\n\020IntegrationEntry\022\020"
-  "\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\002"
-  "8\001\032G\n\031EnvironmentVariablesEntry\022\020\n\003key\030\001"
-  " \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rC"
-  "ommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030"
-  "\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030"
-  "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016"
-  "ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu"
-  "e\030\002 \001(\tR\005value:\0028\001\032\?\n\021InstanceTypeEntry\022"
+  "R\020afterDeployTasks\022.\n\023is_exist_dockerfil"
+  "e\030\030 \001(\010R\021isExistDockerfile\032>\n\020Integratio"
+  "nEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR"
+  "\005value:\0028\001\032G\n\031EnvironmentVariablesEntry\022"
   "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:"
-  "\0028\001\"W\n\nTektonTask\0223\n\004task\030\001 \003(\0132\037.pipeli"
-  "nes.tekton.v1alpha1.TaskR\004task\022\024\n\005order\030"
-  "\002 \001(\005R\005order\"R\n\016TektonTaskList\022@\n\005items\030"
-  "\001 \003(\0132*.pipelines.tekton.v1alpha1.TaskTo"
-  "CustomizeR\005items\"\357\002\n\016CustomPipeline\022\016\n\002i"
-  "d\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013descr"
-  "iption\030\003 \001(\tR\013description\022\033\n\tis_public\030\004"
-  " \001(\010R\010isPublic\022C\n\nowner_type\030\005 \001(\0162$.pip"
-  "elines.tekton.v1alpha1.OwnerTypeR\townerT"
-  "ype\022\031\n\010owner_id\030\006 \001(\tR\007ownerId\022\035\n\ncreate"
-  "d_by\030\007 \001(\tR\tcreatedBy\022\037\n\013copied_from\030\010 \001"
-  "(\tR\ncopiedFrom\022\035\n\nruntime_id\030\t \001(\tR\trunt"
-  "imeId\022;\n\004spec\030\n \001(\0132\'.pipelines.tekton.v"
-  "1alpha1.PipelineSpecR\004spec\"\347\001\n\014PipelineS"
-  "pec\022=\n\006params\030\001 \003(\0132%.pipelines.tekton.v"
-  "1alpha1.TaskParamsR\006params\022\034\n\tresources\030"
-  "\002 \001(\tR\tresources\0225\n\005tasks\030\003 \003(\0132\037.pipeli"
-  "nes.tekton.v1alpha1.TaskR\005tasks\022C\n\tworks"
-  "pace\030\004 \003(\0132%.pipelines.tekton.v1alpha1.W"
-  "orkspacesR\tworkspace\"\201\001\n\026CustomPipelineR"
-  "esponse\022\016\n\002ok\030\001 \001(\010R\002ok\022\030\n\007message\030\002 \001(\t"
-  "R\007message\022=\n\004data\030\003 \001(\0132).pipelines.tekt"
-  "on.v1alpha1.CustomPipelineR\004data\"U\n\022Cust"
-  "omPipelineList\022\?\n\005items\030\001 \003(\0132).pipeline"
-  "s.tekton.v1alpha1.CustomPipelineR\005items\""
-  "\231\003\n\017TaskToCustomize\022\033\n\ttask_name\030\001 \001(\tR\010"
-  "taskName\022\"\n\rtask_ref_name\030\002 \001(\tR\013taskRef"
-  "Name\022\033\n\ttask_kind\030\003 \001(\tR\010taskKind\022$\n\016tas"
-  "k_run_after\030\004 \003(\tR\014taskRunAfter\022E\n\nworks"
-  "paces\030\005 \003(\0132%.pipelines.tekton.v1alpha1."
-  "WorkspacesR\nworkspaces\022Q\n\013task_params\030\006 "
-  "\003(\01320.pipelines.tekton.v1alpha1.TaskPara"
-  "msToCustomizeR\ntaskParams\022 \n\013description"
-  "\030\007 \001(\tR\013description\022#\n\rbefore_deploy\030\010 \001"
-  "(\010R\014beforeDeploy\022!\n\014after_deploy\030\t \001(\010R\013"
-  "afterDeploy\"\213\001\n\025TaskParamsToCustomize\022\035\n"
-  "\nparam_name\030\001 \001(\tR\tparamName\022\024\n\005label\030\002 "
-  "\001(\tR\005label\022\036\n\nvalidation\030\003 \001(\tR\nvalidati"
-  "on\022\035\n\ntype_value\030\004 \001(\tR\ttypeValue*j\n\tOwn"
-  "erType\022\032\n\026OWNER_TYPE_UNSPECIFIED\020\000\022\025\n\021OW"
-  "NER_TYPE_CUEMBY\020\001\022\022\n\016OWNER_TYPE_ORG\020\002\022\026\n"
-  "\022OWNER_TYPE_PROJECT\020\003B\256\001\n#io.cuemby.pipe"
-  "lines.tekton.v1alpha1B\013TektonProtoP\001Z:gi"
-  "thub.com/cuemby/ccp-sdk/gen/go/pipelines"
-  "/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekto"
-  "n.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1b\006"
-  "proto3"
+  "\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
+  "\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry"
+  "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value"
+  ":\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003key"
+  "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032\?\n\021InstanceTy"
+  "peEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
+  "R\005value:\0028\001\"W\n\nTektonTask\0223\n\004task\030\001 \003(\0132"
+  "\037.pipelines.tekton.v1alpha1.TaskR\004task\022\024"
+  "\n\005order\030\002 \001(\005R\005order\"R\n\016TektonTaskList\022@"
+  "\n\005items\030\001 \003(\0132*.pipelines.tekton.v1alpha"
+  "1.TaskToCustomizeR\005items\"\357\002\n\016CustomPipel"
+  "ine\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022"
+  " \n\013description\030\003 \001(\tR\013description\022\033\n\tis_"
+  "public\030\004 \001(\010R\010isPublic\022C\n\nowner_type\030\005 \001"
+  "(\0162$.pipelines.tekton.v1alpha1.OwnerType"
+  "R\townerType\022\031\n\010owner_id\030\006 \001(\tR\007ownerId\022\035"
+  "\n\ncreated_by\030\007 \001(\tR\tcreatedBy\022\037\n\013copied_"
+  "from\030\010 \001(\tR\ncopiedFrom\022\035\n\nruntime_id\030\t \001"
+  "(\tR\truntimeId\022;\n\004spec\030\n \001(\0132\'.pipelines."
+  "tekton.v1alpha1.PipelineSpecR\004spec\"\347\001\n\014P"
+  "ipelineSpec\022=\n\006params\030\001 \003(\0132%.pipelines."
+  "tekton.v1alpha1.TaskParamsR\006params\022\034\n\tre"
+  "sources\030\002 \001(\tR\tresources\0225\n\005tasks\030\003 \003(\0132"
+  "\037.pipelines.tekton.v1alpha1.TaskR\005tasks\022"
+  "C\n\tworkspace\030\004 \003(\0132%.pipelines.tekton.v1"
+  "alpha1.WorkspacesR\tworkspace\"\201\001\n\026CustomP"
+  "ipelineResponse\022\016\n\002ok\030\001 \001(\010R\002ok\022\030\n\007messa"
+  "ge\030\002 \001(\tR\007message\022=\n\004data\030\003 \001(\0132).pipeli"
+  "nes.tekton.v1alpha1.CustomPipelineR\004data"
+  "\"U\n\022CustomPipelineList\022\?\n\005items\030\001 \003(\0132)."
+  "pipelines.tekton.v1alpha1.CustomPipeline"
+  "R\005items\"\231\003\n\017TaskToCustomize\022\033\n\ttask_name"
+  "\030\001 \001(\tR\010taskName\022\"\n\rtask_ref_name\030\002 \001(\tR"
+  "\013taskRefName\022\033\n\ttask_kind\030\003 \001(\tR\010taskKin"
+  "d\022$\n\016task_run_after\030\004 \003(\tR\014taskRunAfter\022"
+  "E\n\nworkspaces\030\005 \003(\0132%.pipelines.tekton.v"
+  "1alpha1.WorkspacesR\nworkspaces\022Q\n\013task_p"
+  "arams\030\006 \003(\01320.pipelines.tekton.v1alpha1."
+  "TaskParamsToCustomizeR\ntaskParams\022 \n\013des"
+  "cription\030\007 \001(\tR\013description\022#\n\rbefore_de"
+  "ploy\030\010 \001(\010R\014beforeDeploy\022!\n\014after_deploy"
+  "\030\t \001(\010R\013afterDeploy\"\213\001\n\025TaskParamsToCust"
+  "omize\022\035\n\nparam_name\030\001 \001(\tR\tparamName\022\024\n\005"
+  "label\030\002 \001(\tR\005label\022\036\n\nvalidation\030\003 \001(\tR\n"
+  "validation\022\035\n\ntype_value\030\004 \001(\tR\ttypeValu"
+  "e*j\n\tOwnerType\022\032\n\026OWNER_TYPE_UNSPECIFIED"
+  "\020\000\022\025\n\021OWNER_TYPE_CUEMBY\020\001\022\022\n\016OWNER_TYPE_"
+  "ORG\020\002\022\026\n\022OWNER_TYPE_PROJECT\020\003B\256\001\n#io.cue"
+  "mby.pipelines.tekton.v1alpha1B\013TektonPro"
+  "toP\001Z:github.com/cuemby/ccp-sdk/gen/go/p"
+  "ipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelin"
+  "es.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1"
+  "Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = {
-  false, false, 4366, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
+  false, false, 4414, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
   &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 19,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
@@ -2411,8 +2414,8 @@ Pipeline::Pipeline(const Pipeline& from)
       GetArenaForAllocation());
   }
   ::memcpy(&traffic_type_, &from.traffic_type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&custom_pipeline_) -
-    reinterpret_cast<char*>(&traffic_type_)) + sizeof(custom_pipeline_));
+    static_cast<size_t>(reinterpret_cast<char*>(&is_exist_dockerfile_) -
+    reinterpret_cast<char*>(&traffic_type_)) + sizeof(is_exist_dockerfile_));
   // @@protoc_insertion_point(copy_constructor:pipelines.tekton.v1alpha1.Pipeline)
 }
 
@@ -2428,8 +2431,8 @@ runtime_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 status_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&traffic_type_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&custom_pipeline_) -
-    reinterpret_cast<char*>(&traffic_type_)) + sizeof(custom_pipeline_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&is_exist_dockerfile_) -
+    reinterpret_cast<char*>(&traffic_type_)) + sizeof(is_exist_dockerfile_));
 }
 
 Pipeline::~Pipeline() {
@@ -2497,8 +2500,8 @@ void Pipeline::Clear() {
   runtime_id_.ClearToEmpty();
   status_type_.ClearToEmpty();
   ::memset(&traffic_type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&custom_pipeline_) -
-      reinterpret_cast<char*>(&traffic_type_)) + sizeof(custom_pipeline_));
+      reinterpret_cast<char*>(&is_exist_dockerfile_) -
+      reinterpret_cast<char*>(&traffic_type_)) + sizeof(is_exist_dockerfile_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2735,6 +2738,13 @@ const char* Pipeline::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<186>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 192)) {
+          is_exist_dockerfile_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -3188,6 +3198,12 @@ failure:
       InternalWriteMessage(23, this->_internal_after_deploy_tasks(i), target, stream);
   }
 
+  // bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];
+  if (this->_internal_is_exist_dockerfile() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(24, this->_internal_is_exist_dockerfile(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3371,6 +3387,11 @@ size_t Pipeline::ByteSizeLong() const {
     total_size += 2 + 1;
   }
 
+  // bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];
+  if (this->_internal_is_exist_dockerfile() != 0) {
+    total_size += 2 + 1;
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -3448,6 +3469,9 @@ void Pipeline::MergeFrom(const Pipeline& from) {
   if (from._internal_custom_pipeline() != 0) {
     _internal_set_custom_pipeline(from._internal_custom_pipeline());
   }
+  if (from._internal_is_exist_dockerfile() != 0) {
+    _internal_set_is_exist_dockerfile(from._internal_is_exist_dockerfile());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3521,8 +3545,8 @@ void Pipeline::InternalSwap(Pipeline* other) {
       &other->status_type_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Pipeline, custom_pipeline_)
-      + sizeof(Pipeline::custom_pipeline_)
+      PROTOBUF_FIELD_OFFSET(Pipeline, is_exist_dockerfile_)
+      + sizeof(Pipeline::is_exist_dockerfile_)
       - PROTOBUF_FIELD_OFFSET(Pipeline, traffic_type_)>(
           reinterpret_cast<char*>(&traffic_type_),
           reinterpret_cast<char*>(&other->traffic_type_));

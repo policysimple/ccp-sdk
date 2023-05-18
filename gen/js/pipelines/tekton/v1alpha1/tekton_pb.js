@@ -1581,7 +1581,8 @@ proto.pipelines.tekton.v1alpha1.Pipeline.toObject = function(includeInstance, ms
     beforeDeployTasksList: jspb.Message.toObjectList(msg.getBeforeDeployTasksList(),
     proto.pipelines.tekton.v1alpha1.Task.toObject, includeInstance),
     afterDeployTasksList: jspb.Message.toObjectList(msg.getAfterDeployTasksList(),
-    proto.pipelines.tekton.v1alpha1.Task.toObject, includeInstance)
+    proto.pipelines.tekton.v1alpha1.Task.toObject, includeInstance),
+    isExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 24, false)
   };
 
   if (includeInstance) {
@@ -1725,6 +1726,10 @@ proto.pipelines.tekton.v1alpha1.Pipeline.deserializeBinaryFromReader = function(
       var value = new proto.pipelines.tekton.v1alpha1.Task;
       reader.readMessage(value,proto.pipelines.tekton.v1alpha1.Task.deserializeBinaryFromReader);
       msg.addAfterDeployTasks(value);
+      break;
+    case 24:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsExistDockerfile(value);
       break;
     default:
       reader.skipField();
@@ -1900,6 +1905,13 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
       23,
       f,
       proto.pipelines.tekton.v1alpha1.Task.serializeBinaryToWriter
+    );
+  }
+  f = message.getIsExistDockerfile();
+  if (f) {
+    writer.writeBool(
+      24,
+      f
     );
   }
 };
@@ -2420,6 +2432,24 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.addAfterDeployTasks = functio
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearAfterDeployTasksList = function() {
   return this.setAfterDeployTasksList([]);
+};
+
+
+/**
+ * optional bool is_exist_dockerfile = 24;
+ * @return {boolean}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getIsExistDockerfile = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setIsExistDockerfile = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 24, value);
 };
 
 

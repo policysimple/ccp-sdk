@@ -31,6 +31,19 @@ class SourceServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Source\V1alpha1\CreateIntegrationWithExternalProviderRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateIntegrationWithExternalProvider(\Source\V1alpha1\CreateIntegrationWithExternalProviderRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/source.v1alpha1.SourceService/CreateIntegrationWithExternalProvider',
+        $argument,
+        ['\Source\V1alpha1\CreateIntegrationWithExternalProviderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Source\V1alpha1\ListProvidersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

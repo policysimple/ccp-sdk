@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 type SourceServiceClient interface {
 	//PROVIDERS
 	CreateProvider(ctx context.Context, in *CreateProviderRequest, opts ...grpc.CallOption) (*CreateProviderResponse, error)
+	CreateIntegrationWithExternalProvider(ctx context.Context, in *CreateIntegrationWithExternalProviderRequest, opts ...grpc.CallOption) (*CreateIntegrationWithExternalProviderResponse, error)
 	ListProviders(ctx context.Context, in *ListProvidersRequest, opts ...grpc.CallOption) (*ListProvidersResponse, error)
 	GetProvider(ctx context.Context, in *GetProviderRequest, opts ...grpc.CallOption) (*GetProviderResponse, error)
 	GetOneProviderByName(ctx context.Context, in *GetOneProviderByNameRequest, opts ...grpc.CallOption) (*GetOneProviderByNameResponse, error)
@@ -55,6 +56,15 @@ func NewSourceServiceClient(cc grpc.ClientConnInterface) SourceServiceClient {
 func (c *sourceServiceClient) CreateProvider(ctx context.Context, in *CreateProviderRequest, opts ...grpc.CallOption) (*CreateProviderResponse, error) {
 	out := new(CreateProviderResponse)
 	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/CreateProvider", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourceServiceClient) CreateIntegrationWithExternalProvider(ctx context.Context, in *CreateIntegrationWithExternalProviderRequest, opts ...grpc.CallOption) (*CreateIntegrationWithExternalProviderResponse, error) {
+	out := new(CreateIntegrationWithExternalProviderResponse)
+	err := c.cc.Invoke(ctx, "/source.v1alpha1.SourceService/CreateIntegrationWithExternalProvider", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -238,6 +248,7 @@ func (c *sourceServiceClient) UpdateRepository(ctx context.Context, in *UpdateRe
 type SourceServiceServer interface {
 	//PROVIDERS
 	CreateProvider(context.Context, *CreateProviderRequest) (*CreateProviderResponse, error)
+	CreateIntegrationWithExternalProvider(context.Context, *CreateIntegrationWithExternalProviderRequest) (*CreateIntegrationWithExternalProviderResponse, error)
 	ListProviders(context.Context, *ListProvidersRequest) (*ListProvidersResponse, error)
 	GetProvider(context.Context, *GetProviderRequest) (*GetProviderResponse, error)
 	GetOneProviderByName(context.Context, *GetOneProviderByNameRequest) (*GetOneProviderByNameResponse, error)
@@ -268,6 +279,9 @@ type UnimplementedSourceServiceServer struct {
 
 func (UnimplementedSourceServiceServer) CreateProvider(context.Context, *CreateProviderRequest) (*CreateProviderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateProvider not implemented")
+}
+func (UnimplementedSourceServiceServer) CreateIntegrationWithExternalProvider(context.Context, *CreateIntegrationWithExternalProviderRequest) (*CreateIntegrationWithExternalProviderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateIntegrationWithExternalProvider not implemented")
 }
 func (UnimplementedSourceServiceServer) ListProviders(context.Context, *ListProvidersRequest) (*ListProvidersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListProviders not implemented")
@@ -352,6 +366,24 @@ func _SourceService_CreateProvider_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SourceServiceServer).CreateProvider(ctx, req.(*CreateProviderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SourceService_CreateIntegrationWithExternalProvider_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateIntegrationWithExternalProviderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourceServiceServer).CreateIntegrationWithExternalProvider(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/source.v1alpha1.SourceService/CreateIntegrationWithExternalProvider",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourceServiceServer).CreateIntegrationWithExternalProvider(ctx, req.(*CreateIntegrationWithExternalProviderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -708,6 +740,10 @@ var SourceService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateProvider",
 			Handler:    _SourceService_CreateProvider_Handler,
+		},
+		{
+			MethodName: "CreateIntegrationWithExternalProvider",
+			Handler:    _SourceService_CreateIntegrationWithExternalProvider_Handler,
 		},
 		{
 			MethodName: "ListProviders",

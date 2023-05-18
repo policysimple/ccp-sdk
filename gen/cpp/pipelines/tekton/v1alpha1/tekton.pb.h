@@ -1383,6 +1383,7 @@ class Pipeline final :
     kIsDefaultFieldNumber = 19,
     kActiveFieldNumber = 20,
     kCustomPipelineFieldNumber = 21,
+    kIsExistDockerfileFieldNumber = 24,
   };
   // repeated .pipelines.tekton.v1alpha1.Params params = 10 [json_name = "params"];
   int params_size() const;
@@ -1720,6 +1721,15 @@ class Pipeline final :
   void _internal_set_custom_pipeline(bool value);
   public:
 
+  // bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];
+  void clear_is_exist_dockerfile();
+  bool is_exist_dockerfile() const;
+  void set_is_exist_dockerfile(bool value);
+  private:
+  bool _internal_is_exist_dockerfile() const;
+  void _internal_set_is_exist_dockerfile(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.Pipeline)
  private:
   class _Internal;
@@ -1774,6 +1784,7 @@ class Pipeline final :
   bool is_default_;
   bool active_;
   bool custom_pipeline_;
+  bool is_exist_dockerfile_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
 };
@@ -5311,6 +5322,26 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1a
 Pipeline::after_deploy_tasks() const {
   // @@protoc_insertion_point(field_list:pipelines.tekton.v1alpha1.Pipeline.after_deploy_tasks)
   return after_deploy_tasks_;
+}
+
+// bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];
+inline void Pipeline::clear_is_exist_dockerfile() {
+  is_exist_dockerfile_ = false;
+}
+inline bool Pipeline::_internal_is_exist_dockerfile() const {
+  return is_exist_dockerfile_;
+}
+inline bool Pipeline::is_exist_dockerfile() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.is_exist_dockerfile)
+  return _internal_is_exist_dockerfile();
+}
+inline void Pipeline::_internal_set_is_exist_dockerfile(bool value) {
+  
+  is_exist_dockerfile_ = value;
+}
+inline void Pipeline::set_is_exist_dockerfile(bool value) {
+  _internal_set_is_exist_dockerfile(value);
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.is_exist_dockerfile)
 }
 
 // -------------------------------------------------------------------

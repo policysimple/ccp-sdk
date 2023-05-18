@@ -66,6 +66,7 @@ message ApiKeyList {
     bool is_active = 6;
     Project project = 7;
     Organization organization = 8;
+    repeated Permission permissions = 10;
     string expired_at = 9;
 }
 

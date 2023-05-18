@@ -16,8 +16,28 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-ù@
-source/v1alpha1/source.protosource.v1alpha1"9
+®H
+source/v1alpha1/source.protosource.v1alpha1"ä
+,CreateIntegrationWithExternalProviderRequestB
+provider (2&.source.v1alpha1.CreateProviderRequestRprovider
+name (	Rname[
+data (2G.source.v1alpha1.CreateIntegrationWithExternalProviderRequest.DataEntryRdatag
+metadata (2K.source.v1alpha1.CreateIntegrationWithExternalProviderRequest.MetadataEntryRmetadata
+user_id (	RuserId
+provider_id (	R
+providerId=
+account	 (2#.source.v1alpha1.AccountIntegrationRaccount\'
+organization_id
+ (	RorganizationId7
+	DataEntry
+key (	Rkey
+value (	Rvalue:8;
+MetadataEntry
+key (	Rkey
+value (	Rvalue:8"
+-CreateIntegrationWithExternalProviderResponse
+msg (	Rmsg>
+integration (2.source.v1alpha1.IntegrationRintegration"9
 AccountProvider
 name (	Rname
 type (	Rtype"U
@@ -212,14 +232,14 @@ providerId=
 GetProviderRequest
 id (	Rid"L
 GetProviderResponse5
-provider (2.source.v1alpha1.ProviderRprovider"ï
+provider (2.source.v1alpha1.ProviderRprovider"
 CreateProviderRequest
 name (	Rname 
 description (	Rdescription
-logo (	RlogoD
-data (20.source.v1alpha1.CreateProviderRequest.DataEntryRdataP
-metadata (24.source.v1alpha1.CreateProviderRequest.MetadataEntryRmetadata7
-	DataEntry
+logo (	Rlogo]
+provider_data (28.source.v1alpha1.CreateProviderRequest.ProviderDataEntryRproviderDataP
+metadata (24.source.v1alpha1.CreateProviderRequest.MetadataEntryRmetadata?
+ProviderDataEntry
 key (	Rkey
 value (	Rvalue:8;
 MetadataEntry
@@ -232,9 +252,10 @@ providerId=
 	providers (2.source.v1alpha1.ProviderR	providers
 total_pages (R
 totalPages
-count (Rcount2ú
+count (Rcount2£
 SourceServicea
-CreateProvider&.source.v1alpha1.CreateProviderRequest\'.source.v1alpha1.CreateProviderResponse^
+CreateProvider&.source.v1alpha1.CreateProviderRequest\'.source.v1alpha1.CreateProviderResponse¦
+%CreateIntegrationWithExternalProvider=.source.v1alpha1.CreateIntegrationWithExternalProviderRequest>.source.v1alpha1.CreateIntegrationWithExternalProviderResponse^
 ListProviders%.source.v1alpha1.ListProvidersRequest&.source.v1alpha1.ListProvidersResponseX
 GetProvider#.source.v1alpha1.GetProviderRequest$.source.v1alpha1.GetProviderResponses
 GetOneProviderByName,.source.v1alpha1.GetOneProviderByNameRequest-.source.v1alpha1.GetOneProviderByNameResponsea
