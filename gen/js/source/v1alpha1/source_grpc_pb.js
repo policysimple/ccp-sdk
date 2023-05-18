@@ -48,6 +48,28 @@ function deserialize_source_v1alpha1_CreateIntegrationResponse(buffer_arg) {
   return source_v1alpha1_source_pb.CreateIntegrationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_source_v1alpha1_CreateIntegrationWithExternalProviderRequest(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.CreateIntegrationWithExternalProviderRequest)) {
+    throw new Error('Expected argument of type source.v1alpha1.CreateIntegrationWithExternalProviderRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_CreateIntegrationWithExternalProviderRequest(buffer_arg) {
+  return source_v1alpha1_source_pb.CreateIntegrationWithExternalProviderRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_source_v1alpha1_CreateIntegrationWithExternalProviderResponse(arg) {
+  if (!(arg instanceof source_v1alpha1_source_pb.CreateIntegrationWithExternalProviderResponse)) {
+    throw new Error('Expected argument of type source.v1alpha1.CreateIntegrationWithExternalProviderResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_source_v1alpha1_CreateIntegrationWithExternalProviderResponse(buffer_arg) {
+  return source_v1alpha1_source_pb.CreateIntegrationWithExternalProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_source_v1alpha1_CreateProviderRequest(arg) {
   if (!(arg instanceof source_v1alpha1_source_pb.CreateProviderRequest)) {
     throw new Error('Expected argument of type source.v1alpha1.CreateProviderRequest');
@@ -457,6 +479,17 @@ var SourceServiceService = exports.SourceServiceService = {
     requestDeserialize: deserialize_source_v1alpha1_CreateProviderRequest,
     responseSerialize: serialize_source_v1alpha1_CreateProviderResponse,
     responseDeserialize: deserialize_source_v1alpha1_CreateProviderResponse,
+  },
+  createIntegrationWithExternalProvider: {
+    path: '/source.v1alpha1.SourceService/CreateIntegrationWithExternalProvider',
+    requestStream: false,
+    responseStream: false,
+    requestType: source_v1alpha1_source_pb.CreateIntegrationWithExternalProviderRequest,
+    responseType: source_v1alpha1_source_pb.CreateIntegrationWithExternalProviderResponse,
+    requestSerialize: serialize_source_v1alpha1_CreateIntegrationWithExternalProviderRequest,
+    requestDeserialize: deserialize_source_v1alpha1_CreateIntegrationWithExternalProviderRequest,
+    responseSerialize: serialize_source_v1alpha1_CreateIntegrationWithExternalProviderResponse,
+    responseDeserialize: deserialize_source_v1alpha1_CreateIntegrationWithExternalProviderResponse,
   },
   listProviders: {
     path: '/source.v1alpha1.SourceService/ListProviders',

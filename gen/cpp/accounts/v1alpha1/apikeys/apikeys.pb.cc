@@ -102,7 +102,8 @@ struct ListApiKeyRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListApiKeyRequestDefaultTypeInternal _ListApiKeyRequest_default_instance_;
 constexpr ApiKeyList::ApiKeyList(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : permissions_()
+  , uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , api_key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -252,6 +253,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2fapikeys_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::apikeys::v1::ApiKeyList, is_active_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::apikeys::v1::ApiKeyList, project_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::apikeys::v1::ApiKeyList, organization_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::apikeys::v1::ApiKeyList, permissions_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::apikeys::v1::ApiKeyList, expired_at_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::apikeys::v1::ListApiKeyResponse, _internal_metadata_),
@@ -294,11 +296,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 27, -1, sizeof(::accounts::v1alpha1::apikeys::v1::GetOneApiKeyResponse)},
   { 42, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ListApiKeyRequest)},
   { 49, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ApiKeyList)},
-  { 62, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ListApiKeyResponse)},
-  { 68, -1, sizeof(::accounts::v1alpha1::apikeys::v1::UpdateApiKeyRequest)},
-  { 75, -1, sizeof(::accounts::v1alpha1::apikeys::v1::UpdateApiKeyResponse)},
-  { 82, -1, sizeof(::accounts::v1alpha1::apikeys::v1::DeleteApiKeyRequest)},
-  { 88, -1, sizeof(::accounts::v1alpha1::apikeys::v1::DeleteApiKeyResponse)},
+  { 63, -1, sizeof(::accounts::v1alpha1::apikeys::v1::ListApiKeyResponse)},
+  { 69, -1, sizeof(::accounts::v1alpha1::apikeys::v1::UpdateApiKeyRequest)},
+  { 76, -1, sizeof(::accounts::v1alpha1::apikeys::v1::UpdateApiKeyResponse)},
+  { 83, -1, sizeof(::accounts::v1alpha1::apikeys::v1::DeleteApiKeyRequest)},
+  { 89, -1, sizeof(::accounts::v1alpha1::apikeys::v1::DeleteApiKeyResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -340,33 +342,35 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fapikeys_2fapikeys_2ep
   ".v1alpha1.OrganizationR\014organization\022\035\n\n"
   "expired_at\030\013 \001(\tR\texpiredAt\"U\n\021ListApiKe"
   "yRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\'\n\017org"
-  "anization_id\030\002 \001(\tR\016organizationId\"\235\002\n\nA"
+  "anization_id\030\002 \001(\tR\016organizationId\"\336\002\n\nA"
   "piKeyList\022\022\n\004uuid\030\001 \001(\tR\004uuid\022\027\n\007api_key"
   "\030\002 \001(\tR\006apiKey\022\022\n\004name\030\003 \001(\tR\004name\022\027\n\007us"
   "er_id\030\004 \001(\tR\006userId\022\033\n\tis_active\030\006 \001(\010R\010"
   "isActive\0224\n\007project\030\007 \001(\0132\032.accounts.v1a"
   "lpha1.ProjectR\007project\022C\n\014organization\030\010"
   " \001(\0132\037.accounts.v1alpha1.OrganizationR\014o"
-  "rganization\022\035\n\nexpired_at\030\t \001(\tR\texpired"
-  "At\"Y\n\022ListApiKeyResponse\022C\n\010api_keys\030\001 \003"
-  "(\0132(.accounts.v1alpha1.apikeys.v1.ApiKey"
-  "ListR\007apiKeys\"u\n\023UpdateApiKeyRequest\022\022\n\004"
-  "uuid\030\001 \001(\tR\004uuid\022J\n\007api_key\030\006 \001(\01321.acco"
-  "unts.v1alpha1.apikeys.v1.CreateApiKeyReq"
-  "uestR\006apiKey\"A\n\024UpdateApiKeyResponse\022\020\n\003"
-  "msg\030\001 \001(\tR\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKey\""
-  ")\n\023DeleteApiKeyRequest\022\022\n\004uuid\030\001 \001(\tR\004uu"
-  "id\"A\n\024DeleteApiKeyResponse\022\020\n\003msg\030\001 \001(\tR"
-  "\003msg\022\027\n\007api_key\030\002 \001(\tR\006apiKeyB<Z:github."
-  "com/cuemby/ccp-sdk/gen/go/accounts/v1alp"
-  "ha1/apikeysb\006proto3"
+  "rganization\022\?\n\013permissions\030\n \003(\0132\035.accou"
+  "nts.v1alpha1.PermissionR\013permissions\022\035\n\n"
+  "expired_at\030\t \001(\tR\texpiredAt\"Y\n\022ListApiKe"
+  "yResponse\022C\n\010api_keys\030\001 \003(\0132(.accounts.v"
+  "1alpha1.apikeys.v1.ApiKeyListR\007apiKeys\"u"
+  "\n\023UpdateApiKeyRequest\022\022\n\004uuid\030\001 \001(\tR\004uui"
+  "d\022J\n\007api_key\030\006 \001(\01321.accounts.v1alpha1.a"
+  "pikeys.v1.CreateApiKeyRequestR\006apiKey\"A\n"
+  "\024UpdateApiKeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022"
+  "\027\n\007api_key\030\002 \001(\tR\006apiKey\")\n\023DeleteApiKey"
+  "Request\022\022\n\004uuid\030\001 \001(\tR\004uuid\"A\n\024DeleteApi"
+  "KeyResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\027\n\007api_key"
+  "\030\002 \001(\tR\006apiKeyB<Z:github.com/cuemby/ccp-"
+  "sdk/gen/go/accounts/v1alpha1/apikeysb\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto = {
-  false, false, 1739, descriptor_table_protodef_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto, "accounts/v1alpha1/apikeys/apikeys.proto", 
+  false, false, 1804, descriptor_table_protodef_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto, "accounts/v1alpha1/apikeys/apikeys.proto", 
   &descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto_once, descriptor_table_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto_deps, 1, 11,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2fapikeys_2fapikeys_2eproto,
@@ -2184,9 +2188,13 @@ void ApiKeyList::clear_organization() {
   }
   organization_ = nullptr;
 }
+void ApiKeyList::clear_permissions() {
+  permissions_.Clear();
+}
 ApiKeyList::ApiKeyList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  permissions_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2194,7 +2202,8 @@ ApiKeyList::ApiKeyList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:accounts.v1alpha1.apikeys.v1.ApiKeyList)
 }
 ApiKeyList::ApiKeyList(const ApiKeyList& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      permissions_(from.permissions_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_uuid().empty()) {
@@ -2281,6 +2290,7 @@ void ApiKeyList::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  permissions_.Clear();
   uuid_.ClearToEmpty();
   api_key_.ClearToEmpty();
   name_.ClearToEmpty();
@@ -2368,6 +2378,18 @@ const char* ApiKeyList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.apikeys.v1.ApiKeyList.expired_at"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_permissions(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -2471,6 +2493,14 @@ failure:
         9, this->_internal_expired_at(), target);
   }
 
+  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_permissions_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(10, this->_internal_permissions(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2486,6 +2516,13 @@ size_t ApiKeyList::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+  total_size += 1UL * this->_internal_permissions_size();
+  for (const auto& msg : this->permissions_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   // string uuid = 1 [json_name = "uuid"];
   if (!this->_internal_uuid().empty()) {
@@ -2569,6 +2606,7 @@ void ApiKeyList::MergeFrom(const ApiKeyList& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  permissions_.MergeFrom(from.permissions_);
   if (!from._internal_uuid().empty()) {
     _internal_set_uuid(from._internal_uuid());
   }
@@ -2610,6 +2648,7 @@ bool ApiKeyList::IsInitialized() const {
 void ApiKeyList::InternalSwap(ApiKeyList* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  permissions_.InternalSwap(&other->permissions_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &uuid_, GetArenaForAllocation(),

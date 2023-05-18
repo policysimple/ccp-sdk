@@ -107,6 +107,10 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 23 [json_name = "afterDeployTasks"];</code>
      */
     private $after_deploy_tasks;
+    /**
+     * Generated from protobuf field <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
+     */
+    protected $is_exist_dockerfile = false;
 
     /**
      * Constructor.
@@ -137,6 +141,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type bool $custom_pipeline
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $before_deploy_tasks
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $after_deploy_tasks
+     *     @type bool $is_exist_dockerfile
      * }
      */
     public function __construct($data = NULL) {
@@ -646,6 +651,28 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Task::class);
         $this->after_deploy_tasks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
+     * @return bool
+     */
+    public function getIsExistDockerfile()
+    {
+        return $this->is_exist_dockerfile;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsExistDockerfile($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_exist_dockerfile = $var;
 
         return $this;
     }

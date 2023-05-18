@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.pipelines.tekton.v1alpha1B\013TektonProtoP\001Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&pipelines/tekton/v1alpha1/tekton.proto\x12\x19pipelines.tekton.v1alpha1\"\x7f\n\x06Params\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12!\n\x0cvalue_string\x18\x02 \x01(\tR\x0bvalueString\x12\x1f\n\x0bvalue_array\x18\x03 \x03(\tR\nvalueArray\x12\x1d\n\nvalue_type\x18\x04 \x01(\tR\tvalueType\"\xde\x01\n\nTaskParams\x12\x1d\n\nparam_name\x18\x01 \x01(\tR\tparamName\x12(\n\x10param_value_type\x18\x02 \x01(\tR\x0eparamValueType\x12\x1f\n\x0bparam_value\x18\x03 \x01(\tR\nparamValue\x12*\n\x11param_value_array\x18\x04 \x03(\tR\x0fparamValueArray\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x18\n\x07\x64\x65\x66\x61ult\x18\x06 \x01(\tR\x07\x64\x65\x66\x61ult\"H\n\nWorkspaces\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04main\x18\x02 \x01(\tR\x04main\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\"\x93\x03\n\x04Task\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n\ttask_name\x18\x02 \x01(\tR\x08taskName\x12\"\n\rtask_ref_name\x18\x03 \x01(\tR\x0btaskRefName\x12\x1b\n\ttask_kind\x18\x04 \x01(\tR\x08taskKind\x12$\n\x0etask_run_after\x18\x05 \x03(\tR\x0ctaskRunAfter\x12\x45\n\nworkspaces\x18\x06 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\nworkspaces\x12\x46\n\x0btask_params\x18\x07 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.TaskParamsR\ntaskParams\x12 \n\x0b\x64\x65scription\x18\x08 \x01(\tR\x0b\x64\x65scription\x12#\n\rbefore_deploy\x18\t \x01(\x08R\x0c\x62\x65\x66oreDeploy\x12!\n\x0c\x61\x66ter_deploy\x18\n \x01(\x08R\x0b\x61\x66terDeploy\"\xd3\x0c\n\x08Pipeline\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12!\n\x0ctraffic_type\x18\x03 \x01(\x05R\x0btrafficType\x12\'\n\x0forganization_id\x18\x04 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x05 \x01(\tR\tprojectId\x12!\n\x0cname_project\x18\x06 \x01(\tR\x0bnameProject\x12%\n\x0e\x65nvironment_id\x18\x07 \x01(\tR\renvironmentId\x12%\n\x0e\x61pplication_id\x18\x08 \x01(\tR\rapplicationId\x12\x1d\n\nruntime_id\x18\t \x01(\tR\truntimeId\x12\x39\n\x06params\x18\n \x03(\x0b\x32!.pipelines.tekton.v1alpha1.ParamsR\x06params\x12\x35\n\x05tasks\x18\x0b \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x05tasks\x12\x1f\n\x0bstatus_type\x18\x0c \x01(\tR\nstatusType\x12V\n\x0bintegration\x18\r \x03(\x0b\x32\x34.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0e \x03(\x0b\x32=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0f \x03(\x0b\x32\x31.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x10 \x03(\x0b\x32\x30.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x11 \x03(\x0b\x32\x32.pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntryR\textraArgs\x12Z\n\rinstance_type\x18\x12 \x03(\x0b\x32\x35.pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntryR\x0cinstanceType\x12\x1d\n\nis_default\x18\x13 \x01(\x08R\tisDefault\x12\x16\n\x06\x61\x63tive\x18\x14 \x01(\x08R\x06\x61\x63tive\x12\'\n\x0f\x63ustom_pipeline\x18\x15 \x01(\x08R\x0e\x63ustomPipeline\x12O\n\x13\x62\x65\x66ore_deploy_tasks\x18\x16 \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x11\x62\x65\x66oreDeployTasks\x12M\n\x12\x61\x66ter_deploy_tasks\x18\x17 \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x10\x61\x66terDeployTasks\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a?\n\x11InstanceTypeEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"W\n\nTektonTask\x12\x33\n\x04task\x18\x01 \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x04task\x12\x14\n\x05order\x18\x02 \x01(\x05R\x05order\"R\n\x0eTektonTaskList\x12@\n\x05items\x18\x01 \x03(\x0b\x32*.pipelines.tekton.v1alpha1.TaskToCustomizeR\x05items\"\xef\x02\n\x0e\x43ustomPipeline\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x1b\n\tis_public\x18\x04 \x01(\x08R\x08isPublic\x12\x43\n\nowner_type\x18\x05 \x01(\x0e\x32$.pipelines.tekton.v1alpha1.OwnerTypeR\townerType\x12\x19\n\x08owner_id\x18\x06 \x01(\tR\x07ownerId\x12\x1d\n\ncreated_by\x18\x07 \x01(\tR\tcreatedBy\x12\x1f\n\x0b\x63opied_from\x18\x08 \x01(\tR\ncopiedFrom\x12\x1d\n\nruntime_id\x18\t \x01(\tR\truntimeId\x12;\n\x04spec\x18\n \x01(\x0b\x32\'.pipelines.tekton.v1alpha1.PipelineSpecR\x04spec\"\xe7\x01\n\x0cPipelineSpec\x12=\n\x06params\x18\x01 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.TaskParamsR\x06params\x12\x1c\n\tresources\x18\x02 \x01(\tR\tresources\x12\x35\n\x05tasks\x18\x03 \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x05tasks\x12\x43\n\tworkspace\x18\x04 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\tworkspace\"\x81\x01\n\x16\x43ustomPipelineResponse\x12\x0e\n\x02ok\x18\x01 \x01(\x08R\x02ok\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12=\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32).pipelines.tekton.v1alpha1.CustomPipelineR\x04\x64\x61ta\"U\n\x12\x43ustomPipelineList\x12?\n\x05items\x18\x01 \x03(\x0b\x32).pipelines.tekton.v1alpha1.CustomPipelineR\x05items\"\x99\x03\n\x0fTaskToCustomize\x12\x1b\n\ttask_name\x18\x01 \x01(\tR\x08taskName\x12\"\n\rtask_ref_name\x18\x02 \x01(\tR\x0btaskRefName\x12\x1b\n\ttask_kind\x18\x03 \x01(\tR\x08taskKind\x12$\n\x0etask_run_after\x18\x04 \x03(\tR\x0ctaskRunAfter\x12\x45\n\nworkspaces\x18\x05 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\nworkspaces\x12Q\n\x0btask_params\x18\x06 \x03(\x0b\x32\x30.pipelines.tekton.v1alpha1.TaskParamsToCustomizeR\ntaskParams\x12 \n\x0b\x64\x65scription\x18\x07 \x01(\tR\x0b\x64\x65scription\x12#\n\rbefore_deploy\x18\x08 \x01(\x08R\x0c\x62\x65\x66oreDeploy\x12!\n\x0c\x61\x66ter_deploy\x18\t \x01(\x08R\x0b\x61\x66terDeploy\"\x8b\x01\n\x15TaskParamsToCustomize\x12\x1d\n\nparam_name\x18\x01 \x01(\tR\tparamName\x12\x14\n\x05label\x18\x02 \x01(\tR\x05label\x12\x1e\n\nvalidation\x18\x03 \x01(\tR\nvalidation\x12\x1d\n\ntype_value\x18\x04 \x01(\tR\ttypeValue*j\n\tOwnerType\x12\x1a\n\x16OWNER_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11OWNER_TYPE_CUEMBY\x10\x01\x12\x12\n\x0eOWNER_TYPE_ORG\x10\x02\x12\x16\n\x12OWNER_TYPE_PROJECT\x10\x03\x42\xae\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0bTektonProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n&pipelines/tekton/v1alpha1/tekton.proto\x12\x19pipelines.tekton.v1alpha1\"\x7f\n\x06Params\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12!\n\x0cvalue_string\x18\x02 \x01(\tR\x0bvalueString\x12\x1f\n\x0bvalue_array\x18\x03 \x03(\tR\nvalueArray\x12\x1d\n\nvalue_type\x18\x04 \x01(\tR\tvalueType\"\xde\x01\n\nTaskParams\x12\x1d\n\nparam_name\x18\x01 \x01(\tR\tparamName\x12(\n\x10param_value_type\x18\x02 \x01(\tR\x0eparamValueType\x12\x1f\n\x0bparam_value\x18\x03 \x01(\tR\nparamValue\x12*\n\x11param_value_array\x18\x04 \x03(\tR\x0fparamValueArray\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x18\n\x07\x64\x65\x66\x61ult\x18\x06 \x01(\tR\x07\x64\x65\x66\x61ult\"H\n\nWorkspaces\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n\x04main\x18\x02 \x01(\tR\x04main\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\"\x93\x03\n\x04Task\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n\ttask_name\x18\x02 \x01(\tR\x08taskName\x12\"\n\rtask_ref_name\x18\x03 \x01(\tR\x0btaskRefName\x12\x1b\n\ttask_kind\x18\x04 \x01(\tR\x08taskKind\x12$\n\x0etask_run_after\x18\x05 \x03(\tR\x0ctaskRunAfter\x12\x45\n\nworkspaces\x18\x06 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\nworkspaces\x12\x46\n\x0btask_params\x18\x07 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.TaskParamsR\ntaskParams\x12 \n\x0b\x64\x65scription\x18\x08 \x01(\tR\x0b\x64\x65scription\x12#\n\rbefore_deploy\x18\t \x01(\x08R\x0c\x62\x65\x66oreDeploy\x12!\n\x0c\x61\x66ter_deploy\x18\n \x01(\x08R\x0b\x61\x66terDeploy\"\x83\r\n\x08Pipeline\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12!\n\x0ctraffic_type\x18\x03 \x01(\x05R\x0btrafficType\x12\'\n\x0forganization_id\x18\x04 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x05 \x01(\tR\tprojectId\x12!\n\x0cname_project\x18\x06 \x01(\tR\x0bnameProject\x12%\n\x0e\x65nvironment_id\x18\x07 \x01(\tR\renvironmentId\x12%\n\x0e\x61pplication_id\x18\x08 \x01(\tR\rapplicationId\x12\x1d\n\nruntime_id\x18\t \x01(\tR\truntimeId\x12\x39\n\x06params\x18\n \x03(\x0b\x32!.pipelines.tekton.v1alpha1.ParamsR\x06params\x12\x35\n\x05tasks\x18\x0b \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x05tasks\x12\x1f\n\x0bstatus_type\x18\x0c \x01(\tR\nstatusType\x12V\n\x0bintegration\x18\r \x03(\x0b\x32\x34.pipelines.tekton.v1alpha1.Pipeline.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0e \x03(\x0b\x32=.pipelines.tekton.v1alpha1.Pipeline.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0f \x03(\x0b\x32\x31.pipelines.tekton.v1alpha1.Pipeline.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x10 \x03(\x0b\x32\x30.pipelines.tekton.v1alpha1.Pipeline.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x11 \x03(\x0b\x32\x32.pipelines.tekton.v1alpha1.Pipeline.ExtraArgsEntryR\textraArgs\x12Z\n\rinstance_type\x18\x12 \x03(\x0b\x32\x35.pipelines.tekton.v1alpha1.Pipeline.InstanceTypeEntryR\x0cinstanceType\x12\x1d\n\nis_default\x18\x13 \x01(\x08R\tisDefault\x12\x16\n\x06\x61\x63tive\x18\x14 \x01(\x08R\x06\x61\x63tive\x12\'\n\x0f\x63ustom_pipeline\x18\x15 \x01(\x08R\x0e\x63ustomPipeline\x12O\n\x13\x62\x65\x66ore_deploy_tasks\x18\x16 \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x11\x62\x65\x66oreDeployTasks\x12M\n\x12\x61\x66ter_deploy_tasks\x18\x17 \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x10\x61\x66terDeployTasks\x12.\n\x13is_exist_dockerfile\x18\x18 \x01(\x08R\x11isExistDockerfile\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a?\n\x11InstanceTypeEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"W\n\nTektonTask\x12\x33\n\x04task\x18\x01 \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x04task\x12\x14\n\x05order\x18\x02 \x01(\x05R\x05order\"R\n\x0eTektonTaskList\x12@\n\x05items\x18\x01 \x03(\x0b\x32*.pipelines.tekton.v1alpha1.TaskToCustomizeR\x05items\"\xef\x02\n\x0e\x43ustomPipeline\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x1b\n\tis_public\x18\x04 \x01(\x08R\x08isPublic\x12\x43\n\nowner_type\x18\x05 \x01(\x0e\x32$.pipelines.tekton.v1alpha1.OwnerTypeR\townerType\x12\x19\n\x08owner_id\x18\x06 \x01(\tR\x07ownerId\x12\x1d\n\ncreated_by\x18\x07 \x01(\tR\tcreatedBy\x12\x1f\n\x0b\x63opied_from\x18\x08 \x01(\tR\ncopiedFrom\x12\x1d\n\nruntime_id\x18\t \x01(\tR\truntimeId\x12;\n\x04spec\x18\n \x01(\x0b\x32\'.pipelines.tekton.v1alpha1.PipelineSpecR\x04spec\"\xe7\x01\n\x0cPipelineSpec\x12=\n\x06params\x18\x01 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.TaskParamsR\x06params\x12\x1c\n\tresources\x18\x02 \x01(\tR\tresources\x12\x35\n\x05tasks\x18\x03 \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x05tasks\x12\x43\n\tworkspace\x18\x04 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\tworkspace\"\x81\x01\n\x16\x43ustomPipelineResponse\x12\x0e\n\x02ok\x18\x01 \x01(\x08R\x02ok\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12=\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32).pipelines.tekton.v1alpha1.CustomPipelineR\x04\x64\x61ta\"U\n\x12\x43ustomPipelineList\x12?\n\x05items\x18\x01 \x03(\x0b\x32).pipelines.tekton.v1alpha1.CustomPipelineR\x05items\"\x99\x03\n\x0fTaskToCustomize\x12\x1b\n\ttask_name\x18\x01 \x01(\tR\x08taskName\x12\"\n\rtask_ref_name\x18\x02 \x01(\tR\x0btaskRefName\x12\x1b\n\ttask_kind\x18\x03 \x01(\tR\x08taskKind\x12$\n\x0etask_run_after\x18\x04 \x03(\tR\x0ctaskRunAfter\x12\x45\n\nworkspaces\x18\x05 \x03(\x0b\x32%.pipelines.tekton.v1alpha1.WorkspacesR\nworkspaces\x12Q\n\x0btask_params\x18\x06 \x03(\x0b\x32\x30.pipelines.tekton.v1alpha1.TaskParamsToCustomizeR\ntaskParams\x12 \n\x0b\x64\x65scription\x18\x07 \x01(\tR\x0b\x64\x65scription\x12#\n\rbefore_deploy\x18\x08 \x01(\x08R\x0c\x62\x65\x66oreDeploy\x12!\n\x0c\x61\x66ter_deploy\x18\t \x01(\x08R\x0b\x61\x66terDeploy\"\x8b\x01\n\x15TaskParamsToCustomize\x12\x1d\n\nparam_name\x18\x01 \x01(\tR\tparamName\x12\x14\n\x05label\x18\x02 \x01(\tR\x05label\x12\x1e\n\nvalidation\x18\x03 \x01(\tR\nvalidation\x12\x1d\n\ntype_value\x18\x04 \x01(\tR\ttypeValue*j\n\tOwnerType\x12\x1a\n\x16OWNER_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11OWNER_TYPE_CUEMBY\x10\x01\x12\x12\n\x0eOWNER_TYPE_ORG\x10\x02\x12\x16\n\x12OWNER_TYPE_PROJECT\x10\x03\x42\xae\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0bTektonProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
 )
 
 _OWNERTYPE = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _OWNERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4075,
-  serialized_end=4181,
+  serialized_start=4123,
+  serialized_end=4229,
 )
 _sym_db.RegisterEnumDescriptor(_OWNERTYPE)
 
@@ -361,8 +361,8 @@ _PIPELINE_INTEGRATIONENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2140,
-  serialized_end=2202,
+  serialized_start=2188,
+  serialized_end=2250,
 )
 
 _PIPELINE_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
@@ -399,8 +399,8 @@ _PIPELINE_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2204,
-  serialized_end=2275,
+  serialized_start=2252,
+  serialized_end=2323,
 )
 
 _PIPELINE_COMMANDSENTRY = _descriptor.Descriptor(
@@ -437,8 +437,8 @@ _PIPELINE_COMMANDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2277,
-  serialized_end=2336,
+  serialized_start=2325,
+  serialized_end=2384,
 )
 
 _PIPELINE_SECRETSENTRY = _descriptor.Descriptor(
@@ -475,8 +475,8 @@ _PIPELINE_SECRETSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2338,
-  serialized_end=2396,
+  serialized_start=2386,
+  serialized_end=2444,
 )
 
 _PIPELINE_EXTRAARGSENTRY = _descriptor.Descriptor(
@@ -513,8 +513,8 @@ _PIPELINE_EXTRAARGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2398,
-  serialized_end=2458,
+  serialized_start=2446,
+  serialized_end=2506,
 )
 
 _PIPELINE_INSTANCETYPEENTRY = _descriptor.Descriptor(
@@ -551,8 +551,8 @@ _PIPELINE_INSTANCETYPEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2460,
-  serialized_end=2523,
+  serialized_start=2508,
+  serialized_end=2571,
 )
 
 _PIPELINE = _descriptor.Descriptor(
@@ -724,6 +724,13 @@ _PIPELINE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='afterDeployTasks', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='is_exist_dockerfile', full_name='pipelines.tekton.v1alpha1.Pipeline.is_exist_dockerfile', index=23,
+      number=24, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='isExistDockerfile', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -737,7 +744,7 @@ _PIPELINE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=904,
-  serialized_end=2523,
+  serialized_end=2571,
 )
 
 
@@ -775,8 +782,8 @@ _TEKTONTASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2525,
-  serialized_end=2612,
+  serialized_start=2573,
+  serialized_end=2660,
 )
 
 
@@ -807,8 +814,8 @@ _TEKTONTASKLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2614,
-  serialized_end=2696,
+  serialized_start=2662,
+  serialized_end=2744,
 )
 
 
@@ -902,8 +909,8 @@ _CUSTOMPIPELINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2699,
-  serialized_end=3066,
+  serialized_start=2747,
+  serialized_end=3114,
 )
 
 
@@ -955,8 +962,8 @@ _PIPELINESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3069,
-  serialized_end=3300,
+  serialized_start=3117,
+  serialized_end=3348,
 )
 
 
@@ -1001,8 +1008,8 @@ _CUSTOMPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3303,
-  serialized_end=3432,
+  serialized_start=3351,
+  serialized_end=3480,
 )
 
 
@@ -1033,8 +1040,8 @@ _CUSTOMPIPELINELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3434,
-  serialized_end=3519,
+  serialized_start=3482,
+  serialized_end=3567,
 )
 
 
@@ -1121,8 +1128,8 @@ _TASKTOCUSTOMIZE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3522,
-  serialized_end=3931,
+  serialized_start=3570,
+  serialized_end=3979,
 )
 
 
@@ -1174,8 +1181,8 @@ _TASKPARAMSTOCUSTOMIZE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3934,
-  serialized_end=4073,
+  serialized_start=3982,
+  serialized_end=4121,
 )
 
 _TASK.fields_by_name['workspaces'].message_type = _WORKSPACES

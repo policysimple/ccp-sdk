@@ -42,6 +42,10 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
      */
     protected $organization = null;
     /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
+     */
+    private $permissions;
+    /**
      * Generated from protobuf field <code>string expired_at = 9 [json_name = "expiredAt"];</code>
      */
     protected $expired_at = '';
@@ -59,6 +63,7 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
      *     @type bool $is_active
      *     @type \Accounts\V1alpha1\Project $project
      *     @type \Accounts\V1alpha1\Organization $organization
+     *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      *     @type string $expired_at
      * }
      */
@@ -237,6 +242,28 @@ class ApiKeyList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Accounts\V1alpha1\Organization::class);
         $this->organization = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPermissions()
+    {
+        return $this->permissions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];</code>
+     * @param \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPermissions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Permission::class);
+        $this->permissions = $arr;
 
         return $this;
     }

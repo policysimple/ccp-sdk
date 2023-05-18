@@ -1269,6 +1269,7 @@ class ApiKeyList final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kPermissionsFieldNumber = 10,
     kUuidFieldNumber = 1,
     kApiKeyFieldNumber = 2,
     kNameFieldNumber = 3,
@@ -1278,6 +1279,24 @@ class ApiKeyList final :
     kOrganizationFieldNumber = 8,
     kIsActiveFieldNumber = 6,
   };
+  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+  int permissions_size() const;
+  private:
+  int _internal_permissions_size() const;
+  public:
+  void clear_permissions();
+  ::accounts::v1alpha1::Permission* mutable_permissions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >*
+      mutable_permissions();
+  private:
+  const ::accounts::v1alpha1::Permission& _internal_permissions(int index) const;
+  ::accounts::v1alpha1::Permission* _internal_add_permissions();
+  public:
+  const ::accounts::v1alpha1::Permission& permissions(int index) const;
+  ::accounts::v1alpha1::Permission* add_permissions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >&
+      permissions() const;
+
   // string uuid = 1 [json_name = "uuid"];
   void clear_uuid();
   const std::string& uuid() const;
@@ -1400,6 +1419,7 @@ class ApiKeyList final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr api_key_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
@@ -3756,6 +3776,43 @@ inline void ApiKeyList::set_allocated_organization(::accounts::v1alpha1::Organiz
   }
   organization_ = organization;
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.apikeys.v1.ApiKeyList.organization)
+}
+
+// repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+inline int ApiKeyList::_internal_permissions_size() const {
+  return permissions_.size();
+}
+inline int ApiKeyList::permissions_size() const {
+  return _internal_permissions_size();
+}
+inline ::accounts::v1alpha1::Permission* ApiKeyList::mutable_permissions(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.apikeys.v1.ApiKeyList.permissions)
+  return permissions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >*
+ApiKeyList::mutable_permissions() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.apikeys.v1.ApiKeyList.permissions)
+  return &permissions_;
+}
+inline const ::accounts::v1alpha1::Permission& ApiKeyList::_internal_permissions(int index) const {
+  return permissions_.Get(index);
+}
+inline const ::accounts::v1alpha1::Permission& ApiKeyList::permissions(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.apikeys.v1.ApiKeyList.permissions)
+  return _internal_permissions(index);
+}
+inline ::accounts::v1alpha1::Permission* ApiKeyList::_internal_add_permissions() {
+  return permissions_.Add();
+}
+inline ::accounts::v1alpha1::Permission* ApiKeyList::add_permissions() {
+  ::accounts::v1alpha1::Permission* _add = _internal_add_permissions();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.apikeys.v1.ApiKeyList.permissions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >&
+ApiKeyList::permissions() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.apikeys.v1.ApiKeyList.permissions)
+  return permissions_;
 }
 
 // string expired_at = 9 [json_name = "expiredAt"];

@@ -19,6 +19,11 @@ class SourceServiceStub(object):
         request_serializer=source_dot_v1alpha1_dot_source__pb2.CreateProviderRequest.SerializeToString,
         response_deserializer=source_dot_v1alpha1_dot_source__pb2.CreateProviderResponse.FromString,
         )
+    self.CreateIntegrationWithExternalProvider = channel.unary_unary(
+        '/source.v1alpha1.SourceService/CreateIntegrationWithExternalProvider',
+        request_serializer=source_dot_v1alpha1_dot_source__pb2.CreateIntegrationWithExternalProviderRequest.SerializeToString,
+        response_deserializer=source_dot_v1alpha1_dot_source__pb2.CreateIntegrationWithExternalProviderResponse.FromString,
+        )
     self.ListProviders = channel.unary_unary(
         '/source.v1alpha1.SourceService/ListProviders',
         request_serializer=source_dot_v1alpha1_dot_source__pb2.ListProvidersRequest.SerializeToString,
@@ -123,6 +128,13 @@ class SourceServiceServicer(object):
   def CreateProvider(self, request, context):
     """PROVIDERS
     """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateIntegrationWithExternalProvider(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -267,6 +279,11 @@ def add_SourceServiceServicer_to_server(servicer, server):
           servicer.CreateProvider,
           request_deserializer=source_dot_v1alpha1_dot_source__pb2.CreateProviderRequest.FromString,
           response_serializer=source_dot_v1alpha1_dot_source__pb2.CreateProviderResponse.SerializeToString,
+      ),
+      'CreateIntegrationWithExternalProvider': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateIntegrationWithExternalProvider,
+          request_deserializer=source_dot_v1alpha1_dot_source__pb2.CreateIntegrationWithExternalProviderRequest.FromString,
+          response_serializer=source_dot_v1alpha1_dot_source__pb2.CreateIntegrationWithExternalProviderResponse.SerializeToString,
       ),
       'ListProviders': grpc.unary_unary_rpc_method_handler(
           servicer.ListProviders,

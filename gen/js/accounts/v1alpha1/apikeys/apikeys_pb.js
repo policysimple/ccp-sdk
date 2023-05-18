@@ -144,7 +144,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.accounts.v1alpha1.apikeys.v1.ApiKeyList = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.repeatedFields_, null);
 };
 goog.inherits(proto.accounts.v1alpha1.apikeys.v1.ApiKeyList, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1601,6 +1601,13 @@ proto.accounts.v1alpha1.apikeys.v1.ListApiKeyRequest.prototype.setOrganizationId
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.repeatedFields_ = [10];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1639,6 +1646,8 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.toObject = function(includeInstanc
     isActive: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     project: (f = msg.getProject()) && accounts_v1alpha1_accounts_pb.Project.toObject(includeInstance, f),
     organization: (f = msg.getOrganization()) && accounts_v1alpha1_accounts_pb.Organization.toObject(includeInstance, f),
+    permissionsList: jspb.Message.toObjectList(msg.getPermissionsList(),
+    accounts_v1alpha1_accounts_pb.Permission.toObject, includeInstance),
     expiredAt: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
@@ -1705,6 +1714,11 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.deserializeBinaryFromReader = func
       var value = new accounts_v1alpha1_accounts_pb.Organization;
       reader.readMessage(value,accounts_v1alpha1_accounts_pb.Organization.deserializeBinaryFromReader);
       msg.setOrganization(value);
+      break;
+    case 10:
+      var value = new accounts_v1alpha1_accounts_pb.Permission;
+      reader.readMessage(value,accounts_v1alpha1_accounts_pb.Permission.deserializeBinaryFromReader);
+      msg.addPermissions(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -1788,6 +1802,14 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.serializeBinaryToWriter = function
       8,
       f,
       accounts_v1alpha1_accounts_pb.Organization.serializeBinaryToWriter
+    );
+  }
+  f = message.getPermissionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      10,
+      f,
+      accounts_v1alpha1_accounts_pb.Permission.serializeBinaryToWriter
     );
   }
   f = message.getExpiredAt();
@@ -1961,6 +1983,44 @@ proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.clearOrganization = func
  */
 proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.hasOrganization = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated accounts.v1alpha1.Permission permissions = 10;
+ * @return {!Array<!proto.accounts.v1alpha1.Permission>}
+ */
+proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.getPermissionsList = function() {
+  return /** @type{!Array<!proto.accounts.v1alpha1.Permission>} */ (
+    jspb.Message.getRepeatedWrapperField(this, accounts_v1alpha1_accounts_pb.Permission, 10));
+};
+
+
+/**
+ * @param {!Array<!proto.accounts.v1alpha1.Permission>} value
+ * @return {!proto.accounts.v1alpha1.apikeys.v1.ApiKeyList} returns this
+*/
+proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.setPermissionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+};
+
+
+/**
+ * @param {!proto.accounts.v1alpha1.Permission=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.accounts.v1alpha1.Permission}
+ */
+proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.addPermissions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.accounts.v1alpha1.Permission, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.accounts.v1alpha1.apikeys.v1.ApiKeyList} returns this
+ */
+proto.accounts.v1alpha1.apikeys.v1.ApiKeyList.prototype.clearPermissionsList = function() {
+  return this.setPermissionsList([]);
 };
 
 

@@ -70,6 +70,8 @@ message Pipeline {
     bool custom_pipeline = 21;
     repeated Task before_deploy_tasks = 22;
     repeated Task after_deploy_tasks = 23;
+
+    bool is_exist_dockerfile= 24;
 }
 
 message TektonTask {
