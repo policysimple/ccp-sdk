@@ -336,8 +336,7 @@ message Provider{
     string logo = 4;
     map<string, string> data = 5;
     map<string, string> metadata = 6;
-
-
+    bool form_only = 7;
 }
 
 

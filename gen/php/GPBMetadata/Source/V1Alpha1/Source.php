@@ -16,7 +16,7 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-®H
+ËH
 source/v1alpha1/source.protosource.v1alpha1"ä
 ,CreateIntegrationWithExternalProviderRequestB
 provider (2&.source.v1alpha1.CreateProviderRequestRprovider
@@ -206,14 +206,15 @@ providerId=
 DeleteIntegrationRequest
 id (	Rid"-
 DeleteIntegrationResponse
-msg (	Rmsg"Ø
+msg (	Rmsg"õ
 Provider
 id (	Rid
 name (	Rname 
 description (	Rdescription
 logo (	Rlogo7
 data (2#.source.v1alpha1.Provider.DataEntryRdataC
-metadata (2\'.source.v1alpha1.Provider.MetadataEntryRmetadata7
+metadata (2\'.source.v1alpha1.Provider.MetadataEntryRmetadata
+	form_only (RformOnly7
 	DataEntry
 key (	Rkey
 value (	Rvalue:8;

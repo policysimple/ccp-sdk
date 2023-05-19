@@ -37,6 +37,10 @@ class Provider extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> metadata = 6 [json_name = "metadata"];</code>
      */
     private $metadata;
+    /**
+     * Generated from protobuf field <code>bool form_only = 7 [json_name = "formOnly"];</code>
+     */
+    protected $form_only = false;
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Provider extends \Google\Protobuf\Internal\Message
      *     @type string $logo
      *     @type array|\Google\Protobuf\Internal\MapField $data
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *     @type bool $form_only
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +190,28 @@ class Provider extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->metadata = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool form_only = 7 [json_name = "formOnly"];</code>
+     * @return bool
+     */
+    public function getFormOnly()
+    {
+        return $this->form_only;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool form_only = 7 [json_name = "formOnly"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFormOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->form_only = $var;
 
         return $this;
     }

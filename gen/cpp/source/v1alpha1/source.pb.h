@@ -7619,6 +7619,7 @@ class Provider final :
     kNameFieldNumber = 2,
     kDescriptionFieldNumber = 3,
     kLogoFieldNumber = 4,
+    kFormOnlyFieldNumber = 7,
   };
   // map<string, string> data = 5 [json_name = "data"];
   int data_size() const;
@@ -7710,6 +7711,15 @@ class Provider final :
   std::string* _internal_mutable_logo();
   public:
 
+  // bool form_only = 7 [json_name = "formOnly"];
+  void clear_form_only();
+  bool form_only() const;
+  void set_form_only(bool value);
+  private:
+  bool _internal_form_only() const;
+  void _internal_set_form_only(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.Provider)
  private:
   class _Internal;
@@ -7731,6 +7741,7 @@ class Provider final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr logo_;
+  bool form_only_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -15005,6 +15016,26 @@ inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
 Provider::mutable_metadata() {
   // @@protoc_insertion_point(field_mutable_map:source.v1alpha1.Provider.metadata)
   return _internal_mutable_metadata();
+}
+
+// bool form_only = 7 [json_name = "formOnly"];
+inline void Provider::clear_form_only() {
+  form_only_ = false;
+}
+inline bool Provider::_internal_form_only() const {
+  return form_only_;
+}
+inline bool Provider::form_only() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.Provider.form_only)
+  return _internal_form_only();
+}
+inline void Provider::_internal_set_form_only(bool value) {
+  
+  form_only_ = value;
+}
+inline void Provider::set_form_only(bool value) {
+  _internal_set_form_only(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.Provider.form_only)
 }
 
 // -------------------------------------------------------------------
