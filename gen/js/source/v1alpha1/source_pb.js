@@ -8980,7 +8980,8 @@ proto.source.v1alpha1.Provider.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     logo: jspb.Message.getFieldWithDefault(msg, 4, ""),
     dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : [],
-    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : []
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
+    formOnly: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -9044,6 +9045,10 @@ proto.source.v1alpha1.Provider.deserializeBinaryFromReader = function(msg, reade
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFormOnly(value);
       break;
     default:
       reader.skipField();
@@ -9109,6 +9114,13 @@ proto.source.v1alpha1.Provider.serializeBinaryToWriter = function(message, write
   f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getFormOnly();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
+    );
   }
 };
 
@@ -9227,6 +9239,24 @@ proto.source.v1alpha1.Provider.prototype.getMetadataMap = function(opt_noLazyCre
 proto.source.v1alpha1.Provider.prototype.clearMetadataMap = function() {
   this.getMetadataMap().clear();
   return this;};
+
+
+/**
+ * optional bool form_only = 7;
+ * @return {boolean}
+ */
+proto.source.v1alpha1.Provider.prototype.getFormOnly = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.source.v1alpha1.Provider} returns this
+ */
+proto.source.v1alpha1.Provider.prototype.setFormOnly = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
+};
 
 
 
