@@ -244,6 +244,8 @@ class Network final :
     kCreatedAtFieldNumber = 8,
     kUpdatedAtFieldNumber = 9,
     kCcpOrganizationIdFieldNumber = 11,
+    kUserEmailFieldNumber = 13,
+    kUserNameFieldNumber = 14,
     kEnvironmentFieldNumber = 12,
   };
   // repeated .blockchain.network.v1alpha1.Corporation corporations = 10 [json_name = "corporations"];
@@ -404,6 +406,34 @@ class Network final :
   std::string* _internal_mutable_ccp_organization_id();
   public:
 
+  // string user_email = 13 [json_name = "userEmail"];
+  void clear_user_email();
+  const std::string& user_email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_email();
+  void set_allocated_user_email(std::string* user_email);
+  private:
+  const std::string& _internal_user_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_email(const std::string& value);
+  std::string* _internal_mutable_user_email();
+  public:
+
+  // string user_name = 14 [json_name = "userName"];
+  void clear_user_name();
+  const std::string& user_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_name();
+  void set_allocated_user_name(std::string* user_name);
+  private:
+  const std::string& _internal_user_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_name(const std::string& value);
+  std::string* _internal_mutable_user_name();
+  public:
+
   // .blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];
   void clear_environment();
   ::blockchain::network::v1alpha1::BlockchainEnv environment() const;
@@ -431,6 +461,8 @@ class Network final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_name_;
   int environment_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
@@ -565,6 +597,8 @@ class Corporation final :
     kUpdatedAtFieldNumber = 11,
     kNameCaFieldNumber = 12,
     kNameMspFieldNumber = 13,
+    kUserEmailFieldNumber = 14,
+    kUserNameFieldNumber = 15,
   };
   // repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];
   int peers_size() const;
@@ -752,6 +786,34 @@ class Corporation final :
   std::string* _internal_mutable_name_msp();
   public:
 
+  // string user_email = 14 [json_name = "userEmail"];
+  void clear_user_email();
+  const std::string& user_email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_email();
+  void set_allocated_user_email(std::string* user_email);
+  private:
+  const std::string& _internal_user_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_email(const std::string& value);
+  std::string* _internal_mutable_user_email();
+  public:
+
+  // string user_name = 15 [json_name = "userName"];
+  void clear_user_name();
+  const std::string& user_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_name();
+  void set_allocated_user_name(std::string* user_name);
+  private:
+  const std::string& _internal_user_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_name(const std::string& value);
+  std::string* _internal_mutable_user_name();
+  public:
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Corporation)
  private:
   class _Internal;
@@ -772,6 +834,8 @@ class Corporation final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_ca_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_msp_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
 };
@@ -898,6 +962,8 @@ class Peer final :
     kStatusFieldNumber = 4,
     kCreatedAtFieldNumber = 5,
     kUpdatedAtFieldNumber = 6,
+    kUserEmailFieldNumber = 7,
+    kUserNameFieldNumber = 8,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -983,6 +1049,34 @@ class Peer final :
   std::string* _internal_mutable_updated_at();
   public:
 
+  // string user_email = 7 [json_name = "userEmail"];
+  void clear_user_email();
+  const std::string& user_email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_email();
+  void set_allocated_user_email(std::string* user_email);
+  private:
+  const std::string& _internal_user_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_email(const std::string& value);
+  std::string* _internal_mutable_user_email();
+  public:
+
+  // string user_name = 8 [json_name = "userName"];
+  void clear_user_name();
+  const std::string& user_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_name();
+  void set_allocated_user_name(std::string* user_name);
+  private:
+  const std::string& _internal_user_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_name(const std::string& value);
+  std::string* _internal_mutable_user_name();
+  public:
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Peer)
  private:
   class _Internal;
@@ -996,6 +1090,8 @@ class Peer final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
 };
@@ -1123,6 +1219,8 @@ class Orderer final :
     kStatusFieldNumber = 5,
     kCreatedAtFieldNumber = 6,
     kUpdatedAtFieldNumber = 7,
+    kUserEmailFieldNumber = 8,
+    kUserNameFieldNumber = 9,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1222,6 +1320,34 @@ class Orderer final :
   std::string* _internal_mutable_updated_at();
   public:
 
+  // string user_email = 8 [json_name = "userEmail"];
+  void clear_user_email();
+  const std::string& user_email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_email();
+  void set_allocated_user_email(std::string* user_email);
+  private:
+  const std::string& _internal_user_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_email(const std::string& value);
+  std::string* _internal_mutable_user_email();
+  public:
+
+  // string user_name = 9 [json_name = "userName"];
+  void clear_user_name();
+  const std::string& user_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_name();
+  void set_allocated_user_name(std::string* user_name);
+  private:
+  const std::string& _internal_user_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_name(const std::string& value);
+  std::string* _internal_mutable_user_name();
+  public:
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Orderer)
  private:
   class _Internal;
@@ -1236,6 +1362,8 @@ class Orderer final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
 };
@@ -1364,6 +1492,8 @@ class Channel final :
     kStatusFieldNumber = 6,
     kCreatedAtFieldNumber = 7,
     kUpdatedAtFieldNumber = 8,
+    kUserEmailFieldNumber = 9,
+    kUserNameFieldNumber = 10,
   };
   // repeated string corporation_ids = 5 [json_name = "corporationIds"];
   int corporation_ids_size() const;
@@ -1487,6 +1617,34 @@ class Channel final :
   std::string* _internal_mutable_updated_at();
   public:
 
+  // string user_email = 9 [json_name = "userEmail"];
+  void clear_user_email();
+  const std::string& user_email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_email();
+  void set_allocated_user_email(std::string* user_email);
+  private:
+  const std::string& _internal_user_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_email(const std::string& value);
+  std::string* _internal_mutable_user_email();
+  public:
+
+  // string user_name = 10 [json_name = "userName"];
+  void clear_user_name();
+  const std::string& user_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_name();
+  void set_allocated_user_name(std::string* user_name);
+  private:
+  const std::string& _internal_user_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_name(const std::string& value);
+  std::string* _internal_mutable_user_name();
+  public:
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.Channel)
  private:
   class _Internal;
@@ -1502,6 +1660,8 @@ class Channel final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto;
 };
@@ -2276,6 +2436,98 @@ inline void Network::set_environment(::blockchain::network::v1alpha1::Blockchain
   // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Network.environment)
 }
 
+// string user_email = 13 [json_name = "userEmail"];
+inline void Network::clear_user_email() {
+  user_email_.ClearToEmpty();
+}
+inline const std::string& Network::user_email() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Network.user_email)
+  return _internal_user_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Network::set_user_email(ArgT0&& arg0, ArgT... args) {
+ 
+ user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Network.user_email)
+}
+inline std::string* Network::mutable_user_email() {
+  std::string* _s = _internal_mutable_user_email();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Network.user_email)
+  return _s;
+}
+inline const std::string& Network::_internal_user_email() const {
+  return user_email_.Get();
+}
+inline void Network::_internal_set_user_email(const std::string& value) {
+  
+  user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Network::_internal_mutable_user_email() {
+  
+  return user_email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Network::release_user_email() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Network.user_email)
+  return user_email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Network::set_allocated_user_email(std::string* user_email) {
+  if (user_email != nullptr) {
+    
+  } else {
+    
+  }
+  user_email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Network.user_email)
+}
+
+// string user_name = 14 [json_name = "userName"];
+inline void Network::clear_user_name() {
+  user_name_.ClearToEmpty();
+}
+inline const std::string& Network::user_name() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Network.user_name)
+  return _internal_user_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Network::set_user_name(ArgT0&& arg0, ArgT... args) {
+ 
+ user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Network.user_name)
+}
+inline std::string* Network::mutable_user_name() {
+  std::string* _s = _internal_mutable_user_name();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Network.user_name)
+  return _s;
+}
+inline const std::string& Network::_internal_user_name() const {
+  return user_name_.Get();
+}
+inline void Network::_internal_set_user_name(const std::string& value) {
+  
+  user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Network::_internal_mutable_user_name() {
+  
+  return user_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Network::release_user_name() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Network.user_name)
+  return user_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Network::set_allocated_user_name(std::string* user_name) {
+  if (user_name != nullptr) {
+    
+  } else {
+    
+  }
+  user_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Network.user_name)
+}
+
 // -------------------------------------------------------------------
 
 // Corporation
@@ -2872,6 +3124,98 @@ inline void Corporation::set_allocated_name_msp(std::string* name_msp) {
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Corporation.name_msp)
 }
 
+// string user_email = 14 [json_name = "userEmail"];
+inline void Corporation::clear_user_email() {
+  user_email_.ClearToEmpty();
+}
+inline const std::string& Corporation::user_email() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Corporation.user_email)
+  return _internal_user_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Corporation::set_user_email(ArgT0&& arg0, ArgT... args) {
+ 
+ user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Corporation.user_email)
+}
+inline std::string* Corporation::mutable_user_email() {
+  std::string* _s = _internal_mutable_user_email();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Corporation.user_email)
+  return _s;
+}
+inline const std::string& Corporation::_internal_user_email() const {
+  return user_email_.Get();
+}
+inline void Corporation::_internal_set_user_email(const std::string& value) {
+  
+  user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Corporation::_internal_mutable_user_email() {
+  
+  return user_email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Corporation::release_user_email() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Corporation.user_email)
+  return user_email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Corporation::set_allocated_user_email(std::string* user_email) {
+  if (user_email != nullptr) {
+    
+  } else {
+    
+  }
+  user_email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Corporation.user_email)
+}
+
+// string user_name = 15 [json_name = "userName"];
+inline void Corporation::clear_user_name() {
+  user_name_.ClearToEmpty();
+}
+inline const std::string& Corporation::user_name() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Corporation.user_name)
+  return _internal_user_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Corporation::set_user_name(ArgT0&& arg0, ArgT... args) {
+ 
+ user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Corporation.user_name)
+}
+inline std::string* Corporation::mutable_user_name() {
+  std::string* _s = _internal_mutable_user_name();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Corporation.user_name)
+  return _s;
+}
+inline const std::string& Corporation::_internal_user_name() const {
+  return user_name_.Get();
+}
+inline void Corporation::_internal_set_user_name(const std::string& value) {
+  
+  user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Corporation::_internal_mutable_user_name() {
+  
+  return user_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Corporation::release_user_name() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Corporation.user_name)
+  return user_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Corporation::set_allocated_user_name(std::string* user_name) {
+  if (user_name != nullptr) {
+    
+  } else {
+    
+  }
+  user_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Corporation.user_name)
+}
+
 // -------------------------------------------------------------------
 
 // Peer
@@ -3150,6 +3494,98 @@ inline void Peer::set_allocated_updated_at(std::string* updated_at) {
   updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Peer.updated_at)
+}
+
+// string user_email = 7 [json_name = "userEmail"];
+inline void Peer::clear_user_email() {
+  user_email_.ClearToEmpty();
+}
+inline const std::string& Peer::user_email() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Peer.user_email)
+  return _internal_user_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Peer::set_user_email(ArgT0&& arg0, ArgT... args) {
+ 
+ user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Peer.user_email)
+}
+inline std::string* Peer::mutable_user_email() {
+  std::string* _s = _internal_mutable_user_email();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Peer.user_email)
+  return _s;
+}
+inline const std::string& Peer::_internal_user_email() const {
+  return user_email_.Get();
+}
+inline void Peer::_internal_set_user_email(const std::string& value) {
+  
+  user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Peer::_internal_mutable_user_email() {
+  
+  return user_email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Peer::release_user_email() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Peer.user_email)
+  return user_email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Peer::set_allocated_user_email(std::string* user_email) {
+  if (user_email != nullptr) {
+    
+  } else {
+    
+  }
+  user_email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Peer.user_email)
+}
+
+// string user_name = 8 [json_name = "userName"];
+inline void Peer::clear_user_name() {
+  user_name_.ClearToEmpty();
+}
+inline const std::string& Peer::user_name() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Peer.user_name)
+  return _internal_user_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Peer::set_user_name(ArgT0&& arg0, ArgT... args) {
+ 
+ user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Peer.user_name)
+}
+inline std::string* Peer::mutable_user_name() {
+  std::string* _s = _internal_mutable_user_name();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Peer.user_name)
+  return _s;
+}
+inline const std::string& Peer::_internal_user_name() const {
+  return user_name_.Get();
+}
+inline void Peer::_internal_set_user_name(const std::string& value) {
+  
+  user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Peer::_internal_mutable_user_name() {
+  
+  return user_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Peer::release_user_name() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Peer.user_name)
+  return user_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Peer::set_allocated_user_name(std::string* user_name) {
+  if (user_name != nullptr) {
+    
+  } else {
+    
+  }
+  user_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Peer.user_name)
 }
 
 // -------------------------------------------------------------------
@@ -3476,6 +3912,98 @@ inline void Orderer::set_allocated_updated_at(std::string* updated_at) {
   updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.updated_at)
+}
+
+// string user_email = 8 [json_name = "userEmail"];
+inline void Orderer::clear_user_email() {
+  user_email_.ClearToEmpty();
+}
+inline const std::string& Orderer::user_email() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Orderer.user_email)
+  return _internal_user_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Orderer::set_user_email(ArgT0&& arg0, ArgT... args) {
+ 
+ user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Orderer.user_email)
+}
+inline std::string* Orderer::mutable_user_email() {
+  std::string* _s = _internal_mutable_user_email();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Orderer.user_email)
+  return _s;
+}
+inline const std::string& Orderer::_internal_user_email() const {
+  return user_email_.Get();
+}
+inline void Orderer::_internal_set_user_email(const std::string& value) {
+  
+  user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Orderer::_internal_mutable_user_email() {
+  
+  return user_email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Orderer::release_user_email() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Orderer.user_email)
+  return user_email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Orderer::set_allocated_user_email(std::string* user_email) {
+  if (user_email != nullptr) {
+    
+  } else {
+    
+  }
+  user_email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.user_email)
+}
+
+// string user_name = 9 [json_name = "userName"];
+inline void Orderer::clear_user_name() {
+  user_name_.ClearToEmpty();
+}
+inline const std::string& Orderer::user_name() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Orderer.user_name)
+  return _internal_user_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Orderer::set_user_name(ArgT0&& arg0, ArgT... args) {
+ 
+ user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Orderer.user_name)
+}
+inline std::string* Orderer::mutable_user_name() {
+  std::string* _s = _internal_mutable_user_name();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Orderer.user_name)
+  return _s;
+}
+inline const std::string& Orderer::_internal_user_name() const {
+  return user_name_.Get();
+}
+inline void Orderer::_internal_set_user_name(const std::string& value) {
+  
+  user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Orderer::_internal_mutable_user_name() {
+  
+  return user_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Orderer::release_user_name() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Orderer.user_name)
+  return user_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Orderer::set_allocated_user_name(std::string* user_name) {
+  if (user_name != nullptr) {
+    
+  } else {
+    
+  }
+  user_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Orderer.user_name)
 }
 
 // -------------------------------------------------------------------
@@ -3877,6 +4405,98 @@ inline void Channel::set_allocated_updated_at(std::string* updated_at) {
   updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Channel.updated_at)
+}
+
+// string user_email = 9 [json_name = "userEmail"];
+inline void Channel::clear_user_email() {
+  user_email_.ClearToEmpty();
+}
+inline const std::string& Channel::user_email() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Channel.user_email)
+  return _internal_user_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Channel::set_user_email(ArgT0&& arg0, ArgT... args) {
+ 
+ user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Channel.user_email)
+}
+inline std::string* Channel::mutable_user_email() {
+  std::string* _s = _internal_mutable_user_email();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Channel.user_email)
+  return _s;
+}
+inline const std::string& Channel::_internal_user_email() const {
+  return user_email_.Get();
+}
+inline void Channel::_internal_set_user_email(const std::string& value) {
+  
+  user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Channel::_internal_mutable_user_email() {
+  
+  return user_email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Channel::release_user_email() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Channel.user_email)
+  return user_email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Channel::set_allocated_user_email(std::string* user_email) {
+  if (user_email != nullptr) {
+    
+  } else {
+    
+  }
+  user_email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Channel.user_email)
+}
+
+// string user_name = 10 [json_name = "userName"];
+inline void Channel::clear_user_name() {
+  user_name_.ClearToEmpty();
+}
+inline const std::string& Channel::user_name() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Channel.user_name)
+  return _internal_user_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Channel::set_user_name(ArgT0&& arg0, ArgT... args) {
+ 
+ user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.Channel.user_name)
+}
+inline std::string* Channel::mutable_user_name() {
+  std::string* _s = _internal_mutable_user_name();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Channel.user_name)
+  return _s;
+}
+inline const std::string& Channel::_internal_user_name() const {
+  return user_name_.Get();
+}
+inline void Channel::_internal_set_user_name(const std::string& value) {
+  
+  user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Channel::_internal_mutable_user_name() {
+  
+  return user_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Channel::release_user_name() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.Channel.user_name)
+  return user_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Channel::set_allocated_user_name(std::string* user_name) {
+  if (user_name != nullptr) {
+    
+  } else {
+    
+  }
+  user_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Channel.user_name)
 }
 
 // -------------------------------------------------------------------

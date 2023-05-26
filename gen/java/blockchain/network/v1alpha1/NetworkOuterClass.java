@@ -289,6 +289,30 @@ public final class NetworkOuterClass {
      * @return The environment.
      */
     blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv getEnvironment();
+
+    /**
+     * <code>string user_email = 13 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    java.lang.String getUserEmail();
+    /**
+     * <code>string user_email = 13 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    com.google.protobuf.ByteString
+        getUserEmailBytes();
+
+    /**
+     * <code>string user_name = 14 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string user_name = 14 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Network}
@@ -315,6 +339,8 @@ public final class NetworkOuterClass {
       corporations_ = java.util.Collections.emptyList();
       ccpOrganizationId_ = "";
       environment_ = 0;
+      userEmail_ = "";
+      userName_ = "";
     }
 
     @java.lang.Override
@@ -421,6 +447,18 @@ public final class NetworkOuterClass {
               int rawValue = input.readEnum();
 
               environment_ = rawValue;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmail_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
               break;
             }
             default: {
@@ -897,6 +935,82 @@ public final class NetworkOuterClass {
       return result == null ? blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv.UNRECOGNIZED : result;
     }
 
+    public static final int USER_EMAIL_FIELD_NUMBER = 13;
+    private volatile java.lang.Object userEmail_;
+    /**
+     * <code>string user_email = 13 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getUserEmail() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_email = 13 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserEmailBytes() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 14;
+    private volatile java.lang.Object userName_;
+    /**
+     * <code>string user_name = 14 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_name = 14 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -947,6 +1061,12 @@ public final class NetworkOuterClass {
       if (environment_ != blockchain.network.v1alpha1.NetworkOuterClass.BlockchainEnv.BLOCKCHAIN_ENV_UNSPECIFIED.getNumber()) {
         output.writeEnum(12, environment_);
       }
+      if (!getUserEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, userName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -994,6 +1114,12 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, environment_);
       }
+      if (!getUserEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, userName_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1032,6 +1158,10 @@ public final class NetworkOuterClass {
       if (!getCcpOrganizationId()
           .equals(other.getCcpOrganizationId())) return false;
       if (environment_ != other.environment_) return false;
+      if (!getUserEmail()
+          .equals(other.getUserEmail())) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1069,6 +1199,10 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getCcpOrganizationId().hashCode();
       hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
       hash = (53 * hash) + environment_;
+      hash = (37 * hash) + USER_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserEmail().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1231,6 +1365,10 @@ public final class NetworkOuterClass {
 
         environment_ = 0;
 
+        userEmail_ = "";
+
+        userName_ = "";
+
         return this;
       }
 
@@ -1278,6 +1416,8 @@ public final class NetworkOuterClass {
         }
         result.ccpOrganizationId_ = ccpOrganizationId_;
         result.environment_ = environment_;
+        result.userEmail_ = userEmail_;
+        result.userName_ = userName_;
         onBuilt();
         return result;
       }
@@ -1394,6 +1534,14 @@ public final class NetworkOuterClass {
         }
         if (other.environment_ != 0) {
           setEnvironmentValue(other.getEnvironmentValue());
+        }
+        if (!other.getUserEmail().isEmpty()) {
+          userEmail_ = other.userEmail_;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2478,6 +2626,158 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object userEmail_ = "";
+      /**
+       * <code>string user_email = 13 [json_name = "userEmail"];</code>
+       * @return The userEmail.
+       */
+      public java.lang.String getUserEmail() {
+        java.lang.Object ref = userEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 13 [json_name = "userEmail"];</code>
+       * @return The bytes for userEmail.
+       */
+      public com.google.protobuf.ByteString
+          getUserEmailBytes() {
+        java.lang.Object ref = userEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 13 [json_name = "userEmail"];</code>
+       * @param value The userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 13 [json_name = "userEmail"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserEmail() {
+        
+        userEmail_ = getDefaultInstance().getUserEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 13 [json_name = "userEmail"];</code>
+       * @param value The bytes for userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string user_name = 14 [json_name = "userName"];</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 14 [json_name = "userName"];</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 14 [json_name = "userName"];</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 14 [json_name = "userName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 14 [json_name = "userName"];</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2702,6 +3002,30 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getNameMspBytes();
+
+    /**
+     * <code>string user_email = 14 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    java.lang.String getUserEmail();
+    /**
+     * <code>string user_email = 14 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    com.google.protobuf.ByteString
+        getUserEmailBytes();
+
+    /**
+     * <code>string user_name = 15 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string user_name = 15 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Corporation}
@@ -2729,6 +3053,8 @@ public final class NetworkOuterClass {
       updatedAt_ = "";
       nameCa_ = "";
       nameMsp_ = "";
+      userEmail_ = "";
+      userName_ = "";
     }
 
     @java.lang.Override
@@ -2841,6 +3167,18 @@ public final class NetworkOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               nameMsp_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmail_ = s;
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
               break;
             }
             default: {
@@ -3374,6 +3712,82 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int USER_EMAIL_FIELD_NUMBER = 14;
+    private volatile java.lang.Object userEmail_;
+    /**
+     * <code>string user_email = 14 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getUserEmail() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_email = 14 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserEmailBytes() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 15;
+    private volatile java.lang.Object userName_;
+    /**
+     * <code>string user_name = 15 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_name = 15 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3427,6 +3841,12 @@ public final class NetworkOuterClass {
       if (!getNameMspBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nameMsp_);
       }
+      if (!getUserEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3476,6 +3896,12 @@ public final class NetworkOuterClass {
       if (!getNameMspBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nameMsp_);
       }
+      if (!getUserEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userName_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3517,6 +3943,10 @@ public final class NetworkOuterClass {
           .equals(other.getNameCa())) return false;
       if (!getNameMsp()
           .equals(other.getNameMsp())) return false;
+      if (!getUserEmail()
+          .equals(other.getUserEmail())) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3556,6 +3986,10 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getNameCa().hashCode();
       hash = (37 * hash) + NAME_MSP_FIELD_NUMBER;
       hash = (53 * hash) + getNameMsp().hashCode();
+      hash = (37 * hash) + USER_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserEmail().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3720,6 +4154,10 @@ public final class NetworkOuterClass {
 
         nameMsp_ = "";
 
+        userEmail_ = "";
+
+        userName_ = "";
+
         return this;
       }
 
@@ -3768,6 +4206,8 @@ public final class NetworkOuterClass {
         result.updatedAt_ = updatedAt_;
         result.nameCa_ = nameCa_;
         result.nameMsp_ = nameMsp_;
+        result.userEmail_ = userEmail_;
+        result.userName_ = userName_;
         onBuilt();
         return result;
       }
@@ -3888,6 +4328,14 @@ public final class NetworkOuterClass {
         }
         if (!other.getNameMsp().isEmpty()) {
           nameMsp_ = other.nameMsp_;
+          onChanged();
+        }
+        if (!other.getUserEmail().isEmpty()) {
+          userEmail_ = other.userEmail_;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5071,6 +5519,158 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object userEmail_ = "";
+      /**
+       * <code>string user_email = 14 [json_name = "userEmail"];</code>
+       * @return The userEmail.
+       */
+      public java.lang.String getUserEmail() {
+        java.lang.Object ref = userEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 14 [json_name = "userEmail"];</code>
+       * @return The bytes for userEmail.
+       */
+      public com.google.protobuf.ByteString
+          getUserEmailBytes() {
+        java.lang.Object ref = userEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 14 [json_name = "userEmail"];</code>
+       * @param value The userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 14 [json_name = "userEmail"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserEmail() {
+        
+        userEmail_ = getDefaultInstance().getUserEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 14 [json_name = "userEmail"];</code>
+       * @param value The bytes for userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string user_name = 15 [json_name = "userName"];</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 15 [json_name = "userName"];</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 15 [json_name = "userName"];</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 15 [json_name = "userName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 15 [json_name = "userName"];</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5199,6 +5799,30 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getUpdatedAtBytes();
+
+    /**
+     * <code>string user_email = 7 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    java.lang.String getUserEmail();
+    /**
+     * <code>string user_email = 7 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    com.google.protobuf.ByteString
+        getUserEmailBytes();
+
+    /**
+     * <code>string user_name = 8 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string user_name = 8 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Peer}
@@ -5219,6 +5843,8 @@ public final class NetworkOuterClass {
       status_ = "";
       createdAt_ = "";
       updatedAt_ = "";
+      userEmail_ = "";
+      userName_ = "";
     }
 
     @java.lang.Override
@@ -5285,6 +5911,18 @@ public final class NetworkOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               updatedAt_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmail_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
               break;
             }
             default: {
@@ -5547,6 +6185,82 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int USER_EMAIL_FIELD_NUMBER = 7;
+    private volatile java.lang.Object userEmail_;
+    /**
+     * <code>string user_email = 7 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getUserEmail() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_email = 7 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserEmailBytes() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 8;
+    private volatile java.lang.Object userName_;
+    /**
+     * <code>string user_name = 8 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_name = 8 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5579,6 +6293,12 @@ public final class NetworkOuterClass {
       if (!getUpdatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, updatedAt_);
       }
+      if (!getUserEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, userName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5605,6 +6325,12 @@ public final class NetworkOuterClass {
       }
       if (!getUpdatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, updatedAt_);
+      }
+      if (!getUserEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, userName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5633,6 +6359,10 @@ public final class NetworkOuterClass {
           .equals(other.getCreatedAt())) return false;
       if (!getUpdatedAt()
           .equals(other.getUpdatedAt())) return false;
+      if (!getUserEmail()
+          .equals(other.getUserEmail())) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5656,6 +6386,10 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getCreatedAt().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (37 * hash) + USER_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserEmail().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5801,6 +6535,10 @@ public final class NetworkOuterClass {
 
         updatedAt_ = "";
 
+        userEmail_ = "";
+
+        userName_ = "";
+
         return this;
       }
 
@@ -5833,6 +6571,8 @@ public final class NetworkOuterClass {
         result.status_ = status_;
         result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
+        result.userEmail_ = userEmail_;
+        result.userName_ = userName_;
         onBuilt();
         return result;
       }
@@ -5903,6 +6643,14 @@ public final class NetworkOuterClass {
         }
         if (!other.getUpdatedAt().isEmpty()) {
           updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
+        if (!other.getUserEmail().isEmpty()) {
+          userEmail_ = other.userEmail_;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6389,6 +7137,158 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object userEmail_ = "";
+      /**
+       * <code>string user_email = 7 [json_name = "userEmail"];</code>
+       * @return The userEmail.
+       */
+      public java.lang.String getUserEmail() {
+        java.lang.Object ref = userEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 7 [json_name = "userEmail"];</code>
+       * @return The bytes for userEmail.
+       */
+      public com.google.protobuf.ByteString
+          getUserEmailBytes() {
+        java.lang.Object ref = userEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 7 [json_name = "userEmail"];</code>
+       * @param value The userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 7 [json_name = "userEmail"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserEmail() {
+        
+        userEmail_ = getDefaultInstance().getUserEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 7 [json_name = "userEmail"];</code>
+       * @param value The bytes for userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string user_name = 8 [json_name = "userName"];</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 8 [json_name = "userName"];</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 8 [json_name = "userName"];</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 8 [json_name = "userName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 8 [json_name = "userName"];</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6529,6 +7429,30 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getUpdatedAtBytes();
+
+    /**
+     * <code>string user_email = 8 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    java.lang.String getUserEmail();
+    /**
+     * <code>string user_email = 8 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    com.google.protobuf.ByteString
+        getUserEmailBytes();
+
+    /**
+     * <code>string user_name = 9 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string user_name = 9 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Orderer}
@@ -6550,6 +7474,8 @@ public final class NetworkOuterClass {
       status_ = "";
       createdAt_ = "";
       updatedAt_ = "";
+      userEmail_ = "";
+      userName_ = "";
     }
 
     @java.lang.Override
@@ -6622,6 +7548,18 @@ public final class NetworkOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               updatedAt_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmail_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
               break;
             }
             default: {
@@ -6922,6 +7860,82 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int USER_EMAIL_FIELD_NUMBER = 8;
+    private volatile java.lang.Object userEmail_;
+    /**
+     * <code>string user_email = 8 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getUserEmail() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_email = 8 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserEmailBytes() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 9;
+    private volatile java.lang.Object userName_;
+    /**
+     * <code>string user_name = 9 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_name = 9 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6957,6 +7971,12 @@ public final class NetworkOuterClass {
       if (!getUpdatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, updatedAt_);
       }
+      if (!getUserEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6987,6 +8007,12 @@ public final class NetworkOuterClass {
       if (!getUpdatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, updatedAt_);
       }
+      if (!getUserEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userName_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7016,6 +8042,10 @@ public final class NetworkOuterClass {
           .equals(other.getCreatedAt())) return false;
       if (!getUpdatedAt()
           .equals(other.getUpdatedAt())) return false;
+      if (!getUserEmail()
+          .equals(other.getUserEmail())) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7041,6 +8071,10 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getCreatedAt().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (37 * hash) + USER_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserEmail().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7188,6 +8222,10 @@ public final class NetworkOuterClass {
 
         updatedAt_ = "";
 
+        userEmail_ = "";
+
+        userName_ = "";
+
         return this;
       }
 
@@ -7221,6 +8259,8 @@ public final class NetworkOuterClass {
         result.status_ = status_;
         result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
+        result.userEmail_ = userEmail_;
+        result.userName_ = userName_;
         onBuilt();
         return result;
       }
@@ -7295,6 +8335,14 @@ public final class NetworkOuterClass {
         }
         if (!other.getUpdatedAt().isEmpty()) {
           updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
+        if (!other.getUserEmail().isEmpty()) {
+          userEmail_ = other.userEmail_;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -7857,6 +8905,158 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object userEmail_ = "";
+      /**
+       * <code>string user_email = 8 [json_name = "userEmail"];</code>
+       * @return The userEmail.
+       */
+      public java.lang.String getUserEmail() {
+        java.lang.Object ref = userEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 8 [json_name = "userEmail"];</code>
+       * @return The bytes for userEmail.
+       */
+      public com.google.protobuf.ByteString
+          getUserEmailBytes() {
+        java.lang.Object ref = userEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 8 [json_name = "userEmail"];</code>
+       * @param value The userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 8 [json_name = "userEmail"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserEmail() {
+        
+        userEmail_ = getDefaultInstance().getUserEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 8 [json_name = "userEmail"];</code>
+       * @param value The bytes for userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string user_name = 9 [json_name = "userName"];</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 9 [json_name = "userName"];</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 9 [json_name = "userName"];</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 9 [json_name = "userName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 9 [json_name = "userName"];</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8030,6 +9230,30 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getUpdatedAtBytes();
+
+    /**
+     * <code>string user_email = 9 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    java.lang.String getUserEmail();
+    /**
+     * <code>string user_email = 9 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    com.google.protobuf.ByteString
+        getUserEmailBytes();
+
+    /**
+     * <code>string user_name = 10 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string user_name = 10 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Channel}
@@ -8052,6 +9276,8 @@ public final class NetworkOuterClass {
       status_ = "";
       createdAt_ = "";
       updatedAt_ = "";
+      userEmail_ = "";
+      userName_ = "";
     }
 
     @java.lang.Override
@@ -8134,6 +9360,18 @@ public final class NetworkOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               updatedAt_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmail_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
               break;
             }
             default: {
@@ -8480,6 +9718,82 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int USER_EMAIL_FIELD_NUMBER = 9;
+    private volatile java.lang.Object userEmail_;
+    /**
+     * <code>string user_email = 9 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getUserEmail() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_email = 9 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserEmailBytes() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 10;
+    private volatile java.lang.Object userName_;
+    /**
+     * <code>string user_name = 10 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_name = 10 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8517,6 +9831,12 @@ public final class NetworkOuterClass {
       }
       if (!getUpdatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updatedAt_);
+      }
+      if (!getUserEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, userName_);
       }
       unknownFields.writeTo(output);
     }
@@ -8556,6 +9876,12 @@ public final class NetworkOuterClass {
       if (!getUpdatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, updatedAt_);
       }
+      if (!getUserEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, userName_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8587,6 +9913,10 @@ public final class NetworkOuterClass {
           .equals(other.getCreatedAt())) return false;
       if (!getUpdatedAt()
           .equals(other.getUpdatedAt())) return false;
+      if (!getUserEmail()
+          .equals(other.getUserEmail())) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8616,6 +9946,10 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getCreatedAt().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (37 * hash) + USER_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserEmail().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8765,6 +10099,10 @@ public final class NetworkOuterClass {
 
         updatedAt_ = "";
 
+        userEmail_ = "";
+
+        userName_ = "";
+
         return this;
       }
 
@@ -8804,6 +10142,8 @@ public final class NetworkOuterClass {
         result.status_ = status_;
         result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
+        result.userEmail_ = userEmail_;
+        result.userName_ = userName_;
         onBuilt();
         return result;
       }
@@ -8888,6 +10228,14 @@ public final class NetworkOuterClass {
         }
         if (!other.getUpdatedAt().isEmpty()) {
           updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
+        if (!other.getUserEmail().isEmpty()) {
+          userEmail_ = other.userEmail_;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -9578,6 +10926,158 @@ public final class NetworkOuterClass {
   checkByteStringIsUtf8(value);
         
         updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userEmail_ = "";
+      /**
+       * <code>string user_email = 9 [json_name = "userEmail"];</code>
+       * @return The userEmail.
+       */
+      public java.lang.String getUserEmail() {
+        java.lang.Object ref = userEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 9 [json_name = "userEmail"];</code>
+       * @return The bytes for userEmail.
+       */
+      public com.google.protobuf.ByteString
+          getUserEmailBytes() {
+        java.lang.Object ref = userEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 9 [json_name = "userEmail"];</code>
+       * @param value The userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 9 [json_name = "userEmail"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserEmail() {
+        
+        userEmail_ = getDefaultInstance().getUserEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 9 [json_name = "userEmail"];</code>
+       * @param value The bytes for userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string user_name = 10 [json_name = "userName"];</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 10 [json_name = "userName"];</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 10 [json_name = "userName"];</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 10 [json_name = "userName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 10 [json_name = "userName"];</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
         onChanged();
         return this;
       }
@@ -11142,7 +12642,7 @@ public final class NetworkOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)blockchain/network/v1alpha1/network.pr" +
-      "oto\022\033blockchain.network.v1alpha1\"\316\003\n\007Net" +
+      "oto\022\033blockchain.network.v1alpha1\"\212\004\n\007Net" +
       "work\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014network_name\030\002 \001" +
       "(\tR\013networkName\022\034\n\tframework\030\003 \001(\tR\tfram" +
       "ework\022\022\n\004type\030\004 \001(\tR\004type\022\027\n\007user_id\030\005 \001" +
@@ -11154,42 +12654,49 @@ public final class NetworkOuterClass {
       "orporations\022.\n\023ccp_organization_id\030\013 \001(\t" +
       "R\021ccpOrganizationId\022L\n\013environment\030\014 \001(\016" +
       "2*.blockchain.network.v1alpha1.Blockchai" +
-      "nEnvR\013environment\"\241\003\n\013Corporation\022\016\n\002id\030" +
-      "\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\026\n\006do" +
-      "main\030\003 \001(\tR\006domain\022%\n\016admin_password\030\004 \001" +
-      "(\tR\radminPassword\022\035\n\nadmin_user\030\005 \001(\tR\ta" +
-      "dminUser\022#\n\rblockchain_id\030\006 \001(\tR\014blockch" +
-      "ainId\0227\n\005peers\030\007 \003(\0132!.blockchain.networ" +
-      "k.v1alpha1.PeerR\005peers\022\026\n\006status\030\010 \001(\tR\006" +
-      "status\022#\n\rerror_details\030\t \001(\tR\014errorDeta" +
-      "ils\022\035\n\ncreated_at\030\n \001(\tR\tcreatedAt\022\035\n\nup" +
-      "dated_at\030\013 \001(\tR\tupdatedAt\022\027\n\007name_ca\030\014 \001" +
-      "(\tR\006nameCa\022\031\n\010name_msp\030\r \001(\tR\007nameMsp\"\224\001" +
+      "nEnvR\013environment\022\035\n\nuser_email\030\r \001(\tR\tu" +
+      "serEmail\022\033\n\tuser_name\030\016 \001(\tR\010userName\"\335\003" +
+      "\n\013Corporation\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id" +
+      "\030\002 \001(\tR\006userId\022\026\n\006domain\030\003 \001(\tR\006domain\022%" +
+      "\n\016admin_password\030\004 \001(\tR\radminPassword\022\035\n" +
+      "\nadmin_user\030\005 \001(\tR\tadminUser\022#\n\rblockcha" +
+      "in_id\030\006 \001(\tR\014blockchainId\0227\n\005peers\030\007 \003(\013" +
+      "2!.blockchain.network.v1alpha1.PeerR\005pee" +
+      "rs\022\026\n\006status\030\010 \001(\tR\006status\022#\n\rerror_deta" +
+      "ils\030\t \001(\tR\014errorDetails\022\035\n\ncreated_at\030\n " +
+      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\013 \001(\tR\tupda" +
+      "tedAt\022\027\n\007name_ca\030\014 \001(\tR\006nameCa\022\031\n\010name_m" +
+      "sp\030\r \001(\tR\007nameMsp\022\035\n\nuser_email\030\016 \001(\tR\tu" +
+      "serEmail\022\033\n\tuser_name\030\017 \001(\tR\010userName\"\320\001" +
       "\n\004Peer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
       "me\022\022\n\004type\030\003 \001(\tR\004type\022\026\n\006status\030\004 \001(\tR\006" +
       "status\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAt\022\035\n" +
-      "\nupdated_at\030\006 \001(\tR\tupdatedAt\"\274\001\n\007Orderer" +
-      "\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022#\n\r" +
-      "blockchain_id\030\003 \001(\tR\014blockchainId\022\022\n\004typ" +
-      "e\030\004 \001(\tR\004type\022\026\n\006status\030\005 \001(\tR\006status\022\035\n" +
-      "\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_" +
-      "at\030\007 \001(\tR\tupdatedAt\"\370\001\n\007Channel\022\016\n\002id\030\001 " +
+      "\nupdated_at\030\006 \001(\tR\tupdatedAt\022\035\n\nuser_ema" +
+      "il\030\007 \001(\tR\tuserEmail\022\033\n\tuser_name\030\010 \001(\tR\010" +
+      "userName\"\370\001\n\007Orderer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004" +
+      "name\030\002 \001(\tR\004name\022#\n\rblockchain_id\030\003 \001(\tR" +
+      "\014blockchainId\022\022\n\004type\030\004 \001(\tR\004type\022\026\n\006sta" +
+      "tus\030\005 \001(\tR\006status\022\035\n\ncreated_at\030\006 \001(\tR\tc" +
+      "reatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022" +
+      "\035\n\nuser_email\030\010 \001(\tR\tuserEmail\022\033\n\tuser_n" +
+      "ame\030\t \001(\tR\010userName\"\264\002\n\007Channel\022\016\n\002id\030\001 " +
       "\001(\tR\002id\022%\n\016corporation_id\030\002 \001(\tR\rcorpora" +
       "tionId\022#\n\rblockchain_id\030\003 \001(\tR\014blockchai" +
       "nId\022\022\n\004name\030\004 \001(\tR\004name\022\'\n\017corporation_i" +
       "ds\030\005 \003(\tR\016corporationIds\022\026\n\006status\030\006 \001(\t" +
       "R\006status\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022" +
-      "\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\"\317\001\n\nInvit" +
-      "ation\022\016\n\002id\030\001 \001(\tR\002id\022 \n\014from_user_id\030\002 " +
-      "\001(\tR\nfromUserId\022\024\n\005email\030\003 \001(\tR\005email\022\026\n" +
-      "\006status\030\004 \001(\tR\006status\022#\n\rblockchain_id\030\005" +
-      " \001(\tR\014blockchainId\022\035\n\ncreated_at\030\006 \001(\tR\t" +
-      "createdAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt" +
-      "*g\n\rBlockchainEnv\022\036\n\032BLOCKCHAIN_ENV_UNSP" +
-      "ECIFIED\020\000\022\032\n\026BLOCKCHAIN_ENV_TESTNET\020\001\022\032\n" +
-      "\026BLOCKCHAIN_ENV_MAINNET\020\002B>Z<github.com/" +
-      "cuemby/ccp-sdk/gen/go/blockchain/network" +
-      "/v1alpha1b\006proto3"
+      "\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022\035\n\nuser_e" +
+      "mail\030\t \001(\tR\tuserEmail\022\033\n\tuser_name\030\n \001(\t" +
+      "R\010userName\"\317\001\n\nInvitation\022\016\n\002id\030\001 \001(\tR\002i" +
+      "d\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022\024\n\005e" +
+      "mail\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006statu" +
+      "s\022#\n\rblockchain_id\030\005 \001(\tR\014blockchainId\022\035" +
+      "\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated" +
+      "_at\030\007 \001(\tR\tupdatedAt*g\n\rBlockchainEnv\022\036\n" +
+      "\032BLOCKCHAIN_ENV_UNSPECIFIED\020\000\022\032\n\026BLOCKCH" +
+      "AIN_ENV_TESTNET\020\001\022\032\n\026BLOCKCHAIN_ENV_MAIN" +
+      "NET\020\002B>Z<github.com/cuemby/ccp-sdk/gen/g" +
+      "o/blockchain/network/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11200,31 +12707,31 @@ public final class NetworkOuterClass {
     internal_static_blockchain_network_v1alpha1_Network_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Network_descriptor,
-        new java.lang.String[] { "Id", "NetworkName", "Framework", "Type", "UserId", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Corporations", "CcpOrganizationId", "Environment", });
+        new java.lang.String[] { "Id", "NetworkName", "Framework", "Type", "UserId", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "Corporations", "CcpOrganizationId", "Environment", "UserEmail", "UserName", });
     internal_static_blockchain_network_v1alpha1_Corporation_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_blockchain_network_v1alpha1_Corporation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Corporation_descriptor,
-        new java.lang.String[] { "Id", "UserId", "Domain", "AdminPassword", "AdminUser", "BlockchainId", "Peers", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "NameCa", "NameMsp", });
+        new java.lang.String[] { "Id", "UserId", "Domain", "AdminPassword", "AdminUser", "BlockchainId", "Peers", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "NameCa", "NameMsp", "UserEmail", "UserName", });
     internal_static_blockchain_network_v1alpha1_Peer_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_blockchain_network_v1alpha1_Peer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Peer_descriptor,
-        new java.lang.String[] { "Id", "Name", "Type", "Status", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "Name", "Type", "Status", "CreatedAt", "UpdatedAt", "UserEmail", "UserName", });
     internal_static_blockchain_network_v1alpha1_Orderer_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_blockchain_network_v1alpha1_Orderer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Orderer_descriptor,
-        new java.lang.String[] { "Id", "Name", "BlockchainId", "Type", "Status", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "Name", "BlockchainId", "Type", "Status", "CreatedAt", "UpdatedAt", "UserEmail", "UserName", });
     internal_static_blockchain_network_v1alpha1_Channel_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_blockchain_network_v1alpha1_Channel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Channel_descriptor,
-        new java.lang.String[] { "Id", "CorporationId", "BlockchainId", "Name", "CorporationIds", "Status", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "CorporationId", "BlockchainId", "Name", "CorporationIds", "Status", "CreatedAt", "UpdatedAt", "UserEmail", "UserName", });
     internal_static_blockchain_network_v1alpha1_Invitation_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_blockchain_network_v1alpha1_Invitation_fieldAccessorTable = new

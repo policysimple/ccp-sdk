@@ -38,7 +38,10 @@ constexpr AddPeerToCorporationRequest::AddPeerToCorporationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : ccp_organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , ccp_project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , corporation_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , corporation_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct AddPeerToCorporationRequestDefaultTypeInternal {
   constexpr AddPeerToCorporationRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -372,6 +375,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToCorporationRequest, ccp_organization_id_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToCorporationRequest, ccp_project_id_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToCorporationRequest, corporation_id_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToCorporationRequest, user_id_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToCorporationRequest, user_email_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddPeerToCorporationRequest, user_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::AddOrdererByNetworkIdRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -543,28 +549,28 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::network::v1alpha1::CreateNetworkRequest)},
   { 9, -1, sizeof(::blockchain::network::v1alpha1::AddPeerToCorporationRequest)},
-  { 17, -1, sizeof(::blockchain::network::v1alpha1::AddOrdererByNetworkIdRequest)},
-  { 25, -1, sizeof(::blockchain::network::v1alpha1::CreateChannelRequest)},
-  { 31, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainsRequest)},
-  { 39, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainsByUserIdRequest)},
-  { 47, -1, sizeof(::blockchain::network::v1alpha1::GetPeersByCorporationIdRequest)},
-  { 55, -1, sizeof(::blockchain::network::v1alpha1::GetOrderersByNetworkIdRequest)},
-  { 63, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainByIdRequest)},
-  { 69, -1, sizeof(::blockchain::network::v1alpha1::GetCorporationsByBlockchainIdRequest)},
-  { 77, -1, sizeof(::blockchain::network::v1alpha1::CreateCorporationRequest)},
-  { 85, -1, sizeof(::blockchain::network::v1alpha1::SendInvitationRequest)},
-  { 91, -1, sizeof(::blockchain::network::v1alpha1::CreateNetworkResponse)},
-  { 98, -1, sizeof(::blockchain::network::v1alpha1::AddPeerToCorporationResponse)},
-  { 105, -1, sizeof(::blockchain::network::v1alpha1::AddOrdererByNetworkIdResponse)},
-  { 112, -1, sizeof(::blockchain::network::v1alpha1::CreateChannelResponse)},
-  { 119, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainsResponse)},
-  { 128, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse)},
-  { 137, -1, sizeof(::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse)},
-  { 146, -1, sizeof(::blockchain::network::v1alpha1::GetPeersByCorporationIdResponse)},
-  { 155, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainByIdResponse)},
-  { 161, -1, sizeof(::blockchain::network::v1alpha1::GetCorporationsByBlockchainIdResponse)},
-  { 170, -1, sizeof(::blockchain::network::v1alpha1::CreateCorporationResponse)},
-  { 177, -1, sizeof(::blockchain::network::v1alpha1::SendInvitationResponse)},
+  { 20, -1, sizeof(::blockchain::network::v1alpha1::AddOrdererByNetworkIdRequest)},
+  { 28, -1, sizeof(::blockchain::network::v1alpha1::CreateChannelRequest)},
+  { 34, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainsRequest)},
+  { 42, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainsByUserIdRequest)},
+  { 50, -1, sizeof(::blockchain::network::v1alpha1::GetPeersByCorporationIdRequest)},
+  { 58, -1, sizeof(::blockchain::network::v1alpha1::GetOrderersByNetworkIdRequest)},
+  { 66, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainByIdRequest)},
+  { 72, -1, sizeof(::blockchain::network::v1alpha1::GetCorporationsByBlockchainIdRequest)},
+  { 80, -1, sizeof(::blockchain::network::v1alpha1::CreateCorporationRequest)},
+  { 88, -1, sizeof(::blockchain::network::v1alpha1::SendInvitationRequest)},
+  { 94, -1, sizeof(::blockchain::network::v1alpha1::CreateNetworkResponse)},
+  { 101, -1, sizeof(::blockchain::network::v1alpha1::AddPeerToCorporationResponse)},
+  { 108, -1, sizeof(::blockchain::network::v1alpha1::AddOrdererByNetworkIdResponse)},
+  { 115, -1, sizeof(::blockchain::network::v1alpha1::CreateChannelResponse)},
+  { 122, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainsResponse)},
+  { 131, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainsByUserIdResponse)},
+  { 140, -1, sizeof(::blockchain::network::v1alpha1::GetOrderersByNetworkIdResponse)},
+  { 149, -1, sizeof(::blockchain::network::v1alpha1::GetPeersByCorporationIdResponse)},
+  { 158, -1, sizeof(::blockchain::network::v1alpha1::GetBlockchainByIdResponse)},
+  { 164, -1, sizeof(::blockchain::network::v1alpha1::GetCorporationsByBlockchainIdResponse)},
+  { 173, -1, sizeof(::blockchain::network::v1alpha1::CreateCorporationResponse)},
+  { 180, -1, sizeof(::blockchain::network::v1alpha1::SendInvitationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -605,127 +611,130 @@ const char descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5
   "v1alpha1.CorporationR\013corporation\022.\n\023ccp"
   "_organization_id\030\003 \001(\tR\021ccpOrganizationI"
   "d\022$\n\016ccp_project_id\030\004 \001(\tR\014ccpProjectId\""
-  "\232\001\n\033AddPeerToCorporationRequest\022.\n\023ccp_o"
+  "\357\001\n\033AddPeerToCorporationRequest\022.\n\023ccp_o"
   "rganization_id\030\001 \001(\tR\021ccpOrganizationId\022"
   "$\n\016ccp_project_id\030\002 \001(\tR\014ccpProjectId\022%\n"
-  "\016corporation_id\030\003 \001(\tR\rcorporationId\"\264\001\n"
-  "\034AddOrdererByNetworkIdRequest\022>\n\007orderer"
-  "\030\001 \001(\0132$.blockchain.network.v1alpha1.Ord"
-  "ererR\007orderer\022.\n\023ccp_organization_id\030\002 \001"
-  "(\tR\021ccpOrganizationId\022$\n\016ccp_project_id\030"
-  "\003 \001(\tR\014ccpProjectId\"V\n\024CreateChannelRequ"
-  "est\022>\n\007channel\030\001 \001(\0132$.blockchain.networ"
-  "k.v1alpha1.ChannelR\007channel\"h\n\025GetBlockc"
-  "hainsRequest\022\026\n\006offset\030\001 \001(\003R\006offset\022\024\n\005"
-  "limit\030\002 \001(\003R\005limit\022!\n\014query_params\030\003 \001(\t"
-  "R\013queryParams\"f\n\035GetBlockchainsByUserIdR"
-  "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006offse"
-  "t\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"u\n"
-  "\036GetPeersByCorporationIdRequest\022%\n\016corpo"
-  "ration_id\030\001 \001(\tR\rcorporationId\022\026\n\006offset"
-  "\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"l\n\035"
-  "GetOrderersByNetworkIdRequest\022\035\n\nnetwork"
-  "_id\030\001 \001(\tR\tnetworkId\022\026\n\006offset\030\002 \001(\003R\006of"
-  "fset\022\024\n\005limit\030\003 \001(\003R\005limit\"*\n\030GetBlockch"
-  "ainByIdRequest\022\016\n\002id\030\001 \001(\tR\002id\"y\n$GetCor"
-  "porationsByBlockchainIdRequest\022#\n\rblockc"
-  "hain_id\030\001 \001(\tR\014blockchainId\022\026\n\006offset\030\002 "
-  "\001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"\274\001\n\030Cr"
-  "eateCorporationRequest\022J\n\013corporation\030\001 "
-  "\001(\0132(.blockchain.network.v1alpha1.Corpor"
-  "ationR\013corporation\022.\n\023ccp_organization_i"
+  "\016corporation_id\030\003 \001(\tR\rcorporationId\022\027\n\007"
+  "user_id\030\004 \001(\tR\006userId\022\035\n\nuser_email\030\005 \001("
+  "\tR\tuserEmail\022\033\n\tuser_name\030\006 \001(\tR\010userNam"
+  "e\"\264\001\n\034AddOrdererByNetworkIdRequest\022>\n\007or"
+  "derer\030\001 \001(\0132$.blockchain.network.v1alpha"
+  "1.OrdererR\007orderer\022.\n\023ccp_organization_i"
   "d\030\002 \001(\tR\021ccpOrganizationId\022$\n\016ccp_projec"
-  "t_id\030\003 \001(\tR\014ccpProjectId\"`\n\025SendInvitati"
-  "onRequest\022G\n\ninvitation\030\001 \001(\0132\'.blockcha"
-  "in.network.v1alpha1.InvitationR\ninvitati"
-  "on\"q\n\025CreateNetworkResponse\022>\n\007network\030\001"
-  " \001(\0132$.blockchain.network.v1alpha1.Netwo"
-  "rkR\007network\022\030\n\007message\030\002 \001(\tR\007message\"\204\001"
-  "\n\034AddPeerToCorporationResponse\022J\n\013corpor"
-  "ation\030\001 \001(\0132(.blockchain.network.v1alpha"
-  "1.CorporationR\013corporation\022\030\n\007message\030\002 "
-  "\001(\tR\007message\"y\n\035AddOrdererByNetworkIdRes"
-  "ponse\022>\n\007orderer\030\001 \001(\0132$.blockchain.netw"
-  "ork.v1alpha1.OrdererR\007orderer\022\030\n\007message"
-  "\030\002 \001(\tR\007message\"q\n\025CreateChannelResponse"
-  "\022>\n\007channel\030\001 \001(\0132$.blockchain.network.v"
-  "1alpha1.ChannelR\007channel\022\030\n\007message\030\002 \001("
-  "\tR\007message\"\256\001\n\026GetBlockchainsResponse\022@\n"
-  "\010networks\030\001 \003(\0132$.blockchain.network.v1a"
-  "lpha1.NetworkR\010networks\022\024\n\005total\030\002 \001(\003R\005"
-  "total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014prev"
-  "ious_url\030\004 \001(\tR\013previousUrl\"\266\001\n\036GetBlock"
-  "chainsByUserIdResponse\022@\n\010networks\030\001 \003(\013"
-  "2$.blockchain.network.v1alpha1.NetworkR\010"
-  "networks\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_u"
-  "rl\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR"
-  "\013previousUrl\"\266\001\n\036GetOrderersByNetworkIdR"
-  "esponse\022@\n\010orderers\030\001 \003(\0132$.blockchain.n"
-  "etwork.v1alpha1.OrdererR\010orderers\022\024\n\005tot"
-  "al\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextU"
-  "rl\022!\n\014previous_url\030\004 \001(\tR\013previousUrl\"\254\001"
-  "\n\037GetPeersByCorporationIdResponse\0225\n\004pee"
-  "r\030\001 \003(\0132!.blockchain.network.v1alpha1.Pe"
-  "erR\004peer\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_u"
-  "rl\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR"
-  "\013previousUrl\"[\n\031GetBlockchainByIdRespons"
-  "e\022>\n\007network\030\001 \001(\0132$.blockchain.network."
-  "v1alpha1.NetworkR\007network\"\311\001\n%GetCorpora"
-  "tionsByBlockchainIdResponse\022L\n\014corporati"
-  "ons\030\001 \003(\0132(.blockchain.network.v1alpha1."
-  "CorporationR\014corporations\022\024\n\005total\030\002 \001(\003"
-  "R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014pr"
-  "evious_url\030\004 \001(\tR\013previousUrl\"\201\001\n\031Create"
-  "CorporationResponse\022J\n\013corporation\030\001 \001(\013"
-  "2(.blockchain.network.v1alpha1.Corporati"
-  "onR\013corporation\022\030\n\007message\030\002 \001(\tR\007messag"
-  "e\"{\n\026SendInvitationResponse\022G\n\ninvitatio"
-  "n\030\001 \001(\0132\'.blockchain.network.v1alpha1.In"
-  "vitationR\ninvitation\022\030\n\007message\030\002 \001(\tR\007m"
-  "essage2\215\r\n\024BlockchainAPIService\022v\n\rCreat"
-  "eNetwork\0221.blockchain.network.v1alpha1.C"
-  "reateNetworkRequest\0322.blockchain.network"
-  ".v1alpha1.CreateNetworkResponse\022\213\001\n\024AddP"
-  "eerToCorporation\0228.blockchain.network.v1"
-  "alpha1.AddPeerToCorporationRequest\0329.blo"
-  "ckchain.network.v1alpha1.AddPeerToCorpor"
-  "ationResponse\022y\n\016GetBlockchains\0222.blockc"
-  "hain.network.v1alpha1.GetBlockchainsRequ"
-  "est\0323.blockchain.network.v1alpha1.GetBlo"
-  "ckchainsResponse\022\221\001\n\026GetBlockchainsByUse"
-  "rId\022:.blockchain.network.v1alpha1.GetBlo"
-  "ckchainsByUserIdRequest\032;.blockchain.net"
-  "work.v1alpha1.GetBlockchainsByUserIdResp"
-  "onse\022\202\001\n\021GetBlockchainById\0225.blockchain."
-  "network.v1alpha1.GetBlockchainByIdReques"
-  "t\0326.blockchain.network.v1alpha1.GetBlock"
-  "chainByIdResponse\022\246\001\n\035GetCorporationsByB"
-  "lockchainId\022A.blockchain.network.v1alpha"
-  "1.GetCorporationsByBlockchainIdRequest\032B"
-  ".blockchain.network.v1alpha1.GetCorporat"
-  "ionsByBlockchainIdResponse\022y\n\016SendInvita"
-  "tion\0222.blockchain.network.v1alpha1.SendI"
-  "nvitationRequest\0323.blockchain.network.v1"
-  "alpha1.SendInvitationResponse\022\202\001\n\021Create"
-  "Corporation\0225.blockchain.network.v1alpha"
-  "1.CreateCorporationRequest\0326.blockchain."
-  "network.v1alpha1.CreateCorporationRespon"
-  "se\022v\n\rCreateChannel\0221.blockchain.network"
-  ".v1alpha1.CreateChannelRequest\0322.blockch"
-  "ain.network.v1alpha1.CreateChannelRespon"
-  "se\022\224\001\n\027GetPeersByCorporationId\022;.blockch"
-  "ain.network.v1alpha1.GetPeersByCorporati"
-  "onIdRequest\032<.blockchain.network.v1alpha"
-  "1.GetPeersByCorporationIdResponse\022\221\001\n\026Ge"
-  "tOrderersByNetworkId\022:.blockchain.networ"
-  "k.v1alpha1.GetOrderersByNetworkIdRequest"
-  "\032;.blockchain.network.v1alpha1.GetOrdere"
-  "rsByNetworkIdResponse\022\216\001\n\025AddOrdererByNe"
-  "tworkId\0229.blockchain.network.v1alpha1.Ad"
-  "dOrdererByNetworkIdRequest\032:.blockchain."
-  "network.v1alpha1.AddOrdererByNetworkIdRe"
-  "sponseB>Z<github.com/cuemby/ccp-sdk/gen/"
-  "go/blockchain/network/v1alpha1b\006proto3"
+  "t_id\030\003 \001(\tR\014ccpProjectId\"V\n\024CreateChanne"
+  "lRequest\022>\n\007channel\030\001 \001(\0132$.blockchain.n"
+  "etwork.v1alpha1.ChannelR\007channel\"h\n\025GetB"
+  "lockchainsRequest\022\026\n\006offset\030\001 \001(\003R\006offse"
+  "t\022\024\n\005limit\030\002 \001(\003R\005limit\022!\n\014query_params\030"
+  "\003 \001(\tR\013queryParams\"f\n\035GetBlockchainsByUs"
+  "erIdRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006"
+  "offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005lim"
+  "it\"u\n\036GetPeersByCorporationIdRequest\022%\n\016"
+  "corporation_id\030\001 \001(\tR\rcorporationId\022\026\n\006o"
+  "ffset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limi"
+  "t\"l\n\035GetOrderersByNetworkIdRequest\022\035\n\nne"
+  "twork_id\030\001 \001(\tR\tnetworkId\022\026\n\006offset\030\002 \001("
+  "\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"*\n\030GetBl"
+  "ockchainByIdRequest\022\016\n\002id\030\001 \001(\tR\002id\"y\n$G"
+  "etCorporationsByBlockchainIdRequest\022#\n\rb"
+  "lockchain_id\030\001 \001(\tR\014blockchainId\022\026\n\006offs"
+  "et\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"\274"
+  "\001\n\030CreateCorporationRequest\022J\n\013corporati"
+  "on\030\001 \001(\0132(.blockchain.network.v1alpha1.C"
+  "orporationR\013corporation\022.\n\023ccp_organizat"
+  "ion_id\030\002 \001(\tR\021ccpOrganizationId\022$\n\016ccp_p"
+  "roject_id\030\003 \001(\tR\014ccpProjectId\"`\n\025SendInv"
+  "itationRequest\022G\n\ninvitation\030\001 \001(\0132\'.blo"
+  "ckchain.network.v1alpha1.InvitationR\ninv"
+  "itation\"q\n\025CreateNetworkResponse\022>\n\007netw"
+  "ork\030\001 \001(\0132$.blockchain.network.v1alpha1."
+  "NetworkR\007network\022\030\n\007message\030\002 \001(\tR\007messa"
+  "ge\"\204\001\n\034AddPeerToCorporationResponse\022J\n\013c"
+  "orporation\030\001 \001(\0132(.blockchain.network.v1"
+  "alpha1.CorporationR\013corporation\022\030\n\007messa"
+  "ge\030\002 \001(\tR\007message\"y\n\035AddOrdererByNetwork"
+  "IdResponse\022>\n\007orderer\030\001 \001(\0132$.blockchain"
+  ".network.v1alpha1.OrdererR\007orderer\022\030\n\007me"
+  "ssage\030\002 \001(\tR\007message\"q\n\025CreateChannelRes"
+  "ponse\022>\n\007channel\030\001 \001(\0132$.blockchain.netw"
+  "ork.v1alpha1.ChannelR\007channel\022\030\n\007message"
+  "\030\002 \001(\tR\007message\"\256\001\n\026GetBlockchainsRespon"
+  "se\022@\n\010networks\030\001 \003(\0132$.blockchain.networ"
+  "k.v1alpha1.NetworkR\010networks\022\024\n\005total\030\002 "
+  "\001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n"
+  "\014previous_url\030\004 \001(\tR\013previousUrl\"\266\001\n\036Get"
+  "BlockchainsByUserIdResponse\022@\n\010networks\030"
+  "\001 \003(\0132$.blockchain.network.v1alpha1.Netw"
+  "orkR\010networks\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010n"
+  "ext_url\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004"
+  " \001(\tR\013previousUrl\"\266\001\n\036GetOrderersByNetwo"
+  "rkIdResponse\022@\n\010orderers\030\001 \003(\0132$.blockch"
+  "ain.network.v1alpha1.OrdererR\010orderers\022\024"
+  "\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007"
+  "nextUrl\022!\n\014previous_url\030\004 \001(\tR\013previousU"
+  "rl\"\254\001\n\037GetPeersByCorporationIdResponse\0225"
+  "\n\004peer\030\001 \003(\0132!.blockchain.network.v1alph"
+  "a1.PeerR\004peer\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010n"
+  "ext_url\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004"
+  " \001(\tR\013previousUrl\"[\n\031GetBlockchainByIdRe"
+  "sponse\022>\n\007network\030\001 \001(\0132$.blockchain.net"
+  "work.v1alpha1.NetworkR\007network\"\311\001\n%GetCo"
+  "rporationsByBlockchainIdResponse\022L\n\014corp"
+  "orations\030\001 \003(\0132(.blockchain.network.v1al"
+  "pha1.CorporationR\014corporations\022\024\n\005total\030"
+  "\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022"
+  "!\n\014previous_url\030\004 \001(\tR\013previousUrl\"\201\001\n\031C"
+  "reateCorporationResponse\022J\n\013corporation\030"
+  "\001 \001(\0132(.blockchain.network.v1alpha1.Corp"
+  "orationR\013corporation\022\030\n\007message\030\002 \001(\tR\007m"
+  "essage\"{\n\026SendInvitationResponse\022G\n\ninvi"
+  "tation\030\001 \001(\0132\'.blockchain.network.v1alph"
+  "a1.InvitationR\ninvitation\022\030\n\007message\030\002 \001"
+  "(\tR\007message2\215\r\n\024BlockchainAPIService\022v\n\r"
+  "CreateNetwork\0221.blockchain.network.v1alp"
+  "ha1.CreateNetworkRequest\0322.blockchain.ne"
+  "twork.v1alpha1.CreateNetworkResponse\022\213\001\n"
+  "\024AddPeerToCorporation\0228.blockchain.netwo"
+  "rk.v1alpha1.AddPeerToCorporationRequest\032"
+  "9.blockchain.network.v1alpha1.AddPeerToC"
+  "orporationResponse\022y\n\016GetBlockchains\0222.b"
+  "lockchain.network.v1alpha1.GetBlockchain"
+  "sRequest\0323.blockchain.network.v1alpha1.G"
+  "etBlockchainsResponse\022\221\001\n\026GetBlockchains"
+  "ByUserId\022:.blockchain.network.v1alpha1.G"
+  "etBlockchainsByUserIdRequest\032;.blockchai"
+  "n.network.v1alpha1.GetBlockchainsByUserI"
+  "dResponse\022\202\001\n\021GetBlockchainById\0225.blockc"
+  "hain.network.v1alpha1.GetBlockchainByIdR"
+  "equest\0326.blockchain.network.v1alpha1.Get"
+  "BlockchainByIdResponse\022\246\001\n\035GetCorporatio"
+  "nsByBlockchainId\022A.blockchain.network.v1"
+  "alpha1.GetCorporationsByBlockchainIdRequ"
+  "est\032B.blockchain.network.v1alpha1.GetCor"
+  "porationsByBlockchainIdResponse\022y\n\016SendI"
+  "nvitation\0222.blockchain.network.v1alpha1."
+  "SendInvitationRequest\0323.blockchain.netwo"
+  "rk.v1alpha1.SendInvitationResponse\022\202\001\n\021C"
+  "reateCorporation\0225.blockchain.network.v1"
+  "alpha1.CreateCorporationRequest\0326.blockc"
+  "hain.network.v1alpha1.CreateCorporationR"
+  "esponse\022v\n\rCreateChannel\0221.blockchain.ne"
+  "twork.v1alpha1.CreateChannelRequest\0322.bl"
+  "ockchain.network.v1alpha1.CreateChannelR"
+  "esponse\022\224\001\n\027GetPeersByCorporationId\022;.bl"
+  "ockchain.network.v1alpha1.GetPeersByCorp"
+  "orationIdRequest\032<.blockchain.network.v1"
+  "alpha1.GetPeersByCorporationIdResponse\022\221"
+  "\001\n\026GetOrderersByNetworkId\022:.blockchain.n"
+  "etwork.v1alpha1.GetOrderersByNetworkIdRe"
+  "quest\032;.blockchain.network.v1alpha1.GetO"
+  "rderersByNetworkIdResponse\022\216\001\n\025AddOrdere"
+  "rByNetworkId\0229.blockchain.network.v1alph"
+  "a1.AddOrdererByNetworkIdRequest\032:.blockc"
+  "hain.network.v1alpha1.AddOrdererByNetwor"
+  "kIdResponseB>Z<github.com/cuemby/ccp-sdk"
+  "/gen/go/blockchain/network/v1alpha1b\006pro"
+  "to3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_deps[2] = {
   &::descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto,
@@ -733,7 +742,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto = {
-  false, false, 5238, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto, "blockchain/network/v1alpha1/network_api.proto", 
+  false, false, 5323, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto, "blockchain/network/v1alpha1/network_api.proto", 
   &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_once, descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto_deps, 2, 24,
   schemas, file_default_instances, TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto::offsets,
   file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto, file_level_enum_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto, file_level_service_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto,
@@ -1125,6 +1134,21 @@ AddPeerToCorporationRequest::AddPeerToCorporationRequest(const AddPeerToCorporat
     corporation_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_corporation_id(), 
       GetArenaForAllocation());
   }
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
+  user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_email().empty()) {
+    user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_email(), 
+      GetArenaForAllocation());
+  }
+  user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_name().empty()) {
+    user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:blockchain.network.v1alpha1.AddPeerToCorporationRequest)
 }
 
@@ -1132,6 +1156,9 @@ inline void AddPeerToCorporationRequest::SharedCtor() {
 ccp_organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ccp_project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 corporation_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 AddPeerToCorporationRequest::~AddPeerToCorporationRequest() {
@@ -1146,6 +1173,9 @@ inline void AddPeerToCorporationRequest::SharedDtor() {
   ccp_organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ccp_project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   corporation_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void AddPeerToCorporationRequest::ArenaDtor(void* object) {
@@ -1167,6 +1197,9 @@ void AddPeerToCorporationRequest::Clear() {
   ccp_organization_id_.ClearToEmpty();
   ccp_project_id_.ClearToEmpty();
   corporation_id_.ClearToEmpty();
+  user_id_.ClearToEmpty();
+  user_email_.ClearToEmpty();
+  user_name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1200,6 +1233,33 @@ const char* AddPeerToCorporationRequest::_InternalParse(const char* ptr, ::PROTO
           auto str = _internal_mutable_corporation_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToCorporationRequest.corporation_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_id = 4 [json_name = "userId"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_email = 5 [json_name = "userEmail"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_user_email();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_email"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_name = 6 [json_name = "userName"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_user_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1262,6 +1322,36 @@ failure:
         3, this->_internal_corporation_id(), target);
   }
 
+  // string user_id = 4 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_user_id(), target);
+  }
+
+  // string user_email = 5 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_email().data(), static_cast<int>(this->_internal_user_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_email");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_user_email(), target);
+  }
+
+  // string user_name = 6 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_name().data(), static_cast<int>(this->_internal_user_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_name");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_user_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1297,6 +1387,27 @@ size_t AddPeerToCorporationRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_corporation_id());
+  }
+
+  // string user_id = 4 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // string user_email = 5 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_email());
+  }
+
+  // string user_name = 6 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_name());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1336,6 +1447,15 @@ void AddPeerToCorporationRequest::MergeFrom(const AddPeerToCorporationRequest& f
   if (!from._internal_corporation_id().empty()) {
     _internal_set_corporation_id(from._internal_corporation_id());
   }
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+  if (!from._internal_user_email().empty()) {
+    _internal_set_user_email(from._internal_user_email());
+  }
+  if (!from._internal_user_name().empty()) {
+    _internal_set_user_name(from._internal_user_name());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1367,6 +1487,21 @@ void AddPeerToCorporationRequest::InternalSwap(AddPeerToCorporationRequest* othe
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &corporation_id_, GetArenaForAllocation(),
       &other->corporation_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_email_, GetArenaForAllocation(),
+      &other->user_email_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_name_, GetArenaForAllocation(),
+      &other->user_name_, other->GetArenaForAllocation()
   );
 }
 

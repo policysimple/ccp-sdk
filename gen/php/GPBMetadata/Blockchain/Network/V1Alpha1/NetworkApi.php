@@ -18,17 +18,21 @@ class NetworkApi
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ë(
+ )
 -blockchain/network/v1alpha1/network_api.protoblockchain.network.v1alpha1google/protobuf/empty.proto"ø
 CreateNetworkRequest>
 network (2$.blockchain.network.v1alpha1.NetworkRnetworkJ
 corporation (2(.blockchain.network.v1alpha1.CorporationRcorporation.
 ccp_organization_id (	RccpOrganizationId$
-ccp_project_id (	RccpProjectId"š
+ccp_project_id (	RccpProjectId"ï
 AddPeerToCorporationRequest.
 ccp_organization_id (	RccpOrganizationId$
 ccp_project_id (	RccpProjectId%
-corporation_id (	RcorporationId"´
+corporation_id (	RcorporationId
+user_id (	RuserId
+
+user_email (	R	userEmail
+	user_name (	RuserName"´
 AddOrdererByNetworkIdRequest>
 orderer (2$.blockchain.network.v1alpha1.OrdererRorderer.
 ccp_organization_id (	RccpOrganizationId$

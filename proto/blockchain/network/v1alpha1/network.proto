@@ -22,6 +22,8 @@ message Network {
     repeated Corporation corporations = 10;
     string ccp_organization_id = 11;
     BlockchainEnv environment = 12;
+    string user_email = 13;
+    string user_name = 14;
 }
 
 message Corporation {
@@ -38,6 +40,8 @@ message Corporation {
     string updated_at = 11;
     string name_ca = 12;
     string name_msp = 13;
+    string user_email = 14;
+    string user_name = 15;
 }
 
 message Peer {
@@ -47,6 +51,8 @@ message Peer {
     string status = 4;
     string created_at = 5;
     string updated_at = 6;
+    string user_email = 7;
+    string user_name = 8;
 }
 
 message Orderer {
@@ -57,6 +63,8 @@ message Orderer {
     string status = 5;
     string created_at = 6;
     string updated_at = 7;
+    string user_email = 8;
+    string user_name = 9;
 }
 
 message Channel {
@@ -68,6 +76,8 @@ message Channel {
     string status = 6;
     string created_at = 7;
     string updated_at = 8;
+    string user_email = 9;
+    string user_name = 10;
 }
 
 message Invitation {
