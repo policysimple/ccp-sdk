@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-blockchain/network/v1alpha1/network_api.proto\x12\x1b\x62lockchain.network.v1alpha1\x1a)blockchain/network/v1alpha1/network.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xf8\x01\n\x14\x43reateNetworkRequest\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12J\n\x0b\x63orporation\x18\x02 \x01(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0b\x63orporation\x12.\n\x13\x63\x63p_organization_id\x18\x03 \x01(\tR\x11\x63\x63pOrganizationId\x12$\n\x0e\x63\x63p_project_id\x18\x04 \x01(\tR\x0c\x63\x63pProjectId\"\x9a\x01\n\x1b\x41\x64\x64PeerToCorporationRequest\x12.\n\x13\x63\x63p_organization_id\x18\x01 \x01(\tR\x11\x63\x63pOrganizationId\x12$\n\x0e\x63\x63p_project_id\x18\x02 \x01(\tR\x0c\x63\x63pProjectId\x12%\n\x0e\x63orporation_id\x18\x03 \x01(\tR\rcorporationId\"\xb4\x01\n\x1c\x41\x64\x64OrdererByNetworkIdRequest\x12>\n\x07orderer\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.OrdererR\x07orderer\x12.\n\x13\x63\x63p_organization_id\x18\x02 \x01(\tR\x11\x63\x63pOrganizationId\x12$\n\x0e\x63\x63p_project_id\x18\x03 \x01(\tR\x0c\x63\x63pProjectId\"V\n\x14\x43reateChannelRequest\x12>\n\x07\x63hannel\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.ChannelR\x07\x63hannel\"h\n\x15GetBlockchainsRequest\x12\x16\n\x06offset\x18\x01 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x03R\x05limit\x12!\n\x0cquery_params\x18\x03 \x01(\tR\x0bqueryParams\"f\n\x1dGetBlockchainsByUserIdRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x16\n\x06offset\x18\x02 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x03 \x01(\x03R\x05limit\"u\n\x1eGetPeersByCorporationIdRequest\x12%\n\x0e\x63orporation_id\x18\x01 \x01(\tR\rcorporationId\x12\x16\n\x06offset\x18\x02 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x03 \x01(\x03R\x05limit\"l\n\x1dGetOrderersByNetworkIdRequest\x12\x1d\n\nnetwork_id\x18\x01 \x01(\tR\tnetworkId\x12\x16\n\x06offset\x18\x02 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x03 \x01(\x03R\x05limit\"*\n\x18GetBlockchainByIdRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"y\n$GetCorporationsByBlockchainIdRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\x16\n\x06offset\x18\x02 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x03 \x01(\x03R\x05limit\"\xbc\x01\n\x18\x43reateCorporationRequest\x12J\n\x0b\x63orporation\x18\x01 \x01(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0b\x63orporation\x12.\n\x13\x63\x63p_organization_id\x18\x02 \x01(\tR\x11\x63\x63pOrganizationId\x12$\n\x0e\x63\x63p_project_id\x18\x03 \x01(\tR\x0c\x63\x63pProjectId\"`\n\x15SendInvitationRequest\x12G\n\ninvitation\x18\x01 \x01(\x0b\x32\'.blockchain.network.v1alpha1.InvitationR\ninvitation\"q\n\x15\x43reateNetworkResponse\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"\x84\x01\n\x1c\x41\x64\x64PeerToCorporationResponse\x12J\n\x0b\x63orporation\x18\x01 \x01(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0b\x63orporation\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"y\n\x1d\x41\x64\x64OrdererByNetworkIdResponse\x12>\n\x07orderer\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.OrdererR\x07orderer\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"q\n\x15\x43reateChannelResponse\x12>\n\x07\x63hannel\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.ChannelR\x07\x63hannel\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"\xae\x01\n\x16GetBlockchainsResponse\x12@\n\x08networks\x18\x01 \x03(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x08networks\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"\xb6\x01\n\x1eGetBlockchainsByUserIdResponse\x12@\n\x08networks\x18\x01 \x03(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x08networks\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"\xb6\x01\n\x1eGetOrderersByNetworkIdResponse\x12@\n\x08orderers\x18\x01 \x03(\x0b\x32$.blockchain.network.v1alpha1.OrdererR\x08orderers\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"\xac\x01\n\x1fGetPeersByCorporationIdResponse\x12\x35\n\x04peer\x18\x01 \x03(\x0b\x32!.blockchain.network.v1alpha1.PeerR\x04peer\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"[\n\x19GetBlockchainByIdResponse\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\"\xc9\x01\n%GetCorporationsByBlockchainIdResponse\x12L\n\x0c\x63orporations\x18\x01 \x03(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0c\x63orporations\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"\x81\x01\n\x19\x43reateCorporationResponse\x12J\n\x0b\x63orporation\x18\x01 \x01(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0b\x63orporation\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"{\n\x16SendInvitationResponse\x12G\n\ninvitation\x18\x01 \x01(\x0b\x32\'.blockchain.network.v1alpha1.InvitationR\ninvitation\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message2\x8d\r\n\x14\x42lockchainAPIService\x12v\n\rCreateNetwork\x12\x31.blockchain.network.v1alpha1.CreateNetworkRequest\x1a\x32.blockchain.network.v1alpha1.CreateNetworkResponse\x12\x8b\x01\n\x14\x41\x64\x64PeerToCorporation\x12\x38.blockchain.network.v1alpha1.AddPeerToCorporationRequest\x1a\x39.blockchain.network.v1alpha1.AddPeerToCorporationResponse\x12y\n\x0eGetBlockchains\x12\x32.blockchain.network.v1alpha1.GetBlockchainsRequest\x1a\x33.blockchain.network.v1alpha1.GetBlockchainsResponse\x12\x91\x01\n\x16GetBlockchainsByUserId\x12:.blockchain.network.v1alpha1.GetBlockchainsByUserIdRequest\x1a;.blockchain.network.v1alpha1.GetBlockchainsByUserIdResponse\x12\x82\x01\n\x11GetBlockchainById\x12\x35.blockchain.network.v1alpha1.GetBlockchainByIdRequest\x1a\x36.blockchain.network.v1alpha1.GetBlockchainByIdResponse\x12\xa6\x01\n\x1dGetCorporationsByBlockchainId\x12\x41.blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest\x1a\x42.blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse\x12y\n\x0eSendInvitation\x12\x32.blockchain.network.v1alpha1.SendInvitationRequest\x1a\x33.blockchain.network.v1alpha1.SendInvitationResponse\x12\x82\x01\n\x11\x43reateCorporation\x12\x35.blockchain.network.v1alpha1.CreateCorporationRequest\x1a\x36.blockchain.network.v1alpha1.CreateCorporationResponse\x12v\n\rCreateChannel\x12\x31.blockchain.network.v1alpha1.CreateChannelRequest\x1a\x32.blockchain.network.v1alpha1.CreateChannelResponse\x12\x94\x01\n\x17GetPeersByCorporationId\x12;.blockchain.network.v1alpha1.GetPeersByCorporationIdRequest\x1a<.blockchain.network.v1alpha1.GetPeersByCorporationIdResponse\x12\x91\x01\n\x16GetOrderersByNetworkId\x12:.blockchain.network.v1alpha1.GetOrderersByNetworkIdRequest\x1a;.blockchain.network.v1alpha1.GetOrderersByNetworkIdResponse\x12\x8e\x01\n\x15\x41\x64\x64OrdererByNetworkId\x12\x39.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest\x1a:.blockchain.network.v1alpha1.AddOrdererByNetworkIdResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
+  serialized_pb=b'\n-blockchain/network/v1alpha1/network_api.proto\x12\x1b\x62lockchain.network.v1alpha1\x1a)blockchain/network/v1alpha1/network.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xf8\x01\n\x14\x43reateNetworkRequest\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12J\n\x0b\x63orporation\x18\x02 \x01(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0b\x63orporation\x12.\n\x13\x63\x63p_organization_id\x18\x03 \x01(\tR\x11\x63\x63pOrganizationId\x12$\n\x0e\x63\x63p_project_id\x18\x04 \x01(\tR\x0c\x63\x63pProjectId\"\xef\x01\n\x1b\x41\x64\x64PeerToCorporationRequest\x12.\n\x13\x63\x63p_organization_id\x18\x01 \x01(\tR\x11\x63\x63pOrganizationId\x12$\n\x0e\x63\x63p_project_id\x18\x02 \x01(\tR\x0c\x63\x63pProjectId\x12%\n\x0e\x63orporation_id\x18\x03 \x01(\tR\rcorporationId\x12\x17\n\x07user_id\x18\x04 \x01(\tR\x06userId\x12\x1d\n\nuser_email\x18\x05 \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\x06 \x01(\tR\x08userName\"\xb4\x01\n\x1c\x41\x64\x64OrdererByNetworkIdRequest\x12>\n\x07orderer\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.OrdererR\x07orderer\x12.\n\x13\x63\x63p_organization_id\x18\x02 \x01(\tR\x11\x63\x63pOrganizationId\x12$\n\x0e\x63\x63p_project_id\x18\x03 \x01(\tR\x0c\x63\x63pProjectId\"V\n\x14\x43reateChannelRequest\x12>\n\x07\x63hannel\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.ChannelR\x07\x63hannel\"h\n\x15GetBlockchainsRequest\x12\x16\n\x06offset\x18\x01 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x03R\x05limit\x12!\n\x0cquery_params\x18\x03 \x01(\tR\x0bqueryParams\"f\n\x1dGetBlockchainsByUserIdRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x16\n\x06offset\x18\x02 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x03 \x01(\x03R\x05limit\"u\n\x1eGetPeersByCorporationIdRequest\x12%\n\x0e\x63orporation_id\x18\x01 \x01(\tR\rcorporationId\x12\x16\n\x06offset\x18\x02 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x03 \x01(\x03R\x05limit\"l\n\x1dGetOrderersByNetworkIdRequest\x12\x1d\n\nnetwork_id\x18\x01 \x01(\tR\tnetworkId\x12\x16\n\x06offset\x18\x02 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x03 \x01(\x03R\x05limit\"*\n\x18GetBlockchainByIdRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"y\n$GetCorporationsByBlockchainIdRequest\x12#\n\rblockchain_id\x18\x01 \x01(\tR\x0c\x62lockchainId\x12\x16\n\x06offset\x18\x02 \x01(\x03R\x06offset\x12\x14\n\x05limit\x18\x03 \x01(\x03R\x05limit\"\xbc\x01\n\x18\x43reateCorporationRequest\x12J\n\x0b\x63orporation\x18\x01 \x01(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0b\x63orporation\x12.\n\x13\x63\x63p_organization_id\x18\x02 \x01(\tR\x11\x63\x63pOrganizationId\x12$\n\x0e\x63\x63p_project_id\x18\x03 \x01(\tR\x0c\x63\x63pProjectId\"`\n\x15SendInvitationRequest\x12G\n\ninvitation\x18\x01 \x01(\x0b\x32\'.blockchain.network.v1alpha1.InvitationR\ninvitation\"q\n\x15\x43reateNetworkResponse\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"\x84\x01\n\x1c\x41\x64\x64PeerToCorporationResponse\x12J\n\x0b\x63orporation\x18\x01 \x01(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0b\x63orporation\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"y\n\x1d\x41\x64\x64OrdererByNetworkIdResponse\x12>\n\x07orderer\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.OrdererR\x07orderer\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"q\n\x15\x43reateChannelResponse\x12>\n\x07\x63hannel\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.ChannelR\x07\x63hannel\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"\xae\x01\n\x16GetBlockchainsResponse\x12@\n\x08networks\x18\x01 \x03(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x08networks\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"\xb6\x01\n\x1eGetBlockchainsByUserIdResponse\x12@\n\x08networks\x18\x01 \x03(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x08networks\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"\xb6\x01\n\x1eGetOrderersByNetworkIdResponse\x12@\n\x08orderers\x18\x01 \x03(\x0b\x32$.blockchain.network.v1alpha1.OrdererR\x08orderers\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"\xac\x01\n\x1fGetPeersByCorporationIdResponse\x12\x35\n\x04peer\x18\x01 \x03(\x0b\x32!.blockchain.network.v1alpha1.PeerR\x04peer\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"[\n\x19GetBlockchainByIdResponse\x12>\n\x07network\x18\x01 \x01(\x0b\x32$.blockchain.network.v1alpha1.NetworkR\x07network\"\xc9\x01\n%GetCorporationsByBlockchainIdResponse\x12L\n\x0c\x63orporations\x18\x01 \x03(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0c\x63orporations\x12\x14\n\x05total\x18\x02 \x01(\x03R\x05total\x12\x19\n\x08next_url\x18\x03 \x01(\tR\x07nextUrl\x12!\n\x0cprevious_url\x18\x04 \x01(\tR\x0bpreviousUrl\"\x81\x01\n\x19\x43reateCorporationResponse\x12J\n\x0b\x63orporation\x18\x01 \x01(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0b\x63orporation\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"{\n\x16SendInvitationResponse\x12G\n\ninvitation\x18\x01 \x01(\x0b\x32\'.blockchain.network.v1alpha1.InvitationR\ninvitation\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message2\x8d\r\n\x14\x42lockchainAPIService\x12v\n\rCreateNetwork\x12\x31.blockchain.network.v1alpha1.CreateNetworkRequest\x1a\x32.blockchain.network.v1alpha1.CreateNetworkResponse\x12\x8b\x01\n\x14\x41\x64\x64PeerToCorporation\x12\x38.blockchain.network.v1alpha1.AddPeerToCorporationRequest\x1a\x39.blockchain.network.v1alpha1.AddPeerToCorporationResponse\x12y\n\x0eGetBlockchains\x12\x32.blockchain.network.v1alpha1.GetBlockchainsRequest\x1a\x33.blockchain.network.v1alpha1.GetBlockchainsResponse\x12\x91\x01\n\x16GetBlockchainsByUserId\x12:.blockchain.network.v1alpha1.GetBlockchainsByUserIdRequest\x1a;.blockchain.network.v1alpha1.GetBlockchainsByUserIdResponse\x12\x82\x01\n\x11GetBlockchainById\x12\x35.blockchain.network.v1alpha1.GetBlockchainByIdRequest\x1a\x36.blockchain.network.v1alpha1.GetBlockchainByIdResponse\x12\xa6\x01\n\x1dGetCorporationsByBlockchainId\x12\x41.blockchain.network.v1alpha1.GetCorporationsByBlockchainIdRequest\x1a\x42.blockchain.network.v1alpha1.GetCorporationsByBlockchainIdResponse\x12y\n\x0eSendInvitation\x12\x32.blockchain.network.v1alpha1.SendInvitationRequest\x1a\x33.blockchain.network.v1alpha1.SendInvitationResponse\x12\x82\x01\n\x11\x43reateCorporation\x12\x35.blockchain.network.v1alpha1.CreateCorporationRequest\x1a\x36.blockchain.network.v1alpha1.CreateCorporationResponse\x12v\n\rCreateChannel\x12\x31.blockchain.network.v1alpha1.CreateChannelRequest\x1a\x32.blockchain.network.v1alpha1.CreateChannelResponse\x12\x94\x01\n\x17GetPeersByCorporationId\x12;.blockchain.network.v1alpha1.GetPeersByCorporationIdRequest\x1a<.blockchain.network.v1alpha1.GetPeersByCorporationIdResponse\x12\x91\x01\n\x16GetOrderersByNetworkId\x12:.blockchain.network.v1alpha1.GetOrderersByNetworkIdRequest\x1a;.blockchain.network.v1alpha1.GetOrderersByNetworkIdResponse\x12\x8e\x01\n\x15\x41\x64\x64OrdererByNetworkId\x12\x39.blockchain.network.v1alpha1.AddOrdererByNetworkIdRequest\x1a:.blockchain.network.v1alpha1.AddOrdererByNetworkIdResponseB>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
   ,
   dependencies=[blockchain_dot_network_dot_v1alpha1_dot_network__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -110,6 +110,27 @@ _ADDPEERTOCORPORATIONREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='corporationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_email', full_name='blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_email', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='userEmail', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_name', full_name='blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_name', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='userName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -123,7 +144,7 @@ _ADDPEERTOCORPORATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=402,
-  serialized_end=556,
+  serialized_end=641,
 )
 
 
@@ -168,8 +189,8 @@ _ADDORDERERBYNETWORKIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=559,
-  serialized_end=739,
+  serialized_start=644,
+  serialized_end=824,
 )
 
 
@@ -200,8 +221,8 @@ _CREATECHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=741,
-  serialized_end=827,
+  serialized_start=826,
+  serialized_end=912,
 )
 
 
@@ -246,8 +267,8 @@ _GETBLOCKCHAINSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=829,
-  serialized_end=933,
+  serialized_start=914,
+  serialized_end=1018,
 )
 
 
@@ -292,8 +313,8 @@ _GETBLOCKCHAINSBYUSERIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=935,
-  serialized_end=1037,
+  serialized_start=1020,
+  serialized_end=1122,
 )
 
 
@@ -338,8 +359,8 @@ _GETPEERSBYCORPORATIONIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1039,
-  serialized_end=1156,
+  serialized_start=1124,
+  serialized_end=1241,
 )
 
 
@@ -384,8 +405,8 @@ _GETORDERERSBYNETWORKIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1158,
-  serialized_end=1266,
+  serialized_start=1243,
+  serialized_end=1351,
 )
 
 
@@ -416,8 +437,8 @@ _GETBLOCKCHAINBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1268,
-  serialized_end=1310,
+  serialized_start=1353,
+  serialized_end=1395,
 )
 
 
@@ -462,8 +483,8 @@ _GETCORPORATIONSBYBLOCKCHAINIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1312,
-  serialized_end=1433,
+  serialized_start=1397,
+  serialized_end=1518,
 )
 
 
@@ -508,8 +529,8 @@ _CREATECORPORATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1436,
-  serialized_end=1624,
+  serialized_start=1521,
+  serialized_end=1709,
 )
 
 
@@ -540,8 +561,8 @@ _SENDINVITATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1626,
-  serialized_end=1722,
+  serialized_start=1711,
+  serialized_end=1807,
 )
 
 
@@ -579,8 +600,8 @@ _CREATENETWORKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1724,
-  serialized_end=1837,
+  serialized_start=1809,
+  serialized_end=1922,
 )
 
 
@@ -618,8 +639,8 @@ _ADDPEERTOCORPORATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1840,
-  serialized_end=1972,
+  serialized_start=1925,
+  serialized_end=2057,
 )
 
 
@@ -657,8 +678,8 @@ _ADDORDERERBYNETWORKIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1974,
-  serialized_end=2095,
+  serialized_start=2059,
+  serialized_end=2180,
 )
 
 
@@ -696,8 +717,8 @@ _CREATECHANNELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2097,
-  serialized_end=2210,
+  serialized_start=2182,
+  serialized_end=2295,
 )
 
 
@@ -749,8 +770,8 @@ _GETBLOCKCHAINSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2213,
-  serialized_end=2387,
+  serialized_start=2298,
+  serialized_end=2472,
 )
 
 
@@ -802,8 +823,8 @@ _GETBLOCKCHAINSBYUSERIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2390,
-  serialized_end=2572,
+  serialized_start=2475,
+  serialized_end=2657,
 )
 
 
@@ -855,8 +876,8 @@ _GETORDERERSBYNETWORKIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2575,
-  serialized_end=2757,
+  serialized_start=2660,
+  serialized_end=2842,
 )
 
 
@@ -908,8 +929,8 @@ _GETPEERSBYCORPORATIONIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2760,
-  serialized_end=2932,
+  serialized_start=2845,
+  serialized_end=3017,
 )
 
 
@@ -940,8 +961,8 @@ _GETBLOCKCHAINBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2934,
-  serialized_end=3025,
+  serialized_start=3019,
+  serialized_end=3110,
 )
 
 
@@ -993,8 +1014,8 @@ _GETCORPORATIONSBYBLOCKCHAINIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3028,
-  serialized_end=3229,
+  serialized_start=3113,
+  serialized_end=3314,
 )
 
 
@@ -1032,8 +1053,8 @@ _CREATECORPORATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3232,
-  serialized_end=3361,
+  serialized_start=3317,
+  serialized_end=3446,
 )
 
 
@@ -1071,8 +1092,8 @@ _SENDINVITATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3363,
-  serialized_end=3486,
+  serialized_start=3448,
+  serialized_end=3571,
 )
 
 _CREATENETWORKREQUEST.fields_by_name['network'].message_type = blockchain_dot_network_dot_v1alpha1_dot_network__pb2._NETWORK
@@ -1297,8 +1318,8 @@ _BLOCKCHAINAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3489,
-  serialized_end=5166,
+  serialized_start=3574,
+  serialized_end=5251,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateNetwork',

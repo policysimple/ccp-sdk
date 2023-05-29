@@ -61,6 +61,14 @@ class Network extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];</code>
      */
     protected $environment = 0;
+    /**
+     * Generated from protobuf field <code>string user_email = 13 [json_name = "userEmail"];</code>
+     */
+    protected $user_email = '';
+    /**
+     * Generated from protobuf field <code>string user_name = 14 [json_name = "userName"];</code>
+     */
+    protected $user_name = '';
 
     /**
      * Constructor.
@@ -80,6 +88,8 @@ class Network extends \Google\Protobuf\Internal\Message
      *     @type \Blockchain\Network\V1alpha1\Corporation[]|\Google\Protobuf\Internal\RepeatedField $corporations
      *     @type string $ccp_organization_id
      *     @type int $environment
+     *     @type string $user_email
+     *     @type string $user_name
      * }
      */
     public function __construct($data = NULL) {
@@ -347,6 +357,50 @@ class Network extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Blockchain\Network\V1alpha1\BlockchainEnv::class);
         $this->environment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_email = 13 [json_name = "userEmail"];</code>
+     * @return string
+     */
+    public function getUserEmail()
+    {
+        return $this->user_email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_email = 13 [json_name = "userEmail"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_name = 14 [json_name = "userName"];</code>
+     * @return string
+     */
+    public function getUserName()
+    {
+        return $this->user_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_name = 14 [json_name = "userName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_name = $var;
 
         return $this;
     }

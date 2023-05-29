@@ -34,6 +34,9 @@ message AddPeerToCorporationRequest {
     string ccp_organization_id = 1;
     string ccp_project_id = 2;
     string corporation_id = 3;
+    string user_id = 4;
+    string user_email = 5;
+    string user_name = 6;
 }
 
 message AddOrdererByNetworkIdRequest {

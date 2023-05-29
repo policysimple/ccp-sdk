@@ -1185,6 +1185,42 @@ public final class NetworkApi {
      */
     com.google.protobuf.ByteString
         getCorporationIdBytes();
+
+    /**
+     * <code>string user_id = 4 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 4 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>string user_email = 5 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    java.lang.String getUserEmail();
+    /**
+     * <code>string user_email = 5 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    com.google.protobuf.ByteString
+        getUserEmailBytes();
+
+    /**
+     * <code>string user_name = 6 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string user_name = 6 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.AddPeerToCorporationRequest}
@@ -1202,6 +1238,9 @@ public final class NetworkApi {
       ccpOrganizationId_ = "";
       ccpProjectId_ = "";
       corporationId_ = "";
+      userId_ = "";
+      userEmail_ = "";
+      userName_ = "";
     }
 
     @java.lang.Override
@@ -1250,6 +1289,24 @@ public final class NetworkApi {
               java.lang.String s = input.readStringRequireUtf8();
 
               corporationId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userEmail_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
               break;
             }
             default: {
@@ -1398,6 +1455,120 @@ public final class NetworkApi {
       }
     }
 
+    public static final int USER_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 4 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 4 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_EMAIL_FIELD_NUMBER = 5;
+    private volatile java.lang.Object userEmail_;
+    /**
+     * <code>string user_email = 5 [json_name = "userEmail"];</code>
+     * @return The userEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getUserEmail() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_email = 5 [json_name = "userEmail"];</code>
+     * @return The bytes for userEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserEmailBytes() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 6;
+    private volatile java.lang.Object userName_;
+    /**
+     * <code>string user_name = 6 [json_name = "userName"];</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_name = 6 [json_name = "userName"];</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1421,6 +1592,15 @@ public final class NetworkApi {
       if (!getCorporationIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, corporationId_);
       }
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userId_);
+      }
+      if (!getUserEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, userName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1438,6 +1618,15 @@ public final class NetworkApi {
       }
       if (!getCorporationIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, corporationId_);
+      }
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userId_);
+      }
+      if (!getUserEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, userEmail_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, userName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1460,6 +1649,12 @@ public final class NetworkApi {
           .equals(other.getCcpProjectId())) return false;
       if (!getCorporationId()
           .equals(other.getCorporationId())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (!getUserEmail()
+          .equals(other.getUserEmail())) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1477,6 +1672,12 @@ public final class NetworkApi {
       hash = (53 * hash) + getCcpProjectId().hashCode();
       hash = (37 * hash) + CORPORATION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCorporationId().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + USER_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserEmail().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1616,6 +1817,12 @@ public final class NetworkApi {
 
         corporationId_ = "";
 
+        userId_ = "";
+
+        userEmail_ = "";
+
+        userName_ = "";
+
         return this;
       }
 
@@ -1645,6 +1852,9 @@ public final class NetworkApi {
         result.ccpOrganizationId_ = ccpOrganizationId_;
         result.ccpProjectId_ = ccpProjectId_;
         result.corporationId_ = corporationId_;
+        result.userId_ = userId_;
+        result.userEmail_ = userEmail_;
+        result.userName_ = userName_;
         onBuilt();
         return result;
       }
@@ -1703,6 +1913,18 @@ public final class NetworkApi {
         }
         if (!other.getCorporationId().isEmpty()) {
           corporationId_ = other.corporationId_;
+          onChanged();
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.getUserEmail().isEmpty()) {
+          userEmail_ = other.userEmail_;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1958,6 +2180,234 @@ public final class NetworkApi {
   checkByteStringIsUtf8(value);
         
         corporationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 4 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 4 [json_name = "userId"];</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 4 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 4 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 4 [json_name = "userId"];</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userEmail_ = "";
+      /**
+       * <code>string user_email = 5 [json_name = "userEmail"];</code>
+       * @return The userEmail.
+       */
+      public java.lang.String getUserEmail() {
+        java.lang.Object ref = userEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 5 [json_name = "userEmail"];</code>
+       * @return The bytes for userEmail.
+       */
+      public com.google.protobuf.ByteString
+          getUserEmailBytes() {
+        java.lang.Object ref = userEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_email = 5 [json_name = "userEmail"];</code>
+       * @param value The userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 5 [json_name = "userEmail"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserEmail() {
+        
+        userEmail_ = getDefaultInstance().getUserEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_email = 5 [json_name = "userEmail"];</code>
+       * @param value The bytes for userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string user_name = 6 [json_name = "userName"];</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 6 [json_name = "userName"];</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 6 [json_name = "userName"];</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 6 [json_name = "userName"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 6 [json_name = "userName"];</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
         onChanged();
         return this;
       }
@@ -20466,127 +20916,130 @@ public final class NetworkApi {
       "v1alpha1.CorporationR\013corporation\022.\n\023ccp" +
       "_organization_id\030\003 \001(\tR\021ccpOrganizationI" +
       "d\022$\n\016ccp_project_id\030\004 \001(\tR\014ccpProjectId\"" +
-      "\232\001\n\033AddPeerToCorporationRequest\022.\n\023ccp_o" +
+      "\357\001\n\033AddPeerToCorporationRequest\022.\n\023ccp_o" +
       "rganization_id\030\001 \001(\tR\021ccpOrganizationId\022" +
       "$\n\016ccp_project_id\030\002 \001(\tR\014ccpProjectId\022%\n" +
-      "\016corporation_id\030\003 \001(\tR\rcorporationId\"\264\001\n" +
-      "\034AddOrdererByNetworkIdRequest\022>\n\007orderer" +
-      "\030\001 \001(\0132$.blockchain.network.v1alpha1.Ord" +
-      "ererR\007orderer\022.\n\023ccp_organization_id\030\002 \001" +
-      "(\tR\021ccpOrganizationId\022$\n\016ccp_project_id\030" +
-      "\003 \001(\tR\014ccpProjectId\"V\n\024CreateChannelRequ" +
-      "est\022>\n\007channel\030\001 \001(\0132$.blockchain.networ" +
-      "k.v1alpha1.ChannelR\007channel\"h\n\025GetBlockc" +
-      "hainsRequest\022\026\n\006offset\030\001 \001(\003R\006offset\022\024\n\005" +
-      "limit\030\002 \001(\003R\005limit\022!\n\014query_params\030\003 \001(\t" +
-      "R\013queryParams\"f\n\035GetBlockchainsByUserIdR" +
-      "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006offse" +
-      "t\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"u\n" +
-      "\036GetPeersByCorporationIdRequest\022%\n\016corpo" +
-      "ration_id\030\001 \001(\tR\rcorporationId\022\026\n\006offset" +
-      "\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"l\n\035" +
-      "GetOrderersByNetworkIdRequest\022\035\n\nnetwork" +
-      "_id\030\001 \001(\tR\tnetworkId\022\026\n\006offset\030\002 \001(\003R\006of" +
-      "fset\022\024\n\005limit\030\003 \001(\003R\005limit\"*\n\030GetBlockch" +
-      "ainByIdRequest\022\016\n\002id\030\001 \001(\tR\002id\"y\n$GetCor" +
-      "porationsByBlockchainIdRequest\022#\n\rblockc" +
-      "hain_id\030\001 \001(\tR\014blockchainId\022\026\n\006offset\030\002 " +
-      "\001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"\274\001\n\030Cr" +
-      "eateCorporationRequest\022J\n\013corporation\030\001 " +
-      "\001(\0132(.blockchain.network.v1alpha1.Corpor" +
-      "ationR\013corporation\022.\n\023ccp_organization_i" +
+      "\016corporation_id\030\003 \001(\tR\rcorporationId\022\027\n\007" +
+      "user_id\030\004 \001(\tR\006userId\022\035\n\nuser_email\030\005 \001(" +
+      "\tR\tuserEmail\022\033\n\tuser_name\030\006 \001(\tR\010userNam" +
+      "e\"\264\001\n\034AddOrdererByNetworkIdRequest\022>\n\007or" +
+      "derer\030\001 \001(\0132$.blockchain.network.v1alpha" +
+      "1.OrdererR\007orderer\022.\n\023ccp_organization_i" +
       "d\030\002 \001(\tR\021ccpOrganizationId\022$\n\016ccp_projec" +
-      "t_id\030\003 \001(\tR\014ccpProjectId\"`\n\025SendInvitati" +
-      "onRequest\022G\n\ninvitation\030\001 \001(\0132\'.blockcha" +
-      "in.network.v1alpha1.InvitationR\ninvitati" +
-      "on\"q\n\025CreateNetworkResponse\022>\n\007network\030\001" +
-      " \001(\0132$.blockchain.network.v1alpha1.Netwo" +
-      "rkR\007network\022\030\n\007message\030\002 \001(\tR\007message\"\204\001" +
-      "\n\034AddPeerToCorporationResponse\022J\n\013corpor" +
-      "ation\030\001 \001(\0132(.blockchain.network.v1alpha" +
-      "1.CorporationR\013corporation\022\030\n\007message\030\002 " +
-      "\001(\tR\007message\"y\n\035AddOrdererByNetworkIdRes" +
-      "ponse\022>\n\007orderer\030\001 \001(\0132$.blockchain.netw" +
-      "ork.v1alpha1.OrdererR\007orderer\022\030\n\007message" +
-      "\030\002 \001(\tR\007message\"q\n\025CreateChannelResponse" +
-      "\022>\n\007channel\030\001 \001(\0132$.blockchain.network.v" +
-      "1alpha1.ChannelR\007channel\022\030\n\007message\030\002 \001(" +
-      "\tR\007message\"\256\001\n\026GetBlockchainsResponse\022@\n" +
-      "\010networks\030\001 \003(\0132$.blockchain.network.v1a" +
-      "lpha1.NetworkR\010networks\022\024\n\005total\030\002 \001(\003R\005" +
-      "total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014prev" +
-      "ious_url\030\004 \001(\tR\013previousUrl\"\266\001\n\036GetBlock" +
-      "chainsByUserIdResponse\022@\n\010networks\030\001 \003(\013" +
-      "2$.blockchain.network.v1alpha1.NetworkR\010" +
-      "networks\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_u" +
-      "rl\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR" +
-      "\013previousUrl\"\266\001\n\036GetOrderersByNetworkIdR" +
-      "esponse\022@\n\010orderers\030\001 \003(\0132$.blockchain.n" +
-      "etwork.v1alpha1.OrdererR\010orderers\022\024\n\005tot" +
-      "al\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextU" +
-      "rl\022!\n\014previous_url\030\004 \001(\tR\013previousUrl\"\254\001" +
-      "\n\037GetPeersByCorporationIdResponse\0225\n\004pee" +
-      "r\030\001 \003(\0132!.blockchain.network.v1alpha1.Pe" +
-      "erR\004peer\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010next_u" +
-      "rl\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004 \001(\tR" +
-      "\013previousUrl\"[\n\031GetBlockchainByIdRespons" +
-      "e\022>\n\007network\030\001 \001(\0132$.blockchain.network." +
-      "v1alpha1.NetworkR\007network\"\311\001\n%GetCorpora" +
-      "tionsByBlockchainIdResponse\022L\n\014corporati" +
-      "ons\030\001 \003(\0132(.blockchain.network.v1alpha1." +
-      "CorporationR\014corporations\022\024\n\005total\030\002 \001(\003" +
-      "R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n\014pr" +
-      "evious_url\030\004 \001(\tR\013previousUrl\"\201\001\n\031Create" +
-      "CorporationResponse\022J\n\013corporation\030\001 \001(\013" +
-      "2(.blockchain.network.v1alpha1.Corporati" +
-      "onR\013corporation\022\030\n\007message\030\002 \001(\tR\007messag" +
-      "e\"{\n\026SendInvitationResponse\022G\n\ninvitatio" +
-      "n\030\001 \001(\0132\'.blockchain.network.v1alpha1.In" +
-      "vitationR\ninvitation\022\030\n\007message\030\002 \001(\tR\007m" +
-      "essage2\215\r\n\024BlockchainAPIService\022v\n\rCreat" +
-      "eNetwork\0221.blockchain.network.v1alpha1.C" +
-      "reateNetworkRequest\0322.blockchain.network" +
-      ".v1alpha1.CreateNetworkResponse\022\213\001\n\024AddP" +
-      "eerToCorporation\0228.blockchain.network.v1" +
-      "alpha1.AddPeerToCorporationRequest\0329.blo" +
-      "ckchain.network.v1alpha1.AddPeerToCorpor" +
-      "ationResponse\022y\n\016GetBlockchains\0222.blockc" +
-      "hain.network.v1alpha1.GetBlockchainsRequ" +
-      "est\0323.blockchain.network.v1alpha1.GetBlo" +
-      "ckchainsResponse\022\221\001\n\026GetBlockchainsByUse" +
-      "rId\022:.blockchain.network.v1alpha1.GetBlo" +
-      "ckchainsByUserIdRequest\032;.blockchain.net" +
-      "work.v1alpha1.GetBlockchainsByUserIdResp" +
-      "onse\022\202\001\n\021GetBlockchainById\0225.blockchain." +
-      "network.v1alpha1.GetBlockchainByIdReques" +
-      "t\0326.blockchain.network.v1alpha1.GetBlock" +
-      "chainByIdResponse\022\246\001\n\035GetCorporationsByB" +
-      "lockchainId\022A.blockchain.network.v1alpha" +
-      "1.GetCorporationsByBlockchainIdRequest\032B" +
-      ".blockchain.network.v1alpha1.GetCorporat" +
-      "ionsByBlockchainIdResponse\022y\n\016SendInvita" +
-      "tion\0222.blockchain.network.v1alpha1.SendI" +
-      "nvitationRequest\0323.blockchain.network.v1" +
-      "alpha1.SendInvitationResponse\022\202\001\n\021Create" +
-      "Corporation\0225.blockchain.network.v1alpha" +
-      "1.CreateCorporationRequest\0326.blockchain." +
-      "network.v1alpha1.CreateCorporationRespon" +
-      "se\022v\n\rCreateChannel\0221.blockchain.network" +
-      ".v1alpha1.CreateChannelRequest\0322.blockch" +
-      "ain.network.v1alpha1.CreateChannelRespon" +
-      "se\022\224\001\n\027GetPeersByCorporationId\022;.blockch" +
-      "ain.network.v1alpha1.GetPeersByCorporati" +
-      "onIdRequest\032<.blockchain.network.v1alpha" +
-      "1.GetPeersByCorporationIdResponse\022\221\001\n\026Ge" +
-      "tOrderersByNetworkId\022:.blockchain.networ" +
-      "k.v1alpha1.GetOrderersByNetworkIdRequest" +
-      "\032;.blockchain.network.v1alpha1.GetOrdere" +
-      "rsByNetworkIdResponse\022\216\001\n\025AddOrdererByNe" +
-      "tworkId\0229.blockchain.network.v1alpha1.Ad" +
-      "dOrdererByNetworkIdRequest\032:.blockchain." +
-      "network.v1alpha1.AddOrdererByNetworkIdRe" +
-      "sponseB>Z<github.com/cuemby/ccp-sdk/gen/" +
-      "go/blockchain/network/v1alpha1b\006proto3"
+      "t_id\030\003 \001(\tR\014ccpProjectId\"V\n\024CreateChanne" +
+      "lRequest\022>\n\007channel\030\001 \001(\0132$.blockchain.n" +
+      "etwork.v1alpha1.ChannelR\007channel\"h\n\025GetB" +
+      "lockchainsRequest\022\026\n\006offset\030\001 \001(\003R\006offse" +
+      "t\022\024\n\005limit\030\002 \001(\003R\005limit\022!\n\014query_params\030" +
+      "\003 \001(\tR\013queryParams\"f\n\035GetBlockchainsByUs" +
+      "erIdRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\026\n\006" +
+      "offset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005lim" +
+      "it\"u\n\036GetPeersByCorporationIdRequest\022%\n\016" +
+      "corporation_id\030\001 \001(\tR\rcorporationId\022\026\n\006o" +
+      "ffset\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limi" +
+      "t\"l\n\035GetOrderersByNetworkIdRequest\022\035\n\nne" +
+      "twork_id\030\001 \001(\tR\tnetworkId\022\026\n\006offset\030\002 \001(" +
+      "\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"*\n\030GetBl" +
+      "ockchainByIdRequest\022\016\n\002id\030\001 \001(\tR\002id\"y\n$G" +
+      "etCorporationsByBlockchainIdRequest\022#\n\rb" +
+      "lockchain_id\030\001 \001(\tR\014blockchainId\022\026\n\006offs" +
+      "et\030\002 \001(\003R\006offset\022\024\n\005limit\030\003 \001(\003R\005limit\"\274" +
+      "\001\n\030CreateCorporationRequest\022J\n\013corporati" +
+      "on\030\001 \001(\0132(.blockchain.network.v1alpha1.C" +
+      "orporationR\013corporation\022.\n\023ccp_organizat" +
+      "ion_id\030\002 \001(\tR\021ccpOrganizationId\022$\n\016ccp_p" +
+      "roject_id\030\003 \001(\tR\014ccpProjectId\"`\n\025SendInv" +
+      "itationRequest\022G\n\ninvitation\030\001 \001(\0132\'.blo" +
+      "ckchain.network.v1alpha1.InvitationR\ninv" +
+      "itation\"q\n\025CreateNetworkResponse\022>\n\007netw" +
+      "ork\030\001 \001(\0132$.blockchain.network.v1alpha1." +
+      "NetworkR\007network\022\030\n\007message\030\002 \001(\tR\007messa" +
+      "ge\"\204\001\n\034AddPeerToCorporationResponse\022J\n\013c" +
+      "orporation\030\001 \001(\0132(.blockchain.network.v1" +
+      "alpha1.CorporationR\013corporation\022\030\n\007messa" +
+      "ge\030\002 \001(\tR\007message\"y\n\035AddOrdererByNetwork" +
+      "IdResponse\022>\n\007orderer\030\001 \001(\0132$.blockchain" +
+      ".network.v1alpha1.OrdererR\007orderer\022\030\n\007me" +
+      "ssage\030\002 \001(\tR\007message\"q\n\025CreateChannelRes" +
+      "ponse\022>\n\007channel\030\001 \001(\0132$.blockchain.netw" +
+      "ork.v1alpha1.ChannelR\007channel\022\030\n\007message" +
+      "\030\002 \001(\tR\007message\"\256\001\n\026GetBlockchainsRespon" +
+      "se\022@\n\010networks\030\001 \003(\0132$.blockchain.networ" +
+      "k.v1alpha1.NetworkR\010networks\022\024\n\005total\030\002 " +
+      "\001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022!\n" +
+      "\014previous_url\030\004 \001(\tR\013previousUrl\"\266\001\n\036Get" +
+      "BlockchainsByUserIdResponse\022@\n\010networks\030" +
+      "\001 \003(\0132$.blockchain.network.v1alpha1.Netw" +
+      "orkR\010networks\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010n" +
+      "ext_url\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004" +
+      " \001(\tR\013previousUrl\"\266\001\n\036GetOrderersByNetwo" +
+      "rkIdResponse\022@\n\010orderers\030\001 \003(\0132$.blockch" +
+      "ain.network.v1alpha1.OrdererR\010orderers\022\024" +
+      "\n\005total\030\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007" +
+      "nextUrl\022!\n\014previous_url\030\004 \001(\tR\013previousU" +
+      "rl\"\254\001\n\037GetPeersByCorporationIdResponse\0225" +
+      "\n\004peer\030\001 \003(\0132!.blockchain.network.v1alph" +
+      "a1.PeerR\004peer\022\024\n\005total\030\002 \001(\003R\005total\022\031\n\010n" +
+      "ext_url\030\003 \001(\tR\007nextUrl\022!\n\014previous_url\030\004" +
+      " \001(\tR\013previousUrl\"[\n\031GetBlockchainByIdRe" +
+      "sponse\022>\n\007network\030\001 \001(\0132$.blockchain.net" +
+      "work.v1alpha1.NetworkR\007network\"\311\001\n%GetCo" +
+      "rporationsByBlockchainIdResponse\022L\n\014corp" +
+      "orations\030\001 \003(\0132(.blockchain.network.v1al" +
+      "pha1.CorporationR\014corporations\022\024\n\005total\030" +
+      "\002 \001(\003R\005total\022\031\n\010next_url\030\003 \001(\tR\007nextUrl\022" +
+      "!\n\014previous_url\030\004 \001(\tR\013previousUrl\"\201\001\n\031C" +
+      "reateCorporationResponse\022J\n\013corporation\030" +
+      "\001 \001(\0132(.blockchain.network.v1alpha1.Corp" +
+      "orationR\013corporation\022\030\n\007message\030\002 \001(\tR\007m" +
+      "essage\"{\n\026SendInvitationResponse\022G\n\ninvi" +
+      "tation\030\001 \001(\0132\'.blockchain.network.v1alph" +
+      "a1.InvitationR\ninvitation\022\030\n\007message\030\002 \001" +
+      "(\tR\007message2\215\r\n\024BlockchainAPIService\022v\n\r" +
+      "CreateNetwork\0221.blockchain.network.v1alp" +
+      "ha1.CreateNetworkRequest\0322.blockchain.ne" +
+      "twork.v1alpha1.CreateNetworkResponse\022\213\001\n" +
+      "\024AddPeerToCorporation\0228.blockchain.netwo" +
+      "rk.v1alpha1.AddPeerToCorporationRequest\032" +
+      "9.blockchain.network.v1alpha1.AddPeerToC" +
+      "orporationResponse\022y\n\016GetBlockchains\0222.b" +
+      "lockchain.network.v1alpha1.GetBlockchain" +
+      "sRequest\0323.blockchain.network.v1alpha1.G" +
+      "etBlockchainsResponse\022\221\001\n\026GetBlockchains" +
+      "ByUserId\022:.blockchain.network.v1alpha1.G" +
+      "etBlockchainsByUserIdRequest\032;.blockchai" +
+      "n.network.v1alpha1.GetBlockchainsByUserI" +
+      "dResponse\022\202\001\n\021GetBlockchainById\0225.blockc" +
+      "hain.network.v1alpha1.GetBlockchainByIdR" +
+      "equest\0326.blockchain.network.v1alpha1.Get" +
+      "BlockchainByIdResponse\022\246\001\n\035GetCorporatio" +
+      "nsByBlockchainId\022A.blockchain.network.v1" +
+      "alpha1.GetCorporationsByBlockchainIdRequ" +
+      "est\032B.blockchain.network.v1alpha1.GetCor" +
+      "porationsByBlockchainIdResponse\022y\n\016SendI" +
+      "nvitation\0222.blockchain.network.v1alpha1." +
+      "SendInvitationRequest\0323.blockchain.netwo" +
+      "rk.v1alpha1.SendInvitationResponse\022\202\001\n\021C" +
+      "reateCorporation\0225.blockchain.network.v1" +
+      "alpha1.CreateCorporationRequest\0326.blockc" +
+      "hain.network.v1alpha1.CreateCorporationR" +
+      "esponse\022v\n\rCreateChannel\0221.blockchain.ne" +
+      "twork.v1alpha1.CreateChannelRequest\0322.bl" +
+      "ockchain.network.v1alpha1.CreateChannelR" +
+      "esponse\022\224\001\n\027GetPeersByCorporationId\022;.bl" +
+      "ockchain.network.v1alpha1.GetPeersByCorp" +
+      "orationIdRequest\032<.blockchain.network.v1" +
+      "alpha1.GetPeersByCorporationIdResponse\022\221" +
+      "\001\n\026GetOrderersByNetworkId\022:.blockchain.n" +
+      "etwork.v1alpha1.GetOrderersByNetworkIdRe" +
+      "quest\032;.blockchain.network.v1alpha1.GetO" +
+      "rderersByNetworkIdResponse\022\216\001\n\025AddOrdere" +
+      "rByNetworkId\0229.blockchain.network.v1alph" +
+      "a1.AddOrdererByNetworkIdRequest\032:.blockc" +
+      "hain.network.v1alpha1.AddOrdererByNetwor" +
+      "kIdResponseB>Z<github.com/cuemby/ccp-sdk" +
+      "/gen/go/blockchain/network/v1alpha1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20605,7 +21058,7 @@ public final class NetworkApi {
     internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_AddPeerToCorporationRequest_descriptor,
-        new java.lang.String[] { "CcpOrganizationId", "CcpProjectId", "CorporationId", });
+        new java.lang.String[] { "CcpOrganizationId", "CcpProjectId", "CorporationId", "UserId", "UserEmail", "UserName", });
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_blockchain_network_v1alpha1_AddOrdererByNetworkIdRequest_fieldAccessorTable = new

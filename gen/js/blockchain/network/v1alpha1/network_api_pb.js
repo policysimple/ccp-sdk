@@ -843,7 +843,10 @@ proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.toObject = functio
   var f, obj = {
     ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     ccpProjectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    corporationId: jspb.Message.getFieldWithDefault(msg, 3, "")
+    corporationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    userEmail: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    userName: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -892,6 +895,18 @@ proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.deserializeBinaryF
       var value = /** @type {string} */ (reader.readString());
       msg.setCorporationId(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserEmail(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -939,6 +954,27 @@ proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.serializeBinaryToW
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getUserEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getUserName();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -996,6 +1032,60 @@ proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.prototype.getCorpo
  */
 proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.prototype.setCorporationId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string user_id = 4;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string user_email = 5;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.prototype.getUserEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.prototype.setUserEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string user_name = 6;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.prototype.getUserName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest} returns this
+ */
+proto.blockchain.network.v1alpha1.AddPeerToCorporationRequest.prototype.setUserName = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

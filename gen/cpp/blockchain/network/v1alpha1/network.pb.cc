@@ -32,6 +32,8 @@ constexpr Network::Network(
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , ccp_organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , environment_(0)
 {}
 struct NetworkDefaultTypeInternal {
@@ -57,7 +59,9 @@ constexpr Corporation::Corporation(
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_ca_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , name_msp_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , name_msp_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct CorporationDefaultTypeInternal {
   constexpr CorporationDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -74,7 +78,9 @@ constexpr Peer::Peer(
   , type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct PeerDefaultTypeInternal {
   constexpr PeerDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -92,7 +98,9 @@ constexpr Orderer::Orderer(
   , type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct OrdererDefaultTypeInternal {
   constexpr OrdererDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -111,7 +119,9 @@ constexpr Channel::Channel(
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ChannelDefaultTypeInternal {
   constexpr ChannelDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -164,6 +174,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Network, corporations_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Network, ccp_organization_id_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Network, environment_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Network, user_email_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Network, user_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -182,6 +194,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, updated_at_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, name_ca_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, name_msp_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, user_email_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, user_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Peer, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -193,6 +207,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Peer, status_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Peer, created_at_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Peer, updated_at_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Peer, user_email_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Peer, user_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Orderer, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -205,6 +221,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Orderer, status_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Orderer, created_at_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Orderer, updated_at_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Orderer, user_email_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Orderer, user_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -218,6 +236,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, status_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, created_at_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, updated_at_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, user_email_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, user_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Invitation, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -233,11 +253,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::network::v1alpha1::Network)},
-  { 17, -1, sizeof(::blockchain::network::v1alpha1::Corporation)},
-  { 35, -1, sizeof(::blockchain::network::v1alpha1::Peer)},
-  { 46, -1, sizeof(::blockchain::network::v1alpha1::Orderer)},
-  { 58, -1, sizeof(::blockchain::network::v1alpha1::Channel)},
-  { 71, -1, sizeof(::blockchain::network::v1alpha1::Invitation)},
+  { 19, -1, sizeof(::blockchain::network::v1alpha1::Corporation)},
+  { 39, -1, sizeof(::blockchain::network::v1alpha1::Peer)},
+  { 52, -1, sizeof(::blockchain::network::v1alpha1::Orderer)},
+  { 66, -1, sizeof(::blockchain::network::v1alpha1::Channel)},
+  { 81, -1, sizeof(::blockchain::network::v1alpha1::Invitation)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -251,7 +271,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n)blockchain/network/v1alpha1/network.pr"
-  "oto\022\033blockchain.network.v1alpha1\"\316\003\n\007Net"
+  "oto\022\033blockchain.network.v1alpha1\"\212\004\n\007Net"
   "work\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014network_name\030\002 \001"
   "(\tR\013networkName\022\034\n\tframework\030\003 \001(\tR\tfram"
   "ework\022\022\n\004type\030\004 \001(\tR\004type\022\027\n\007user_id\030\005 \001"
@@ -263,46 +283,53 @@ const char descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2
   "orporations\022.\n\023ccp_organization_id\030\013 \001(\t"
   "R\021ccpOrganizationId\022L\n\013environment\030\014 \001(\016"
   "2*.blockchain.network.v1alpha1.Blockchai"
-  "nEnvR\013environment\"\241\003\n\013Corporation\022\016\n\002id\030"
-  "\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\026\n\006do"
-  "main\030\003 \001(\tR\006domain\022%\n\016admin_password\030\004 \001"
-  "(\tR\radminPassword\022\035\n\nadmin_user\030\005 \001(\tR\ta"
-  "dminUser\022#\n\rblockchain_id\030\006 \001(\tR\014blockch"
-  "ainId\0227\n\005peers\030\007 \003(\0132!.blockchain.networ"
-  "k.v1alpha1.PeerR\005peers\022\026\n\006status\030\010 \001(\tR\006"
-  "status\022#\n\rerror_details\030\t \001(\tR\014errorDeta"
-  "ils\022\035\n\ncreated_at\030\n \001(\tR\tcreatedAt\022\035\n\nup"
-  "dated_at\030\013 \001(\tR\tupdatedAt\022\027\n\007name_ca\030\014 \001"
-  "(\tR\006nameCa\022\031\n\010name_msp\030\r \001(\tR\007nameMsp\"\224\001"
+  "nEnvR\013environment\022\035\n\nuser_email\030\r \001(\tR\tu"
+  "serEmail\022\033\n\tuser_name\030\016 \001(\tR\010userName\"\335\003"
+  "\n\013Corporation\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id"
+  "\030\002 \001(\tR\006userId\022\026\n\006domain\030\003 \001(\tR\006domain\022%"
+  "\n\016admin_password\030\004 \001(\tR\radminPassword\022\035\n"
+  "\nadmin_user\030\005 \001(\tR\tadminUser\022#\n\rblockcha"
+  "in_id\030\006 \001(\tR\014blockchainId\0227\n\005peers\030\007 \003(\013"
+  "2!.blockchain.network.v1alpha1.PeerR\005pee"
+  "rs\022\026\n\006status\030\010 \001(\tR\006status\022#\n\rerror_deta"
+  "ils\030\t \001(\tR\014errorDetails\022\035\n\ncreated_at\030\n "
+  "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\013 \001(\tR\tupda"
+  "tedAt\022\027\n\007name_ca\030\014 \001(\tR\006nameCa\022\031\n\010name_m"
+  "sp\030\r \001(\tR\007nameMsp\022\035\n\nuser_email\030\016 \001(\tR\tu"
+  "serEmail\022\033\n\tuser_name\030\017 \001(\tR\010userName\"\320\001"
   "\n\004Peer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na"
   "me\022\022\n\004type\030\003 \001(\tR\004type\022\026\n\006status\030\004 \001(\tR\006"
   "status\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAt\022\035\n"
-  "\nupdated_at\030\006 \001(\tR\tupdatedAt\"\274\001\n\007Orderer"
-  "\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022#\n\r"
-  "blockchain_id\030\003 \001(\tR\014blockchainId\022\022\n\004typ"
-  "e\030\004 \001(\tR\004type\022\026\n\006status\030\005 \001(\tR\006status\022\035\n"
-  "\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_"
-  "at\030\007 \001(\tR\tupdatedAt\"\370\001\n\007Channel\022\016\n\002id\030\001 "
+  "\nupdated_at\030\006 \001(\tR\tupdatedAt\022\035\n\nuser_ema"
+  "il\030\007 \001(\tR\tuserEmail\022\033\n\tuser_name\030\010 \001(\tR\010"
+  "userName\"\370\001\n\007Orderer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004"
+  "name\030\002 \001(\tR\004name\022#\n\rblockchain_id\030\003 \001(\tR"
+  "\014blockchainId\022\022\n\004type\030\004 \001(\tR\004type\022\026\n\006sta"
+  "tus\030\005 \001(\tR\006status\022\035\n\ncreated_at\030\006 \001(\tR\tc"
+  "reatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022"
+  "\035\n\nuser_email\030\010 \001(\tR\tuserEmail\022\033\n\tuser_n"
+  "ame\030\t \001(\tR\010userName\"\264\002\n\007Channel\022\016\n\002id\030\001 "
   "\001(\tR\002id\022%\n\016corporation_id\030\002 \001(\tR\rcorpora"
   "tionId\022#\n\rblockchain_id\030\003 \001(\tR\014blockchai"
   "nId\022\022\n\004name\030\004 \001(\tR\004name\022\'\n\017corporation_i"
   "ds\030\005 \003(\tR\016corporationIds\022\026\n\006status\030\006 \001(\t"
   "R\006status\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022"
-  "\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\"\317\001\n\nInvit"
-  "ation\022\016\n\002id\030\001 \001(\tR\002id\022 \n\014from_user_id\030\002 "
-  "\001(\tR\nfromUserId\022\024\n\005email\030\003 \001(\tR\005email\022\026\n"
-  "\006status\030\004 \001(\tR\006status\022#\n\rblockchain_id\030\005"
-  " \001(\tR\014blockchainId\022\035\n\ncreated_at\030\006 \001(\tR\t"
-  "createdAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt"
-  "*g\n\rBlockchainEnv\022\036\n\032BLOCKCHAIN_ENV_UNSP"
-  "ECIFIED\020\000\022\032\n\026BLOCKCHAIN_ENV_TESTNET\020\001\022\032\n"
-  "\026BLOCKCHAIN_ENV_MAINNET\020\002B>Z<github.com/"
-  "cuemby/ccp-sdk/gen/go/blockchain/network"
-  "/v1alpha1b\006proto3"
+  "\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022\035\n\nuser_e"
+  "mail\030\t \001(\tR\tuserEmail\022\033\n\tuser_name\030\n \001(\t"
+  "R\010userName\"\317\001\n\nInvitation\022\016\n\002id\030\001 \001(\tR\002i"
+  "d\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022\024\n\005e"
+  "mail\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006statu"
+  "s\022#\n\rblockchain_id\030\005 \001(\tR\014blockchainId\022\035"
+  "\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated"
+  "_at\030\007 \001(\tR\tupdatedAt*g\n\rBlockchainEnv\022\036\n"
+  "\032BLOCKCHAIN_ENV_UNSPECIFIED\020\000\022\032\n\026BLOCKCH"
+  "AIN_ENV_TESTNET\020\001\022\032\n\026BLOCKCHAIN_ENV_MAIN"
+  "NET\020\002B>Z<github.com/cuemby/ccp-sdk/gen/g"
+  "o/blockchain/network/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto = {
-  false, false, 1937, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, "blockchain/network/v1alpha1/network.proto", 
+  false, false, 2237, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, "blockchain/network/v1alpha1/network.proto", 
   &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto_once, nullptr, 0, 6,
   schemas, file_default_instances, TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto::offsets,
   file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, file_level_enum_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, file_level_service_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto,
@@ -402,6 +429,16 @@ Network::Network(const Network& from)
     ccp_organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ccp_organization_id(), 
       GetArenaForAllocation());
   }
+  user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_email().empty()) {
+    user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_email(), 
+      GetArenaForAllocation());
+  }
+  user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_name().empty()) {
+    user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_name(), 
+      GetArenaForAllocation());
+  }
   environment_ = from.environment_;
   // @@protoc_insertion_point(copy_constructor:blockchain.network.v1alpha1.Network)
 }
@@ -417,6 +454,8 @@ error_details_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStri
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ccp_organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 environment_ = 0;
 }
 
@@ -439,6 +478,8 @@ inline void Network::SharedDtor() {
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ccp_organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Network::ArenaDtor(void* object) {
@@ -468,6 +509,8 @@ void Network::Clear() {
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
   ccp_organization_id_.ClearToEmpty();
+  user_email_.ClearToEmpty();
+  user_name_.ClearToEmpty();
   environment_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -586,6 +629,24 @@ const char* Network::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_environment(static_cast<::blockchain::network::v1alpha1::BlockchainEnv>(val));
+        } else goto handle_unusual;
+        continue;
+      // string user_email = 13 [json_name = "userEmail"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          auto str = _internal_mutable_user_email();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Network.user_email"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_name = 14 [json_name = "userName"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
+          auto str = _internal_mutable_user_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Network.user_name"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -732,6 +793,26 @@ failure:
       12, this->_internal_environment(), target);
   }
 
+  // string user_email = 13 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_email().data(), static_cast<int>(this->_internal_user_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Network.user_email");
+    target = stream->WriteStringMaybeAliased(
+        13, this->_internal_user_email(), target);
+  }
+
+  // string user_name = 14 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_name().data(), static_cast<int>(this->_internal_user_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Network.user_name");
+    target = stream->WriteStringMaybeAliased(
+        14, this->_internal_user_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -825,6 +906,20 @@ size_t Network::ByteSizeLong() const {
         this->_internal_ccp_organization_id());
   }
 
+  // string user_email = 13 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_email());
+  }
+
+  // string user_name = 14 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_name());
+  }
+
   // .blockchain.network.v1alpha1.BlockchainEnv environment = 12 [json_name = "environment"];
   if (this->_internal_environment() != 0) {
     total_size += 1 +
@@ -889,6 +984,12 @@ void Network::MergeFrom(const Network& from) {
   }
   if (!from._internal_ccp_organization_id().empty()) {
     _internal_set_ccp_organization_id(from._internal_ccp_organization_id());
+  }
+  if (!from._internal_user_email().empty()) {
+    _internal_set_user_email(from._internal_user_email());
+  }
+  if (!from._internal_user_name().empty()) {
+    _internal_set_user_name(from._internal_user_name());
   }
   if (from._internal_environment() != 0) {
     _internal_set_environment(from._internal_environment());
@@ -960,6 +1061,16 @@ void Network::InternalSwap(Network* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &ccp_organization_id_, GetArenaForAllocation(),
       &other->ccp_organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_email_, GetArenaForAllocation(),
+      &other->user_email_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_name_, GetArenaForAllocation(),
+      &other->user_name_, other->GetArenaForAllocation()
   );
   swap(environment_, other->environment_);
 }
@@ -1050,6 +1161,16 @@ Corporation::Corporation(const Corporation& from)
     name_msp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name_msp(), 
       GetArenaForAllocation());
   }
+  user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_email().empty()) {
+    user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_email(), 
+      GetArenaForAllocation());
+  }
+  user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_name().empty()) {
+    user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:blockchain.network.v1alpha1.Corporation)
 }
 
@@ -1066,6 +1187,8 @@ created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_ca_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 name_msp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Corporation::~Corporation() {
@@ -1089,6 +1212,8 @@ inline void Corporation::SharedDtor() {
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_ca_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_msp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Corporation::ArenaDtor(void* object) {
@@ -1120,6 +1245,8 @@ void Corporation::Clear() {
   updated_at_.ClearToEmpty();
   name_ca_.ClearToEmpty();
   name_msp_.ClearToEmpty();
+  user_email_.ClearToEmpty();
+  user_name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1246,6 +1373,24 @@ const char* Corporation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           auto str = _internal_mutable_name_msp();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Corporation.name_msp"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_email = 14 [json_name = "userEmail"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
+          auto str = _internal_mutable_user_email();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Corporation.user_email"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_name = 15 [json_name = "userName"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+          auto str = _internal_mutable_user_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Corporation.user_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1406,6 +1551,26 @@ failure:
         13, this->_internal_name_msp(), target);
   }
 
+  // string user_email = 14 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_email().data(), static_cast<int>(this->_internal_user_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Corporation.user_email");
+    target = stream->WriteStringMaybeAliased(
+        14, this->_internal_user_email(), target);
+  }
+
+  // string user_name = 15 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_name().data(), static_cast<int>(this->_internal_user_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Corporation.user_name");
+    target = stream->WriteStringMaybeAliased(
+        15, this->_internal_user_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1513,6 +1678,20 @@ size_t Corporation::ByteSizeLong() const {
         this->_internal_name_msp());
   }
 
+  // string user_email = 14 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_email());
+  }
+
+  // string user_name = 15 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_name());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1577,6 +1756,12 @@ void Corporation::MergeFrom(const Corporation& from) {
   }
   if (!from._internal_name_msp().empty()) {
     _internal_set_name_msp(from._internal_name_msp());
+  }
+  if (!from._internal_user_email().empty()) {
+    _internal_set_user_email(from._internal_user_email());
+  }
+  if (!from._internal_user_name().empty()) {
+    _internal_set_user_name(from._internal_user_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1656,6 +1841,16 @@ void Corporation::InternalSwap(Corporation* other) {
       &name_msp_, GetArenaForAllocation(),
       &other->name_msp_, other->GetArenaForAllocation()
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_email_, GetArenaForAllocation(),
+      &other->user_email_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_name_, GetArenaForAllocation(),
+      &other->user_name_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Corporation::GetMetadata() const {
@@ -1712,6 +1907,16 @@ Peer::Peer(const Peer& from)
     updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
       GetArenaForAllocation());
   }
+  user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_email().empty()) {
+    user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_email(), 
+      GetArenaForAllocation());
+  }
+  user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_name().empty()) {
+    user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:blockchain.network.v1alpha1.Peer)
 }
 
@@ -1722,6 +1927,8 @@ type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Peer::~Peer() {
@@ -1739,6 +1946,8 @@ inline void Peer::SharedDtor() {
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Peer::ArenaDtor(void* object) {
@@ -1763,6 +1972,8 @@ void Peer::Clear() {
   status_.ClearToEmpty();
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
+  user_email_.ClearToEmpty();
+  user_name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1823,6 +2034,24 @@ const char* Peer::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           auto str = _internal_mutable_updated_at();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Peer.updated_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_email = 7 [json_name = "userEmail"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_user_email();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Peer.user_email"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_name = 8 [json_name = "userName"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_user_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Peer.user_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1915,6 +2144,26 @@ failure:
         6, this->_internal_updated_at(), target);
   }
 
+  // string user_email = 7 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_email().data(), static_cast<int>(this->_internal_user_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Peer.user_email");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_user_email(), target);
+  }
+
+  // string user_name = 8 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_name().data(), static_cast<int>(this->_internal_user_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Peer.user_name");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_user_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1973,6 +2222,20 @@ size_t Peer::ByteSizeLong() const {
         this->_internal_updated_at());
   }
 
+  // string user_email = 7 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_email());
+  }
+
+  // string user_name = 8 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_name());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -2018,6 +2281,12 @@ void Peer::MergeFrom(const Peer& from) {
   }
   if (!from._internal_updated_at().empty()) {
     _internal_set_updated_at(from._internal_updated_at());
+  }
+  if (!from._internal_user_email().empty()) {
+    _internal_set_user_email(from._internal_user_email());
+  }
+  if (!from._internal_user_name().empty()) {
+    _internal_set_user_name(from._internal_user_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2065,6 +2334,16 @@ void Peer::InternalSwap(Peer* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &updated_at_, GetArenaForAllocation(),
       &other->updated_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_email_, GetArenaForAllocation(),
+      &other->user_email_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_name_, GetArenaForAllocation(),
+      &other->user_name_, other->GetArenaForAllocation()
   );
 }
 
@@ -2127,6 +2406,16 @@ Orderer::Orderer(const Orderer& from)
     updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
       GetArenaForAllocation());
   }
+  user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_email().empty()) {
+    user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_email(), 
+      GetArenaForAllocation());
+  }
+  user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_name().empty()) {
+    user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:blockchain.network.v1alpha1.Orderer)
 }
 
@@ -2138,6 +2427,8 @@ type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Orderer::~Orderer() {
@@ -2156,6 +2447,8 @@ inline void Orderer::SharedDtor() {
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Orderer::ArenaDtor(void* object) {
@@ -2181,6 +2474,8 @@ void Orderer::Clear() {
   status_.ClearToEmpty();
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
+  user_email_.ClearToEmpty();
+  user_name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2250,6 +2545,24 @@ const char* Orderer::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           auto str = _internal_mutable_updated_at();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Orderer.updated_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_email = 8 [json_name = "userEmail"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_user_email();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Orderer.user_email"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_name = 9 [json_name = "userName"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_user_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Orderer.user_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2352,6 +2665,26 @@ failure:
         7, this->_internal_updated_at(), target);
   }
 
+  // string user_email = 8 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_email().data(), static_cast<int>(this->_internal_user_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Orderer.user_email");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_user_email(), target);
+  }
+
+  // string user_name = 9 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_name().data(), static_cast<int>(this->_internal_user_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Orderer.user_name");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_user_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2417,6 +2750,20 @@ size_t Orderer::ByteSizeLong() const {
         this->_internal_updated_at());
   }
 
+  // string user_email = 8 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_email());
+  }
+
+  // string user_name = 9 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_name());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -2465,6 +2812,12 @@ void Orderer::MergeFrom(const Orderer& from) {
   }
   if (!from._internal_updated_at().empty()) {
     _internal_set_updated_at(from._internal_updated_at());
+  }
+  if (!from._internal_user_email().empty()) {
+    _internal_set_user_email(from._internal_user_email());
+  }
+  if (!from._internal_user_name().empty()) {
+    _internal_set_user_name(from._internal_user_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2517,6 +2870,16 @@ void Orderer::InternalSwap(Orderer* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &updated_at_, GetArenaForAllocation(),
       &other->updated_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_email_, GetArenaForAllocation(),
+      &other->user_email_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_name_, GetArenaForAllocation(),
+      &other->user_name_, other->GetArenaForAllocation()
   );
 }
 
@@ -2581,6 +2944,16 @@ Channel::Channel(const Channel& from)
     updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
       GetArenaForAllocation());
   }
+  user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_email().empty()) {
+    user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_email(), 
+      GetArenaForAllocation());
+  }
+  user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_name().empty()) {
+    user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_name(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:blockchain.network.v1alpha1.Channel)
 }
 
@@ -2592,6 +2965,8 @@ name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Channel::~Channel() {
@@ -2610,6 +2985,8 @@ inline void Channel::SharedDtor() {
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Channel::ArenaDtor(void* object) {
@@ -2636,6 +3013,8 @@ void Channel::Clear() {
   status_.ClearToEmpty();
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
+  user_email_.ClearToEmpty();
+  user_name_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2719,6 +3098,24 @@ const char* Channel::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           auto str = _internal_mutable_updated_at();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Channel.updated_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_email = 9 [json_name = "userEmail"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_user_email();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Channel.user_email"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_name = 10 [json_name = "userName"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_user_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Channel.user_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2831,6 +3228,26 @@ failure:
         8, this->_internal_updated_at(), target);
   }
 
+  // string user_email = 9 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_email().data(), static_cast<int>(this->_internal_user_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Channel.user_email");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_user_email(), target);
+  }
+
+  // string user_name = 10 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_name().data(), static_cast<int>(this->_internal_user_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "blockchain.network.v1alpha1.Channel.user_name");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_user_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2904,6 +3321,20 @@ size_t Channel::ByteSizeLong() const {
         this->_internal_updated_at());
   }
 
+  // string user_email = 9 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_email());
+  }
+
+  // string user_name = 10 [json_name = "userName"];
+  if (!this->_internal_user_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_name());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -2953,6 +3384,12 @@ void Channel::MergeFrom(const Channel& from) {
   }
   if (!from._internal_updated_at().empty()) {
     _internal_set_updated_at(from._internal_updated_at());
+  }
+  if (!from._internal_user_email().empty()) {
+    _internal_set_user_email(from._internal_user_email());
+  }
+  if (!from._internal_user_name().empty()) {
+    _internal_set_user_name(from._internal_user_name());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3006,6 +3443,16 @@ void Channel::InternalSwap(Channel* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &updated_at_, GetArenaForAllocation(),
       &other->updated_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_email_, GetArenaForAllocation(),
+      &other->user_email_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_name_, GetArenaForAllocation(),
+      &other->user_name_, other->GetArenaForAllocation()
   );
 }
 

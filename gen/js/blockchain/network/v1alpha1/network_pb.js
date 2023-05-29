@@ -199,7 +199,9 @@ proto.blockchain.network.v1alpha1.Network.toObject = function(includeInstance, m
     corporationsList: jspb.Message.toObjectList(msg.getCorporationsList(),
     proto.blockchain.network.v1alpha1.Corporation.toObject, includeInstance),
     ccpOrganizationId: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    environment: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    environment: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    userEmail: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    userName: jspb.Message.getFieldWithDefault(msg, 14, "")
   };
 
   if (includeInstance) {
@@ -284,6 +286,14 @@ proto.blockchain.network.v1alpha1.Network.deserializeBinaryFromReader = function
     case 12:
       var value = /** @type {!proto.blockchain.network.v1alpha1.BlockchainEnv} */ (reader.readEnum());
       msg.setEnvironment(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserEmail(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserName(value);
       break;
     default:
       reader.skipField();
@@ -396,6 +406,20 @@ proto.blockchain.network.v1alpha1.Network.serializeBinaryToWriter = function(mes
   if (f !== 0.0) {
     writer.writeEnum(
       12,
+      f
+    );
+  }
+  f = message.getUserEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getUserName();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
       f
     );
   }
@@ -638,6 +662,42 @@ proto.blockchain.network.v1alpha1.Network.prototype.setEnvironment = function(va
 };
 
 
+/**
+ * optional string user_email = 13;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Network.prototype.getUserEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Network} returns this
+ */
+proto.blockchain.network.v1alpha1.Network.prototype.setUserEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string user_name = 14;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Network.prototype.getUserName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Network} returns this
+ */
+proto.blockchain.network.v1alpha1.Network.prototype.setUserName = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -690,7 +750,9 @@ proto.blockchain.network.v1alpha1.Corporation.toObject = function(includeInstanc
     createdAt: jspb.Message.getFieldWithDefault(msg, 10, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 11, ""),
     nameCa: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    nameMsp: jspb.Message.getFieldWithDefault(msg, 13, "")
+    nameMsp: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    userEmail: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    userName: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -779,6 +841,14 @@ proto.blockchain.network.v1alpha1.Corporation.deserializeBinaryFromReader = func
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setNameMsp(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserEmail(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserName(value);
       break;
     default:
       reader.skipField();
@@ -898,6 +968,20 @@ proto.blockchain.network.v1alpha1.Corporation.serializeBinaryToWriter = function
   if (f.length > 0) {
     writer.writeString(
       13,
+      f
+    );
+  }
+  f = message.getUserEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+  f = message.getUserName();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
       f
     );
   }
@@ -1158,6 +1242,42 @@ proto.blockchain.network.v1alpha1.Corporation.prototype.setNameMsp = function(va
 };
 
 
+/**
+ * optional string user_email = 14;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Corporation.prototype.getUserEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Corporation} returns this
+ */
+proto.blockchain.network.v1alpha1.Corporation.prototype.setUserEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional string user_name = 15;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Corporation.prototype.getUserName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Corporation} returns this
+ */
+proto.blockchain.network.v1alpha1.Corporation.prototype.setUserName = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
 
 
 
@@ -1195,7 +1315,9 @@ proto.blockchain.network.v1alpha1.Peer.toObject = function(includeInstance, msg)
     type: jspb.Message.getFieldWithDefault(msg, 3, ""),
     status: jspb.Message.getFieldWithDefault(msg, 4, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 6, "")
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    userEmail: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    userName: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -1255,6 +1377,14 @@ proto.blockchain.network.v1alpha1.Peer.deserializeBinaryFromReader = function(ms
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdatedAt(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserEmail(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserName(value);
       break;
     default:
       reader.skipField();
@@ -1324,6 +1454,20 @@ proto.blockchain.network.v1alpha1.Peer.serializeBinaryToWriter = function(messag
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getUserEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getUserName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -1438,6 +1582,42 @@ proto.blockchain.network.v1alpha1.Peer.prototype.setUpdatedAt = function(value) 
 };
 
 
+/**
+ * optional string user_email = 7;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Peer.prototype.getUserEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Peer} returns this
+ */
+proto.blockchain.network.v1alpha1.Peer.prototype.setUserEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string user_name = 8;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Peer.prototype.getUserName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Peer} returns this
+ */
+proto.blockchain.network.v1alpha1.Peer.prototype.setUserName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
 
 
 
@@ -1476,7 +1656,9 @@ proto.blockchain.network.v1alpha1.Orderer.toObject = function(includeInstance, m
     type: jspb.Message.getFieldWithDefault(msg, 4, ""),
     status: jspb.Message.getFieldWithDefault(msg, 5, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 7, "")
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    userEmail: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    userName: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -1540,6 +1722,14 @@ proto.blockchain.network.v1alpha1.Orderer.deserializeBinaryFromReader = function
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdatedAt(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserEmail(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserName(value);
       break;
     default:
       reader.skipField();
@@ -1616,6 +1806,20 @@ proto.blockchain.network.v1alpha1.Orderer.serializeBinaryToWriter = function(mes
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getUserEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getUserName();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -1748,6 +1952,42 @@ proto.blockchain.network.v1alpha1.Orderer.prototype.setUpdatedAt = function(valu
 };
 
 
+/**
+ * optional string user_email = 8;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Orderer.prototype.getUserEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Orderer} returns this
+ */
+proto.blockchain.network.v1alpha1.Orderer.prototype.setUserEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string user_name = 9;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Orderer.prototype.getUserName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Orderer} returns this
+ */
+proto.blockchain.network.v1alpha1.Orderer.prototype.setUserName = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -1794,7 +2034,9 @@ proto.blockchain.network.v1alpha1.Channel.toObject = function(includeInstance, m
     corporationIdsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     status: jspb.Message.getFieldWithDefault(msg, 6, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 8, "")
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    userEmail: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    userName: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -1862,6 +2104,14 @@ proto.blockchain.network.v1alpha1.Channel.deserializeBinaryFromReader = function
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdatedAt(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserEmail(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserName(value);
       break;
     default:
       reader.skipField();
@@ -1945,6 +2195,20 @@ proto.blockchain.network.v1alpha1.Channel.serializeBinaryToWriter = function(mes
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getUserEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getUserName();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -2111,6 +2375,42 @@ proto.blockchain.network.v1alpha1.Channel.prototype.getUpdatedAt = function() {
  */
 proto.blockchain.network.v1alpha1.Channel.prototype.setUpdatedAt = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string user_email = 9;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Channel.prototype.getUserEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Channel} returns this
+ */
+proto.blockchain.network.v1alpha1.Channel.prototype.setUserEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string user_name = 10;
+ * @return {string}
+ */
+proto.blockchain.network.v1alpha1.Channel.prototype.getUserName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.blockchain.network.v1alpha1.Channel} returns this
+ */
+proto.blockchain.network.v1alpha1.Channel.prototype.setUserName = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 

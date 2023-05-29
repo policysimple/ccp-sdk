@@ -483,6 +483,9 @@ class AddPeerToCorporationRequest final :
     kCcpOrganizationIdFieldNumber = 1,
     kCcpProjectIdFieldNumber = 2,
     kCorporationIdFieldNumber = 3,
+    kUserIdFieldNumber = 4,
+    kUserEmailFieldNumber = 5,
+    kUserNameFieldNumber = 6,
   };
   // string ccp_organization_id = 1 [json_name = "ccpOrganizationId"];
   void clear_ccp_organization_id();
@@ -526,6 +529,48 @@ class AddPeerToCorporationRequest final :
   std::string* _internal_mutable_corporation_id();
   public:
 
+  // string user_id = 4 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // string user_email = 5 [json_name = "userEmail"];
+  void clear_user_email();
+  const std::string& user_email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_email();
+  void set_allocated_user_email(std::string* user_email);
+  private:
+  const std::string& _internal_user_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_email(const std::string& value);
+  std::string* _internal_mutable_user_email();
+  public:
+
+  // string user_name = 6 [json_name = "userName"];
+  void clear_user_name();
+  const std::string& user_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_name();
+  void set_allocated_user_name(std::string* user_name);
+  private:
+  const std::string& _internal_user_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_name(const std::string& value);
+  std::string* _internal_mutable_user_name();
+  public:
+
   // @@protoc_insertion_point(class_scope:blockchain.network.v1alpha1.AddPeerToCorporationRequest)
  private:
   class _Internal;
@@ -536,6 +581,9 @@ class AddPeerToCorporationRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_organization_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ccp_project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr corporation_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_email_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_name_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_5fapi_2eproto;
 };
@@ -4671,6 +4719,144 @@ inline void AddPeerToCorporationRequest::set_allocated_corporation_id(std::strin
   corporation_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), corporation_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToCorporationRequest.corporation_id)
+}
+
+// string user_id = 4 [json_name = "userId"];
+inline void AddPeerToCorporationRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& AddPeerToCorporationRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddPeerToCorporationRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_id)
+}
+inline std::string* AddPeerToCorporationRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_id)
+  return _s;
+}
+inline const std::string& AddPeerToCorporationRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void AddPeerToCorporationRequest::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddPeerToCorporationRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddPeerToCorporationRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddPeerToCorporationRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_id)
+}
+
+// string user_email = 5 [json_name = "userEmail"];
+inline void AddPeerToCorporationRequest::clear_user_email() {
+  user_email_.ClearToEmpty();
+}
+inline const std::string& AddPeerToCorporationRequest::user_email() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_email)
+  return _internal_user_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddPeerToCorporationRequest::set_user_email(ArgT0&& arg0, ArgT... args) {
+ 
+ user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_email)
+}
+inline std::string* AddPeerToCorporationRequest::mutable_user_email() {
+  std::string* _s = _internal_mutable_user_email();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_email)
+  return _s;
+}
+inline const std::string& AddPeerToCorporationRequest::_internal_user_email() const {
+  return user_email_.Get();
+}
+inline void AddPeerToCorporationRequest::_internal_set_user_email(const std::string& value) {
+  
+  user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddPeerToCorporationRequest::_internal_mutable_user_email() {
+  
+  return user_email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddPeerToCorporationRequest::release_user_email() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_email)
+  return user_email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddPeerToCorporationRequest::set_allocated_user_email(std::string* user_email) {
+  if (user_email != nullptr) {
+    
+  } else {
+    
+  }
+  user_email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_email)
+}
+
+// string user_name = 6 [json_name = "userName"];
+inline void AddPeerToCorporationRequest::clear_user_name() {
+  user_name_.ClearToEmpty();
+}
+inline const std::string& AddPeerToCorporationRequest::user_name() const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_name)
+  return _internal_user_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddPeerToCorporationRequest::set_user_name(ArgT0&& arg0, ArgT... args) {
+ 
+ user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_name)
+}
+inline std::string* AddPeerToCorporationRequest::mutable_user_name() {
+  std::string* _s = _internal_mutable_user_name();
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_name)
+  return _s;
+}
+inline const std::string& AddPeerToCorporationRequest::_internal_user_name() const {
+  return user_name_.Get();
+}
+inline void AddPeerToCorporationRequest::_internal_set_user_name(const std::string& value) {
+  
+  user_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddPeerToCorporationRequest::_internal_mutable_user_name() {
+  
+  return user_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddPeerToCorporationRequest::release_user_name() {
+  // @@protoc_insertion_point(field_release:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_name)
+  return user_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddPeerToCorporationRequest::set_allocated_user_name(std::string* user_name) {
+  if (user_name != nullptr) {
+    
+  } else {
+    
+  }
+  user_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.AddPeerToCorporationRequest.user_name)
 }
 
 // -------------------------------------------------------------------

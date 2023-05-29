@@ -47,6 +47,14 @@ class Channel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      */
     protected $updated_at = '';
+    /**
+     * Generated from protobuf field <code>string user_email = 9 [json_name = "userEmail"];</code>
+     */
+    protected $user_email = '';
+    /**
+     * Generated from protobuf field <code>string user_name = 10 [json_name = "userName"];</code>
+     */
+    protected $user_name = '';
 
     /**
      * Constructor.
@@ -63,6 +71,8 @@ class Channel extends \Google\Protobuf\Internal\Message
      *     @type string $status
      *     @type string $created_at
      *     @type string $updated_at
+     *     @type string $user_email
+     *     @type string $user_name
      * }
      */
     public function __construct($data = NULL) {
@@ -246,6 +256,50 @@ class Channel extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_email = 9 [json_name = "userEmail"];</code>
+     * @return string
+     */
+    public function getUserEmail()
+    {
+        return $this->user_email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_email = 9 [json_name = "userEmail"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_name = 10 [json_name = "userName"];</code>
+     * @return string
+     */
+    public function getUserName()
+    {
+        return $this->user_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_name = 10 [json_name = "userName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_name = $var;
 
         return $this;
     }
