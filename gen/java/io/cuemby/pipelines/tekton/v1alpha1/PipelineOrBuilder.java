@@ -440,8 +440,8 @@ public interface PipelineOrBuilder extends
       int index);
 
   /**
-   * <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
-   * @return The isExistDockerfile.
+   * <code>bool is_not_exist_dockerfile = 24 [json_name = "isNotExistDockerfile"];</code>
+   * @return The isNotExistDockerfile.
    */
-  boolean getIsExistDockerfile();
+  boolean getIsNotExistDockerfile();
 }

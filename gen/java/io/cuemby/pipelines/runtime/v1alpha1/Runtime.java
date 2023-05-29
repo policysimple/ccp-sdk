@@ -302,6 +302,11 @@ private static final long serialVersionUID = 0L;
             podIngressCert_ = s;
             break;
           }
+          case 248: {
+
+            isNotExistDockerfile_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1612,6 +1617,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_NOT_EXIST_DOCKERFILE_FIELD_NUMBER = 31;
+  private boolean isNotExistDockerfile_;
+  /**
+   * <code>bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];</code>
+   * @return The isNotExistDockerfile.
+   */
+  @java.lang.Override
+  public boolean getIsNotExistDockerfile() {
+    return isNotExistDockerfile_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1730,6 +1746,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPodIngressCertBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30, podIngressCert_);
+    }
+    if (isNotExistDockerfile_ != false) {
+      output.writeBool(31, isNotExistDockerfile_);
     }
     unknownFields.writeTo(output);
   }
@@ -1873,6 +1892,10 @@ private static final long serialVersionUID = 0L;
     if (!getPodIngressCertBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, podIngressCert_);
     }
+    if (isNotExistDockerfile_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(31, isNotExistDockerfile_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1950,6 +1973,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAfterDeployTasksList())) return false;
     if (!getPodIngressCert()
         .equals(other.getPodIngressCert())) return false;
+    if (getIsNotExistDockerfile()
+        != other.getIsNotExistDockerfile()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2040,6 +2065,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + POD_INGRESS_CERT_FIELD_NUMBER;
     hash = (53 * hash) + getPodIngressCert().hashCode();
+    hash = (37 * hash) + IS_NOT_EXIST_DOCKERFILE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsNotExistDockerfile());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2289,6 +2317,8 @@ private static final long serialVersionUID = 0L;
       }
       podIngressCert_ = "";
 
+      isNotExistDockerfile_ = false;
+
       return this;
     }
 
@@ -2379,6 +2409,7 @@ private static final long serialVersionUID = 0L;
         result.afterDeployTasks_ = afterDeployTasksBuilder_.build();
       }
       result.podIngressCert_ = podIngressCert_;
+      result.isNotExistDockerfile_ = isNotExistDockerfile_;
       onBuilt();
       return result;
     }
@@ -2597,6 +2628,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getPodIngressCert().isEmpty()) {
         podIngressCert_ = other.podIngressCert_;
         onChanged();
+      }
+      if (other.getIsNotExistDockerfile() != false) {
+        setIsNotExistDockerfile(other.getIsNotExistDockerfile());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5542,6 +5576,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       podIngressCert_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isNotExistDockerfile_ ;
+    /**
+     * <code>bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];</code>
+     * @return The isNotExistDockerfile.
+     */
+    @java.lang.Override
+    public boolean getIsNotExistDockerfile() {
+      return isNotExistDockerfile_;
+    }
+    /**
+     * <code>bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];</code>
+     * @param value The isNotExistDockerfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsNotExistDockerfile(boolean value) {
+      
+      isNotExistDockerfile_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsNotExistDockerfile() {
+      
+      isNotExistDockerfile_ = false;
       onChanged();
       return this;
     }

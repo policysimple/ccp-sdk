@@ -223,7 +223,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     pipelines_tekton_v1alpha1_tekton_pb.Task.toObject, includeInstance),
     afterDeployTasksList: jspb.Message.toObjectList(msg.getAfterDeployTasksList(),
     pipelines_tekton_v1alpha1_tekton_pb.Task.toObject, includeInstance),
-    podIngressCert: jspb.Message.getFieldWithDefault(msg, 30, "")
+    podIngressCert: jspb.Message.getFieldWithDefault(msg, 30, ""),
+    isNotExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 31, false)
   };
 
   if (includeInstance) {
@@ -393,6 +394,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 30:
       var value = /** @type {string} */ (reader.readString());
       msg.setPodIngressCert(value);
+      break;
+    case 31:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsNotExistDockerfile(value);
       break;
     default:
       reader.skipField();
@@ -619,6 +624,13 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       30,
+      f
+    );
+  }
+  f = message.getIsNotExistDockerfile();
+  if (f) {
+    writer.writeBool(
+      31,
       f
     );
   }
@@ -1261,6 +1273,24 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getPodIngressCert = function(
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setPodIngressCert = function(value) {
   return jspb.Message.setProto3StringField(this, 30, value);
+};
+
+
+/**
+ * optional bool is_not_exist_dockerfile = 31;
+ * @return {boolean}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIsNotExistDockerfile = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setIsNotExistDockerfile = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 31, value);
 };
 
 

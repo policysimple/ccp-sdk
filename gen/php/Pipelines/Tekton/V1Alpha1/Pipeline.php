@@ -108,9 +108,9 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      */
     private $after_deploy_tasks;
     /**
-     * Generated from protobuf field <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
+     * Generated from protobuf field <code>bool is_not_exist_dockerfile = 24 [json_name = "isNotExistDockerfile"];</code>
      */
-    protected $is_exist_dockerfile = false;
+    protected $is_not_exist_dockerfile = false;
 
     /**
      * Constructor.
@@ -141,7 +141,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type bool $custom_pipeline
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $before_deploy_tasks
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $after_deploy_tasks
-     *     @type bool $is_exist_dockerfile
+     *     @type bool $is_not_exist_dockerfile
      * }
      */
     public function __construct($data = NULL) {
@@ -656,23 +656,23 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
+     * Generated from protobuf field <code>bool is_not_exist_dockerfile = 24 [json_name = "isNotExistDockerfile"];</code>
      * @return bool
      */
-    public function getIsExistDockerfile()
+    public function getIsNotExistDockerfile()
     {
-        return $this->is_exist_dockerfile;
+        return $this->is_not_exist_dockerfile;
     }
 
     /**
-     * Generated from protobuf field <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
+     * Generated from protobuf field <code>bool is_not_exist_dockerfile = 24 [json_name = "isNotExistDockerfile"];</code>
      * @param bool $var
      * @return $this
      */
-    public function setIsExistDockerfile($var)
+    public function setIsNotExistDockerfile($var)
     {
         GPBUtil::checkBool($var);
-        $this->is_exist_dockerfile = $var;
+        $this->is_not_exist_dockerfile = $var;
 
         return $this;
     }

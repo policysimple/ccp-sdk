@@ -496,4 +496,10 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPodIngressCertBytes();
+
+  /**
+   * <code>bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];</code>
+   * @return The isNotExistDockerfile.
+   */
+  boolean getIsNotExistDockerfile();
 }

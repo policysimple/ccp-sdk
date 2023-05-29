@@ -135,6 +135,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string pod_ingress_cert = 30 [json_name = "podIngressCert"];</code>
      */
     protected $pod_ingress_cert = '';
+    /**
+     * Generated from protobuf field <code>bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];</code>
+     */
+    protected $is_not_exist_dockerfile = false;
 
     /**
      * Constructor.
@@ -172,6 +176,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $before_deploy_tasks
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $after_deploy_tasks
      *     @type string $pod_ingress_cert
+     *     @type bool $is_not_exist_dockerfile
      * }
      */
     public function __construct($data = NULL) {
@@ -845,6 +850,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->pod_ingress_cert = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];</code>
+     * @return bool
+     */
+    public function getIsNotExistDockerfile()
+    {
+        return $this->is_not_exist_dockerfile;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsNotExistDockerfile($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_not_exist_dockerfile = $var;
 
         return $this;
     }
