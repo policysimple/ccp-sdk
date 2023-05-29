@@ -71,7 +71,7 @@ message Pipeline {
     repeated Task before_deploy_tasks = 22;
     repeated Task after_deploy_tasks = 23;
 
-    bool is_exist_dockerfile= 24;
+    bool is_not_exist_dockerfile= 24;
 }
 
 message TektonTask {

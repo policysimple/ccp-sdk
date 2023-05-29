@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
           }
           case 192: {
 
-            isExistDockerfile_ = input.readBool();
+            isNotExistDockerfile_ = input.readBool();
             break;
           }
           default: {
@@ -1357,15 +1357,15 @@ private static final long serialVersionUID = 0L;
     return afterDeployTasks_.get(index);
   }
 
-  public static final int IS_EXIST_DOCKERFILE_FIELD_NUMBER = 24;
-  private boolean isExistDockerfile_;
+  public static final int IS_NOT_EXIST_DOCKERFILE_FIELD_NUMBER = 24;
+  private boolean isNotExistDockerfile_;
   /**
-   * <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
-   * @return The isExistDockerfile.
+   * <code>bool is_not_exist_dockerfile = 24 [json_name = "isNotExistDockerfile"];</code>
+   * @return The isNotExistDockerfile.
    */
   @java.lang.Override
-  public boolean getIsExistDockerfile() {
-    return isExistDockerfile_;
+  public boolean getIsNotExistDockerfile() {
+    return isNotExistDockerfile_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1469,8 +1469,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < afterDeployTasks_.size(); i++) {
       output.writeMessage(23, afterDeployTasks_.get(i));
     }
-    if (isExistDockerfile_ != false) {
-      output.writeBool(24, isExistDockerfile_);
+    if (isNotExistDockerfile_ != false) {
+      output.writeBool(24, isNotExistDockerfile_);
     }
     unknownFields.writeTo(output);
   }
@@ -1600,9 +1600,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(23, afterDeployTasks_.get(i));
     }
-    if (isExistDockerfile_ != false) {
+    if (isNotExistDockerfile_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(24, isExistDockerfile_);
+        .computeBoolSize(24, isNotExistDockerfile_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1665,8 +1665,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBeforeDeployTasksList())) return false;
     if (!getAfterDeployTasksList()
         .equals(other.getAfterDeployTasksList())) return false;
-    if (getIsExistDockerfile()
-        != other.getIsExistDockerfile()) return false;
+    if (getIsNotExistDockerfile()
+        != other.getIsNotExistDockerfile()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1747,9 +1747,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + AFTER_DEPLOY_TASKS_FIELD_NUMBER;
       hash = (53 * hash) + getAfterDeployTasksList().hashCode();
     }
-    hash = (37 * hash) + IS_EXIST_DOCKERFILE_FIELD_NUMBER;
+    hash = (37 * hash) + IS_NOT_EXIST_DOCKERFILE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsExistDockerfile());
+        getIsNotExistDockerfile());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1989,7 +1989,7 @@ private static final long serialVersionUID = 0L;
       } else {
         afterDeployTasksBuilder_.clear();
       }
-      isExistDockerfile_ = false;
+      isNotExistDockerfile_ = false;
 
       return this;
     }
@@ -2079,7 +2079,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.afterDeployTasks_ = afterDeployTasksBuilder_.build();
       }
-      result.isExistDockerfile_ = isExistDockerfile_;
+      result.isNotExistDockerfile_ = isNotExistDockerfile_;
       onBuilt();
       return result;
     }
@@ -2292,8 +2292,8 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.getIsExistDockerfile() != false) {
-        setIsExistDockerfile(other.getIsExistDockerfile());
+      if (other.getIsNotExistDockerfile() != false) {
+        setIsNotExistDockerfile(other.getIsNotExistDockerfile());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4861,33 +4861,33 @@ private static final long serialVersionUID = 0L;
       return afterDeployTasksBuilder_;
     }
 
-    private boolean isExistDockerfile_ ;
+    private boolean isNotExistDockerfile_ ;
     /**
-     * <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
-     * @return The isExistDockerfile.
+     * <code>bool is_not_exist_dockerfile = 24 [json_name = "isNotExistDockerfile"];</code>
+     * @return The isNotExistDockerfile.
      */
     @java.lang.Override
-    public boolean getIsExistDockerfile() {
-      return isExistDockerfile_;
+    public boolean getIsNotExistDockerfile() {
+      return isNotExistDockerfile_;
     }
     /**
-     * <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
-     * @param value The isExistDockerfile to set.
+     * <code>bool is_not_exist_dockerfile = 24 [json_name = "isNotExistDockerfile"];</code>
+     * @param value The isNotExistDockerfile to set.
      * @return This builder for chaining.
      */
-    public Builder setIsExistDockerfile(boolean value) {
+    public Builder setIsNotExistDockerfile(boolean value) {
       
-      isExistDockerfile_ = value;
+      isNotExistDockerfile_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool is_exist_dockerfile = 24 [json_name = "isExistDockerfile"];</code>
+     * <code>bool is_not_exist_dockerfile = 24 [json_name = "isNotExistDockerfile"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearIsExistDockerfile() {
+    public Builder clearIsNotExistDockerfile() {
       
-      isExistDockerfile_ = false;
+      isNotExistDockerfile_ = false;
       onChanged();
       return this;
     }

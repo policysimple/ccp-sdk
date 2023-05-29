@@ -424,6 +424,7 @@ class Runtime final :
     kStorageUsedFieldNumber = 23,
     kStorageLimitFieldNumber = 24,
     kCustomPipelineFieldNumber = 27,
+    kIsNotExistDockerfileFieldNumber = 31,
   };
   // repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 3 [json_name = "instanceTypes"];
   int instance_types_size() const;
@@ -856,6 +857,15 @@ class Runtime final :
   void _internal_set_custom_pipeline(bool value);
   public:
 
+  // bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];
+  void clear_is_not_exist_dockerfile();
+  bool is_not_exist_dockerfile() const;
+  void set_is_not_exist_dockerfile(bool value);
+  private:
+  bool _internal_is_not_exist_dockerfile() const;
+  void _internal_set_is_not_exist_dockerfile(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime)
  private:
   class _Internal;
@@ -913,6 +923,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_used_;
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit_;
   bool custom_pipeline_;
+  bool is_not_exist_dockerfile_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
 };
@@ -2958,6 +2969,26 @@ inline void Runtime::set_allocated_pod_ingress_cert(std::string* pod_ingress_cer
   pod_ingress_cert_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pod_ingress_cert,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert)
+}
+
+// bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];
+inline void Runtime::clear_is_not_exist_dockerfile() {
+  is_not_exist_dockerfile_ = false;
+}
+inline bool Runtime::_internal_is_not_exist_dockerfile() const {
+  return is_not_exist_dockerfile_;
+}
+inline bool Runtime::is_not_exist_dockerfile() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.is_not_exist_dockerfile)
+  return _internal_is_not_exist_dockerfile();
+}
+inline void Runtime::_internal_set_is_not_exist_dockerfile(bool value) {
+  
+  is_not_exist_dockerfile_ = value;
+}
+inline void Runtime::set_is_not_exist_dockerfile(bool value) {
+  _internal_set_is_not_exist_dockerfile(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.is_not_exist_dockerfile)
 }
 
 // -------------------------------------------------------------------

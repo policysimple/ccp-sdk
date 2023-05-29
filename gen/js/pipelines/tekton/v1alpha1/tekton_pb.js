@@ -1582,7 +1582,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.toObject = function(includeInstance, ms
     proto.pipelines.tekton.v1alpha1.Task.toObject, includeInstance),
     afterDeployTasksList: jspb.Message.toObjectList(msg.getAfterDeployTasksList(),
     proto.pipelines.tekton.v1alpha1.Task.toObject, includeInstance),
-    isExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 24, false)
+    isNotExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 24, false)
   };
 
   if (includeInstance) {
@@ -1729,7 +1729,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.deserializeBinaryFromReader = function(
       break;
     case 24:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIsExistDockerfile(value);
+      msg.setIsNotExistDockerfile(value);
       break;
     default:
       reader.skipField();
@@ -1907,7 +1907,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
       proto.pipelines.tekton.v1alpha1.Task.serializeBinaryToWriter
     );
   }
-  f = message.getIsExistDockerfile();
+  f = message.getIsNotExistDockerfile();
   if (f) {
     writer.writeBool(
       24,
@@ -2436,10 +2436,10 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.clearAfterDeployTasksList = f
 
 
 /**
- * optional bool is_exist_dockerfile = 24;
+ * optional bool is_not_exist_dockerfile = 24;
  * @return {boolean}
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getIsExistDockerfile = function() {
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getIsNotExistDockerfile = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
 };
 
@@ -2448,7 +2448,7 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getIsExistDockerfile = functi
  * @param {boolean} value
  * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
  */
-proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setIsExistDockerfile = function(value) {
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setIsNotExistDockerfile = function(value) {
   return jspb.Message.setProto3BooleanField(this, 24, value);
 };
 
