@@ -4685,7 +4685,7 @@ proto.payment.v1alpha1.ProjectBilling.toObject = function(includeInstance, msg) 
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    nameProject: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    projectName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     ram: jspb.Message.getFieldWithDefault(msg, 4, ""),
     cpu: jspb.Message.getFieldWithDefault(msg, 5, ""),
     pipeline: jspb.Message.getFieldWithDefault(msg, 6, "")
@@ -4735,7 +4735,7 @@ proto.payment.v1alpha1.ProjectBilling.deserializeBinaryFromReader = function(msg
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNameProject(value);
+      msg.setProjectName(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -4792,7 +4792,7 @@ proto.payment.v1alpha1.ProjectBilling.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getNameProject();
+  f = message.getProjectName();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -4860,10 +4860,10 @@ proto.payment.v1alpha1.ProjectBilling.prototype.setProjectId = function(value) {
 
 
 /**
- * optional string name_project = 3;
+ * optional string project_name = 3;
  * @return {string}
  */
-proto.payment.v1alpha1.ProjectBilling.prototype.getNameProject = function() {
+proto.payment.v1alpha1.ProjectBilling.prototype.getProjectName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -4872,7 +4872,7 @@ proto.payment.v1alpha1.ProjectBilling.prototype.getNameProject = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.ProjectBilling} returns this
  */
-proto.payment.v1alpha1.ProjectBilling.prototype.setNameProject = function(value) {
+proto.payment.v1alpha1.ProjectBilling.prototype.setProjectName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 

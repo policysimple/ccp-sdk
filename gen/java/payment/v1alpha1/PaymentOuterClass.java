@@ -19556,16 +19556,16 @@ public final class PaymentOuterClass {
         getProjectIdBytes();
 
     /**
-     * <code>string name_project = 3 [json_name = "nameProject"];</code>
-     * @return The nameProject.
+     * <code>string project_name = 3 [json_name = "projectName"];</code>
+     * @return The projectName.
      */
-    java.lang.String getNameProject();
+    java.lang.String getProjectName();
     /**
-     * <code>string name_project = 3 [json_name = "nameProject"];</code>
-     * @return The bytes for nameProject.
+     * <code>string project_name = 3 [json_name = "projectName"];</code>
+     * @return The bytes for projectName.
      */
     com.google.protobuf.ByteString
-        getNameProjectBytes();
+        getProjectNameBytes();
 
     /**
      * <code>string ram = 4 [json_name = "ram"];</code>
@@ -19618,7 +19618,7 @@ public final class PaymentOuterClass {
     private ProjectBilling() {
       id_ = "";
       projectId_ = "";
-      nameProject_ = "";
+      projectName_ = "";
       ram_ = "";
       cpu_ = "";
       pipeline_ = "";
@@ -19669,7 +19669,7 @@ public final class PaymentOuterClass {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              nameProject_ = s;
+              projectName_ = s;
               break;
             }
             case 34: {
@@ -19798,38 +19798,38 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int NAME_PROJECT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object nameProject_;
+    public static final int PROJECT_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object projectName_;
     /**
-     * <code>string name_project = 3 [json_name = "nameProject"];</code>
-     * @return The nameProject.
+     * <code>string project_name = 3 [json_name = "projectName"];</code>
+     * @return The projectName.
      */
     @java.lang.Override
-    public java.lang.String getNameProject() {
-      java.lang.Object ref = nameProject_;
+    public java.lang.String getProjectName() {
+      java.lang.Object ref = projectName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        nameProject_ = s;
+        projectName_ = s;
         return s;
       }
     }
     /**
-     * <code>string name_project = 3 [json_name = "nameProject"];</code>
-     * @return The bytes for nameProject.
+     * <code>string project_name = 3 [json_name = "projectName"];</code>
+     * @return The bytes for projectName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameProjectBytes() {
-      java.lang.Object ref = nameProject_;
+        getProjectNameBytes() {
+      java.lang.Object ref = projectName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        nameProject_ = b;
+        projectName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -19970,8 +19970,8 @@ public final class PaymentOuterClass {
       if (!getProjectIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
       }
-      if (!getNameProjectBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nameProject_);
+      if (!getProjectNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectName_);
       }
       if (!getRamBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ram_);
@@ -19997,8 +19997,8 @@ public final class PaymentOuterClass {
       if (!getProjectIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
       }
-      if (!getNameProjectBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nameProject_);
+      if (!getProjectNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectName_);
       }
       if (!getRamBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ram_);
@@ -20028,8 +20028,8 @@ public final class PaymentOuterClass {
           .equals(other.getId())) return false;
       if (!getProjectId()
           .equals(other.getProjectId())) return false;
-      if (!getNameProject()
-          .equals(other.getNameProject())) return false;
+      if (!getProjectName()
+          .equals(other.getProjectName())) return false;
       if (!getRam()
           .equals(other.getRam())) return false;
       if (!getCpu()
@@ -20051,8 +20051,8 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProjectId().hashCode();
-      hash = (37 * hash) + NAME_PROJECT_FIELD_NUMBER;
-      hash = (53 * hash) + getNameProject().hashCode();
+      hash = (37 * hash) + PROJECT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectName().hashCode();
       hash = (37 * hash) + RAM_FIELD_NUMBER;
       hash = (53 * hash) + getRam().hashCode();
       hash = (37 * hash) + CPU_FIELD_NUMBER;
@@ -20196,7 +20196,7 @@ public final class PaymentOuterClass {
 
         projectId_ = "";
 
-        nameProject_ = "";
+        projectName_ = "";
 
         ram_ = "";
 
@@ -20232,7 +20232,7 @@ public final class PaymentOuterClass {
         payment.v1alpha1.PaymentOuterClass.ProjectBilling result = new payment.v1alpha1.PaymentOuterClass.ProjectBilling(this);
         result.id_ = id_;
         result.projectId_ = projectId_;
-        result.nameProject_ = nameProject_;
+        result.projectName_ = projectName_;
         result.ram_ = ram_;
         result.cpu_ = cpu_;
         result.pipeline_ = pipeline_;
@@ -20292,8 +20292,8 @@ public final class PaymentOuterClass {
           projectId_ = other.projectId_;
           onChanged();
         }
-        if (!other.getNameProject().isEmpty()) {
-          nameProject_ = other.nameProject_;
+        if (!other.getProjectName().isEmpty()) {
+          projectName_ = other.projectName_;
           onChanged();
         }
         if (!other.getRam().isEmpty()) {
@@ -20489,78 +20489,78 @@ public final class PaymentOuterClass {
         return this;
       }
 
-      private java.lang.Object nameProject_ = "";
+      private java.lang.Object projectName_ = "";
       /**
-       * <code>string name_project = 3 [json_name = "nameProject"];</code>
-       * @return The nameProject.
+       * <code>string project_name = 3 [json_name = "projectName"];</code>
+       * @return The projectName.
        */
-      public java.lang.String getNameProject() {
-        java.lang.Object ref = nameProject_;
+      public java.lang.String getProjectName() {
+        java.lang.Object ref = projectName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          nameProject_ = s;
+          projectName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name_project = 3 [json_name = "nameProject"];</code>
-       * @return The bytes for nameProject.
+       * <code>string project_name = 3 [json_name = "projectName"];</code>
+       * @return The bytes for projectName.
        */
       public com.google.protobuf.ByteString
-          getNameProjectBytes() {
-        java.lang.Object ref = nameProject_;
+          getProjectNameBytes() {
+        java.lang.Object ref = projectName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          nameProject_ = b;
+          projectName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name_project = 3 [json_name = "nameProject"];</code>
-       * @param value The nameProject to set.
+       * <code>string project_name = 3 [json_name = "projectName"];</code>
+       * @param value The projectName to set.
        * @return This builder for chaining.
        */
-      public Builder setNameProject(
+      public Builder setProjectName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        nameProject_ = value;
+        projectName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name_project = 3 [json_name = "nameProject"];</code>
+       * <code>string project_name = 3 [json_name = "projectName"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearNameProject() {
+      public Builder clearProjectName() {
         
-        nameProject_ = getDefaultInstance().getNameProject();
+        projectName_ = getDefaultInstance().getProjectName();
         onChanged();
         return this;
       }
       /**
-       * <code>string name_project = 3 [json_name = "nameProject"];</code>
-       * @param value The bytes for nameProject to set.
+       * <code>string project_name = 3 [json_name = "projectName"];</code>
+       * @param value The bytes for projectName to set.
        * @return This builder for chaining.
        */
-      public Builder setNameProjectBytes(
+      public Builder setProjectNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        nameProject_ = value;
+        projectName_ = value;
         onChanged();
         return this;
       }
@@ -23474,8 +23474,8 @@ public final class PaymentOuterClass {
       "ymentR\005items\">\n\013ProjectList\022/\n\005items\030\001 \003" +
       "(\0132\031.payment.v1alpha1.ProjectR\005items\"\242\001\n" +
       "\016ProjectBilling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproje" +
-      "ct_id\030\002 \001(\tR\tprojectId\022!\n\014name_project\030\003" +
-      " \001(\tR\013nameProject\022\020\n\003ram\030\004 \001(\tR\003ram\022\020\n\003c" +
+      "ct_id\030\002 \001(\tR\tprojectId\022!\n\014project_name\030\003" +
+      " \001(\tR\013projectName\022\020\n\003ram\030\004 \001(\tR\003ram\022\020\n\003c" +
       "pu\030\005 \001(\tR\003cpu\022\032\n\010pipeline\030\006 \001(\tR\010pipelin" +
       "e\"L\n\022ProjectBillingList\0226\n\005items\030\001 \003(\0132 " +
       ".payment.v1alpha1.ProjectBillingR\005items\"" +
@@ -23596,7 +23596,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_ProjectBilling_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ProjectBilling_descriptor,
-        new java.lang.String[] { "Id", "ProjectId", "NameProject", "Ram", "Cpu", "Pipeline", });
+        new java.lang.String[] { "Id", "ProjectId", "ProjectName", "Ram", "Cpu", "Pipeline", });
     internal_static_payment_v1alpha1_ProjectBillingList_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_payment_v1alpha1_ProjectBillingList_fieldAccessorTable = new

@@ -131,7 +131,7 @@ message ProjectList {
 message ProjectBilling {
   string id =1;
   string project_id = 2;
-  string name_project = 3;
+  string project_name = 3;
   string ram = 4;
   string cpu = 5;
   string pipeline = 6;

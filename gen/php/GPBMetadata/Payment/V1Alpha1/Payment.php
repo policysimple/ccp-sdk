@@ -127,7 +127,7 @@ BilingList.
 id (	Rid
 
 project_id (	R	projectId!
-name_project (	RnameProject
+project_name (	RprojectName
 ram (	Rram
 cpu (	Rcpu
 pipeline (	Rpipeline"L

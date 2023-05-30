@@ -22,9 +22,9 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = '';
     /**
-     * Generated from protobuf field <code>string name_project = 3 [json_name = "nameProject"];</code>
+     * Generated from protobuf field <code>string project_name = 3 [json_name = "projectName"];</code>
      */
-    protected $name_project = '';
+    protected $project_name = '';
     /**
      * Generated from protobuf field <code>string ram = 4 [json_name = "ram"];</code>
      */
@@ -46,7 +46,7 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $project_id
-     *     @type string $name_project
+     *     @type string $project_name
      *     @type string $ram
      *     @type string $cpu
      *     @type string $pipeline
@@ -102,23 +102,23 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name_project = 3 [json_name = "nameProject"];</code>
+     * Generated from protobuf field <code>string project_name = 3 [json_name = "projectName"];</code>
      * @return string
      */
-    public function getNameProject()
+    public function getProjectName()
     {
-        return $this->name_project;
+        return $this->project_name;
     }
 
     /**
-     * Generated from protobuf field <code>string name_project = 3 [json_name = "nameProject"];</code>
+     * Generated from protobuf field <code>string project_name = 3 [json_name = "projectName"];</code>
      * @param string $var
      * @return $this
      */
-    public function setNameProject($var)
+    public function setProjectName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name_project = $var;
+        $this->project_name = $var;
 
         return $this;
     }
