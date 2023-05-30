@@ -84,6 +84,7 @@ constexpr Runtime::Runtime(
   , extra_args_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , before_deploy_tasks_()
   , after_deploy_tasks_()
+  , params_()
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -271,6 +272,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, after_deploy_tasks_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, pod_ingress_cert_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, is_not_exist_dockerfile_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, params_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::RuntimeList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -314,11 +316,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 27, 34, sizeof(::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse)},
   { 36, 43, sizeof(::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse)},
   { 45, -1, sizeof(::pipelines::runtime::v1alpha1::Runtime)},
-  { 81, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
-  { 87, -1, sizeof(::pipelines::runtime::v1alpha1::IntanceType)},
-  { 95, -1, sizeof(::pipelines::runtime::v1alpha1::ResourcesRules)},
-  { 102, -1, sizeof(::pipelines::runtime::v1alpha1::Limit)},
-  { 109, -1, sizeof(::pipelines::runtime::v1alpha1::Request)},
+  { 82, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
+  { 88, -1, sizeof(::pipelines::runtime::v1alpha1::IntanceType)},
+  { 96, -1, sizeof(::pipelines::runtime::v1alpha1::ResourcesRules)},
+  { 103, -1, sizeof(::pipelines::runtime::v1alpha1::Limit)},
+  { 110, -1, sizeof(::pipelines::runtime::v1alpha1::Request)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -339,7 +341,7 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "\n(pipelines/runtime/v1alpha1/runtime.pro"
   "to\022\032pipelines.runtime.v1alpha1\032&applicat"
   "ion/v1alpha1/application.proto\032&pipeline"
-  "s/tekton/v1alpha1/tekton.proto\"\240\017\n\007Runti"
+  "s/tekton/v1alpha1/tekton.proto\"\333\017\n\007Runti"
   "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022N"
   "\n\016instance_types\030\003 \003(\0132\'.pipelines.runti"
   "me.v1alpha1.IntanceTypeR\rinstanceTypes\022\'"
@@ -380,33 +382,35 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "pipelines.tekton.v1alpha1.TaskR\020afterDep"
   "loyTasks\022(\n\020pod_ingress_cert\030\036 \001(\tR\016podI"
   "ngressCert\0225\n\027is_not_exist_dockerfile\030\037 "
-  "\001(\010R\024isNotExistDockerfile\032>\n\020Integration"
-  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005"
-  "value:\0028\001\032G\n\031EnvironmentVariablesEntry\022\020"
+  "\001(\010R\024isNotExistDockerfile\0229\n\006params\030  \003("
+  "\0132!.pipelines.tekton.v1alpha1.ParamsR\006pa"
+  "rams\032>\n\020IntegrationEntry\022\020\n\003key\030\001 \001(\tR\003k"
+  "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031Environm"
+  "entVariablesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v"
+  "alue\030\002 \001(\tR\005value:\0028\001\032;\n\rCommandsEntry\022\020"
   "\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\002"
-  "8\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n"
-  "\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022"
-  "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:"
-  "\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
-  "\024\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013RuntimeList"
-  "\0229\n\005items\030\001 \003(\0132#.pipelines.runtime.v1al"
-  "pha1.RuntimeR\005items\"\206\001\n\013IntanceType\022\016\n\002i"
-  "d\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022S\n\017resou"
-  "rces_rules\030\003 \003(\0132*.pipelines.runtime.v1a"
-  "lpha1.ResourcesRulesR\016resourcesRules\"\210\001\n"
-  "\016ResourcesRules\0227\n\005limit\030\001 \003(\0132!.pipelin"
-  "es.runtime.v1alpha1.LimitR\005limit\022=\n\007requ"
-  "est\030\002 \003(\0132#.pipelines.runtime.v1alpha1.R"
-  "equestR\007request\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003c"
-  "pu\022\020\n\003ram\030\002 \001(\tR\003ram\"-\n\007Request\022\020\n\003cpu\030\001"
-  " \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram*a\n\013TrafficTy"
-  "pe\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAF"
-  "FIC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTE"
-  "RNAL\020\002B\255\001\n$io.cuemby.pipelines.runtime.v"
-  "1alpha1B\014RuntimeProtoP\001Z5github.com/cuem"
-  "by/ccp-runtime-service/runtimev1alpha1\242\002"
-  "\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipe"
-  "lines\\Runtime\\V1Alpha1b\006proto3"
+  "8\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005"
+  "value\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraArgsEntry"
+  "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value"
+  ":\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003(\0132#.pip"
+  "elines.runtime.v1alpha1.RuntimeR\005items\"\206"
+  "\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002"
+  " \001(\tR\004name\022S\n\017resources_rules\030\003 \003(\0132*.pi"
+  "pelines.runtime.v1alpha1.ResourcesRulesR"
+  "\016resourcesRules\"\210\001\n\016ResourcesRules\0227\n\005li"
+  "mit\030\001 \003(\0132!.pipelines.runtime.v1alpha1.L"
+  "imitR\005limit\022=\n\007request\030\002 \003(\0132#.pipelines"
+  ".runtime.v1alpha1.RequestR\007request\"+\n\005Li"
+  "mit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\""
+  "-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001("
+  "\tR\003ram*a\n\013TrafficType\022\034\n\030TRAFFIC_TYPE_UN"
+  "SPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL\020\001\022\031"
+  "\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cuemby."
+  "pipelines.runtime.v1alpha1B\014RuntimeProto"
+  "P\001Z5github.com/cuemby/ccp-runtime-servic"
+  "e/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runt"
+  "ime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha"
+  "1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps[2] = {
   &::descriptor_table_application_2fv1alpha1_2fapplication_2eproto,
@@ -414,7 +418,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = {
-  false, false, 2830, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
+  false, false, 2889, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
   &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps, 2, 11,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
@@ -537,6 +541,9 @@ void Runtime::clear_before_deploy_tasks() {
 void Runtime::clear_after_deploy_tasks() {
   after_deploy_tasks_.Clear();
 }
+void Runtime::clear_params() {
+  params_.Clear();
+}
 Runtime::Runtime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
@@ -547,7 +554,8 @@ Runtime::Runtime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   secrets_(arena),
   extra_args_(arena),
   before_deploy_tasks_(arena),
-  after_deploy_tasks_(arena) {
+  after_deploy_tasks_(arena),
+  params_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -558,7 +566,8 @@ Runtime::Runtime(const Runtime& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       instance_types_(from.instance_types_),
       before_deploy_tasks_(from.before_deploy_tasks_),
-      after_deploy_tasks_(from.after_deploy_tasks_) {
+      after_deploy_tasks_(from.after_deploy_tasks_),
+      params_(from.params_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   integration_.MergeFrom(from.integration_);
   environment_variables_.MergeFrom(from.environment_variables_);
@@ -746,6 +755,7 @@ void Runtime::Clear() {
   extra_args_.Clear();
   before_deploy_tasks_.Clear();
   after_deploy_tasks_.Clear();
+  params_.Clear();
   id_.ClearToEmpty();
   name_.ClearToEmpty();
   organization_id_.ClearToEmpty();
@@ -1069,6 +1079,18 @@ const char* Runtime::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
           is_not_exist_dockerfile_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];
+      case 32:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 2)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_params(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<258>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1563,6 +1585,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(31, this->_internal_is_not_exist_dockerfile(), target);
   }
 
+  // repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_params_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(32, this->_internal_params(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1641,6 +1671,13 @@ size_t Runtime::ByteSizeLong() const {
   // repeated .pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29 [json_name = "afterDeployTasks"];
   total_size += 2UL * this->_internal_after_deploy_tasks_size();
   for (const auto& msg : this->after_deploy_tasks_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];
+  total_size += 2UL * this->_internal_params_size();
+  for (const auto& msg : this->params_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -1837,6 +1874,7 @@ void Runtime::MergeFrom(const Runtime& from) {
   extra_args_.MergeFrom(from.extra_args_);
   before_deploy_tasks_.MergeFrom(from.before_deploy_tasks_);
   after_deploy_tasks_.MergeFrom(from.after_deploy_tasks_);
+  params_.MergeFrom(from.params_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -1931,6 +1969,7 @@ void Runtime::InternalSwap(Runtime* other) {
   extra_args_.InternalSwap(&other->extra_args_);
   before_deploy_tasks_.InternalSwap(&other->before_deploy_tasks_);
   after_deploy_tasks_.InternalSwap(&other->after_deploy_tasks_);
+  params_.InternalSwap(&other->params_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),

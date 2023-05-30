@@ -41,6 +41,7 @@ private static final long serialVersionUID = 0L;
     beforeDeployTasks_ = java.util.Collections.emptyList();
     afterDeployTasks_ = java.util.Collections.emptyList();
     podIngressCert_ = "";
+    params_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -307,6 +308,15 @@ private static final long serialVersionUID = 0L;
             isNotExistDockerfile_ = input.readBool();
             break;
           }
+          case 258: {
+            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              params_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Params>();
+              mutable_bitField0_ |= 0x00000100;
+            }
+            params_.add(
+                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Params.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -330,6 +340,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000080) != 0)) {
         afterDeployTasks_ = java.util.Collections.unmodifiableList(afterDeployTasks_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+        params_ = java.util.Collections.unmodifiableList(params_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1628,6 +1641,46 @@ private static final long serialVersionUID = 0L;
     return isNotExistDockerfile_;
   }
 
+  public static final int PARAMS_FIELD_NUMBER = 32;
+  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> params_;
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> getParamsList() {
+    return params_;
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+      getParamsOrBuilderList() {
+    return params_;
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  @java.lang.Override
+  public int getParamsCount() {
+    return params_.size();
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index) {
+    return params_.get(index);
+  }
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
+      int index) {
+    return params_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1749,6 +1802,9 @@ private static final long serialVersionUID = 0L;
     }
     if (isNotExistDockerfile_ != false) {
       output.writeBool(31, isNotExistDockerfile_);
+    }
+    for (int i = 0; i < params_.size(); i++) {
+      output.writeMessage(32, params_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1896,6 +1952,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(31, isNotExistDockerfile_);
     }
+    for (int i = 0; i < params_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(32, params_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1975,6 +2035,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPodIngressCert())) return false;
     if (getIsNotExistDockerfile()
         != other.getIsNotExistDockerfile()) return false;
+    if (!getParamsList()
+        .equals(other.getParamsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2068,6 +2130,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_NOT_EXIST_DOCKERFILE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsNotExistDockerfile());
+    if (getParamsCount() > 0) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParamsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2241,6 +2307,7 @@ private static final long serialVersionUID = 0L;
         getInstanceTypesFieldBuilder();
         getBeforeDeployTasksFieldBuilder();
         getAfterDeployTasksFieldBuilder();
+        getParamsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -2319,6 +2386,12 @@ private static final long serialVersionUID = 0L;
 
       isNotExistDockerfile_ = false;
 
+      if (paramsBuilder_ == null) {
+        params_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      } else {
+        paramsBuilder_.clear();
+      }
       return this;
     }
 
@@ -2410,6 +2483,15 @@ private static final long serialVersionUID = 0L;
       }
       result.podIngressCert_ = podIngressCert_;
       result.isNotExistDockerfile_ = isNotExistDockerfile_;
+      if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          params_ = java.util.Collections.unmodifiableList(params_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.params_ = params_;
+      } else {
+        result.params_ = paramsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2631,6 +2713,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsNotExistDockerfile() != false) {
         setIsNotExistDockerfile(other.getIsNotExistDockerfile());
+      }
+      if (paramsBuilder_ == null) {
+        if (!other.params_.isEmpty()) {
+          if (params_.isEmpty()) {
+            params_ = other.params_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureParamsIsMutable();
+            params_.addAll(other.params_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.params_.isEmpty()) {
+          if (paramsBuilder_.isEmpty()) {
+            paramsBuilder_.dispose();
+            paramsBuilder_ = null;
+            params_ = other.params_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            paramsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getParamsFieldBuilder() : null;
+          } else {
+            paramsBuilder_.addAllMessages(other.params_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5609,6 +5717,246 @@ private static final long serialVersionUID = 0L;
       isNotExistDockerfile_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> params_ =
+      java.util.Collections.emptyList();
+    private void ensureParamsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        params_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.Params>(params_);
+        bitField0_ |= 0x00000100;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> paramsBuilder_;
+
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> getParamsList() {
+      if (paramsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(params_);
+      } else {
+        return paramsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public int getParamsCount() {
+      if (paramsBuilder_ == null) {
+        return params_.size();
+      } else {
+        return paramsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index) {
+      if (paramsBuilder_ == null) {
+        return params_.get(index);
+      } else {
+        return paramsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public Builder setParams(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParamsIsMutable();
+        params_.set(index, value);
+        onChanged();
+      } else {
+        paramsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public Builder setParams(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        ensureParamsIsMutable();
+        params_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        paramsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public Builder addParams(io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParamsIsMutable();
+        params_.add(value);
+        onChanged();
+      } else {
+        paramsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public Builder addParams(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Params value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParamsIsMutable();
+        params_.add(index, value);
+        onChanged();
+      } else {
+        paramsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public Builder addParams(
+        io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        ensureParamsIsMutable();
+        params_.add(builderForValue.build());
+        onChanged();
+      } else {
+        paramsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public Builder addParams(
+        int index, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        ensureParamsIsMutable();
+        params_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        paramsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public Builder addAllParams(
+        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.Params> values) {
+      if (paramsBuilder_ == null) {
+        ensureParamsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, params_);
+        onChanged();
+      } else {
+        paramsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public Builder clearParams() {
+      if (paramsBuilder_ == null) {
+        params_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        paramsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public Builder removeParams(int index) {
+      if (paramsBuilder_ == null) {
+        ensureParamsIsMutable();
+        params_.remove(index);
+        onChanged();
+      } else {
+        paramsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder getParamsBuilder(
+        int index) {
+      return getParamsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
+        int index) {
+      if (paramsBuilder_ == null) {
+        return params_.get(index);  } else {
+        return paramsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+         getParamsOrBuilderList() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(params_);
+      }
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder addParamsBuilder() {
+      return getParamsFieldBuilder().addBuilder(
+          io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public io.cuemby.pipelines.tekton.v1alpha1.Params.Builder addParamsBuilder(
+        int index) {
+      return getParamsFieldBuilder().addBuilder(
+          index, io.cuemby.pipelines.tekton.v1alpha1.Params.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params.Builder> 
+         getParamsBuilderList() {
+      return getParamsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+        getParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.cuemby.pipelines.tekton.v1alpha1.Params, io.cuemby.pipelines.tekton.v1alpha1.Params.Builder, io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder>(
+                params_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

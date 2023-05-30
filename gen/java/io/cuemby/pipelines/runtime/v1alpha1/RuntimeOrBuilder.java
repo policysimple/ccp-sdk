@@ -502,4 +502,28 @@ public interface RuntimeOrBuilder extends
    * @return The isNotExistDockerfile.
    */
   boolean getIsNotExistDockerfile();
+
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.Params> 
+      getParamsList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.Params getParams(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  int getParamsCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder> 
+      getParamsOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
+      int index);
 }
