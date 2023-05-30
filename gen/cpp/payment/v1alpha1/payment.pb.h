@@ -3499,7 +3499,7 @@ class ProjectBilling final :
   enum : int {
     kIdFieldNumber = 1,
     kProjectIdFieldNumber = 2,
-    kNameProjectFieldNumber = 3,
+    kProjectNameFieldNumber = 3,
     kRamFieldNumber = 4,
     kCpuFieldNumber = 5,
     kPipelineFieldNumber = 6,
@@ -3532,18 +3532,18 @@ class ProjectBilling final :
   std::string* _internal_mutable_project_id();
   public:
 
-  // string name_project = 3 [json_name = "nameProject"];
-  void clear_name_project();
-  const std::string& name_project() const;
+  // string project_name = 3 [json_name = "projectName"];
+  void clear_project_name();
+  const std::string& project_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_name_project(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_name_project();
-  PROTOBUF_MUST_USE_RESULT std::string* release_name_project();
-  void set_allocated_name_project(std::string* name_project);
+  void set_project_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_name();
+  void set_allocated_project_name(std::string* project_name);
   private:
-  const std::string& _internal_name_project() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name_project(const std::string& value);
-  std::string* _internal_mutable_name_project();
+  const std::string& _internal_project_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_name(const std::string& value);
+  std::string* _internal_mutable_project_name();
   public:
 
   // string ram = 4 [json_name = "ram"];
@@ -3597,7 +3597,7 @@ class ProjectBilling final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_project_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ram_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cpu_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pipeline_;
@@ -7489,50 +7489,50 @@ inline void ProjectBilling::set_allocated_project_id(std::string* project_id) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.project_id)
 }
 
-// string name_project = 3 [json_name = "nameProject"];
-inline void ProjectBilling::clear_name_project() {
-  name_project_.ClearToEmpty();
+// string project_name = 3 [json_name = "projectName"];
+inline void ProjectBilling::clear_project_name() {
+  project_name_.ClearToEmpty();
 }
-inline const std::string& ProjectBilling::name_project() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBilling.name_project)
-  return _internal_name_project();
+inline const std::string& ProjectBilling::project_name() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBilling.project_name)
+  return _internal_project_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void ProjectBilling::set_name_project(ArgT0&& arg0, ArgT... args) {
+void ProjectBilling::set_project_name(ArgT0&& arg0, ArgT... args) {
  
- name_project_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.ProjectBilling.name_project)
+ project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.ProjectBilling.project_name)
 }
-inline std::string* ProjectBilling::mutable_name_project() {
-  std::string* _s = _internal_mutable_name_project();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBilling.name_project)
+inline std::string* ProjectBilling::mutable_project_name() {
+  std::string* _s = _internal_mutable_project_name();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBilling.project_name)
   return _s;
 }
-inline const std::string& ProjectBilling::_internal_name_project() const {
-  return name_project_.Get();
+inline const std::string& ProjectBilling::_internal_project_name() const {
+  return project_name_.Get();
 }
-inline void ProjectBilling::_internal_set_name_project(const std::string& value) {
+inline void ProjectBilling::_internal_set_project_name(const std::string& value) {
   
-  name_project_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* ProjectBilling::_internal_mutable_name_project() {
+inline std::string* ProjectBilling::_internal_mutable_project_name() {
   
-  return name_project_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return project_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* ProjectBilling::release_name_project() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.ProjectBilling.name_project)
-  return name_project_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* ProjectBilling::release_project_name() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ProjectBilling.project_name)
+  return project_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void ProjectBilling::set_allocated_name_project(std::string* name_project) {
-  if (name_project != nullptr) {
+inline void ProjectBilling::set_allocated_project_name(std::string* project_name) {
+  if (project_name != nullptr) {
     
   } else {
     
   }
-  name_project_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name_project,
+  project_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_name,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.name_project)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.project_name)
 }
 
 // string ram = 4 [json_name = "ram"];

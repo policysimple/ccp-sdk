@@ -7,7 +7,7 @@ option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 
 
 import "payment/v1alpha1/payment.proto";
-///import "payment.proto";
+//import "payment.proto";
 
 service PaymentAPIService{ 
     //Create a new service 
@@ -212,7 +212,6 @@ message CreateCustomerRequest {
     string name = 2;
 	string email = 3;
     string customer_id = 4;
-	
 }
 
 message CreateCustomerResponse {
