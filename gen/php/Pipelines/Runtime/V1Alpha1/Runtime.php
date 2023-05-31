@@ -139,6 +139,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_not_exist_dockerfile = 31 [json_name = "isNotExistDockerfile"];</code>
      */
     protected $is_not_exist_dockerfile = false;
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     */
+    private $params;
 
     /**
      * Constructor.
@@ -177,6 +181,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $after_deploy_tasks
      *     @type string $pod_ingress_cert
      *     @type bool $is_not_exist_dockerfile
+     *     @type \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $params
      * }
      */
     public function __construct($data = NULL) {
@@ -872,6 +877,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_not_exist_dockerfile = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getParams()
+    {
+        return $this->params;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setParams($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Params::class);
+        $this->params = $arr;
 
         return $this;
     }

@@ -158,7 +158,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.pipelines.runtime.v1alpha1.Runtime.repeatedFields_ = [3,28,29];
+proto.pipelines.runtime.v1alpha1.Runtime.repeatedFields_ = [3,28,29,32];
 
 
 
@@ -224,7 +224,9 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     afterDeployTasksList: jspb.Message.toObjectList(msg.getAfterDeployTasksList(),
     pipelines_tekton_v1alpha1_tekton_pb.Task.toObject, includeInstance),
     podIngressCert: jspb.Message.getFieldWithDefault(msg, 30, ""),
-    isNotExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 31, false)
+    isNotExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
+    paramsList: jspb.Message.toObjectList(msg.getParamsList(),
+    pipelines_tekton_v1alpha1_tekton_pb.Params.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -398,6 +400,11 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 31:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsNotExistDockerfile(value);
+      break;
+    case 32:
+      var value = new pipelines_tekton_v1alpha1_tekton_pb.Params;
+      reader.readMessage(value,pipelines_tekton_v1alpha1_tekton_pb.Params.deserializeBinaryFromReader);
+      msg.addParams(value);
       break;
     default:
       reader.skipField();
@@ -632,6 +639,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
     writer.writeBool(
       31,
       f
+    );
+  }
+  f = message.getParamsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      32,
+      f,
+      pipelines_tekton_v1alpha1_tekton_pb.Params.serializeBinaryToWriter
     );
   }
 };
@@ -1291,6 +1306,44 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIsNotExistDockerfile = fun
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setIsNotExistDockerfile = function(value) {
   return jspb.Message.setProto3BooleanField(this, 31, value);
+};
+
+
+/**
+ * repeated pipelines.tekton.v1alpha1.Params params = 32;
+ * @return {!Array<!proto.pipelines.tekton.v1alpha1.Params>}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getParamsList = function() {
+  return /** @type{!Array<!proto.pipelines.tekton.v1alpha1.Params>} */ (
+    jspb.Message.getRepeatedWrapperField(this, pipelines_tekton_v1alpha1_tekton_pb.Params, 32));
+};
+
+
+/**
+ * @param {!Array<!proto.pipelines.tekton.v1alpha1.Params>} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+*/
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setParamsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 32, value);
+};
+
+
+/**
+ * @param {!proto.pipelines.tekton.v1alpha1.Params=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.pipelines.tekton.v1alpha1.Params}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.addParams = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 32, opt_value, proto.pipelines.tekton.v1alpha1.Params, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearParamsList = function() {
+  return this.setParamsList([]);
 };
 
 

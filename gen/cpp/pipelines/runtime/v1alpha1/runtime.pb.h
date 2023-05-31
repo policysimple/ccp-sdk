@@ -402,6 +402,7 @@ class Runtime final :
     kExtraArgsFieldNumber = 17,
     kBeforeDeployTasksFieldNumber = 28,
     kAfterDeployTasksFieldNumber = 29,
+    kParamsFieldNumber = 32,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kOrganizationIdFieldNumber = 4,
@@ -564,6 +565,24 @@ class Runtime final :
   ::pipelines::tekton::v1alpha1::Task* add_after_deploy_tasks();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task >&
       after_deploy_tasks() const;
+
+  // repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];
+  int params_size() const;
+  private:
+  int _internal_params_size() const;
+  public:
+  void clear_params();
+  ::pipelines::tekton::v1alpha1::Params* mutable_params(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params >*
+      mutable_params();
+  private:
+  const ::pipelines::tekton::v1alpha1::Params& _internal_params(int index) const;
+  ::pipelines::tekton::v1alpha1::Params* _internal_add_params();
+  public:
+  const ::pipelines::tekton::v1alpha1::Params& params(int index) const;
+  ::pipelines::tekton::v1alpha1::Params* add_params();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params >&
+      params() const;
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -901,6 +920,7 @@ class Runtime final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> extra_args_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > before_deploy_tasks_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Task > after_deploy_tasks_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params > params_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
@@ -2989,6 +3009,43 @@ inline void Runtime::_internal_set_is_not_exist_dockerfile(bool value) {
 inline void Runtime::set_is_not_exist_dockerfile(bool value) {
   _internal_set_is_not_exist_dockerfile(value);
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.is_not_exist_dockerfile)
+}
+
+// repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];
+inline int Runtime::_internal_params_size() const {
+  return params_.size();
+}
+inline int Runtime::params_size() const {
+  return _internal_params_size();
+}
+inline ::pipelines::tekton::v1alpha1::Params* Runtime::mutable_params(int index) {
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.params)
+  return params_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params >*
+Runtime::mutable_params() {
+  // @@protoc_insertion_point(field_mutable_list:pipelines.runtime.v1alpha1.Runtime.params)
+  return &params_;
+}
+inline const ::pipelines::tekton::v1alpha1::Params& Runtime::_internal_params(int index) const {
+  return params_.Get(index);
+}
+inline const ::pipelines::tekton::v1alpha1::Params& Runtime::params(int index) const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.params)
+  return _internal_params(index);
+}
+inline ::pipelines::tekton::v1alpha1::Params* Runtime::_internal_add_params() {
+  return params_.Add();
+}
+inline ::pipelines::tekton::v1alpha1::Params* Runtime::add_params() {
+  ::pipelines::tekton::v1alpha1::Params* _add = _internal_add_params();
+  // @@protoc_insertion_point(field_add:pipelines.runtime.v1alpha1.Runtime.params)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pipelines::tekton::v1alpha1::Params >&
+Runtime::params() const {
+  // @@protoc_insertion_point(field_list:pipelines.runtime.v1alpha1.Runtime.params)
+  return params_;
 }
 
 // -------------------------------------------------------------------

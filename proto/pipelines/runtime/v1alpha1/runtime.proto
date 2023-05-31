@@ -52,6 +52,8 @@ message Runtime {
   repeated pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29;
   string pod_ingress_cert = 30;
   bool is_not_exist_dockerfile= 31;
+  repeated pipelines.tekton.v1alpha1.Params params = 32;
+
 }
 
 message RuntimeList {
