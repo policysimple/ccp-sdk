@@ -42,6 +42,7 @@ message Corporation {
     string name_msp = 13;
     string user_email = 14;
     string user_name = 15;
+    repeated Channel channels = 16;
 }
 
 message Peer {
@@ -78,6 +79,7 @@ message Channel {
     string updated_at = 8;
     string user_email = 9;
     string user_name = 10;
+    repeated Peer peers = 11;
 }
 
 message Invitation {

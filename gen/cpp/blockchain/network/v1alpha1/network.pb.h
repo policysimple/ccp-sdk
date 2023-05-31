@@ -585,6 +585,7 @@ class Corporation final :
 
   enum : int {
     kPeersFieldNumber = 7,
+    kChannelsFieldNumber = 16,
     kIdFieldNumber = 1,
     kUserIdFieldNumber = 2,
     kDomainFieldNumber = 3,
@@ -617,6 +618,24 @@ class Corporation final :
   ::blockchain::network::v1alpha1::Peer* add_peers();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer >&
       peers() const;
+
+  // repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];
+  int channels_size() const;
+  private:
+  int _internal_channels_size() const;
+  public:
+  void clear_channels();
+  ::blockchain::network::v1alpha1::Channel* mutable_channels(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Channel >*
+      mutable_channels();
+  private:
+  const ::blockchain::network::v1alpha1::Channel& _internal_channels(int index) const;
+  ::blockchain::network::v1alpha1::Channel* _internal_add_channels();
+  public:
+  const ::blockchain::network::v1alpha1::Channel& channels(int index) const;
+  ::blockchain::network::v1alpha1::Channel* add_channels();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Channel >&
+      channels() const;
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -822,6 +841,7 @@ class Corporation final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer > peers_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Channel > channels_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr domain_;
@@ -1485,6 +1505,7 @@ class Channel final :
 
   enum : int {
     kCorporationIdsFieldNumber = 5,
+    kPeersFieldNumber = 11,
     kIdFieldNumber = 1,
     kCorporationIdFieldNumber = 2,
     kBlockchainIdFieldNumber = 3,
@@ -1518,6 +1539,24 @@ class Channel final :
   const std::string& _internal_corporation_ids(int index) const;
   std::string* _internal_add_corporation_ids();
   public:
+
+  // repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];
+  int peers_size() const;
+  private:
+  int _internal_peers_size() const;
+  public:
+  void clear_peers();
+  ::blockchain::network::v1alpha1::Peer* mutable_peers(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer >*
+      mutable_peers();
+  private:
+  const ::blockchain::network::v1alpha1::Peer& _internal_peers(int index) const;
+  ::blockchain::network::v1alpha1::Peer* _internal_add_peers();
+  public:
+  const ::blockchain::network::v1alpha1::Peer& peers(int index) const;
+  ::blockchain::network::v1alpha1::Peer* add_peers();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer >&
+      peers() const;
 
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -1653,6 +1692,7 @@ class Channel final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> corporation_ids_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer > peers_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr corporation_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blockchain_id_;
@@ -3216,6 +3256,46 @@ inline void Corporation::set_allocated_user_name(std::string* user_name) {
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Corporation.user_name)
 }
 
+// repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];
+inline int Corporation::_internal_channels_size() const {
+  return channels_.size();
+}
+inline int Corporation::channels_size() const {
+  return _internal_channels_size();
+}
+inline void Corporation::clear_channels() {
+  channels_.Clear();
+}
+inline ::blockchain::network::v1alpha1::Channel* Corporation::mutable_channels(int index) {
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Corporation.channels)
+  return channels_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Channel >*
+Corporation::mutable_channels() {
+  // @@protoc_insertion_point(field_mutable_list:blockchain.network.v1alpha1.Corporation.channels)
+  return &channels_;
+}
+inline const ::blockchain::network::v1alpha1::Channel& Corporation::_internal_channels(int index) const {
+  return channels_.Get(index);
+}
+inline const ::blockchain::network::v1alpha1::Channel& Corporation::channels(int index) const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Corporation.channels)
+  return _internal_channels(index);
+}
+inline ::blockchain::network::v1alpha1::Channel* Corporation::_internal_add_channels() {
+  return channels_.Add();
+}
+inline ::blockchain::network::v1alpha1::Channel* Corporation::add_channels() {
+  ::blockchain::network::v1alpha1::Channel* _add = _internal_add_channels();
+  // @@protoc_insertion_point(field_add:blockchain.network.v1alpha1.Corporation.channels)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Channel >&
+Corporation::channels() const {
+  // @@protoc_insertion_point(field_list:blockchain.network.v1alpha1.Corporation.channels)
+  return channels_;
+}
+
 // -------------------------------------------------------------------
 
 // Peer
@@ -4497,6 +4577,46 @@ inline void Channel::set_allocated_user_name(std::string* user_name) {
   user_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_name,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:blockchain.network.v1alpha1.Channel.user_name)
+}
+
+// repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];
+inline int Channel::_internal_peers_size() const {
+  return peers_.size();
+}
+inline int Channel::peers_size() const {
+  return _internal_peers_size();
+}
+inline void Channel::clear_peers() {
+  peers_.Clear();
+}
+inline ::blockchain::network::v1alpha1::Peer* Channel::mutable_peers(int index) {
+  // @@protoc_insertion_point(field_mutable:blockchain.network.v1alpha1.Channel.peers)
+  return peers_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer >*
+Channel::mutable_peers() {
+  // @@protoc_insertion_point(field_mutable_list:blockchain.network.v1alpha1.Channel.peers)
+  return &peers_;
+}
+inline const ::blockchain::network::v1alpha1::Peer& Channel::_internal_peers(int index) const {
+  return peers_.Get(index);
+}
+inline const ::blockchain::network::v1alpha1::Peer& Channel::peers(int index) const {
+  // @@protoc_insertion_point(field_get:blockchain.network.v1alpha1.Channel.peers)
+  return _internal_peers(index);
+}
+inline ::blockchain::network::v1alpha1::Peer* Channel::_internal_add_peers() {
+  return peers_.Add();
+}
+inline ::blockchain::network::v1alpha1::Peer* Channel::add_peers() {
+  ::blockchain::network::v1alpha1::Peer* _add = _internal_add_peers();
+  // @@protoc_insertion_point(field_add:blockchain.network.v1alpha1.Channel.peers)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::blockchain::network::v1alpha1::Peer >&
+Channel::peers() const {
+  // @@protoc_insertion_point(field_list:blockchain.network.v1alpha1.Channel.peers)
+  return peers_;
 }
 
 // -------------------------------------------------------------------

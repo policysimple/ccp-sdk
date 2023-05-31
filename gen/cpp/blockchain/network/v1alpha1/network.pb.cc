@@ -48,6 +48,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NetworkDefaultTypeInternal _Net
 constexpr Corporation::Corporation(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : peers_()
+  , channels_()
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , domain_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -113,6 +114,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OrdererDefaultTypeInternal _Ord
 constexpr Channel::Channel(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : corporation_ids_()
+  , peers_()
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , corporation_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , blockchain_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -196,6 +198,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, name_msp_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, user_email_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, user_name_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Corporation, channels_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Peer, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -238,6 +241,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, updated_at_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, user_email_),
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, user_name_),
+  PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Channel, peers_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::blockchain::network::v1alpha1::Invitation, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -254,10 +258,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_blockchain_2fnetwork_2fv1alpha
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::blockchain::network::v1alpha1::Network)},
   { 19, -1, sizeof(::blockchain::network::v1alpha1::Corporation)},
-  { 39, -1, sizeof(::blockchain::network::v1alpha1::Peer)},
-  { 52, -1, sizeof(::blockchain::network::v1alpha1::Orderer)},
-  { 66, -1, sizeof(::blockchain::network::v1alpha1::Channel)},
-  { 81, -1, sizeof(::blockchain::network::v1alpha1::Invitation)},
+  { 40, -1, sizeof(::blockchain::network::v1alpha1::Peer)},
+  { 53, -1, sizeof(::blockchain::network::v1alpha1::Orderer)},
+  { 67, -1, sizeof(::blockchain::network::v1alpha1::Channel)},
+  { 83, -1, sizeof(::blockchain::network::v1alpha1::Invitation)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -284,7 +288,7 @@ const char descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2
   "R\021ccpOrganizationId\022L\n\013environment\030\014 \001(\016"
   "2*.blockchain.network.v1alpha1.Blockchai"
   "nEnvR\013environment\022\035\n\nuser_email\030\r \001(\tR\tu"
-  "serEmail\022\033\n\tuser_name\030\016 \001(\tR\010userName\"\335\003"
+  "serEmail\022\033\n\tuser_name\030\016 \001(\tR\010userName\"\237\004"
   "\n\013Corporation\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id"
   "\030\002 \001(\tR\006userId\022\026\n\006domain\030\003 \001(\tR\006domain\022%"
   "\n\016admin_password\030\004 \001(\tR\radminPassword\022\035\n"
@@ -296,40 +300,43 @@ const char descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2
   "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\013 \001(\tR\tupda"
   "tedAt\022\027\n\007name_ca\030\014 \001(\tR\006nameCa\022\031\n\010name_m"
   "sp\030\r \001(\tR\007nameMsp\022\035\n\nuser_email\030\016 \001(\tR\tu"
-  "serEmail\022\033\n\tuser_name\030\017 \001(\tR\010userName\"\320\001"
-  "\n\004Peer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na"
-  "me\022\022\n\004type\030\003 \001(\tR\004type\022\026\n\006status\030\004 \001(\tR\006"
-  "status\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAt\022\035\n"
-  "\nupdated_at\030\006 \001(\tR\tupdatedAt\022\035\n\nuser_ema"
-  "il\030\007 \001(\tR\tuserEmail\022\033\n\tuser_name\030\010 \001(\tR\010"
-  "userName\"\370\001\n\007Orderer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004"
-  "name\030\002 \001(\tR\004name\022#\n\rblockchain_id\030\003 \001(\tR"
-  "\014blockchainId\022\022\n\004type\030\004 \001(\tR\004type\022\026\n\006sta"
-  "tus\030\005 \001(\tR\006status\022\035\n\ncreated_at\030\006 \001(\tR\tc"
-  "reatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022"
-  "\035\n\nuser_email\030\010 \001(\tR\tuserEmail\022\033\n\tuser_n"
-  "ame\030\t \001(\tR\010userName\"\264\002\n\007Channel\022\016\n\002id\030\001 "
-  "\001(\tR\002id\022%\n\016corporation_id\030\002 \001(\tR\rcorpora"
-  "tionId\022#\n\rblockchain_id\030\003 \001(\tR\014blockchai"
-  "nId\022\022\n\004name\030\004 \001(\tR\004name\022\'\n\017corporation_i"
-  "ds\030\005 \003(\tR\016corporationIds\022\026\n\006status\030\006 \001(\t"
-  "R\006status\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022"
-  "\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022\035\n\nuser_e"
-  "mail\030\t \001(\tR\tuserEmail\022\033\n\tuser_name\030\n \001(\t"
-  "R\010userName\"\317\001\n\nInvitation\022\016\n\002id\030\001 \001(\tR\002i"
-  "d\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022\024\n\005e"
-  "mail\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006statu"
-  "s\022#\n\rblockchain_id\030\005 \001(\tR\014blockchainId\022\035"
-  "\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated"
-  "_at\030\007 \001(\tR\tupdatedAt*g\n\rBlockchainEnv\022\036\n"
-  "\032BLOCKCHAIN_ENV_UNSPECIFIED\020\000\022\032\n\026BLOCKCH"
-  "AIN_ENV_TESTNET\020\001\022\032\n\026BLOCKCHAIN_ENV_MAIN"
-  "NET\020\002B>Z<github.com/cuemby/ccp-sdk/gen/g"
-  "o/blockchain/network/v1alpha1b\006proto3"
+  "serEmail\022\033\n\tuser_name\030\017 \001(\tR\010userName\022@\n"
+  "\010channels\030\020 \003(\0132$.blockchain.network.v1a"
+  "lpha1.ChannelR\010channels\"\320\001\n\004Peer\022\016\n\002id\030\001"
+  " \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001"
+  "(\tR\004type\022\026\n\006status\030\004 \001(\tR\006status\022\035\n\ncrea"
+  "ted_at\030\005 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\006 "
+  "\001(\tR\tupdatedAt\022\035\n\nuser_email\030\007 \001(\tR\tuser"
+  "Email\022\033\n\tuser_name\030\010 \001(\tR\010userName\"\370\001\n\007O"
+  "rderer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na"
+  "me\022#\n\rblockchain_id\030\003 \001(\tR\014blockchainId\022"
+  "\022\n\004type\030\004 \001(\tR\004type\022\026\n\006status\030\005 \001(\tR\006sta"
+  "tus\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nup"
+  "dated_at\030\007 \001(\tR\tupdatedAt\022\035\n\nuser_email\030"
+  "\010 \001(\tR\tuserEmail\022\033\n\tuser_name\030\t \001(\tR\010use"
+  "rName\"\355\002\n\007Channel\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016cor"
+  "poration_id\030\002 \001(\tR\rcorporationId\022#\n\rbloc"
+  "kchain_id\030\003 \001(\tR\014blockchainId\022\022\n\004name\030\004 "
+  "\001(\tR\004name\022\'\n\017corporation_ids\030\005 \003(\tR\016corp"
+  "orationIds\022\026\n\006status\030\006 \001(\tR\006status\022\035\n\ncr"
+  "eated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030"
+  "\010 \001(\tR\tupdatedAt\022\035\n\nuser_email\030\t \001(\tR\tus"
+  "erEmail\022\033\n\tuser_name\030\n \001(\tR\010userName\0227\n\005"
+  "peers\030\013 \003(\0132!.blockchain.network.v1alpha"
+  "1.PeerR\005peers\"\317\001\n\nInvitation\022\016\n\002id\030\001 \001(\t"
+  "R\002id\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022\024"
+  "\n\005email\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006st"
+  "atus\022#\n\rblockchain_id\030\005 \001(\tR\014blockchainI"
+  "d\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupda"
+  "ted_at\030\007 \001(\tR\tupdatedAt*g\n\rBlockchainEnv"
+  "\022\036\n\032BLOCKCHAIN_ENV_UNSPECIFIED\020\000\022\032\n\026BLOC"
+  "KCHAIN_ENV_TESTNET\020\001\022\032\n\026BLOCKCHAIN_ENV_M"
+  "AINNET\020\002B>Z<github.com/cuemby/ccp-sdk/ge"
+  "n/go/blockchain/network/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto = {
-  false, false, 2237, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, "blockchain/network/v1alpha1/network.proto", 
+  false, false, 2360, descriptor_table_protodef_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, "blockchain/network/v1alpha1/network.proto", 
   &descriptor_table_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto_once, nullptr, 0, 6,
   schemas, file_default_instances, TableStruct_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto::offsets,
   file_level_metadata_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, file_level_enum_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto, file_level_service_descriptors_blockchain_2fnetwork_2fv1alpha1_2fnetwork_2eproto,
@@ -1090,7 +1097,8 @@ class Corporation::_Internal {
 Corporation::Corporation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  peers_(arena) {
+  peers_(arena),
+  channels_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -1099,7 +1107,8 @@ Corporation::Corporation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 Corporation::Corporation(const Corporation& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      peers_(from.peers_) {
+      peers_(from.peers_),
+      channels_(from.channels_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
@@ -1233,6 +1242,7 @@ void Corporation::Clear() {
   (void) cached_has_bits;
 
   peers_.Clear();
+  channels_.Clear();
   id_.ClearToEmpty();
   user_id_.ClearToEmpty();
   domain_.ClearToEmpty();
@@ -1392,6 +1402,18 @@ const char* Corporation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Corporation.user_name"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_channels(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<130>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1571,6 +1593,14 @@ failure:
         15, this->_internal_user_name(), target);
   }
 
+  // repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_channels_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(16, this->_internal_channels(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1590,6 +1620,13 @@ size_t Corporation::ByteSizeLong() const {
   // repeated .blockchain.network.v1alpha1.Peer peers = 7 [json_name = "peers"];
   total_size += 1UL * this->_internal_peers_size();
   for (const auto& msg : this->peers_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];
+  total_size += 2UL * this->_internal_channels_size();
+  for (const auto& msg : this->channels_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -1721,6 +1758,7 @@ void Corporation::MergeFrom(const Corporation& from) {
   (void) cached_has_bits;
 
   peers_.MergeFrom(from.peers_);
+  channels_.MergeFrom(from.channels_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -1781,6 +1819,7 @@ void Corporation::InternalSwap(Corporation* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   peers_.InternalSwap(&other->peers_);
+  channels_.InternalSwap(&other->channels_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
@@ -2898,7 +2937,8 @@ class Channel::_Internal {
 Channel::Channel(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  corporation_ids_(arena) {
+  corporation_ids_(arena),
+  peers_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2907,7 +2947,8 @@ Channel::Channel(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 Channel::Channel(const Channel& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      corporation_ids_(from.corporation_ids_) {
+      corporation_ids_(from.corporation_ids_),
+      peers_(from.peers_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
@@ -3006,6 +3047,7 @@ void Channel::Clear() {
   (void) cached_has_bits;
 
   corporation_ids_.Clear();
+  peers_.Clear();
   id_.ClearToEmpty();
   corporation_id_.ClearToEmpty();
   blockchain_id_.ClearToEmpty();
@@ -3117,6 +3159,18 @@ const char* Channel::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "blockchain.network.v1alpha1.Channel.user_name"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_peers(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -3248,6 +3302,14 @@ failure:
         10, this->_internal_user_name(), target);
   }
 
+  // repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_peers_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(11, this->_internal_peers(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3270,6 +3332,13 @@ size_t Channel::ByteSizeLong() const {
   for (int i = 0, n = corporation_ids_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
       corporation_ids_.Get(i));
+  }
+
+  // repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];
+  total_size += 1UL * this->_internal_peers_size();
+  for (const auto& msg : this->peers_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // string id = 1 [json_name = "id"];
@@ -3364,6 +3433,7 @@ void Channel::MergeFrom(const Channel& from) {
   (void) cached_has_bits;
 
   corporation_ids_.MergeFrom(from.corporation_ids_);
+  peers_.MergeFrom(from.peers_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -3409,6 +3479,7 @@ void Channel::InternalSwap(Channel* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   corporation_ids_.InternalSwap(&other->corporation_ids_);
+  peers_.InternalSwap(&other->peers_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),

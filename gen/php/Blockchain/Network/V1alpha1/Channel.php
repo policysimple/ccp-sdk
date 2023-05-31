@@ -55,6 +55,10 @@ class Channel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_name = 10 [json_name = "userName"];</code>
      */
     protected $user_name = '';
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    private $peers;
 
     /**
      * Constructor.
@@ -73,6 +77,7 @@ class Channel extends \Google\Protobuf\Internal\Message
      *     @type string $updated_at
      *     @type string $user_email
      *     @type string $user_name
+     *     @type \Blockchain\Network\V1alpha1\Peer[]|\Google\Protobuf\Internal\RepeatedField $peers
      * }
      */
     public function __construct($data = NULL) {
@@ -300,6 +305,28 @@ class Channel extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPeers()
+    {
+        return $this->peers;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     * @param \Blockchain\Network\V1alpha1\Peer[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPeers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Network\V1alpha1\Peer::class);
+        $this->peers = $arr;
 
         return $this;
     }

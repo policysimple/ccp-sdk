@@ -704,7 +704,7 @@ proto.blockchain.network.v1alpha1.Network.prototype.setUserName = function(value
  * @private {!Array<number>}
  * @const
  */
-proto.blockchain.network.v1alpha1.Corporation.repeatedFields_ = [7];
+proto.blockchain.network.v1alpha1.Corporation.repeatedFields_ = [7,16];
 
 
 
@@ -752,7 +752,9 @@ proto.blockchain.network.v1alpha1.Corporation.toObject = function(includeInstanc
     nameCa: jspb.Message.getFieldWithDefault(msg, 12, ""),
     nameMsp: jspb.Message.getFieldWithDefault(msg, 13, ""),
     userEmail: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    userName: jspb.Message.getFieldWithDefault(msg, 15, "")
+    userName: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    channelsList: jspb.Message.toObjectList(msg.getChannelsList(),
+    proto.blockchain.network.v1alpha1.Channel.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -849,6 +851,11 @@ proto.blockchain.network.v1alpha1.Corporation.deserializeBinaryFromReader = func
     case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserName(value);
+      break;
+    case 16:
+      var value = new proto.blockchain.network.v1alpha1.Channel;
+      reader.readMessage(value,proto.blockchain.network.v1alpha1.Channel.deserializeBinaryFromReader);
+      msg.addChannels(value);
       break;
     default:
       reader.skipField();
@@ -983,6 +990,14 @@ proto.blockchain.network.v1alpha1.Corporation.serializeBinaryToWriter = function
     writer.writeString(
       15,
       f
+    );
+  }
+  f = message.getChannelsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      16,
+      f,
+      proto.blockchain.network.v1alpha1.Channel.serializeBinaryToWriter
     );
   }
 };
@@ -1275,6 +1290,44 @@ proto.blockchain.network.v1alpha1.Corporation.prototype.getUserName = function()
  */
 proto.blockchain.network.v1alpha1.Corporation.prototype.setUserName = function(value) {
   return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * repeated Channel channels = 16;
+ * @return {!Array<!proto.blockchain.network.v1alpha1.Channel>}
+ */
+proto.blockchain.network.v1alpha1.Corporation.prototype.getChannelsList = function() {
+  return /** @type{!Array<!proto.blockchain.network.v1alpha1.Channel>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.blockchain.network.v1alpha1.Channel, 16));
+};
+
+
+/**
+ * @param {!Array<!proto.blockchain.network.v1alpha1.Channel>} value
+ * @return {!proto.blockchain.network.v1alpha1.Corporation} returns this
+*/
+proto.blockchain.network.v1alpha1.Corporation.prototype.setChannelsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 16, value);
+};
+
+
+/**
+ * @param {!proto.blockchain.network.v1alpha1.Channel=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.blockchain.network.v1alpha1.Channel}
+ */
+proto.blockchain.network.v1alpha1.Corporation.prototype.addChannels = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 16, opt_value, proto.blockchain.network.v1alpha1.Channel, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.blockchain.network.v1alpha1.Corporation} returns this
+ */
+proto.blockchain.network.v1alpha1.Corporation.prototype.clearChannelsList = function() {
+  return this.setChannelsList([]);
 };
 
 
@@ -1994,7 +2047,7 @@ proto.blockchain.network.v1alpha1.Orderer.prototype.setUserName = function(value
  * @private {!Array<number>}
  * @const
  */
-proto.blockchain.network.v1alpha1.Channel.repeatedFields_ = [5];
+proto.blockchain.network.v1alpha1.Channel.repeatedFields_ = [5,11];
 
 
 
@@ -2036,7 +2089,9 @@ proto.blockchain.network.v1alpha1.Channel.toObject = function(includeInstance, m
     createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 8, ""),
     userEmail: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    userName: jspb.Message.getFieldWithDefault(msg, 10, "")
+    userName: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    peersList: jspb.Message.toObjectList(msg.getPeersList(),
+    proto.blockchain.network.v1alpha1.Peer.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2112,6 +2167,11 @@ proto.blockchain.network.v1alpha1.Channel.deserializeBinaryFromReader = function
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setUserName(value);
+      break;
+    case 11:
+      var value = new proto.blockchain.network.v1alpha1.Peer;
+      reader.readMessage(value,proto.blockchain.network.v1alpha1.Peer.deserializeBinaryFromReader);
+      msg.addPeers(value);
       break;
     default:
       reader.skipField();
@@ -2210,6 +2270,14 @@ proto.blockchain.network.v1alpha1.Channel.serializeBinaryToWriter = function(mes
     writer.writeString(
       10,
       f
+    );
+  }
+  f = message.getPeersList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      11,
+      f,
+      proto.blockchain.network.v1alpha1.Peer.serializeBinaryToWriter
     );
   }
 };
@@ -2411,6 +2479,44 @@ proto.blockchain.network.v1alpha1.Channel.prototype.getUserName = function() {
  */
 proto.blockchain.network.v1alpha1.Channel.prototype.setUserName = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * repeated Peer peers = 11;
+ * @return {!Array<!proto.blockchain.network.v1alpha1.Peer>}
+ */
+proto.blockchain.network.v1alpha1.Channel.prototype.getPeersList = function() {
+  return /** @type{!Array<!proto.blockchain.network.v1alpha1.Peer>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.blockchain.network.v1alpha1.Peer, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.blockchain.network.v1alpha1.Peer>} value
+ * @return {!proto.blockchain.network.v1alpha1.Channel} returns this
+*/
+proto.blockchain.network.v1alpha1.Channel.prototype.setPeersList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+};
+
+
+/**
+ * @param {!proto.blockchain.network.v1alpha1.Peer=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.blockchain.network.v1alpha1.Peer}
+ */
+proto.blockchain.network.v1alpha1.Channel.prototype.addPeers = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.blockchain.network.v1alpha1.Peer, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.blockchain.network.v1alpha1.Channel} returns this
+ */
+proto.blockchain.network.v1alpha1.Channel.prototype.clearPeersList = function() {
+  return this.setPeersList([]);
 };
 
 

@@ -73,6 +73,10 @@ class Corporation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_name = 15 [json_name = "userName"];</code>
      */
     protected $user_name = '';
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    private $channels;
 
     /**
      * Constructor.
@@ -95,6 +99,7 @@ class Corporation extends \Google\Protobuf\Internal\Message
      *     @type string $name_msp
      *     @type string $user_email
      *     @type string $user_name
+     *     @type \Blockchain\Network\V1alpha1\Channel[]|\Google\Protobuf\Internal\RepeatedField $channels
      * }
      */
     public function __construct($data = NULL) {
@@ -428,6 +433,28 @@ class Corporation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getChannels()
+    {
+        return $this->channels;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     * @param \Blockchain\Network\V1alpha1\Channel[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setChannels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Blockchain\Network\V1alpha1\Channel::class);
+        $this->channels = $arr;
 
         return $this;
     }
