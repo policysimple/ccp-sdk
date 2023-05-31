@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)blockchain/network/v1alpha1/network.proto\x12\x1b\x62lockchain.network.v1alpha1\"\x8a\x04\n\x07Network\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cnetwork_name\x18\x02 \x01(\tR\x0bnetworkName\x12\x1c\n\tframework\x18\x03 \x01(\tR\tframework\x12\x12\n\x04type\x18\x04 \x01(\tR\x04type\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x16\n\x06status\x18\x06 \x01(\tR\x06status\x12#\n\rerror_details\x18\x07 \x01(\tR\x0c\x65rrorDetails\x12\x1d\n\ncreated_at\x18\x08 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\t \x01(\tR\tupdatedAt\x12L\n\x0c\x63orporations\x18\n \x03(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0c\x63orporations\x12.\n\x13\x63\x63p_organization_id\x18\x0b \x01(\tR\x11\x63\x63pOrganizationId\x12L\n\x0b\x65nvironment\x18\x0c \x01(\x0e\x32*.blockchain.network.v1alpha1.BlockchainEnvR\x0b\x65nvironment\x12\x1d\n\nuser_email\x18\r \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\x0e \x01(\tR\x08userName\"\xdd\x03\n\x0b\x43orporation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x16\n\x06\x64omain\x18\x03 \x01(\tR\x06\x64omain\x12%\n\x0e\x61\x64min_password\x18\x04 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x05 \x01(\tR\tadminUser\x12#\n\rblockchain_id\x18\x06 \x01(\tR\x0c\x62lockchainId\x12\x37\n\x05peers\x18\x07 \x03(\x0b\x32!.blockchain.network.v1alpha1.PeerR\x05peers\x12\x16\n\x06status\x18\x08 \x01(\tR\x06status\x12#\n\rerror_details\x18\t \x01(\tR\x0c\x65rrorDetails\x12\x1d\n\ncreated_at\x18\n \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x0b \x01(\tR\tupdatedAt\x12\x17\n\x07name_ca\x18\x0c \x01(\tR\x06nameCa\x12\x19\n\x08name_msp\x18\r \x01(\tR\x07nameMsp\x12\x1d\n\nuser_email\x18\x0e \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\x0f \x01(\tR\x08userName\"\xd0\x01\n\x04Peer\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\x12\x16\n\x06status\x18\x04 \x01(\tR\x06status\x12\x1d\n\ncreated_at\x18\x05 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x06 \x01(\tR\tupdatedAt\x12\x1d\n\nuser_email\x18\x07 \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\x08 \x01(\tR\x08userName\"\xf8\x01\n\x07Orderer\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12#\n\rblockchain_id\x18\x03 \x01(\tR\x0c\x62lockchainId\x12\x12\n\x04type\x18\x04 \x01(\tR\x04type\x12\x16\n\x06status\x18\x05 \x01(\tR\x06status\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12\x1d\n\nuser_email\x18\x08 \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\t \x01(\tR\x08userName\"\xb4\x02\n\x07\x43hannel\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12%\n\x0e\x63orporation_id\x18\x02 \x01(\tR\rcorporationId\x12#\n\rblockchain_id\x18\x03 \x01(\tR\x0c\x62lockchainId\x12\x12\n\x04name\x18\x04 \x01(\tR\x04name\x12\'\n\x0f\x63orporation_ids\x18\x05 \x03(\tR\x0e\x63orporationIds\x12\x16\n\x06status\x18\x06 \x01(\tR\x06status\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12\x1d\n\nuser_email\x18\t \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\n \x01(\tR\x08userName\"\xcf\x01\n\nInvitation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12 \n\x0c\x66rom_user_id\x18\x02 \x01(\tR\nfromUserId\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\x16\n\x06status\x18\x04 \x01(\tR\x06status\x12#\n\rblockchain_id\x18\x05 \x01(\tR\x0c\x62lockchainId\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt*g\n\rBlockchainEnv\x12\x1e\n\x1a\x42LOCKCHAIN_ENV_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x42LOCKCHAIN_ENV_TESTNET\x10\x01\x12\x1a\n\x16\x42LOCKCHAIN_ENV_MAINNET\x10\x02\x42>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
+  serialized_pb=b'\n)blockchain/network/v1alpha1/network.proto\x12\x1b\x62lockchain.network.v1alpha1\"\x8a\x04\n\x07Network\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cnetwork_name\x18\x02 \x01(\tR\x0bnetworkName\x12\x1c\n\tframework\x18\x03 \x01(\tR\tframework\x12\x12\n\x04type\x18\x04 \x01(\tR\x04type\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x16\n\x06status\x18\x06 \x01(\tR\x06status\x12#\n\rerror_details\x18\x07 \x01(\tR\x0c\x65rrorDetails\x12\x1d\n\ncreated_at\x18\x08 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\t \x01(\tR\tupdatedAt\x12L\n\x0c\x63orporations\x18\n \x03(\x0b\x32(.blockchain.network.v1alpha1.CorporationR\x0c\x63orporations\x12.\n\x13\x63\x63p_organization_id\x18\x0b \x01(\tR\x11\x63\x63pOrganizationId\x12L\n\x0b\x65nvironment\x18\x0c \x01(\x0e\x32*.blockchain.network.v1alpha1.BlockchainEnvR\x0b\x65nvironment\x12\x1d\n\nuser_email\x18\r \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\x0e \x01(\tR\x08userName\"\x9f\x04\n\x0b\x43orporation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x16\n\x06\x64omain\x18\x03 \x01(\tR\x06\x64omain\x12%\n\x0e\x61\x64min_password\x18\x04 \x01(\tR\radminPassword\x12\x1d\n\nadmin_user\x18\x05 \x01(\tR\tadminUser\x12#\n\rblockchain_id\x18\x06 \x01(\tR\x0c\x62lockchainId\x12\x37\n\x05peers\x18\x07 \x03(\x0b\x32!.blockchain.network.v1alpha1.PeerR\x05peers\x12\x16\n\x06status\x18\x08 \x01(\tR\x06status\x12#\n\rerror_details\x18\t \x01(\tR\x0c\x65rrorDetails\x12\x1d\n\ncreated_at\x18\n \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x0b \x01(\tR\tupdatedAt\x12\x17\n\x07name_ca\x18\x0c \x01(\tR\x06nameCa\x12\x19\n\x08name_msp\x18\r \x01(\tR\x07nameMsp\x12\x1d\n\nuser_email\x18\x0e \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\x0f \x01(\tR\x08userName\x12@\n\x08\x63hannels\x18\x10 \x03(\x0b\x32$.blockchain.network.v1alpha1.ChannelR\x08\x63hannels\"\xd0\x01\n\x04Peer\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\x12\x16\n\x06status\x18\x04 \x01(\tR\x06status\x12\x1d\n\ncreated_at\x18\x05 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x06 \x01(\tR\tupdatedAt\x12\x1d\n\nuser_email\x18\x07 \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\x08 \x01(\tR\x08userName\"\xf8\x01\n\x07Orderer\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12#\n\rblockchain_id\x18\x03 \x01(\tR\x0c\x62lockchainId\x12\x12\n\x04type\x18\x04 \x01(\tR\x04type\x12\x16\n\x06status\x18\x05 \x01(\tR\x06status\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12\x1d\n\nuser_email\x18\x08 \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\t \x01(\tR\x08userName\"\xed\x02\n\x07\x43hannel\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12%\n\x0e\x63orporation_id\x18\x02 \x01(\tR\rcorporationId\x12#\n\rblockchain_id\x18\x03 \x01(\tR\x0c\x62lockchainId\x12\x12\n\x04name\x18\x04 \x01(\tR\x04name\x12\'\n\x0f\x63orporation_ids\x18\x05 \x03(\tR\x0e\x63orporationIds\x12\x16\n\x06status\x18\x06 \x01(\tR\x06status\x12\x1d\n\ncreated_at\x18\x07 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x08 \x01(\tR\tupdatedAt\x12\x1d\n\nuser_email\x18\t \x01(\tR\tuserEmail\x12\x1b\n\tuser_name\x18\n \x01(\tR\x08userName\x12\x37\n\x05peers\x18\x0b \x03(\x0b\x32!.blockchain.network.v1alpha1.PeerR\x05peers\"\xcf\x01\n\nInvitation\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12 \n\x0c\x66rom_user_id\x18\x02 \x01(\tR\nfromUserId\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\x16\n\x06status\x18\x04 \x01(\tR\x06status\x12#\n\rblockchain_id\x18\x05 \x01(\tR\x0c\x62lockchainId\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt*g\n\rBlockchainEnv\x12\x1e\n\x1a\x42LOCKCHAIN_ENV_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x42LOCKCHAIN_ENV_TESTNET\x10\x01\x12\x1a\n\x16\x42LOCKCHAIN_ENV_MAINNET\x10\x02\x42>Z<github.com/cuemby/ccp-sdk/gen/go/blockchain/network/v1alpha1b\x06proto3'
 )
 
 _BLOCKCHAINENV = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _BLOCKCHAINENV = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2062,
-  serialized_end=2165,
+  serialized_start=2185,
+  serialized_end=2288,
 )
 _sym_db.RegisterEnumDescriptor(_BLOCKCHAINENV)
 
@@ -296,6 +296,13 @@ _CORPORATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='channels', full_name='blockchain.network.v1alpha1.Corporation.channels', index=15,
+      number=16, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='channels', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -309,7 +316,7 @@ _CORPORATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=600,
-  serialized_end=1077,
+  serialized_end=1143,
 )
 
 
@@ -389,8 +396,8 @@ _PEER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1080,
-  serialized_end=1288,
+  serialized_start=1146,
+  serialized_end=1354,
 )
 
 
@@ -477,8 +484,8 @@ _ORDERER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1291,
-  serialized_end=1539,
+  serialized_start=1357,
+  serialized_end=1605,
 )
 
 
@@ -560,6 +567,13 @@ _CHANNEL = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='peers', full_name='blockchain.network.v1alpha1.Channel.peers', index=10,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='peers', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -572,8 +586,8 @@ _CHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1542,
-  serialized_end=1850,
+  serialized_start=1608,
+  serialized_end=1973,
 )
 
 
@@ -646,13 +660,15 @@ _INVITATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1853,
-  serialized_end=2060,
+  serialized_start=1976,
+  serialized_end=2183,
 )
 
 _NETWORK.fields_by_name['corporations'].message_type = _CORPORATION
 _NETWORK.fields_by_name['environment'].enum_type = _BLOCKCHAINENV
 _CORPORATION.fields_by_name['peers'].message_type = _PEER
+_CORPORATION.fields_by_name['channels'].message_type = _CHANNEL
+_CHANNEL.fields_by_name['peers'].message_type = _PEER
 DESCRIPTOR.message_types_by_name['Network'] = _NETWORK
 DESCRIPTOR.message_types_by_name['Corporation'] = _CORPORATION
 DESCRIPTOR.message_types_by_name['Peer'] = _PEER

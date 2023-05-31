@@ -3026,6 +3026,30 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
+
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Channel> 
+        getChannelsList();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    blockchain.network.v1alpha1.NetworkOuterClass.Channel getChannels(int index);
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    int getChannelsCount();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.ChannelOrBuilder> 
+        getChannelsOrBuilderList();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    blockchain.network.v1alpha1.NetworkOuterClass.ChannelOrBuilder getChannelsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Corporation}
@@ -3055,6 +3079,7 @@ public final class NetworkOuterClass {
       nameMsp_ = "";
       userEmail_ = "";
       userName_ = "";
+      channels_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3181,6 +3206,15 @@ public final class NetworkOuterClass {
               userName_ = s;
               break;
             }
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                channels_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Channel>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              channels_.add(
+                  input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Channel.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3198,6 +3232,9 @@ public final class NetworkOuterClass {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           peers_ = java.util.Collections.unmodifiableList(peers_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          channels_ = java.util.Collections.unmodifiableList(channels_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3788,6 +3825,46 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int CHANNELS_FIELD_NUMBER = 16;
+    private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Channel> channels_;
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Channel> getChannelsList() {
+      return channels_;
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.ChannelOrBuilder> 
+        getChannelsOrBuilderList() {
+      return channels_;
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    @java.lang.Override
+    public int getChannelsCount() {
+      return channels_.size();
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.Channel getChannels(int index) {
+      return channels_.get(index);
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+     */
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.ChannelOrBuilder getChannelsOrBuilder(
+        int index) {
+      return channels_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3847,6 +3924,9 @@ public final class NetworkOuterClass {
       if (!getUserNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userName_);
       }
+      for (int i = 0; i < channels_.size(); i++) {
+        output.writeMessage(16, channels_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3902,6 +3982,10 @@ public final class NetworkOuterClass {
       if (!getUserNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userName_);
       }
+      for (int i = 0; i < channels_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, channels_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3947,6 +4031,8 @@ public final class NetworkOuterClass {
           .equals(other.getUserEmail())) return false;
       if (!getUserName()
           .equals(other.getUserName())) return false;
+      if (!getChannelsList()
+          .equals(other.getChannelsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3990,6 +4076,10 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getUserEmail().hashCode();
       hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getUserName().hashCode();
+      if (getChannelsCount() > 0) {
+        hash = (37 * hash) + CHANNELS_FIELD_NUMBER;
+        hash = (53 * hash) + getChannelsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4119,6 +4209,7 @@ public final class NetworkOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getPeersFieldBuilder();
+          getChannelsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -4158,6 +4249,12 @@ public final class NetworkOuterClass {
 
         userName_ = "";
 
+        if (channelsBuilder_ == null) {
+          channels_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          channelsBuilder_.clear();
+        }
         return this;
       }
 
@@ -4208,6 +4305,15 @@ public final class NetworkOuterClass {
         result.nameMsp_ = nameMsp_;
         result.userEmail_ = userEmail_;
         result.userName_ = userName_;
+        if (channelsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            channels_ = java.util.Collections.unmodifiableList(channels_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.channels_ = channels_;
+        } else {
+          result.channels_ = channelsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4337,6 +4443,32 @@ public final class NetworkOuterClass {
         if (!other.getUserName().isEmpty()) {
           userName_ = other.userName_;
           onChanged();
+        }
+        if (channelsBuilder_ == null) {
+          if (!other.channels_.isEmpty()) {
+            if (channels_.isEmpty()) {
+              channels_ = other.channels_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureChannelsIsMutable();
+              channels_.addAll(other.channels_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.channels_.isEmpty()) {
+            if (channelsBuilder_.isEmpty()) {
+              channelsBuilder_.dispose();
+              channelsBuilder_ = null;
+              channels_ = other.channels_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              channelsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getChannelsFieldBuilder() : null;
+            } else {
+              channelsBuilder_.addAllMessages(other.channels_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5670,6 +5802,246 @@ public final class NetworkOuterClass {
         userName_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Channel> channels_ =
+        java.util.Collections.emptyList();
+      private void ensureChannelsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          channels_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Channel>(channels_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.network.v1alpha1.NetworkOuterClass.Channel, blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder, blockchain.network.v1alpha1.NetworkOuterClass.ChannelOrBuilder> channelsBuilder_;
+
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Channel> getChannelsList() {
+        if (channelsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(channels_);
+        } else {
+          return channelsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public int getChannelsCount() {
+        if (channelsBuilder_ == null) {
+          return channels_.size();
+        } else {
+          return channelsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Channel getChannels(int index) {
+        if (channelsBuilder_ == null) {
+          return channels_.get(index);
+        } else {
+          return channelsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public Builder setChannels(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Channel value) {
+        if (channelsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChannelsIsMutable();
+          channels_.set(index, value);
+          onChanged();
+        } else {
+          channelsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public Builder setChannels(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder builderForValue) {
+        if (channelsBuilder_ == null) {
+          ensureChannelsIsMutable();
+          channels_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          channelsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public Builder addChannels(blockchain.network.v1alpha1.NetworkOuterClass.Channel value) {
+        if (channelsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChannelsIsMutable();
+          channels_.add(value);
+          onChanged();
+        } else {
+          channelsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public Builder addChannels(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Channel value) {
+        if (channelsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChannelsIsMutable();
+          channels_.add(index, value);
+          onChanged();
+        } else {
+          channelsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public Builder addChannels(
+          blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder builderForValue) {
+        if (channelsBuilder_ == null) {
+          ensureChannelsIsMutable();
+          channels_.add(builderForValue.build());
+          onChanged();
+        } else {
+          channelsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public Builder addChannels(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder builderForValue) {
+        if (channelsBuilder_ == null) {
+          ensureChannelsIsMutable();
+          channels_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          channelsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public Builder addAllChannels(
+          java.lang.Iterable<? extends blockchain.network.v1alpha1.NetworkOuterClass.Channel> values) {
+        if (channelsBuilder_ == null) {
+          ensureChannelsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, channels_);
+          onChanged();
+        } else {
+          channelsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public Builder clearChannels() {
+        if (channelsBuilder_ == null) {
+          channels_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          channelsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public Builder removeChannels(int index) {
+        if (channelsBuilder_ == null) {
+          ensureChannelsIsMutable();
+          channels_.remove(index);
+          onChanged();
+        } else {
+          channelsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder getChannelsBuilder(
+          int index) {
+        return getChannelsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.ChannelOrBuilder getChannelsOrBuilder(
+          int index) {
+        if (channelsBuilder_ == null) {
+          return channels_.get(index);  } else {
+          return channelsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.ChannelOrBuilder> 
+           getChannelsOrBuilderList() {
+        if (channelsBuilder_ != null) {
+          return channelsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(channels_);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder addChannelsBuilder() {
+        return getChannelsFieldBuilder().addBuilder(
+            blockchain.network.v1alpha1.NetworkOuterClass.Channel.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder addChannelsBuilder(
+          int index) {
+        return getChannelsFieldBuilder().addBuilder(
+            index, blockchain.network.v1alpha1.NetworkOuterClass.Channel.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Channel channels = 16 [json_name = "channels"];</code>
+       */
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder> 
+           getChannelsBuilderList() {
+        return getChannelsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.network.v1alpha1.NetworkOuterClass.Channel, blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder, blockchain.network.v1alpha1.NetworkOuterClass.ChannelOrBuilder> 
+          getChannelsFieldBuilder() {
+        if (channelsBuilder_ == null) {
+          channelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              blockchain.network.v1alpha1.NetworkOuterClass.Channel, blockchain.network.v1alpha1.NetworkOuterClass.Channel.Builder, blockchain.network.v1alpha1.NetworkOuterClass.ChannelOrBuilder>(
+                  channels_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          channels_ = null;
+        }
+        return channelsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9254,6 +9626,30 @@ public final class NetworkOuterClass {
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
+
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> 
+        getPeersList();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    blockchain.network.v1alpha1.NetworkOuterClass.Peer getPeers(int index);
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    int getPeersCount();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> 
+        getPeersOrBuilderList();
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder getPeersOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code blockchain.network.v1alpha1.Channel}
@@ -9278,6 +9674,7 @@ public final class NetworkOuterClass {
       updatedAt_ = "";
       userEmail_ = "";
       userName_ = "";
+      peers_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -9374,6 +9771,15 @@ public final class NetworkOuterClass {
               userName_ = s;
               break;
             }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                peers_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Peer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              peers_.add(
+                  input.readMessage(blockchain.network.v1alpha1.NetworkOuterClass.Peer.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -9391,6 +9797,9 @@ public final class NetworkOuterClass {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           corporationIds_ = corporationIds_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          peers_ = java.util.Collections.unmodifiableList(peers_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -9794,6 +10203,46 @@ public final class NetworkOuterClass {
       }
     }
 
+    public static final int PEERS_FIELD_NUMBER = 11;
+    private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> peers_;
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> getPeersList() {
+      return peers_;
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> 
+        getPeersOrBuilderList() {
+      return peers_;
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public int getPeersCount() {
+      return peers_.size();
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.Peer getPeers(int index) {
+      return peers_.get(index);
+    }
+    /**
+     * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+     */
+    @java.lang.Override
+    public blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder getPeersOrBuilder(
+        int index) {
+      return peers_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9837,6 +10286,9 @@ public final class NetworkOuterClass {
       }
       if (!getUserNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, userName_);
+      }
+      for (int i = 0; i < peers_.size(); i++) {
+        output.writeMessage(11, peers_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -9882,6 +10334,10 @@ public final class NetworkOuterClass {
       if (!getUserNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, userName_);
       }
+      for (int i = 0; i < peers_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, peers_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9917,6 +10373,8 @@ public final class NetworkOuterClass {
           .equals(other.getUserEmail())) return false;
       if (!getUserName()
           .equals(other.getUserName())) return false;
+      if (!getPeersList()
+          .equals(other.getPeersList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9950,6 +10408,10 @@ public final class NetworkOuterClass {
       hash = (53 * hash) + getUserEmail().hashCode();
       hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getUserName().hashCode();
+      if (getPeersCount() > 0) {
+        hash = (37 * hash) + PEERS_FIELD_NUMBER;
+        hash = (53 * hash) + getPeersList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10078,6 +10540,7 @@ public final class NetworkOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getPeersFieldBuilder();
         }
       }
       @java.lang.Override
@@ -10103,6 +10566,12 @@ public final class NetworkOuterClass {
 
         userName_ = "";
 
+        if (peersBuilder_ == null) {
+          peers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          peersBuilder_.clear();
+        }
         return this;
       }
 
@@ -10144,6 +10613,15 @@ public final class NetworkOuterClass {
         result.updatedAt_ = updatedAt_;
         result.userEmail_ = userEmail_;
         result.userName_ = userName_;
+        if (peersBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            peers_ = java.util.Collections.unmodifiableList(peers_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.peers_ = peers_;
+        } else {
+          result.peers_ = peersBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -10237,6 +10715,32 @@ public final class NetworkOuterClass {
         if (!other.getUserName().isEmpty()) {
           userName_ = other.userName_;
           onChanged();
+        }
+        if (peersBuilder_ == null) {
+          if (!other.peers_.isEmpty()) {
+            if (peers_.isEmpty()) {
+              peers_ = other.peers_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensurePeersIsMutable();
+              peers_.addAll(other.peers_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.peers_.isEmpty()) {
+            if (peersBuilder_.isEmpty()) {
+              peersBuilder_.dispose();
+              peersBuilder_ = null;
+              peers_ = other.peers_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              peersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPeersFieldBuilder() : null;
+            } else {
+              peersBuilder_.addAllMessages(other.peers_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11080,6 +11584,246 @@ public final class NetworkOuterClass {
         userName_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> peers_ =
+        java.util.Collections.emptyList();
+      private void ensurePeersIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          peers_ = new java.util.ArrayList<blockchain.network.v1alpha1.NetworkOuterClass.Peer>(peers_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.network.v1alpha1.NetworkOuterClass.Peer, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder, blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> peersBuilder_;
+
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer> getPeersList() {
+        if (peersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(peers_);
+        } else {
+          return peersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public int getPeersCount() {
+        if (peersBuilder_ == null) {
+          return peers_.size();
+        } else {
+          return peersBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer getPeers(int index) {
+        if (peersBuilder_ == null) {
+          return peers_.get(index);
+        } else {
+          return peersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public Builder setPeers(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Peer value) {
+        if (peersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePeersIsMutable();
+          peers_.set(index, value);
+          onChanged();
+        } else {
+          peersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public Builder setPeers(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder builderForValue) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          peers_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          peersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public Builder addPeers(blockchain.network.v1alpha1.NetworkOuterClass.Peer value) {
+        if (peersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePeersIsMutable();
+          peers_.add(value);
+          onChanged();
+        } else {
+          peersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public Builder addPeers(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Peer value) {
+        if (peersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePeersIsMutable();
+          peers_.add(index, value);
+          onChanged();
+        } else {
+          peersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public Builder addPeers(
+          blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder builderForValue) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          peers_.add(builderForValue.build());
+          onChanged();
+        } else {
+          peersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public Builder addPeers(
+          int index, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder builderForValue) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          peers_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          peersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public Builder addAllPeers(
+          java.lang.Iterable<? extends blockchain.network.v1alpha1.NetworkOuterClass.Peer> values) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, peers_);
+          onChanged();
+        } else {
+          peersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public Builder clearPeers() {
+        if (peersBuilder_ == null) {
+          peers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          peersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public Builder removePeers(int index) {
+        if (peersBuilder_ == null) {
+          ensurePeersIsMutable();
+          peers_.remove(index);
+          onChanged();
+        } else {
+          peersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder getPeersBuilder(
+          int index) {
+        return getPeersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder getPeersOrBuilder(
+          int index) {
+        if (peersBuilder_ == null) {
+          return peers_.get(index);  } else {
+          return peersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public java.util.List<? extends blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> 
+           getPeersOrBuilderList() {
+        if (peersBuilder_ != null) {
+          return peersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(peers_);
+        }
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder addPeersBuilder() {
+        return getPeersFieldBuilder().addBuilder(
+            blockchain.network.v1alpha1.NetworkOuterClass.Peer.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder addPeersBuilder(
+          int index) {
+        return getPeersFieldBuilder().addBuilder(
+            index, blockchain.network.v1alpha1.NetworkOuterClass.Peer.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .blockchain.network.v1alpha1.Peer peers = 11 [json_name = "peers"];</code>
+       */
+      public java.util.List<blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder> 
+           getPeersBuilderList() {
+        return getPeersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          blockchain.network.v1alpha1.NetworkOuterClass.Peer, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder, blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder> 
+          getPeersFieldBuilder() {
+        if (peersBuilder_ == null) {
+          peersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              blockchain.network.v1alpha1.NetworkOuterClass.Peer, blockchain.network.v1alpha1.NetworkOuterClass.Peer.Builder, blockchain.network.v1alpha1.NetworkOuterClass.PeerOrBuilder>(
+                  peers_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          peers_ = null;
+        }
+        return peersBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -12655,7 +13399,7 @@ public final class NetworkOuterClass {
       "R\021ccpOrganizationId\022L\n\013environment\030\014 \001(\016" +
       "2*.blockchain.network.v1alpha1.Blockchai" +
       "nEnvR\013environment\022\035\n\nuser_email\030\r \001(\tR\tu" +
-      "serEmail\022\033\n\tuser_name\030\016 \001(\tR\010userName\"\335\003" +
+      "serEmail\022\033\n\tuser_name\030\016 \001(\tR\010userName\"\237\004" +
       "\n\013Corporation\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id" +
       "\030\002 \001(\tR\006userId\022\026\n\006domain\030\003 \001(\tR\006domain\022%" +
       "\n\016admin_password\030\004 \001(\tR\radminPassword\022\035\n" +
@@ -12667,36 +13411,39 @@ public final class NetworkOuterClass {
       "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\013 \001(\tR\tupda" +
       "tedAt\022\027\n\007name_ca\030\014 \001(\tR\006nameCa\022\031\n\010name_m" +
       "sp\030\r \001(\tR\007nameMsp\022\035\n\nuser_email\030\016 \001(\tR\tu" +
-      "serEmail\022\033\n\tuser_name\030\017 \001(\tR\010userName\"\320\001" +
-      "\n\004Peer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
-      "me\022\022\n\004type\030\003 \001(\tR\004type\022\026\n\006status\030\004 \001(\tR\006" +
-      "status\022\035\n\ncreated_at\030\005 \001(\tR\tcreatedAt\022\035\n" +
-      "\nupdated_at\030\006 \001(\tR\tupdatedAt\022\035\n\nuser_ema" +
-      "il\030\007 \001(\tR\tuserEmail\022\033\n\tuser_name\030\010 \001(\tR\010" +
-      "userName\"\370\001\n\007Orderer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004" +
-      "name\030\002 \001(\tR\004name\022#\n\rblockchain_id\030\003 \001(\tR" +
-      "\014blockchainId\022\022\n\004type\030\004 \001(\tR\004type\022\026\n\006sta" +
-      "tus\030\005 \001(\tR\006status\022\035\n\ncreated_at\030\006 \001(\tR\tc" +
-      "reatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022" +
-      "\035\n\nuser_email\030\010 \001(\tR\tuserEmail\022\033\n\tuser_n" +
-      "ame\030\t \001(\tR\010userName\"\264\002\n\007Channel\022\016\n\002id\030\001 " +
-      "\001(\tR\002id\022%\n\016corporation_id\030\002 \001(\tR\rcorpora" +
-      "tionId\022#\n\rblockchain_id\030\003 \001(\tR\014blockchai" +
-      "nId\022\022\n\004name\030\004 \001(\tR\004name\022\'\n\017corporation_i" +
-      "ds\030\005 \003(\tR\016corporationIds\022\026\n\006status\030\006 \001(\t" +
-      "R\006status\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022" +
-      "\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022\035\n\nuser_e" +
-      "mail\030\t \001(\tR\tuserEmail\022\033\n\tuser_name\030\n \001(\t" +
-      "R\010userName\"\317\001\n\nInvitation\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022\024\n\005e" +
-      "mail\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006statu" +
-      "s\022#\n\rblockchain_id\030\005 \001(\tR\014blockchainId\022\035" +
-      "\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated" +
-      "_at\030\007 \001(\tR\tupdatedAt*g\n\rBlockchainEnv\022\036\n" +
-      "\032BLOCKCHAIN_ENV_UNSPECIFIED\020\000\022\032\n\026BLOCKCH" +
-      "AIN_ENV_TESTNET\020\001\022\032\n\026BLOCKCHAIN_ENV_MAIN" +
-      "NET\020\002B>Z<github.com/cuemby/ccp-sdk/gen/g" +
-      "o/blockchain/network/v1alpha1b\006proto3"
+      "serEmail\022\033\n\tuser_name\030\017 \001(\tR\010userName\022@\n" +
+      "\010channels\030\020 \003(\0132$.blockchain.network.v1a" +
+      "lpha1.ChannelR\010channels\"\320\001\n\004Peer\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001" +
+      "(\tR\004type\022\026\n\006status\030\004 \001(\tR\006status\022\035\n\ncrea" +
+      "ted_at\030\005 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\006 " +
+      "\001(\tR\tupdatedAt\022\035\n\nuser_email\030\007 \001(\tR\tuser" +
+      "Email\022\033\n\tuser_name\030\010 \001(\tR\010userName\"\370\001\n\007O" +
+      "rderer\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
+      "me\022#\n\rblockchain_id\030\003 \001(\tR\014blockchainId\022" +
+      "\022\n\004type\030\004 \001(\tR\004type\022\026\n\006status\030\005 \001(\tR\006sta" +
+      "tus\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nup" +
+      "dated_at\030\007 \001(\tR\tupdatedAt\022\035\n\nuser_email\030" +
+      "\010 \001(\tR\tuserEmail\022\033\n\tuser_name\030\t \001(\tR\010use" +
+      "rName\"\355\002\n\007Channel\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016cor" +
+      "poration_id\030\002 \001(\tR\rcorporationId\022#\n\rbloc" +
+      "kchain_id\030\003 \001(\tR\014blockchainId\022\022\n\004name\030\004 " +
+      "\001(\tR\004name\022\'\n\017corporation_ids\030\005 \003(\tR\016corp" +
+      "orationIds\022\026\n\006status\030\006 \001(\tR\006status\022\035\n\ncr" +
+      "eated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030" +
+      "\010 \001(\tR\tupdatedAt\022\035\n\nuser_email\030\t \001(\tR\tus" +
+      "erEmail\022\033\n\tuser_name\030\n \001(\tR\010userName\0227\n\005" +
+      "peers\030\013 \003(\0132!.blockchain.network.v1alpha" +
+      "1.PeerR\005peers\"\317\001\n\nInvitation\022\016\n\002id\030\001 \001(\t" +
+      "R\002id\022 \n\014from_user_id\030\002 \001(\tR\nfromUserId\022\024" +
+      "\n\005email\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006st" +
+      "atus\022#\n\rblockchain_id\030\005 \001(\tR\014blockchainI" +
+      "d\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupda" +
+      "ted_at\030\007 \001(\tR\tupdatedAt*g\n\rBlockchainEnv" +
+      "\022\036\n\032BLOCKCHAIN_ENV_UNSPECIFIED\020\000\022\032\n\026BLOC" +
+      "KCHAIN_ENV_TESTNET\020\001\022\032\n\026BLOCKCHAIN_ENV_M" +
+      "AINNET\020\002B>Z<github.com/cuemby/ccp-sdk/ge" +
+      "n/go/blockchain/network/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12713,7 +13460,7 @@ public final class NetworkOuterClass {
     internal_static_blockchain_network_v1alpha1_Corporation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Corporation_descriptor,
-        new java.lang.String[] { "Id", "UserId", "Domain", "AdminPassword", "AdminUser", "BlockchainId", "Peers", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "NameCa", "NameMsp", "UserEmail", "UserName", });
+        new java.lang.String[] { "Id", "UserId", "Domain", "AdminPassword", "AdminUser", "BlockchainId", "Peers", "Status", "ErrorDetails", "CreatedAt", "UpdatedAt", "NameCa", "NameMsp", "UserEmail", "UserName", "Channels", });
     internal_static_blockchain_network_v1alpha1_Peer_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_blockchain_network_v1alpha1_Peer_fieldAccessorTable = new
@@ -12731,7 +13478,7 @@ public final class NetworkOuterClass {
     internal_static_blockchain_network_v1alpha1_Channel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_blockchain_network_v1alpha1_Channel_descriptor,
-        new java.lang.String[] { "Id", "CorporationId", "BlockchainId", "Name", "CorporationIds", "Status", "CreatedAt", "UpdatedAt", "UserEmail", "UserName", });
+        new java.lang.String[] { "Id", "CorporationId", "BlockchainId", "Name", "CorporationIds", "Status", "CreatedAt", "UpdatedAt", "UserEmail", "UserName", "Peers", });
     internal_static_blockchain_network_v1alpha1_Invitation_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_blockchain_network_v1alpha1_Invitation_fieldAccessorTable = new
