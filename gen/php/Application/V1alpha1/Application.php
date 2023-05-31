@@ -34,7 +34,7 @@ class Application extends \Google\Protobuf\Internal\Message
      */
     protected $configuration = null;
     /**
-     * Generated from protobuf field <code>string project_id = 13 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 6 [json_name = "projectId"];</code>
      */
     protected $project_id = '';
     /**
@@ -50,7 +50,7 @@ class Application extends \Google\Protobuf\Internal\Message
      */
     protected $project_description = '';
     /**
-     * Generated from protobuf field <code>string organization_id = 14 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 10 [json_name = "organizationId"];</code>
      */
     protected $organization_id = '';
     /**
@@ -62,9 +62,17 @@ class Application extends \Google\Protobuf\Internal\Message
      */
     protected $traffic_type = 0;
     /**
-     * Generated from protobuf field <code>bool integration_status = 15 [json_name = "integrationStatus"];</code>
+     * Generated from protobuf field <code>bool integration_status = 13 [json_name = "integrationStatus"];</code>
      */
     protected $integration_status = false;
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.DockerImageBuildpack docker_image_buildpack = 14 [json_name = "dockerImageBuildpack"];</code>
+     */
+    protected $docker_image_buildpack = 0;
+    /**
+     * Generated from protobuf field <code>bool no_docker_exists = 15 [json_name = "noDockerExists"];</code>
+     */
+    protected $no_docker_exists = false;
 
     /**
      * Constructor.
@@ -85,6 +93,8 @@ class Application extends \Google\Protobuf\Internal\Message
      *     @type \Application\V1alpha1\Scaling $scaling
      *     @type int $traffic_type
      *     @type bool $integration_status
+     *     @type int $docker_image_buildpack
+     *     @type bool $no_docker_exists
      * }
      */
     public function __construct($data = NULL) {
@@ -223,7 +233,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 13 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 6 [json_name = "projectId"];</code>
      * @return string
      */
     public function getProjectId()
@@ -232,7 +242,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 13 [json_name = "projectId"];</code>
+     * Generated from protobuf field <code>string project_id = 6 [json_name = "projectId"];</code>
      * @param string $var
      * @return $this
      */
@@ -311,7 +321,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 14 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 10 [json_name = "organizationId"];</code>
      * @return string
      */
     public function getOrganizationId()
@@ -320,7 +330,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 14 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string organization_id = 10 [json_name = "organizationId"];</code>
      * @param string $var
      * @return $this
      */
@@ -387,7 +397,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool integration_status = 15 [json_name = "integrationStatus"];</code>
+     * Generated from protobuf field <code>bool integration_status = 13 [json_name = "integrationStatus"];</code>
      * @return bool
      */
     public function getIntegrationStatus()
@@ -396,7 +406,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool integration_status = 15 [json_name = "integrationStatus"];</code>
+     * Generated from protobuf field <code>bool integration_status = 13 [json_name = "integrationStatus"];</code>
      * @param bool $var
      * @return $this
      */
@@ -404,6 +414,50 @@ class Application extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->integration_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.DockerImageBuildpack docker_image_buildpack = 14 [json_name = "dockerImageBuildpack"];</code>
+     * @return int
+     */
+    public function getDockerImageBuildpack()
+    {
+        return $this->docker_image_buildpack;
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.DockerImageBuildpack docker_image_buildpack = 14 [json_name = "dockerImageBuildpack"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDockerImageBuildpack($var)
+    {
+        GPBUtil::checkEnum($var, \Application\V1alpha1\DockerImageBuildpack::class);
+        $this->docker_image_buildpack = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool no_docker_exists = 15 [json_name = "noDockerExists"];</code>
+     * @return bool
+     */
+    public function getNoDockerExists()
+    {
+        return $this->no_docker_exists;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool no_docker_exists = 15 [json_name = "noDockerExists"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNoDockerExists($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->no_docker_exists = $var;
 
         return $this;
     }
