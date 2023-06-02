@@ -583,12 +583,13 @@ class Project final :
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
     kBudgetFieldNumber = 4,
-    kDescriptionFieldNumber = 5,
-    kCreatedAtFieldNumber = 6,
-    kUpdatedAtFieldNumber = 7,
-    kSubscriptionFieldNumber = 8,
-    kStatusFieldNumber = 9,
-    kIsSuspendedFieldNumber = 10,
+    kCardIdFieldNumber = 5,
+    kDescriptionFieldNumber = 6,
+    kCreatedAtFieldNumber = 7,
+    kUpdatedAtFieldNumber = 8,
+    kSubscriptionFieldNumber = 9,
+    kStatusFieldNumber = 10,
+    kIsSuspendedFieldNumber = 11,
   };
   // string project_id = 1 [json_name = "projectId"];
   void clear_project_id();
@@ -646,7 +647,21 @@ class Project final :
   std::string* _internal_mutable_budget();
   public:
 
-  // string description = 5 [json_name = "description"];
+  // string card_id = 5 [json_name = "cardId"];
+  void clear_card_id();
+  const std::string& card_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_card_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_card_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_card_id();
+  void set_allocated_card_id(std::string* card_id);
+  private:
+  const std::string& _internal_card_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_card_id(const std::string& value);
+  std::string* _internal_mutable_card_id();
+  public:
+
+  // string description = 6 [json_name = "description"];
   void clear_description();
   const std::string& description() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -660,7 +675,7 @@ class Project final :
   std::string* _internal_mutable_description();
   public:
 
-  // string created_at = 6 [json_name = "createdAt"];
+  // string created_at = 7 [json_name = "createdAt"];
   void clear_created_at();
   const std::string& created_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -674,7 +689,7 @@ class Project final :
   std::string* _internal_mutable_created_at();
   public:
 
-  // string updated_at = 7 [json_name = "updatedAt"];
+  // string updated_at = 8 [json_name = "updatedAt"];
   void clear_updated_at();
   const std::string& updated_at() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -688,7 +703,7 @@ class Project final :
   std::string* _internal_mutable_updated_at();
   public:
 
-  // .payment.v1alpha1.Subscription subscription = 8 [json_name = "subscription"];
+  // .payment.v1alpha1.Subscription subscription = 9 [json_name = "subscription"];
   bool has_subscription() const;
   private:
   bool _internal_has_subscription() const;
@@ -706,7 +721,7 @@ class Project final :
       ::payment::v1alpha1::Subscription* subscription);
   ::payment::v1alpha1::Subscription* unsafe_arena_release_subscription();
 
-  // bool status = 9 [json_name = "status"];
+  // bool status = 10 [json_name = "status"];
   void clear_status();
   bool status() const;
   void set_status(bool value);
@@ -715,7 +730,7 @@ class Project final :
   void _internal_set_status(bool value);
   public:
 
-  // bool is_suspended = 10 [json_name = "isSuspended"];
+  // bool is_suspended = 11 [json_name = "isSuspended"];
   void clear_is_suspended();
   bool is_suspended() const;
   void set_is_suspended(bool value);
@@ -735,6 +750,7 @@ class Project final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr budget_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr card_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
@@ -4843,7 +4859,53 @@ inline void Project::set_allocated_budget(std::string* budget) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.budget)
 }
 
-// string description = 5 [json_name = "description"];
+// string card_id = 5 [json_name = "cardId"];
+inline void Project::clear_card_id() {
+  card_id_.ClearToEmpty();
+}
+inline const std::string& Project::card_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Project.card_id)
+  return _internal_card_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Project::set_card_id(ArgT0&& arg0, ArgT... args) {
+ 
+ card_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Project.card_id)
+}
+inline std::string* Project::mutable_card_id() {
+  std::string* _s = _internal_mutable_card_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Project.card_id)
+  return _s;
+}
+inline const std::string& Project::_internal_card_id() const {
+  return card_id_.Get();
+}
+inline void Project::_internal_set_card_id(const std::string& value) {
+  
+  card_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Project::_internal_mutable_card_id() {
+  
+  return card_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Project::release_card_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Project.card_id)
+  return card_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Project::set_allocated_card_id(std::string* card_id) {
+  if (card_id != nullptr) {
+    
+  } else {
+    
+  }
+  card_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), card_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.card_id)
+}
+
+// string description = 6 [json_name = "description"];
 inline void Project::clear_description() {
   description_.ClearToEmpty();
 }
@@ -4889,7 +4951,7 @@ inline void Project::set_allocated_description(std::string* description) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.description)
 }
 
-// string created_at = 6 [json_name = "createdAt"];
+// string created_at = 7 [json_name = "createdAt"];
 inline void Project::clear_created_at() {
   created_at_.ClearToEmpty();
 }
@@ -4935,7 +4997,7 @@ inline void Project::set_allocated_created_at(std::string* created_at) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.created_at)
 }
 
-// string updated_at = 7 [json_name = "updatedAt"];
+// string updated_at = 8 [json_name = "updatedAt"];
 inline void Project::clear_updated_at() {
   updated_at_.ClearToEmpty();
 }
@@ -4981,7 +5043,7 @@ inline void Project::set_allocated_updated_at(std::string* updated_at) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.updated_at)
 }
 
-// .payment.v1alpha1.Subscription subscription = 8 [json_name = "subscription"];
+// .payment.v1alpha1.Subscription subscription = 9 [json_name = "subscription"];
 inline bool Project::_internal_has_subscription() const {
   return this != internal_default_instance() && subscription_ != nullptr;
 }
@@ -5071,7 +5133,7 @@ inline void Project::set_allocated_subscription(::payment::v1alpha1::Subscriptio
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Project.subscription)
 }
 
-// bool status = 9 [json_name = "status"];
+// bool status = 10 [json_name = "status"];
 inline void Project::clear_status() {
   status_ = false;
 }
@@ -5091,7 +5153,7 @@ inline void Project::set_status(bool value) {
   // @@protoc_insertion_point(field_set:payment.v1alpha1.Project.status)
 }
 
-// bool is_suspended = 10 [json_name = "isSuspended"];
+// bool is_suspended = 11 [json_name = "isSuspended"];
 inline void Project::clear_is_suspended() {
   is_suspended_ = false;
 }

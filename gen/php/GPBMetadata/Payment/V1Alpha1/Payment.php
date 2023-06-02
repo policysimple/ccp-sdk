@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-³
+Ì
 payment/v1alpha1/payment.protopayment.v1alpha1"Û
 Customer
 id (	Rid
@@ -31,22 +31,23 @@ customerId\'
 biling	 (2.payment.v1alpha1.BilingRbiling5
 projects
  (2.payment.v1alpha1.ProjectRprojects>
-blockchains (2.payment.v1alpha1.BlockChainRblockchains"É
+blockchains (2.payment.v1alpha1.BlockChainRblockchains"â
 Project
 
 project_id (	R	projectId
 name (	Rname
 image (	Rimage
-budget (	Rbudget 
-description (	Rdescription
+budget (	Rbudget
+card_id (	RcardId 
+description (	Rdescription
 
-created_at (	R	createdAt
+created_at (	R	createdAt
 
-updated_at (	R	updatedAtB
-subscription (2.payment.v1alpha1.SubscriptionRsubscription
-status	 (Rstatus!
-is_suspended
- (RisSuspended"¥
+updated_at (	R	updatedAtB
+subscription	 (2.payment.v1alpha1.SubscriptionRsubscription
+status
+ (Rstatus!
+is_suspended (RisSuspended"¥
 Subscription\'
 subscription_id (	RsubscriptionId0
 subscription_item_id (	RsubscriptionItemId
