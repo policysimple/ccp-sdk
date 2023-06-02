@@ -30,27 +30,31 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     protected $budget = '';
     /**
-     * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
+     * Generated from protobuf field <code>string card_id = 5 [json_name = "cardId"];</code>
+     */
+    protected $card_id = '';
+    /**
+     * Generated from protobuf field <code>string description = 6 [json_name = "description"];</code>
      */
     protected $description = '';
     /**
-     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
      */
     protected $created_at = '';
     /**
-     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      */
     protected $updated_at = '';
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 8 [json_name = "subscription"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 9 [json_name = "subscription"];</code>
      */
     protected $subscription = null;
     /**
-     * Generated from protobuf field <code>bool status = 9 [json_name = "status"];</code>
+     * Generated from protobuf field <code>bool status = 10 [json_name = "status"];</code>
      */
     protected $status = false;
     /**
-     * Generated from protobuf field <code>bool is_suspended = 10 [json_name = "isSuspended"];</code>
+     * Generated from protobuf field <code>bool is_suspended = 11 [json_name = "isSuspended"];</code>
      */
     protected $is_suspended = false;
 
@@ -64,6 +68,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $image
      *     @type string $budget
+     *     @type string $card_id
      *     @type string $description
      *     @type string $created_at
      *     @type string $updated_at
@@ -166,7 +171,29 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
+     * Generated from protobuf field <code>string card_id = 5 [json_name = "cardId"];</code>
+     * @return string
+     */
+    public function getCardId()
+    {
+        return $this->card_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string card_id = 5 [json_name = "cardId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->card_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 6 [json_name = "description"];</code>
      * @return string
      */
     public function getDescription()
@@ -175,7 +202,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string description = 5 [json_name = "description"];</code>
+     * Generated from protobuf field <code>string description = 6 [json_name = "description"];</code>
      * @param string $var
      * @return $this
      */
@@ -188,7 +215,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @return string
      */
     public function getCreatedAt()
@@ -197,7 +224,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_at = 6 [json_name = "createdAt"];</code>
+     * Generated from protobuf field <code>string created_at = 7 [json_name = "createdAt"];</code>
      * @param string $var
      * @return $this
      */
@@ -210,7 +237,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @return string
      */
     public function getUpdatedAt()
@@ -219,7 +246,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string updated_at = 7 [json_name = "updatedAt"];</code>
+     * Generated from protobuf field <code>string updated_at = 8 [json_name = "updatedAt"];</code>
      * @param string $var
      * @return $this
      */
@@ -232,7 +259,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 8 [json_name = "subscription"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 9 [json_name = "subscription"];</code>
      * @return \Payment\V1alpha1\Subscription|null
      */
     public function getSubscription()
@@ -251,7 +278,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 8 [json_name = "subscription"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Subscription subscription = 9 [json_name = "subscription"];</code>
      * @param \Payment\V1alpha1\Subscription $var
      * @return $this
      */
@@ -264,7 +291,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool status = 9 [json_name = "status"];</code>
+     * Generated from protobuf field <code>bool status = 10 [json_name = "status"];</code>
      * @return bool
      */
     public function getStatus()
@@ -273,7 +300,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool status = 9 [json_name = "status"];</code>
+     * Generated from protobuf field <code>bool status = 10 [json_name = "status"];</code>
      * @param bool $var
      * @return $this
      */
@@ -286,7 +313,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_suspended = 10 [json_name = "isSuspended"];</code>
+     * Generated from protobuf field <code>bool is_suspended = 11 [json_name = "isSuspended"];</code>
      * @return bool
      */
     public function getIsSuspended()
@@ -295,7 +322,7 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_suspended = 10 [json_name = "isSuspended"];</code>
+     * Generated from protobuf field <code>bool is_suspended = 11 [json_name = "isSuspended"];</code>
      * @param bool $var
      * @return $this
      */
