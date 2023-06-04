@@ -556,6 +556,28 @@ function deserialize_payment_v1alpha1_StopProjectResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.StopProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_UpdateProjectRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.UpdateProjectRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.UpdateProjectRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_UpdateProjectRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.UpdateProjectRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_UpdateProjectResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.UpdateProjectResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.UpdateProjectResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_UpdateProjectResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.UpdateProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_UpdateSubscriptionRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.UpdateSubscriptionRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.UpdateSubscriptionRequest');
@@ -624,17 +646,6 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_CreateCardRequest,
     responseSerialize: serialize_payment_v1alpha1_CreateCardResponse,
     responseDeserialize: deserialize_payment_v1alpha1_CreateCardResponse,
-  },
-  createProject: {
-    path: '/payment.v1alpha1.PaymentAPIService/CreateProject',
-    requestStream: false,
-    responseStream: false,
-    requestType: payment_v1alpha1_payment_api_pb.CreateProjectRequest,
-    responseType: payment_v1alpha1_payment_api_pb.CreateProjectResponse,
-    requestSerialize: serialize_payment_v1alpha1_CreateProjectRequest,
-    requestDeserialize: deserialize_payment_v1alpha1_CreateProjectRequest,
-    responseSerialize: serialize_payment_v1alpha1_CreateProjectResponse,
-    responseDeserialize: deserialize_payment_v1alpha1_CreateProjectResponse,
   },
   createInvoice: {
     path: '/payment.v1alpha1.PaymentAPIService/CreateInvoice',
@@ -850,7 +861,29 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     responseSerialize: serialize_payment_v1alpha1_ConsumeByProjectResponse,
     responseDeserialize: deserialize_payment_v1alpha1_ConsumeByProjectResponse,
   },
-  // Pause Project Consumption
+  // Projects
+  createProject: {
+    path: '/payment.v1alpha1.PaymentAPIService/CreateProject',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.CreateProjectRequest,
+    responseType: payment_v1alpha1_payment_api_pb.CreateProjectResponse,
+    requestSerialize: serialize_payment_v1alpha1_CreateProjectRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_CreateProjectRequest,
+    responseSerialize: serialize_payment_v1alpha1_CreateProjectResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_CreateProjectResponse,
+  },
+  updateProject: {
+    path: '/payment.v1alpha1.PaymentAPIService/UpdateProject',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.UpdateProjectRequest,
+    responseType: payment_v1alpha1_payment_api_pb.UpdateProjectResponse,
+    requestSerialize: serialize_payment_v1alpha1_UpdateProjectRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_UpdateProjectRequest,
+    responseSerialize: serialize_payment_v1alpha1_UpdateProjectResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_UpdateProjectResponse,
+  },
   stopProject: {
     path: '/payment.v1alpha1.PaymentAPIService/StopProject',
     requestStream: false,

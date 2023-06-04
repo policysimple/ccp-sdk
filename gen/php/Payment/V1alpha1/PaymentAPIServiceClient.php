@@ -70,19 +70,6 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Payment\V1alpha1\CreateProjectRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function CreateProject(\Payment\V1alpha1\CreateProjectRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CreateProject',
-        $argument,
-        ['\Payment\V1alpha1\CreateProjectResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * @param \Payment\V1alpha1\CreateInvoiceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -335,7 +322,33 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Pause Project Consumption
+     * Projects
+     * @param \Payment\V1alpha1\CreateProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateProject(\Payment\V1alpha1\CreateProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/CreateProject',
+        $argument,
+        ['\Payment\V1alpha1\CreateProjectResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Payment\V1alpha1\UpdateProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateProject(\Payment\V1alpha1\UpdateProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/UpdateProject',
+        $argument,
+        ['\Payment\V1alpha1\UpdateProjectResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Payment\V1alpha1\StopProjectRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

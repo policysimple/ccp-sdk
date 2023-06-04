@@ -15,7 +15,6 @@ service PaymentAPIService{
     rpc CreateSubscription(CreateSubscriptionRequest) returns (CreateSubscriptionResponse) {}; 
     rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {};
     rpc CreateCard(CreateCardRequest) returns (CreateCardResponse) {};
-    rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse) {};
     rpc CreateInvoice(CreateInvoiceRequest) returns (CreateInvoiceResponse) {}; 
 
     //Get the service
@@ -46,7 +45,9 @@ service PaymentAPIService{
     rpc InvoiceFilter(InvoiceFilterRequest) returns (InvoiceFilterResponse) {};
     rpc ConsumeByProject(ConsumeByProjectRequest) returns (ConsumeByProjectResponse) {};
 
-    //Pause Project Consumption
+    //Projects
+    rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse) {};
+    rpc UpdateProject(UpdateProjectRequest) returns (UpdateProjectResponse) {};
     rpc StopProject(StopProjectRequest) returns (StopProjectResponse){};
 
     //BlockChain Subscription
@@ -341,5 +342,16 @@ message ListCustomersRequest {
 
 message ListCustomersResponse {
     repeated payment.v1alpha1.Customer customers = 1;
+    string error = 2;
+}
+
+message UpdateProjectRequest {
+    string organization_id = 1;
+    string project_id = 2;
+    payment.v1alpha1.Project project = 3;
+}
+
+message UpdateProjectResponse {
+    string status = 1;
     string error = 2;
 }

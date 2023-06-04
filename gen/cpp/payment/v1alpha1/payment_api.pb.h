@@ -48,7 +48,7 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[54]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[56]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -213,6 +213,12 @@ extern StopProjectRequestDefaultTypeInternal _StopProjectRequest_default_instanc
 class StopProjectResponse;
 struct StopProjectResponseDefaultTypeInternal;
 extern StopProjectResponseDefaultTypeInternal _StopProjectResponse_default_instance_;
+class UpdateProjectRequest;
+struct UpdateProjectRequestDefaultTypeInternal;
+extern UpdateProjectRequestDefaultTypeInternal _UpdateProjectRequest_default_instance_;
+class UpdateProjectResponse;
+struct UpdateProjectResponseDefaultTypeInternal;
+extern UpdateProjectResponseDefaultTypeInternal _UpdateProjectResponse_default_instance_;
 class UpdateSubscriptionRequest;
 struct UpdateSubscriptionRequestDefaultTypeInternal;
 extern UpdateSubscriptionRequestDefaultTypeInternal _UpdateSubscriptionRequest_default_instance_;
@@ -274,6 +280,8 @@ template<> ::payment::v1alpha1::SetDefaultPaymentMethodRequest* Arena::CreateMay
 template<> ::payment::v1alpha1::SetDefaultPaymentMethodResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::SetDefaultPaymentMethodResponse>(Arena*);
 template<> ::payment::v1alpha1::StopProjectRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::StopProjectRequest>(Arena*);
 template<> ::payment::v1alpha1::StopProjectResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::StopProjectResponse>(Arena*);
+template<> ::payment::v1alpha1::UpdateProjectRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::UpdateProjectRequest>(Arena*);
+template<> ::payment::v1alpha1::UpdateProjectResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::UpdateProjectResponse>(Arena*);
 template<> ::payment::v1alpha1::UpdateSubscriptionRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::UpdateSubscriptionRequest>(Arena*);
 template<> ::payment::v1alpha1::UpdateSubscriptionResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::UpdateSubscriptionResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -9349,6 +9357,346 @@ class ListCustomersResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class UpdateProjectRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.UpdateProjectRequest) */ {
+ public:
+  inline UpdateProjectRequest() : UpdateProjectRequest(nullptr) {}
+  ~UpdateProjectRequest() override;
+  explicit constexpr UpdateProjectRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateProjectRequest(const UpdateProjectRequest& from);
+  UpdateProjectRequest(UpdateProjectRequest&& from) noexcept
+    : UpdateProjectRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateProjectRequest& operator=(const UpdateProjectRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateProjectRequest& operator=(UpdateProjectRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateProjectRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateProjectRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateProjectRequest*>(
+               &_UpdateProjectRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    54;
+
+  friend void swap(UpdateProjectRequest& a, UpdateProjectRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateProjectRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateProjectRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateProjectRequest* New() const final {
+    return new UpdateProjectRequest();
+  }
+
+  UpdateProjectRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateProjectRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateProjectRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateProjectRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateProjectRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.UpdateProjectRequest";
+  }
+  protected:
+  explicit UpdateProjectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationIdFieldNumber = 1,
+    kProjectIdFieldNumber = 2,
+    kProjectFieldNumber = 3,
+  };
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // string project_id = 2 [json_name = "projectId"];
+  void clear_project_id();
+  const std::string& project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_id();
+  void set_allocated_project_id(std::string* project_id);
+  private:
+  const std::string& _internal_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
+  std::string* _internal_mutable_project_id();
+  public:
+
+  // .payment.v1alpha1.Project project = 3 [json_name = "project"];
+  bool has_project() const;
+  private:
+  bool _internal_has_project() const;
+  public:
+  void clear_project();
+  const ::payment::v1alpha1::Project& project() const;
+  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Project* release_project();
+  ::payment::v1alpha1::Project* mutable_project();
+  void set_allocated_project(::payment::v1alpha1::Project* project);
+  private:
+  const ::payment::v1alpha1::Project& _internal_project() const;
+  ::payment::v1alpha1::Project* _internal_mutable_project();
+  public:
+  void unsafe_arena_set_allocated_project(
+      ::payment::v1alpha1::Project* project);
+  ::payment::v1alpha1::Project* unsafe_arena_release_project();
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.UpdateProjectRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
+  ::payment::v1alpha1::Project* project_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateProjectResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.UpdateProjectResponse) */ {
+ public:
+  inline UpdateProjectResponse() : UpdateProjectResponse(nullptr) {}
+  ~UpdateProjectResponse() override;
+  explicit constexpr UpdateProjectResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateProjectResponse(const UpdateProjectResponse& from);
+  UpdateProjectResponse(UpdateProjectResponse&& from) noexcept
+    : UpdateProjectResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateProjectResponse& operator=(const UpdateProjectResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateProjectResponse& operator=(UpdateProjectResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateProjectResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateProjectResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdateProjectResponse*>(
+               &_UpdateProjectResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    55;
+
+  friend void swap(UpdateProjectResponse& a, UpdateProjectResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateProjectResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateProjectResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateProjectResponse* New() const final {
+    return new UpdateProjectResponse();
+  }
+
+  UpdateProjectResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateProjectResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateProjectResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateProjectResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateProjectResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "payment.v1alpha1.UpdateProjectResponse";
+  }
+  protected:
+  explicit UpdateProjectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStatusFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // string status = 1 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // string error = 2 [json_name = "error"];
+  void clear_error();
+  const std::string& error() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error();
+  PROTOBUF_MUST_USE_RESULT std::string* release_error();
+  void set_allocated_error(std::string* error);
+  private:
+  const std::string& _internal_error() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error(const std::string& value);
+  std::string* _internal_mutable_error();
+  public:
+
+  // @@protoc_insertion_point(class_scope:payment.v1alpha1.UpdateProjectResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
+};
 // ===================================================================
 
 
@@ -16296,9 +16644,291 @@ inline void ListCustomersResponse::set_allocated_error(std::string* error) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ListCustomersResponse.error)
 }
 
+// -------------------------------------------------------------------
+
+// UpdateProjectRequest
+
+// string organization_id = 1 [json_name = "organizationId"];
+inline void UpdateProjectRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& UpdateProjectRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.UpdateProjectRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateProjectRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.UpdateProjectRequest.organization_id)
+}
+inline std::string* UpdateProjectRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.UpdateProjectRequest.organization_id)
+  return _s;
+}
+inline const std::string& UpdateProjectRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void UpdateProjectRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateProjectRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateProjectRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.UpdateProjectRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateProjectRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.UpdateProjectRequest.organization_id)
+}
+
+// string project_id = 2 [json_name = "projectId"];
+inline void UpdateProjectRequest::clear_project_id() {
+  project_id_.ClearToEmpty();
+}
+inline const std::string& UpdateProjectRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.UpdateProjectRequest.project_id)
+  return _internal_project_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateProjectRequest::set_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.UpdateProjectRequest.project_id)
+}
+inline std::string* UpdateProjectRequest::mutable_project_id() {
+  std::string* _s = _internal_mutable_project_id();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.UpdateProjectRequest.project_id)
+  return _s;
+}
+inline const std::string& UpdateProjectRequest::_internal_project_id() const {
+  return project_id_.Get();
+}
+inline void UpdateProjectRequest::_internal_set_project_id(const std::string& value) {
+  
+  project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateProjectRequest::_internal_mutable_project_id() {
+  
+  return project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateProjectRequest::release_project_id() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.UpdateProjectRequest.project_id)
+  return project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateProjectRequest::set_allocated_project_id(std::string* project_id) {
+  if (project_id != nullptr) {
+    
+  } else {
+    
+  }
+  project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.UpdateProjectRequest.project_id)
+}
+
+// .payment.v1alpha1.Project project = 3 [json_name = "project"];
+inline bool UpdateProjectRequest::_internal_has_project() const {
+  return this != internal_default_instance() && project_ != nullptr;
+}
+inline bool UpdateProjectRequest::has_project() const {
+  return _internal_has_project();
+}
+inline const ::payment::v1alpha1::Project& UpdateProjectRequest::_internal_project() const {
+  const ::payment::v1alpha1::Project* p = project_;
+  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Project&>(
+      ::payment::v1alpha1::_Project_default_instance_);
+}
+inline const ::payment::v1alpha1::Project& UpdateProjectRequest::project() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.UpdateProjectRequest.project)
+  return _internal_project();
+}
+inline void UpdateProjectRequest::unsafe_arena_set_allocated_project(
+    ::payment::v1alpha1::Project* project) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+  }
+  project_ = project;
+  if (project) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.UpdateProjectRequest.project)
+}
+inline ::payment::v1alpha1::Project* UpdateProjectRequest::release_project() {
+  
+  ::payment::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::payment::v1alpha1::Project* UpdateProjectRequest::unsafe_arena_release_project() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.UpdateProjectRequest.project)
+  
+  ::payment::v1alpha1::Project* temp = project_;
+  project_ = nullptr;
+  return temp;
+}
+inline ::payment::v1alpha1::Project* UpdateProjectRequest::_internal_mutable_project() {
+  
+  if (project_ == nullptr) {
+    auto* p = CreateMaybeMessage<::payment::v1alpha1::Project>(GetArenaForAllocation());
+    project_ = p;
+  }
+  return project_;
+}
+inline ::payment::v1alpha1::Project* UpdateProjectRequest::mutable_project() {
+  ::payment::v1alpha1::Project* _msg = _internal_mutable_project();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.UpdateProjectRequest.project)
+  return _msg;
+}
+inline void UpdateProjectRequest::set_allocated_project(::payment::v1alpha1::Project* project) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(project_);
+  }
+  if (project) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(project));
+    if (message_arena != submessage_arena) {
+      project = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, project, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  project_ = project;
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.UpdateProjectRequest.project)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateProjectResponse
+
+// string status = 1 [json_name = "status"];
+inline void UpdateProjectResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& UpdateProjectResponse::status() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.UpdateProjectResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateProjectResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.UpdateProjectResponse.status)
+}
+inline std::string* UpdateProjectResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.UpdateProjectResponse.status)
+  return _s;
+}
+inline const std::string& UpdateProjectResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void UpdateProjectResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateProjectResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateProjectResponse::release_status() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.UpdateProjectResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateProjectResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.UpdateProjectResponse.status)
+}
+
+// string error = 2 [json_name = "error"];
+inline void UpdateProjectResponse::clear_error() {
+  error_.ClearToEmpty();
+}
+inline const std::string& UpdateProjectResponse::error() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.UpdateProjectResponse.error)
+  return _internal_error();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateProjectResponse::set_error(ArgT0&& arg0, ArgT... args) {
+ 
+ error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.UpdateProjectResponse.error)
+}
+inline std::string* UpdateProjectResponse::mutable_error() {
+  std::string* _s = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.UpdateProjectResponse.error)
+  return _s;
+}
+inline const std::string& UpdateProjectResponse::_internal_error() const {
+  return error_.Get();
+}
+inline void UpdateProjectResponse::_internal_set_error(const std::string& value) {
+  
+  error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateProjectResponse::_internal_mutable_error() {
+  
+  return error_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateProjectResponse::release_error() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.UpdateProjectResponse.error)
+  return error_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateProjectResponse::set_allocated_error(std::string* error) {
+  if (error != nullptr) {
+    
+  } else {
+    
+  }
+  error_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.UpdateProjectResponse.error)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

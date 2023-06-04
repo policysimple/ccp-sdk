@@ -65,13 +65,6 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateCardResponse>> PrepareAsyncCreateCard(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateCardResponse>>(PrepareAsyncCreateCardRaw(context, request, cq));
     }
-    virtual ::grpc::Status CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::payment::v1alpha1::CreateProjectResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>> AsyncCreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>>(AsyncCreateProjectRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>> PrepareAsyncCreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>>(PrepareAsyncCreateProjectRaw(context, request, cq));
-    }
     virtual ::grpc::Status CreateInvoice(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::payment::v1alpha1::CreateInvoiceResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateInvoiceResponse>> AsyncCreateInvoice(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateInvoiceResponse>>(AsyncCreateInvoiceRaw(context, request, cq));
@@ -210,7 +203,21 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::ConsumeByProjectResponse>> PrepareAsyncConsumeByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::ConsumeByProjectResponse>>(PrepareAsyncConsumeByProjectRaw(context, request, cq));
     }
-    // Pause Project Consumption
+    // Projects
+    virtual ::grpc::Status CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::payment::v1alpha1::CreateProjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>> AsyncCreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>>(AsyncCreateProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>> PrepareAsyncCreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>>(PrepareAsyncCreateProjectRaw(context, request, cq));
+    }
+    virtual ::grpc::Status UpdateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::payment::v1alpha1::UpdateProjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateProjectResponse>> AsyncUpdateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateProjectResponse>>(AsyncUpdateProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateProjectResponse>> PrepareAsyncUpdateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateProjectResponse>>(PrepareAsyncUpdateProjectRaw(context, request, cq));
+    }
     virtual ::grpc::Status StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::payment::v1alpha1::StopProjectResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>> AsyncStopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>>(AsyncStopProjectRaw(context, request, cq));
@@ -234,7 +241,6 @@ class PaymentAPIService final {
       virtual void CreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreatePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest* request, ::payment::v1alpha1::CreatePaymentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateCard(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest* request, ::payment::v1alpha1::CreateCardResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateInvoice(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest* request, ::payment::v1alpha1::CreateInvoiceResponse* response, std::function<void(::grpc::Status)>) = 0;
       // Get the service
       virtual void GetOrganization(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest* request, ::payment::v1alpha1::GetOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -259,7 +265,9 @@ class PaymentAPIService final {
       // Filter service
       virtual void InvoiceFilter(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest* request, ::payment::v1alpha1::InvoiceFilterResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ConsumeByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest* request, ::payment::v1alpha1::ConsumeByProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      // Pause Project Consumption
+      // Projects
+      virtual void CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest* request, ::payment::v1alpha1::UpdateProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       // BlockChain Subscription
       virtual void BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -274,8 +282,6 @@ class PaymentAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreatePaymentResponse>* PrepareAsyncCreatePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateCardResponse>* AsyncCreateCardRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateCardResponse>* PrepareAsyncCreateCardRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>* AsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>* PrepareAsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateInvoiceResponse>* AsyncCreateInvoiceRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateInvoiceResponse>* PrepareAsyncCreateInvoiceRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetOrganizationResponse>* AsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -314,6 +320,10 @@ class PaymentAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::InvoiceFilterResponse>* PrepareAsyncInvoiceFilterRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::ConsumeByProjectResponse>* AsyncConsumeByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::ConsumeByProjectResponse>* PrepareAsyncConsumeByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>* AsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::CreateProjectResponse>* PrepareAsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateProjectResponse>* AsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::UpdateProjectResponse>* PrepareAsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>* AsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::StopProjectResponse>* PrepareAsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::BlockChainSubscriptionResponse>* AsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -349,13 +359,6 @@ class PaymentAPIService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCardResponse>> PrepareAsyncCreateCard(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCardResponse>>(PrepareAsyncCreateCardRaw(context, request, cq));
-    }
-    ::grpc::Status CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::payment::v1alpha1::CreateProjectResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>> AsyncCreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>>(AsyncCreateProjectRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>> PrepareAsyncCreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>>(PrepareAsyncCreateProjectRaw(context, request, cq));
     }
     ::grpc::Status CreateInvoice(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::payment::v1alpha1::CreateInvoiceResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateInvoiceResponse>> AsyncCreateInvoice(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::grpc::CompletionQueue* cq) {
@@ -490,6 +493,20 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ConsumeByProjectResponse>> PrepareAsyncConsumeByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ConsumeByProjectResponse>>(PrepareAsyncConsumeByProjectRaw(context, request, cq));
     }
+    ::grpc::Status CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::payment::v1alpha1::CreateProjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>> AsyncCreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>>(AsyncCreateProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>> PrepareAsyncCreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>>(PrepareAsyncCreateProjectRaw(context, request, cq));
+    }
+    ::grpc::Status UpdateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::payment::v1alpha1::UpdateProjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateProjectResponse>> AsyncUpdateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateProjectResponse>>(AsyncUpdateProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateProjectResponse>> PrepareAsyncUpdateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateProjectResponse>>(PrepareAsyncUpdateProjectRaw(context, request, cq));
+    }
     ::grpc::Status StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::payment::v1alpha1::StopProjectResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>> AsyncStopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>>(AsyncStopProjectRaw(context, request, cq));
@@ -511,7 +528,6 @@ class PaymentAPIService final {
       void CreateSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
       void CreatePayment(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest* request, ::payment::v1alpha1::CreatePaymentResponse* response, std::function<void(::grpc::Status)>) override;
       void CreateCard(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest* request, ::payment::v1alpha1::CreateCardResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void CreateInvoice(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest* request, ::payment::v1alpha1::CreateInvoiceResponse* response, std::function<void(::grpc::Status)>) override;
       void GetOrganization(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest* request, ::payment::v1alpha1::GetOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
       void GetSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionRequest* request, ::payment::v1alpha1::GetSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
@@ -531,6 +547,8 @@ class PaymentAPIService final {
       void DeleteCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::DeleteCustomerRequest* request, ::payment::v1alpha1::DeleteCustomerResponse* response, std::function<void(::grpc::Status)>) override;
       void InvoiceFilter(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest* request, ::payment::v1alpha1::InvoiceFilterResponse* response, std::function<void(::grpc::Status)>) override;
       void ConsumeByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest* request, ::payment::v1alpha1::ConsumeByProjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateProject(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest* request, ::payment::v1alpha1::UpdateProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
      private:
@@ -552,8 +570,6 @@ class PaymentAPIService final {
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreatePaymentResponse>* PrepareAsyncCreatePaymentRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreatePaymentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCardResponse>* AsyncCreateCardRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateCardResponse>* PrepareAsyncCreateCardRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCardRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>* AsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>* PrepareAsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateInvoiceResponse>* AsyncCreateInvoiceRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateInvoiceResponse>* PrepareAsyncCreateInvoiceRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateInvoiceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetOrganizationResponse>* AsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -592,6 +608,10 @@ class PaymentAPIService final {
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::InvoiceFilterResponse>* PrepareAsyncInvoiceFilterRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::InvoiceFilterRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ConsumeByProjectResponse>* AsyncConsumeByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::ConsumeByProjectResponse>* PrepareAsyncConsumeByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>* AsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::CreateProjectResponse>* PrepareAsyncCreateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateProjectResponse>* AsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::UpdateProjectResponse>* PrepareAsyncUpdateProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::UpdateProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>* AsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::StopProjectResponse>* PrepareAsyncStopProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>* AsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -600,7 +620,6 @@ class PaymentAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_CreateSubscription_;
     const ::grpc::internal::RpcMethod rpcmethod_CreatePayment_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateCard_;
-    const ::grpc::internal::RpcMethod rpcmethod_CreateProject_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateInvoice_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOrganization_;
     const ::grpc::internal::RpcMethod rpcmethod_GetSubscription_;
@@ -620,6 +639,8 @@ class PaymentAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_DeleteCustomer_;
     const ::grpc::internal::RpcMethod rpcmethod_InvoiceFilter_;
     const ::grpc::internal::RpcMethod rpcmethod_ConsumeByProject_;
+    const ::grpc::internal::RpcMethod rpcmethod_CreateProject_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateProject_;
     const ::grpc::internal::RpcMethod rpcmethod_StopProject_;
     const ::grpc::internal::RpcMethod rpcmethod_BlockChainSubscription_;
   };
@@ -634,7 +655,6 @@ class PaymentAPIService final {
     virtual ::grpc::Status CreateSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateSubscriptionRequest* request, ::payment::v1alpha1::CreateSubscriptionResponse* response);
     virtual ::grpc::Status CreatePayment(::grpc::ServerContext* context, const ::payment::v1alpha1::CreatePaymentRequest* request, ::payment::v1alpha1::CreatePaymentResponse* response);
     virtual ::grpc::Status CreateCard(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateCardRequest* request, ::payment::v1alpha1::CreateCardResponse* response);
-    virtual ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response);
     virtual ::grpc::Status CreateInvoice(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateInvoiceRequest* request, ::payment::v1alpha1::CreateInvoiceResponse* response);
     // Get the service
     virtual ::grpc::Status GetOrganization(::grpc::ServerContext* context, const ::payment::v1alpha1::GetOrganizationRequest* request, ::payment::v1alpha1::GetOrganizationResponse* response);
@@ -659,7 +679,9 @@ class PaymentAPIService final {
     // Filter service
     virtual ::grpc::Status InvoiceFilter(::grpc::ServerContext* context, const ::payment::v1alpha1::InvoiceFilterRequest* request, ::payment::v1alpha1::InvoiceFilterResponse* response);
     virtual ::grpc::Status ConsumeByProject(::grpc::ServerContext* context, const ::payment::v1alpha1::ConsumeByProjectRequest* request, ::payment::v1alpha1::ConsumeByProjectResponse* response);
-    // Pause Project Consumption
+    // Projects
+    virtual ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response);
+    virtual ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateProjectRequest* request, ::payment::v1alpha1::UpdateProjectResponse* response);
     virtual ::grpc::Status StopProject(::grpc::ServerContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response);
     // BlockChain Subscription
     virtual ::grpc::Status BlockChainSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response);
@@ -745,32 +767,12 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_CreateProject : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_CreateProject() {
-      ::grpc::Service::MarkMethodAsync(4);
-    }
-    ~WithAsyncMethod_CreateProject() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestCreateProject(::grpc::ServerContext* context, ::payment::v1alpha1::CreateProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::CreateProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_CreateInvoice : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_CreateInvoice() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_CreateInvoice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -781,7 +783,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateInvoice(::grpc::ServerContext* context, ::payment::v1alpha1::CreateInvoiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::CreateInvoiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -790,7 +792,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetOrganization() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_GetOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -801,7 +803,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOrganization(::grpc::ServerContext* context, ::payment::v1alpha1::GetOrganizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetOrganizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -810,7 +812,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetSubscription() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_GetSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -821,7 +823,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::GetSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -830,7 +832,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetPayment() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_GetPayment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -841,7 +843,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPayment(::grpc::ServerContext* context, ::payment::v1alpha1::GetPaymentRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetPaymentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -850,7 +852,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetCustomer() {
-      ::grpc::Service::MarkMethodAsync(9);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_GetCustomer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -861,7 +863,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCustomer(::grpc::ServerContext* context, ::payment::v1alpha1::GetCustomerRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetCustomerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -870,7 +872,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetBilingMonth() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_GetBilingMonth() override {
       BaseClassMustBeDerivedFromService(this);
@@ -881,7 +883,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBilingMonth(::grpc::ServerContext* context, ::payment::v1alpha1::GetBilingMonthRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetBilingMonthResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -890,7 +892,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetPayments() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_GetPayments() override {
       BaseClassMustBeDerivedFromService(this);
@@ -901,7 +903,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPayments(::grpc::ServerContext* context, ::payment::v1alpha1::GetPaymentsRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetPaymentsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -910,7 +912,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ListProjects() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_ListProjects() override {
       BaseClassMustBeDerivedFromService(this);
@@ -921,7 +923,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListProjects(::grpc::ServerContext* context, ::payment::v1alpha1::ListProjectsRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::ListProjectsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -930,7 +932,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ListPayment() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_ListPayment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -941,7 +943,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListPayment(::grpc::ServerContext* context, ::payment::v1alpha1::ListPaymentRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::ListPaymentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -950,7 +952,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ListSubscriptionItems() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(13);
     }
     ~WithAsyncMethod_ListSubscriptionItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -961,7 +963,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListSubscriptionItems(::grpc::ServerContext* context, ::payment::v1alpha1::ListSubscriptionItemsRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::ListSubscriptionItemsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -970,7 +972,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ListCustomers() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_ListCustomers() override {
       BaseClassMustBeDerivedFromService(this);
@@ -981,7 +983,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListCustomers(::grpc::ServerContext* context, ::payment::v1alpha1::ListCustomersRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::ListCustomersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -990,7 +992,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_UpdateSubscription() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_UpdateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1001,7 +1003,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::UpdateSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::UpdateSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1010,7 +1012,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_SetDefaultPaymentMethod() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_SetDefaultPaymentMethod() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1021,7 +1023,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetDefaultPaymentMethod(::grpc::ServerContext* context, ::payment::v1alpha1::SetDefaultPaymentMethodRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::SetDefaultPaymentMethodResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1030,7 +1032,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_DeleteProject() {
-      ::grpc::Service::MarkMethodAsync(18);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_DeleteProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1041,7 +1043,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteProject(::grpc::ServerContext* context, ::payment::v1alpha1::DeleteProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::DeleteProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1050,7 +1052,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_DeletePayment() {
-      ::grpc::Service::MarkMethodAsync(19);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_DeletePayment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1061,7 +1063,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeletePayment(::grpc::ServerContext* context, ::payment::v1alpha1::DeletePaymentRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::DeletePaymentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1070,7 +1072,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_CancelSubscription() {
-      ::grpc::Service::MarkMethodAsync(20);
+      ::grpc::Service::MarkMethodAsync(19);
     }
     ~WithAsyncMethod_CancelSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1081,7 +1083,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCancelSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::CancelSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::CancelSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1090,7 +1092,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_DeleteCustomer() {
-      ::grpc::Service::MarkMethodAsync(21);
+      ::grpc::Service::MarkMethodAsync(20);
     }
     ~WithAsyncMethod_DeleteCustomer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1101,7 +1103,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteCustomer(::grpc::ServerContext* context, ::payment::v1alpha1::DeleteCustomerRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::DeleteCustomerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1110,7 +1112,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_InvoiceFilter() {
-      ::grpc::Service::MarkMethodAsync(22);
+      ::grpc::Service::MarkMethodAsync(21);
     }
     ~WithAsyncMethod_InvoiceFilter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1121,7 +1123,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestInvoiceFilter(::grpc::ServerContext* context, ::payment::v1alpha1::InvoiceFilterRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::InvoiceFilterResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1130,7 +1132,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ConsumeByProject() {
-      ::grpc::Service::MarkMethodAsync(23);
+      ::grpc::Service::MarkMethodAsync(22);
     }
     ~WithAsyncMethod_ConsumeByProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1141,7 +1143,47 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestConsumeByProject(::grpc::ServerContext* context, ::payment::v1alpha1::ConsumeByProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::ConsumeByProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_CreateProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_CreateProject() {
+      ::grpc::Service::MarkMethodAsync(23);
+    }
+    ~WithAsyncMethod_CreateProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateProject(::grpc::ServerContext* context, ::payment::v1alpha1::CreateProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::CreateProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_UpdateProject() {
+      ::grpc::Service::MarkMethodAsync(24);
+    }
+    ~WithAsyncMethod_UpdateProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateProjectRequest* request, ::payment::v1alpha1::UpdateProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateProject(::grpc::ServerContext* context, ::payment::v1alpha1::UpdateProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::UpdateProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1150,7 +1192,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_StopProject() {
-      ::grpc::Service::MarkMethodAsync(24);
+      ::grpc::Service::MarkMethodAsync(25);
     }
     ~WithAsyncMethod_StopProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1161,7 +1203,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestStopProject(::grpc::ServerContext* context, ::payment::v1alpha1::StopProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::StopProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1170,7 +1212,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_BlockChainSubscription() {
-      ::grpc::Service::MarkMethodAsync(25);
+      ::grpc::Service::MarkMethodAsync(26);
     }
     ~WithAsyncMethod_BlockChainSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1181,10 +1223,10 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestBlockChainSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::BlockChainSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateCustomer<WithAsyncMethod_CreateSubscription<WithAsyncMethod_CreatePayment<WithAsyncMethod_CreateCard<WithAsyncMethod_CreateProject<WithAsyncMethod_CreateInvoice<WithAsyncMethod_GetOrganization<WithAsyncMethod_GetSubscription<WithAsyncMethod_GetPayment<WithAsyncMethod_GetCustomer<WithAsyncMethod_GetBilingMonth<WithAsyncMethod_GetPayments<WithAsyncMethod_ListProjects<WithAsyncMethod_ListPayment<WithAsyncMethod_ListSubscriptionItems<WithAsyncMethod_ListCustomers<WithAsyncMethod_UpdateSubscription<WithAsyncMethod_SetDefaultPaymentMethod<WithAsyncMethod_DeleteProject<WithAsyncMethod_DeletePayment<WithAsyncMethod_CancelSubscription<WithAsyncMethod_DeleteCustomer<WithAsyncMethod_InvoiceFilter<WithAsyncMethod_ConsumeByProject<WithAsyncMethod_StopProject<WithAsyncMethod_BlockChainSubscription<Service > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateCustomer<WithAsyncMethod_CreateSubscription<WithAsyncMethod_CreatePayment<WithAsyncMethod_CreateCard<WithAsyncMethod_CreateInvoice<WithAsyncMethod_GetOrganization<WithAsyncMethod_GetSubscription<WithAsyncMethod_GetPayment<WithAsyncMethod_GetCustomer<WithAsyncMethod_GetBilingMonth<WithAsyncMethod_GetPayments<WithAsyncMethod_ListProjects<WithAsyncMethod_ListPayment<WithAsyncMethod_ListSubscriptionItems<WithAsyncMethod_ListCustomers<WithAsyncMethod_UpdateSubscription<WithAsyncMethod_SetDefaultPaymentMethod<WithAsyncMethod_DeleteProject<WithAsyncMethod_DeletePayment<WithAsyncMethod_CancelSubscription<WithAsyncMethod_DeleteCustomer<WithAsyncMethod_InvoiceFilter<WithAsyncMethod_ConsumeByProject<WithAsyncMethod_CreateProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_StopProject<WithAsyncMethod_BlockChainSubscription<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateCustomer : public BaseClass {
    private:
@@ -1254,29 +1296,12 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_CreateProject : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_CreateProject() {
-      ::grpc::Service::MarkMethodGeneric(4);
-    }
-    ~WithGenericMethod_CreateProject() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_CreateInvoice : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_CreateInvoice() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_CreateInvoice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1293,7 +1318,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetOrganization() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_GetOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1310,7 +1335,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetSubscription() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_GetSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1327,7 +1352,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetPayment() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_GetPayment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1344,7 +1369,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetCustomer() {
-      ::grpc::Service::MarkMethodGeneric(9);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_GetCustomer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1361,7 +1386,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetBilingMonth() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_GetBilingMonth() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1378,7 +1403,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetPayments() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_GetPayments() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1395,7 +1420,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ListProjects() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_ListProjects() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1412,7 +1437,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ListPayment() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_ListPayment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1429,7 +1454,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ListSubscriptionItems() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(13);
     }
     ~WithGenericMethod_ListSubscriptionItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1446,7 +1471,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ListCustomers() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_ListCustomers() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1463,7 +1488,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_UpdateSubscription() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_UpdateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1480,7 +1505,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_SetDefaultPaymentMethod() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_SetDefaultPaymentMethod() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1497,7 +1522,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_DeleteProject() {
-      ::grpc::Service::MarkMethodGeneric(18);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_DeleteProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1514,7 +1539,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_DeletePayment() {
-      ::grpc::Service::MarkMethodGeneric(19);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_DeletePayment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1531,7 +1556,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_CancelSubscription() {
-      ::grpc::Service::MarkMethodGeneric(20);
+      ::grpc::Service::MarkMethodGeneric(19);
     }
     ~WithGenericMethod_CancelSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1548,7 +1573,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_DeleteCustomer() {
-      ::grpc::Service::MarkMethodGeneric(21);
+      ::grpc::Service::MarkMethodGeneric(20);
     }
     ~WithGenericMethod_DeleteCustomer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1565,7 +1590,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_InvoiceFilter() {
-      ::grpc::Service::MarkMethodGeneric(22);
+      ::grpc::Service::MarkMethodGeneric(21);
     }
     ~WithGenericMethod_InvoiceFilter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1582,7 +1607,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ConsumeByProject() {
-      ::grpc::Service::MarkMethodGeneric(23);
+      ::grpc::Service::MarkMethodGeneric(22);
     }
     ~WithGenericMethod_ConsumeByProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1594,12 +1619,46 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_CreateProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_CreateProject() {
+      ::grpc::Service::MarkMethodGeneric(23);
+    }
+    ~WithGenericMethod_CreateProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_UpdateProject() {
+      ::grpc::Service::MarkMethodGeneric(24);
+    }
+    ~WithGenericMethod_UpdateProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateProjectRequest* request, ::payment::v1alpha1::UpdateProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_StopProject : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_StopProject() {
-      ::grpc::Service::MarkMethodGeneric(24);
+      ::grpc::Service::MarkMethodGeneric(25);
     }
     ~WithGenericMethod_StopProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1616,7 +1675,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_BlockChainSubscription() {
-      ::grpc::Service::MarkMethodGeneric(25);
+      ::grpc::Service::MarkMethodGeneric(26);
     }
     ~WithGenericMethod_BlockChainSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1708,32 +1767,12 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_CreateProject : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_CreateProject() {
-      ::grpc::Service::MarkMethodRaw(4);
-    }
-    ~WithRawMethod_CreateProject() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestCreateProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_CreateInvoice : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_CreateInvoice() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_CreateInvoice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1744,7 +1783,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateInvoice(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1753,7 +1792,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetOrganization() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_GetOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1764,7 +1803,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOrganization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1773,7 +1812,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetSubscription() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_GetSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1784,7 +1823,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1793,7 +1832,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetPayment() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_GetPayment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1804,7 +1843,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPayment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1813,7 +1852,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetCustomer() {
-      ::grpc::Service::MarkMethodRaw(9);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_GetCustomer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1824,7 +1863,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCustomer(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1833,7 +1872,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetBilingMonth() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_GetBilingMonth() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1844,7 +1883,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBilingMonth(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1853,7 +1892,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetPayments() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_GetPayments() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1864,7 +1903,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPayments(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1873,7 +1912,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ListProjects() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_ListProjects() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1884,7 +1923,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListProjects(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1893,7 +1932,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ListPayment() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_ListPayment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1904,7 +1943,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListPayment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1913,7 +1952,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ListSubscriptionItems() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(13);
     }
     ~WithRawMethod_ListSubscriptionItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1924,7 +1963,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListSubscriptionItems(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1933,7 +1972,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ListCustomers() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_ListCustomers() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1944,7 +1983,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListCustomers(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1953,7 +1992,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_UpdateSubscription() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_UpdateSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1964,7 +2003,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1973,7 +2012,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_SetDefaultPaymentMethod() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_SetDefaultPaymentMethod() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1984,7 +2023,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetDefaultPaymentMethod(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1993,7 +2032,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_DeleteProject() {
-      ::grpc::Service::MarkMethodRaw(18);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_DeleteProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2004,7 +2043,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2013,7 +2052,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_DeletePayment() {
-      ::grpc::Service::MarkMethodRaw(19);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_DeletePayment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2024,7 +2063,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeletePayment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2033,7 +2072,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_CancelSubscription() {
-      ::grpc::Service::MarkMethodRaw(20);
+      ::grpc::Service::MarkMethodRaw(19);
     }
     ~WithRawMethod_CancelSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2044,7 +2083,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCancelSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2053,7 +2092,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_DeleteCustomer() {
-      ::grpc::Service::MarkMethodRaw(21);
+      ::grpc::Service::MarkMethodRaw(20);
     }
     ~WithRawMethod_DeleteCustomer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2064,7 +2103,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteCustomer(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2073,7 +2112,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_InvoiceFilter() {
-      ::grpc::Service::MarkMethodRaw(22);
+      ::grpc::Service::MarkMethodRaw(21);
     }
     ~WithRawMethod_InvoiceFilter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2084,7 +2123,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestInvoiceFilter(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2093,7 +2132,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ConsumeByProject() {
-      ::grpc::Service::MarkMethodRaw(23);
+      ::grpc::Service::MarkMethodRaw(22);
     }
     ~WithRawMethod_ConsumeByProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2104,7 +2143,47 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestConsumeByProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_CreateProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_CreateProject() {
+      ::grpc::Service::MarkMethodRaw(23);
+    }
+    ~WithRawMethod_CreateProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_UpdateProject() {
+      ::grpc::Service::MarkMethodRaw(24);
+    }
+    ~WithRawMethod_UpdateProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateProjectRequest* request, ::payment::v1alpha1::UpdateProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2113,7 +2192,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_StopProject() {
-      ::grpc::Service::MarkMethodRaw(24);
+      ::grpc::Service::MarkMethodRaw(25);
     }
     ~WithRawMethod_StopProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2124,7 +2203,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestStopProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2133,7 +2212,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_BlockChainSubscription() {
-      ::grpc::Service::MarkMethodRaw(25);
+      ::grpc::Service::MarkMethodRaw(26);
     }
     ~WithRawMethod_BlockChainSubscription() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2144,7 +2223,7 @@ class PaymentAPIService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestBlockChainSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2228,32 +2307,12 @@ class PaymentAPIService final {
     virtual ::grpc::Status StreamedCreateCard(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::CreateCardRequest,::payment::v1alpha1::CreateCardResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_CreateProject : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_CreateProject() {
-      ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::CreateProjectRequest, ::payment::v1alpha1::CreateProjectResponse>(std::bind(&WithStreamedUnaryMethod_CreateProject<BaseClass>::StreamedCreateProject, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_CreateProject() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedCreateProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::CreateProjectRequest,::payment::v1alpha1::CreateProjectResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateInvoice : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_CreateInvoice() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::CreateInvoiceRequest, ::payment::v1alpha1::CreateInvoiceResponse>(std::bind(&WithStreamedUnaryMethod_CreateInvoice<BaseClass>::StreamedCreateInvoice, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_CreateInvoice() override {
@@ -2273,7 +2332,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetOrganization() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetOrganizationRequest, ::payment::v1alpha1::GetOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_GetOrganization<BaseClass>::StreamedGetOrganization, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetOrganization() override {
@@ -2293,7 +2352,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetSubscription() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetSubscriptionRequest, ::payment::v1alpha1::GetSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_GetSubscription<BaseClass>::StreamedGetSubscription, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetSubscription() override {
@@ -2313,7 +2372,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetPayment() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetPaymentRequest, ::payment::v1alpha1::GetPaymentResponse>(std::bind(&WithStreamedUnaryMethod_GetPayment<BaseClass>::StreamedGetPayment, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetPayment() override {
@@ -2333,7 +2392,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetCustomer() {
-      ::grpc::Service::MarkMethodStreamed(9,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetCustomerRequest, ::payment::v1alpha1::GetCustomerResponse>(std::bind(&WithStreamedUnaryMethod_GetCustomer<BaseClass>::StreamedGetCustomer, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetCustomer() override {
@@ -2353,7 +2412,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetBilingMonth() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetBilingMonthRequest, ::payment::v1alpha1::GetBilingMonthResponse>(std::bind(&WithStreamedUnaryMethod_GetBilingMonth<BaseClass>::StreamedGetBilingMonth, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetBilingMonth() override {
@@ -2373,7 +2432,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetPayments() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetPaymentsRequest, ::payment::v1alpha1::GetPaymentsResponse>(std::bind(&WithStreamedUnaryMethod_GetPayments<BaseClass>::StreamedGetPayments, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetPayments() override {
@@ -2393,7 +2452,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ListProjects() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::ListProjectsRequest, ::payment::v1alpha1::ListProjectsResponse>(std::bind(&WithStreamedUnaryMethod_ListProjects<BaseClass>::StreamedListProjects, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ListProjects() override {
@@ -2413,7 +2472,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ListPayment() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::ListPaymentRequest, ::payment::v1alpha1::ListPaymentResponse>(std::bind(&WithStreamedUnaryMethod_ListPayment<BaseClass>::StreamedListPayment, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ListPayment() override {
@@ -2433,7 +2492,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ListSubscriptionItems() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::ListSubscriptionItemsRequest, ::payment::v1alpha1::ListSubscriptionItemsResponse>(std::bind(&WithStreamedUnaryMethod_ListSubscriptionItems<BaseClass>::StreamedListSubscriptionItems, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ListSubscriptionItems() override {
@@ -2453,7 +2512,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ListCustomers() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::ListCustomersRequest, ::payment::v1alpha1::ListCustomersResponse>(std::bind(&WithStreamedUnaryMethod_ListCustomers<BaseClass>::StreamedListCustomers, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ListCustomers() override {
@@ -2473,7 +2532,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_UpdateSubscription() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::UpdateSubscriptionRequest, ::payment::v1alpha1::UpdateSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_UpdateSubscription<BaseClass>::StreamedUpdateSubscription, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_UpdateSubscription() override {
@@ -2493,7 +2552,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_SetDefaultPaymentMethod() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::SetDefaultPaymentMethodRequest, ::payment::v1alpha1::SetDefaultPaymentMethodResponse>(std::bind(&WithStreamedUnaryMethod_SetDefaultPaymentMethod<BaseClass>::StreamedSetDefaultPaymentMethod, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_SetDefaultPaymentMethod() override {
@@ -2513,7 +2572,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_DeleteProject() {
-      ::grpc::Service::MarkMethodStreamed(18,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::DeleteProjectRequest, ::payment::v1alpha1::DeleteProjectResponse>(std::bind(&WithStreamedUnaryMethod_DeleteProject<BaseClass>::StreamedDeleteProject, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_DeleteProject() override {
@@ -2533,7 +2592,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_DeletePayment() {
-      ::grpc::Service::MarkMethodStreamed(19,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::DeletePaymentRequest, ::payment::v1alpha1::DeletePaymentResponse>(std::bind(&WithStreamedUnaryMethod_DeletePayment<BaseClass>::StreamedDeletePayment, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_DeletePayment() override {
@@ -2553,7 +2612,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_CancelSubscription() {
-      ::grpc::Service::MarkMethodStreamed(20,
+      ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::CancelSubscriptionRequest, ::payment::v1alpha1::CancelSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_CancelSubscription<BaseClass>::StreamedCancelSubscription, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_CancelSubscription() override {
@@ -2573,7 +2632,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_DeleteCustomer() {
-      ::grpc::Service::MarkMethodStreamed(21,
+      ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::DeleteCustomerRequest, ::payment::v1alpha1::DeleteCustomerResponse>(std::bind(&WithStreamedUnaryMethod_DeleteCustomer<BaseClass>::StreamedDeleteCustomer, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_DeleteCustomer() override {
@@ -2593,7 +2652,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_InvoiceFilter() {
-      ::grpc::Service::MarkMethodStreamed(22,
+      ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::InvoiceFilterRequest, ::payment::v1alpha1::InvoiceFilterResponse>(std::bind(&WithStreamedUnaryMethod_InvoiceFilter<BaseClass>::StreamedInvoiceFilter, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_InvoiceFilter() override {
@@ -2613,7 +2672,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ConsumeByProject() {
-      ::grpc::Service::MarkMethodStreamed(23,
+      ::grpc::Service::MarkMethodStreamed(22,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::ConsumeByProjectRequest, ::payment::v1alpha1::ConsumeByProjectResponse>(std::bind(&WithStreamedUnaryMethod_ConsumeByProject<BaseClass>::StreamedConsumeByProject, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ConsumeByProject() override {
@@ -2628,12 +2687,52 @@ class PaymentAPIService final {
     virtual ::grpc::Status StreamedConsumeByProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::ConsumeByProjectRequest,::payment::v1alpha1::ConsumeByProjectResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_CreateProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_CreateProject() {
+      ::grpc::Service::MarkMethodStreamed(23,
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::CreateProjectRequest, ::payment::v1alpha1::CreateProjectResponse>(std::bind(&WithStreamedUnaryMethod_CreateProject<BaseClass>::StreamedCreateProject, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_CreateProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status CreateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::CreateProjectRequest* request, ::payment::v1alpha1::CreateProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedCreateProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::CreateProjectRequest,::payment::v1alpha1::CreateProjectResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_UpdateProject() {
+      ::grpc::Service::MarkMethodStreamed(24,
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::UpdateProjectRequest, ::payment::v1alpha1::UpdateProjectResponse>(std::bind(&WithStreamedUnaryMethod_UpdateProject<BaseClass>::StreamedUpdateProject, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_UpdateProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateProject(::grpc::ServerContext* context, const ::payment::v1alpha1::UpdateProjectRequest* request, ::payment::v1alpha1::UpdateProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::UpdateProjectRequest,::payment::v1alpha1::UpdateProjectResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_StopProject : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_StopProject() {
-      ::grpc::Service::MarkMethodStreamed(24,
+      ::grpc::Service::MarkMethodStreamed(25,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::StopProjectRequest, ::payment::v1alpha1::StopProjectResponse>(std::bind(&WithStreamedUnaryMethod_StopProject<BaseClass>::StreamedStopProject, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_StopProject() override {
@@ -2653,7 +2752,7 @@ class PaymentAPIService final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_BlockChainSubscription() {
-      ::grpc::Service::MarkMethodStreamed(25,
+      ::grpc::Service::MarkMethodStreamed(26,
         new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::BlockChainSubscriptionRequest, ::payment::v1alpha1::BlockChainSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_BlockChainSubscription<BaseClass>::StreamedBlockChainSubscription, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_BlockChainSubscription() override {
@@ -2667,9 +2766,9 @@ class PaymentAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedBlockChainSubscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::BlockChainSubscriptionRequest,::payment::v1alpha1::BlockChainSubscriptionResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_ListCustomers<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<Service > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_ListCustomers<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_ListCustomers<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<Service > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_ListCustomers<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1
