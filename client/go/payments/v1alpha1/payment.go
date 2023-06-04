@@ -504,7 +504,6 @@ func UpdateProject(in *paymentpkgv1.UpdateProjectRequest) (response *paymentpkgv
 	defer cancel()
 	response, err = client.UpdateProject(ctx, &paymentpkgv1.UpdateProjectRequest{
 		OrganizationId: in.OrganizationId,
-		ProjectId:      in.ProjectId,
 		Project:        in.Project,
 	})
 
