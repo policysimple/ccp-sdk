@@ -45,8 +45,8 @@ func CreateCustomer(in *paymentpkgv1.CreateCustomerRequest) (response *paymentpk
 
 	response, err = client.CreateCustomer(ctx, &paymentpkgv1.CreateCustomerRequest{
 		OrganizationId: in.OrganizationId,
-		Name: 		 in.Name,
-		Email: 		 in.Email,
+		Name:           in.Name,
+		Email:          in.Email,
 	})
 
 	if err != nil {
@@ -85,7 +85,7 @@ func CreateSubscription(in *paymentpkgv1.CreateSubscriptionRequest) (response *p
 
 	response, err = client.CreateSubscription(ctx, &paymentpkgv1.CreateSubscriptionRequest{
 		OrganizationId: in.OrganizationId,
-		Subscription: in.Subscription,
+		Subscription:   in.Subscription,
 	})
 
 	if err != nil {
@@ -217,10 +217,10 @@ func CreatePayment(in *paymentpkgv1.CreatePaymentRequest) (response *paymentpkgv
 	}
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
-fmt.Println("CreatePayment---", in)
+	fmt.Println("CreatePayment---", in)
 	response, err = client.CreatePayment(ctx, &paymentpkgv1.CreatePaymentRequest{
 		OrganizationId: in.OrganizationId,
-		Payment:    in.Payment,
+		Payment:        in.Payment,
 	})
 
 	if err != nil {
@@ -443,8 +443,8 @@ func ConsumeByProject(in *paymentpkgv1.ConsumeByProjectRequest) (response *payme
 
 	response, err = client.ConsumeByProject(ctx, &paymentpkgv1.ConsumeByProjectRequest{
 		OrganizationId: in.OrganizationId,
-		Year: 		 in.Year,
-		Month: 		 in.Month,
+		Year:           in.Year,
+		Month:          in.Month,
 	})
 
 	if err != nil {
@@ -464,8 +464,8 @@ func CreateBlockchainNodeSubscription(in *paymentpkgv1.BlockChainSubscriptionReq
 
 	response, err = client.BlockChainSubscription(ctx, &paymentpkgv1.BlockChainSubscriptionRequest{
 		OrganizationId: in.OrganizationId,
-		CustomerId:    in.CustomerId,
-		Blockchain:   in.Blockchain,
+		CustomerId:     in.CustomerId,
+		Blockchain:     in.Blockchain,
 	})
 
 	if err != nil {
@@ -484,12 +484,33 @@ func ListCustomers(in *paymentpkgv1.ListCustomersRequest) (response *paymentpkgv
 	defer cancel()
 
 	response, err = client.ListCustomers(ctx, &paymentpkgv1.ListCustomersRequest{
-		Empty:          in.Empty,
+		Empty: in.Empty,
 	})
 
 	if err != nil {
 		log.Printf("%s: %v", "Error list customers", err)
 		return nil, fmt.Errorf("%s: %w", "Error list customers", err)
+	}
+	return response, nil
+}
+
+func UpdateProject(in *paymentpkgv1.UpdateProjectRequest) (response *paymentpkgv1.UpdateProjectResponse, err error) {
+	fmt.Println("UpdateProject")
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+	response, err = client.UpdateProject(ctx, &paymentpkgv1.UpdateProjectRequest{
+		OrganizationId: in.OrganizationId,
+		ProjectId:      in.ProjectId,
+		Project:        in.Project,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error update project", err)
+		return nil, fmt.Errorf("%s: %w", "Error update project", err)
 	}
 	return response, nil
 }

@@ -23,7 +23,6 @@ type PaymentAPIServiceClient interface {
 	CreateSubscription(ctx context.Context, in *CreateSubscriptionRequest, opts ...grpc.CallOption) (*CreateSubscriptionResponse, error)
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
 	CreateCard(ctx context.Context, in *CreateCardRequest, opts ...grpc.CallOption) (*CreateCardResponse, error)
-	CreateProject(ctx context.Context, in *CreateProjectRequest, opts ...grpc.CallOption) (*CreateProjectResponse, error)
 	CreateInvoice(ctx context.Context, in *CreateInvoiceRequest, opts ...grpc.CallOption) (*CreateInvoiceResponse, error)
 	//Get the service
 	GetOrganization(ctx context.Context, in *GetOrganizationRequest, opts ...grpc.CallOption) (*GetOrganizationResponse, error)
@@ -48,7 +47,9 @@ type PaymentAPIServiceClient interface {
 	//Filter service
 	InvoiceFilter(ctx context.Context, in *InvoiceFilterRequest, opts ...grpc.CallOption) (*InvoiceFilterResponse, error)
 	ConsumeByProject(ctx context.Context, in *ConsumeByProjectRequest, opts ...grpc.CallOption) (*ConsumeByProjectResponse, error)
-	//Pause Project Consumption
+	//Projects
+	CreateProject(ctx context.Context, in *CreateProjectRequest, opts ...grpc.CallOption) (*CreateProjectResponse, error)
+	UpdateProject(ctx context.Context, in *UpdateProjectRequest, opts ...grpc.CallOption) (*UpdateProjectResponse, error)
 	StopProject(ctx context.Context, in *StopProjectRequest, opts ...grpc.CallOption) (*StopProjectResponse, error)
 	//BlockChain Subscription
 	BlockChainSubscription(ctx context.Context, in *BlockChainSubscriptionRequest, opts ...grpc.CallOption) (*BlockChainSubscriptionResponse, error)
@@ -92,15 +93,6 @@ func (c *paymentAPIServiceClient) CreatePayment(ctx context.Context, in *CreateP
 func (c *paymentAPIServiceClient) CreateCard(ctx context.Context, in *CreateCardRequest, opts ...grpc.CallOption) (*CreateCardResponse, error) {
 	out := new(CreateCardResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CreateCard", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *paymentAPIServiceClient) CreateProject(ctx context.Context, in *CreateProjectRequest, opts ...grpc.CallOption) (*CreateProjectResponse, error) {
-	out := new(CreateProjectResponse)
-	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CreateProject", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -278,6 +270,24 @@ func (c *paymentAPIServiceClient) ConsumeByProject(ctx context.Context, in *Cons
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) CreateProject(ctx context.Context, in *CreateProjectRequest, opts ...grpc.CallOption) (*CreateProjectResponse, error) {
+	out := new(CreateProjectResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/CreateProject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *paymentAPIServiceClient) UpdateProject(ctx context.Context, in *UpdateProjectRequest, opts ...grpc.CallOption) (*UpdateProjectResponse, error) {
+	out := new(UpdateProjectResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/UpdateProject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *paymentAPIServiceClient) StopProject(ctx context.Context, in *StopProjectRequest, opts ...grpc.CallOption) (*StopProjectResponse, error) {
 	out := new(StopProjectResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/StopProject", in, out, opts...)
@@ -305,7 +315,6 @@ type PaymentAPIServiceServer interface {
 	CreateSubscription(context.Context, *CreateSubscriptionRequest) (*CreateSubscriptionResponse, error)
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
 	CreateCard(context.Context, *CreateCardRequest) (*CreateCardResponse, error)
-	CreateProject(context.Context, *CreateProjectRequest) (*CreateProjectResponse, error)
 	CreateInvoice(context.Context, *CreateInvoiceRequest) (*CreateInvoiceResponse, error)
 	//Get the service
 	GetOrganization(context.Context, *GetOrganizationRequest) (*GetOrganizationResponse, error)
@@ -330,7 +339,9 @@ type PaymentAPIServiceServer interface {
 	//Filter service
 	InvoiceFilter(context.Context, *InvoiceFilterRequest) (*InvoiceFilterResponse, error)
 	ConsumeByProject(context.Context, *ConsumeByProjectRequest) (*ConsumeByProjectResponse, error)
-	//Pause Project Consumption
+	//Projects
+	CreateProject(context.Context, *CreateProjectRequest) (*CreateProjectResponse, error)
+	UpdateProject(context.Context, *UpdateProjectRequest) (*UpdateProjectResponse, error)
 	StopProject(context.Context, *StopProjectRequest) (*StopProjectResponse, error)
 	//BlockChain Subscription
 	BlockChainSubscription(context.Context, *BlockChainSubscriptionRequest) (*BlockChainSubscriptionResponse, error)
@@ -351,9 +362,6 @@ func (UnimplementedPaymentAPIServiceServer) CreatePayment(context.Context, *Crea
 }
 func (UnimplementedPaymentAPIServiceServer) CreateCard(context.Context, *CreateCardRequest) (*CreateCardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCard not implemented")
-}
-func (UnimplementedPaymentAPIServiceServer) CreateProject(context.Context, *CreateProjectRequest) (*CreateProjectResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateProject not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) CreateInvoice(context.Context, *CreateInvoiceRequest) (*CreateInvoiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateInvoice not implemented")
@@ -411,6 +419,12 @@ func (UnimplementedPaymentAPIServiceServer) InvoiceFilter(context.Context, *Invo
 }
 func (UnimplementedPaymentAPIServiceServer) ConsumeByProject(context.Context, *ConsumeByProjectRequest) (*ConsumeByProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConsumeByProject not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) CreateProject(context.Context, *CreateProjectRequest) (*CreateProjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateProject not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) UpdateProject(context.Context, *UpdateProjectRequest) (*UpdateProjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateProject not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) StopProject(context.Context, *StopProjectRequest) (*StopProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StopProject not implemented")
@@ -498,24 +512,6 @@ func _PaymentAPIService_CreateCard_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(PaymentAPIServiceServer).CreateCard(ctx, req.(*CreateCardRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _PaymentAPIService_CreateProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateProjectRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(PaymentAPIServiceServer).CreateProject(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/payment.v1alpha1.PaymentAPIService/CreateProject",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentAPIServiceServer).CreateProject(ctx, req.(*CreateProjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -862,6 +858,42 @@ func _PaymentAPIService_ConsumeByProject_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_CreateProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).CreateProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/CreateProject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).CreateProject(ctx, req.(*CreateProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PaymentAPIService_UpdateProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).UpdateProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/UpdateProject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).UpdateProject(ctx, req.(*UpdateProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _PaymentAPIService_StopProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(StopProjectRequest)
 	if err := dec(in); err != nil {
@@ -920,10 +952,6 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCard",
 			Handler:    _PaymentAPIService_CreateCard_Handler,
-		},
-		{
-			MethodName: "CreateProject",
-			Handler:    _PaymentAPIService_CreateProject_Handler,
 		},
 		{
 			MethodName: "CreateInvoice",
@@ -1000,6 +1028,14 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ConsumeByProject",
 			Handler:    _PaymentAPIService_ConsumeByProject_Handler,
+		},
+		{
+			MethodName: "CreateProject",
+			Handler:    _PaymentAPIService_CreateProject_Handler,
+		},
+		{
+			MethodName: "UpdateProject",
+			Handler:    _PaymentAPIService_UpdateProject_Handler,
 		},
 		{
 			MethodName: "StopProject",
