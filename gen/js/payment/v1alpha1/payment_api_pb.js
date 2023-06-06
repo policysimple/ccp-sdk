@@ -11085,7 +11085,6 @@ proto.payment.v1alpha1.UpdateProjectRequest.prototype.toObject = function(opt_in
 proto.payment.v1alpha1.UpdateProjectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     project: (f = msg.getProject()) && payment_v1alpha1_payment_pb.Project.toObject(includeInstance, f)
   };
 
@@ -11128,10 +11127,6 @@ proto.payment.v1alpha1.UpdateProjectRequest.deserializeBinaryFromReader = functi
       msg.setOrganizationId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProjectId(value);
-      break;
-    case 3:
       var value = new payment_v1alpha1_payment_pb.Project;
       reader.readMessage(value,payment_v1alpha1_payment_pb.Project.deserializeBinaryFromReader);
       msg.setProject(value);
@@ -11172,17 +11167,10 @@ proto.payment.v1alpha1.UpdateProjectRequest.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getProjectId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getProject();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       payment_v1alpha1_payment_pb.Project.serializeBinaryToWriter
     );
@@ -11209,30 +11197,12 @@ proto.payment.v1alpha1.UpdateProjectRequest.prototype.setOrganizationId = functi
 
 
 /**
- * optional string project_id = 2;
- * @return {string}
- */
-proto.payment.v1alpha1.UpdateProjectRequest.prototype.getProjectId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.UpdateProjectRequest} returns this
- */
-proto.payment.v1alpha1.UpdateProjectRequest.prototype.setProjectId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional Project project = 3;
+ * optional Project project = 2;
  * @return {?proto.payment.v1alpha1.Project}
  */
 proto.payment.v1alpha1.UpdateProjectRequest.prototype.getProject = function() {
   return /** @type{?proto.payment.v1alpha1.Project} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Project, 3));
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Project, 2));
 };
 
 
@@ -11241,7 +11211,7 @@ proto.payment.v1alpha1.UpdateProjectRequest.prototype.getProject = function() {
  * @return {!proto.payment.v1alpha1.UpdateProjectRequest} returns this
 */
 proto.payment.v1alpha1.UpdateProjectRequest.prototype.setProject = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -11259,7 +11229,7 @@ proto.payment.v1alpha1.UpdateProjectRequest.prototype.clearProject = function() 
  * @return {boolean}
  */
 proto.payment.v1alpha1.UpdateProjectRequest.prototype.hasProject = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

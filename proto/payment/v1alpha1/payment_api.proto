@@ -347,8 +347,7 @@ message ListCustomersResponse {
 
 message UpdateProjectRequest {
     string organization_id = 1;
-    string project_id = 2;
-    payment.v1alpha1.Project project = 3;
+    payment.v1alpha1.Project project = 2;
 }
 
 message UpdateProjectResponse {
