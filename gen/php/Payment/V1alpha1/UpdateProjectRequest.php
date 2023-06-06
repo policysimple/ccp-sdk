@@ -18,11 +18,7 @@ class UpdateProjectRequest extends \Google\Protobuf\Internal\Message
      */
     protected $organization_id = '';
     /**
-     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
-     */
-    protected $project_id = '';
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
      */
     protected $project = null;
 
@@ -33,7 +29,6 @@ class UpdateProjectRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $organization_id
-     *     @type string $project_id
      *     @type \Payment\V1alpha1\Project $project
      * }
      */
@@ -65,29 +60,7 @@ class UpdateProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
-     * @return string
-     */
-    public function getProjectId()
-    {
-        return $this->project_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string project_id = 2 [json_name = "projectId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProjectId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->project_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
      * @return \Payment\V1alpha1\Project|null
      */
     public function getProject()
@@ -106,7 +79,7 @@ class UpdateProjectRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 3 [json_name = "project"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Project project = 2 [json_name = "project"];</code>
      * @param \Payment\V1alpha1\Project $var
      * @return $this
      */

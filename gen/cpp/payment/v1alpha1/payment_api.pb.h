@@ -9475,8 +9475,7 @@ class UpdateProjectRequest final :
 
   enum : int {
     kOrganizationIdFieldNumber = 1,
-    kProjectIdFieldNumber = 2,
-    kProjectFieldNumber = 3,
+    kProjectFieldNumber = 2,
   };
   // string organization_id = 1 [json_name = "organizationId"];
   void clear_organization_id();
@@ -9492,21 +9491,7 @@ class UpdateProjectRequest final :
   std::string* _internal_mutable_organization_id();
   public:
 
-  // string project_id = 2 [json_name = "projectId"];
-  void clear_project_id();
-  const std::string& project_id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_project_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_project_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_project_id();
-  void set_allocated_project_id(std::string* project_id);
-  private:
-  const std::string& _internal_project_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
-  std::string* _internal_mutable_project_id();
-  public:
-
-  // .payment.v1alpha1.Project project = 3 [json_name = "project"];
+  // .payment.v1alpha1.Project project = 2 [json_name = "project"];
   bool has_project() const;
   private:
   bool _internal_has_project() const;
@@ -9532,7 +9517,6 @@ class UpdateProjectRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
   ::payment::v1alpha1::Project* project_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
@@ -16694,53 +16678,7 @@ inline void UpdateProjectRequest::set_allocated_organization_id(std::string* org
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.UpdateProjectRequest.organization_id)
 }
 
-// string project_id = 2 [json_name = "projectId"];
-inline void UpdateProjectRequest::clear_project_id() {
-  project_id_.ClearToEmpty();
-}
-inline const std::string& UpdateProjectRequest::project_id() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.UpdateProjectRequest.project_id)
-  return _internal_project_id();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void UpdateProjectRequest::set_project_id(ArgT0&& arg0, ArgT... args) {
- 
- project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.UpdateProjectRequest.project_id)
-}
-inline std::string* UpdateProjectRequest::mutable_project_id() {
-  std::string* _s = _internal_mutable_project_id();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.UpdateProjectRequest.project_id)
-  return _s;
-}
-inline const std::string& UpdateProjectRequest::_internal_project_id() const {
-  return project_id_.Get();
-}
-inline void UpdateProjectRequest::_internal_set_project_id(const std::string& value) {
-  
-  project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* UpdateProjectRequest::_internal_mutable_project_id() {
-  
-  return project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* UpdateProjectRequest::release_project_id() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.UpdateProjectRequest.project_id)
-  return project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void UpdateProjectRequest::set_allocated_project_id(std::string* project_id) {
-  if (project_id != nullptr) {
-    
-  } else {
-    
-  }
-  project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.UpdateProjectRequest.project_id)
-}
-
-// .payment.v1alpha1.Project project = 3 [json_name = "project"];
+// .payment.v1alpha1.Project project = 2 [json_name = "project"];
 inline bool UpdateProjectRequest::_internal_has_project() const {
   return this != internal_default_instance() && project_ != nullptr;
 }
