@@ -43,32 +43,6 @@ class TektonPipelineAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Pipelines\Tekton\V1Alpha1\CreateTektonTaskPipelineRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function CreateTektonTaskPipeline(\Pipelines\Tekton\V1Alpha1\CreateTektonTaskPipelineRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/CreateTektonTaskPipeline',
-        $argument,
-        ['\Pipelines\Tekton\V1Alpha1\CreateTektonTaskPipelineResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Pipelines\Tekton\V1Alpha1\DeleteTektonTaskPipelineRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function DeleteTektonTaskPipeline(\Pipelines\Tekton\V1Alpha1\DeleteTektonTaskPipelineRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteTektonTaskPipeline',
-        $argument,
-        ['\Pipelines\Tekton\V1Alpha1\DeleteTektonTaskPipelineResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * @param \Pipelines\Tekton\V1Alpha1\ListTektonTaskPipelineRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -82,80 +56,28 @@ class TektonPipelineAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Pipelines\Tekton\V1Alpha1\GetTektonTaskPipelineRequest $argument input argument
+     * @param \Pipelines\Tekton\V1Alpha1\ListPipelineRunRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function GetTektonTaskPipeline(\Pipelines\Tekton\V1Alpha1\GetTektonTaskPipelineRequest $argument,
+    public function ListPipelineRun(\Pipelines\Tekton\V1Alpha1\ListPipelineRunRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetTektonTaskPipeline',
+        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListPipelineRun',
         $argument,
-        ['\Pipelines\Tekton\V1Alpha1\GetTektonTaskPipelineResponse', 'decode'],
+        ['\Pipelines\Tekton\V1Alpha1\ListPipelineRunResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \Pipelines\Tekton\V1Alpha1\CreateCustomPipelineRequest $argument input argument
+     * @param \Pipelines\Tekton\V1Alpha1\GetPipelineRunRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function CreateCustomPipeline(\Pipelines\Tekton\V1Alpha1\CreateCustomPipelineRequest $argument,
+    public function GetPipelineRun(\Pipelines\Tekton\V1Alpha1\GetPipelineRunRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/CreateCustomPipeline',
+        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetPipelineRun',
         $argument,
-        ['\Pipelines\Tekton\V1Alpha1\CreateCustomPipelineResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Pipelines\Tekton\V1Alpha1\DeleteCustomPipelineRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function DeleteCustomPipeline(\Pipelines\Tekton\V1Alpha1\DeleteCustomPipelineRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/DeleteCustomPipeline',
-        $argument,
-        ['\Pipelines\Tekton\V1Alpha1\DeleteCustomPipelineResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Pipelines\Tekton\V1Alpha1\ListCustomPipelineRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function ListCustomPipeline(\Pipelines\Tekton\V1Alpha1\ListCustomPipelineRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListCustomPipeline',
-        $argument,
-        ['\Pipelines\Tekton\V1Alpha1\ListCustomPipelineResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Pipelines\Tekton\V1Alpha1\GetCustomPipelineRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function GetCustomPipeline(\Pipelines\Tekton\V1Alpha1\GetCustomPipelineRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetCustomPipeline',
-        $argument,
-        ['\Pipelines\Tekton\V1Alpha1\GetCustomPipelineResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Pipelines\Tekton\V1Alpha1\UpdateCustomPipelineRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function UpdateCustomPipeline(\Pipelines\Tekton\V1Alpha1\UpdateCustomPipelineRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/UpdateCustomPipeline',
-        $argument,
-        ['\Pipelines\Tekton\V1Alpha1\UpdateCustomPipelineResponse', 'decode'],
+        ['\Pipelines\Tekton\V1Alpha1\GetPipelineRunResponse', 'decode'],
         $metadata, $options);
     }
 

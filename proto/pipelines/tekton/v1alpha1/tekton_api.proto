@@ -16,16 +16,12 @@ import "pipelines/tekton/v1alpha1/tekton.proto";
 service TektonPipelineAPIService{
     rpc CreateTektonPipeline(CreateTektonPipelineRequest) returns (CreateTektonPipelineResponse);
     rpc DeleteTektonPipeline(DeleteTektonPipelineRequest) returns (DeleteTektonPipelineResponse);
-    rpc CreateTektonTaskPipeline(CreateTektonTaskPipelineRequest) returns (CreateTektonTaskPipelineResponse);
-    rpc DeleteTektonTaskPipeline(DeleteTektonTaskPipelineRequest) returns (DeleteTektonTaskPipelineResponse);
     rpc ListTektonTaskPipeline(ListTektonTaskPipelineRequest) returns (ListTektonTaskPipelineResponse);
-    rpc GetTektonTaskPipeline(GetTektonTaskPipelineRequest) returns (GetTektonTaskPipelineResponse);
-    rpc CreateCustomPipeline(CreateCustomPipelineRequest) returns (CreateCustomPipelineResponse);
-    rpc DeleteCustomPipeline(DeleteCustomPipelineRequest) returns (DeleteCustomPipelineResponse);
-    rpc ListCustomPipeline(ListCustomPipelineRequest) returns (ListCustomPipelineResponse);
-    rpc GetCustomPipeline(GetCustomPipelineRequest) returns (GetCustomPipelineResponse);
-    rpc UpdateCustomPipeline(UpdateCustomPipelineRequest) returns (UpdateCustomPipelineResponse);
+    rpc ListPipelineRun(ListPipelineRunRequest) returns (ListPipelineRunResponse);
+    rpc GetPipelineRun(GetPipelineRunRequest) returns (GetPipelineRunResponse);
+
 }
+
 
 message CreateTektonPipelineRequest {
     pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1;
@@ -47,23 +43,7 @@ message DeleteTektonPipelineResponse {
     string status = 1;
 }
 
-message CreateTektonTaskPipelineRequest {
-    pipelines.tekton.v1alpha1.Task tekton_task = 1;
-    int32 order = 2;
-}
-
-message CreateTektonTaskPipelineResponse {
-    pipelines.tekton.v1alpha1.Task tekton_task = 1;
-}
-
-message DeleteTektonTaskPipelineRequest {
-    string task_id = 2;
-}
-
-message DeleteTektonTaskPipelineResponse {
-    string status = 1;
-}
-
+// CUSTOM PIPELINES
 message ListTektonTaskPipelineRequest {
 }
 
@@ -72,55 +52,19 @@ message ListTektonTaskPipelineResponse {
     string status = 2;
 }
 
-message GetTektonTaskPipelineRequest {
-    string task_id = 1;
+// PIPELINERUN
+message ListPipelineRunRequest {
 }
 
-message GetTektonTaskPipelineResponse {
-    pipelines.tekton.v1alpha1.CustomPipeline task = 1;
+message ListPipelineRunResponse {
+    pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1;
     string status = 2;
 }
 
-
-// CUSTOM PIPELINES
-
-message CreateCustomPipelineRequest {
-    pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1;
+message GetPipelineRunRequest {
 }
 
-message CreateCustomPipelineResponse {
-    pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1;
-}
-
-message DeleteCustomPipelineRequest {
-    string custom_pipeline_id = 1;
-}
-
-message DeleteCustomPipelineResponse {
-    pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1;
-}
-
-message ListCustomPipelineRequest {
-}
-
-message ListCustomPipelineResponse {
-    pipelines.tekton.v1alpha1.CustomPipelineList custom_pipeline_list = 1;
+message GetPipelineRunResponse {
+    pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 1;
     string status = 2;
-}
-
-message GetCustomPipelineRequest {
-    string custom_pipeline_id = 1;
-}
-
-message GetCustomPipelineResponse {
-    pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1;
-}
-
-message UpdateCustomPipelineRequest {
-    pipelines.tekton.v1alpha1.CustomPipeline custom_pipeline = 1;
-    string custom_pipeline_id = 2;
-}
-
-message UpdateCustomPipelineResponse {
-    pipelines.tekton.v1alpha1.CustomPipelineResponse custom_pipeline_response = 1;
 }

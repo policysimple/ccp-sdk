@@ -9,11 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * CUSTOM PIPELINES
- *
- * Generated from protobuf message <code>pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest</code>
+ * Generated from protobuf message <code>pipelines.tekton.v1alpha1.GetPipelineRunRequest</code>
  */
-class ListTektonTaskPipelineRequest extends \Google\Protobuf\Internal\Message
+class GetPipelineRunRequest extends \Google\Protobuf\Internal\Message
 {
 
     /**

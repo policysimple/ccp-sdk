@@ -4,29 +4,25 @@
 package io.cuemby.pipelines.tekton.v1alpha1;
 
 /**
- * <pre>
- * CUSTOM PIPELINES
- * </pre>
- *
- * Protobuf type {@code pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest}
+ * Protobuf type {@code pipelines.tekton.v1alpha1.GetPipelineRunRequest}
  */
-public final class ListTektonTaskPipelineRequest extends
+public final class GetPipelineRunRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest)
-    ListTektonTaskPipelineRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:pipelines.tekton.v1alpha1.GetPipelineRunRequest)
+    GetPipelineRunRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListTektonTaskPipelineRequest.newBuilder() to construct.
-  private ListTektonTaskPipelineRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetPipelineRunRequest.newBuilder() to construct.
+  private GetPipelineRunRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListTektonTaskPipelineRequest() {
+  private GetPipelineRunRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListTektonTaskPipelineRequest();
+    return new GetPipelineRunRequest();
   }
 
   @java.lang.Override
@@ -34,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListTektonTaskPipelineRequest(
+  private GetPipelineRunRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -73,15 +69,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_ListTektonTaskPipelineRequest_descriptor;
+    return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_GetPipelineRunRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_ListTektonTaskPipelineRequest_fieldAccessorTable
+    return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_GetPipelineRunRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest.class, io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest.Builder.class);
+            io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest.class, io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -117,10 +113,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest)) {
+    if (!(obj instanceof io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest)) {
       return super.equals(obj);
     }
-    io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest other = (io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest) obj;
+    io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest other = (io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest) obj;
 
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -138,69 +134,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(byte[] data)
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(java.io.InputStream input)
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseDelimitedFrom(java.io.InputStream input)
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseDelimitedFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -213,7 +209,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest prototype) {
+  public static Builder newBuilder(io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -229,30 +225,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * CUSTOM PIPELINES
-   * </pre>
-   *
-   * Protobuf type {@code pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest}
+   * Protobuf type {@code pipelines.tekton.v1alpha1.GetPipelineRunRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest)
-      io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pipelines.tekton.v1alpha1.GetPipelineRunRequest)
+      io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_ListTektonTaskPipelineRequest_descriptor;
+      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_GetPipelineRunRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_ListTektonTaskPipelineRequest_fieldAccessorTable
+      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_GetPipelineRunRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest.class, io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest.Builder.class);
+              io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest.class, io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest.Builder.class);
     }
 
-    // Construct using io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest.newBuilder()
+    // Construct using io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -276,17 +268,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_ListTektonTaskPipelineRequest_descriptor;
+      return io.cuemby.pipelines.tekton.v1alpha1.TektonAPIProto.internal_static_pipelines_tekton_v1alpha1_GetPipelineRunRequest_descriptor;
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest getDefaultInstanceForType() {
-      return io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest.getDefaultInstance();
+    public io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest getDefaultInstanceForType() {
+      return io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest build() {
-      io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest result = buildPartial();
+    public io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest build() {
+      io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -294,8 +286,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest buildPartial() {
-      io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest result = new io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest(this);
+    public io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest buildPartial() {
+      io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest result = new io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest(this);
       onBuilt();
       return result;
     }
@@ -334,16 +326,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest) {
-        return mergeFrom((io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest)other);
+      if (other instanceof io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest) {
+        return mergeFrom((io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest other) {
-      if (other == io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest other) {
+      if (other == io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -359,11 +351,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest parsedMessage = null;
+      io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest) e.getUnfinishedMessage();
+        parsedMessage = (io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -385,41 +377,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest)
+    // @@protoc_insertion_point(builder_scope:pipelines.tekton.v1alpha1.GetPipelineRunRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest)
-  private static final io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.GetPipelineRunRequest)
+  private static final io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest();
+    DEFAULT_INSTANCE = new io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest();
   }
 
-  public static io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest getDefaultInstance() {
+  public static io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListTektonTaskPipelineRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListTektonTaskPipelineRequest>() {
+  private static final com.google.protobuf.Parser<GetPipelineRunRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetPipelineRunRequest>() {
     @java.lang.Override
-    public ListTektonTaskPipelineRequest parsePartialFrom(
+    public GetPipelineRunRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListTektonTaskPipelineRequest(input, extensionRegistry);
+      return new GetPipelineRunRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListTektonTaskPipelineRequest> parser() {
+  public static com.google.protobuf.Parser<GetPipelineRunRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListTektonTaskPipelineRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetPipelineRunRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest getDefaultInstanceForType() {
+  public io.cuemby.pipelines.tekton.v1alpha1.GetPipelineRunRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
