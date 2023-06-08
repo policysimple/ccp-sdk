@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPipelineRunResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      */
     protected $pipeline_run_list = null;
     /**
@@ -28,7 +28,7 @@ class ListPipelineRunResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Pipelines\Tekton\V1Alpha1\PipelineRun $pipeline_run_list
+     *     @type \Pipelines\Tekton\V1Alpha1\PipelineRunList $pipeline_run_list
      *     @type string $status
      * }
      */
@@ -38,8 +38,8 @@ class ListPipelineRunResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
-     * @return \Pipelines\Tekton\V1Alpha1\PipelineRun|null
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * @return \Pipelines\Tekton\V1Alpha1\PipelineRunList|null
      */
     public function getPipelineRunList()
     {
@@ -57,13 +57,13 @@ class ListPipelineRunResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
-     * @param \Pipelines\Tekton\V1Alpha1\PipelineRun $var
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\PipelineRunList $var
      * @return $this
      */
     public function setPipelineRunList($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\PipelineRun::class);
+        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\PipelineRunList::class);
         $this->pipeline_run_list = $var;
 
         return $this;

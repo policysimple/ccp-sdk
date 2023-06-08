@@ -15,6 +15,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class ListPipelineRunRequest extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string namespace = 1 [json_name = "namespace"];</code>
+     */
+    protected $namespace = '';
 
     /**
      * Constructor.
@@ -22,11 +26,34 @@ class ListPipelineRunRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $namespace
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Pipelines\Tekton\V1Alpha1\TektonApi::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 1 [json_name = "namespace"];</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 1 [json_name = "namespace"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
+
+        return $this;
     }
 
 }
