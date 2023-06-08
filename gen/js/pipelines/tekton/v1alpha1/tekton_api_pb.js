@@ -1233,7 +1233,7 @@ proto.pipelines.tekton.v1alpha1.ListPipelineRunRequest.prototype.toObject = func
  */
 proto.pipelines.tekton.v1alpha1.ListPipelineRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1270,6 +1270,10 @@ proto.pipelines.tekton.v1alpha1.ListPipelineRunRequest.deserializeBinaryFromRead
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1299,6 +1303,31 @@ proto.pipelines.tekton.v1alpha1.ListPipelineRunRequest.prototype.serializeBinary
  */
 proto.pipelines.tekton.v1alpha1.ListPipelineRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string namespace = 1;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.ListPipelineRunRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.ListPipelineRunRequest} returns this
+ */
+proto.pipelines.tekton.v1alpha1.ListPipelineRunRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1334,7 +1363,7 @@ proto.pipelines.tekton.v1alpha1.ListPipelineRunResponse.prototype.toObject = fun
  */
 proto.pipelines.tekton.v1alpha1.ListPipelineRunResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelineRunList: (f = msg.getPipelineRunList()) && pipelines_tekton_v1alpha1_tekton_pb.PipelineRun.toObject(includeInstance, f),
+    pipelineRunList: (f = msg.getPipelineRunList()) && pipelines_tekton_v1alpha1_tekton_pb.PipelineRunList.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1373,8 +1402,8 @@ proto.pipelines.tekton.v1alpha1.ListPipelineRunResponse.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new pipelines_tekton_v1alpha1_tekton_pb.PipelineRun;
-      reader.readMessage(value,pipelines_tekton_v1alpha1_tekton_pb.PipelineRun.deserializeBinaryFromReader);
+      var value = new pipelines_tekton_v1alpha1_tekton_pb.PipelineRunList;
+      reader.readMessage(value,pipelines_tekton_v1alpha1_tekton_pb.PipelineRunList.deserializeBinaryFromReader);
       msg.setPipelineRunList(value);
       break;
     case 2:
@@ -1415,7 +1444,7 @@ proto.pipelines.tekton.v1alpha1.ListPipelineRunResponse.serializeBinaryToWriter 
     writer.writeMessage(
       1,
       f,
-      pipelines_tekton_v1alpha1_tekton_pb.PipelineRun.serializeBinaryToWriter
+      pipelines_tekton_v1alpha1_tekton_pb.PipelineRunList.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
@@ -1429,17 +1458,17 @@ proto.pipelines.tekton.v1alpha1.ListPipelineRunResponse.serializeBinaryToWriter 
 
 
 /**
- * optional PipelineRun pipeline_run_list = 1;
- * @return {?proto.pipelines.tekton.v1alpha1.PipelineRun}
+ * optional PipelineRunList pipeline_run_list = 1;
+ * @return {?proto.pipelines.tekton.v1alpha1.PipelineRunList}
  */
 proto.pipelines.tekton.v1alpha1.ListPipelineRunResponse.prototype.getPipelineRunList = function() {
-  return /** @type{?proto.pipelines.tekton.v1alpha1.PipelineRun} */ (
-    jspb.Message.getWrapperField(this, pipelines_tekton_v1alpha1_tekton_pb.PipelineRun, 1));
+  return /** @type{?proto.pipelines.tekton.v1alpha1.PipelineRunList} */ (
+    jspb.Message.getWrapperField(this, pipelines_tekton_v1alpha1_tekton_pb.PipelineRunList, 1));
 };
 
 
 /**
- * @param {?proto.pipelines.tekton.v1alpha1.PipelineRun|undefined} value
+ * @param {?proto.pipelines.tekton.v1alpha1.PipelineRunList|undefined} value
  * @return {!proto.pipelines.tekton.v1alpha1.ListPipelineRunResponse} returns this
 */
 proto.pipelines.tekton.v1alpha1.ListPipelineRunResponse.prototype.setPipelineRunList = function(value) {
@@ -1515,7 +1544,8 @@ proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest.prototype.toObject = funct
  */
 proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1552,6 +1582,14 @@ proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest.deserializeBinaryFromReade
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1581,6 +1619,56 @@ proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest.prototype.serializeBinary 
  */
 proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string name = 1;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest} returns this
+ */
+proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string namespace = 2;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest} returns this
+ */
+proto.pipelines.tekton.v1alpha1.GetPipelineRunRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

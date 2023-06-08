@@ -143,6 +143,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.Params params = 32 [json_name = "params"];</code>
      */
     private $params;
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     */
+    protected $pipeline_run = null;
 
     /**
      * Constructor.
@@ -182,6 +186,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $pod_ingress_cert
      *     @type bool $is_not_exist_dockerfile
      *     @type \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $params
+     *     @type \Pipelines\Runtime\V1Alpha1\PipelineRun $pipeline_run
      * }
      */
     public function __construct($data = NULL) {
@@ -899,6 +904,38 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\Params::class);
         $this->params = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     * @return \Pipelines\Runtime\V1Alpha1\PipelineRun|null
+     */
+    public function getPipelineRun()
+    {
+        return $this->pipeline_run;
+    }
+
+    public function hasPipelineRun()
+    {
+        return isset($this->pipeline_run);
+    }
+
+    public function clearPipelineRun()
+    {
+        unset($this->pipeline_run);
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\PipelineRun $var
+     * @return $this
+     */
+    public function setPipelineRun($var)
+    {
+        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\PipelineRun::class);
+        $this->pipeline_run = $var;
 
         return $this;
     }

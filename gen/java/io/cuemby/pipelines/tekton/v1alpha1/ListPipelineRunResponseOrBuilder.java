@@ -8,19 +8,19 @@ public interface ListPipelineRunResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+   * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
    * @return Whether the pipelineRunList field is set.
    */
   boolean hasPipelineRunList();
   /**
-   * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+   * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
    * @return The pipelineRunList.
    */
-  io.cuemby.pipelines.tekton.v1alpha1.PipelineRun getPipelineRunList();
+  io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList getPipelineRunList();
   /**
-   * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+   * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.PipelineRunOrBuilder getPipelineRunListOrBuilder();
+  io.cuemby.pipelines.tekton.v1alpha1.PipelineRunListOrBuilder getPipelineRunListOrBuilder();
 
   /**
    * <code>string status = 2 [json_name = "status"];</code>

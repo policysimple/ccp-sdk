@@ -13,6 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class GetPipelineRunRequest extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     */
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>string namespace = 2 [json_name = "namespace"];</code>
+     */
+    protected $namespace = '';
 
     /**
      * Constructor.
@@ -20,11 +28,57 @@ class GetPipelineRunRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type string $namespace
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Pipelines\Tekton\V1Alpha1\TektonApi::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 2 [json_name = "namespace"];</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 2 [json_name = "namespace"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
+
+        return $this;
     }
 
 }

@@ -50,11 +50,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.Builder subBuilder = null;
+            io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.Builder subBuilder = null;
             if (pipelineRunList_ != null) {
               subBuilder = pipelineRunList_.toBuilder();
             }
-            pipelineRunList_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.parser(), extensionRegistry);
+            pipelineRunList_ = input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(pipelineRunList_);
               pipelineRunList_ = subBuilder.buildPartial();
@@ -101,9 +101,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PIPELINE_RUN_LIST_FIELD_NUMBER = 1;
-  private io.cuemby.pipelines.tekton.v1alpha1.PipelineRun pipelineRunList_;
+  private io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList pipelineRunList_;
   /**
-   * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+   * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
    * @return Whether the pipelineRunList field is set.
    */
   @java.lang.Override
@@ -111,18 +111,18 @@ private static final long serialVersionUID = 0L;
     return pipelineRunList_ != null;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+   * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
    * @return The pipelineRunList.
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.PipelineRun getPipelineRunList() {
-    return pipelineRunList_ == null ? io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.getDefaultInstance() : pipelineRunList_;
+  public io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList getPipelineRunList() {
+    return pipelineRunList_ == null ? io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.getDefaultInstance() : pipelineRunList_;
   }
   /**
-   * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+   * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.PipelineRunOrBuilder getPipelineRunListOrBuilder() {
+  public io.cuemby.pipelines.tekton.v1alpha1.PipelineRunListOrBuilder getPipelineRunListOrBuilder() {
     return getPipelineRunList();
   }
 
@@ -496,31 +496,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.cuemby.pipelines.tekton.v1alpha1.PipelineRun pipelineRunList_;
+    private io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList pipelineRunList_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.PipelineRun, io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.Builder, io.cuemby.pipelines.tekton.v1alpha1.PipelineRunOrBuilder> pipelineRunListBuilder_;
+        io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList, io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.Builder, io.cuemby.pipelines.tekton.v1alpha1.PipelineRunListOrBuilder> pipelineRunListBuilder_;
     /**
-     * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      * @return Whether the pipelineRunList field is set.
      */
     public boolean hasPipelineRunList() {
       return pipelineRunListBuilder_ != null || pipelineRunList_ != null;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      * @return The pipelineRunList.
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.PipelineRun getPipelineRunList() {
+    public io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList getPipelineRunList() {
       if (pipelineRunListBuilder_ == null) {
-        return pipelineRunList_ == null ? io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.getDefaultInstance() : pipelineRunList_;
+        return pipelineRunList_ == null ? io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.getDefaultInstance() : pipelineRunList_;
       } else {
         return pipelineRunListBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      */
-    public Builder setPipelineRunList(io.cuemby.pipelines.tekton.v1alpha1.PipelineRun value) {
+    public Builder setPipelineRunList(io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList value) {
       if (pipelineRunListBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -534,10 +534,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      */
     public Builder setPipelineRunList(
-        io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.Builder builderForValue) {
+        io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.Builder builderForValue) {
       if (pipelineRunListBuilder_ == null) {
         pipelineRunList_ = builderForValue.build();
         onChanged();
@@ -548,13 +548,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      */
-    public Builder mergePipelineRunList(io.cuemby.pipelines.tekton.v1alpha1.PipelineRun value) {
+    public Builder mergePipelineRunList(io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList value) {
       if (pipelineRunListBuilder_ == null) {
         if (pipelineRunList_ != null) {
           pipelineRunList_ =
-            io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.newBuilder(pipelineRunList_).mergeFrom(value).buildPartial();
+            io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.newBuilder(pipelineRunList_).mergeFrom(value).buildPartial();
         } else {
           pipelineRunList_ = value;
         }
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      */
     public Builder clearPipelineRunList() {
       if (pipelineRunListBuilder_ == null) {
@@ -580,33 +580,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.Builder getPipelineRunListBuilder() {
+    public io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.Builder getPipelineRunListBuilder() {
       
       onChanged();
       return getPipelineRunListFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      */
-    public io.cuemby.pipelines.tekton.v1alpha1.PipelineRunOrBuilder getPipelineRunListOrBuilder() {
+    public io.cuemby.pipelines.tekton.v1alpha1.PipelineRunListOrBuilder getPipelineRunListOrBuilder() {
       if (pipelineRunListBuilder_ != null) {
         return pipelineRunListBuilder_.getMessageOrBuilder();
       } else {
         return pipelineRunList_ == null ?
-            io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.getDefaultInstance() : pipelineRunList_;
+            io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.getDefaultInstance() : pipelineRunList_;
       }
     }
     /**
-     * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
+     * <code>.pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.PipelineRun, io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.Builder, io.cuemby.pipelines.tekton.v1alpha1.PipelineRunOrBuilder> 
+        io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList, io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.Builder, io.cuemby.pipelines.tekton.v1alpha1.PipelineRunListOrBuilder> 
         getPipelineRunListFieldBuilder() {
       if (pipelineRunListBuilder_ == null) {
         pipelineRunListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.pipelines.tekton.v1alpha1.PipelineRun, io.cuemby.pipelines.tekton.v1alpha1.PipelineRun.Builder, io.cuemby.pipelines.tekton.v1alpha1.PipelineRunOrBuilder>(
+            io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList, io.cuemby.pipelines.tekton.v1alpha1.PipelineRunList.Builder, io.cuemby.pipelines.tekton.v1alpha1.PipelineRunListOrBuilder>(
                 getPipelineRunList(),
                 getParentForChildren(),
                 isClean());

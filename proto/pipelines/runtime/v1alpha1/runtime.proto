@@ -53,6 +53,7 @@ message Runtime {
   string pod_ingress_cert = 30;
   bool is_not_exist_dockerfile= 31;
   repeated pipelines.tekton.v1alpha1.Params params = 32;
+  PipelineRun pipeline_run = 33;
 
 }
 
@@ -79,4 +80,11 @@ message Limit {
 message Request {
   string cpu = 1;
   string ram = 2; 
+}
+
+message PipelineRun {
+  string name = 1;
+  string label = 2;
+  string namespace = 3;
+  string pipeline_run_status = 4;
 }

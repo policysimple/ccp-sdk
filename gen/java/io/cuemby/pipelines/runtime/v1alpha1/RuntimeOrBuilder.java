@@ -526,4 +526,19 @@ public interface RuntimeOrBuilder extends
    */
   io.cuemby.pipelines.tekton.v1alpha1.ParamsOrBuilder getParamsOrBuilder(
       int index);
+
+  /**
+   * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+   * @return Whether the pipelineRun field is set.
+   */
+  boolean hasPipelineRun();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+   * @return The pipelineRun.
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.PipelineRun getPipelineRun();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.PipelineRunOrBuilder getPipelineRunOrBuilder();
 }

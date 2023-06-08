@@ -317,6 +317,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.Params.parser(), extensionRegistry));
             break;
           }
+          case 266: {
+            io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.Builder subBuilder = null;
+            if (pipelineRun_ != null) {
+              subBuilder = pipelineRun_.toBuilder();
+            }
+            pipelineRun_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pipelineRun_);
+              pipelineRun_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1681,6 +1694,32 @@ private static final long serialVersionUID = 0L;
     return params_.get(index);
   }
 
+  public static final int PIPELINE_RUN_FIELD_NUMBER = 33;
+  private io.cuemby.pipelines.runtime.v1alpha1.PipelineRun pipelineRun_;
+  /**
+   * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+   * @return Whether the pipelineRun field is set.
+   */
+  @java.lang.Override
+  public boolean hasPipelineRun() {
+    return pipelineRun_ != null;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+   * @return The pipelineRun.
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.PipelineRun getPipelineRun() {
+    return pipelineRun_ == null ? io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.getDefaultInstance() : pipelineRun_;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.PipelineRunOrBuilder getPipelineRunOrBuilder() {
+    return getPipelineRun();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1805,6 +1844,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < params_.size(); i++) {
       output.writeMessage(32, params_.get(i));
+    }
+    if (pipelineRun_ != null) {
+      output.writeMessage(33, getPipelineRun());
     }
     unknownFields.writeTo(output);
   }
@@ -1956,6 +1998,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(32, params_.get(i));
     }
+    if (pipelineRun_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(33, getPipelineRun());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2037,6 +2083,11 @@ private static final long serialVersionUID = 0L;
         != other.getIsNotExistDockerfile()) return false;
     if (!getParamsList()
         .equals(other.getParamsList())) return false;
+    if (hasPipelineRun() != other.hasPipelineRun()) return false;
+    if (hasPipelineRun()) {
+      if (!getPipelineRun()
+          .equals(other.getPipelineRun())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2133,6 +2184,10 @@ private static final long serialVersionUID = 0L;
     if (getParamsCount() > 0) {
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getParamsList().hashCode();
+    }
+    if (hasPipelineRun()) {
+      hash = (37 * hash) + PIPELINE_RUN_FIELD_NUMBER;
+      hash = (53 * hash) + getPipelineRun().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2392,6 +2447,12 @@ private static final long serialVersionUID = 0L;
       } else {
         paramsBuilder_.clear();
       }
+      if (pipelineRunBuilder_ == null) {
+        pipelineRun_ = null;
+      } else {
+        pipelineRun_ = null;
+        pipelineRunBuilder_ = null;
+      }
       return this;
     }
 
@@ -2491,6 +2552,11 @@ private static final long serialVersionUID = 0L;
         result.params_ = params_;
       } else {
         result.params_ = paramsBuilder_.build();
+      }
+      if (pipelineRunBuilder_ == null) {
+        result.pipelineRun_ = pipelineRun_;
+      } else {
+        result.pipelineRun_ = pipelineRunBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2739,6 +2805,9 @@ private static final long serialVersionUID = 0L;
             paramsBuilder_.addAllMessages(other.params_);
           }
         }
+      }
+      if (other.hasPipelineRun()) {
+        mergePipelineRun(other.getPipelineRun());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5957,6 +6026,125 @@ private static final long serialVersionUID = 0L;
         params_ = null;
       }
       return paramsBuilder_;
+    }
+
+    private io.cuemby.pipelines.runtime.v1alpha1.PipelineRun pipelineRun_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.PipelineRun, io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.Builder, io.cuemby.pipelines.runtime.v1alpha1.PipelineRunOrBuilder> pipelineRunBuilder_;
+    /**
+     * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     * @return Whether the pipelineRun field is set.
+     */
+    public boolean hasPipelineRun() {
+      return pipelineRunBuilder_ != null || pipelineRun_ != null;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     * @return The pipelineRun.
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.PipelineRun getPipelineRun() {
+      if (pipelineRunBuilder_ == null) {
+        return pipelineRun_ == null ? io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.getDefaultInstance() : pipelineRun_;
+      } else {
+        return pipelineRunBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     */
+    public Builder setPipelineRun(io.cuemby.pipelines.runtime.v1alpha1.PipelineRun value) {
+      if (pipelineRunBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pipelineRun_ = value;
+        onChanged();
+      } else {
+        pipelineRunBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     */
+    public Builder setPipelineRun(
+        io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.Builder builderForValue) {
+      if (pipelineRunBuilder_ == null) {
+        pipelineRun_ = builderForValue.build();
+        onChanged();
+      } else {
+        pipelineRunBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     */
+    public Builder mergePipelineRun(io.cuemby.pipelines.runtime.v1alpha1.PipelineRun value) {
+      if (pipelineRunBuilder_ == null) {
+        if (pipelineRun_ != null) {
+          pipelineRun_ =
+            io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.newBuilder(pipelineRun_).mergeFrom(value).buildPartial();
+        } else {
+          pipelineRun_ = value;
+        }
+        onChanged();
+      } else {
+        pipelineRunBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     */
+    public Builder clearPipelineRun() {
+      if (pipelineRunBuilder_ == null) {
+        pipelineRun_ = null;
+        onChanged();
+      } else {
+        pipelineRun_ = null;
+        pipelineRunBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.Builder getPipelineRunBuilder() {
+      
+      onChanged();
+      return getPipelineRunFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.PipelineRunOrBuilder getPipelineRunOrBuilder() {
+      if (pipelineRunBuilder_ != null) {
+        return pipelineRunBuilder_.getMessageOrBuilder();
+      } else {
+        return pipelineRun_ == null ?
+            io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.getDefaultInstance() : pipelineRun_;
+      }
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.PipelineRun, io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.Builder, io.cuemby.pipelines.runtime.v1alpha1.PipelineRunOrBuilder> 
+        getPipelineRunFieldBuilder() {
+      if (pipelineRunBuilder_ == null) {
+        pipelineRunBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.pipelines.runtime.v1alpha1.PipelineRun, io.cuemby.pipelines.runtime.v1alpha1.PipelineRun.Builder, io.cuemby.pipelines.runtime.v1alpha1.PipelineRunOrBuilder>(
+                getPipelineRun(),
+                getParentForChildren(),
+                isClean());
+        pipelineRun_ = null;
+      }
+      return pipelineRunBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

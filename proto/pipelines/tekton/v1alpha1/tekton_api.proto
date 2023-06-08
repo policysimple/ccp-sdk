@@ -54,14 +54,18 @@ message ListTektonTaskPipelineResponse {
 
 // PIPELINERUN
 message ListPipelineRunRequest {
+    string namespace = 1;
 }
 
 message ListPipelineRunResponse {
-    pipelines.tekton.v1alpha1.PipelineRun pipeline_run_list = 1;
+    pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1;
     string status = 2;
 }
 
 message GetPipelineRunRequest {
+    string name = 1;
+    string namespace = 2;
+
 }
 
 message GetPipelineRunResponse {

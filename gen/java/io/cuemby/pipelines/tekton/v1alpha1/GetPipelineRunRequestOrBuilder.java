@@ -6,4 +6,28 @@ package io.cuemby.pipelines.tekton.v1alpha1;
 public interface GetPipelineRunRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:pipelines.tekton.v1alpha1.GetPipelineRunRequest)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>string name = 1 [json_name = "name"];</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 1 [json_name = "name"];</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * @return The namespace.
+   */
+  java.lang.String getNamespace();
+  /**
+   * <code>string namespace = 2 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
+   */
+  com.google.protobuf.ByteString
+      getNamespaceBytes();
 }
