@@ -147,6 +147,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
      */
     protected $pipeline_run = null;
+    /**
+     * Generated from protobuf field <code>string host_url = 34 [json_name = "hostUrl"];</code>
+     */
+    protected $host_url = '';
 
     /**
      * Constructor.
@@ -187,6 +191,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type bool $is_not_exist_dockerfile
      *     @type \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $params
      *     @type \Pipelines\Runtime\V1Alpha1\PipelineRun $pipeline_run
+     *     @type string $host_url
      * }
      */
     public function __construct($data = NULL) {
@@ -936,6 +941,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\PipelineRun::class);
         $this->pipeline_run = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string host_url = 34 [json_name = "hostUrl"];</code>
+     * @return string
+     */
+    public function getHostUrl()
+    {
+        return $this->host_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string host_url = 34 [json_name = "hostUrl"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHostUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->host_url = $var;
 
         return $this;
     }

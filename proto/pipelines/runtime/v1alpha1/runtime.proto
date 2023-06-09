@@ -54,6 +54,7 @@ message Runtime {
   bool is_not_exist_dockerfile= 31;
   repeated pipelines.tekton.v1alpha1.Params params = 32;
   PipelineRun pipeline_run = 33;
+  string host_url = 34;
 
 }
 
