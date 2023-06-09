@@ -249,7 +249,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     isNotExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
     paramsList: jspb.Message.toObjectList(msg.getParamsList(),
     pipelines_tekton_v1alpha1_tekton_pb.Params.toObject, includeInstance),
-    pipelineRun: (f = msg.getPipelineRun()) && proto.pipelines.runtime.v1alpha1.PipelineRun.toObject(includeInstance, f)
+    pipelineRun: (f = msg.getPipelineRun()) && proto.pipelines.runtime.v1alpha1.PipelineRun.toObject(includeInstance, f),
+    hostUrl: jspb.Message.getFieldWithDefault(msg, 34, "")
   };
 
   if (includeInstance) {
@@ -433,6 +434,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
       var value = new proto.pipelines.runtime.v1alpha1.PipelineRun;
       reader.readMessage(value,proto.pipelines.runtime.v1alpha1.PipelineRun.deserializeBinaryFromReader);
       msg.setPipelineRun(value);
+      break;
+    case 34:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHostUrl(value);
       break;
     default:
       reader.skipField();
@@ -683,6 +688,13 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
       33,
       f,
       proto.pipelines.runtime.v1alpha1.PipelineRun.serializeBinaryToWriter
+    );
+  }
+  f = message.getHostUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      34,
+      f
     );
   }
 };
@@ -1417,6 +1429,24 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearPipelineRun = function()
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.hasPipelineRun = function() {
   return jspb.Message.getField(this, 33) != null;
+};
+
+
+/**
+ * optional string host_url = 34;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getHostUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 34, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setHostUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 34, value);
 };
 
 

@@ -541,4 +541,16 @@ public interface RuntimeOrBuilder extends
    * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.PipelineRunOrBuilder getPipelineRunOrBuilder();
+
+  /**
+   * <code>string host_url = 34 [json_name = "hostUrl"];</code>
+   * @return The hostUrl.
+   */
+  java.lang.String getHostUrl();
+  /**
+   * <code>string host_url = 34 [json_name = "hostUrl"];</code>
+   * @return The bytes for hostUrl.
+   */
+  com.google.protobuf.ByteString
+      getHostUrlBytes();
 }

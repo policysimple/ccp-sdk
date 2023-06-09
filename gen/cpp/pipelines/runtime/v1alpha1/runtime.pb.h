@@ -424,6 +424,7 @@ class Runtime final :
     kApplicationNameFieldNumber = 22,
     kIntegrationIdFieldNumber = 25,
     kPodIngressCertFieldNumber = 30,
+    kHostUrlFieldNumber = 34,
     kApplicationDataFieldNumber = 26,
     kPipelineRunFieldNumber = 33,
     kTrafficTypeFieldNumber = 18,
@@ -827,6 +828,20 @@ class Runtime final :
   std::string* _internal_mutable_pod_ingress_cert();
   public:
 
+  // string host_url = 34 [json_name = "hostUrl"];
+  void clear_host_url();
+  const std::string& host_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_host_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_host_url();
+  PROTOBUF_MUST_USE_RESULT std::string* release_host_url();
+  void set_allocated_host_url(std::string* host_url);
+  private:
+  const std::string& _internal_host_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_host_url(const std::string& value);
+  std::string* _internal_mutable_host_url();
+  public:
+
   // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
   bool has_application_data() const;
   private:
@@ -961,6 +976,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_ingress_cert_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_url_;
   ::application::v1alpha1::Application* application_data_;
   ::pipelines::runtime::v1alpha1::PipelineRun* pipeline_run_;
   int traffic_type_;
@@ -3352,6 +3368,52 @@ inline void Runtime::set_allocated_pipeline_run(::pipelines::runtime::v1alpha1::
   }
   pipeline_run_ = pipeline_run;
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.pipeline_run)
+}
+
+// string host_url = 34 [json_name = "hostUrl"];
+inline void Runtime::clear_host_url() {
+  host_url_.ClearToEmpty();
+}
+inline const std::string& Runtime::host_url() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.host_url)
+  return _internal_host_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_host_url(ArgT0&& arg0, ArgT... args) {
+ 
+ host_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.host_url)
+}
+inline std::string* Runtime::mutable_host_url() {
+  std::string* _s = _internal_mutable_host_url();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.host_url)
+  return _s;
+}
+inline const std::string& Runtime::_internal_host_url() const {
+  return host_url_.Get();
+}
+inline void Runtime::_internal_set_host_url(const std::string& value) {
+  
+  host_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_host_url() {
+  
+  return host_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_host_url() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.host_url)
+  return host_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_host_url(std::string* host_url) {
+  if (host_url != nullptr) {
+    
+  } else {
+    
+  }
+  host_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), host_url,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.host_url)
 }
 
 // -------------------------------------------------------------------
