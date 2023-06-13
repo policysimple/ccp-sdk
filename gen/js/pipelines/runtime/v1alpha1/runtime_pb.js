@@ -249,7 +249,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     isNotExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 31, false),
     paramsList: jspb.Message.toObjectList(msg.getParamsList(),
     pipelines_tekton_v1alpha1_tekton_pb.Params.toObject, includeInstance),
-    pipelineRun: (f = msg.getPipelineRun()) && proto.pipelines.runtime.v1alpha1.PipelineRun.toObject(includeInstance, f),
+    pipelineRun: (f = msg.getPipelineRun()) && pipelines_tekton_v1alpha1_tekton_pb.PipelineRun.toObject(includeInstance, f),
     hostUrl: jspb.Message.getFieldWithDefault(msg, 34, "")
   };
 
@@ -431,8 +431,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
       msg.addParams(value);
       break;
     case 33:
-      var value = new proto.pipelines.runtime.v1alpha1.PipelineRun;
-      reader.readMessage(value,proto.pipelines.runtime.v1alpha1.PipelineRun.deserializeBinaryFromReader);
+      var value = new pipelines_tekton_v1alpha1_tekton_pb.PipelineRun;
+      reader.readMessage(value,pipelines_tekton_v1alpha1_tekton_pb.PipelineRun.deserializeBinaryFromReader);
       msg.setPipelineRun(value);
       break;
     case 34:
@@ -687,7 +687,7 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
     writer.writeMessage(
       33,
       f,
-      proto.pipelines.runtime.v1alpha1.PipelineRun.serializeBinaryToWriter
+      pipelines_tekton_v1alpha1_tekton_pb.PipelineRun.serializeBinaryToWriter
     );
   }
   f = message.getHostUrl();
@@ -1396,17 +1396,17 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearParamsList = function() 
 
 
 /**
- * optional PipelineRun pipeline_run = 33;
- * @return {?proto.pipelines.runtime.v1alpha1.PipelineRun}
+ * optional pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33;
+ * @return {?proto.pipelines.tekton.v1alpha1.PipelineRun}
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.getPipelineRun = function() {
-  return /** @type{?proto.pipelines.runtime.v1alpha1.PipelineRun} */ (
-    jspb.Message.getWrapperField(this, proto.pipelines.runtime.v1alpha1.PipelineRun, 33));
+  return /** @type{?proto.pipelines.tekton.v1alpha1.PipelineRun} */ (
+    jspb.Message.getWrapperField(this, pipelines_tekton_v1alpha1_tekton_pb.PipelineRun, 33));
 };
 
 
 /**
- * @param {?proto.pipelines.runtime.v1alpha1.PipelineRun|undefined} value
+ * @param {?proto.pipelines.tekton.v1alpha1.PipelineRun|undefined} value
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
 */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setPipelineRun = function(value) {

@@ -371,7 +371,7 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "\n(pipelines/runtime/v1alpha1/runtime.pro"
   "to\022\032pipelines.runtime.v1alpha1\032&applicat"
   "ion/v1alpha1/application.proto\032&pipeline"
-  "s/tekton/v1alpha1/tekton.proto\"\302\020\n\007Runti"
+  "s/tekton/v1alpha1/tekton.proto\"\301\020\n\007Runti"
   "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022N"
   "\n\016instance_types\030\003 \003(\0132\'.pipelines.runti"
   "me.v1alpha1.IntanceTypeR\rinstanceTypes\022\'"
@@ -414,39 +414,39 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "ngressCert\0225\n\027is_not_exist_dockerfile\030\037 "
   "\001(\010R\024isNotExistDockerfile\0229\n\006params\030  \003("
   "\0132!.pipelines.tekton.v1alpha1.ParamsR\006pa"
-  "rams\022J\n\014pipeline_run\030! \001(\0132\'.pipelines.r"
-  "untime.v1alpha1.PipelineRunR\013pipelineRun"
-  "\022\031\n\010host_url\030\" \001(\tR\007hostUrl\032>\n\020Integrati"
-  "onEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
-  "R\005value:\0028\001\032G\n\031EnvironmentVariablesEntry"
+  "rams\022I\n\014pipeline_run\030! \001(\0132&.pipelines.t"
+  "ekton.v1alpha1.PipelineRunR\013pipelineRun\022"
+  "\031\n\010host_url\030\" \001(\tR\007hostUrl\032>\n\020Integratio"
+  "nEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR"
+  "\005value:\0028\001\032G\n\031EnvironmentVariablesEntry\022"
+  "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:"
+  "\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
+  "\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry"
   "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value"
-  ":\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
-  "\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntr"
-  "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu"
-  "e:\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003ke"
-  "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013RuntimeLi"
-  "st\0229\n\005items\030\001 \003(\0132#.pipelines.runtime.v1"
-  "alpha1.RuntimeR\005items\"\206\001\n\013IntanceType\022\016\n"
-  "\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022S\n\017res"
-  "ources_rules\030\003 \003(\0132*.pipelines.runtime.v"
-  "1alpha1.ResourcesRulesR\016resourcesRules\"\210"
-  "\001\n\016ResourcesRules\0227\n\005limit\030\001 \003(\0132!.pipel"
-  "ines.runtime.v1alpha1.LimitR\005limit\022=\n\007re"
-  "quest\030\002 \003(\0132#.pipelines.runtime.v1alpha1"
-  ".RequestR\007request\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR"
-  "\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"-\n\007Request\022\020\n\003cpu"
-  "\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"\205\001\n\013Pipeli"
-  "neRun\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\t"
-  "R\005label\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022.\n"
-  "\023pipeline_run_status\030\004 \001(\tR\021pipelineRunS"
-  "tatus*a\n\013TrafficType\022\034\n\030TRAFFIC_TYPE_UNS"
-  "PECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n"
-  "\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cuemby.p"
-  "ipelines.runtime.v1alpha1B\014RuntimeProtoP"
-  "\001Z5github.com/cuemby/ccp-runtime-service"
-  "/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runti"
-  "me.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1"
-  "b\006proto3"
+  ":\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003key"
+  "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013RuntimeLis"
+  "t\0229\n\005items\030\001 \003(\0132#.pipelines.runtime.v1a"
+  "lpha1.RuntimeR\005items\"\206\001\n\013IntanceType\022\016\n\002"
+  "id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022S\n\017reso"
+  "urces_rules\030\003 \003(\0132*.pipelines.runtime.v1"
+  "alpha1.ResourcesRulesR\016resourcesRules\"\210\001"
+  "\n\016ResourcesRules\0227\n\005limit\030\001 \003(\0132!.pipeli"
+  "nes.runtime.v1alpha1.LimitR\005limit\022=\n\007req"
+  "uest\030\002 \003(\0132#.pipelines.runtime.v1alpha1."
+  "RequestR\007request\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003"
+  "cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"-\n\007Request\022\020\n\003cpu\030"
+  "\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"\205\001\n\013Pipelin"
+  "eRun\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\tR"
+  "\005label\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022.\n\023"
+  "pipeline_run_status\030\004 \001(\tR\021pipelineRunSt"
+  "atus*a\n\013TrafficType\022\034\n\030TRAFFIC_TYPE_UNSP"
+  "ECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n\025"
+  "TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cuemby.pi"
+  "pelines.runtime.v1alpha1B\014RuntimeProtoP\001"
+  "Z5github.com/cuemby/ccp-runtime-service/"
+  "runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtim"
+  "e.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1b"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps[2] = {
   &::descriptor_table_application_2fv1alpha1_2fapplication_2eproto,
@@ -454,7 +454,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = {
-  false, false, 3128, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
+  false, false, 3127, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
   &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps, 2, 12,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
@@ -559,14 +559,14 @@ void Runtime_ExtraArgsEntry_DoNotUse::MergeFrom(const Runtime_ExtraArgsEntry_DoN
 class Runtime::_Internal {
  public:
   static const ::application::v1alpha1::Application& application_data(const Runtime* msg);
-  static const ::pipelines::runtime::v1alpha1::PipelineRun& pipeline_run(const Runtime* msg);
+  static const ::pipelines::tekton::v1alpha1::PipelineRun& pipeline_run(const Runtime* msg);
 };
 
 const ::application::v1alpha1::Application&
 Runtime::_Internal::application_data(const Runtime* msg) {
   return *msg->application_data_;
 }
-const ::pipelines::runtime::v1alpha1::PipelineRun&
+const ::pipelines::tekton::v1alpha1::PipelineRun&
 Runtime::_Internal::pipeline_run(const Runtime* msg) {
   return *msg->pipeline_run_;
 }
@@ -584,6 +584,12 @@ void Runtime::clear_after_deploy_tasks() {
 }
 void Runtime::clear_params() {
   params_.Clear();
+}
+void Runtime::clear_pipeline_run() {
+  if (GetArenaForAllocation() == nullptr && pipeline_run_ != nullptr) {
+    delete pipeline_run_;
+  }
+  pipeline_run_ = nullptr;
 }
 Runtime::Runtime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -711,7 +717,7 @@ Runtime::Runtime(const Runtime& from)
     application_data_ = nullptr;
   }
   if (from._internal_has_pipeline_run()) {
-    pipeline_run_ = new ::pipelines::runtime::v1alpha1::PipelineRun(*from.pipeline_run_);
+    pipeline_run_ = new ::pipelines::tekton::v1alpha1::PipelineRun(*from.pipeline_run_);
   } else {
     pipeline_run_ = nullptr;
   }
@@ -1152,7 +1158,7 @@ const char* Runtime::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<258>(ptr));
         } else goto handle_unusual;
         continue;
-      // .pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
+      // .pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
       case 33:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_pipeline_run(), ptr);
@@ -1668,7 +1674,7 @@ failure:
       InternalWriteMessage(32, this->_internal_params(i), target, stream);
   }
 
-  // .pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
+  // .pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
   if (this->_internal_has_pipeline_run()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1908,7 +1914,7 @@ size_t Runtime::ByteSizeLong() const {
         *application_data_);
   }
 
-  // .pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
+  // .pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
   if (this->_internal_has_pipeline_run()) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2040,7 +2046,7 @@ void Runtime::MergeFrom(const Runtime& from) {
     _internal_mutable_application_data()->::application::v1alpha1::Application::MergeFrom(from._internal_application_data());
   }
   if (from._internal_has_pipeline_run()) {
-    _internal_mutable_pipeline_run()->::pipelines::runtime::v1alpha1::PipelineRun::MergeFrom(from._internal_pipeline_run());
+    _internal_mutable_pipeline_run()->::pipelines::tekton::v1alpha1::PipelineRun::MergeFrom(from._internal_pipeline_run());
   }
   if (from._internal_traffic_type() != 0) {
     _internal_set_traffic_type(from._internal_traffic_type());
