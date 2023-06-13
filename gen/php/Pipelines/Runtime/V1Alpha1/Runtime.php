@@ -144,7 +144,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     private $params;
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
      */
     protected $pipeline_run = null;
     /**
@@ -190,7 +190,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $pod_ingress_cert
      *     @type bool $is_not_exist_dockerfile
      *     @type \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $params
-     *     @type \Pipelines\Runtime\V1Alpha1\PipelineRun $pipeline_run
+     *     @type \Pipelines\Tekton\V1Alpha1\PipelineRun $pipeline_run
      *     @type string $host_url
      * }
      */
@@ -914,8 +914,8 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
-     * @return \Pipelines\Runtime\V1Alpha1\PipelineRun|null
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     * @return \Pipelines\Tekton\V1Alpha1\PipelineRun|null
      */
     public function getPipelineRun()
     {
@@ -933,13 +933,13 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
-     * @param \Pipelines\Runtime\V1Alpha1\PipelineRun $var
+     * Generated from protobuf field <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\PipelineRun $var
      * @return $this
      */
     public function setPipelineRun($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\PipelineRun::class);
+        GPBUtil::checkMessage($var, \Pipelines\Tekton\V1Alpha1\PipelineRun::class);
         $this->pipeline_run = $var;
 
         return $this;

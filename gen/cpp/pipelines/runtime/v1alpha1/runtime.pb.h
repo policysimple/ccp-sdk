@@ -860,23 +860,23 @@ class Runtime final :
       ::application::v1alpha1::Application* application_data);
   ::application::v1alpha1::Application* unsafe_arena_release_application_data();
 
-  // .pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
+  // .pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
   bool has_pipeline_run() const;
   private:
   bool _internal_has_pipeline_run() const;
   public:
   void clear_pipeline_run();
-  const ::pipelines::runtime::v1alpha1::PipelineRun& pipeline_run() const;
-  PROTOBUF_MUST_USE_RESULT ::pipelines::runtime::v1alpha1::PipelineRun* release_pipeline_run();
-  ::pipelines::runtime::v1alpha1::PipelineRun* mutable_pipeline_run();
-  void set_allocated_pipeline_run(::pipelines::runtime::v1alpha1::PipelineRun* pipeline_run);
+  const ::pipelines::tekton::v1alpha1::PipelineRun& pipeline_run() const;
+  PROTOBUF_MUST_USE_RESULT ::pipelines::tekton::v1alpha1::PipelineRun* release_pipeline_run();
+  ::pipelines::tekton::v1alpha1::PipelineRun* mutable_pipeline_run();
+  void set_allocated_pipeline_run(::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run);
   private:
-  const ::pipelines::runtime::v1alpha1::PipelineRun& _internal_pipeline_run() const;
-  ::pipelines::runtime::v1alpha1::PipelineRun* _internal_mutable_pipeline_run();
+  const ::pipelines::tekton::v1alpha1::PipelineRun& _internal_pipeline_run() const;
+  ::pipelines::tekton::v1alpha1::PipelineRun* _internal_mutable_pipeline_run();
   public:
   void unsafe_arena_set_allocated_pipeline_run(
-      ::pipelines::runtime::v1alpha1::PipelineRun* pipeline_run);
-  ::pipelines::runtime::v1alpha1::PipelineRun* unsafe_arena_release_pipeline_run();
+      ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run);
+  ::pipelines::tekton::v1alpha1::PipelineRun* unsafe_arena_release_pipeline_run();
 
   // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];
   void clear_traffic_type();
@@ -978,7 +978,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_ingress_cert_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_url_;
   ::application::v1alpha1::Application* application_data_;
-  ::pipelines::runtime::v1alpha1::PipelineRun* pipeline_run_;
+  ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run_;
   int traffic_type_;
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_used_;
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit_;
@@ -3280,30 +3280,24 @@ Runtime::params() const {
   return params_;
 }
 
-// .pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
+// .pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
 inline bool Runtime::_internal_has_pipeline_run() const {
   return this != internal_default_instance() && pipeline_run_ != nullptr;
 }
 inline bool Runtime::has_pipeline_run() const {
   return _internal_has_pipeline_run();
 }
-inline void Runtime::clear_pipeline_run() {
-  if (GetArenaForAllocation() == nullptr && pipeline_run_ != nullptr) {
-    delete pipeline_run_;
-  }
-  pipeline_run_ = nullptr;
+inline const ::pipelines::tekton::v1alpha1::PipelineRun& Runtime::_internal_pipeline_run() const {
+  const ::pipelines::tekton::v1alpha1::PipelineRun* p = pipeline_run_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::tekton::v1alpha1::PipelineRun&>(
+      ::pipelines::tekton::v1alpha1::_PipelineRun_default_instance_);
 }
-inline const ::pipelines::runtime::v1alpha1::PipelineRun& Runtime::_internal_pipeline_run() const {
-  const ::pipelines::runtime::v1alpha1::PipelineRun* p = pipeline_run_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::runtime::v1alpha1::PipelineRun&>(
-      ::pipelines::runtime::v1alpha1::_PipelineRun_default_instance_);
-}
-inline const ::pipelines::runtime::v1alpha1::PipelineRun& Runtime::pipeline_run() const {
+inline const ::pipelines::tekton::v1alpha1::PipelineRun& Runtime::pipeline_run() const {
   // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.pipeline_run)
   return _internal_pipeline_run();
 }
 inline void Runtime::unsafe_arena_set_allocated_pipeline_run(
-    ::pipelines::runtime::v1alpha1::PipelineRun* pipeline_run) {
+    ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run_);
   }
@@ -3315,9 +3309,9 @@ inline void Runtime::unsafe_arena_set_allocated_pipeline_run(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.runtime.v1alpha1.Runtime.pipeline_run)
 }
-inline ::pipelines::runtime::v1alpha1::PipelineRun* Runtime::release_pipeline_run() {
+inline ::pipelines::tekton::v1alpha1::PipelineRun* Runtime::release_pipeline_run() {
   
-  ::pipelines::runtime::v1alpha1::PipelineRun* temp = pipeline_run_;
+  ::pipelines::tekton::v1alpha1::PipelineRun* temp = pipeline_run_;
   pipeline_run_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -3330,34 +3324,36 @@ inline ::pipelines::runtime::v1alpha1::PipelineRun* Runtime::release_pipeline_ru
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::pipelines::runtime::v1alpha1::PipelineRun* Runtime::unsafe_arena_release_pipeline_run() {
+inline ::pipelines::tekton::v1alpha1::PipelineRun* Runtime::unsafe_arena_release_pipeline_run() {
   // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.pipeline_run)
   
-  ::pipelines::runtime::v1alpha1::PipelineRun* temp = pipeline_run_;
+  ::pipelines::tekton::v1alpha1::PipelineRun* temp = pipeline_run_;
   pipeline_run_ = nullptr;
   return temp;
 }
-inline ::pipelines::runtime::v1alpha1::PipelineRun* Runtime::_internal_mutable_pipeline_run() {
+inline ::pipelines::tekton::v1alpha1::PipelineRun* Runtime::_internal_mutable_pipeline_run() {
   
   if (pipeline_run_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pipelines::runtime::v1alpha1::PipelineRun>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::pipelines::tekton::v1alpha1::PipelineRun>(GetArenaForAllocation());
     pipeline_run_ = p;
   }
   return pipeline_run_;
 }
-inline ::pipelines::runtime::v1alpha1::PipelineRun* Runtime::mutable_pipeline_run() {
-  ::pipelines::runtime::v1alpha1::PipelineRun* _msg = _internal_mutable_pipeline_run();
+inline ::pipelines::tekton::v1alpha1::PipelineRun* Runtime::mutable_pipeline_run() {
+  ::pipelines::tekton::v1alpha1::PipelineRun* _msg = _internal_mutable_pipeline_run();
   // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.pipeline_run)
   return _msg;
 }
-inline void Runtime::set_allocated_pipeline_run(::pipelines::runtime::v1alpha1::PipelineRun* pipeline_run) {
+inline void Runtime::set_allocated_pipeline_run(::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete pipeline_run_;
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run_);
   }
   if (pipeline_run) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::pipelines::runtime::v1alpha1::PipelineRun>::GetOwningArena(pipeline_run);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run));
     if (message_arena != submessage_arena) {
       pipeline_run = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, pipeline_run, submessage_arena);

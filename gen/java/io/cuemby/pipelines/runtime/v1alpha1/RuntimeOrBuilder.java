@@ -528,19 +528,19 @@ public interface RuntimeOrBuilder extends
       int index);
 
   /**
-   * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+   * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
    * @return Whether the pipelineRun field is set.
    */
   boolean hasPipelineRun();
   /**
-   * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+   * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
    * @return The pipelineRun.
    */
-  io.cuemby.pipelines.runtime.v1alpha1.PipelineRun getPipelineRun();
+  io.cuemby.pipelines.tekton.v1alpha1.PipelineRun getPipelineRun();
   /**
-   * <code>.pipelines.runtime.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
+   * <code>.pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];</code>
    */
-  io.cuemby.pipelines.runtime.v1alpha1.PipelineRunOrBuilder getPipelineRunOrBuilder();
+  io.cuemby.pipelines.tekton.v1alpha1.PipelineRunOrBuilder getPipelineRunOrBuilder();
 
   /**
    * <code>string host_url = 34 [json_name = "hostUrl"];</code>
