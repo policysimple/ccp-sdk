@@ -90,7 +90,25 @@ func ListTektonTaskPipeline(in *tektonPipelinepkgv1.ListTektonTaskPipelineReques
 }
 
 // PIPELINE RUN
-func ListkPipelineRun(in *tektonPipelinepkgv1.ListPipelineRunRequest) (response *tektonPipelinepkgv1.ListPipelineRunResponse, err error) {
+func GetPipelineRun(in *tektonPipelinepkgv1.GetPipelineRunRequest) (response *tektonPipelinepkgv1.GetPipelineRunResponse, err error) {
+	bylogs.LogInfo("client: get pipeline run")
+	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetPipelineRun(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: get pipeline run failed", err)
+		return nil, fmt.Errorf("[GetPipelineRun] %w", err)
+	}
+	return response, nil
+}
+
+func ListPipelineRun(in *tektonPipelinepkgv1.ListPipelineRunRequest) (response *tektonPipelinepkgv1.ListPipelineRunResponse, err error) {
 	bylogs.LogInfo("client: list pipeline run")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
@@ -104,24 +122,6 @@ func ListkPipelineRun(in *tektonPipelinepkgv1.ListPipelineRunRequest) (response 
 	if err != nil {
 		bylogs.LogErr("client: list pipeline run failed", err)
 		return nil, fmt.Errorf("[ListPipelineRun] %w", err)
-	}
-	return response, nil
-}
-
-func GetPipelineRun(in *tektonPipelinepkgv1.GetPipelineRunRequest) (response *tektonPipelinepkgv1.GetPipelineRunResponse, err error) {
-	bylogs.LogInfo("client: list pipeline run")
-	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
-	if err != nil {
-		return
-	}
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
-	defer cancel()
-
-	response, err = client.GetPipelineRun(ctx, in)
-
-	if err != nil {
-		bylogs.LogErr("client: get pipeline run failed", err)
-		return nil, fmt.Errorf("[GetPipelineRun] %w", err)
 	}
 	return response, nil
 }

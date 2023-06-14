@@ -1046,314 +1046,6 @@ class ListTektonTaskPipelineResponse final :
 };
 // -------------------------------------------------------------------
 
-class ListPipelineRunRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.ListPipelineRunRequest) */ {
- public:
-  inline ListPipelineRunRequest() : ListPipelineRunRequest(nullptr) {}
-  ~ListPipelineRunRequest() override;
-  explicit constexpr ListPipelineRunRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  ListPipelineRunRequest(const ListPipelineRunRequest& from);
-  ListPipelineRunRequest(ListPipelineRunRequest&& from) noexcept
-    : ListPipelineRunRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline ListPipelineRunRequest& operator=(const ListPipelineRunRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ListPipelineRunRequest& operator=(ListPipelineRunRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ListPipelineRunRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const ListPipelineRunRequest* internal_default_instance() {
-    return reinterpret_cast<const ListPipelineRunRequest*>(
-               &_ListPipelineRunRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  friend void swap(ListPipelineRunRequest& a, ListPipelineRunRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(ListPipelineRunRequest* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ListPipelineRunRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ListPipelineRunRequest* New() const final {
-    return new ListPipelineRunRequest();
-  }
-
-  ListPipelineRunRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<ListPipelineRunRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const ListPipelineRunRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const ListPipelineRunRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ListPipelineRunRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pipelines.tekton.v1alpha1.ListPipelineRunRequest";
-  }
-  protected:
-  explicit ListPipelineRunRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kNamespaceFieldNumber = 1,
-  };
-  // string namespace = 1 [json_name = "namespace"];
-  void clear_namespace_();
-  const std::string& namespace_() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_namespace_(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_namespace_();
-  PROTOBUF_MUST_USE_RESULT std::string* release_namespace_();
-  void set_allocated_namespace_(std::string* namespace_);
-  private:
-  const std::string& _internal_namespace_() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_namespace_(const std::string& value);
-  std::string* _internal_mutable_namespace_();
-  public:
-
-  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ListPipelineRunRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
-};
-// -------------------------------------------------------------------
-
-class ListPipelineRunResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.ListPipelineRunResponse) */ {
- public:
-  inline ListPipelineRunResponse() : ListPipelineRunResponse(nullptr) {}
-  ~ListPipelineRunResponse() override;
-  explicit constexpr ListPipelineRunResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  ListPipelineRunResponse(const ListPipelineRunResponse& from);
-  ListPipelineRunResponse(ListPipelineRunResponse&& from) noexcept
-    : ListPipelineRunResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline ListPipelineRunResponse& operator=(const ListPipelineRunResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ListPipelineRunResponse& operator=(ListPipelineRunResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ListPipelineRunResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const ListPipelineRunResponse* internal_default_instance() {
-    return reinterpret_cast<const ListPipelineRunResponse*>(
-               &_ListPipelineRunResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    7;
-
-  friend void swap(ListPipelineRunResponse& a, ListPipelineRunResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(ListPipelineRunResponse* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ListPipelineRunResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ListPipelineRunResponse* New() const final {
-    return new ListPipelineRunResponse();
-  }
-
-  ListPipelineRunResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<ListPipelineRunResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const ListPipelineRunResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const ListPipelineRunResponse& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ListPipelineRunResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pipelines.tekton.v1alpha1.ListPipelineRunResponse";
-  }
-  protected:
-  explicit ListPipelineRunResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStatusFieldNumber = 2,
-    kPipelineRunListFieldNumber = 1,
-  };
-  // string status = 2 [json_name = "status"];
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
-  // .pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];
-  bool has_pipeline_run_list() const;
-  private:
-  bool _internal_has_pipeline_run_list() const;
-  public:
-  void clear_pipeline_run_list();
-  const ::pipelines::tekton::v1alpha1::PipelineRunList& pipeline_run_list() const;
-  PROTOBUF_MUST_USE_RESULT ::pipelines::tekton::v1alpha1::PipelineRunList* release_pipeline_run_list();
-  ::pipelines::tekton::v1alpha1::PipelineRunList* mutable_pipeline_run_list();
-  void set_allocated_pipeline_run_list(::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list);
-  private:
-  const ::pipelines::tekton::v1alpha1::PipelineRunList& _internal_pipeline_run_list() const;
-  ::pipelines::tekton::v1alpha1::PipelineRunList* _internal_mutable_pipeline_run_list();
-  public:
-  void unsafe_arena_set_allocated_pipeline_run_list(
-      ::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list);
-  ::pipelines::tekton::v1alpha1::PipelineRunList* unsafe_arena_release_pipeline_run_list();
-
-  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ListPipelineRunResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
-  ::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
-};
-// -------------------------------------------------------------------
-
 class GetPipelineRunRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.GetPipelineRunRequest) */ {
  public:
@@ -1398,7 +1090,7 @@ class GetPipelineRunRequest final :
                &_GetPipelineRunRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    6;
 
   friend void swap(GetPipelineRunRequest& a, GetPipelineRunRequest& b) {
     a.Swap(&b);
@@ -1558,7 +1250,7 @@ class GetPipelineRunResponse final :
                &_GetPipelineRunResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    7;
 
   friend void swap(GetPipelineRunResponse& a, GetPipelineRunResponse& b) {
     a.Swap(&b);
@@ -1673,6 +1365,314 @@ class GetPipelineRunResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListPipelineRunRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.ListPipelineRunRequest) */ {
+ public:
+  inline ListPipelineRunRequest() : ListPipelineRunRequest(nullptr) {}
+  ~ListPipelineRunRequest() override;
+  explicit constexpr ListPipelineRunRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListPipelineRunRequest(const ListPipelineRunRequest& from);
+  ListPipelineRunRequest(ListPipelineRunRequest&& from) noexcept
+    : ListPipelineRunRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ListPipelineRunRequest& operator=(const ListPipelineRunRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListPipelineRunRequest& operator=(ListPipelineRunRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListPipelineRunRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListPipelineRunRequest* internal_default_instance() {
+    return reinterpret_cast<const ListPipelineRunRequest*>(
+               &_ListPipelineRunRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(ListPipelineRunRequest& a, ListPipelineRunRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListPipelineRunRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListPipelineRunRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListPipelineRunRequest* New() const final {
+    return new ListPipelineRunRequest();
+  }
+
+  ListPipelineRunRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListPipelineRunRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListPipelineRunRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListPipelineRunRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListPipelineRunRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.tekton.v1alpha1.ListPipelineRunRequest";
+  }
+  protected:
+  explicit ListPipelineRunRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNamespaceFieldNumber = 1,
+  };
+  // string namespace = 1 [json_name = "namespace"];
+  void clear_namespace_();
+  const std::string& namespace_() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_namespace_(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_namespace_();
+  PROTOBUF_MUST_USE_RESULT std::string* release_namespace_();
+  void set_allocated_namespace_(std::string* namespace_);
+  private:
+  const std::string& _internal_namespace_() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_namespace_(const std::string& value);
+  std::string* _internal_mutable_namespace_();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ListPipelineRunRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListPipelineRunResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.ListPipelineRunResponse) */ {
+ public:
+  inline ListPipelineRunResponse() : ListPipelineRunResponse(nullptr) {}
+  ~ListPipelineRunResponse() override;
+  explicit constexpr ListPipelineRunResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListPipelineRunResponse(const ListPipelineRunResponse& from);
+  ListPipelineRunResponse(ListPipelineRunResponse&& from) noexcept
+    : ListPipelineRunResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ListPipelineRunResponse& operator=(const ListPipelineRunResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListPipelineRunResponse& operator=(ListPipelineRunResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ListPipelineRunResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListPipelineRunResponse* internal_default_instance() {
+    return reinterpret_cast<const ListPipelineRunResponse*>(
+               &_ListPipelineRunResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(ListPipelineRunResponse& a, ListPipelineRunResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListPipelineRunResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListPipelineRunResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListPipelineRunResponse* New() const final {
+    return new ListPipelineRunResponse();
+  }
+
+  ListPipelineRunResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListPipelineRunResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ListPipelineRunResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ListPipelineRunResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListPipelineRunResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.tekton.v1alpha1.ListPipelineRunResponse";
+  }
+  protected:
+  explicit ListPipelineRunResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStatusFieldNumber = 2,
+    kPipelineRunListFieldNumber = 1,
+  };
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // .pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];
+  bool has_pipeline_run_list() const;
+  private:
+  bool _internal_has_pipeline_run_list() const;
+  public:
+  void clear_pipeline_run_list();
+  const ::pipelines::tekton::v1alpha1::PipelineRunList& pipeline_run_list() const;
+  PROTOBUF_MUST_USE_RESULT ::pipelines::tekton::v1alpha1::PipelineRunList* release_pipeline_run_list();
+  ::pipelines::tekton::v1alpha1::PipelineRunList* mutable_pipeline_run_list();
+  void set_allocated_pipeline_run_list(::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list);
+  private:
+  const ::pipelines::tekton::v1alpha1::PipelineRunList& _internal_pipeline_run_list() const;
+  ::pipelines::tekton::v1alpha1::PipelineRunList* _internal_mutable_pipeline_run_list();
+  public:
+  void unsafe_arena_set_allocated_pipeline_run_list(
+      ::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list);
+  ::pipelines::tekton::v1alpha1::PipelineRunList* unsafe_arena_release_pipeline_run_list();
+
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ListPipelineRunResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
 };
@@ -2289,192 +2289,6 @@ inline void ListTektonTaskPipelineResponse::set_allocated_status(std::string* st
 
 // -------------------------------------------------------------------
 
-// ListPipelineRunRequest
-
-// string namespace = 1 [json_name = "namespace"];
-inline void ListPipelineRunRequest::clear_namespace_() {
-  namespace__.ClearToEmpty();
-}
-inline const std::string& ListPipelineRunRequest::namespace_() const {
-  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
-  return _internal_namespace_();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ListPipelineRunRequest::set_namespace_(ArgT0&& arg0, ArgT... args) {
- 
- namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
-}
-inline std::string* ListPipelineRunRequest::mutable_namespace_() {
-  std::string* _s = _internal_mutable_namespace_();
-  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
-  return _s;
-}
-inline const std::string& ListPipelineRunRequest::_internal_namespace_() const {
-  return namespace__.Get();
-}
-inline void ListPipelineRunRequest::_internal_set_namespace_(const std::string& value) {
-  
-  namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* ListPipelineRunRequest::_internal_mutable_namespace_() {
-  
-  return namespace__.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* ListPipelineRunRequest::release_namespace_() {
-  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
-  return namespace__.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void ListPipelineRunRequest::set_allocated_namespace_(std::string* namespace_) {
-  if (namespace_ != nullptr) {
-    
-  } else {
-    
-  }
-  namespace__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), namespace_,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
-}
-
-// -------------------------------------------------------------------
-
-// ListPipelineRunResponse
-
-// .pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];
-inline bool ListPipelineRunResponse::_internal_has_pipeline_run_list() const {
-  return this != internal_default_instance() && pipeline_run_list_ != nullptr;
-}
-inline bool ListPipelineRunResponse::has_pipeline_run_list() const {
-  return _internal_has_pipeline_run_list();
-}
-inline const ::pipelines::tekton::v1alpha1::PipelineRunList& ListPipelineRunResponse::_internal_pipeline_run_list() const {
-  const ::pipelines::tekton::v1alpha1::PipelineRunList* p = pipeline_run_list_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::tekton::v1alpha1::PipelineRunList&>(
-      ::pipelines::tekton::v1alpha1::_PipelineRunList_default_instance_);
-}
-inline const ::pipelines::tekton::v1alpha1::PipelineRunList& ListPipelineRunResponse::pipeline_run_list() const {
-  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
-  return _internal_pipeline_run_list();
-}
-inline void ListPipelineRunResponse::unsafe_arena_set_allocated_pipeline_run_list(
-    ::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run_list_);
-  }
-  pipeline_run_list_ = pipeline_run_list;
-  if (pipeline_run_list) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
-}
-inline ::pipelines::tekton::v1alpha1::PipelineRunList* ListPipelineRunResponse::release_pipeline_run_list() {
-  
-  ::pipelines::tekton::v1alpha1::PipelineRunList* temp = pipeline_run_list_;
-  pipeline_run_list_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::pipelines::tekton::v1alpha1::PipelineRunList* ListPipelineRunResponse::unsafe_arena_release_pipeline_run_list() {
-  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
-  
-  ::pipelines::tekton::v1alpha1::PipelineRunList* temp = pipeline_run_list_;
-  pipeline_run_list_ = nullptr;
-  return temp;
-}
-inline ::pipelines::tekton::v1alpha1::PipelineRunList* ListPipelineRunResponse::_internal_mutable_pipeline_run_list() {
-  
-  if (pipeline_run_list_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pipelines::tekton::v1alpha1::PipelineRunList>(GetArenaForAllocation());
-    pipeline_run_list_ = p;
-  }
-  return pipeline_run_list_;
-}
-inline ::pipelines::tekton::v1alpha1::PipelineRunList* ListPipelineRunResponse::mutable_pipeline_run_list() {
-  ::pipelines::tekton::v1alpha1::PipelineRunList* _msg = _internal_mutable_pipeline_run_list();
-  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
-  return _msg;
-}
-inline void ListPipelineRunResponse::set_allocated_pipeline_run_list(::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run_list_);
-  }
-  if (pipeline_run_list) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run_list));
-    if (message_arena != submessage_arena) {
-      pipeline_run_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, pipeline_run_list, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  pipeline_run_list_ = pipeline_run_list;
-  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
-}
-
-// string status = 2 [json_name = "status"];
-inline void ListPipelineRunResponse::clear_status() {
-  status_.ClearToEmpty();
-}
-inline const std::string& ListPipelineRunResponse::status() const {
-  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
-  return _internal_status();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ListPipelineRunResponse::set_status(ArgT0&& arg0, ArgT... args) {
- 
- status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
-}
-inline std::string* ListPipelineRunResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
-  return _s;
-}
-inline const std::string& ListPipelineRunResponse::_internal_status() const {
-  return status_.Get();
-}
-inline void ListPipelineRunResponse::_internal_set_status(const std::string& value) {
-  
-  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* ListPipelineRunResponse::_internal_mutable_status() {
-  
-  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* ListPipelineRunResponse::release_status() {
-  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
-  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void ListPipelineRunResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
-}
-
-// -------------------------------------------------------------------
-
 // GetPipelineRunRequest
 
 // string name = 1 [json_name = "name"];
@@ -2703,6 +2517,192 @@ inline void GetPipelineRunResponse::set_allocated_status(std::string* status) {
   status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.GetPipelineRunResponse.status)
+}
+
+// -------------------------------------------------------------------
+
+// ListPipelineRunRequest
+
+// string namespace = 1 [json_name = "namespace"];
+inline void ListPipelineRunRequest::clear_namespace_() {
+  namespace__.ClearToEmpty();
+}
+inline const std::string& ListPipelineRunRequest::namespace_() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
+  return _internal_namespace_();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListPipelineRunRequest::set_namespace_(ArgT0&& arg0, ArgT... args) {
+ 
+ namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
+}
+inline std::string* ListPipelineRunRequest::mutable_namespace_() {
+  std::string* _s = _internal_mutable_namespace_();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
+  return _s;
+}
+inline const std::string& ListPipelineRunRequest::_internal_namespace_() const {
+  return namespace__.Get();
+}
+inline void ListPipelineRunRequest::_internal_set_namespace_(const std::string& value) {
+  
+  namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListPipelineRunRequest::_internal_mutable_namespace_() {
+  
+  return namespace__.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListPipelineRunRequest::release_namespace_() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
+  return namespace__.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListPipelineRunRequest::set_allocated_namespace_(std::string* namespace_) {
+  if (namespace_ != nullptr) {
+    
+  } else {
+    
+  }
+  namespace__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), namespace_,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.ListPipelineRunRequest.namespace)
+}
+
+// -------------------------------------------------------------------
+
+// ListPipelineRunResponse
+
+// .pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1 [json_name = "pipelineRunList"];
+inline bool ListPipelineRunResponse::_internal_has_pipeline_run_list() const {
+  return this != internal_default_instance() && pipeline_run_list_ != nullptr;
+}
+inline bool ListPipelineRunResponse::has_pipeline_run_list() const {
+  return _internal_has_pipeline_run_list();
+}
+inline const ::pipelines::tekton::v1alpha1::PipelineRunList& ListPipelineRunResponse::_internal_pipeline_run_list() const {
+  const ::pipelines::tekton::v1alpha1::PipelineRunList* p = pipeline_run_list_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::tekton::v1alpha1::PipelineRunList&>(
+      ::pipelines::tekton::v1alpha1::_PipelineRunList_default_instance_);
+}
+inline const ::pipelines::tekton::v1alpha1::PipelineRunList& ListPipelineRunResponse::pipeline_run_list() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
+  return _internal_pipeline_run_list();
+}
+inline void ListPipelineRunResponse::unsafe_arena_set_allocated_pipeline_run_list(
+    ::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run_list_);
+  }
+  pipeline_run_list_ = pipeline_run_list;
+  if (pipeline_run_list) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
+}
+inline ::pipelines::tekton::v1alpha1::PipelineRunList* ListPipelineRunResponse::release_pipeline_run_list() {
+  
+  ::pipelines::tekton::v1alpha1::PipelineRunList* temp = pipeline_run_list_;
+  pipeline_run_list_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pipelines::tekton::v1alpha1::PipelineRunList* ListPipelineRunResponse::unsafe_arena_release_pipeline_run_list() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
+  
+  ::pipelines::tekton::v1alpha1::PipelineRunList* temp = pipeline_run_list_;
+  pipeline_run_list_ = nullptr;
+  return temp;
+}
+inline ::pipelines::tekton::v1alpha1::PipelineRunList* ListPipelineRunResponse::_internal_mutable_pipeline_run_list() {
+  
+  if (pipeline_run_list_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pipelines::tekton::v1alpha1::PipelineRunList>(GetArenaForAllocation());
+    pipeline_run_list_ = p;
+  }
+  return pipeline_run_list_;
+}
+inline ::pipelines::tekton::v1alpha1::PipelineRunList* ListPipelineRunResponse::mutable_pipeline_run_list() {
+  ::pipelines::tekton::v1alpha1::PipelineRunList* _msg = _internal_mutable_pipeline_run_list();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
+  return _msg;
+}
+inline void ListPipelineRunResponse::set_allocated_pipeline_run_list(::pipelines::tekton::v1alpha1::PipelineRunList* pipeline_run_list) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run_list_);
+  }
+  if (pipeline_run_list) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run_list));
+    if (message_arena != submessage_arena) {
+      pipeline_run_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, pipeline_run_list, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  pipeline_run_list_ = pipeline_run_list;
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list)
+}
+
+// string status = 2 [json_name = "status"];
+inline void ListPipelineRunResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& ListPipelineRunResponse::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ListPipelineRunResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
+}
+inline std::string* ListPipelineRunResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
+  return _s;
+}
+inline const std::string& ListPipelineRunResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void ListPipelineRunResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ListPipelineRunResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ListPipelineRunResponse::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ListPipelineRunResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.ListPipelineRunResponse.status)
 }
 
 #ifdef __GNUC__

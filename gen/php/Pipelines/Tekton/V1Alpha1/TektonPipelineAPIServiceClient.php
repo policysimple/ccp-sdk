@@ -56,19 +56,6 @@ class TektonPipelineAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Pipelines\Tekton\V1Alpha1\ListPipelineRunRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function ListPipelineRun(\Pipelines\Tekton\V1Alpha1\ListPipelineRunRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListPipelineRun',
-        $argument,
-        ['\Pipelines\Tekton\V1Alpha1\ListPipelineRunResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * @param \Pipelines\Tekton\V1Alpha1\GetPipelineRunRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -78,6 +65,19 @@ class TektonPipelineAPIServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetPipelineRun',
         $argument,
         ['\Pipelines\Tekton\V1Alpha1\GetPipelineRunResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Pipelines\Tekton\V1Alpha1\ListPipelineRunRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListPipelineRun(\Pipelines\Tekton\V1Alpha1\ListPipelineRunRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListPipelineRun',
+        $argument,
+        ['\Pipelines\Tekton\V1Alpha1\ListPipelineRunResponse', 'decode'],
         $metadata, $options);
     }
 
