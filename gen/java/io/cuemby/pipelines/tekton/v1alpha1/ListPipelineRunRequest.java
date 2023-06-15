@@ -4,10 +4,6 @@
 package io.cuemby.pipelines.tekton.v1alpha1;
 
 /**
- * <pre>
- * PIPELINERUN
- * </pre>
- *
  * Protobuf type {@code pipelines.tekton.v1alpha1.ListPipelineRunRequest}
  */
 public final class ListPipelineRunRequest extends
@@ -284,10 +280,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * PIPELINERUN
-   * </pre>
-   *
    * Protobuf type {@code pipelines.tekton.v1alpha1.ListPipelineRunRequest}
    */
   public static final class Builder extends

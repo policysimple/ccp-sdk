@@ -150,17 +150,6 @@ var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = 
     responseSerialize: serialize_pipelines_tekton_v1alpha1_ListTektonTaskPipelineResponse,
     responseDeserialize: deserialize_pipelines_tekton_v1alpha1_ListTektonTaskPipelineResponse,
   },
-  listPipelineRun: {
-    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListPipelineRun',
-    requestStream: false,
-    responseStream: false,
-    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.ListPipelineRunRequest,
-    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.ListPipelineRunResponse,
-    requestSerialize: serialize_pipelines_tekton_v1alpha1_ListPipelineRunRequest,
-    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_ListPipelineRunRequest,
-    responseSerialize: serialize_pipelines_tekton_v1alpha1_ListPipelineRunResponse,
-    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_ListPipelineRunResponse,
-  },
   getPipelineRun: {
     path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetPipelineRun',
     requestStream: false,
@@ -171,6 +160,17 @@ var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = 
     requestDeserialize: deserialize_pipelines_tekton_v1alpha1_GetPipelineRunRequest,
     responseSerialize: serialize_pipelines_tekton_v1alpha1_GetPipelineRunResponse,
     responseDeserialize: deserialize_pipelines_tekton_v1alpha1_GetPipelineRunResponse,
+  },
+  listPipelineRun: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListPipelineRun',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.ListPipelineRunRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.ListPipelineRunResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_ListPipelineRunRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_ListPipelineRunRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_ListPipelineRunResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_ListPipelineRunResponse,
   },
 };
 

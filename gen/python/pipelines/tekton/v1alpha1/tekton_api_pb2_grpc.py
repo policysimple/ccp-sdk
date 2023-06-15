@@ -29,15 +29,15 @@ class TektonPipelineAPIServiceStub(object):
         request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonTaskPipelineRequest.SerializeToString,
         response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonTaskPipelineResponse.FromString,
         )
-    self.ListPipelineRun = channel.unary_unary(
-        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListPipelineRun',
-        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunRequest.SerializeToString,
-        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunResponse.FromString,
-        )
     self.GetPipelineRun = channel.unary_unary(
         '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetPipelineRun',
         request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetPipelineRunRequest.SerializeToString,
         response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetPipelineRunResponse.FromString,
+        )
+    self.ListPipelineRun = channel.unary_unary(
+        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListPipelineRun',
+        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunRequest.SerializeToString,
+        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunResponse.FromString,
         )
 
 
@@ -66,14 +66,14 @@ class TektonPipelineAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def ListPipelineRun(self, request, context):
+  def GetPipelineRun(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetPipelineRun(self, request, context):
+  def ListPipelineRun(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -98,15 +98,15 @@ def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
           request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonTaskPipelineRequest.FromString,
           response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListTektonTaskPipelineResponse.SerializeToString,
       ),
-      'ListPipelineRun': grpc.unary_unary_rpc_method_handler(
-          servicer.ListPipelineRun,
-          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunRequest.FromString,
-          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunResponse.SerializeToString,
-      ),
       'GetPipelineRun': grpc.unary_unary_rpc_method_handler(
           servicer.GetPipelineRun,
           request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetPipelineRunRequest.FromString,
           response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetPipelineRunResponse.SerializeToString,
+      ),
+      'ListPipelineRun': grpc.unary_unary_rpc_method_handler(
+          servicer.ListPipelineRun,
+          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunRequest.FromString,
+          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

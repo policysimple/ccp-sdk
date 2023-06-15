@@ -17,9 +17,8 @@ service TektonPipelineAPIService{
     rpc CreateTektonPipeline(CreateTektonPipelineRequest) returns (CreateTektonPipelineResponse);
     rpc DeleteTektonPipeline(DeleteTektonPipelineRequest) returns (DeleteTektonPipelineResponse);
     rpc ListTektonTaskPipeline(ListTektonTaskPipelineRequest) returns (ListTektonTaskPipelineResponse);
-    rpc ListPipelineRun(ListPipelineRunRequest) returns (ListPipelineRunResponse);
     rpc GetPipelineRun(GetPipelineRunRequest) returns (GetPipelineRunResponse);
-
+    rpc ListPipelineRun(ListPipelineRunRequest) returns (ListPipelineRunResponse);
 }
 
 
@@ -53,14 +52,6 @@ message ListTektonTaskPipelineResponse {
 }
 
 // PIPELINERUN
-message ListPipelineRunRequest {
-    string namespace = 1;
-}
-
-message ListPipelineRunResponse {
-    pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1;
-    string status = 2;
-}
 
 message GetPipelineRunRequest {
     string name = 1;
@@ -72,3 +63,13 @@ message GetPipelineRunResponse {
     pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 1;
     string status = 2;
 }
+
+message ListPipelineRunRequest {
+    string namespace = 1;
+}
+
+message ListPipelineRunResponse {
+    pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1;
+    string status = 2;
+}
+
