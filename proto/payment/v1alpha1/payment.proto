@@ -22,7 +22,7 @@ message Project {
   string project_id = 1;
   string name = 2;
   string image = 3;
-  string budget = 4;
+  Budget budget = 4;
   string card_id = 5;
   string description = 6;
   string created_at = 7;
@@ -153,4 +153,9 @@ message BlockChain {
   string updated_at = 7;
   bool status = 8;
   bool is_suspended = 9;
+}
+
+message Budget {
+  string budget_time = 1;
+  string budget_amount = 2;
 }

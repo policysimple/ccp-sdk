@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-Ì
+¶
 payment/v1alpha1/payment.protopayment.v1alpha1"Û
 Customer
 id (	Rid
@@ -31,13 +31,13 @@ customerId\'
 biling	 (2.payment.v1alpha1.BilingRbiling5
 projects
  (2.payment.v1alpha1.ProjectRprojects>
-blockchains (2.payment.v1alpha1.BlockChainRblockchains"â
+blockchains (2.payment.v1alpha1.BlockChainRblockchains"ü
 Project
 
 project_id (	R	projectId
 name (	Rname
-image (	Rimage
-budget (	Rbudget
+image (	Rimage0
+budget (2.payment.v1alpha1.BudgetRbudget
 card_id (	RcardId 
 description (	Rdescription
 
@@ -147,7 +147,11 @@ created_at (	R	createdAt
 
 updated_at (	R	updatedAt
 status (Rstatus!
-is_suspended	 (RisSuspendedB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
+is_suspended	 (RisSuspended"N
+Budget
+budget_time (	R
+budgetTime#
+budget_amount (	RbudgetAmountB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
