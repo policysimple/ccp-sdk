@@ -3,8 +3,8 @@
 
 package io.cuemby.pipelines.tekton.v1alpha1;
 
-public interface TaskRunOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pipelines.tekton.v1alpha1.TaskRun)
+public interface TaskRunStepOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:pipelines.tekton.v1alpha1.TaskRunStep)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -80,38 +80,14 @@ public interface TaskRunOrBuilder extends
       getDurationBytes();
 
   /**
-   * <code>string task_run_status = 7 [json_name = "taskRunStatus"];</code>
-   * @return The taskRunStatus.
+   * <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
+   * @return The taskRunStepStatus.
    */
-  java.lang.String getTaskRunStatus();
+  java.lang.String getTaskRunStepStatus();
   /**
-   * <code>string task_run_status = 7 [json_name = "taskRunStatus"];</code>
-   * @return The bytes for taskRunStatus.
+   * <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
+   * @return The bytes for taskRunStepStatus.
    */
   com.google.protobuf.ByteString
-      getTaskRunStatusBytes();
-
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep> 
-      getTaskRunList();
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep getTaskRun(int index);
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  int getTaskRunCount();
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder> 
-      getTaskRunOrBuilderList();
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder getTaskRunOrBuilder(
-      int index);
+      getTaskRunStepStatusBytes();
 }

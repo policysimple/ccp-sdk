@@ -4,33 +4,32 @@
 package io.cuemby.pipelines.tekton.v1alpha1;
 
 /**
- * Protobuf type {@code pipelines.tekton.v1alpha1.TaskRun}
+ * Protobuf type {@code pipelines.tekton.v1alpha1.TaskRunStep}
  */
-public final class TaskRun extends
+public final class TaskRunStep extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pipelines.tekton.v1alpha1.TaskRun)
-    TaskRunOrBuilder {
+    // @@protoc_insertion_point(message_implements:pipelines.tekton.v1alpha1.TaskRunStep)
+    TaskRunStepOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use TaskRun.newBuilder() to construct.
-  private TaskRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use TaskRunStep.newBuilder() to construct.
+  private TaskRunStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private TaskRun() {
+  private TaskRunStep() {
     name_ = "";
     message_ = "";
     reason_ = "";
     startedAt_ = "";
     finishedAt_ = "";
     duration_ = "";
-    taskRunStatus_ = "";
-    taskRun_ = java.util.Collections.emptyList();
+    taskRunStepStatus_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new TaskRun();
+    return new TaskRunStep();
   }
 
   @java.lang.Override
@@ -38,7 +37,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private TaskRun(
+  private TaskRunStep(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -46,7 +45,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -96,16 +94,7 @@ private static final long serialVersionUID = 0L;
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskRunStatus_ = s;
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              taskRun_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            taskRun_.add(
-                input.readMessage(io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.parser(), extensionRegistry));
+            taskRunStepStatus_ = s;
             break;
           }
           default: {
@@ -123,24 +112,21 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        taskRun_ = java.util.Collections.unmodifiableList(taskRun_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRun_descriptor;
+    return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRunStep_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRun_fieldAccessorTable
+    return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRunStep_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.cuemby.pipelines.tekton.v1alpha1.TaskRun.class, io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder.class);
+            io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.class, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -371,82 +357,42 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_RUN_STATUS_FIELD_NUMBER = 7;
-  private volatile java.lang.Object taskRunStatus_;
+  public static final int TASK_RUN_STEP_STATUS_FIELD_NUMBER = 7;
+  private volatile java.lang.Object taskRunStepStatus_;
   /**
-   * <code>string task_run_status = 7 [json_name = "taskRunStatus"];</code>
-   * @return The taskRunStatus.
+   * <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
+   * @return The taskRunStepStatus.
    */
   @java.lang.Override
-  public java.lang.String getTaskRunStatus() {
-    java.lang.Object ref = taskRunStatus_;
+  public java.lang.String getTaskRunStepStatus() {
+    java.lang.Object ref = taskRunStepStatus_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskRunStatus_ = s;
+      taskRunStepStatus_ = s;
       return s;
     }
   }
   /**
-   * <code>string task_run_status = 7 [json_name = "taskRunStatus"];</code>
-   * @return The bytes for taskRunStatus.
+   * <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
+   * @return The bytes for taskRunStepStatus.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskRunStatusBytes() {
-    java.lang.Object ref = taskRunStatus_;
+      getTaskRunStepStatusBytes() {
+    java.lang.Object ref = taskRunStepStatus_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskRunStatus_ = b;
+      taskRunStepStatus_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int TASK_RUN_FIELD_NUMBER = 8;
-  private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep> taskRun_;
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep> getTaskRunList() {
-    return taskRun_;
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder> 
-      getTaskRunOrBuilderList() {
-    return taskRun_;
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  @java.lang.Override
-  public int getTaskRunCount() {
-    return taskRun_.size();
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep getTaskRun(int index) {
-    return taskRun_.get(index);
-  }
-  /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-   */
-  @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder getTaskRunOrBuilder(
-      int index) {
-    return taskRun_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -481,11 +427,8 @@ private static final long serialVersionUID = 0L;
     if (!getDurationBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, duration_);
     }
-    if (!getTaskRunStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, taskRunStatus_);
-    }
-    for (int i = 0; i < taskRun_.size(); i++) {
-      output.writeMessage(8, taskRun_.get(i));
+    if (!getTaskRunStepStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, taskRunStepStatus_);
     }
     unknownFields.writeTo(output);
   }
@@ -514,12 +457,8 @@ private static final long serialVersionUID = 0L;
     if (!getDurationBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, duration_);
     }
-    if (!getTaskRunStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, taskRunStatus_);
-    }
-    for (int i = 0; i < taskRun_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, taskRun_.get(i));
+    if (!getTaskRunStepStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, taskRunStepStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -531,10 +470,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.cuemby.pipelines.tekton.v1alpha1.TaskRun)) {
+    if (!(obj instanceof io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep)) {
       return super.equals(obj);
     }
-    io.cuemby.pipelines.tekton.v1alpha1.TaskRun other = (io.cuemby.pipelines.tekton.v1alpha1.TaskRun) obj;
+    io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep other = (io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep) obj;
 
     if (!getName()
         .equals(other.getName())) return false;
@@ -548,10 +487,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFinishedAt())) return false;
     if (!getDuration()
         .equals(other.getDuration())) return false;
-    if (!getTaskRunStatus()
-        .equals(other.getTaskRunStatus())) return false;
-    if (!getTaskRunList()
-        .equals(other.getTaskRunList())) return false;
+    if (!getTaskRunStepStatus()
+        .equals(other.getTaskRunStepStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -575,80 +512,76 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getFinishedAt().hashCode();
     hash = (37 * hash) + DURATION_FIELD_NUMBER;
     hash = (53 * hash) + getDuration().hashCode();
-    hash = (37 * hash) + TASK_RUN_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskRunStatus().hashCode();
-    if (getTaskRunCount() > 0) {
-      hash = (37 * hash) + TASK_RUN_FIELD_NUMBER;
-      hash = (53 * hash) + getTaskRunList().hashCode();
-    }
+    hash = (37 * hash) + TASK_RUN_STEP_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskRunStepStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(byte[] data)
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(java.io.InputStream input)
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseDelimitedFrom(java.io.InputStream input)
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseDelimitedFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun parseFrom(
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -661,7 +594,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.cuemby.pipelines.tekton.v1alpha1.TaskRun prototype) {
+  public static Builder newBuilder(io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -677,26 +610,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pipelines.tekton.v1alpha1.TaskRun}
+   * Protobuf type {@code pipelines.tekton.v1alpha1.TaskRunStep}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pipelines.tekton.v1alpha1.TaskRun)
-      io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pipelines.tekton.v1alpha1.TaskRunStep)
+      io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRun_descriptor;
+      return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRunStep_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRun_fieldAccessorTable
+      return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRunStep_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.cuemby.pipelines.tekton.v1alpha1.TaskRun.class, io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder.class);
+              io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.class, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder.class);
     }
 
-    // Construct using io.cuemby.pipelines.tekton.v1alpha1.TaskRun.newBuilder()
+    // Construct using io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -709,7 +642,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getTaskRunFieldBuilder();
       }
     }
     @java.lang.Override
@@ -727,31 +659,25 @@ private static final long serialVersionUID = 0L;
 
       duration_ = "";
 
-      taskRunStatus_ = "";
+      taskRunStepStatus_ = "";
 
-      if (taskRunBuilder_ == null) {
-        taskRun_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        taskRunBuilder_.clear();
-      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRun_descriptor;
+      return io.cuemby.pipelines.tekton.v1alpha1.TektonProto.internal_static_pipelines_tekton_v1alpha1_TaskRunStep_descriptor;
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskRun getDefaultInstanceForType() {
-      return io.cuemby.pipelines.tekton.v1alpha1.TaskRun.getDefaultInstance();
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep getDefaultInstanceForType() {
+      return io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.getDefaultInstance();
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskRun build() {
-      io.cuemby.pipelines.tekton.v1alpha1.TaskRun result = buildPartial();
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep build() {
+      io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -759,25 +685,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskRun buildPartial() {
-      io.cuemby.pipelines.tekton.v1alpha1.TaskRun result = new io.cuemby.pipelines.tekton.v1alpha1.TaskRun(this);
-      int from_bitField0_ = bitField0_;
+    public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep buildPartial() {
+      io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep result = new io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep(this);
       result.name_ = name_;
       result.message_ = message_;
       result.reason_ = reason_;
       result.startedAt_ = startedAt_;
       result.finishedAt_ = finishedAt_;
       result.duration_ = duration_;
-      result.taskRunStatus_ = taskRunStatus_;
-      if (taskRunBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          taskRun_ = java.util.Collections.unmodifiableList(taskRun_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.taskRun_ = taskRun_;
-      } else {
-        result.taskRun_ = taskRunBuilder_.build();
-      }
+      result.taskRunStepStatus_ = taskRunStepStatus_;
       onBuilt();
       return result;
     }
@@ -816,16 +732,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.cuemby.pipelines.tekton.v1alpha1.TaskRun) {
-        return mergeFrom((io.cuemby.pipelines.tekton.v1alpha1.TaskRun)other);
+      if (other instanceof io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep) {
+        return mergeFrom((io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.TaskRun other) {
-      if (other == io.cuemby.pipelines.tekton.v1alpha1.TaskRun.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep other) {
+      if (other == io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -850,35 +766,9 @@ private static final long serialVersionUID = 0L;
         duration_ = other.duration_;
         onChanged();
       }
-      if (!other.getTaskRunStatus().isEmpty()) {
-        taskRunStatus_ = other.taskRunStatus_;
+      if (!other.getTaskRunStepStatus().isEmpty()) {
+        taskRunStepStatus_ = other.taskRunStepStatus_;
         onChanged();
-      }
-      if (taskRunBuilder_ == null) {
-        if (!other.taskRun_.isEmpty()) {
-          if (taskRun_.isEmpty()) {
-            taskRun_ = other.taskRun_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureTaskRunIsMutable();
-            taskRun_.addAll(other.taskRun_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.taskRun_.isEmpty()) {
-          if (taskRunBuilder_.isEmpty()) {
-            taskRunBuilder_.dispose();
-            taskRunBuilder_ = null;
-            taskRun_ = other.taskRun_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            taskRunBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTaskRunFieldBuilder() : null;
-          } else {
-            taskRunBuilder_.addAllMessages(other.taskRun_);
-          }
-        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -895,11 +785,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.cuemby.pipelines.tekton.v1alpha1.TaskRun parsedMessage = null;
+      io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.cuemby.pipelines.tekton.v1alpha1.TaskRun) e.getUnfinishedMessage();
+        parsedMessage = (io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -908,7 +798,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1366,320 +1255,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object taskRunStatus_ = "";
+    private java.lang.Object taskRunStepStatus_ = "";
     /**
-     * <code>string task_run_status = 7 [json_name = "taskRunStatus"];</code>
-     * @return The taskRunStatus.
+     * <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
+     * @return The taskRunStepStatus.
      */
-    public java.lang.String getTaskRunStatus() {
-      java.lang.Object ref = taskRunStatus_;
+    public java.lang.String getTaskRunStepStatus() {
+      java.lang.Object ref = taskRunStepStatus_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskRunStatus_ = s;
+        taskRunStepStatus_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string task_run_status = 7 [json_name = "taskRunStatus"];</code>
-     * @return The bytes for taskRunStatus.
+     * <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
+     * @return The bytes for taskRunStepStatus.
      */
     public com.google.protobuf.ByteString
-        getTaskRunStatusBytes() {
-      java.lang.Object ref = taskRunStatus_;
+        getTaskRunStepStatusBytes() {
+      java.lang.Object ref = taskRunStepStatus_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskRunStatus_ = b;
+        taskRunStepStatus_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string task_run_status = 7 [json_name = "taskRunStatus"];</code>
-     * @param value The taskRunStatus to set.
+     * <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
+     * @param value The taskRunStepStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskRunStatus(
+    public Builder setTaskRunStepStatus(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskRunStatus_ = value;
+      taskRunStepStatus_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string task_run_status = 7 [json_name = "taskRunStatus"];</code>
+     * <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskRunStatus() {
+    public Builder clearTaskRunStepStatus() {
       
-      taskRunStatus_ = getDefaultInstance().getTaskRunStatus();
+      taskRunStepStatus_ = getDefaultInstance().getTaskRunStepStatus();
       onChanged();
       return this;
     }
     /**
-     * <code>string task_run_status = 7 [json_name = "taskRunStatus"];</code>
-     * @param value The bytes for taskRunStatus to set.
+     * <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
+     * @param value The bytes for taskRunStepStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskRunStatusBytes(
+    public Builder setTaskRunStepStatusBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskRunStatus_ = value;
+      taskRunStepStatus_ = value;
       onChanged();
       return this;
-    }
-
-    private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep> taskRun_ =
-      java.util.Collections.emptyList();
-    private void ensureTaskRunIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        taskRun_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep>(taskRun_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder> taskRunBuilder_;
-
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep> getTaskRunList() {
-      if (taskRunBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(taskRun_);
-      } else {
-        return taskRunBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public int getTaskRunCount() {
-      if (taskRunBuilder_ == null) {
-        return taskRun_.size();
-      } else {
-        return taskRunBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep getTaskRun(int index) {
-      if (taskRunBuilder_ == null) {
-        return taskRun_.get(index);
-      } else {
-        return taskRunBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public Builder setTaskRun(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep value) {
-      if (taskRunBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureTaskRunIsMutable();
-        taskRun_.set(index, value);
-        onChanged();
-      } else {
-        taskRunBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public Builder setTaskRun(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder builderForValue) {
-      if (taskRunBuilder_ == null) {
-        ensureTaskRunIsMutable();
-        taskRun_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        taskRunBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public Builder addTaskRun(io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep value) {
-      if (taskRunBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureTaskRunIsMutable();
-        taskRun_.add(value);
-        onChanged();
-      } else {
-        taskRunBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public Builder addTaskRun(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep value) {
-      if (taskRunBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureTaskRunIsMutable();
-        taskRun_.add(index, value);
-        onChanged();
-      } else {
-        taskRunBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public Builder addTaskRun(
-        io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder builderForValue) {
-      if (taskRunBuilder_ == null) {
-        ensureTaskRunIsMutable();
-        taskRun_.add(builderForValue.build());
-        onChanged();
-      } else {
-        taskRunBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public Builder addTaskRun(
-        int index, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder builderForValue) {
-      if (taskRunBuilder_ == null) {
-        ensureTaskRunIsMutable();
-        taskRun_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        taskRunBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public Builder addAllTaskRun(
-        java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep> values) {
-      if (taskRunBuilder_ == null) {
-        ensureTaskRunIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, taskRun_);
-        onChanged();
-      } else {
-        taskRunBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public Builder clearTaskRun() {
-      if (taskRunBuilder_ == null) {
-        taskRun_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        taskRunBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public Builder removeTaskRun(int index) {
-      if (taskRunBuilder_ == null) {
-        ensureTaskRunIsMutable();
-        taskRun_.remove(index);
-        onChanged();
-      } else {
-        taskRunBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder getTaskRunBuilder(
-        int index) {
-      return getTaskRunFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder getTaskRunOrBuilder(
-        int index) {
-      if (taskRunBuilder_ == null) {
-        return taskRun_.get(index);  } else {
-        return taskRunBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder> 
-         getTaskRunOrBuilderList() {
-      if (taskRunBuilder_ != null) {
-        return taskRunBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(taskRun_);
-      }
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder addTaskRunBuilder() {
-      return getTaskRunFieldBuilder().addBuilder(
-          io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder addTaskRunBuilder(
-        int index) {
-      return getTaskRunFieldBuilder().addBuilder(
-          index, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
-     */
-    public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder> 
-         getTaskRunBuilderList() {
-      return getTaskRunFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder> 
-        getTaskRunFieldBuilder() {
-      if (taskRunBuilder_ == null) {
-        taskRunBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder>(
-                taskRun_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
-        taskRun_ = null;
-      }
-      return taskRunBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1694,41 +1343,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pipelines.tekton.v1alpha1.TaskRun)
+    // @@protoc_insertion_point(builder_scope:pipelines.tekton.v1alpha1.TaskRunStep)
   }
 
-  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.TaskRun)
-  private static final io.cuemby.pipelines.tekton.v1alpha1.TaskRun DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.TaskRunStep)
+  private static final io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.cuemby.pipelines.tekton.v1alpha1.TaskRun();
+    DEFAULT_INSTANCE = new io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep();
   }
 
-  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRun getDefaultInstance() {
+  public static io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TaskRun>
-      PARSER = new com.google.protobuf.AbstractParser<TaskRun>() {
+  private static final com.google.protobuf.Parser<TaskRunStep>
+      PARSER = new com.google.protobuf.AbstractParser<TaskRunStep>() {
     @java.lang.Override
-    public TaskRun parsePartialFrom(
+    public TaskRunStep parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TaskRun(input, extensionRegistry);
+      return new TaskRunStep(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<TaskRun> parser() {
+  public static com.google.protobuf.Parser<TaskRunStep> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<TaskRun> getParserForType() {
+  public com.google.protobuf.Parser<TaskRunStep> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public io.cuemby.pipelines.tekton.v1alpha1.TaskRun getDefaultInstanceForType() {
+  public io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
