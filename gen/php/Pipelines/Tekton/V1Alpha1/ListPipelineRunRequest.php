@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPipelineRunRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string namespace = 1 [json_name = "namespace"];</code>
+     * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
      */
-    protected $namespace = '';
+    protected $runtime_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class ListPipelineRunRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $namespace
+     *     @type string $runtime_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class ListPipelineRunRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1 [json_name = "namespace"];</code>
+     * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
      * @return string
      */
-    public function getNamespace()
+    public function getRuntimeId()
     {
-        return $this->namespace;
+        return $this->runtime_id;
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1 [json_name = "namespace"];</code>
+     * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setRuntimeId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->namespace = $var;
+        $this->runtime_id = $var;
 
         return $this;
     }

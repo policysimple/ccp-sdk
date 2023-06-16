@@ -26,9 +26,21 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
      */
     protected $namespace = '';
     /**
-     * Generated from protobuf field <code>string pipeline_run_status = 4 [json_name = "pipelineRunStatus"];</code>
+     * Generated from protobuf field <code>string message = 4 [json_name = "message"];</code>
+     */
+    protected $message = '';
+    /**
+     * Generated from protobuf field <code>string reason = 5 [json_name = "reason"];</code>
+     */
+    protected $reason = '';
+    /**
+     * Generated from protobuf field <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
      */
     protected $pipeline_run_status = '';
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     */
+    private $task_run;
 
     /**
      * Constructor.
@@ -39,7 +51,10 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $label
      *     @type string $namespace
+     *     @type string $message
+     *     @type string $reason
      *     @type string $pipeline_run_status
+     *     @type \Pipelines\Tekton\V1Alpha1\TaskRun[]|\Google\Protobuf\Internal\RepeatedField $task_run
      * }
      */
     public function __construct($data = NULL) {
@@ -114,7 +129,51 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string pipeline_run_status = 4 [json_name = "pipelineRunStatus"];</code>
+     * Generated from protobuf field <code>string message = 4 [json_name = "message"];</code>
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * Generated from protobuf field <code>string message = 4 [json_name = "message"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->message = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reason = 5 [json_name = "reason"];</code>
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->reason;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reason = 5 [json_name = "reason"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReason($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->reason = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
      * @return string
      */
     public function getPipelineRunStatus()
@@ -123,7 +182,7 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string pipeline_run_status = 4 [json_name = "pipelineRunStatus"];</code>
+     * Generated from protobuf field <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
      * @param string $var
      * @return $this
      */
@@ -131,6 +190,28 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->pipeline_run_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTaskRun()
+    {
+        return $this->task_run;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * @param \Pipelines\Tekton\V1Alpha1\TaskRun[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTaskRun($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\TaskRun::class);
+        $this->task_run = $arr;
 
         return $this;
     }

@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-û
+å
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -131,14 +131,22 @@ param_name (	R	paramName
 validation (	R
 validation
 
-type_value (	R	typeValue"…
+type_value (	R	typeValue"ö
 PipelineRun
 name (	Rname
 label (	Rlabel
-	namespace (	R	namespace.
-pipeline_run_status (	RpipelineRunStatus"O
+	namespace (	R	namespace
+message (	Rmessage
+reason (	Rreason.
+pipeline_run_status (	RpipelineRunStatus=
+task_run (2".pipelines.tekton.v1alpha1.TaskRunRtaskRun"O
 PipelineRunList<
-items (2&.pipelines.tekton.v1alpha1.PipelineRunRitemsB®
+items (2&.pipelines.tekton.v1alpha1.PipelineRunRitems"w
+TaskRun
+name (	Rname
+message (	Rmessage
+reason (	Rreason&
+task_run_status (	RtaskRunStatusB®
 #io.cuemby.pipelines.tekton.v1alpha1BTektonProtoPZ:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1¢PPXªPipelines.Tekton.V1Alpha1ÊPipelines\\Tekton\\V1Alpha1bproto3'
         , true);
 
