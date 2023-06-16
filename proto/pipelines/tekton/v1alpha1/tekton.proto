@@ -107,9 +107,19 @@ message PipelineRun {
     string name = 1;
     string label = 2;
     string namespace = 3;
-    string pipeline_run_status = 4;
+    string message = 4;
+    string reason = 5;
+    string pipeline_run_status = 6;
+    repeated TaskRun task_run = 7;
 }
 
 message PipelineRunList {
     repeated PipelineRun items = 1;
+}
+
+message TaskRun {
+    string name = 1;
+    string message = 2;
+    string reason = 3;
+    string task_run_status = 4;
 }

@@ -54,9 +54,7 @@ message ListTektonTaskPipelineResponse {
 // PIPELINERUN
 
 message GetPipelineRunRequest {
-    string name = 1;
-    string namespace = 2;
-
+    string runtime_id = 1;
 }
 
 message GetPipelineRunResponse {
@@ -65,7 +63,7 @@ message GetPipelineRunResponse {
 }
 
 message ListPipelineRunRequest {
-    string namespace = 1;
+    string runtime_id = 1;
 }
 
 message ListPipelineRunResponse {
