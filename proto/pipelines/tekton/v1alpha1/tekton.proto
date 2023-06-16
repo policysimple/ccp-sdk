@@ -109,8 +109,11 @@ message PipelineRun {
     string namespace = 3;
     string message = 4;
     string reason = 5;
-    string pipeline_run_status = 6;
-    repeated TaskRun task_run = 7;
+    string started_at = 6;
+    string finished_at = 7;
+    string duration = 8;
+    string pipeline_run_status = 9;
+    repeated TaskRun task_run = 10;
 }
 
 message PipelineRunList {
@@ -121,5 +124,21 @@ message TaskRun {
     string name = 1;
     string message = 2;
     string reason = 3;
-    string task_run_status = 4;
+    string started_at = 4;
+    string finished_at = 5;
+    string duration = 6;
+    string task_run_status = 7;
+    repeated TaskRunStep task_run = 8;
+
+}
+
+message TaskRunStep {
+    string name = 1;
+    string message = 2;
+    string reason = 3;
+    string started_at = 4;
+    string finished_at = 5;
+    string duration = 6;
+    string task_run_step_status = 7;
+    
 }

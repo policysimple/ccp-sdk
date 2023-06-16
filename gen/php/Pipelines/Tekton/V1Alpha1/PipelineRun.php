@@ -34,11 +34,23 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
      */
     protected $reason = '';
     /**
-     * Generated from protobuf field <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+     * Generated from protobuf field <code>string started_at = 6 [json_name = "startedAt"];</code>
+     */
+    protected $started_at = '';
+    /**
+     * Generated from protobuf field <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+     */
+    protected $finished_at = '';
+    /**
+     * Generated from protobuf field <code>string duration = 8 [json_name = "duration"];</code>
+     */
+    protected $duration = '';
+    /**
+     * Generated from protobuf field <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
      */
     protected $pipeline_run_status = '';
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     private $task_run;
 
@@ -53,6 +65,9 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
      *     @type string $namespace
      *     @type string $message
      *     @type string $reason
+     *     @type string $started_at
+     *     @type string $finished_at
+     *     @type string $duration
      *     @type string $pipeline_run_status
      *     @type \Pipelines\Tekton\V1Alpha1\TaskRun[]|\Google\Protobuf\Internal\RepeatedField $task_run
      * }
@@ -173,7 +188,73 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+     * Generated from protobuf field <code>string started_at = 6 [json_name = "startedAt"];</code>
+     * @return string
+     */
+    public function getStartedAt()
+    {
+        return $this->started_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string started_at = 6 [json_name = "startedAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStartedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->started_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+     * @return string
+     */
+    public function getFinishedAt()
+    {
+        return $this->finished_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFinishedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->finished_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string duration = 8 [json_name = "duration"];</code>
+     * @return string
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * Generated from protobuf field <code>string duration = 8 [json_name = "duration"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDuration($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
      * @return string
      */
     public function getPipelineRunStatus()
@@ -182,7 +263,7 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+     * Generated from protobuf field <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
      * @param string $var
      * @return $this
      */
@@ -195,7 +276,7 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTaskRun()
@@ -204,7 +285,7 @@ class PipelineRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      * @param \Pipelines\Tekton\V1Alpha1\TaskRun[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

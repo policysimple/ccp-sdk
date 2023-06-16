@@ -21,6 +21,9 @@ private static final long serialVersionUID = 0L;
     namespace_ = "";
     message_ = "";
     reason_ = "";
+    startedAt_ = "";
+    finishedAt_ = "";
+    duration_ = "";
     pipelineRunStatus_ = "";
     taskRun_ = java.util.Collections.emptyList();
   }
@@ -89,10 +92,28 @@ private static final long serialVersionUID = 0L;
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            pipelineRunStatus_ = s;
+            startedAt_ = s;
             break;
           }
           case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            finishedAt_ = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            duration_ = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            pipelineRunStatus_ = s;
+            break;
+          }
+          case 82: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               taskRun_ = new java.util.ArrayList<io.cuemby.pipelines.tekton.v1alpha1.TaskRun>();
               mutable_bitField0_ |= 0x00000001;
@@ -326,10 +347,124 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PIPELINE_RUN_STATUS_FIELD_NUMBER = 6;
+  public static final int STARTED_AT_FIELD_NUMBER = 6;
+  private volatile java.lang.Object startedAt_;
+  /**
+   * <code>string started_at = 6 [json_name = "startedAt"];</code>
+   * @return The startedAt.
+   */
+  @java.lang.Override
+  public java.lang.String getStartedAt() {
+    java.lang.Object ref = startedAt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      startedAt_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string started_at = 6 [json_name = "startedAt"];</code>
+   * @return The bytes for startedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStartedAtBytes() {
+    java.lang.Object ref = startedAt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      startedAt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FINISHED_AT_FIELD_NUMBER = 7;
+  private volatile java.lang.Object finishedAt_;
+  /**
+   * <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+   * @return The finishedAt.
+   */
+  @java.lang.Override
+  public java.lang.String getFinishedAt() {
+    java.lang.Object ref = finishedAt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      finishedAt_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+   * @return The bytes for finishedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFinishedAtBytes() {
+    java.lang.Object ref = finishedAt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      finishedAt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DURATION_FIELD_NUMBER = 8;
+  private volatile java.lang.Object duration_;
+  /**
+   * <code>string duration = 8 [json_name = "duration"];</code>
+   * @return The duration.
+   */
+  @java.lang.Override
+  public java.lang.String getDuration() {
+    java.lang.Object ref = duration_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      duration_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string duration = 8 [json_name = "duration"];</code>
+   * @return The bytes for duration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDurationBytes() {
+    java.lang.Object ref = duration_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      duration_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PIPELINE_RUN_STATUS_FIELD_NUMBER = 9;
   private volatile java.lang.Object pipelineRunStatus_;
   /**
-   * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+   * <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
    * @return The pipelineRunStatus.
    */
   @java.lang.Override
@@ -346,7 +481,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+   * <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
    * @return The bytes for pipelineRunStatus.
    */
   @java.lang.Override
@@ -364,17 +499,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_RUN_FIELD_NUMBER = 7;
+  public static final int TASK_RUN_FIELD_NUMBER = 10;
   private java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRun> taskRun_;
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   @java.lang.Override
   public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRun> getTaskRunList() {
     return taskRun_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder> 
@@ -382,21 +517,21 @@ private static final long serialVersionUID = 0L;
     return taskRun_;
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   @java.lang.Override
   public int getTaskRunCount() {
     return taskRun_.size();
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   @java.lang.Override
   public io.cuemby.pipelines.tekton.v1alpha1.TaskRun getTaskRun(int index) {
     return taskRun_.get(index);
   }
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   @java.lang.Override
   public io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder getTaskRunOrBuilder(
@@ -433,11 +568,20 @@ private static final long serialVersionUID = 0L;
     if (!getReasonBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, reason_);
     }
+    if (!getStartedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, startedAt_);
+    }
+    if (!getFinishedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, finishedAt_);
+    }
+    if (!getDurationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, duration_);
+    }
     if (!getPipelineRunStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pipelineRunStatus_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pipelineRunStatus_);
     }
     for (int i = 0; i < taskRun_.size(); i++) {
-      output.writeMessage(7, taskRun_.get(i));
+      output.writeMessage(10, taskRun_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -463,12 +607,21 @@ private static final long serialVersionUID = 0L;
     if (!getReasonBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, reason_);
     }
+    if (!getStartedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, startedAt_);
+    }
+    if (!getFinishedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, finishedAt_);
+    }
+    if (!getDurationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, duration_);
+    }
     if (!getPipelineRunStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pipelineRunStatus_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pipelineRunStatus_);
     }
     for (int i = 0; i < taskRun_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, taskRun_.get(i));
+        .computeMessageSize(10, taskRun_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -495,6 +648,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMessage())) return false;
     if (!getReason()
         .equals(other.getReason())) return false;
+    if (!getStartedAt()
+        .equals(other.getStartedAt())) return false;
+    if (!getFinishedAt()
+        .equals(other.getFinishedAt())) return false;
+    if (!getDuration()
+        .equals(other.getDuration())) return false;
     if (!getPipelineRunStatus()
         .equals(other.getPipelineRunStatus())) return false;
     if (!getTaskRunList()
@@ -520,6 +679,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + REASON_FIELD_NUMBER;
     hash = (53 * hash) + getReason().hashCode();
+    hash = (37 * hash) + STARTED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getStartedAt().hashCode();
+    hash = (37 * hash) + FINISHED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getFinishedAt().hashCode();
+    hash = (37 * hash) + DURATION_FIELD_NUMBER;
+    hash = (53 * hash) + getDuration().hashCode();
     hash = (37 * hash) + PIPELINE_RUN_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getPipelineRunStatus().hashCode();
     if (getTaskRunCount() > 0) {
@@ -670,6 +835,12 @@ private static final long serialVersionUID = 0L;
 
       reason_ = "";
 
+      startedAt_ = "";
+
+      finishedAt_ = "";
+
+      duration_ = "";
+
       pipelineRunStatus_ = "";
 
       if (taskRunBuilder_ == null) {
@@ -710,6 +881,9 @@ private static final long serialVersionUID = 0L;
       result.namespace_ = namespace_;
       result.message_ = message_;
       result.reason_ = reason_;
+      result.startedAt_ = startedAt_;
+      result.finishedAt_ = finishedAt_;
+      result.duration_ = duration_;
       result.pipelineRunStatus_ = pipelineRunStatus_;
       if (taskRunBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -786,6 +960,18 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getReason().isEmpty()) {
         reason_ = other.reason_;
+        onChanged();
+      }
+      if (!other.getStartedAt().isEmpty()) {
+        startedAt_ = other.startedAt_;
+        onChanged();
+      }
+      if (!other.getFinishedAt().isEmpty()) {
+        finishedAt_ = other.finishedAt_;
+        onChanged();
+      }
+      if (!other.getDuration().isEmpty()) {
+        duration_ = other.duration_;
         onChanged();
       }
       if (!other.getPipelineRunStatus().isEmpty()) {
@@ -1228,9 +1414,237 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object startedAt_ = "";
+    /**
+     * <code>string started_at = 6 [json_name = "startedAt"];</code>
+     * @return The startedAt.
+     */
+    public java.lang.String getStartedAt() {
+      java.lang.Object ref = startedAt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startedAt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string started_at = 6 [json_name = "startedAt"];</code>
+     * @return The bytes for startedAt.
+     */
+    public com.google.protobuf.ByteString
+        getStartedAtBytes() {
+      java.lang.Object ref = startedAt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string started_at = 6 [json_name = "startedAt"];</code>
+     * @param value The startedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      startedAt_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string started_at = 6 [json_name = "startedAt"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStartedAt() {
+      
+      startedAt_ = getDefaultInstance().getStartedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string started_at = 6 [json_name = "startedAt"];</code>
+     * @param value The bytes for startedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      startedAt_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object finishedAt_ = "";
+    /**
+     * <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+     * @return The finishedAt.
+     */
+    public java.lang.String getFinishedAt() {
+      java.lang.Object ref = finishedAt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        finishedAt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+     * @return The bytes for finishedAt.
+     */
+    public com.google.protobuf.ByteString
+        getFinishedAtBytes() {
+      java.lang.Object ref = finishedAt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        finishedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+     * @param value The finishedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFinishedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      finishedAt_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFinishedAt() {
+      
+      finishedAt_ = getDefaultInstance().getFinishedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+     * @param value The bytes for finishedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFinishedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      finishedAt_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object duration_ = "";
+    /**
+     * <code>string duration = 8 [json_name = "duration"];</code>
+     * @return The duration.
+     */
+    public java.lang.String getDuration() {
+      java.lang.Object ref = duration_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        duration_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string duration = 8 [json_name = "duration"];</code>
+     * @return The bytes for duration.
+     */
+    public com.google.protobuf.ByteString
+        getDurationBytes() {
+      java.lang.Object ref = duration_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        duration_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string duration = 8 [json_name = "duration"];</code>
+     * @param value The duration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDuration(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      duration_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string duration = 8 [json_name = "duration"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDuration() {
+      
+      duration_ = getDefaultInstance().getDuration();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string duration = 8 [json_name = "duration"];</code>
+     * @param value The bytes for duration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDurationBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      duration_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object pipelineRunStatus_ = "";
     /**
-     * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+     * <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
      * @return The pipelineRunStatus.
      */
     public java.lang.String getPipelineRunStatus() {
@@ -1246,7 +1660,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+     * <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
      * @return The bytes for pipelineRunStatus.
      */
     public com.google.protobuf.ByteString
@@ -1263,7 +1677,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+     * <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
      * @param value The pipelineRunStatus to set.
      * @return This builder for chaining.
      */
@@ -1278,7 +1692,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+     * <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
      * @return This builder for chaining.
      */
     public Builder clearPipelineRunStatus() {
@@ -1288,7 +1702,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+     * <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
      * @param value The bytes for pipelineRunStatus to set.
      * @return This builder for chaining.
      */
@@ -1317,7 +1731,7 @@ private static final long serialVersionUID = 0L;
         io.cuemby.pipelines.tekton.v1alpha1.TaskRun, io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder, io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder> taskRunBuilder_;
 
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRun> getTaskRunList() {
       if (taskRunBuilder_ == null) {
@@ -1327,7 +1741,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public int getTaskRunCount() {
       if (taskRunBuilder_ == null) {
@@ -1337,7 +1751,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskRun getTaskRun(int index) {
       if (taskRunBuilder_ == null) {
@@ -1347,7 +1761,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public Builder setTaskRun(
         int index, io.cuemby.pipelines.tekton.v1alpha1.TaskRun value) {
@@ -1364,7 +1778,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public Builder setTaskRun(
         int index, io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder builderForValue) {
@@ -1378,7 +1792,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public Builder addTaskRun(io.cuemby.pipelines.tekton.v1alpha1.TaskRun value) {
       if (taskRunBuilder_ == null) {
@@ -1394,7 +1808,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public Builder addTaskRun(
         int index, io.cuemby.pipelines.tekton.v1alpha1.TaskRun value) {
@@ -1411,7 +1825,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public Builder addTaskRun(
         io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder builderForValue) {
@@ -1425,7 +1839,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public Builder addTaskRun(
         int index, io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder builderForValue) {
@@ -1439,7 +1853,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public Builder addAllTaskRun(
         java.lang.Iterable<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRun> values) {
@@ -1454,7 +1868,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public Builder clearTaskRun() {
       if (taskRunBuilder_ == null) {
@@ -1467,7 +1881,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public Builder removeTaskRun(int index) {
       if (taskRunBuilder_ == null) {
@@ -1480,14 +1894,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder getTaskRunBuilder(
         int index) {
       return getTaskRunFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder getTaskRunOrBuilder(
         int index) {
@@ -1497,7 +1911,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder> 
          getTaskRunOrBuilderList() {
@@ -1508,14 +1922,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder addTaskRunBuilder() {
       return getTaskRunFieldBuilder().addBuilder(
           io.cuemby.pipelines.tekton.v1alpha1.TaskRun.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder addTaskRunBuilder(
         int index) {
@@ -1523,7 +1937,7 @@ private static final long serialVersionUID = 0L;
           index, io.cuemby.pipelines.tekton.v1alpha1.TaskRun.getDefaultInstance());
     }
     /**
-     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+     * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
      */
     public java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRun.Builder> 
          getTaskRunBuilderList() {

@@ -68,37 +68,73 @@ public interface PipelineRunOrBuilder extends
       getReasonBytes();
 
   /**
-   * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+   * <code>string started_at = 6 [json_name = "startedAt"];</code>
+   * @return The startedAt.
+   */
+  java.lang.String getStartedAt();
+  /**
+   * <code>string started_at = 6 [json_name = "startedAt"];</code>
+   * @return The bytes for startedAt.
+   */
+  com.google.protobuf.ByteString
+      getStartedAtBytes();
+
+  /**
+   * <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+   * @return The finishedAt.
+   */
+  java.lang.String getFinishedAt();
+  /**
+   * <code>string finished_at = 7 [json_name = "finishedAt"];</code>
+   * @return The bytes for finishedAt.
+   */
+  com.google.protobuf.ByteString
+      getFinishedAtBytes();
+
+  /**
+   * <code>string duration = 8 [json_name = "duration"];</code>
+   * @return The duration.
+   */
+  java.lang.String getDuration();
+  /**
+   * <code>string duration = 8 [json_name = "duration"];</code>
+   * @return The bytes for duration.
+   */
+  com.google.protobuf.ByteString
+      getDurationBytes();
+
+  /**
+   * <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
    * @return The pipelineRunStatus.
    */
   java.lang.String getPipelineRunStatus();
   /**
-   * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
+   * <code>string pipeline_run_status = 9 [json_name = "pipelineRunStatus"];</code>
    * @return The bytes for pipelineRunStatus.
    */
   com.google.protobuf.ByteString
       getPipelineRunStatusBytes();
 
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRun> 
       getTaskRunList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.TaskRun getTaskRun(int index);
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   int getTaskRunCount();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder> 
       getTaskRunOrBuilderList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 10 [json_name = "taskRun"];</code>
    */
   io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder getTaskRunOrBuilder(
       int index);
