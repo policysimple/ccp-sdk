@@ -26,9 +26,9 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     protected $image = '';
     /**
-     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Budget budget = 4 [json_name = "budget"];</code>
      */
-    protected $budget = '';
+    protected $budget = null;
     /**
      * Generated from protobuf field <code>string card_id = 5 [json_name = "cardId"];</code>
      */
@@ -67,7 +67,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type string $project_id
      *     @type string $name
      *     @type string $image
-     *     @type string $budget
+     *     @type \Payment\V1alpha1\Budget $budget
      *     @type string $card_id
      *     @type string $description
      *     @type string $created_at
@@ -149,22 +149,32 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
-     * @return string
+     * Generated from protobuf field <code>.payment.v1alpha1.Budget budget = 4 [json_name = "budget"];</code>
+     * @return \Payment\V1alpha1\Budget|null
      */
     public function getBudget()
     {
         return $this->budget;
     }
 
+    public function hasBudget()
+    {
+        return isset($this->budget);
+    }
+
+    public function clearBudget()
+    {
+        unset($this->budget);
+    }
+
     /**
-     * Generated from protobuf field <code>string budget = 4 [json_name = "budget"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.payment.v1alpha1.Budget budget = 4 [json_name = "budget"];</code>
+     * @param \Payment\V1alpha1\Budget $var
      * @return $this
      */
     public function setBudget($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Payment\V1alpha1\Budget::class);
         $this->budget = $var;
 
         return $this;
