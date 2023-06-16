@@ -249,9 +249,12 @@ struct TaskParamsToCustomizeDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TaskParamsToCustomizeDefaultTypeInternal _TaskParamsToCustomize_default_instance_;
 constexpr PipelineRun::PipelineRun(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : task_run_()
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , label_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , reason_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , pipeline_run_status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct PipelineRunDefaultTypeInternal {
   constexpr PipelineRunDefaultTypeInternal()
@@ -274,10 +277,25 @@ struct PipelineRunListDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PipelineRunListDefaultTypeInternal _PipelineRunList_default_instance_;
+constexpr TaskRun::TaskRun(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , reason_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , task_run_status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct TaskRunDefaultTypeInternal {
+  constexpr TaskRunDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TaskRunDefaultTypeInternal() {}
+  union {
+    TaskRun _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TaskRunDefaultTypeInternal _TaskRun_default_instance_;
 }  // namespace v1alpha1
 }  // namespace tekton
 }  // namespace pipelines
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[17];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[18];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = nullptr;
 
@@ -452,13 +470,25 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRun, name_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRun, label_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRun, namespace__),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRun, message_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRun, reason_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRun, pipeline_run_status_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRun, task_run_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRunList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRunList, items_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, name_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, message_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, reason_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, task_run_status_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pipelines::tekton::v1alpha1::Params)},
@@ -477,7 +507,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 139, -1, sizeof(::pipelines::tekton::v1alpha1::TaskToCustomize)},
   { 153, -1, sizeof(::pipelines::tekton::v1alpha1::TaskParamsToCustomize)},
   { 162, -1, sizeof(::pipelines::tekton::v1alpha1::PipelineRun)},
-  { 171, -1, sizeof(::pipelines::tekton::v1alpha1::PipelineRunList)},
+  { 174, -1, sizeof(::pipelines::tekton::v1alpha1::PipelineRunList)},
+  { 180, -1, sizeof(::pipelines::tekton::v1alpha1::TaskRun)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -498,6 +529,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::tekton::v1alpha1::_TaskParamsToCustomize_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::tekton::v1alpha1::_PipelineRun_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::tekton::v1alpha1::_PipelineRunList_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::tekton::v1alpha1::_TaskRun_default_instance_),
 };
 
 const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -583,22 +615,28 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "loy\"\213\001\n\025TaskParamsToCustomize\022\035\n\nparam_n"
   "ame\030\001 \001(\tR\tparamName\022\024\n\005label\030\002 \001(\tR\005lab"
   "el\022\036\n\nvalidation\030\003 \001(\tR\nvalidation\022\035\n\nty"
-  "pe_value\030\004 \001(\tR\ttypeValue\"\205\001\n\013PipelineRu"
+  "pe_value\030\004 \001(\tR\ttypeValue\"\366\001\n\013PipelineRu"
   "n\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\tR\005la"
-  "bel\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022.\n\023pip"
-  "eline_run_status\030\004 \001(\tR\021pipelineRunStatu"
-  "s\"O\n\017PipelineRunList\022<\n\005items\030\001 \003(\0132&.pi"
-  "pelines.tekton.v1alpha1.PipelineRunR\005ite"
-  "msB\256\001\n#io.cuemby.pipelines.tekton.v1alph"
-  "a1B\013TektonProtoP\001Z:github.com/cuemby/ccp"
-  "-sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003"
-  "PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipeli"
-  "nes\\Tekton\\V1Alpha1b\006proto3"
+  "bel\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022\030\n\007mes"
+  "sage\030\004 \001(\tR\007message\022\026\n\006reason\030\005 \001(\tR\006rea"
+  "son\022.\n\023pipeline_run_status\030\006 \001(\tR\021pipeli"
+  "neRunStatus\022=\n\010task_run\030\007 \003(\0132\".pipeline"
+  "s.tekton.v1alpha1.TaskRunR\007taskRun\"O\n\017Pi"
+  "pelineRunList\022<\n\005items\030\001 \003(\0132&.pipelines"
+  ".tekton.v1alpha1.PipelineRunR\005items\"w\n\007T"
+  "askRun\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 "
+  "\001(\tR\007message\022\026\n\006reason\030\003 \001(\tR\006reason\022&\n\017"
+  "task_run_status\030\004 \001(\tR\rtaskRunStatusB\256\001\n"
+  "#io.cuemby.pipelines.tekton.v1alpha1B\013Te"
+  "ktonProtoP\001Z:github.com/cuemby/ccp-sdk/g"
+  "en/go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031"
+  "Pipelines.Tekton.V1Alpha1\312\002\031Pipelines\\Te"
+  "kton\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = {
-  false, false, 3707, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
-  &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 17,
+  false, false, 3941, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
+  &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 18,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
 };
@@ -4687,7 +4725,8 @@ class PipelineRun::_Internal {
 
 PipelineRun::PipelineRun(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  task_run_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -4695,7 +4734,8 @@ PipelineRun::PipelineRun(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:pipelines.tekton.v1alpha1.PipelineRun)
 }
 PipelineRun::PipelineRun(const PipelineRun& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      task_run_(from.task_run_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
@@ -4712,6 +4752,16 @@ PipelineRun::PipelineRun(const PipelineRun& from)
     namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_namespace_(), 
       GetArenaForAllocation());
   }
+  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_message().empty()) {
+    message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_reason().empty()) {
+    reason_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reason(), 
+      GetArenaForAllocation());
+  }
   pipeline_run_status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_pipeline_run_status().empty()) {
     pipeline_run_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pipeline_run_status(), 
@@ -4724,6 +4774,8 @@ inline void PipelineRun::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 pipeline_run_status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -4739,6 +4791,8 @@ inline void PipelineRun::SharedDtor() {
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   label_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reason_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   pipeline_run_status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -4758,9 +4812,12 @@ void PipelineRun::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  task_run_.Clear();
   name_.ClearToEmpty();
   label_.ClearToEmpty();
   namespace__.ClearToEmpty();
+  message_.ClearToEmpty();
+  reason_.ClearToEmpty();
   pipeline_run_status_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4798,13 +4855,43 @@ const char* PipelineRun::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string pipeline_run_status = 4 [json_name = "pipelineRunStatus"];
+      // string message = 4 [json_name = "message"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_message();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.PipelineRun.message"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string reason = 5 [json_name = "reason"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_reason();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.PipelineRun.reason"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_pipeline_run_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.PipelineRun.pipeline_run_status"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_task_run(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -4866,14 +4953,42 @@ failure:
         3, this->_internal_namespace_(), target);
   }
 
-  // string pipeline_run_status = 4 [json_name = "pipelineRunStatus"];
+  // string message = 4 [json_name = "message"];
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.PipelineRun.message");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_message(), target);
+  }
+
+  // string reason = 5 [json_name = "reason"];
+  if (!this->_internal_reason().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.PipelineRun.reason");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_reason(), target);
+  }
+
+  // string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];
   if (!this->_internal_pipeline_run_status().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_pipeline_run_status().data(), static_cast<int>(this->_internal_pipeline_run_status().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "pipelines.tekton.v1alpha1.PipelineRun.pipeline_run_status");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_pipeline_run_status(), target);
+        6, this->_internal_pipeline_run_status(), target);
+  }
+
+  // repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_task_run_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(7, this->_internal_task_run(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4891,6 +5006,13 @@ size_t PipelineRun::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];
+  total_size += 1UL * this->_internal_task_run_size();
+  for (const auto& msg : this->task_run_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   // string name = 1 [json_name = "name"];
   if (!this->_internal_name().empty()) {
@@ -4913,7 +5035,21 @@ size_t PipelineRun::ByteSizeLong() const {
         this->_internal_namespace_());
   }
 
-  // string pipeline_run_status = 4 [json_name = "pipelineRunStatus"];
+  // string message = 4 [json_name = "message"];
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // string reason = 5 [json_name = "reason"];
+  if (!this->_internal_reason().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_reason());
+  }
+
+  // string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];
   if (!this->_internal_pipeline_run_status().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -4948,6 +5084,7 @@ void PipelineRun::MergeFrom(const PipelineRun& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  task_run_.MergeFrom(from.task_run_);
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
@@ -4956,6 +5093,12 @@ void PipelineRun::MergeFrom(const PipelineRun& from) {
   }
   if (!from._internal_namespace_().empty()) {
     _internal_set_namespace_(from._internal_namespace_());
+  }
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (!from._internal_reason().empty()) {
+    _internal_set_reason(from._internal_reason());
   }
   if (!from._internal_pipeline_run_status().empty()) {
     _internal_set_pipeline_run_status(from._internal_pipeline_run_status());
@@ -4977,6 +5120,7 @@ bool PipelineRun::IsInitialized() const {
 void PipelineRun::InternalSwap(PipelineRun* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  task_run_.InternalSwap(&other->task_run_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, GetArenaForAllocation(),
@@ -4991,6 +5135,16 @@ void PipelineRun::InternalSwap(PipelineRun* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &namespace__, GetArenaForAllocation(),
       &other->namespace__, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &message_, GetArenaForAllocation(),
+      &other->message_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &reason_, GetArenaForAllocation(),
+      &other->reason_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -5195,6 +5349,332 @@ void PipelineRunList::InternalSwap(PipelineRunList* other) {
       file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[16]);
 }
 
+// ===================================================================
+
+class TaskRun::_Internal {
+ public:
+};
+
+TaskRun::TaskRun(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.tekton.v1alpha1.TaskRun)
+}
+TaskRun::TaskRun(const TaskRun& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_message().empty()) {
+    message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_reason().empty()) {
+    reason_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reason(), 
+      GetArenaForAllocation());
+  }
+  task_run_status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_task_run_status().empty()) {
+    task_run_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_task_run_status(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.tekton.v1alpha1.TaskRun)
+}
+
+inline void TaskRun::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+task_run_status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+TaskRun::~TaskRun() {
+  // @@protoc_insertion_point(destructor:pipelines.tekton.v1alpha1.TaskRun)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void TaskRun::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reason_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  task_run_status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void TaskRun::ArenaDtor(void* object) {
+  TaskRun* _this = reinterpret_cast< TaskRun* >(object);
+  (void)_this;
+}
+void TaskRun::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TaskRun::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TaskRun::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.tekton.v1alpha1.TaskRun)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmpty();
+  message_.ClearToEmpty();
+  reason_.ClearToEmpty();
+  task_run_status_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TaskRun::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1 [json_name = "name"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskRun.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string message = 2 [json_name = "message"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskRun.message"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string reason = 3 [json_name = "reason"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_reason();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskRun.reason"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string task_run_status = 4 [json_name = "taskRunStatus"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_task_run_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskRun.task_run_status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* TaskRun::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.tekton.v1alpha1.TaskRun)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.TaskRun.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // string message = 2 [json_name = "message"];
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.TaskRun.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  // string reason = 3 [json_name = "reason"];
+  if (!this->_internal_reason().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.TaskRun.reason");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_reason(), target);
+  }
+
+  // string task_run_status = 4 [json_name = "taskRunStatus"];
+  if (!this->_internal_task_run_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_task_run_status().data(), static_cast<int>(this->_internal_task_run_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.TaskRun.task_run_status");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_task_run_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.tekton.v1alpha1.TaskRun)
+  return target;
+}
+
+size_t TaskRun::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.tekton.v1alpha1.TaskRun)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string message = 2 [json_name = "message"];
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // string reason = 3 [json_name = "reason"];
+  if (!this->_internal_reason().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_reason());
+  }
+
+  // string task_run_status = 4 [json_name = "taskRunStatus"];
+  if (!this->_internal_task_run_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_task_run_status());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TaskRun::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TaskRun::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TaskRun::GetClassData() const { return &_class_data_; }
+
+void TaskRun::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<TaskRun *>(to)->MergeFrom(
+      static_cast<const TaskRun &>(from));
+}
+
+
+void TaskRun::MergeFrom(const TaskRun& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.tekton.v1alpha1.TaskRun)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  if (!from._internal_reason().empty()) {
+    _internal_set_reason(from._internal_reason());
+  }
+  if (!from._internal_task_run_status().empty()) {
+    _internal_set_task_run_status(from._internal_task_run_status());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TaskRun::CopyFrom(const TaskRun& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.tekton.v1alpha1.TaskRun)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TaskRun::IsInitialized() const {
+  return true;
+}
+
+void TaskRun::InternalSwap(TaskRun* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, GetArenaForAllocation(),
+      &other->name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &message_, GetArenaForAllocation(),
+      &other->message_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &reason_, GetArenaForAllocation(),
+      &other->reason_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &task_run_status_, GetArenaForAllocation(),
+      &other->task_run_status_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TaskRun::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_getter, &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once,
+      file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto[17]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace tekton
@@ -5250,6 +5730,9 @@ template<> PROTOBUF_NOINLINE ::pipelines::tekton::v1alpha1::PipelineRun* Arena::
 }
 template<> PROTOBUF_NOINLINE ::pipelines::tekton::v1alpha1::PipelineRunList* Arena::CreateMaybeMessage< ::pipelines::tekton::v1alpha1::PipelineRunList >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::tekton::v1alpha1::PipelineRunList >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::tekton::v1alpha1::TaskRun* Arena::CreateMaybeMessage< ::pipelines::tekton::v1alpha1::TaskRun >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::tekton::v1alpha1::TaskRun >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

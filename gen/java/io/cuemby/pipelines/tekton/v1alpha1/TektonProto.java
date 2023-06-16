@@ -99,6 +99,11 @@ public final class TektonProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_tekton_v1alpha1_PipelineRunList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_TaskRun_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_TaskRun_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -190,17 +195,23 @@ public final class TektonProto {
       "loy\"\213\001\n\025TaskParamsToCustomize\022\035\n\nparam_n" +
       "ame\030\001 \001(\tR\tparamName\022\024\n\005label\030\002 \001(\tR\005lab" +
       "el\022\036\n\nvalidation\030\003 \001(\tR\nvalidation\022\035\n\nty" +
-      "pe_value\030\004 \001(\tR\ttypeValue\"\205\001\n\013PipelineRu" +
+      "pe_value\030\004 \001(\tR\ttypeValue\"\366\001\n\013PipelineRu" +
       "n\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\tR\005la" +
-      "bel\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022.\n\023pip" +
-      "eline_run_status\030\004 \001(\tR\021pipelineRunStatu" +
-      "s\"O\n\017PipelineRunList\022<\n\005items\030\001 \003(\0132&.pi" +
-      "pelines.tekton.v1alpha1.PipelineRunR\005ite" +
-      "msB\256\001\n#io.cuemby.pipelines.tekton.v1alph" +
-      "a1B\013TektonProtoP\001Z:github.com/cuemby/ccp" +
-      "-sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003" +
-      "PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipeli" +
-      "nes\\Tekton\\V1Alpha1b\006proto3"
+      "bel\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022\030\n\007mes" +
+      "sage\030\004 \001(\tR\007message\022\026\n\006reason\030\005 \001(\tR\006rea" +
+      "son\022.\n\023pipeline_run_status\030\006 \001(\tR\021pipeli" +
+      "neRunStatus\022=\n\010task_run\030\007 \003(\0132\".pipeline" +
+      "s.tekton.v1alpha1.TaskRunR\007taskRun\"O\n\017Pi" +
+      "pelineRunList\022<\n\005items\030\001 \003(\0132&.pipelines" +
+      ".tekton.v1alpha1.PipelineRunR\005items\"w\n\007T" +
+      "askRun\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 " +
+      "\001(\tR\007message\022\026\n\006reason\030\003 \001(\tR\006reason\022&\n\017" +
+      "task_run_status\030\004 \001(\tR\rtaskRunStatusB\256\001\n" +
+      "#io.cuemby.pipelines.tekton.v1alpha1B\013Te" +
+      "ktonProtoP\001Z:github.com/cuemby/ccp-sdk/g" +
+      "en/go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031" +
+      "Pipelines.Tekton.V1Alpha1\312\002\031Pipelines\\Te" +
+      "kton\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -301,13 +312,19 @@ public final class TektonProto {
     internal_static_pipelines_tekton_v1alpha1_PipelineRun_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_PipelineRun_descriptor,
-        new java.lang.String[] { "Name", "Label", "Namespace", "PipelineRunStatus", });
+        new java.lang.String[] { "Name", "Label", "Namespace", "Message", "Reason", "PipelineRunStatus", "TaskRun", });
     internal_static_pipelines_tekton_v1alpha1_PipelineRunList_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_pipelines_tekton_v1alpha1_PipelineRunList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_PipelineRunList_descriptor,
         new java.lang.String[] { "Items", });
+    internal_static_pipelines_tekton_v1alpha1_TaskRun_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_pipelines_tekton_v1alpha1_TaskRun_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_TaskRun_descriptor,
+        new java.lang.String[] { "Name", "Message", "Reason", "TaskRunStatus", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

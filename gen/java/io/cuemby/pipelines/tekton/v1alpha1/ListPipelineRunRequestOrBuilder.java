@@ -8,14 +8,14 @@ public interface ListPipelineRunRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string namespace = 1 [json_name = "namespace"];</code>
-   * @return The namespace.
+   * <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
+   * @return The runtimeId.
    */
-  java.lang.String getNamespace();
+  java.lang.String getRuntimeId();
   /**
-   * <code>string namespace = 1 [json_name = "namespace"];</code>
-   * @return The bytes for namespace.
+   * <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
+   * @return The bytes for runtimeId.
    */
   com.google.protobuf.ByteString
-      getNamespaceBytes();
+      getRuntimeIdBytes();
 }
