@@ -8,26 +8,14 @@ public interface GetPipelineRunRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The name.
+   * <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
+   * @return The runtimeId.
    */
-  java.lang.String getName();
+  java.lang.String getRuntimeId();
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
+   * @return The bytes for runtimeId.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
-   * @return The namespace.
-   */
-  java.lang.String getNamespace();
-  /**
-   * <code>string namespace = 2 [json_name = "namespace"];</code>
-   * @return The bytes for namespace.
-   */
-  com.google.protobuf.ByteString
-      getNamespaceBytes();
+      getRuntimeIdBytes();
 }

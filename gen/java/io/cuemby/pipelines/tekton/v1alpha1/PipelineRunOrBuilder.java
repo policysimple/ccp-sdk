@@ -44,14 +44,62 @@ public interface PipelineRunOrBuilder extends
       getNamespaceBytes();
 
   /**
-   * <code>string pipeline_run_status = 4 [json_name = "pipelineRunStatus"];</code>
+   * <code>string message = 4 [json_name = "message"];</code>
+   * @return The message.
+   */
+  java.lang.String getMessage();
+  /**
+   * <code>string message = 4 [json_name = "message"];</code>
+   * @return The bytes for message.
+   */
+  com.google.protobuf.ByteString
+      getMessageBytes();
+
+  /**
+   * <code>string reason = 5 [json_name = "reason"];</code>
+   * @return The reason.
+   */
+  java.lang.String getReason();
+  /**
+   * <code>string reason = 5 [json_name = "reason"];</code>
+   * @return The bytes for reason.
+   */
+  com.google.protobuf.ByteString
+      getReasonBytes();
+
+  /**
+   * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
    * @return The pipelineRunStatus.
    */
   java.lang.String getPipelineRunStatus();
   /**
-   * <code>string pipeline_run_status = 4 [json_name = "pipelineRunStatus"];</code>
+   * <code>string pipeline_run_status = 6 [json_name = "pipelineRunStatus"];</code>
    * @return The bytes for pipelineRunStatus.
    */
   com.google.protobuf.ByteString
       getPipelineRunStatusBytes();
+
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   */
+  java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRun> 
+      getTaskRunList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.TaskRun getTaskRun(int index);
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   */
+  int getTaskRunCount();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   */
+  java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder> 
+      getTaskRunOrBuilderList();
+  /**
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRun task_run = 7 [json_name = "taskRun"];</code>
+   */
+  io.cuemby.pipelines.tekton.v1alpha1.TaskRunOrBuilder getTaskRunOrBuilder(
+      int index);
 }

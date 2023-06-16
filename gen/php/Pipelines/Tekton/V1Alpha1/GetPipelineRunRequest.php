@@ -14,13 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetPipelineRunRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
      */
-    protected $name = '';
-    /**
-     * Generated from protobuf field <code>string namespace = 2 [json_name = "namespace"];</code>
-     */
-    protected $namespace = '';
+    protected $runtime_id = '';
 
     /**
      * Constructor.
@@ -28,8 +24,7 @@ class GetPipelineRunRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
-     *     @type string $namespace
+     *     @type string $runtime_id
      * }
      */
     public function __construct($data = NULL) {
@@ -38,45 +33,23 @@ class GetPipelineRunRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
      * @return string
      */
-    public function getName()
+    public function getRuntimeId()
     {
-        return $this->name;
+        return $this->runtime_id;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1 [json_name = "name"];</code>
+     * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setRuntimeId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string namespace = 2 [json_name = "namespace"];</code>
-     * @return string
-     */
-    public function getNamespace()
-    {
-        return $this->namespace;
-    }
-
-    /**
-     * Generated from protobuf field <code>string namespace = 2 [json_name = "namespace"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNamespace($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->namespace = $var;
+        $this->runtime_id = $var;
 
         return $this;
     }

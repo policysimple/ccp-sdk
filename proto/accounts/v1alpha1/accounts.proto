@@ -42,8 +42,9 @@ message MemberProject {
     Role role = 7;
     string uid = 9;
 
-
     string status = 10;
+    string expired_at = 11;
+
 
 }
 message Permission {

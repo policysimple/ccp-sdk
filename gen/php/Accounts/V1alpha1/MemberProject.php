@@ -49,6 +49,10 @@ class MemberProject extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string status = 10 [json_name = "status"];</code>
      */
     protected $status = '';
+    /**
+     * Generated from protobuf field <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+     */
+    protected $expired_at = '';
 
     /**
      * Constructor.
@@ -65,6 +69,7 @@ class MemberProject extends \Google\Protobuf\Internal\Message
      *     @type \Accounts\V1alpha1\Role $role
      *     @type string $uid
      *     @type string $status
+     *     @type string $expired_at
      * }
      */
     public function __construct($data = NULL) {
@@ -276,6 +281,28 @@ class MemberProject extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+     * @return string
+     */
+    public function getExpiredAt()
+    {
+        return $this->expired_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string expired_at = 11 [json_name = "expiredAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExpiredAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->expired_at = $var;
 
         return $this;
     }
