@@ -76,6 +76,7 @@ constexpr MemberProject::MemberProject(
   , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , uid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , expired_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , role_(nullptr)
   , id_(0u)
   , is_active_(false){}
@@ -241,6 +242,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::MemberProject, role_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::MemberProject, uid_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::MemberProject, status_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::MemberProject, expired_at_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::Permission, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -323,10 +325,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 11, -1, sizeof(::accounts::v1alpha1::UserList)},
   { 24, -1, sizeof(::accounts::v1alpha1::MemberRol)},
   { 32, -1, sizeof(::accounts::v1alpha1::MemberProject)},
-  { 46, -1, sizeof(::accounts::v1alpha1::Permission)},
-  { 56, -1, sizeof(::accounts::v1alpha1::Project)},
-  { 70, -1, sizeof(::accounts::v1alpha1::Organization)},
-  { 83, -1, sizeof(::accounts::v1alpha1::UserDetail)},
+  { 47, -1, sizeof(::accounts::v1alpha1::Permission)},
+  { 57, -1, sizeof(::accounts::v1alpha1::Project)},
+  { 71, -1, sizeof(::accounts::v1alpha1::Organization)},
+  { 84, -1, sizeof(::accounts::v1alpha1::UserDetail)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -355,68 +357,69 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto[] PR
   "user\030\007 \001(\010R\013isSuperUser\022\024\n\005image\030\010 \001(\tR\005"
   "image\"L\n\tMemberRol\022\022\n\004name\030\002 \001(\tR\004name\022\031"
   "\n\010is_admin\030\003 \001(\010R\007isAdmin\022\020\n\003uid\030\004 \001(\tR\003"
-  "uid\"\376\001\n\rMemberProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n"
+  "uid\"\235\002\n\rMemberProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n"
   "\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001"
   "(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastNa"
   "me\022\033\n\tis_active\030\005 \001(\010R\010isActive\022\024\n\005image"
   "\030\006 \001(\tR\005image\022+\n\004role\030\007 \001(\0132\027.accounts.v"
   "1alpha1.RoleR\004role\022\020\n\003uid\030\t \001(\tR\003uid\022\026\n\006"
-  "status\030\n \001(\tR\006status\"y\n\nPermission\022\016\n\002id"
-  "\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\026\n\006action"
-  "\030\003 \001(\tR\006action\022\022\n\004type\030\004 \001(\tR\004type\022\033\n\tfu"
-  "ll_name\030\005 \001(\tR\010fullName\"\263\002\n\007Project\022\016\n\002i"
-  "d\030\n \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image"
-  "\030\003 \001(\tR\005image\022\'\n\017organization_id\030\004 \001(\tR\016"
-  "organizationId\022 \n\013description\030\005 \001(\tR\013des"
-  "cription\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022"
-  "\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022-\n\005roles\030"
-  "\010 \003(\0132\027.accounts.v1alpha1.RoleR\005roles\0226\n"
-  "\005users\030\t \003(\0132 .accounts.v1alpha1.MemberP"
-  "rojectR\005users\"\230\002\n\014Organization\022\022\n\004name\030\002"
-  " \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013desc"
-  "ription\030\004 \001(\tR\013description\0221\n\005owner\030\007 \001("
-  "\0132\033.accounts.v1alpha1.UserListR\005owner\022-\n"
-  "\005roles\030\010 \003(\0132\027.accounts.v1alpha1.RoleR\005r"
-  "oles\022\022\n\004slug\030\t \001(\tR\004slug\0226\n\010projects\030\n \003"
-  "(\0132\032.accounts.v1alpha1.ProjectR\010projects"
-  "\022\016\n\002id\030\013 \001(\tR\002id\"\361\t\n\nUserDetail\022\016\n\002id\030\001 "
-  "\001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirs"
-  "t_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001"
-  "(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis"
-  "_active\030\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 "
-  "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupda"
-  "tedAt\022-\n\005roles\030\t \003(\0132\027.accounts.v1alpha1"
-  ".RoleR\005roles\022\?\n\013permissions\030\n \003(\0132\035.acco"
-  "unts.v1alpha1.PermissionR\013permissions\022\"\n"
-  "\ris_super_user\030\013 \001(\010R\013isSuperUser\022E\n\rorg"
-  "anizations\030\014 \003(\0132\037.accounts.v1alpha1.Org"
-  "anizationR\rorganizations\022!\n\014phone_number"
-  "\030\017 \001(\tR\013phoneNumber\022\030\n\007country\030\020 \001(\tR\007co"
-  "untry\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022 "
-  "\001(\tR\007zipCode\022\030\n\007address\030\023 \001(\tR\007address\022\024"
-  "\n\005state\030\024 \001(\tR\005state\022#\n\remoji_country\030\025 "
-  "\001(\tR\014emojiCountry\022$\n\016is_mfa_enabled\030\026 \001("
-  "\010R\014isMfaEnabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010toke"
-  "nCcp\022%\n\016email_verified\030\030 \001(\010R\remailVerif"
-  "ied\022\032\n\010language\030\032 \001(\tR\010language\022+\n\021push_"
-  "notification\030\033 \001(\010R\020pushNotification\022-\n\022"
-  "email_notification\030\034 \001(\010R\021emailNotificat"
-  "ion\0224\n\026new_login_notification\030\035 \001(\010R\024new"
-  "LoginNotification\022/\n\023create_notification"
-  "\030\036 \001(\010R\022createNotification\022/\n\023update_not"
-  "ification\030\037 \001(\010R\022updateNotification\022/\n\023d"
-  "elete_notification\030  \001(\010R\022deleteNotifica"
-  "tion\0229\n\030application_notification\030! \001(\010R\027"
-  "applicationNotification\022+\n\021read_notifica"
-  "tion\030\" \001(\010R\020readNotification\022\035\n\nphone_co"
-  "de\030# \001(\tR\tphoneCode\022)\n\020optional_address\030"
-  "$ \001(\tR\017optionalAddress\022\024\n\005image\030% \001(\tR\005i"
-  "mageB4Z2github.com/cuemby/ccp-sdk/gen/go"
-  "/accounts/v1alpha1b\006proto3"
+  "status\030\n \001(\tR\006status\022\035\n\nexpired_at\030\013 \001(\t"
+  "R\texpiredAt\"y\n\nPermission\022\016\n\002id\030\001 \001(\rR\002i"
+  "d\022\022\n\004name\030\002 \001(\tR\004name\022\026\n\006action\030\003 \001(\tR\006a"
+  "ction\022\022\n\004type\030\004 \001(\tR\004type\022\033\n\tfull_name\030\005"
+  " \001(\tR\010fullName\"\263\002\n\007Project\022\016\n\002id\030\n \001(\tR\002"
+  "id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005i"
+  "mage\022\'\n\017organization_id\030\004 \001(\tR\016organizat"
+  "ionId\022 \n\013description\030\005 \001(\tR\013description\022"
+  "\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdate"
+  "d_at\030\007 \001(\tR\tupdatedAt\022-\n\005roles\030\010 \003(\0132\027.a"
+  "ccounts.v1alpha1.RoleR\005roles\0226\n\005users\030\t "
+  "\003(\0132 .accounts.v1alpha1.MemberProjectR\005u"
+  "sers\"\230\002\n\014Organization\022\022\n\004name\030\002 \001(\tR\004nam"
+  "e\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030\004"
+  " \001(\tR\013description\0221\n\005owner\030\007 \001(\0132\033.accou"
+  "nts.v1alpha1.UserListR\005owner\022-\n\005roles\030\010 "
+  "\003(\0132\027.accounts.v1alpha1.RoleR\005roles\022\022\n\004s"
+  "lug\030\t \001(\tR\004slug\0226\n\010projects\030\n \003(\0132\032.acco"
+  "unts.v1alpha1.ProjectR\010projects\022\016\n\002id\030\013 "
+  "\001(\tR\002id\"\361\t\n\nUserDetail\022\016\n\002id\030\001 \001(\rR\002id\022\027"
+  "\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 "
+  "\001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastN"
+  "ame\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_active\030\006"
+  " \001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001(\tR\tcrea"
+  "tedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022-\n\005"
+  "roles\030\t \003(\0132\027.accounts.v1alpha1.RoleR\005ro"
+  "les\022\?\n\013permissions\030\n \003(\0132\035.accounts.v1al"
+  "pha1.PermissionR\013permissions\022\"\n\ris_super"
+  "_user\030\013 \001(\010R\013isSuperUser\022E\n\rorganization"
+  "s\030\014 \003(\0132\037.accounts.v1alpha1.Organization"
+  "R\rorganizations\022!\n\014phone_number\030\017 \001(\tR\013p"
+  "honeNumber\022\030\n\007country\030\020 \001(\tR\007country\022\022\n\004"
+  "city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022 \001(\tR\007zipC"
+  "ode\022\030\n\007address\030\023 \001(\tR\007address\022\024\n\005state\030\024"
+  " \001(\tR\005state\022#\n\remoji_country\030\025 \001(\tR\014emoj"
+  "iCountry\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isMfaE"
+  "nabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016e"
+  "mail_verified\030\030 \001(\010R\remailVerified\022\032\n\010la"
+  "nguage\030\032 \001(\tR\010language\022+\n\021push_notificat"
+  "ion\030\033 \001(\010R\020pushNotification\022-\n\022email_not"
+  "ification\030\034 \001(\010R\021emailNotification\0224\n\026ne"
+  "w_login_notification\030\035 \001(\010R\024newLoginNoti"
+  "fication\022/\n\023create_notification\030\036 \001(\010R\022c"
+  "reateNotification\022/\n\023update_notification"
+  "\030\037 \001(\010R\022updateNotification\022/\n\023delete_not"
+  "ification\030  \001(\010R\022deleteNotification\0229\n\030a"
+  "pplication_notification\030! \001(\010R\027applicati"
+  "onNotification\022+\n\021read_notification\030\" \001("
+  "\010R\020readNotification\022\035\n\nphone_code\030# \001(\tR"
+  "\tphoneCode\022)\n\020optional_address\030$ \001(\tR\017op"
+  "tionalAddress\022\024\n\005image\030% \001(\tR\005imageB4Z2g"
+  "ithub.com/cuemby/ccp-sdk/gen/go/accounts"
+  "/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto = {
-  false, false, 2866, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
+  false, false, 2897, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
   &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once, nullptr, 0, 8,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2faccounts_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2faccounts_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2faccounts_2eproto,
@@ -1582,6 +1585,11 @@ MemberProject::MemberProject(const MemberProject& from)
     status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArenaForAllocation());
   }
+  expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_expired_at().empty()) {
+    expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_expired_at(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_role()) {
     role_ = new ::accounts::v1alpha1::Role(*from.role_);
   } else {
@@ -1600,6 +1608,7 @@ last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAl
 image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+expired_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&role_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&is_active_) -
@@ -1621,6 +1630,7 @@ inline void MemberProject::SharedDtor() {
   image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   uid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  expired_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete role_;
 }
 
@@ -1646,6 +1656,7 @@ void MemberProject::Clear() {
   image_.ClearToEmpty();
   uid_.ClearToEmpty();
   status_.ClearToEmpty();
+  expired_at_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && role_ != nullptr) {
     delete role_;
   }
@@ -1734,6 +1745,15 @@ const char* MemberProject::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.MemberProject.status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string expired_at = 11 [json_name = "expiredAt"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          auto str = _internal_mutable_expired_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.MemberProject.expired_at"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1846,6 +1866,16 @@ failure:
         10, this->_internal_status(), target);
   }
 
+  // string expired_at = 11 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_expired_at().data(), static_cast<int>(this->_internal_expired_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.MemberProject.expired_at");
+    target = stream->WriteStringMaybeAliased(
+        11, this->_internal_expired_at(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1902,6 +1932,13 @@ size_t MemberProject::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_status());
+  }
+
+  // string expired_at = 11 [json_name = "expiredAt"];
+  if (!this->_internal_expired_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_expired_at());
   }
 
   // .accounts.v1alpha1.Role role = 7 [json_name = "role"];
@@ -1969,6 +2006,9 @@ void MemberProject::MergeFrom(const MemberProject& from) {
   if (!from._internal_status().empty()) {
     _internal_set_status(from._internal_status());
   }
+  if (!from._internal_expired_at().empty()) {
+    _internal_set_expired_at(from._internal_expired_at());
+  }
   if (from._internal_has_role()) {
     _internal_mutable_role()->::accounts::v1alpha1::Role::MergeFrom(from._internal_role());
   }
@@ -2024,6 +2064,11 @@ void MemberProject::InternalSwap(MemberProject* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &status_, GetArenaForAllocation(),
       &other->status_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &expired_at_, GetArenaForAllocation(),
+      &other->expired_at_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(MemberProject, is_active_)

@@ -852,6 +852,7 @@ class MemberProject final :
     kImageFieldNumber = 6,
     kUidFieldNumber = 9,
     kStatusFieldNumber = 10,
+    kExpiredAtFieldNumber = 11,
     kRoleFieldNumber = 7,
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 5,
@@ -940,6 +941,20 @@ class MemberProject final :
   std::string* _internal_mutable_status();
   public:
 
+  // string expired_at = 11 [json_name = "expiredAt"];
+  void clear_expired_at();
+  const std::string& expired_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_expired_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_expired_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_expired_at();
+  void set_allocated_expired_at(std::string* expired_at);
+  private:
+  const std::string& _internal_expired_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_expired_at(const std::string& value);
+  std::string* _internal_mutable_expired_at();
+  public:
+
   // .accounts.v1alpha1.Role role = 7 [json_name = "role"];
   bool has_role() const;
   private:
@@ -989,6 +1004,7 @@ class MemberProject final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expired_at_;
   ::accounts::v1alpha1::Role* role_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
@@ -3438,6 +3454,52 @@ inline void MemberProject::set_allocated_status(std::string* status) {
   status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MemberProject.status)
+}
+
+// string expired_at = 11 [json_name = "expiredAt"];
+inline void MemberProject::clear_expired_at() {
+  expired_at_.ClearToEmpty();
+}
+inline const std::string& MemberProject::expired_at() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MemberProject.expired_at)
+  return _internal_expired_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MemberProject::set_expired_at(ArgT0&& arg0, ArgT... args) {
+ 
+ expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MemberProject.expired_at)
+}
+inline std::string* MemberProject::mutable_expired_at() {
+  std::string* _s = _internal_mutable_expired_at();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MemberProject.expired_at)
+  return _s;
+}
+inline const std::string& MemberProject::_internal_expired_at() const {
+  return expired_at_.Get();
+}
+inline void MemberProject::_internal_set_expired_at(const std::string& value) {
+  
+  expired_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MemberProject::_internal_mutable_expired_at() {
+  
+  return expired_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MemberProject::release_expired_at() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MemberProject.expired_at)
+  return expired_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MemberProject::set_allocated_expired_at(std::string* expired_at) {
+  if (expired_at != nullptr) {
+    
+  } else {
+    
+  }
+  expired_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), expired_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MemberProject.expired_at)
 }
 
 // -------------------------------------------------------------------
