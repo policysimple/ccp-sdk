@@ -320,7 +320,8 @@ struct BlockChainDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BlockChainDefaultTypeInternal _BlockChain_default_instance_;
 constexpr Budget::Budget(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : budget_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : plan_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , budget_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , budget_amount_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct BudgetDefaultTypeInternal {
   constexpr BudgetDefaultTypeInternal()
@@ -529,6 +530,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Budget, plan_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Budget, budget_time_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Budget, budget_amount_),
 };
@@ -663,14 +665,15 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "ion\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nup"
   "dated_at\030\007 \001(\tR\tupdatedAt\022\026\n\006status\030\010 \001("
   "\010R\006status\022!\n\014is_suspended\030\t \001(\010R\013isSuspe"
-  "nded\"N\n\006Budget\022\037\n\013budget_time\030\001 \001(\tR\nbud"
-  "getTime\022#\n\rbudget_amount\030\002 \001(\tR\014budgetAm"
-  "ountB8Z6github.com/cuemby/ccp-payment-se"
-  "rvice/payment/v1alpha1b\006proto3"
+  "nded\"b\n\006Budget\022\022\n\004plan\030\001 \001(\tR\004plan\022\037\n\013bu"
+  "dget_time\030\002 \001(\tR\nbudgetTime\022#\n\rbudget_am"
+  "ount\030\003 \001(\tR\014budgetAmountB8Z6github.com/c"
+  "uemby/ccp-payment-service/payment/v1alph"
+  "a1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 3510, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  false, false, 3530, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 20,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,
@@ -7234,6 +7237,11 @@ Budget::Budget(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Budget::Budget(const Budget& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  plan_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_plan().empty()) {
+    plan_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_plan(), 
+      GetArenaForAllocation());
+  }
   budget_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_budget_time().empty()) {
     budget_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_budget_time(), 
@@ -7248,6 +7256,7 @@ Budget::Budget(const Budget& from)
 }
 
 inline void Budget::SharedCtor() {
+plan_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 budget_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 budget_amount_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -7261,6 +7270,7 @@ Budget::~Budget() {
 
 inline void Budget::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  plan_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   budget_time_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   budget_amount_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -7281,6 +7291,7 @@ void Budget::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  plan_.ClearToEmpty();
   budget_time_.ClearToEmpty();
   budget_amount_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -7292,18 +7303,27 @@ const char* Budget::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string budget_time = 1 [json_name = "budgetTime"];
+      // string plan = 1 [json_name = "plan"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_plan();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Budget.plan"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string budget_time = 2 [json_name = "budgetTime"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_budget_time();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Budget.budget_time"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string budget_amount = 2 [json_name = "budgetAmount"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // string budget_amount = 3 [json_name = "budgetAmount"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_budget_amount();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Budget.budget_amount"));
@@ -7339,24 +7359,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string budget_time = 1 [json_name = "budgetTime"];
+  // string plan = 1 [json_name = "plan"];
+  if (!this->_internal_plan().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_plan().data(), static_cast<int>(this->_internal_plan().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Budget.plan");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_plan(), target);
+  }
+
+  // string budget_time = 2 [json_name = "budgetTime"];
   if (!this->_internal_budget_time().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_budget_time().data(), static_cast<int>(this->_internal_budget_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "payment.v1alpha1.Budget.budget_time");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_budget_time(), target);
+        2, this->_internal_budget_time(), target);
   }
 
-  // string budget_amount = 2 [json_name = "budgetAmount"];
+  // string budget_amount = 3 [json_name = "budgetAmount"];
   if (!this->_internal_budget_amount().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_budget_amount().data(), static_cast<int>(this->_internal_budget_amount().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "payment.v1alpha1.Budget.budget_amount");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_budget_amount(), target);
+        3, this->_internal_budget_amount(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7375,14 +7405,21 @@ size_t Budget::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string budget_time = 1 [json_name = "budgetTime"];
+  // string plan = 1 [json_name = "plan"];
+  if (!this->_internal_plan().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_plan());
+  }
+
+  // string budget_time = 2 [json_name = "budgetTime"];
   if (!this->_internal_budget_time().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_budget_time());
   }
 
-  // string budget_amount = 2 [json_name = "budgetAmount"];
+  // string budget_amount = 3 [json_name = "budgetAmount"];
   if (!this->_internal_budget_amount().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -7417,6 +7454,9 @@ void Budget::MergeFrom(const Budget& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_plan().empty()) {
+    _internal_set_plan(from._internal_plan());
+  }
   if (!from._internal_budget_time().empty()) {
     _internal_set_budget_time(from._internal_budget_time());
   }
@@ -7440,6 +7480,11 @@ bool Budget::IsInitialized() const {
 void Budget::InternalSwap(Budget* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &plan_, GetArenaForAllocation(),
+      &other->plan_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &budget_time_, GetArenaForAllocation(),

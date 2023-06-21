@@ -4159,10 +4159,25 @@ class Budget final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBudgetTimeFieldNumber = 1,
-    kBudgetAmountFieldNumber = 2,
+    kPlanFieldNumber = 1,
+    kBudgetTimeFieldNumber = 2,
+    kBudgetAmountFieldNumber = 3,
   };
-  // string budget_time = 1 [json_name = "budgetTime"];
+  // string plan = 1 [json_name = "plan"];
+  void clear_plan();
+  const std::string& plan() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_plan(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_plan();
+  PROTOBUF_MUST_USE_RESULT std::string* release_plan();
+  void set_allocated_plan(std::string* plan);
+  private:
+  const std::string& _internal_plan() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_plan(const std::string& value);
+  std::string* _internal_mutable_plan();
+  public:
+
+  // string budget_time = 2 [json_name = "budgetTime"];
   void clear_budget_time();
   const std::string& budget_time() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4176,7 +4191,7 @@ class Budget final :
   std::string* _internal_mutable_budget_time();
   public:
 
-  // string budget_amount = 2 [json_name = "budgetAmount"];
+  // string budget_amount = 3 [json_name = "budgetAmount"];
   void clear_budget_amount();
   const std::string& budget_amount() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4197,6 +4212,7 @@ class Budget final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr plan_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr budget_time_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr budget_amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -8405,7 +8421,53 @@ inline void BlockChain::set_is_suspended(bool value) {
 
 // Budget
 
-// string budget_time = 1 [json_name = "budgetTime"];
+// string plan = 1 [json_name = "plan"];
+inline void Budget::clear_plan() {
+  plan_.ClearToEmpty();
+}
+inline const std::string& Budget::plan() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Budget.plan)
+  return _internal_plan();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Budget::set_plan(ArgT0&& arg0, ArgT... args) {
+ 
+ plan_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Budget.plan)
+}
+inline std::string* Budget::mutable_plan() {
+  std::string* _s = _internal_mutable_plan();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Budget.plan)
+  return _s;
+}
+inline const std::string& Budget::_internal_plan() const {
+  return plan_.Get();
+}
+inline void Budget::_internal_set_plan(const std::string& value) {
+  
+  plan_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Budget::_internal_mutable_plan() {
+  
+  return plan_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Budget::release_plan() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Budget.plan)
+  return plan_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Budget::set_allocated_plan(std::string* plan) {
+  if (plan != nullptr) {
+    
+  } else {
+    
+  }
+  plan_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), plan,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Budget.plan)
+}
+
+// string budget_time = 2 [json_name = "budgetTime"];
 inline void Budget::clear_budget_time() {
   budget_time_.ClearToEmpty();
 }
@@ -8451,7 +8513,7 @@ inline void Budget::set_allocated_budget_time(std::string* budget_time) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Budget.budget_time)
 }
 
-// string budget_amount = 2 [json_name = "budgetAmount"];
+// string budget_amount = 3 [json_name = "budgetAmount"];
 inline void Budget::clear_budget_amount() {
   budget_amount_.ClearToEmpty();
 }
