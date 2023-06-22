@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class Budget extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+     * Generated from protobuf field <code>string plan = 1 [json_name = "plan"];</code>
+     */
+    protected $plan = '';
+    /**
+     * Generated from protobuf field <code>string budget_time = 2 [json_name = "budgetTime"];</code>
      */
     protected $budget_time = '';
     /**
-     * Generated from protobuf field <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+     * Generated from protobuf field <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
      */
     protected $budget_amount = '';
 
@@ -28,6 +32,7 @@ class Budget extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $plan
      *     @type string $budget_time
      *     @type string $budget_amount
      * }
@@ -38,7 +43,29 @@ class Budget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+     * Generated from protobuf field <code>string plan = 1 [json_name = "plan"];</code>
+     * @return string
+     */
+    public function getPlan()
+    {
+        return $this->plan;
+    }
+
+    /**
+     * Generated from protobuf field <code>string plan = 1 [json_name = "plan"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlan($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->plan = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string budget_time = 2 [json_name = "budgetTime"];</code>
      * @return string
      */
     public function getBudgetTime()
@@ -47,7 +74,7 @@ class Budget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+     * Generated from protobuf field <code>string budget_time = 2 [json_name = "budgetTime"];</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class Budget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+     * Generated from protobuf field <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
      * @return string
      */
     public function getBudgetAmount()
@@ -69,7 +96,7 @@ class Budget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+     * Generated from protobuf field <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
      * @param string $var
      * @return $this
      */

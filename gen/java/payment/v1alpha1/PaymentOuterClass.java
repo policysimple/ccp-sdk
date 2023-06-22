@@ -23509,24 +23509,36 @@ public final class PaymentOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+     * <code>string plan = 1 [json_name = "plan"];</code>
+     * @return The plan.
+     */
+    java.lang.String getPlan();
+    /**
+     * <code>string plan = 1 [json_name = "plan"];</code>
+     * @return The bytes for plan.
+     */
+    com.google.protobuf.ByteString
+        getPlanBytes();
+
+    /**
+     * <code>string budget_time = 2 [json_name = "budgetTime"];</code>
      * @return The budgetTime.
      */
     java.lang.String getBudgetTime();
     /**
-     * <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+     * <code>string budget_time = 2 [json_name = "budgetTime"];</code>
      * @return The bytes for budgetTime.
      */
     com.google.protobuf.ByteString
         getBudgetTimeBytes();
 
     /**
-     * <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+     * <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
      * @return The budgetAmount.
      */
     java.lang.String getBudgetAmount();
     /**
-     * <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+     * <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
      * @return The bytes for budgetAmount.
      */
     com.google.protobuf.ByteString
@@ -23545,6 +23557,7 @@ public final class PaymentOuterClass {
       super(builder);
     }
     private Budget() {
+      plan_ = "";
       budgetTime_ = "";
       budgetAmount_ = "";
     }
@@ -23582,10 +23595,16 @@ public final class PaymentOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              budgetTime_ = s;
+              plan_ = s;
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              budgetTime_ = s;
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               budgetAmount_ = s;
@@ -23623,10 +23642,48 @@ public final class PaymentOuterClass {
               payment.v1alpha1.PaymentOuterClass.Budget.class, payment.v1alpha1.PaymentOuterClass.Budget.Builder.class);
     }
 
-    public static final int BUDGET_TIME_FIELD_NUMBER = 1;
+    public static final int PLAN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object plan_;
+    /**
+     * <code>string plan = 1 [json_name = "plan"];</code>
+     * @return The plan.
+     */
+    @java.lang.Override
+    public java.lang.String getPlan() {
+      java.lang.Object ref = plan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        plan_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string plan = 1 [json_name = "plan"];</code>
+     * @return The bytes for plan.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPlanBytes() {
+      java.lang.Object ref = plan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        plan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUDGET_TIME_FIELD_NUMBER = 2;
     private volatile java.lang.Object budgetTime_;
     /**
-     * <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+     * <code>string budget_time = 2 [json_name = "budgetTime"];</code>
      * @return The budgetTime.
      */
     @java.lang.Override
@@ -23643,7 +23700,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+     * <code>string budget_time = 2 [json_name = "budgetTime"];</code>
      * @return The bytes for budgetTime.
      */
     @java.lang.Override
@@ -23661,10 +23718,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int BUDGET_AMOUNT_FIELD_NUMBER = 2;
+    public static final int BUDGET_AMOUNT_FIELD_NUMBER = 3;
     private volatile java.lang.Object budgetAmount_;
     /**
-     * <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+     * <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
      * @return The budgetAmount.
      */
     @java.lang.Override
@@ -23681,7 +23738,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+     * <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
      * @return The bytes for budgetAmount.
      */
     @java.lang.Override
@@ -23713,11 +23770,14 @@ public final class PaymentOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getPlanBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, plan_);
+      }
       if (!getBudgetTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, budgetTime_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, budgetTime_);
       }
       if (!getBudgetAmountBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, budgetAmount_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, budgetAmount_);
       }
       unknownFields.writeTo(output);
     }
@@ -23728,11 +23788,14 @@ public final class PaymentOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!getPlanBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, plan_);
+      }
       if (!getBudgetTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, budgetTime_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, budgetTime_);
       }
       if (!getBudgetAmountBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, budgetAmount_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, budgetAmount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -23749,6 +23812,8 @@ public final class PaymentOuterClass {
       }
       payment.v1alpha1.PaymentOuterClass.Budget other = (payment.v1alpha1.PaymentOuterClass.Budget) obj;
 
+      if (!getPlan()
+          .equals(other.getPlan())) return false;
       if (!getBudgetTime()
           .equals(other.getBudgetTime())) return false;
       if (!getBudgetAmount()
@@ -23764,6 +23829,8 @@ public final class PaymentOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PLAN_FIELD_NUMBER;
+      hash = (53 * hash) + getPlan().hashCode();
       hash = (37 * hash) + BUDGET_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getBudgetTime().hashCode();
       hash = (37 * hash) + BUDGET_AMOUNT_FIELD_NUMBER;
@@ -23901,6 +23968,8 @@ public final class PaymentOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        plan_ = "";
+
         budgetTime_ = "";
 
         budgetAmount_ = "";
@@ -23931,6 +24000,7 @@ public final class PaymentOuterClass {
       @java.lang.Override
       public payment.v1alpha1.PaymentOuterClass.Budget buildPartial() {
         payment.v1alpha1.PaymentOuterClass.Budget result = new payment.v1alpha1.PaymentOuterClass.Budget(this);
+        result.plan_ = plan_;
         result.budgetTime_ = budgetTime_;
         result.budgetAmount_ = budgetAmount_;
         onBuilt();
@@ -23981,6 +24051,10 @@ public final class PaymentOuterClass {
 
       public Builder mergeFrom(payment.v1alpha1.PaymentOuterClass.Budget other) {
         if (other == payment.v1alpha1.PaymentOuterClass.Budget.getDefaultInstance()) return this;
+        if (!other.getPlan().isEmpty()) {
+          plan_ = other.plan_;
+          onChanged();
+        }
         if (!other.getBudgetTime().isEmpty()) {
           budgetTime_ = other.budgetTime_;
           onChanged();
@@ -24018,9 +24092,85 @@ public final class PaymentOuterClass {
         return this;
       }
 
+      private java.lang.Object plan_ = "";
+      /**
+       * <code>string plan = 1 [json_name = "plan"];</code>
+       * @return The plan.
+       */
+      public java.lang.String getPlan() {
+        java.lang.Object ref = plan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          plan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string plan = 1 [json_name = "plan"];</code>
+       * @return The bytes for plan.
+       */
+      public com.google.protobuf.ByteString
+          getPlanBytes() {
+        java.lang.Object ref = plan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          plan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string plan = 1 [json_name = "plan"];</code>
+       * @param value The plan to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlan(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        plan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plan = 1 [json_name = "plan"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlan() {
+        
+        plan_ = getDefaultInstance().getPlan();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plan = 1 [json_name = "plan"];</code>
+       * @param value The bytes for plan to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        plan_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object budgetTime_ = "";
       /**
-       * <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+       * <code>string budget_time = 2 [json_name = "budgetTime"];</code>
        * @return The budgetTime.
        */
       public java.lang.String getBudgetTime() {
@@ -24036,7 +24186,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+       * <code>string budget_time = 2 [json_name = "budgetTime"];</code>
        * @return The bytes for budgetTime.
        */
       public com.google.protobuf.ByteString
@@ -24053,7 +24203,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+       * <code>string budget_time = 2 [json_name = "budgetTime"];</code>
        * @param value The budgetTime to set.
        * @return This builder for chaining.
        */
@@ -24068,7 +24218,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+       * <code>string budget_time = 2 [json_name = "budgetTime"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBudgetTime() {
@@ -24078,7 +24228,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string budget_time = 1 [json_name = "budgetTime"];</code>
+       * <code>string budget_time = 2 [json_name = "budgetTime"];</code>
        * @param value The bytes for budgetTime to set.
        * @return This builder for chaining.
        */
@@ -24096,7 +24246,7 @@ public final class PaymentOuterClass {
 
       private java.lang.Object budgetAmount_ = "";
       /**
-       * <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+       * <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
        * @return The budgetAmount.
        */
       public java.lang.String getBudgetAmount() {
@@ -24112,7 +24262,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+       * <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
        * @return The bytes for budgetAmount.
        */
       public com.google.protobuf.ByteString
@@ -24129,7 +24279,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+       * <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
        * @param value The budgetAmount to set.
        * @return This builder for chaining.
        */
@@ -24144,7 +24294,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+       * <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearBudgetAmount() {
@@ -24154,7 +24304,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string budget_amount = 2 [json_name = "budgetAmount"];</code>
+       * <code>string budget_amount = 3 [json_name = "budgetAmount"];</code>
        * @param value The bytes for budgetAmount to set.
        * @return This builder for chaining.
        */
@@ -24415,10 +24565,11 @@ public final class PaymentOuterClass {
       "ion\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nup" +
       "dated_at\030\007 \001(\tR\tupdatedAt\022\026\n\006status\030\010 \001(" +
       "\010R\006status\022!\n\014is_suspended\030\t \001(\010R\013isSuspe" +
-      "nded\"N\n\006Budget\022\037\n\013budget_time\030\001 \001(\tR\nbud" +
-      "getTime\022#\n\rbudget_amount\030\002 \001(\tR\014budgetAm" +
-      "ountB8Z6github.com/cuemby/ccp-payment-se" +
-      "rvice/payment/v1alpha1b\006proto3"
+      "nded\"b\n\006Budget\022\022\n\004plan\030\001 \001(\tR\004plan\022\037\n\013bu" +
+      "dget_time\030\002 \001(\tR\nbudgetTime\022#\n\rbudget_am" +
+      "ount\030\003 \001(\tR\014budgetAmountB8Z6github.com/c" +
+      "uemby/ccp-payment-service/payment/v1alph" +
+      "a1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -24543,7 +24694,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Budget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Budget_descriptor,
-        new java.lang.String[] { "BudgetTime", "BudgetAmount", });
+        new java.lang.String[] { "Plan", "BudgetTime", "BudgetAmount", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

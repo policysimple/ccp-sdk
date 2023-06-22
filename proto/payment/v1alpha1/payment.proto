@@ -156,6 +156,7 @@ message BlockChain {
 }
 
 message Budget {
-  string budget_time = 1;
-  string budget_amount = 2;
+  string plan = 1;
+  string budget_time = 2;
+  string budget_amount = 3;
 }

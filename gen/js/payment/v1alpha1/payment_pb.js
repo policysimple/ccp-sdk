@@ -5587,8 +5587,9 @@ proto.payment.v1alpha1.Budget.prototype.toObject = function(opt_includeInstance)
  */
 proto.payment.v1alpha1.Budget.toObject = function(includeInstance, msg) {
   var f, obj = {
-    budgetTime: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    budgetAmount: jspb.Message.getFieldWithDefault(msg, 2, "")
+    plan: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    budgetTime: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    budgetAmount: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5627,9 +5628,13 @@ proto.payment.v1alpha1.Budget.deserializeBinaryFromReader = function(msg, reader
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBudgetTime(value);
+      msg.setPlan(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBudgetTime(value);
+      break;
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setBudgetAmount(value);
       break;
@@ -5662,17 +5667,24 @@ proto.payment.v1alpha1.Budget.prototype.serializeBinary = function() {
  */
 proto.payment.v1alpha1.Budget.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBudgetTime();
+  f = message.getPlan();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getBudgetAmount();
+  f = message.getBudgetTime();
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getBudgetAmount();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -5680,10 +5692,10 @@ proto.payment.v1alpha1.Budget.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * optional string budget_time = 1;
+ * optional string plan = 1;
  * @return {string}
  */
-proto.payment.v1alpha1.Budget.prototype.getBudgetTime = function() {
+proto.payment.v1alpha1.Budget.prototype.getPlan = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -5692,16 +5704,16 @@ proto.payment.v1alpha1.Budget.prototype.getBudgetTime = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Budget} returns this
  */
-proto.payment.v1alpha1.Budget.prototype.setBudgetTime = function(value) {
+proto.payment.v1alpha1.Budget.prototype.setPlan = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string budget_amount = 2;
+ * optional string budget_time = 2;
  * @return {string}
  */
-proto.payment.v1alpha1.Budget.prototype.getBudgetAmount = function() {
+proto.payment.v1alpha1.Budget.prototype.getBudgetTime = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -5710,8 +5722,26 @@ proto.payment.v1alpha1.Budget.prototype.getBudgetAmount = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Budget} returns this
  */
-proto.payment.v1alpha1.Budget.prototype.setBudgetAmount = function(value) {
+proto.payment.v1alpha1.Budget.prototype.setBudgetTime = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string budget_amount = 3;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Budget.prototype.getBudgetAmount = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Budget} returns this
+ */
+proto.payment.v1alpha1.Budget.prototype.setBudgetAmount = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

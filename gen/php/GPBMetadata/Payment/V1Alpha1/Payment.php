@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-¶
+Ê
 payment/v1alpha1/payment.protopayment.v1alpha1"Û
 Customer
 id (	Rid
@@ -147,11 +147,12 @@ created_at (	R	createdAt
 
 updated_at (	R	updatedAt
 status (Rstatus!
-is_suspended	 (RisSuspended"N
-Budget
-budget_time (	R
+is_suspended	 (RisSuspended"b
+Budget
+plan (	Rplan
+budget_time (	R
 budgetTime#
-budget_amount (	RbudgetAmountB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
+budget_amount (	RbudgetAmountB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;
