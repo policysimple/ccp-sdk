@@ -86,7 +86,7 @@ public final class RuntimeProto {
       "\n(pipelines/runtime/v1alpha1/runtime.pro" +
       "to\022\032pipelines.runtime.v1alpha1\032&applicat" +
       "ion/v1alpha1/application.proto\032&pipeline" +
-      "s/tekton/v1alpha1/tekton.proto\"\301\020\n\007Runti" +
+      "s/tekton/v1alpha1/tekton.proto\"\336\020\n\007Runti" +
       "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022N" +
       "\n\016instance_types\030\003 \003(\0132\'.pipelines.runti" +
       "me.v1alpha1.IntanceTypeR\rinstanceTypes\022\'" +
@@ -131,37 +131,37 @@ public final class RuntimeProto {
       "\0132!.pipelines.tekton.v1alpha1.ParamsR\006pa" +
       "rams\022I\n\014pipeline_run\030! \001(\0132&.pipelines.t" +
       "ekton.v1alpha1.PipelineRunR\013pipelineRun\022" +
-      "\031\n\010host_url\030\" \001(\tR\007hostUrl\032>\n\020Integratio" +
-      "nEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR" +
-      "\005value:\0028\001\032G\n\031EnvironmentVariablesEntry\022" +
-      "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:" +
-      "\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
-      "\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry" +
-      "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value" +
-      ":\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003key" +
-      "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013RuntimeLis" +
-      "t\0229\n\005items\030\001 \003(\0132#.pipelines.runtime.v1a" +
-      "lpha1.RuntimeR\005items\"\206\001\n\013IntanceType\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022S\n\017reso" +
-      "urces_rules\030\003 \003(\0132*.pipelines.runtime.v1" +
-      "alpha1.ResourcesRulesR\016resourcesRules\"\210\001" +
-      "\n\016ResourcesRules\0227\n\005limit\030\001 \003(\0132!.pipeli" +
-      "nes.runtime.v1alpha1.LimitR\005limit\022=\n\007req" +
-      "uest\030\002 \003(\0132#.pipelines.runtime.v1alpha1." +
-      "RequestR\007request\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003" +
-      "cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"-\n\007Request\022\020\n\003cpu\030" +
-      "\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"\205\001\n\013Pipelin" +
-      "eRun\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\tR" +
-      "\005label\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022.\n\023" +
-      "pipeline_run_status\030\004 \001(\tR\021pipelineRunSt" +
-      "atus*a\n\013TrafficType\022\034\n\030TRAFFIC_TYPE_UNSP" +
-      "ECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n\025" +
-      "TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cuemby.pi" +
-      "pelines.runtime.v1alpha1B\014RuntimeProtoP\001" +
-      "Z5github.com/cuemby/ccp-runtime-service/" +
-      "runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtim" +
-      "e.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1b" +
-      "\006proto3"
+      "\031\n\010host_url\030\" \001(\tR\007hostUrl\022\033\n\tapp_label\030" +
+      "# \001(\tR\010appLabel\032>\n\020IntegrationEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032" +
+      "G\n\031EnvironmentVariablesEntry\022\020\n\003key\030\001 \001(" +
+      "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rComm" +
+      "andsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
+      "(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001" +
+      "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016Ext" +
+      "raArgsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002" +
+      " \001(\tR\005value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030" +
+      "\001 \003(\0132#.pipelines.runtime.v1alpha1.Runti" +
+      "meR\005items\"\206\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002i" +
+      "d\022\022\n\004name\030\002 \001(\tR\004name\022S\n\017resources_rules" +
+      "\030\003 \003(\0132*.pipelines.runtime.v1alpha1.Reso" +
+      "urcesRulesR\016resourcesRules\"\210\001\n\016Resources" +
+      "Rules\0227\n\005limit\030\001 \003(\0132!.pipelines.runtime" +
+      ".v1alpha1.LimitR\005limit\022=\n\007request\030\002 \003(\0132" +
+      "#.pipelines.runtime.v1alpha1.RequestR\007re" +
+      "quest\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030" +
+      "\002 \001(\tR\003ram\"-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022" +
+      "\020\n\003ram\030\002 \001(\tR\003ram\"\205\001\n\013PipelineRun\022\022\n\004nam" +
+      "e\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\tR\005label\022\034\n\tn" +
+      "amespace\030\003 \001(\tR\tnamespace\022.\n\023pipeline_ru" +
+      "n_status\030\004 \001(\tR\021pipelineRunStatus*a\n\013Tra" +
+      "fficType\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020\000\022\031" +
+      "\n\025TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYP" +
+      "E_INTERNAL\020\002B\255\001\n$io.cuemby.pipelines.run" +
+      "time.v1alpha1B\014RuntimeProtoP\001Z5github.co" +
+      "m/cuemby/ccp-runtime-service/runtimev1al" +
+      "pha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312" +
+      "\002\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -174,7 +174,7 @@ public final class RuntimeProto {
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
-        new java.lang.String[] { "Id", "Name", "InstanceTypes", "OrganizationId", "ProjectId", "NameProject", "ApplicationId", "WorkspaceId", "EnvironmentId", "Scaler", "PodStatus", "PodStatusMsg", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", "TrafficType", "ResponseMessage", "EnvironmentName", "EnvironmentInternalName", "ApplicationName", "StorageUsed", "StorageLimit", "IntegrationId", "ApplicationData", "CustomPipeline", "BeforeDeployTasks", "AfterDeployTasks", "PodIngressCert", "IsNotExistDockerfile", "Params", "PipelineRun", "HostUrl", });
+        new java.lang.String[] { "Id", "Name", "InstanceTypes", "OrganizationId", "ProjectId", "NameProject", "ApplicationId", "WorkspaceId", "EnvironmentId", "Scaler", "PodStatus", "PodStatusMsg", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", "TrafficType", "ResponseMessage", "EnvironmentName", "EnvironmentInternalName", "ApplicationName", "StorageUsed", "StorageLimit", "IntegrationId", "ApplicationData", "CustomPipeline", "BeforeDeployTasks", "AfterDeployTasks", "PodIngressCert", "IsNotExistDockerfile", "Params", "PipelineRun", "HostUrl", "AppLabel", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_fieldAccessorTable = new

@@ -425,6 +425,7 @@ class Runtime final :
     kIntegrationIdFieldNumber = 25,
     kPodIngressCertFieldNumber = 30,
     kHostUrlFieldNumber = 34,
+    kAppLabelFieldNumber = 35,
     kApplicationDataFieldNumber = 26,
     kPipelineRunFieldNumber = 33,
     kTrafficTypeFieldNumber = 18,
@@ -842,6 +843,20 @@ class Runtime final :
   std::string* _internal_mutable_host_url();
   public:
 
+  // string app_label = 35 [json_name = "appLabel"];
+  void clear_app_label();
+  const std::string& app_label() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_app_label(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_app_label();
+  PROTOBUF_MUST_USE_RESULT std::string* release_app_label();
+  void set_allocated_app_label(std::string* app_label);
+  private:
+  const std::string& _internal_app_label() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_app_label(const std::string& value);
+  std::string* _internal_mutable_app_label();
+  public:
+
   // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
   bool has_application_data() const;
   private:
@@ -977,6 +992,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_ingress_cert_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr app_label_;
   ::application::v1alpha1::Application* application_data_;
   ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run_;
   int traffic_type_;
@@ -3410,6 +3426,52 @@ inline void Runtime::set_allocated_host_url(std::string* host_url) {
   host_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), host_url,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.host_url)
+}
+
+// string app_label = 35 [json_name = "appLabel"];
+inline void Runtime::clear_app_label() {
+  app_label_.ClearToEmpty();
+}
+inline const std::string& Runtime::app_label() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.app_label)
+  return _internal_app_label();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_app_label(ArgT0&& arg0, ArgT... args) {
+ 
+ app_label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.app_label)
+}
+inline std::string* Runtime::mutable_app_label() {
+  std::string* _s = _internal_mutable_app_label();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.app_label)
+  return _s;
+}
+inline const std::string& Runtime::_internal_app_label() const {
+  return app_label_.Get();
+}
+inline void Runtime::_internal_set_app_label(const std::string& value) {
+  
+  app_label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_app_label() {
+  
+  return app_label_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_app_label() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.app_label)
+  return app_label_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_app_label(std::string* app_label) {
+  if (app_label != nullptr) {
+    
+  } else {
+    
+  }
+  app_label_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), app_label,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.app_label)
 }
 
 // -------------------------------------------------------------------

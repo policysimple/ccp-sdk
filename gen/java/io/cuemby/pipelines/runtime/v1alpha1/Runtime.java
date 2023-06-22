@@ -43,6 +43,7 @@ private static final long serialVersionUID = 0L;
     podIngressCert_ = "";
     params_ = java.util.Collections.emptyList();
     hostUrl_ = "";
+    appLabel_ = "";
   }
 
   @java.lang.Override
@@ -335,6 +336,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             hostUrl_ = s;
+            break;
+          }
+          case 282: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            appLabel_ = s;
             break;
           }
           default: {
@@ -1765,6 +1772,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int APP_LABEL_FIELD_NUMBER = 35;
+  private volatile java.lang.Object appLabel_;
+  /**
+   * <code>string app_label = 35 [json_name = "appLabel"];</code>
+   * @return The appLabel.
+   */
+  @java.lang.Override
+  public java.lang.String getAppLabel() {
+    java.lang.Object ref = appLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      appLabel_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string app_label = 35 [json_name = "appLabel"];</code>
+   * @return The bytes for appLabel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAppLabelBytes() {
+    java.lang.Object ref = appLabel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      appLabel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1895,6 +1940,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getHostUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 34, hostUrl_);
+    }
+    if (!getAppLabelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 35, appLabel_);
     }
     unknownFields.writeTo(output);
   }
@@ -2053,6 +2101,9 @@ private static final long serialVersionUID = 0L;
     if (!getHostUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(34, hostUrl_);
     }
+    if (!getAppLabelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(35, appLabel_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2141,6 +2192,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getHostUrl()
         .equals(other.getHostUrl())) return false;
+    if (!getAppLabel()
+        .equals(other.getAppLabel())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2244,6 +2297,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + HOST_URL_FIELD_NUMBER;
     hash = (53 * hash) + getHostUrl().hashCode();
+    hash = (37 * hash) + APP_LABEL_FIELD_NUMBER;
+    hash = (53 * hash) + getAppLabel().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2510,6 +2565,8 @@ private static final long serialVersionUID = 0L;
       }
       hostUrl_ = "";
 
+      appLabel_ = "";
+
       return this;
     }
 
@@ -2616,6 +2673,7 @@ private static final long serialVersionUID = 0L;
         result.pipelineRun_ = pipelineRunBuilder_.build();
       }
       result.hostUrl_ = hostUrl_;
+      result.appLabel_ = appLabel_;
       onBuilt();
       return result;
     }
@@ -2869,6 +2927,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getHostUrl().isEmpty()) {
         hostUrl_ = other.hostUrl_;
+        onChanged();
+      }
+      if (!other.getAppLabel().isEmpty()) {
+        appLabel_ = other.appLabel_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -6281,6 +6343,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       hostUrl_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object appLabel_ = "";
+    /**
+     * <code>string app_label = 35 [json_name = "appLabel"];</code>
+     * @return The appLabel.
+     */
+    public java.lang.String getAppLabel() {
+      java.lang.Object ref = appLabel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appLabel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string app_label = 35 [json_name = "appLabel"];</code>
+     * @return The bytes for appLabel.
+     */
+    public com.google.protobuf.ByteString
+        getAppLabelBytes() {
+      java.lang.Object ref = appLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string app_label = 35 [json_name = "appLabel"];</code>
+     * @param value The appLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppLabel(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      appLabel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string app_label = 35 [json_name = "appLabel"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAppLabel() {
+      
+      appLabel_ = getDefaultInstance().getAppLabel();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string app_label = 35 [json_name = "appLabel"];</code>
+     * @param value The bytes for appLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppLabelBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      appLabel_ = value;
       onChanged();
       return this;
     }
