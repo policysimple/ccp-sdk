@@ -250,7 +250,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     paramsList: jspb.Message.toObjectList(msg.getParamsList(),
     pipelines_tekton_v1alpha1_tekton_pb.Params.toObject, includeInstance),
     pipelineRun: (f = msg.getPipelineRun()) && pipelines_tekton_v1alpha1_tekton_pb.PipelineRun.toObject(includeInstance, f),
-    hostUrl: jspb.Message.getFieldWithDefault(msg, 34, "")
+    hostUrl: jspb.Message.getFieldWithDefault(msg, 34, ""),
+    appLabel: jspb.Message.getFieldWithDefault(msg, 35, "")
   };
 
   if (includeInstance) {
@@ -438,6 +439,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 34:
       var value = /** @type {string} */ (reader.readString());
       msg.setHostUrl(value);
+      break;
+    case 35:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAppLabel(value);
       break;
     default:
       reader.skipField();
@@ -694,6 +699,13 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       34,
+      f
+    );
+  }
+  f = message.getAppLabel();
+  if (f.length > 0) {
+    writer.writeString(
+      35,
       f
     );
   }
@@ -1447,6 +1459,24 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getHostUrl = function() {
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setHostUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 34, value);
+};
+
+
+/**
+ * optional string app_label = 35;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getAppLabel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 35, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setAppLabel = function(value) {
+  return jspb.Message.setProto3StringField(this, 35, value);
 };
 
 

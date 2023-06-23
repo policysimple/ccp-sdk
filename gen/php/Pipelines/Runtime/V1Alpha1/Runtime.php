@@ -151,6 +151,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string host_url = 34 [json_name = "hostUrl"];</code>
      */
     protected $host_url = '';
+    /**
+     * Generated from protobuf field <code>string app_label = 35 [json_name = "appLabel"];</code>
+     */
+    protected $app_label = '';
 
     /**
      * Constructor.
@@ -192,6 +196,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type \Pipelines\Tekton\V1Alpha1\Params[]|\Google\Protobuf\Internal\RepeatedField $params
      *     @type \Pipelines\Tekton\V1Alpha1\PipelineRun $pipeline_run
      *     @type string $host_url
+     *     @type string $app_label
      * }
      */
     public function __construct($data = NULL) {
@@ -963,6 +968,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->host_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string app_label = 35 [json_name = "appLabel"];</code>
+     * @return string
+     */
+    public function getAppLabel()
+    {
+        return $this->app_label;
+    }
+
+    /**
+     * Generated from protobuf field <code>string app_label = 35 [json_name = "appLabel"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAppLabel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->app_label = $var;
 
         return $this;
     }

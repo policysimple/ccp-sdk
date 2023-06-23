@@ -553,4 +553,16 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getHostUrlBytes();
+
+  /**
+   * <code>string app_label = 35 [json_name = "appLabel"];</code>
+   * @return The appLabel.
+   */
+  java.lang.String getAppLabel();
+  /**
+   * <code>string app_label = 35 [json_name = "appLabel"];</code>
+   * @return The bytes for appLabel.
+   */
+  com.google.protobuf.ByteString
+      getAppLabelBytes();
 }
