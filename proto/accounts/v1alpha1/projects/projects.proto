@@ -15,6 +15,11 @@ message CreateProjectRequest {
     string image = 3;
     string user_id = 5;
     string organization_id=6;
+
+    string plan=7;
+    string budget_time=8;
+    string budget_amount=9;
+    string card_id = 10;
 }
 
 message GetOneProjectRequest {
