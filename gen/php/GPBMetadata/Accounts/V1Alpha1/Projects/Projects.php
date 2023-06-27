@@ -17,14 +17,20 @@ class Projects
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ù
-)accounts/v1alpha1/projects/projects.protoaccounts.v1alpha1.projects.v1"§
+ê
+)accounts/v1alpha1/projects/projects.protoaccounts.v1alpha1.projects.v1"ó
 CreateProjectRequest
 name (	Rname 
 description (	Rdescription
 image (	Rimage
 user_id (	RuserId\'
-organization_id (	RorganizationId"&
+organization_id (	RorganizationId
+plan (	Rplan
+budget_time (	R
+budgetTime#
+budget_amount	 (	RbudgetAmount
+card_id
+ (	RcardId"&
 GetOneProjectRequest
 id (	Rid"&
 DeleteProjectRequest

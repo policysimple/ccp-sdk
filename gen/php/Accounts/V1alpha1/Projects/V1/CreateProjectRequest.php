@@ -35,6 +35,22 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string organization_id = 6 [json_name = "organizationId"];</code>
      */
     protected $organization_id = '';
+    /**
+     * Generated from protobuf field <code>string plan = 7 [json_name = "plan"];</code>
+     */
+    protected $plan = '';
+    /**
+     * Generated from protobuf field <code>string budget_time = 8 [json_name = "budgetTime"];</code>
+     */
+    protected $budget_time = '';
+    /**
+     * Generated from protobuf field <code>string budget_amount = 9 [json_name = "budgetAmount"];</code>
+     */
+    protected $budget_amount = '';
+    /**
+     * Generated from protobuf field <code>string card_id = 10 [json_name = "cardId"];</code>
+     */
+    protected $card_id = '';
 
     /**
      * Constructor.
@@ -47,6 +63,10 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
      *     @type string $image
      *     @type string $user_id
      *     @type string $organization_id
+     *     @type string $plan
+     *     @type string $budget_time
+     *     @type string $budget_amount
+     *     @type string $card_id
      * }
      */
     public function __construct($data = NULL) {
@@ -160,6 +180,94 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string plan = 7 [json_name = "plan"];</code>
+     * @return string
+     */
+    public function getPlan()
+    {
+        return $this->plan;
+    }
+
+    /**
+     * Generated from protobuf field <code>string plan = 7 [json_name = "plan"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlan($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->plan = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string budget_time = 8 [json_name = "budgetTime"];</code>
+     * @return string
+     */
+    public function getBudgetTime()
+    {
+        return $this->budget_time;
+    }
+
+    /**
+     * Generated from protobuf field <code>string budget_time = 8 [json_name = "budgetTime"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBudgetTime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->budget_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string budget_amount = 9 [json_name = "budgetAmount"];</code>
+     * @return string
+     */
+    public function getBudgetAmount()
+    {
+        return $this->budget_amount;
+    }
+
+    /**
+     * Generated from protobuf field <code>string budget_amount = 9 [json_name = "budgetAmount"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBudgetAmount($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->budget_amount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string card_id = 10 [json_name = "cardId"];</code>
+     * @return string
+     */
+    public function getCardId()
+    {
+        return $this->card_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string card_id = 10 [json_name = "cardId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->card_id = $var;
 
         return $this;
     }

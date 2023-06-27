@@ -471,7 +471,11 @@ proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.toObject = function(inc
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
     image: jspb.Message.getFieldWithDefault(msg, 3, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 6, "")
+    organizationId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    plan: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    budgetTime: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    budgetAmount: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    cardId: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -527,6 +531,22 @@ proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.deserializeBinaryFromRe
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPlan(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBudgetTime(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBudgetAmount(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCardId(value);
       break;
     default:
       reader.skipField();
@@ -589,6 +609,34 @@ proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.serializeBinaryToWriter
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getPlan();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getBudgetTime();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getBudgetAmount();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getCardId();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -682,6 +730,78 @@ proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.getOrganizati
  */
 proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.setOrganizationId = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string plan = 7;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.getPlan = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.projects.v1.CreateProjectRequest} returns this
+ */
+proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.setPlan = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string budget_time = 8;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.getBudgetTime = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.projects.v1.CreateProjectRequest} returns this
+ */
+proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.setBudgetTime = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string budget_amount = 9;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.getBudgetAmount = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.projects.v1.CreateProjectRequest} returns this
+ */
+proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.setBudgetAmount = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string card_id = 10;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.getCardId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.projects.v1.CreateProjectRequest} returns this
+ */
+proto.accounts.v1alpha1.projects.v1.CreateProjectRequest.prototype.setCardId = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
