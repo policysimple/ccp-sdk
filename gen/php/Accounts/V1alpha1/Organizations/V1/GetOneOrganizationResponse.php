@@ -45,6 +45,10 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 10 [json_name = "id"];</code>
      */
     protected $id = '';
+    /**
+     * Generated from protobuf field <code>bool status_payment_method = 11 [json_name = "statusPaymentMethod"];</code>
+     */
+    protected $status_payment_method = false;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
      *     @type \Accounts\V1alpha1\UserList $owner
      *     @type string $slug
      *     @type string $id
+     *     @type bool $status_payment_method
      * }
      */
     public function __construct($data = NULL) {
@@ -249,6 +254,28 @@ class GetOneOrganizationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool status_payment_method = 11 [json_name = "statusPaymentMethod"];</code>
+     * @return bool
+     */
+    public function getStatusPaymentMethod()
+    {
+        return $this->status_payment_method;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool status_payment_method = 11 [json_name = "statusPaymentMethod"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStatusPaymentMethod($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->status_payment_method = $var;
 
         return $this;
     }

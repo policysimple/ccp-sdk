@@ -3738,6 +3738,12 @@ public final class Organizations {
      */
     com.google.protobuf.ByteString
         getIdBytes();
+
+    /**
+     * <code>bool status_payment_method = 11 [json_name = "statusPaymentMethod"];</code>
+     * @return The statusPaymentMethod.
+     */
+    boolean getStatusPaymentMethod();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse}
@@ -3851,6 +3857,11 @@ public final class Organizations {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
+              break;
+            }
+            case 88: {
+
+              statusPaymentMethod_ = input.readBool();
               break;
             }
             default: {
@@ -4187,6 +4198,17 @@ public final class Organizations {
       }
     }
 
+    public static final int STATUS_PAYMENT_METHOD_FIELD_NUMBER = 11;
+    private boolean statusPaymentMethod_;
+    /**
+     * <code>bool status_payment_method = 11 [json_name = "statusPaymentMethod"];</code>
+     * @return The statusPaymentMethod.
+     */
+    @java.lang.Override
+    public boolean getStatusPaymentMethod() {
+      return statusPaymentMethod_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4225,6 +4247,9 @@ public final class Organizations {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, id_);
       }
+      if (statusPaymentMethod_ != false) {
+        output.writeBool(11, statusPaymentMethod_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4261,6 +4286,10 @@ public final class Organizations {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, id_);
       }
+      if (statusPaymentMethod_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, statusPaymentMethod_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4295,6 +4324,8 @@ public final class Organizations {
           .equals(other.getSlug())) return false;
       if (!getId()
           .equals(other.getId())) return false;
+      if (getStatusPaymentMethod()
+          != other.getStatusPaymentMethod()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4328,6 +4359,9 @@ public final class Organizations {
       hash = (53 * hash) + getSlug().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + STATUS_PAYMENT_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStatusPaymentMethod());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4491,6 +4525,8 @@ public final class Organizations {
 
         id_ = "";
 
+        statusPaymentMethod_ = false;
+
         return this;
       }
 
@@ -4546,6 +4582,7 @@ public final class Organizations {
         }
         result.slug_ = slug_;
         result.id_ = id_;
+        result.statusPaymentMethod_ = statusPaymentMethod_;
         onBuilt();
         return result;
       }
@@ -4668,6 +4705,9 @@ public final class Organizations {
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
+        }
+        if (other.getStatusPaymentMethod() != false) {
+          setStatusPaymentMethod(other.getStatusPaymentMethod());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5674,6 +5714,37 @@ public final class Organizations {
   checkByteStringIsUtf8(value);
         
         id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean statusPaymentMethod_ ;
+      /**
+       * <code>bool status_payment_method = 11 [json_name = "statusPaymentMethod"];</code>
+       * @return The statusPaymentMethod.
+       */
+      @java.lang.Override
+      public boolean getStatusPaymentMethod() {
+        return statusPaymentMethod_;
+      }
+      /**
+       * <code>bool status_payment_method = 11 [json_name = "statusPaymentMethod"];</code>
+       * @param value The statusPaymentMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusPaymentMethod(boolean value) {
+        
+        statusPaymentMethod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool status_payment_method = 11 [json_name = "statusPaymentMethod"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatusPaymentMethod() {
+        
+        statusPaymentMethod_ = false;
         onChanged();
         return this;
       }
@@ -11170,7 +11241,7 @@ public final class Organizations {
       "mage\030\004 \001(\tR\005image\022\'\n\017organization_id\030\005 \001" +
       "(\tR\016organizationId\"D\n\031DeleteOrganization" +
       "Request\022\'\n\017organization_id\030\002 \001(\tR\016organi" +
-      "zationId\"\332\002\n\032GetOneOrganizationResponse\022" +
+      "zationId\"\216\003\n\032GetOneOrganizationResponse\022" +
       "\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005imag" +
       "e\022S\n\010projects\030\004 \003(\01327.accounts.v1alpha1." +
       "organizations.v1.ProjectOrganizationR\010pr" +
@@ -11178,25 +11249,27 @@ public final class Organizations {
       "ha1.organizations.v1.MemberR\007members\022 \n\013" +
       "description\030\006 \001(\tR\013description\0221\n\005owner\030" +
       "\007 \001(\0132\033.accounts.v1alpha1.UserListR\005owne" +
-      "r\022\022\n\004slug\030\t \001(\tR\004slug\022\016\n\002id\030\n \001(\tR\002id\"a\n" +
-      "\030ListOrganizationResponse\022E\n\rorganizatio" +
-      "ns\030\001 \003(\0132\037.accounts.v1alpha1.Organizatio" +
-      "nR\rorganizations\"p\n\032CreateOrganizationRe" +
-      "sponse\022\020\n\003msg\030\001 \001(\tR\003msg\0220\n\024role_id_orga" +
-      "nization\030\006 \001(\tR\022roleIdOrganization\022\016\n\002id" +
-      "\030\005 \001(\tR\002id\".\n\032UpdateOrganizationResponse" +
-      "\022\020\n\003msg\030\001 \001(\tR\003msg\".\n\032DeleteOrganization" +
-      "Response\022\020\n\003msg\030\001 \001(\tR\003msg\"\324\001\n\006Member\022\027\n" +
-      "\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001" +
-      "(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastNa" +
-      "me\022\033\n\tis_active\030\005 \001(\010R\010isActive\0222\n\005roles" +
-      "\030\006 \003(\0132\034.accounts.v1alpha1.MemberRolR\005ro" +
-      "les\022\024\n\005image\030\007 \001(\tR\005image\022\016\n\002id\030\010 \001(\rR\002i" +
-      "d\"q\n\023ProjectOrganization\022\022\n\004name\030\002 \001(\tR\004" +
-      "name\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013descriptio" +
-      "n\030\004 \001(\tR\013description\022\016\n\002id\030\005 \001(\tR\002idBBZ@" +
-      "github.com/cuemby/ccp-sdk/gen/go/account" +
-      "s/v1alpha1/organizationsb\006proto3"
+      "r\022\022\n\004slug\030\t \001(\tR\004slug\022\016\n\002id\030\n \001(\tR\002id\0222\n" +
+      "\025status_payment_method\030\013 \001(\010R\023statusPaym" +
+      "entMethod\"a\n\030ListOrganizationResponse\022E\n" +
+      "\rorganizations\030\001 \003(\0132\037.accounts.v1alpha1" +
+      ".OrganizationR\rorganizations\"p\n\032CreateOr" +
+      "ganizationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\0220\n\024" +
+      "role_id_organization\030\006 \001(\tR\022roleIdOrgani" +
+      "zation\022\016\n\002id\030\005 \001(\tR\002id\".\n\032UpdateOrganiza" +
+      "tionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\".\n\032Delete" +
+      "OrganizationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"\324" +
+      "\001\n\006Member\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfi" +
+      "rst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004" +
+      " \001(\tR\010lastName\022\033\n\tis_active\030\005 \001(\010R\010isAct" +
+      "ive\0222\n\005roles\030\006 \003(\0132\034.accounts.v1alpha1.M" +
+      "emberRolR\005roles\022\024\n\005image\030\007 \001(\tR\005image\022\016\n" +
+      "\002id\030\010 \001(\rR\002id\"q\n\023ProjectOrganization\022\022\n\004" +
+      "name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022 " +
+      "\n\013description\030\004 \001(\tR\013description\022\016\n\002id\030\005" +
+      " \001(\tR\002idBBZ@github.com/cuemby/ccp-sdk/ge" +
+      "n/go/accounts/v1alpha1/organizationsb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11238,7 +11311,7 @@ public final class Organizations {
     internal_static_accounts_v1alpha1_organizations_v1_GetOneOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_organizations_v1_GetOneOrganizationResponse_descriptor,
-        new java.lang.String[] { "Name", "Image", "Projects", "Members", "Description", "Owner", "Slug", "Id", });
+        new java.lang.String[] { "Name", "Image", "Projects", "Members", "Description", "Owner", "Slug", "Id", "StatusPaymentMethod", });
     internal_static_accounts_v1alpha1_organizations_v1_ListOrganizationResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_accounts_v1alpha1_organizations_v1_ListOrganizationResponse_fieldAccessorTable = new

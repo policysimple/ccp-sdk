@@ -55,7 +55,7 @@ message GetOneOrganizationResponse{
     UserList owner = 7;
     string slug = 9;
     string id = 10;
-
+    bool status_payment_method  = 11;
 }
 
 
