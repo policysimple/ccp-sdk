@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizations',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3accounts/v1alpha1/organizations/organizations.proto\x12\"accounts.v1alpha1.organizations.v1\x1a accounts/v1alpha1/accounts.proto\"\x80\x01\n\x19\x43reateOrganizationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"\x19\n\x17ListOrganizationRequest\"D\n\x19GetOneOrganizationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\"\x90\x01\n\x19UpdateOrganizationRequest\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x04 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x05 \x01(\tR\x0eorganizationId\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\"\xda\x02\n\x1aGetOneOrganizationResponse\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12S\n\x08projects\x18\x04 \x03(\x0b\x32\x37.accounts.v1alpha1.organizations.v1.ProjectOrganizationR\x08projects\x12\x44\n\x07members\x18\x05 \x03(\x0b\x32*.accounts.v1alpha1.organizations.v1.MemberR\x07members\x12 \n\x0b\x64\x65scription\x18\x06 \x01(\tR\x0b\x64\x65scription\x12\x31\n\x05owner\x18\x07 \x01(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05owner\x12\x12\n\x04slug\x18\t \x01(\tR\x04slug\x12\x0e\n\x02id\x18\n \x01(\tR\x02id\"a\n\x18ListOrganizationResponse\x12\x45\n\rorganizations\x18\x01 \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\"p\n\x1a\x43reateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x30\n\x14role_id_organization\x18\x06 \x01(\tR\x12roleIdOrganization\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02id\".\n\x1aUpdateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\".\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"\xd4\x01\n\x06Member\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x32\n\x05roles\x18\x06 \x03(\x0b\x32\x1c.accounts.v1alpha1.MemberRolR\x05roles\x12\x14\n\x05image\x18\x07 \x01(\tR\x05image\x12\x0e\n\x02id\x18\x08 \x01(\rR\x02id\"q\n\x13ProjectOrganization\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02idBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsb\x06proto3'
+  serialized_pb=b'\n3accounts/v1alpha1/organizations/organizations.proto\x12\"accounts.v1alpha1.organizations.v1\x1a accounts/v1alpha1/accounts.proto\"\x80\x01\n\x19\x43reateOrganizationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"\x19\n\x17ListOrganizationRequest\"D\n\x19GetOneOrganizationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\"\x90\x01\n\x19UpdateOrganizationRequest\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x04 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x05 \x01(\tR\x0eorganizationId\"D\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\"\x8e\x03\n\x1aGetOneOrganizationResponse\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12S\n\x08projects\x18\x04 \x03(\x0b\x32\x37.accounts.v1alpha1.organizations.v1.ProjectOrganizationR\x08projects\x12\x44\n\x07members\x18\x05 \x03(\x0b\x32*.accounts.v1alpha1.organizations.v1.MemberR\x07members\x12 \n\x0b\x64\x65scription\x18\x06 \x01(\tR\x0b\x64\x65scription\x12\x31\n\x05owner\x18\x07 \x01(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05owner\x12\x12\n\x04slug\x18\t \x01(\tR\x04slug\x12\x0e\n\x02id\x18\n \x01(\tR\x02id\x12\x32\n\x15status_payment_method\x18\x0b \x01(\x08R\x13statusPaymentMethod\"a\n\x18ListOrganizationResponse\x12\x45\n\rorganizations\x18\x01 \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\"p\n\x1a\x43reateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x30\n\x14role_id_organization\x18\x06 \x01(\tR\x12roleIdOrganization\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02id\".\n\x1aUpdateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\".\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"\xd4\x01\n\x06Member\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x32\n\x05roles\x18\x06 \x03(\x0b\x32\x1c.accounts.v1alpha1.MemberRolR\x05roles\x12\x14\n\x05image\x18\x07 \x01(\tR\x05image\x12\x0e\n\x02id\x18\x08 \x01(\rR\x02id\"q\n\x13ProjectOrganization\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02idBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_accounts__pb2.DESCRIPTOR,])
 
@@ -286,6 +286,13 @@ _GETONEORGANIZATIONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status_payment_method', full_name='accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.status_payment_method', index=8,
+      number=11, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='statusPaymentMethod', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -299,7 +306,7 @@ _GETONEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=571,
-  serialized_end=917,
+  serialized_end=969,
 )
 
 
@@ -330,8 +337,8 @@ _LISTORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=919,
-  serialized_end=1016,
+  serialized_start=971,
+  serialized_end=1068,
 )
 
 
@@ -376,8 +383,8 @@ _CREATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1018,
-  serialized_end=1130,
+  serialized_start=1070,
+  serialized_end=1182,
 )
 
 
@@ -408,8 +415,8 @@ _UPDATEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1132,
-  serialized_end=1178,
+  serialized_start=1184,
+  serialized_end=1230,
 )
 
 
@@ -440,8 +447,8 @@ _DELETEORGANIZATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1180,
-  serialized_end=1226,
+  serialized_start=1232,
+  serialized_end=1278,
 )
 
 
@@ -514,8 +521,8 @@ _MEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1229,
-  serialized_end=1441,
+  serialized_start=1281,
+  serialized_end=1493,
 )
 
 
@@ -567,8 +574,8 @@ _PROJECTORGANIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1443,
-  serialized_end=1556,
+  serialized_start=1495,
+  serialized_end=1608,
 )
 
 _GETONEORGANIZATIONRESPONSE.fields_by_name['projects'].message_type = _PROJECTORGANIZATION

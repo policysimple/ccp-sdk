@@ -1130,7 +1130,8 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.toObject = f
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     owner: (f = msg.getOwner()) && accounts_v1alpha1_accounts_pb.UserList.toObject(includeInstance, f),
     slug: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 10, "")
+    id: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    statusPaymentMethod: jspb.Message.getBooleanFieldWithDefault(msg, 11, false)
   };
 
   if (includeInstance) {
@@ -1201,6 +1202,10 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.deserializeB
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStatusPaymentMethod(value);
       break;
     default:
       reader.skipField();
@@ -1287,6 +1292,13 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.serializeBin
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getStatusPaymentMethod();
+  if (f) {
+    writer.writeBool(
+      11,
       f
     );
   }
@@ -1493,6 +1505,24 @@ proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.ge
  */
 proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional bool status_payment_method = 11;
+ * @return {boolean}
+ */
+proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.getStatusPaymentMethod = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse} returns this
+ */
+proto.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.prototype.setStatusPaymentMethod = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 

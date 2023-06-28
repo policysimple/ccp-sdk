@@ -1040,6 +1040,7 @@ class GetOneOrganizationResponse final :
     kSlugFieldNumber = 9,
     kIdFieldNumber = 10,
     kOwnerFieldNumber = 7,
+    kStatusPaymentMethodFieldNumber = 11,
   };
   // repeated .accounts.v1alpha1.organizations.v1.ProjectOrganization projects = 4 [json_name = "projects"];
   int projects_size() const;
@@ -1165,6 +1166,15 @@ class GetOneOrganizationResponse final :
       ::accounts::v1alpha1::UserList* owner);
   ::accounts::v1alpha1::UserList* unsafe_arena_release_owner();
 
+  // bool status_payment_method = 11 [json_name = "statusPaymentMethod"];
+  void clear_status_payment_method();
+  bool status_payment_method() const;
+  void set_status_payment_method(bool value);
+  private:
+  bool _internal_status_payment_method() const;
+  void _internal_set_status_payment_method(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse)
  private:
   class _Internal;
@@ -1180,6 +1190,7 @@ class GetOneOrganizationResponse final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr slug_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::accounts::v1alpha1::UserList* owner_;
+  bool status_payment_method_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto;
 };
@@ -3106,6 +3117,26 @@ inline void GetOneOrganizationResponse::set_allocated_id(std::string* id) {
   id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.id)
+}
+
+// bool status_payment_method = 11 [json_name = "statusPaymentMethod"];
+inline void GetOneOrganizationResponse::clear_status_payment_method() {
+  status_payment_method_ = false;
+}
+inline bool GetOneOrganizationResponse::_internal_status_payment_method() const {
+  return status_payment_method_;
+}
+inline bool GetOneOrganizationResponse::status_payment_method() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.status_payment_method)
+  return _internal_status_payment_method();
+}
+inline void GetOneOrganizationResponse::_internal_set_status_payment_method(bool value) {
+  
+  status_payment_method_ = value;
+}
+inline void GetOneOrganizationResponse::set_status_payment_method(bool value) {
+  _internal_set_status_payment_method(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse.status_payment_method)
 }
 
 // -------------------------------------------------------------------
