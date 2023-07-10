@@ -237,7 +237,9 @@ constexpr TaskParamsToCustomize::TaskParamsToCustomize(
   : param_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , label_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , validation_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , type_value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , type_value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , default__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct TaskParamsToCustomizeDefaultTypeInternal {
   constexpr TaskParamsToCustomizeDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -487,6 +489,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskParamsToCustomize, label_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskParamsToCustomize, validation_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskParamsToCustomize, type_value_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskParamsToCustomize, description_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskParamsToCustomize, default__),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::PipelineRun, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -550,10 +554,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 133, -1, sizeof(::pipelines::tekton::v1alpha1::TektonTaskList)},
   { 139, -1, sizeof(::pipelines::tekton::v1alpha1::TaskToCustomize)},
   { 153, -1, sizeof(::pipelines::tekton::v1alpha1::TaskParamsToCustomize)},
-  { 162, -1, sizeof(::pipelines::tekton::v1alpha1::PipelineRun)},
-  { 177, -1, sizeof(::pipelines::tekton::v1alpha1::PipelineRunList)},
-  { 183, -1, sizeof(::pipelines::tekton::v1alpha1::TaskRun)},
-  { 196, -1, sizeof(::pipelines::tekton::v1alpha1::TaskRunStep)},
+  { 164, -1, sizeof(::pipelines::tekton::v1alpha1::PipelineRun)},
+  { 179, -1, sizeof(::pipelines::tekton::v1alpha1::PipelineRunList)},
+  { 185, -1, sizeof(::pipelines::tekton::v1alpha1::TaskRun)},
+  { 198, -1, sizeof(::pipelines::tekton::v1alpha1::TaskRunStep)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -658,42 +662,43 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "omizeR\ntaskParams\022 \n\013description\030\007 \001(\tR\013"
   "description\022#\n\rbefore_deploy\030\010 \001(\010R\014befo"
   "reDeploy\022!\n\014after_deploy\030\t \001(\010R\013afterDep"
-  "loy\"\213\001\n\025TaskParamsToCustomize\022\035\n\nparam_n"
+  "loy\"\307\001\n\025TaskParamsToCustomize\022\035\n\nparam_n"
   "ame\030\001 \001(\tR\tparamName\022\024\n\005label\030\002 \001(\tR\005lab"
   "el\022\036\n\nvalidation\030\003 \001(\tR\nvalidation\022\035\n\nty"
-  "pe_value\030\004 \001(\tR\ttypeValue\"\322\002\n\013PipelineRu"
-  "n\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\tR\005la"
-  "bel\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022\030\n\007mes"
-  "sage\030\004 \001(\tR\007message\022\026\n\006reason\030\005 \001(\tR\006rea"
-  "son\022\035\n\nstarted_at\030\006 \001(\tR\tstartedAt\022\037\n\013fi"
-  "nished_at\030\007 \001(\tR\nfinishedAt\022\032\n\010duration\030"
-  "\010 \001(\tR\010duration\022.\n\023pipeline_run_status\030\t"
-  " \001(\tR\021pipelineRunStatus\022=\n\010task_run\030\n \003("
-  "\0132\".pipelines.tekton.v1alpha1.TaskRunR\007t"
-  "askRun\"O\n\017PipelineRunList\022<\n\005items\030\001 \003(\013"
-  "2&.pipelines.tekton.v1alpha1.PipelineRun"
-  "R\005items\"\226\002\n\007TaskRun\022\022\n\004name\030\001 \001(\tR\004name\022"
-  "\030\n\007message\030\002 \001(\tR\007message\022\026\n\006reason\030\003 \001("
-  "\tR\006reason\022\035\n\nstarted_at\030\004 \001(\tR\tstartedAt"
-  "\022\037\n\013finished_at\030\005 \001(\tR\nfinishedAt\022\032\n\010dur"
-  "ation\030\006 \001(\tR\010duration\022&\n\017task_run_status"
-  "\030\007 \001(\tR\rtaskRunStatus\022A\n\010task_run\030\010 \003(\0132"
-  "&.pipelines.tekton.v1alpha1.TaskRunStepR"
-  "\007taskRun\"\340\001\n\013TaskRunStep\022\022\n\004name\030\001 \001(\tR\004"
-  "name\022\030\n\007message\030\002 \001(\tR\007message\022\026\n\006reason"
-  "\030\003 \001(\tR\006reason\022\035\n\nstarted_at\030\004 \001(\tR\tstar"
-  "tedAt\022\037\n\013finished_at\030\005 \001(\tR\nfinishedAt\022\032"
-  "\n\010duration\030\006 \001(\tR\010duration\022/\n\024task_run_s"
-  "tep_status\030\007 \001(\tR\021taskRunStepStatusB\256\001\n#"
-  "io.cuemby.pipelines.tekton.v1alpha1B\013Tek"
-  "tonProtoP\001Z:github.com/cuemby/ccp-sdk/ge"
-  "n/go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031P"
-  "ipelines.Tekton.V1Alpha1\312\002\031Pipelines\\Tek"
-  "ton\\V1Alpha1b\006proto3"
+  "pe_value\030\004 \001(\tR\ttypeValue\022 \n\013description"
+  "\030\005 \001(\tR\013description\022\030\n\007default\030\006 \001(\tR\007de"
+  "fault\"\322\002\n\013PipelineRun\022\022\n\004name\030\001 \001(\tR\004nam"
+  "e\022\024\n\005label\030\002 \001(\tR\005label\022\034\n\tnamespace\030\003 \001"
+  "(\tR\tnamespace\022\030\n\007message\030\004 \001(\tR\007message\022"
+  "\026\n\006reason\030\005 \001(\tR\006reason\022\035\n\nstarted_at\030\006 "
+  "\001(\tR\tstartedAt\022\037\n\013finished_at\030\007 \001(\tR\nfin"
+  "ishedAt\022\032\n\010duration\030\010 \001(\tR\010duration\022.\n\023p"
+  "ipeline_run_status\030\t \001(\tR\021pipelineRunSta"
+  "tus\022=\n\010task_run\030\n \003(\0132\".pipelines.tekton"
+  ".v1alpha1.TaskRunR\007taskRun\"O\n\017PipelineRu"
+  "nList\022<\n\005items\030\001 \003(\0132&.pipelines.tekton."
+  "v1alpha1.PipelineRunR\005items\"\226\002\n\007TaskRun\022"
+  "\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 \001(\tR\007me"
+  "ssage\022\026\n\006reason\030\003 \001(\tR\006reason\022\035\n\nstarted"
+  "_at\030\004 \001(\tR\tstartedAt\022\037\n\013finished_at\030\005 \001("
+  "\tR\nfinishedAt\022\032\n\010duration\030\006 \001(\tR\010duratio"
+  "n\022&\n\017task_run_status\030\007 \001(\tR\rtaskRunStatu"
+  "s\022A\n\010task_run\030\010 \003(\0132&.pipelines.tekton.v"
+  "1alpha1.TaskRunStepR\007taskRun\"\340\001\n\013TaskRun"
+  "Step\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 \001("
+  "\tR\007message\022\026\n\006reason\030\003 \001(\tR\006reason\022\035\n\nst"
+  "arted_at\030\004 \001(\tR\tstartedAt\022\037\n\013finished_at"
+  "\030\005 \001(\tR\nfinishedAt\022\032\n\010duration\030\006 \001(\tR\010du"
+  "ration\022/\n\024task_run_step_status\030\007 \001(\tR\021ta"
+  "skRunStepStatusB\256\001\n#io.cuemby.pipelines."
+  "tekton.v1alpha1B\013TektonProtoP\001Z:github.c"
+  "om/cuemby/ccp-sdk/gen/go/pipelines/tekto"
+  "n/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Al"
+  "pha1\312\002\031Pipelines\\Tekton\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = {
-  false, false, 4420, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
+  false, false, 4480, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
   &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 19,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
@@ -4487,6 +4492,16 @@ TaskParamsToCustomize::TaskParamsToCustomize(const TaskParamsToCustomize& from)
     type_value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_type_value(), 
       GetArenaForAllocation());
   }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
+      GetArenaForAllocation());
+  }
+  default__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_default_().empty()) {
+    default__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_default_(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:pipelines.tekton.v1alpha1.TaskParamsToCustomize)
 }
 
@@ -4495,6 +4510,8 @@ param_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 validation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 type_value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+default__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 TaskParamsToCustomize::~TaskParamsToCustomize() {
@@ -4510,6 +4527,8 @@ inline void TaskParamsToCustomize::SharedDtor() {
   label_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   validation_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   type_value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  default__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void TaskParamsToCustomize::ArenaDtor(void* object) {
@@ -4532,6 +4551,8 @@ void TaskParamsToCustomize::Clear() {
   label_.ClearToEmpty();
   validation_.ClearToEmpty();
   type_value_.ClearToEmpty();
+  description_.ClearToEmpty();
+  default__.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4574,6 +4595,24 @@ const char* TaskParamsToCustomize::_InternalParse(const char* ptr, ::PROTOBUF_NA
           auto str = _internal_mutable_type_value();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 5 [json_name = "description"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskParamsToCustomize.description"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string default = 6 [json_name = "default"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_default_();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskParamsToCustomize.default"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4646,6 +4685,26 @@ failure:
         4, this->_internal_type_value(), target);
   }
 
+  // string description = 5 [json_name = "description"];
+  if (!this->_internal_description().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.TaskParamsToCustomize.description");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_description(), target);
+  }
+
+  // string default = 6 [json_name = "default"];
+  if (!this->_internal_default_().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_default_().data(), static_cast<int>(this->_internal_default_().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.TaskParamsToCustomize.default");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_default_(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4690,6 +4749,20 @@ size_t TaskParamsToCustomize::ByteSizeLong() const {
         this->_internal_type_value());
   }
 
+  // string description = 5 [json_name = "description"];
+  if (!this->_internal_description().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
+  }
+
+  // string default = 6 [json_name = "default"];
+  if (!this->_internal_default_().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_default_());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -4730,6 +4803,12 @@ void TaskParamsToCustomize::MergeFrom(const TaskParamsToCustomize& from) {
   if (!from._internal_type_value().empty()) {
     _internal_set_type_value(from._internal_type_value());
   }
+  if (!from._internal_description().empty()) {
+    _internal_set_description(from._internal_description());
+  }
+  if (!from._internal_default_().empty()) {
+    _internal_set_default_(from._internal_default_());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4766,6 +4845,16 @@ void TaskParamsToCustomize::InternalSwap(TaskParamsToCustomize* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &type_value_, GetArenaForAllocation(),
       &other->type_value_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &description_, GetArenaForAllocation(),
+      &other->description_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &default__, GetArenaForAllocation(),
+      &other->default__, other->GetArenaForAllocation()
   );
 }
 

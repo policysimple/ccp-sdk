@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-Ä"
+€#
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -122,7 +122,7 @@ workspacesQ
 taskParams 
 description (	Rdescription#
 before_deploy (RbeforeDeploy!
-after_deploy	 (RafterDeploy"‹
+after_deploy	 (RafterDeploy"Ç
 TaskParamsToCustomize
 
 param_name (	R	paramName
@@ -131,7 +131,9 @@ param_name (	R	paramName
 validation (	R
 validation
 
-type_value (	R	typeValue"Ò
+type_value (	R	typeValue 
+description (	Rdescription
+default (	Rdefault"Ò
 PipelineRun
 name (	Rname
 label (	Rlabel
