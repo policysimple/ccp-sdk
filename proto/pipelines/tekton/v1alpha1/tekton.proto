@@ -101,6 +101,8 @@ message TaskParamsToCustomize {
     string label = 2;
     string validation = 3;
     string type_value = 4;
+    string description = 5;
+    string default = 6;
 }
 
 message PipelineRun {

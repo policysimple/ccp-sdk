@@ -197,38 +197,39 @@ public final class TektonProto {
       "omizeR\ntaskParams\022 \n\013description\030\007 \001(\tR\013" +
       "description\022#\n\rbefore_deploy\030\010 \001(\010R\014befo" +
       "reDeploy\022!\n\014after_deploy\030\t \001(\010R\013afterDep" +
-      "loy\"\213\001\n\025TaskParamsToCustomize\022\035\n\nparam_n" +
+      "loy\"\307\001\n\025TaskParamsToCustomize\022\035\n\nparam_n" +
       "ame\030\001 \001(\tR\tparamName\022\024\n\005label\030\002 \001(\tR\005lab" +
       "el\022\036\n\nvalidation\030\003 \001(\tR\nvalidation\022\035\n\nty" +
-      "pe_value\030\004 \001(\tR\ttypeValue\"\322\002\n\013PipelineRu" +
-      "n\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\tR\005la" +
-      "bel\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022\030\n\007mes" +
-      "sage\030\004 \001(\tR\007message\022\026\n\006reason\030\005 \001(\tR\006rea" +
-      "son\022\035\n\nstarted_at\030\006 \001(\tR\tstartedAt\022\037\n\013fi" +
-      "nished_at\030\007 \001(\tR\nfinishedAt\022\032\n\010duration\030" +
-      "\010 \001(\tR\010duration\022.\n\023pipeline_run_status\030\t" +
-      " \001(\tR\021pipelineRunStatus\022=\n\010task_run\030\n \003(" +
-      "\0132\".pipelines.tekton.v1alpha1.TaskRunR\007t" +
-      "askRun\"O\n\017PipelineRunList\022<\n\005items\030\001 \003(\013" +
-      "2&.pipelines.tekton.v1alpha1.PipelineRun" +
-      "R\005items\"\226\002\n\007TaskRun\022\022\n\004name\030\001 \001(\tR\004name\022" +
-      "\030\n\007message\030\002 \001(\tR\007message\022\026\n\006reason\030\003 \001(" +
-      "\tR\006reason\022\035\n\nstarted_at\030\004 \001(\tR\tstartedAt" +
-      "\022\037\n\013finished_at\030\005 \001(\tR\nfinishedAt\022\032\n\010dur" +
-      "ation\030\006 \001(\tR\010duration\022&\n\017task_run_status" +
-      "\030\007 \001(\tR\rtaskRunStatus\022A\n\010task_run\030\010 \003(\0132" +
-      "&.pipelines.tekton.v1alpha1.TaskRunStepR" +
-      "\007taskRun\"\340\001\n\013TaskRunStep\022\022\n\004name\030\001 \001(\tR\004" +
-      "name\022\030\n\007message\030\002 \001(\tR\007message\022\026\n\006reason" +
-      "\030\003 \001(\tR\006reason\022\035\n\nstarted_at\030\004 \001(\tR\tstar" +
-      "tedAt\022\037\n\013finished_at\030\005 \001(\tR\nfinishedAt\022\032" +
-      "\n\010duration\030\006 \001(\tR\010duration\022/\n\024task_run_s" +
-      "tep_status\030\007 \001(\tR\021taskRunStepStatusB\256\001\n#" +
-      "io.cuemby.pipelines.tekton.v1alpha1B\013Tek" +
-      "tonProtoP\001Z:github.com/cuemby/ccp-sdk/ge" +
-      "n/go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031P" +
-      "ipelines.Tekton.V1Alpha1\312\002\031Pipelines\\Tek" +
-      "ton\\V1Alpha1b\006proto3"
+      "pe_value\030\004 \001(\tR\ttypeValue\022 \n\013description" +
+      "\030\005 \001(\tR\013description\022\030\n\007default\030\006 \001(\tR\007de" +
+      "fault\"\322\002\n\013PipelineRun\022\022\n\004name\030\001 \001(\tR\004nam" +
+      "e\022\024\n\005label\030\002 \001(\tR\005label\022\034\n\tnamespace\030\003 \001" +
+      "(\tR\tnamespace\022\030\n\007message\030\004 \001(\tR\007message\022" +
+      "\026\n\006reason\030\005 \001(\tR\006reason\022\035\n\nstarted_at\030\006 " +
+      "\001(\tR\tstartedAt\022\037\n\013finished_at\030\007 \001(\tR\nfin" +
+      "ishedAt\022\032\n\010duration\030\010 \001(\tR\010duration\022.\n\023p" +
+      "ipeline_run_status\030\t \001(\tR\021pipelineRunSta" +
+      "tus\022=\n\010task_run\030\n \003(\0132\".pipelines.tekton" +
+      ".v1alpha1.TaskRunR\007taskRun\"O\n\017PipelineRu" +
+      "nList\022<\n\005items\030\001 \003(\0132&.pipelines.tekton." +
+      "v1alpha1.PipelineRunR\005items\"\226\002\n\007TaskRun\022" +
+      "\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 \001(\tR\007me" +
+      "ssage\022\026\n\006reason\030\003 \001(\tR\006reason\022\035\n\nstarted" +
+      "_at\030\004 \001(\tR\tstartedAt\022\037\n\013finished_at\030\005 \001(" +
+      "\tR\nfinishedAt\022\032\n\010duration\030\006 \001(\tR\010duratio" +
+      "n\022&\n\017task_run_status\030\007 \001(\tR\rtaskRunStatu" +
+      "s\022A\n\010task_run\030\010 \003(\0132&.pipelines.tekton.v" +
+      "1alpha1.TaskRunStepR\007taskRun\"\340\001\n\013TaskRun" +
+      "Step\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 \001(" +
+      "\tR\007message\022\026\n\006reason\030\003 \001(\tR\006reason\022\035\n\nst" +
+      "arted_at\030\004 \001(\tR\tstartedAt\022\037\n\013finished_at" +
+      "\030\005 \001(\tR\nfinishedAt\022\032\n\010duration\030\006 \001(\tR\010du" +
+      "ration\022/\n\024task_run_step_status\030\007 \001(\tR\021ta" +
+      "skRunStepStatusB\256\001\n#io.cuemby.pipelines." +
+      "tekton.v1alpha1B\013TektonProtoP\001Z:github.c" +
+      "om/cuemby/ccp-sdk/gen/go/pipelines/tekto" +
+      "n/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Al" +
+      "pha1\312\002\031Pipelines\\Tekton\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -323,7 +324,7 @@ public final class TektonProto {
     internal_static_pipelines_tekton_v1alpha1_TaskParamsToCustomize_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_TaskParamsToCustomize_descriptor,
-        new java.lang.String[] { "ParamName", "Label", "Validation", "TypeValue", });
+        new java.lang.String[] { "ParamName", "Label", "Validation", "TypeValue", "Description", "Default", });
     internal_static_pipelines_tekton_v1alpha1_PipelineRun_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_pipelines_tekton_v1alpha1_PipelineRun_fieldAccessorTable = new
