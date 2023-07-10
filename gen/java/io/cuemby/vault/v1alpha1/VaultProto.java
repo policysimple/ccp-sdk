@@ -54,11 +54,6 @@ public final class VaultProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vault_v1alpha1_FirebaseSecret_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vault_v1alpha1_FirebaseSecret_DataEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vault_v1alpha1_FirebaseSecret_DataEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -91,14 +86,12 @@ public final class VaultProto {
       "organizationId\022%\n\016integration_id\030\002 \001(\tR\r" +
       "integrationId\022\024\n\005token\030\003 \001(\tR\005token\"B\n\020B" +
       "lockchainSecret\022.\n\004data\030\001 \001(\0132\032.vault.v1" +
-      "alpha1.SecretDataR\004data\"\207\001\n\016FirebaseSecr" +
-      "et\022<\n\004data\030\001 \003(\0132(.vault.v1alpha1.Fireba" +
-      "seSecret.DataEntryR\004data\0327\n\tDataEntry\022\020\n" +
-      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
-      "\001B\203\001\n\030io.cuemby.vault.v1alpha1B\nVaultPro" +
-      "toP\001Z1github.com/cuemby/ccp-vault-servic" +
-      "e/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002" +
-      "\016Vault\\V1Alpha1b\006proto3"
+      "alpha1.SecretDataR\004data\"$\n\016FirebaseSecre" +
+      "t\022\022\n\004data\030\001 \001(\014R\004dataB\203\001\n\030io.cuemby.vaul" +
+      "t.v1alpha1B\nVaultProtoP\001Z1github.com/cue" +
+      "mby/ccp-vault-service/vaultv1alpha1\242\002\003PP" +
+      "X\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -152,12 +145,6 @@ public final class VaultProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vault_v1alpha1_FirebaseSecret_descriptor,
         new java.lang.String[] { "Data", });
-    internal_static_vault_v1alpha1_FirebaseSecret_DataEntry_descriptor =
-      internal_static_vault_v1alpha1_FirebaseSecret_descriptor.getNestedTypes().get(0);
-    internal_static_vault_v1alpha1_FirebaseSecret_DataEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vault_v1alpha1_FirebaseSecret_DataEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -17,7 +17,7 @@ class Organizations
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ò
+‹
 3accounts/v1alpha1/organizations/organizations.proto"accounts.v1alpha1.organizations.v1"€
 CreateOrganizationRequest
 name (	Rname
@@ -31,9 +31,10 @@ class Organizations
 name (	Rname 
 description (	Rdescription
 image (	Rimage\'
-organization_id (	RorganizationId"D
+organization_id (	RorganizationId"]
 DeleteOrganizationRequest\'
-organization_id (	RorganizationId"Ž
+organization_id (	RorganizationId
+user_id (	RuserId"Ž
 GetOneOrganizationResponse
 name (	Rname
 image (	RimageS

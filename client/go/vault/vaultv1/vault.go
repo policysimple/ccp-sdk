@@ -293,3 +293,24 @@ func GetSecretsService(in *vaultpkgv1.GetSecretsServiceRequest) (*vaultpkgv1.Get
 	bylogs.LogInfo("GetSecretsService Client Sdk", "Success")
 	return response, nil
 }
+
+func GetSecretsServiceNotification(in *vaultpkgv1.GetSecretsServiceNotificationRequest) (*vaultpkgv1.GetSecretsServiceNotificationResponse, error) {
+	bylogs.LogInfo("GetNotificationSecretsService Client Sdk")
+	d, err := time.ParseDuration(vaultServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.GetSecretsServiceNotification(ctx, &vaultpkgv1.GetSecretsServiceNotificationRequest{
+		NameService: in.NameService,
+	})
+
+	if err != nil {
+		bylogs.LogErr("GetNotificationSecretsService Client Sdk", err)
+		return nil, fmt.Errorf("[GetNotificationSecretsService] %w", err)
+	}
+	bylogs.LogInfo("GetNotificationSecretsService Client Sdk", "Success")
+	return response, nil
+}

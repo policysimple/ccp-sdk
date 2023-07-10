@@ -984,7 +984,8 @@ proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.toO
  */
 proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1021,9 +1022,13 @@ proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.deserializeBi
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -1057,6 +1062,13 @@ proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.serializeBina
   f = message.getOrganizationId();
   if (f.length > 0) {
     writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -1065,11 +1077,11 @@ proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.serializeBina
 
 
 /**
- * optional string organization_id = 2;
+ * optional string organization_id = 1;
  * @return {string}
  */
 proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.getOrganizationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1078,6 +1090,24 @@ proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.get
  * @return {!proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest} returns this
  */
 proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string user_id = 2;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest} returns this
+ */
+proto.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

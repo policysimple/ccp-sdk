@@ -49,7 +49,7 @@ struct TableStruct_vault_2fv1alpha1_2fvault_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -64,9 +64,6 @@ extern BlockchainSecretDefaultTypeInternal _BlockchainSecret_default_instance_;
 class FirebaseSecret;
 struct FirebaseSecretDefaultTypeInternal;
 extern FirebaseSecretDefaultTypeInternal _FirebaseSecret_default_instance_;
-class FirebaseSecret_DataEntry_DoNotUse;
-struct FirebaseSecret_DataEntry_DoNotUseDefaultTypeInternal;
-extern FirebaseSecret_DataEntry_DoNotUseDefaultTypeInternal _FirebaseSecret_DataEntry_DoNotUse_default_instance_;
 class Metadata;
 struct MetadataDefaultTypeInternal;
 extern MetadataDefaultTypeInternal _Metadata_default_instance_;
@@ -90,7 +87,6 @@ extern TokenIntegrationDefaultTypeInternal _TokenIntegration_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::vault::v1alpha1::BlockchainSecret* Arena::CreateMaybeMessage<::vault::v1alpha1::BlockchainSecret>(Arena*);
 template<> ::vault::v1alpha1::FirebaseSecret* Arena::CreateMaybeMessage<::vault::v1alpha1::FirebaseSecret>(Arena*);
-template<> ::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse>(Arena*);
 template<> ::vault::v1alpha1::Metadata* Arena::CreateMaybeMessage<::vault::v1alpha1::Metadata>(Arena*);
 template<> ::vault::v1alpha1::Secret* Arena::CreateMaybeMessage<::vault::v1alpha1::Secret>(Arena*);
 template<> ::vault::v1alpha1::SecretData* Arena::CreateMaybeMessage<::vault::v1alpha1::SecretData>(Arena*);
@@ -1242,33 +1238,6 @@ class BlockchainSecret final :
 };
 // -------------------------------------------------------------------
 
-class FirebaseSecret_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FirebaseSecret_DataEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FirebaseSecret_DataEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
-  FirebaseSecret_DataEntry_DoNotUse();
-  explicit constexpr FirebaseSecret_DataEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit FirebaseSecret_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const FirebaseSecret_DataEntry_DoNotUse& other);
-  static const FirebaseSecret_DataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const FirebaseSecret_DataEntry_DoNotUse*>(&_FirebaseSecret_DataEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "vault.v1alpha1.FirebaseSecret.DataEntry.key");
- }
-  static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "vault.v1alpha1.FirebaseSecret.DataEntry.value");
- }
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-};
-
-// -------------------------------------------------------------------
-
 class FirebaseSecret final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vault.v1alpha1.FirebaseSecret) */ {
  public:
@@ -1313,7 +1282,7 @@ class FirebaseSecret final :
                &_FirebaseSecret_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   friend void swap(FirebaseSecret& a, FirebaseSecret& b) {
     a.Swap(&b);
@@ -1381,28 +1350,24 @@ class FirebaseSecret final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
 
   enum : int {
     kDataFieldNumber = 1,
   };
-  // map<string, string> data = 1 [json_name = "data"];
-  int data_size() const;
-  private:
-  int _internal_data_size() const;
-  public:
+  // bytes data = 1 [json_name = "data"];
   void clear_data();
+  const std::string& data() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_data(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_data();
+  PROTOBUF_MUST_USE_RESULT std::string* release_data();
+  void set_allocated_data(std::string* data);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      _internal_data() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      _internal_mutable_data();
+  const std::string& _internal_data() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_data(const std::string& value);
+  std::string* _internal_mutable_data();
   public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      data() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      mutable_data();
 
   // @@protoc_insertion_point(class_scope:vault.v1alpha1.FirebaseSecret)
  private:
@@ -1411,11 +1376,7 @@ class FirebaseSecret final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      FirebaseSecret_DataEntry_DoNotUse,
-      std::string, std::string,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> data_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vault_2fv1alpha1_2fvault_2eproto;
 };
@@ -2510,44 +2471,57 @@ inline void BlockchainSecret::set_allocated_data(::vault::v1alpha1::SecretData* 
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // FirebaseSecret
 
-// map<string, string> data = 1 [json_name = "data"];
-inline int FirebaseSecret::_internal_data_size() const {
-  return data_.size();
-}
-inline int FirebaseSecret::data_size() const {
-  return _internal_data_size();
-}
+// bytes data = 1 [json_name = "data"];
 inline void FirebaseSecret::clear_data() {
-  data_.Clear();
+  data_.ClearToEmpty();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-FirebaseSecret::_internal_data() const {
-  return data_.GetMap();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-FirebaseSecret::data() const {
-  // @@protoc_insertion_point(field_map:vault.v1alpha1.FirebaseSecret.data)
+inline const std::string& FirebaseSecret::data() const {
+  // @@protoc_insertion_point(field_get:vault.v1alpha1.FirebaseSecret.data)
   return _internal_data();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-FirebaseSecret::_internal_mutable_data() {
-  return data_.MutableMap();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FirebaseSecret::set_data(ArgT0&& arg0, ArgT... args) {
+ 
+ data_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:vault.v1alpha1.FirebaseSecret.data)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-FirebaseSecret::mutable_data() {
-  // @@protoc_insertion_point(field_mutable_map:vault.v1alpha1.FirebaseSecret.data)
-  return _internal_mutable_data();
+inline std::string* FirebaseSecret::mutable_data() {
+  std::string* _s = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:vault.v1alpha1.FirebaseSecret.data)
+  return _s;
+}
+inline const std::string& FirebaseSecret::_internal_data() const {
+  return data_.Get();
+}
+inline void FirebaseSecret::_internal_set_data(const std::string& value) {
+  
+  data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* FirebaseSecret::_internal_mutable_data() {
+  
+  return data_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* FirebaseSecret::release_data() {
+  // @@protoc_insertion_point(field_release:vault.v1alpha1.FirebaseSecret.data)
+  return data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void FirebaseSecret::set_allocated_data(std::string* data) {
+  if (data != nullptr) {
+    
+  } else {
+    
+  }
+  data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), data,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:vault.v1alpha1.FirebaseSecret.data)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

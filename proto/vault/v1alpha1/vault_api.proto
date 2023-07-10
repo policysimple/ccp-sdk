@@ -34,6 +34,7 @@ service VaultAPIService{
 
     //Getsecret to service
     rpc GetSecretsService(GetSecretsServiceRequest) returns (GetSecretsServiceResponse) {};
+    rpc GetSecretsServiceNotification(GetSecretsServiceNotificationRequest) returns (GetSecretsServiceNotificationResponse) {};
 }
 
 message SaveTokenFirebaseRequest {
@@ -165,5 +166,15 @@ message GetSecretsServiceRequest {
 
 message GetSecretsServiceResponse {
     SecretData secrets = 1;
+    string error = 2;
+}
+
+message GetSecretsServiceNotificationRequest {
+    string name_service = 1;
+    string error = 2;
+}
+
+message GetSecretsServiceNotificationResponse {
+    FirebaseSecret secrets = 1;
     string error = 2;
 }

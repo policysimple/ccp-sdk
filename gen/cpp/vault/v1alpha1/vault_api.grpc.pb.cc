@@ -31,6 +31,7 @@ static const char* VaultAPIService_method_names[] = {
   "/vault.v1alpha1.VaultAPIService/SaveTokenFirebase",
   "/vault.v1alpha1.VaultAPIService/GetTokenFirebase",
   "/vault.v1alpha1.VaultAPIService/GetSecretsService",
+  "/vault.v1alpha1.VaultAPIService/GetSecretsServiceNotification",
 };
 
 std::unique_ptr< VaultAPIService::Stub> VaultAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -52,6 +53,7 @@ VaultAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& ch
   , rpcmethod_SaveTokenFirebase_(VaultAPIService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetTokenFirebase_(VaultAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetSecretsService_(VaultAPIService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetSecretsServiceNotification_(VaultAPIService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status VaultAPIService::Stub::CreateSecret(::grpc::ClientContext* context, const ::vault::v1alpha1::CreateSecretRequest& request, ::vault::v1alpha1::CreateSecretResponse* response) {
@@ -246,6 +248,22 @@ void VaultAPIService::Stub::experimental_async::GetSecretsService(::grpc::Client
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetSecretsServiceResponse>::Create(channel_.get(), cq, rpcmethod_GetSecretsService_, context, request, false);
 }
 
+::grpc::Status VaultAPIService::Stub::GetSecretsServiceNotification(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceNotificationRequest& request, ::vault::v1alpha1::GetSecretsServiceNotificationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetSecretsServiceNotification_, context, request, response);
+}
+
+void VaultAPIService::Stub::experimental_async::GetSecretsServiceNotification(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceNotificationRequest* request, ::vault::v1alpha1::GetSecretsServiceNotificationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetSecretsServiceNotification_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretsServiceNotificationResponse>* VaultAPIService::Stub::AsyncGetSecretsServiceNotificationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceNotificationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetSecretsServiceNotificationResponse>::Create(channel_.get(), cq, rpcmethod_GetSecretsServiceNotification_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vault::v1alpha1::GetSecretsServiceNotificationResponse>* VaultAPIService::Stub::PrepareAsyncGetSecretsServiceNotificationRaw(::grpc::ClientContext* context, const ::vault::v1alpha1::GetSecretsServiceNotificationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vault::v1alpha1::GetSecretsServiceNotificationResponse>::Create(channel_.get(), cq, rpcmethod_GetSecretsServiceNotification_, context, request, false);
+}
+
 VaultAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       VaultAPIService_method_names[0],
@@ -307,6 +325,11 @@ VaultAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::GetSecretsServiceRequest, ::vault::v1alpha1::GetSecretsServiceResponse>(
           std::mem_fn(&VaultAPIService::Service::GetSecretsService), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      VaultAPIService_method_names[12],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< VaultAPIService::Service, ::vault::v1alpha1::GetSecretsServiceNotificationRequest, ::vault::v1alpha1::GetSecretsServiceNotificationResponse>(
+          std::mem_fn(&VaultAPIService::Service::GetSecretsServiceNotification), this)));
 }
 
 VaultAPIService::Service::~Service() {
@@ -390,6 +413,13 @@ VaultAPIService::Service::~Service() {
 }
 
 ::grpc::Status VaultAPIService::Service::GetSecretsService(::grpc::ServerContext* context, const ::vault::v1alpha1::GetSecretsServiceRequest* request, ::vault::v1alpha1::GetSecretsServiceResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status VaultAPIService::Service::GetSecretsServiceNotification(::grpc::ServerContext* context, const ::vault::v1alpha1::GetSecretsServiceNotificationRequest* request, ::vault::v1alpha1::GetSecretsServiceNotificationResponse* response) {
   (void) context;
   (void) request;
   (void) response;

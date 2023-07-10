@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\030io.cuemby.vault.v1alpha1B\nVaultProtoP\001Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1avault/v1alpha1/vault.proto\x12\x0evault.v1alpha1\"\xc5\x01\n\x08Metadata\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12!\n\x0c\x63reated_time\x18\x02 \x01(\tR\x0b\x63reatedTime\x12\'\n\x0f\x63ustom_metadata\x18\x03 \x01(\tR\x0e\x63ustomMetadata\x12#\n\rdeletion_time\x18\x04 \x01(\tR\x0c\x64\x65letionTime\x12\x1c\n\tdestroyed\x18\x05 \x01(\x08R\tdestroyed\x12\x18\n\x07version\x18\x06 \x01(\x05R\x07version\"\x7f\n\nSecretData\x12\x38\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32$.vault.v1alpha1.SecretData.DataEntryR\x04\x64\x61ta\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\",\n\x0eSecretWarnings\x12\x1a\n\x08warnings\x18\x01 \x03(\tR\x08warnings\"\xcb\x02\n\x06Secret\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\x12\x34\n\x08metadata\x18\x06 \x01(\x0b\x32\x18.vault.v1alpha1.MetadataR\x08metadata\x12.\n\x04\x64\x61ta\x18\x07 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\x12:\n\x08warnings\x18\x08 \x01(\x0b\x32\x1e.vault.v1alpha1.SecretWarningsR\x08warnings\"x\n\x10TokenIntegration\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\x12\x14\n\x05token\x18\x03 \x01(\tR\x05token\"B\n\x10\x42lockchainSecret\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\"\x87\x01\n\x0e\x46irebaseSecret\x12<\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32(.vault.v1alpha1.FirebaseSecret.DataEntryR\x04\x64\x61ta\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x83\x01\n\x18io.cuemby.vault.v1alpha1B\nVaultProtoP\x01Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\xa2\x02\x03PPX\xaa\x02\x0eVault.V1Alpha1\xca\x02\x0eVault\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n\x1avault/v1alpha1/vault.proto\x12\x0evault.v1alpha1\"\xc5\x01\n\x08Metadata\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12!\n\x0c\x63reated_time\x18\x02 \x01(\tR\x0b\x63reatedTime\x12\'\n\x0f\x63ustom_metadata\x18\x03 \x01(\tR\x0e\x63ustomMetadata\x12#\n\rdeletion_time\x18\x04 \x01(\tR\x0c\x64\x65letionTime\x12\x1c\n\tdestroyed\x18\x05 \x01(\x08R\tdestroyed\x12\x18\n\x07version\x18\x06 \x01(\x05R\x07version\"\x7f\n\nSecretData\x12\x38\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32$.vault.v1alpha1.SecretData.DataEntryR\x04\x64\x61ta\x1a\x37\n\tDataEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\",\n\x0eSecretWarnings\x12\x1a\n\x08warnings\x18\x01 \x03(\tR\x08warnings\"\xcb\x02\n\x06Secret\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12%\n\x0e\x61pplication_id\x18\x03 \x01(\tR\rapplicationId\x12\x1c\n\tnamespace\x18\x04 \x01(\tR\tnamespace\x12\x12\n\x04name\x18\x05 \x01(\tR\x04name\x12\x34\n\x08metadata\x18\x06 \x01(\x0b\x32\x18.vault.v1alpha1.MetadataR\x08metadata\x12.\n\x04\x64\x61ta\x18\x07 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\x12:\n\x08warnings\x18\x08 \x01(\x0b\x32\x1e.vault.v1alpha1.SecretWarningsR\x08warnings\"x\n\x10TokenIntegration\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12%\n\x0eintegration_id\x18\x02 \x01(\tR\rintegrationId\x12\x14\n\x05token\x18\x03 \x01(\tR\x05token\"B\n\x10\x42lockchainSecret\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1a.vault.v1alpha1.SecretDataR\x04\x64\x61ta\"$\n\x0e\x46irebaseSecret\x12\x12\n\x04\x64\x61ta\x18\x01 \x01(\x0cR\x04\x64\x61taB\x83\x01\n\x18io.cuemby.vault.v1alpha1B\nVaultProtoP\x01Z1github.com/cuemby/ccp-vault-service/vaultv1alpha1\xa2\x02\x03PPX\xaa\x02\x0eVault.V1Alpha1\xca\x02\x0eVault\\V1Alpha1b\x06proto3'
 )
 
 
@@ -353,44 +353,6 @@ _BLOCKCHAINSECRET = _descriptor.Descriptor(
 )
 
 
-_FIREBASESECRET_DATAENTRY = _descriptor.Descriptor(
-  name='DataEntry',
-  full_name='vault.v1alpha1.FirebaseSecret.DataEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='vault.v1alpha1.FirebaseSecret.DataEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='vault.v1alpha1.FirebaseSecret.DataEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=318,
-  serialized_end=373,
-)
-
 _FIREBASESECRET = _descriptor.Descriptor(
   name='FirebaseSecret',
   full_name='vault.v1alpha1.FirebaseSecret',
@@ -401,15 +363,15 @@ _FIREBASESECRET = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='data', full_name='vault.v1alpha1.FirebaseSecret.data', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_FIREBASESECRET_DATAENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -418,8 +380,8 @@ _FIREBASESECRET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=946,
-  serialized_end=1081,
+  serialized_start=945,
+  serialized_end=981,
 )
 
 _SECRETDATA_DATAENTRY.containing_type = _SECRETDATA
@@ -428,8 +390,6 @@ _SECRET.fields_by_name['metadata'].message_type = _METADATA
 _SECRET.fields_by_name['data'].message_type = _SECRETDATA
 _SECRET.fields_by_name['warnings'].message_type = _SECRETWARNINGS
 _BLOCKCHAINSECRET.fields_by_name['data'].message_type = _SECRETDATA
-_FIREBASESECRET_DATAENTRY.containing_type = _FIREBASESECRET
-_FIREBASESECRET.fields_by_name['data'].message_type = _FIREBASESECRET_DATAENTRY
 DESCRIPTOR.message_types_by_name['Metadata'] = _METADATA
 DESCRIPTOR.message_types_by_name['SecretData'] = _SECRETDATA
 DESCRIPTOR.message_types_by_name['SecretWarnings'] = _SECRETWARNINGS
@@ -490,22 +450,13 @@ BlockchainSecret = _reflection.GeneratedProtocolMessageType('BlockchainSecret', 
 _sym_db.RegisterMessage(BlockchainSecret)
 
 FirebaseSecret = _reflection.GeneratedProtocolMessageType('FirebaseSecret', (_message.Message,), {
-
-  'DataEntry' : _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), {
-    'DESCRIPTOR' : _FIREBASESECRET_DATAENTRY,
-    '__module__' : 'vault.v1alpha1.vault_pb2'
-    # @@protoc_insertion_point(class_scope:vault.v1alpha1.FirebaseSecret.DataEntry)
-    })
-  ,
   'DESCRIPTOR' : _FIREBASESECRET,
   '__module__' : 'vault.v1alpha1.vault_pb2'
   # @@protoc_insertion_point(class_scope:vault.v1alpha1.FirebaseSecret)
   })
 _sym_db.RegisterMessage(FirebaseSecret)
-_sym_db.RegisterMessage(FirebaseSecret.DataEntry)
 
 
 DESCRIPTOR._options = None
 _SECRETDATA_DATAENTRY._options = None
-_FIREBASESECRET_DATAENTRY._options = None
 # @@protoc_insertion_point(module_scope)

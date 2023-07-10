@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class FirebaseSecret extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
+     * Generated from protobuf field <code>bytes data = 1 [json_name = "data"];</code>
      */
-    private $data;
+    protected $data = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class FirebaseSecret extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array|\Google\Protobuf\Internal\MapField $data
+     *     @type string $data
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class FirebaseSecret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
-     * @return \Google\Protobuf\Internal\MapField
+     * Generated from protobuf field <code>bytes data = 1 [json_name = "data"];</code>
+     * @return string
      */
     public function getData()
     {
@@ -42,14 +42,14 @@ class FirebaseSecret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
+     * Generated from protobuf field <code>bytes data = 1 [json_name = "data"];</code>
+     * @param string $var
      * @return $this
      */
     public function setData($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->data = $arr;
+        GPBUtil::checkString($var, False);
+        $this->data = $var;
 
         return $this;
     }

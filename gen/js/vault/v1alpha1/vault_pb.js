@@ -1514,7 +1514,7 @@ proto.vault.v1alpha1.FirebaseSecret.prototype.toObject = function(opt_includeIns
  */
 proto.vault.v1alpha1.FirebaseSecret.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : []
+    data: msg.getData_asB64()
   };
 
   if (includeInstance) {
@@ -1552,10 +1552,8 @@ proto.vault.v1alpha1.FirebaseSecret.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = msg.getDataMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setData(value);
       break;
     default:
       reader.skipField();
@@ -1586,33 +1584,56 @@ proto.vault.v1alpha1.FirebaseSecret.prototype.serializeBinary = function() {
  */
 proto.vault.v1alpha1.FirebaseSecret.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDataMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  f = message.getData_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      1,
+      f
+    );
   }
 };
 
 
 /**
- * map<string, string> data = 1;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
+ * optional bytes data = 1;
+ * @return {!(string|Uint8Array)}
  */
-proto.vault.v1alpha1.FirebaseSecret.prototype.getDataMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      null));
+proto.vault.v1alpha1.FirebaseSecret.prototype.getData = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * optional bytes data = 1;
+ * This is a type-conversion wrapper around `getData()`
+ * @return {string}
+ */
+proto.vault.v1alpha1.FirebaseSecret.prototype.getData_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getData()));
+};
+
+
+/**
+ * optional bytes data = 1;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getData()`
+ * @return {!Uint8Array}
+ */
+proto.vault.v1alpha1.FirebaseSecret.prototype.getData_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getData()));
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
  * @return {!proto.vault.v1alpha1.FirebaseSecret} returns this
  */
-proto.vault.v1alpha1.FirebaseSecret.prototype.clearDataMap = function() {
-  this.getDataMap().clear();
-  return this;};
+proto.vault.v1alpha1.FirebaseSecret.prototype.setData = function(value) {
+  return jspb.Message.setProto3BytesField(this, 1, value);
+};
 
 
 goog.object.extend(exports, proto.vault.v1alpha1);

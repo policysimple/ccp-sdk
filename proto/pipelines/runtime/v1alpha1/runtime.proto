@@ -11,7 +11,9 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 
 import "application/v1alpha1/application.proto";
+//import "../../application/v1alpha1/application.proto";
 import "pipelines/tekton/v1alpha1/tekton.proto";
+//import "../../tekton/v1alpha1/tekton.proto";
 
 enum TrafficType {
   TRAFFIC_TYPE_UNSPECIFIED = 0;

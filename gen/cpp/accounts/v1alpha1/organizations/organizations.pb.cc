@@ -75,7 +75,8 @@ struct UpdateOrganizationRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateOrganizationRequestDefaultTypeInternal _UpdateOrganizationRequest_default_instance_;
 constexpr DeleteOrganizationRequest::DeleteOrganizationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct DeleteOrganizationRequestDefaultTypeInternal {
   constexpr DeleteOrganizationRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -232,6 +233,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2forganiza
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest, user_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::organizations::v1::GetOneOrganizationResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -300,13 +302,13 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 14, -1, sizeof(::accounts::v1alpha1::organizations::v1::GetOneOrganizationRequest)},
   { 20, -1, sizeof(::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest)},
   { 29, -1, sizeof(::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest)},
-  { 35, -1, sizeof(::accounts::v1alpha1::organizations::v1::GetOneOrganizationResponse)},
-  { 49, -1, sizeof(::accounts::v1alpha1::organizations::v1::ListOrganizationResponse)},
-  { 55, -1, sizeof(::accounts::v1alpha1::organizations::v1::CreateOrganizationResponse)},
-  { 63, -1, sizeof(::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse)},
-  { 69, -1, sizeof(::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse)},
-  { 75, -1, sizeof(::accounts::v1alpha1::organizations::v1::Member)},
-  { 87, -1, sizeof(::accounts::v1alpha1::organizations::v1::ProjectOrganization)},
+  { 36, -1, sizeof(::accounts::v1alpha1::organizations::v1::GetOneOrganizationResponse)},
+  { 50, -1, sizeof(::accounts::v1alpha1::organizations::v1::ListOrganizationResponse)},
+  { 56, -1, sizeof(::accounts::v1alpha1::organizations::v1::CreateOrganizationResponse)},
+  { 64, -1, sizeof(::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse)},
+  { 70, -1, sizeof(::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse)},
+  { 76, -1, sizeof(::accounts::v1alpha1::organizations::v1::Member)},
+  { 88, -1, sizeof(::accounts::v1alpha1::organizations::v1::ProjectOrganization)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -337,44 +339,44 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2forganizations_2forgan
   "teOrganizationRequest\022\022\n\004name\030\002 \001(\tR\004nam"
   "e\022 \n\013description\030\003 \001(\tR\013description\022\024\n\005i"
   "mage\030\004 \001(\tR\005image\022\'\n\017organization_id\030\005 \001"
-  "(\tR\016organizationId\"D\n\031DeleteOrganization"
-  "Request\022\'\n\017organization_id\030\002 \001(\tR\016organi"
-  "zationId\"\216\003\n\032GetOneOrganizationResponse\022"
-  "\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005imag"
-  "e\022S\n\010projects\030\004 \003(\01327.accounts.v1alpha1."
-  "organizations.v1.ProjectOrganizationR\010pr"
-  "ojects\022D\n\007members\030\005 \003(\0132*.accounts.v1alp"
-  "ha1.organizations.v1.MemberR\007members\022 \n\013"
-  "description\030\006 \001(\tR\013description\0221\n\005owner\030"
-  "\007 \001(\0132\033.accounts.v1alpha1.UserListR\005owne"
-  "r\022\022\n\004slug\030\t \001(\tR\004slug\022\016\n\002id\030\n \001(\tR\002id\0222\n"
-  "\025status_payment_method\030\013 \001(\010R\023statusPaym"
-  "entMethod\"a\n\030ListOrganizationResponse\022E\n"
-  "\rorganizations\030\001 \003(\0132\037.accounts.v1alpha1"
-  ".OrganizationR\rorganizations\"p\n\032CreateOr"
-  "ganizationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\0220\n\024"
-  "role_id_organization\030\006 \001(\tR\022roleIdOrgani"
-  "zation\022\016\n\002id\030\005 \001(\tR\002id\".\n\032UpdateOrganiza"
-  "tionResponse\022\020\n\003msg\030\001 \001(\tR\003msg\".\n\032Delete"
-  "OrganizationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"\324"
-  "\001\n\006Member\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfi"
-  "rst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004"
-  " \001(\tR\010lastName\022\033\n\tis_active\030\005 \001(\010R\010isAct"
-  "ive\0222\n\005roles\030\006 \003(\0132\034.accounts.v1alpha1.M"
-  "emberRolR\005roles\022\024\n\005image\030\007 \001(\tR\005image\022\016\n"
-  "\002id\030\010 \001(\rR\002id\"q\n\023ProjectOrganization\022\022\n\004"
-  "name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022 "
-  "\n\013description\030\004 \001(\tR\013description\022\016\n\002id\030\005"
-  " \001(\tR\002idBBZ@github.com/cuemby/ccp-sdk/ge"
-  "n/go/accounts/v1alpha1/organizationsb\006pr"
-  "oto3"
+  "(\tR\016organizationId\"]\n\031DeleteOrganization"
+  "Request\022\'\n\017organization_id\030\001 \001(\tR\016organi"
+  "zationId\022\027\n\007user_id\030\002 \001(\tR\006userId\"\216\003\n\032Ge"
+  "tOneOrganizationResponse\022\022\n\004name\030\002 \001(\tR\004"
+  "name\022\024\n\005image\030\003 \001(\tR\005image\022S\n\010projects\030\004"
+  " \003(\01327.accounts.v1alpha1.organizations.v"
+  "1.ProjectOrganizationR\010projects\022D\n\007membe"
+  "rs\030\005 \003(\0132*.accounts.v1alpha1.organizatio"
+  "ns.v1.MemberR\007members\022 \n\013description\030\006 \001"
+  "(\tR\013description\0221\n\005owner\030\007 \001(\0132\033.account"
+  "s.v1alpha1.UserListR\005owner\022\022\n\004slug\030\t \001(\t"
+  "R\004slug\022\016\n\002id\030\n \001(\tR\002id\0222\n\025status_payment"
+  "_method\030\013 \001(\010R\023statusPaymentMethod\"a\n\030Li"
+  "stOrganizationResponse\022E\n\rorganizations\030"
+  "\001 \003(\0132\037.accounts.v1alpha1.OrganizationR\r"
+  "organizations\"p\n\032CreateOrganizationRespo"
+  "nse\022\020\n\003msg\030\001 \001(\tR\003msg\0220\n\024role_id_organiz"
+  "ation\030\006 \001(\tR\022roleIdOrganization\022\016\n\002id\030\005 "
+  "\001(\tR\002id\".\n\032UpdateOrganizationResponse\022\020\n"
+  "\003msg\030\001 \001(\tR\003msg\".\n\032DeleteOrganizationRes"
+  "ponse\022\020\n\003msg\030\001 \001(\tR\003msg\"\324\001\n\006Member\022\027\n\007us"
+  "er_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR"
+  "\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022"
+  "\033\n\tis_active\030\005 \001(\010R\010isActive\0222\n\005roles\030\006 "
+  "\003(\0132\034.accounts.v1alpha1.MemberRolR\005roles"
+  "\022\024\n\005image\030\007 \001(\tR\005image\022\016\n\002id\030\010 \001(\rR\002id\"q"
+  "\n\023ProjectOrganization\022\022\n\004name\030\002 \001(\tR\004nam"
+  "e\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030\004"
+  " \001(\tR\013description\022\016\n\002id\030\005 \001(\tR\002idBBZ@git"
+  "hub.com/cuemby/ccp-sdk/gen/go/accounts/v"
+  "1alpha1/organizationsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto = {
-  false, false, 1684, descriptor_table_protodef_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto, "accounts/v1alpha1/organizations/organizations.proto", 
+  false, false, 1709, descriptor_table_protodef_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto, "accounts/v1alpha1/organizations/organizations.proto", 
   &descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto_once, descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto_deps, 1, 12,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto,
@@ -1418,11 +1420,17 @@ DeleteOrganizationRequest::DeleteOrganizationRequest(const DeleteOrganizationReq
     organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
       GetArenaForAllocation());
   }
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest)
 }
 
 inline void DeleteOrganizationRequest::SharedCtor() {
 organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 DeleteOrganizationRequest::~DeleteOrganizationRequest() {
@@ -1435,6 +1443,7 @@ DeleteOrganizationRequest::~DeleteOrganizationRequest() {
 inline void DeleteOrganizationRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DeleteOrganizationRequest::ArenaDtor(void* object) {
@@ -1454,6 +1463,7 @@ void DeleteOrganizationRequest::Clear() {
   (void) cached_has_bits;
 
   organization_id_.ClearToEmpty();
+  user_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1463,12 +1473,21 @@ const char* DeleteOrganizationRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string organization_id = 2 [json_name = "organizationId"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // string organization_id = 1 [json_name = "organizationId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_organization_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_id = 2 [json_name = "userId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.user_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1501,14 +1520,24 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string organization_id = 2 [json_name = "organizationId"];
+  // string organization_id = 1 [json_name = "organizationId"];
   if (!this->_internal_organization_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.organization_id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_organization_id(), target);
+        1, this->_internal_organization_id(), target);
+  }
+
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_user_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1527,11 +1556,18 @@ size_t DeleteOrganizationRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string organization_id = 2 [json_name = "organizationId"];
+  // string organization_id = 1 [json_name = "organizationId"];
   if (!this->_internal_organization_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_organization_id());
+  }
+
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1565,6 +1601,9 @@ void DeleteOrganizationRequest::MergeFrom(const DeleteOrganizationRequest& from)
   if (!from._internal_organization_id().empty()) {
     _internal_set_organization_id(from._internal_organization_id());
   }
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1586,6 +1625,11 @@ void DeleteOrganizationRequest::InternalSwap(DeleteOrganizationRequest* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &organization_id_, GetArenaForAllocation(),
       &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
   );
 }
 

@@ -341,9 +341,35 @@ struct GetSecretsServiceResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetSecretsServiceResponseDefaultTypeInternal _GetSecretsServiceResponse_default_instance_;
+constexpr GetSecretsServiceNotificationRequest::GetSecretsServiceNotificationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_service_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GetSecretsServiceNotificationRequestDefaultTypeInternal {
+  constexpr GetSecretsServiceNotificationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetSecretsServiceNotificationRequestDefaultTypeInternal() {}
+  union {
+    GetSecretsServiceNotificationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetSecretsServiceNotificationRequestDefaultTypeInternal _GetSecretsServiceNotificationRequest_default_instance_;
+constexpr GetSecretsServiceNotificationResponse::GetSecretsServiceNotificationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , secrets_(nullptr){}
+struct GetSecretsServiceNotificationResponseDefaultTypeInternal {
+  constexpr GetSecretsServiceNotificationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetSecretsServiceNotificationResponseDefaultTypeInternal() {}
+  union {
+    GetSecretsServiceNotificationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetSecretsServiceNotificationResponseDefaultTypeInternal _GetSecretsServiceNotificationResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace vault
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[24];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[26];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto = nullptr;
 
@@ -527,6 +553,20 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_5fapi
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretsServiceResponse, secrets_),
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretsServiceResponse, error_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretsServiceNotificationRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretsServiceNotificationRequest, name_service_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretsServiceNotificationRequest, error_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretsServiceNotificationResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretsServiceNotificationResponse, secrets_),
+  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::GetSecretsServiceNotificationResponse, error_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vault::v1alpha1::SaveTokenFirebaseRequest)},
@@ -553,6 +593,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 158, -1, sizeof(::vault::v1alpha1::GetTokenBlockChainResponse)},
   { 165, -1, sizeof(::vault::v1alpha1::GetSecretsServiceRequest)},
   { 172, -1, sizeof(::vault::v1alpha1::GetSecretsServiceResponse)},
+  { 179, -1, sizeof(::vault::v1alpha1::GetSecretsServiceNotificationRequest)},
+  { 186, -1, sizeof(::vault::v1alpha1::GetSecretsServiceNotificationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -580,6 +622,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_GetTokenBlockChainResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_GetSecretsServiceRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_GetSecretsServiceResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_GetSecretsServiceNotificationRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_GetSecretsServiceNotificationResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -649,50 +693,59 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto[] PR
   "\022\024\n\005error\030\002 \001(\tR\005error\"g\n\031GetSecretsServ"
   "iceResponse\0224\n\007secrets\030\001 \001(\0132\032.vault.v1a"
   "lpha1.SecretDataR\007secrets\022\024\n\005error\030\002 \001(\t"
-  "R\005error2\372\t\n\017VaultAPIService\022[\n\014CreateSec"
-  "ret\022#.vault.v1alpha1.CreateSecretRequest"
-  "\032$.vault.v1alpha1.CreateSecretResponse\"\000"
-  "\022[\n\014UpdateSecret\022#.vault.v1alpha1.Update"
-  "SecretRequest\032$.vault.v1alpha1.UpdateSec"
-  "retResponse\"\000\022[\n\014DeleteSecret\022#.vault.v1"
-  "alpha1.DeleteSecretRequest\032$.vault.v1alp"
-  "ha1.DeleteSecretResponse\"\000\022R\n\tGetSecret\022"
-  " .vault.v1alpha1.GetSecretRequest\032!.vaul"
-  "t.v1alpha1.GetSecretResponse\"\000\022m\n\022Delete"
-  "Organization\022).vault.v1alpha1.DeleteOrga"
-  "nizationRequest\032*.vault.v1alpha1.DeleteO"
-  "rganizationResponse\"\000\022v\n\025SaveTokenIntegr"
-  "ations\022,.vault.v1alpha1.SaveTokenIntegra"
-  "tionsRequest\032-.vault.v1alpha1.SaveTokenI"
-  "ntegrationsResponse\"\000\022s\n\024GetTokenIntegra"
-  "tions\022+.vault.v1alpha1.GetTokenIntegrati"
-  "onsRequest\032,.vault.v1alpha1.GetTokenInte"
-  "grationsResponse\"\000\022p\n\023SaveTokenBlockChai"
-  "n\022*.vault.v1alpha1.SaveTokenBlockChainRe"
-  "quest\032+.vault.v1alpha1.SaveTokenBlockCha"
-  "inResponse\"\000\022m\n\022GetTokenBlockChain\022).vau"
-  "lt.v1alpha1.GetTokenBlockChainRequest\032*."
-  "vault.v1alpha1.GetTokenBlockChainRespons"
-  "e\"\000\022j\n\021SaveTokenFirebase\022(.vault.v1alpha"
-  "1.SaveTokenFirebaseRequest\032).vault.v1alp"
-  "ha1.SaveTokenFirebaseResponse\"\000\022g\n\020GetTo"
-  "kenFirebase\022\'.vault.v1alpha1.GetTokenFir"
-  "ebaseRequest\032(.vault.v1alpha1.GetTokenFi"
-  "rebaseResponse\"\000\022j\n\021GetSecretsService\022(."
-  "vault.v1alpha1.GetSecretsServiceRequest\032"
-  ").vault.v1alpha1.GetSecretsServiceRespon"
-  "se\"\000B\206\001\n\030io.cuemby.vault.v1alpha1B\rVault"
-  "APIProtoP\001Z1github.com/cuemby/ccp-vault-"
-  "service/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Al"
-  "pha1\312\002\016Vault\\V1Alpha1b\006proto3"
+  "R\005error\"_\n$GetSecretsServiceNotification"
+  "Request\022!\n\014name_service\030\001 \001(\tR\013nameServi"
+  "ce\022\024\n\005error\030\002 \001(\tR\005error\"w\n%GetSecretsSe"
+  "rviceNotificationResponse\0228\n\007secrets\030\001 \001"
+  "(\0132\036.vault.v1alpha1.FirebaseSecretR\007secr"
+  "ets\022\024\n\005error\030\002 \001(\tR\005error2\213\013\n\017VaultAPISe"
+  "rvice\022[\n\014CreateSecret\022#.vault.v1alpha1.C"
+  "reateSecretRequest\032$.vault.v1alpha1.Crea"
+  "teSecretResponse\"\000\022[\n\014UpdateSecret\022#.vau"
+  "lt.v1alpha1.UpdateSecretRequest\032$.vault."
+  "v1alpha1.UpdateSecretResponse\"\000\022[\n\014Delet"
+  "eSecret\022#.vault.v1alpha1.DeleteSecretReq"
+  "uest\032$.vault.v1alpha1.DeleteSecretRespon"
+  "se\"\000\022R\n\tGetSecret\022 .vault.v1alpha1.GetSe"
+  "cretRequest\032!.vault.v1alpha1.GetSecretRe"
+  "sponse\"\000\022m\n\022DeleteOrganization\022).vault.v"
+  "1alpha1.DeleteOrganizationRequest\032*.vaul"
+  "t.v1alpha1.DeleteOrganizationResponse\"\000\022"
+  "v\n\025SaveTokenIntegrations\022,.vault.v1alpha"
+  "1.SaveTokenIntegrationsRequest\032-.vault.v"
+  "1alpha1.SaveTokenIntegrationsResponse\"\000\022"
+  "s\n\024GetTokenIntegrations\022+.vault.v1alpha1"
+  ".GetTokenIntegrationsRequest\032,.vault.v1a"
+  "lpha1.GetTokenIntegrationsResponse\"\000\022p\n\023"
+  "SaveTokenBlockChain\022*.vault.v1alpha1.Sav"
+  "eTokenBlockChainRequest\032+.vault.v1alpha1"
+  ".SaveTokenBlockChainResponse\"\000\022m\n\022GetTok"
+  "enBlockChain\022).vault.v1alpha1.GetTokenBl"
+  "ockChainRequest\032*.vault.v1alpha1.GetToke"
+  "nBlockChainResponse\"\000\022j\n\021SaveTokenFireba"
+  "se\022(.vault.v1alpha1.SaveTokenFirebaseReq"
+  "uest\032).vault.v1alpha1.SaveTokenFirebaseR"
+  "esponse\"\000\022g\n\020GetTokenFirebase\022\'.vault.v1"
+  "alpha1.GetTokenFirebaseRequest\032(.vault.v"
+  "1alpha1.GetTokenFirebaseResponse\"\000\022j\n\021Ge"
+  "tSecretsService\022(.vault.v1alpha1.GetSecr"
+  "etsServiceRequest\032).vault.v1alpha1.GetSe"
+  "cretsServiceResponse\"\000\022\216\001\n\035GetSecretsSer"
+  "viceNotification\0224.vault.v1alpha1.GetSec"
+  "retsServiceNotificationRequest\0325.vault.v"
+  "1alpha1.GetSecretsServiceNotificationRes"
+  "ponse\"\000B\206\001\n\030io.cuemby.vault.v1alpha1B\rVa"
+  "ultAPIProtoP\001Z1github.com/cuemby/ccp-vau"
+  "lt-service/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V"
+  "1Alpha1\312\002\016Vault\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps[1] = {
   &::descriptor_table_vault_2fv1alpha1_2fvault_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto = {
-  false, false, 4069, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
-  &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once, descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps, 1, 24,
+  false, false, 4432, descriptor_table_protodef_vault_2fv1alpha1_2fvault_5fapi_2eproto, "vault/v1alpha1/vault_api.proto", 
+  &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once, descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_deps, 1, 26,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_5fapi_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_5fapi_2eproto,
 };
@@ -7023,6 +7076,496 @@ void GetSecretsServiceResponse::InternalSwap(GetSecretsServiceResponse* other) {
       file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[23]);
 }
 
+// ===================================================================
+
+class GetSecretsServiceNotificationRequest::_Internal {
+ public:
+};
+
+GetSecretsServiceNotificationRequest::GetSecretsServiceNotificationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.GetSecretsServiceNotificationRequest)
+}
+GetSecretsServiceNotificationRequest::GetSecretsServiceNotificationRequest(const GetSecretsServiceNotificationRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_service_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name_service().empty()) {
+    name_service_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name_service(), 
+      GetArenaForAllocation());
+  }
+  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_error().empty()) {
+    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.GetSecretsServiceNotificationRequest)
+}
+
+inline void GetSecretsServiceNotificationRequest::SharedCtor() {
+name_service_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+GetSecretsServiceNotificationRequest::~GetSecretsServiceNotificationRequest() {
+  // @@protoc_insertion_point(destructor:vault.v1alpha1.GetSecretsServiceNotificationRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetSecretsServiceNotificationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_service_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void GetSecretsServiceNotificationRequest::ArenaDtor(void* object) {
+  GetSecretsServiceNotificationRequest* _this = reinterpret_cast< GetSecretsServiceNotificationRequest* >(object);
+  (void)_this;
+}
+void GetSecretsServiceNotificationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetSecretsServiceNotificationRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetSecretsServiceNotificationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.GetSecretsServiceNotificationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_service_.ClearToEmpty();
+  error_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetSecretsServiceNotificationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name_service = 1 [json_name = "nameService"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name_service();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetSecretsServiceNotificationRequest.name_service"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string error = 2 [json_name = "error"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_error();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetSecretsServiceNotificationRequest.error"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetSecretsServiceNotificationRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.GetSecretsServiceNotificationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name_service = 1 [json_name = "nameService"];
+  if (!this->_internal_name_service().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name_service().data(), static_cast<int>(this->_internal_name_service().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetSecretsServiceNotificationRequest.name_service");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name_service(), target);
+  }
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetSecretsServiceNotificationRequest.error");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.GetSecretsServiceNotificationRequest)
+  return target;
+}
+
+size_t GetSecretsServiceNotificationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.GetSecretsServiceNotificationRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name_service = 1 [json_name = "nameService"];
+  if (!this->_internal_name_service().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name_service());
+  }
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetSecretsServiceNotificationRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetSecretsServiceNotificationRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetSecretsServiceNotificationRequest::GetClassData() const { return &_class_data_; }
+
+void GetSecretsServiceNotificationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<GetSecretsServiceNotificationRequest *>(to)->MergeFrom(
+      static_cast<const GetSecretsServiceNotificationRequest &>(from));
+}
+
+
+void GetSecretsServiceNotificationRequest::MergeFrom(const GetSecretsServiceNotificationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.GetSecretsServiceNotificationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name_service().empty()) {
+    _internal_set_name_service(from._internal_name_service());
+  }
+  if (!from._internal_error().empty()) {
+    _internal_set_error(from._internal_error());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetSecretsServiceNotificationRequest::CopyFrom(const GetSecretsServiceNotificationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.GetSecretsServiceNotificationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetSecretsServiceNotificationRequest::IsInitialized() const {
+  return true;
+}
+
+void GetSecretsServiceNotificationRequest::InternalSwap(GetSecretsServiceNotificationRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_service_, GetArenaForAllocation(),
+      &other->name_service_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &error_, GetArenaForAllocation(),
+      &other->error_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetSecretsServiceNotificationRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[24]);
+}
+
+// ===================================================================
+
+class GetSecretsServiceNotificationResponse::_Internal {
+ public:
+  static const ::vault::v1alpha1::FirebaseSecret& secrets(const GetSecretsServiceNotificationResponse* msg);
+};
+
+const ::vault::v1alpha1::FirebaseSecret&
+GetSecretsServiceNotificationResponse::_Internal::secrets(const GetSecretsServiceNotificationResponse* msg) {
+  return *msg->secrets_;
+}
+void GetSecretsServiceNotificationResponse::clear_secrets() {
+  if (GetArenaForAllocation() == nullptr && secrets_ != nullptr) {
+    delete secrets_;
+  }
+  secrets_ = nullptr;
+}
+GetSecretsServiceNotificationResponse::GetSecretsServiceNotificationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vault.v1alpha1.GetSecretsServiceNotificationResponse)
+}
+GetSecretsServiceNotificationResponse::GetSecretsServiceNotificationResponse(const GetSecretsServiceNotificationResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_error().empty()) {
+    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_secrets()) {
+    secrets_ = new ::vault::v1alpha1::FirebaseSecret(*from.secrets_);
+  } else {
+    secrets_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.GetSecretsServiceNotificationResponse)
+}
+
+inline void GetSecretsServiceNotificationResponse::SharedCtor() {
+error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+secrets_ = nullptr;
+}
+
+GetSecretsServiceNotificationResponse::~GetSecretsServiceNotificationResponse() {
+  // @@protoc_insertion_point(destructor:vault.v1alpha1.GetSecretsServiceNotificationResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetSecretsServiceNotificationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete secrets_;
+}
+
+void GetSecretsServiceNotificationResponse::ArenaDtor(void* object) {
+  GetSecretsServiceNotificationResponse* _this = reinterpret_cast< GetSecretsServiceNotificationResponse* >(object);
+  (void)_this;
+}
+void GetSecretsServiceNotificationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetSecretsServiceNotificationResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetSecretsServiceNotificationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:vault.v1alpha1.GetSecretsServiceNotificationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  error_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && secrets_ != nullptr) {
+    delete secrets_;
+  }
+  secrets_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetSecretsServiceNotificationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .vault.v1alpha1.FirebaseSecret secrets = 1 [json_name = "secrets"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_secrets(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string error = 2 [json_name = "error"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_error();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vault.v1alpha1.GetSecretsServiceNotificationResponse.error"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetSecretsServiceNotificationResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vault.v1alpha1.GetSecretsServiceNotificationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .vault.v1alpha1.FirebaseSecret secrets = 1 [json_name = "secrets"];
+  if (this->_internal_has_secrets()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::secrets(this), target, stream);
+  }
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vault.v1alpha1.GetSecretsServiceNotificationResponse.error");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vault.v1alpha1.GetSecretsServiceNotificationResponse)
+  return target;
+}
+
+size_t GetSecretsServiceNotificationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vault.v1alpha1.GetSecretsServiceNotificationResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error());
+  }
+
+  // .vault.v1alpha1.FirebaseSecret secrets = 1 [json_name = "secrets"];
+  if (this->_internal_has_secrets()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *secrets_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetSecretsServiceNotificationResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetSecretsServiceNotificationResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetSecretsServiceNotificationResponse::GetClassData() const { return &_class_data_; }
+
+void GetSecretsServiceNotificationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<GetSecretsServiceNotificationResponse *>(to)->MergeFrom(
+      static_cast<const GetSecretsServiceNotificationResponse &>(from));
+}
+
+
+void GetSecretsServiceNotificationResponse::MergeFrom(const GetSecretsServiceNotificationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vault.v1alpha1.GetSecretsServiceNotificationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_error().empty()) {
+    _internal_set_error(from._internal_error());
+  }
+  if (from._internal_has_secrets()) {
+    _internal_mutable_secrets()->::vault::v1alpha1::FirebaseSecret::MergeFrom(from._internal_secrets());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetSecretsServiceNotificationResponse::CopyFrom(const GetSecretsServiceNotificationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vault.v1alpha1.GetSecretsServiceNotificationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetSecretsServiceNotificationResponse::IsInitialized() const {
+  return true;
+}
+
+void GetSecretsServiceNotificationResponse::InternalSwap(GetSecretsServiceNotificationResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &error_, GetArenaForAllocation(),
+      &other->error_, other->GetArenaForAllocation()
+  );
+  swap(secrets_, other->secrets_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetSecretsServiceNotificationResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_5fapi_2eproto_once,
+      file_level_metadata_vault_2fv1alpha1_2fvault_5fapi_2eproto[25]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace vault
@@ -7098,6 +7641,12 @@ template<> PROTOBUF_NOINLINE ::vault::v1alpha1::GetSecretsServiceRequest* Arena:
 }
 template<> PROTOBUF_NOINLINE ::vault::v1alpha1::GetSecretsServiceResponse* Arena::CreateMaybeMessage< ::vault::v1alpha1::GetSecretsServiceResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vault::v1alpha1::GetSecretsServiceResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vault::v1alpha1::GetSecretsServiceNotificationRequest* Arena::CreateMaybeMessage< ::vault::v1alpha1::GetSecretsServiceNotificationRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vault::v1alpha1::GetSecretsServiceNotificationRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vault::v1alpha1::GetSecretsServiceNotificationResponse* Arena::CreateMaybeMessage< ::vault::v1alpha1::GetSecretsServiceNotificationResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vault::v1alpha1::GetSecretsServiceNotificationResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

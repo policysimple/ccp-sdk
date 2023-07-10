@@ -115,20 +115,9 @@ struct BlockchainSecretDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BlockchainSecretDefaultTypeInternal _BlockchainSecret_default_instance_;
-constexpr FirebaseSecret_DataEntry_DoNotUse::FirebaseSecret_DataEntry_DoNotUse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct FirebaseSecret_DataEntry_DoNotUseDefaultTypeInternal {
-  constexpr FirebaseSecret_DataEntry_DoNotUseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~FirebaseSecret_DataEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    FirebaseSecret_DataEntry_DoNotUse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FirebaseSecret_DataEntry_DoNotUseDefaultTypeInternal _FirebaseSecret_DataEntry_DoNotUse_default_instance_;
 constexpr FirebaseSecret::FirebaseSecret(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}){}
+  : data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct FirebaseSecretDefaultTypeInternal {
   constexpr FirebaseSecretDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -140,7 +129,7 @@ struct FirebaseSecretDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FirebaseSecretDefaultTypeInternal _FirebaseSecret_default_instance_;
 }  // namespace v1alpha1
 }  // namespace vault
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[9];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[8];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_vault_2fv1alpha1_2fvault_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_vault_2fv1alpha1_2fvault_2eproto = nullptr;
 
@@ -204,15 +193,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vault_2fv1alpha1_2fvault_2epro
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::BlockchainSecret, data_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vault::v1alpha1::FirebaseSecret, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -228,8 +208,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 32, -1, sizeof(::vault::v1alpha1::Secret)},
   { 45, -1, sizeof(::vault::v1alpha1::TokenIntegration)},
   { 53, -1, sizeof(::vault::v1alpha1::BlockchainSecret)},
-  { 59, 66, sizeof(::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse)},
-  { 68, -1, sizeof(::vault::v1alpha1::FirebaseSecret)},
+  { 59, -1, sizeof(::vault::v1alpha1::FirebaseSecret)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -240,7 +219,6 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_Secret_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_TokenIntegration_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_BlockchainSecret_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_FirebaseSecret_DataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vault::v1alpha1::_FirebaseSecret_default_instance_),
 };
 
@@ -268,19 +246,17 @@ const char descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto[] PROTOBUF
   "organizationId\022%\n\016integration_id\030\002 \001(\tR\r"
   "integrationId\022\024\n\005token\030\003 \001(\tR\005token\"B\n\020B"
   "lockchainSecret\022.\n\004data\030\001 \001(\0132\032.vault.v1"
-  "alpha1.SecretDataR\004data\"\207\001\n\016FirebaseSecr"
-  "et\022<\n\004data\030\001 \003(\0132(.vault.v1alpha1.Fireba"
-  "seSecret.DataEntryR\004data\0327\n\tDataEntry\022\020\n"
-  "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028"
-  "\001B\203\001\n\030io.cuemby.vault.v1alpha1B\nVaultPro"
-  "toP\001Z1github.com/cuemby/ccp-vault-servic"
-  "e/vaultv1alpha1\242\002\003PPX\252\002\016Vault.V1Alpha1\312\002"
-  "\016Vault\\V1Alpha1b\006proto3"
+  "alpha1.SecretDataR\004data\"$\n\016FirebaseSecre"
+  "t\022\022\n\004data\030\001 \001(\014R\004dataB\203\001\n\030io.cuemby.vaul"
+  "t.v1alpha1B\nVaultProtoP\001Z1github.com/cue"
+  "mby/ccp-vault-service/vaultv1alpha1\242\002\003PP"
+  "X\252\002\016Vault.V1Alpha1\312\002\016Vault\\V1Alpha1b\006pro"
+  "to3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vault_2fv1alpha1_2fvault_2eproto = {
-  false, false, 1223, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
-  &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once, nullptr, 0, 9,
+  false, false, 1123, descriptor_table_protodef_vault_2fv1alpha1_2fvault_2eproto, "vault/v1alpha1/vault.proto", 
+  &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once, nullptr, 0, 8,
   schemas, file_default_instances, TableStruct_vault_2fv1alpha1_2fvault_2eproto::offsets,
   file_level_metadata_vault_2fv1alpha1_2fvault_2eproto, file_level_enum_descriptors_vault_2fv1alpha1_2fvault_2eproto, file_level_service_descriptors_vault_2fv1alpha1_2fvault_2eproto,
 };
@@ -2106,28 +2082,13 @@ void BlockchainSecret::InternalSwap(BlockchainSecret* other) {
 
 // ===================================================================
 
-FirebaseSecret_DataEntry_DoNotUse::FirebaseSecret_DataEntry_DoNotUse() {}
-FirebaseSecret_DataEntry_DoNotUse::FirebaseSecret_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void FirebaseSecret_DataEntry_DoNotUse::MergeFrom(const FirebaseSecret_DataEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata FirebaseSecret_DataEntry_DoNotUse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[7]);
-}
-
-// ===================================================================
-
 class FirebaseSecret::_Internal {
  public:
 };
 
 FirebaseSecret::FirebaseSecret(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  data_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2137,11 +2098,16 @@ FirebaseSecret::FirebaseSecret(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 FirebaseSecret::FirebaseSecret(const FirebaseSecret& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  data_.MergeFrom(from.data_);
+  data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_data().empty()) {
+    data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_data(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:vault.v1alpha1.FirebaseSecret)
 }
 
 inline void FirebaseSecret::SharedCtor() {
+data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 FirebaseSecret::~FirebaseSecret() {
@@ -2153,17 +2119,14 @@ FirebaseSecret::~FirebaseSecret() {
 
 inline void FirebaseSecret::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void FirebaseSecret::ArenaDtor(void* object) {
   FirebaseSecret* _this = reinterpret_cast< FirebaseSecret* >(object);
   (void)_this;
-  _this->data_. ~MapField();
 }
-inline void FirebaseSecret::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
-  if (arena != nullptr) {
-    arena->OwnCustomDestructor(this, &FirebaseSecret::ArenaDtor);
-  }
+void FirebaseSecret::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
 void FirebaseSecret::SetCachedSize(int size) const {
   _cached_size_.Set(size);
@@ -2175,7 +2138,7 @@ void FirebaseSecret::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  data_.Clear();
+  data_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2185,16 +2148,12 @@ const char* FirebaseSecret::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // map<string, string> data = 1 [json_name = "data"];
+      // bytes data = 1 [json_name = "data"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&data_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+          auto str = _internal_mutable_data();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -2226,50 +2185,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<string, string> data = 1 [json_name = "data"];
+  // bytes data = 1 [json_name = "data"];
   if (!this->_internal_data().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        (void)p;
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "vault.v1alpha1.FirebaseSecret.DataEntry.key");
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "vault.v1alpha1.FirebaseSecret.DataEntry.value");
-      }
-    };
-
-    if (stream->IsSerializationDeterministic() &&
-        this->_internal_data().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->_internal_data().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_data().begin();
-          it != this->_internal_data().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        target = FirebaseSecret_DataEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_data().begin();
-          it != this->_internal_data().end(); ++it) {
-        target = FirebaseSecret_DataEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
-        Utf8Check::Check(&(*it));
-      }
-    }
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_data(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2288,13 +2207,11 @@ size_t FirebaseSecret::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> data = 1 [json_name = "data"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_data_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-      it = this->_internal_data().begin();
-      it != this->_internal_data().end(); ++it) {
-    total_size += FirebaseSecret_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  // bytes data = 1 [json_name = "data"];
+  if (!this->_internal_data().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_data());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2325,7 +2242,9 @@ void FirebaseSecret::MergeFrom(const FirebaseSecret& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  data_.MergeFrom(from.data_);
+  if (!from._internal_data().empty()) {
+    _internal_set_data(from._internal_data());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2343,13 +2262,17 @@ bool FirebaseSecret::IsInitialized() const {
 void FirebaseSecret::InternalSwap(FirebaseSecret* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  data_.InternalSwap(&other->data_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &data_, GetArenaForAllocation(),
+      &other->data_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FirebaseSecret::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_getter, &descriptor_table_vault_2fv1alpha1_2fvault_2eproto_once,
-      file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[8]);
+      file_level_metadata_vault_2fv1alpha1_2fvault_2eproto[7]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2376,9 +2299,6 @@ template<> PROTOBUF_NOINLINE ::vault::v1alpha1::TokenIntegration* Arena::CreateM
 }
 template<> PROTOBUF_NOINLINE ::vault::v1alpha1::BlockchainSecret* Arena::CreateMaybeMessage< ::vault::v1alpha1::BlockchainSecret >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vault::v1alpha1::BlockchainSecret >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vault::v1alpha1::FirebaseSecret_DataEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vault::v1alpha1::FirebaseSecret* Arena::CreateMaybeMessage< ::vault::v1alpha1::FirebaseSecret >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vault::v1alpha1::FirebaseSecret >(arena);

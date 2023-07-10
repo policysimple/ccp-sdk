@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private FirebaseSecret() {
+    data_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -38,7 +39,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -50,16 +50,8 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              data_ = com.google.protobuf.MapField.newMapField(
-                  DataDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            data__ = input.readMessage(
-                DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            data_.getMutableMap().put(
-                data__.getKey(), data__.getValue());
+
+            data_ = input.readBytes();
             break;
           }
           default: {
@@ -86,18 +78,6 @@ private static final long serialVersionUID = 0L;
     return io.cuemby.vault.v1alpha1.VaultProto.internal_static_vault_v1alpha1_FirebaseSecret_descriptor;
   }
 
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
-    switch (number) {
-      case 1:
-        return internalGetData();
-      default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
-    }
-  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -107,84 +87,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DATA_FIELD_NUMBER = 1;
-  private static final class DataDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                io.cuemby.vault.v1alpha1.VaultProto.internal_static_vault_v1alpha1_FirebaseSecret_DataEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
-  }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> data_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetData() {
-    if (data_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          DataDefaultEntryHolder.defaultEntry);
-    }
+  private com.google.protobuf.ByteString data_;
+  /**
+   * <code>bytes data = 1 [json_name = "data"];</code>
+   * @return The data.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getData() {
     return data_;
-  }
-
-  public int getDataCount() {
-    return internalGetData().getMap().size();
-  }
-  /**
-   * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-   */
-
-  @java.lang.Override
-  public boolean containsData(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    return internalGetData().getMap().containsKey(key);
-  }
-  /**
-   * Use {@link #getDataMap()} instead.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getData() {
-    return getDataMap();
-  }
-  /**
-   * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-   */
-  @java.lang.Override
-
-  public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-    return internalGetData().getMap();
-  }
-  /**
-   * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-   */
-  @java.lang.Override
-
-  public java.lang.String getDataOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetData().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-   */
-  @java.lang.Override
-
-  public java.lang.String getDataOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetData().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -201,12 +111,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetData(),
-        DataDefaultEntryHolder.defaultEntry,
-        1);
+    if (!data_.isEmpty()) {
+      output.writeBytes(1, data_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -216,15 +123,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetData().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
+    if (!data_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, data__);
+        .computeBytesSize(1, data_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -241,8 +142,8 @@ private static final long serialVersionUID = 0L;
     }
     io.cuemby.vault.v1alpha1.FirebaseSecret other = (io.cuemby.vault.v1alpha1.FirebaseSecret) obj;
 
-    if (!internalGetData().equals(
-        other.internalGetData())) return false;
+    if (!getData()
+        .equals(other.getData())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -254,10 +155,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (!internalGetData().getMap().isEmpty()) {
-      hash = (37 * hash) + DATA_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetData().hashCode();
-    }
+    hash = (37 * hash) + DATA_FIELD_NUMBER;
+    hash = (53 * hash) + getData().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -365,28 +264,6 @@ private static final long serialVersionUID = 0L;
       return io.cuemby.vault.v1alpha1.VaultProto.internal_static_vault_v1alpha1_FirebaseSecret_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetData();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetMutableData();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -413,7 +290,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      internalGetMutableData().clear();
+      data_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -440,9 +318,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.vault.v1alpha1.FirebaseSecret buildPartial() {
       io.cuemby.vault.v1alpha1.FirebaseSecret result = new io.cuemby.vault.v1alpha1.FirebaseSecret(this);
-      int from_bitField0_ = bitField0_;
-      result.data_ = internalGetData();
-      result.data_.makeImmutable();
+      result.data_ = data_;
       onBuilt();
       return result;
     }
@@ -491,8 +367,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.vault.v1alpha1.FirebaseSecret other) {
       if (other == io.cuemby.vault.v1alpha1.FirebaseSecret.getDefaultInstance()) return this;
-      internalGetMutableData().mergeFrom(
-          other.internalGetData());
+      if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+        setData(other.getData());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -521,133 +398,38 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> data_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetData() {
-      if (data_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            DataDefaultEntryHolder.defaultEntry);
-      }
+    private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <code>bytes data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
       return data_;
     }
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableData() {
-      onChanged();;
-      if (data_ == null) {
-        data_ = com.google.protobuf.MapField.newMapField(
-            DataDefaultEntryHolder.defaultEntry);
-      }
-      if (!data_.isMutable()) {
-        data_ = data_.copy();
-      }
-      return data_;
-    }
-
-    public int getDataCount() {
-      return internalGetData().getMap().size();
+    /**
+     * <code>bytes data = 1 [json_name = "data"];</code>
+     * @param value The data to set.
+     * @return This builder for chaining.
+     */
+    public Builder setData(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      data_ = value;
+      onChanged();
+      return this;
     }
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>bytes data = 1 [json_name = "data"];</code>
+     * @return This builder for chaining.
      */
-
-    @java.lang.Override
-    public boolean containsData(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetData().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getDataMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getData() {
-      return getDataMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-      return internalGetData().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getDataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getDataOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
     public Builder clearData() {
-      internalGetMutableData().getMutableMap()
-          .clear();
-      return this;
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-
-    public Builder removeData(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableData().getMutableMap()
-          .remove(key);
-      return this;
-    }
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableData() {
-      return internalGetMutableData().getMutableMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-    public Builder putData(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableData().getMutableMap()
-          .put(key, value);
-      return this;
-    }
-    /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
-     */
-
-    public Builder putAllData(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableData().getMutableMap()
-          .putAll(values);
+      
+      data_ = getDefaultInstance().getData();
+      onChanged();
       return this;
     }
     @java.lang.Override

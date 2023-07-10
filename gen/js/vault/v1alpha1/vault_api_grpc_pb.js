@@ -93,6 +93,28 @@ function deserialize_vault_v1alpha1_GetSecretResponse(buffer_arg) {
   return vault_v1alpha1_vault_api_pb.GetSecretResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_vault_v1alpha1_GetSecretsServiceNotificationRequest(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetSecretsServiceNotificationRequest)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetSecretsServiceNotificationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetSecretsServiceNotificationRequest(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetSecretsServiceNotificationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vault_v1alpha1_GetSecretsServiceNotificationResponse(arg) {
+  if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetSecretsServiceNotificationResponse)) {
+    throw new Error('Expected argument of type vault.v1alpha1.GetSecretsServiceNotificationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_vault_v1alpha1_GetSecretsServiceNotificationResponse(buffer_arg) {
+  return vault_v1alpha1_vault_api_pb.GetSecretsServiceNotificationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_vault_v1alpha1_GetSecretsServiceRequest(arg) {
   if (!(arg instanceof vault_v1alpha1_vault_api_pb.GetSecretsServiceRequest)) {
     throw new Error('Expected argument of type vault.v1alpha1.GetSecretsServiceRequest');
@@ -405,6 +427,17 @@ var VaultAPIServiceService = exports.VaultAPIServiceService = {
     requestDeserialize: deserialize_vault_v1alpha1_GetSecretsServiceRequest,
     responseSerialize: serialize_vault_v1alpha1_GetSecretsServiceResponse,
     responseDeserialize: deserialize_vault_v1alpha1_GetSecretsServiceResponse,
+  },
+  getSecretsServiceNotification: {
+    path: '/vault.v1alpha1.VaultAPIService/GetSecretsServiceNotification',
+    requestStream: false,
+    responseStream: false,
+    requestType: vault_v1alpha1_vault_api_pb.GetSecretsServiceNotificationRequest,
+    responseType: vault_v1alpha1_vault_api_pb.GetSecretsServiceNotificationResponse,
+    requestSerialize: serialize_vault_v1alpha1_GetSecretsServiceNotificationRequest,
+    requestDeserialize: deserialize_vault_v1alpha1_GetSecretsServiceNotificationRequest,
+    responseSerialize: serialize_vault_v1alpha1_GetSecretsServiceNotificationResponse,
+    responseDeserialize: deserialize_vault_v1alpha1_GetSecretsServiceNotificationResponse,
   },
 };
 
