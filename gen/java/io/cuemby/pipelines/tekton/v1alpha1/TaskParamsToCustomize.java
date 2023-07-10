@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     label_ = "";
     validation_ = "";
     typeValue_ = "";
+    description_ = "";
+    default_ = "";
   }
 
   @java.lang.Override
@@ -74,6 +76,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             typeValue_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            default_ = s;
             break;
           }
           default: {
@@ -260,6 +274,82 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object description_;
+  /**
+   * <code>string description = 5 [json_name = "description"];</code>
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string description = 5 [json_name = "description"];</code>
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEFAULT_FIELD_NUMBER = 6;
+  private volatile java.lang.Object default_;
+  /**
+   * <code>string default = 6 [json_name = "default"];</code>
+   * @return The default.
+   */
+  @java.lang.Override
+  public java.lang.String getDefault() {
+    java.lang.Object ref = default_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      default_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string default = 6 [json_name = "default"];</code>
+   * @return The bytes for default.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDefaultBytes() {
+    java.lang.Object ref = default_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      default_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -286,6 +376,12 @@ private static final long serialVersionUID = 0L;
     if (!getTypeValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, typeValue_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
+    }
+    if (!getDefaultBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, default_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -306,6 +402,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTypeValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, typeValue_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
+    }
+    if (!getDefaultBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, default_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,6 +432,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getValidation())) return false;
     if (!getTypeValue()
         .equals(other.getTypeValue())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (!getDefault()
+        .equals(other.getDefault())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -349,6 +455,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getValidation().hashCode();
     hash = (37 * hash) + TYPE_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getTypeValue().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + DEFAULT_FIELD_NUMBER;
+    hash = (53 * hash) + getDefault().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -490,6 +600,10 @@ private static final long serialVersionUID = 0L;
 
       typeValue_ = "";
 
+      description_ = "";
+
+      default_ = "";
+
       return this;
     }
 
@@ -520,6 +634,8 @@ private static final long serialVersionUID = 0L;
       result.label_ = label_;
       result.validation_ = validation_;
       result.typeValue_ = typeValue_;
+      result.description_ = description_;
+      result.default_ = default_;
       onBuilt();
       return result;
     }
@@ -582,6 +698,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getTypeValue().isEmpty()) {
         typeValue_ = other.typeValue_;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
+      if (!other.getDefault().isEmpty()) {
+        default_ = other.default_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -913,6 +1037,158 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       typeValue_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <code>string description = 5 [json_name = "description"];</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string description = 5 [json_name = "description"];</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string description = 5 [json_name = "description"];</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 5 [json_name = "description"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 5 [json_name = "description"];</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object default_ = "";
+    /**
+     * <code>string default = 6 [json_name = "default"];</code>
+     * @return The default.
+     */
+    public java.lang.String getDefault() {
+      java.lang.Object ref = default_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        default_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string default = 6 [json_name = "default"];</code>
+     * @return The bytes for default.
+     */
+    public com.google.protobuf.ByteString
+        getDefaultBytes() {
+      java.lang.Object ref = default_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        default_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string default = 6 [json_name = "default"];</code>
+     * @param value The default to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefault(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      default_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string default = 6 [json_name = "default"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDefault() {
+      
+      default_ = getDefaultInstance().getDefault();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string default = 6 [json_name = "default"];</code>
+     * @param value The bytes for default to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      default_ = value;
       onChanged();
       return this;
     }

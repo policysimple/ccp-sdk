@@ -54,4 +54,28 @@ public interface TaskParamsToCustomizeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTypeValueBytes();
+
+  /**
+   * <code>string description = 5 [json_name = "description"];</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <code>string description = 5 [json_name = "description"];</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
+
+  /**
+   * <code>string default = 6 [json_name = "default"];</code>
+   * @return The default.
+   */
+  java.lang.String getDefault();
+  /**
+   * <code>string default = 6 [json_name = "default"];</code>
+   * @return The bytes for default.
+   */
+  com.google.protobuf.ByteString
+      getDefaultBytes();
 }

@@ -2468,6 +2468,8 @@ class TaskParamsToCustomize final :
     kLabelFieldNumber = 2,
     kValidationFieldNumber = 3,
     kTypeValueFieldNumber = 4,
+    kDescriptionFieldNumber = 5,
+    kDefaultFieldNumber = 6,
   };
   // string param_name = 1 [json_name = "paramName"];
   void clear_param_name();
@@ -2525,6 +2527,34 @@ class TaskParamsToCustomize final :
   std::string* _internal_mutable_type_value();
   public:
 
+  // string description = 5 [json_name = "description"];
+  void clear_description();
+  const std::string& description() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_description(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_description();
+  PROTOBUF_MUST_USE_RESULT std::string* release_description();
+  void set_allocated_description(std::string* description);
+  private:
+  const std::string& _internal_description() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_description(const std::string& value);
+  std::string* _internal_mutable_description();
+  public:
+
+  // string default = 6 [json_name = "default"];
+  void clear_default_();
+  const std::string& default_() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_default_(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_default_();
+  PROTOBUF_MUST_USE_RESULT std::string* release_default_();
+  void set_allocated_default_(std::string* default_);
+  private:
+  const std::string& _internal_default_() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_default_(const std::string& value);
+  std::string* _internal_mutable_default_();
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.TaskParamsToCustomize)
  private:
   class _Internal;
@@ -2536,6 +2566,8 @@ class TaskParamsToCustomize final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr label_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr validation_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr default__;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
 };
@@ -6124,6 +6156,98 @@ inline void TaskParamsToCustomize::set_allocated_type_value(std::string* type_va
   type_value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), type_value,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskParamsToCustomize.type_value)
+}
+
+// string description = 5 [json_name = "description"];
+inline void TaskParamsToCustomize::clear_description() {
+  description_.ClearToEmpty();
+}
+inline const std::string& TaskParamsToCustomize::description() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskParamsToCustomize.description)
+  return _internal_description();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskParamsToCustomize::set_description(ArgT0&& arg0, ArgT... args) {
+ 
+ description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.description)
+}
+inline std::string* TaskParamsToCustomize::mutable_description() {
+  std::string* _s = _internal_mutable_description();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.description)
+  return _s;
+}
+inline const std::string& TaskParamsToCustomize::_internal_description() const {
+  return description_.Get();
+}
+inline void TaskParamsToCustomize::_internal_set_description(const std::string& value) {
+  
+  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::_internal_mutable_description() {
+  
+  return description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::release_description() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskParamsToCustomize.description)
+  return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TaskParamsToCustomize::set_allocated_description(std::string* description) {
+  if (description != nullptr) {
+    
+  } else {
+    
+  }
+  description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskParamsToCustomize.description)
+}
+
+// string default = 6 [json_name = "default"];
+inline void TaskParamsToCustomize::clear_default_() {
+  default__.ClearToEmpty();
+}
+inline const std::string& TaskParamsToCustomize::default_() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.TaskParamsToCustomize.default)
+  return _internal_default_();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TaskParamsToCustomize::set_default_(ArgT0&& arg0, ArgT... args) {
+ 
+ default__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.TaskParamsToCustomize.default)
+}
+inline std::string* TaskParamsToCustomize::mutable_default_() {
+  std::string* _s = _internal_mutable_default_();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.TaskParamsToCustomize.default)
+  return _s;
+}
+inline const std::string& TaskParamsToCustomize::_internal_default_() const {
+  return default__.Get();
+}
+inline void TaskParamsToCustomize::_internal_set_default_(const std::string& value) {
+  
+  default__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::_internal_mutable_default_() {
+  
+  return default__.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TaskParamsToCustomize::release_default_() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.TaskParamsToCustomize.default)
+  return default__.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TaskParamsToCustomize::set_allocated_default_(std::string* default_) {
+  if (default_ != nullptr) {
+    
+  } else {
+    
+  }
+  default__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), default_,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskParamsToCustomize.default)
 }
 
 // -------------------------------------------------------------------
