@@ -54,7 +54,7 @@ func ListOrganization() (*accountpkgv1.ListOrganizationResponse, error) {
 	return response, nil
 }
 
-func DeleteOrganization(organizationId string) (*accountpkgv1.DeleteOrganizationResponse, error) {
+func DeleteOrganization(organizationId string, userId string) (*accountpkgv1.DeleteOrganizationResponse, error) {
 	bylogs.LogInfo("DeleteOrganization Client Sdk")
 	d, err := time.ParseDuration(accountServiceTimeout)
 	if err != nil {
@@ -65,6 +65,7 @@ func DeleteOrganization(organizationId string) (*accountpkgv1.DeleteOrganization
 
 	response, err := client.DeleteOrganization(ctx, &accountpkgv1.DeleteOrganizationRequest{
 		OrganizationId: organizationId,
+		UserId:         userId,
 	})
 
 	if err != nil {

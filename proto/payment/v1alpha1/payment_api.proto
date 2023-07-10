@@ -4,8 +4,6 @@ import "google/protobuf/empty.proto";
 package payment.v1alpha1;
 option go_package = "github.com/cuemby/ccp-payment-service/payment/v1alpha1";
 
-
-
 import "payment/v1alpha1/payment.proto";
 //import "payment.proto";
 

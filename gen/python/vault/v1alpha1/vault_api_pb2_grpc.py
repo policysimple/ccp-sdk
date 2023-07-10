@@ -74,6 +74,11 @@ class VaultAPIServiceStub(object):
         request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceRequest.SerializeToString,
         response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceResponse.FromString,
         )
+    self.GetSecretsServiceNotification = channel.unary_unary(
+        '/vault.v1alpha1.VaultAPIService/GetSecretsServiceNotification',
+        request_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceNotificationRequest.SerializeToString,
+        response_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceNotificationResponse.FromString,
+        )
 
 
 class VaultAPIServiceServicer(object):
@@ -164,6 +169,13 @@ class VaultAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetSecretsServiceNotification(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_VaultAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -226,6 +238,11 @@ def add_VaultAPIServiceServicer_to_server(servicer, server):
           servicer.GetSecretsService,
           request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceRequest.FromString,
           response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceResponse.SerializeToString,
+      ),
+      'GetSecretsServiceNotification': grpc.unary_unary_rpc_method_handler(
+          servicer.GetSecretsServiceNotification,
+          request_deserializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceNotificationRequest.FromString,
+          response_serializer=vault_dot_v1alpha1_dot_vault__api__pb2.GetSecretsServiceNotificationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
