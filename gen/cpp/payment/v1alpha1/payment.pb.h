@@ -3524,9 +3524,10 @@ class ProjectBilling final :
     kIdFieldNumber = 1,
     kProjectIdFieldNumber = 2,
     kProjectNameFieldNumber = 3,
-    kRamFieldNumber = 4,
-    kCpuFieldNumber = 5,
-    kPipelineFieldNumber = 6,
+    kPlanFieldNumber = 4,
+    kRamFieldNumber = 5,
+    kCpuFieldNumber = 6,
+    kPipelineFieldNumber = 7,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -3570,7 +3571,21 @@ class ProjectBilling final :
   std::string* _internal_mutable_project_name();
   public:
 
-  // string ram = 4 [json_name = "ram"];
+  // string plan = 4 [json_name = "plan"];
+  void clear_plan();
+  const std::string& plan() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_plan(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_plan();
+  PROTOBUF_MUST_USE_RESULT std::string* release_plan();
+  void set_allocated_plan(std::string* plan);
+  private:
+  const std::string& _internal_plan() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_plan(const std::string& value);
+  std::string* _internal_mutable_plan();
+  public:
+
+  // string ram = 5 [json_name = "ram"];
   void clear_ram();
   const std::string& ram() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3584,7 +3599,7 @@ class ProjectBilling final :
   std::string* _internal_mutable_ram();
   public:
 
-  // string cpu = 5 [json_name = "cpu"];
+  // string cpu = 6 [json_name = "cpu"];
   void clear_cpu();
   const std::string& cpu() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3598,7 +3613,7 @@ class ProjectBilling final :
   std::string* _internal_mutable_cpu();
   public:
 
-  // string pipeline = 6 [json_name = "pipeline"];
+  // string pipeline = 7 [json_name = "pipeline"];
   void clear_pipeline();
   const std::string& pipeline() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3622,6 +3637,7 @@ class ProjectBilling final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr plan_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ram_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cpu_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pipeline_;
@@ -7825,7 +7841,53 @@ inline void ProjectBilling::set_allocated_project_name(std::string* project_name
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.project_name)
 }
 
-// string ram = 4 [json_name = "ram"];
+// string plan = 4 [json_name = "plan"];
+inline void ProjectBilling::clear_plan() {
+  plan_.ClearToEmpty();
+}
+inline const std::string& ProjectBilling::plan() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.ProjectBilling.plan)
+  return _internal_plan();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ProjectBilling::set_plan(ArgT0&& arg0, ArgT... args) {
+ 
+ plan_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.ProjectBilling.plan)
+}
+inline std::string* ProjectBilling::mutable_plan() {
+  std::string* _s = _internal_mutable_plan();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.ProjectBilling.plan)
+  return _s;
+}
+inline const std::string& ProjectBilling::_internal_plan() const {
+  return plan_.Get();
+}
+inline void ProjectBilling::_internal_set_plan(const std::string& value) {
+  
+  plan_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::_internal_mutable_plan() {
+  
+  return plan_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ProjectBilling::release_plan() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.ProjectBilling.plan)
+  return plan_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ProjectBilling::set_allocated_plan(std::string* plan) {
+  if (plan != nullptr) {
+    
+  } else {
+    
+  }
+  plan_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), plan,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.plan)
+}
+
+// string ram = 5 [json_name = "ram"];
 inline void ProjectBilling::clear_ram() {
   ram_.ClearToEmpty();
 }
@@ -7871,7 +7933,7 @@ inline void ProjectBilling::set_allocated_ram(std::string* ram) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.ram)
 }
 
-// string cpu = 5 [json_name = "cpu"];
+// string cpu = 6 [json_name = "cpu"];
 inline void ProjectBilling::clear_cpu() {
   cpu_.ClearToEmpty();
 }
@@ -7917,7 +7979,7 @@ inline void ProjectBilling::set_allocated_cpu(std::string* cpu) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.ProjectBilling.cpu)
 }
 
-// string pipeline = 6 [json_name = "pipeline"];
+// string pipeline = 7 [json_name = "pipeline"];
 inline void ProjectBilling::clear_pipeline() {
   pipeline_.ClearToEmpty();
 }
