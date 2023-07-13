@@ -26,15 +26,19 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
      */
     protected $project_name = '';
     /**
-     * Generated from protobuf field <code>string ram = 4 [json_name = "ram"];</code>
+     * Generated from protobuf field <code>string plan = 4 [json_name = "plan"];</code>
+     */
+    protected $plan = '';
+    /**
+     * Generated from protobuf field <code>string ram = 5 [json_name = "ram"];</code>
      */
     protected $ram = '';
     /**
-     * Generated from protobuf field <code>string cpu = 5 [json_name = "cpu"];</code>
+     * Generated from protobuf field <code>string cpu = 6 [json_name = "cpu"];</code>
      */
     protected $cpu = '';
     /**
-     * Generated from protobuf field <code>string pipeline = 6 [json_name = "pipeline"];</code>
+     * Generated from protobuf field <code>string pipeline = 7 [json_name = "pipeline"];</code>
      */
     protected $pipeline = '';
 
@@ -47,6 +51,7 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $project_id
      *     @type string $project_name
+     *     @type string $plan
      *     @type string $ram
      *     @type string $cpu
      *     @type string $pipeline
@@ -124,7 +129,29 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ram = 4 [json_name = "ram"];</code>
+     * Generated from protobuf field <code>string plan = 4 [json_name = "plan"];</code>
+     * @return string
+     */
+    public function getPlan()
+    {
+        return $this->plan;
+    }
+
+    /**
+     * Generated from protobuf field <code>string plan = 4 [json_name = "plan"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlan($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->plan = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ram = 5 [json_name = "ram"];</code>
      * @return string
      */
     public function getRam()
@@ -133,7 +160,7 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ram = 4 [json_name = "ram"];</code>
+     * Generated from protobuf field <code>string ram = 5 [json_name = "ram"];</code>
      * @param string $var
      * @return $this
      */
@@ -146,7 +173,7 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string cpu = 5 [json_name = "cpu"];</code>
+     * Generated from protobuf field <code>string cpu = 6 [json_name = "cpu"];</code>
      * @return string
      */
     public function getCpu()
@@ -155,7 +182,7 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string cpu = 5 [json_name = "cpu"];</code>
+     * Generated from protobuf field <code>string cpu = 6 [json_name = "cpu"];</code>
      * @param string $var
      * @return $this
      */
@@ -168,7 +195,7 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string pipeline = 6 [json_name = "pipeline"];</code>
+     * Generated from protobuf field <code>string pipeline = 7 [json_name = "pipeline"];</code>
      * @return string
      */
     public function getPipeline()
@@ -177,7 +204,7 @@ class ProjectBilling extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string pipeline = 6 [json_name = "pipeline"];</code>
+     * Generated from protobuf field <code>string pipeline = 7 [json_name = "pipeline"];</code>
      * @param string $var
      * @return $this
      */

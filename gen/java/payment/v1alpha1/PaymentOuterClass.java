@@ -19771,36 +19771,48 @@ public final class PaymentOuterClass {
         getProjectNameBytes();
 
     /**
-     * <code>string ram = 4 [json_name = "ram"];</code>
+     * <code>string plan = 4 [json_name = "plan"];</code>
+     * @return The plan.
+     */
+    java.lang.String getPlan();
+    /**
+     * <code>string plan = 4 [json_name = "plan"];</code>
+     * @return The bytes for plan.
+     */
+    com.google.protobuf.ByteString
+        getPlanBytes();
+
+    /**
+     * <code>string ram = 5 [json_name = "ram"];</code>
      * @return The ram.
      */
     java.lang.String getRam();
     /**
-     * <code>string ram = 4 [json_name = "ram"];</code>
+     * <code>string ram = 5 [json_name = "ram"];</code>
      * @return The bytes for ram.
      */
     com.google.protobuf.ByteString
         getRamBytes();
 
     /**
-     * <code>string cpu = 5 [json_name = "cpu"];</code>
+     * <code>string cpu = 6 [json_name = "cpu"];</code>
      * @return The cpu.
      */
     java.lang.String getCpu();
     /**
-     * <code>string cpu = 5 [json_name = "cpu"];</code>
+     * <code>string cpu = 6 [json_name = "cpu"];</code>
      * @return The bytes for cpu.
      */
     com.google.protobuf.ByteString
         getCpuBytes();
 
     /**
-     * <code>string pipeline = 6 [json_name = "pipeline"];</code>
+     * <code>string pipeline = 7 [json_name = "pipeline"];</code>
      * @return The pipeline.
      */
     java.lang.String getPipeline();
     /**
-     * <code>string pipeline = 6 [json_name = "pipeline"];</code>
+     * <code>string pipeline = 7 [json_name = "pipeline"];</code>
      * @return The bytes for pipeline.
      */
     com.google.protobuf.ByteString
@@ -19822,6 +19834,7 @@ public final class PaymentOuterClass {
       id_ = "";
       projectId_ = "";
       projectName_ = "";
+      plan_ = "";
       ram_ = "";
       cpu_ = "";
       pipeline_ = "";
@@ -19878,16 +19891,22 @@ public final class PaymentOuterClass {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              ram_ = s;
+              plan_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              cpu_ = s;
+              ram_ = s;
               break;
             }
             case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cpu_ = s;
+              break;
+            }
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               pipeline_ = s;
@@ -20039,10 +20058,48 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int RAM_FIELD_NUMBER = 4;
+    public static final int PLAN_FIELD_NUMBER = 4;
+    private volatile java.lang.Object plan_;
+    /**
+     * <code>string plan = 4 [json_name = "plan"];</code>
+     * @return The plan.
+     */
+    @java.lang.Override
+    public java.lang.String getPlan() {
+      java.lang.Object ref = plan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        plan_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string plan = 4 [json_name = "plan"];</code>
+     * @return The bytes for plan.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPlanBytes() {
+      java.lang.Object ref = plan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        plan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RAM_FIELD_NUMBER = 5;
     private volatile java.lang.Object ram_;
     /**
-     * <code>string ram = 4 [json_name = "ram"];</code>
+     * <code>string ram = 5 [json_name = "ram"];</code>
      * @return The ram.
      */
     @java.lang.Override
@@ -20059,7 +20116,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string ram = 4 [json_name = "ram"];</code>
+     * <code>string ram = 5 [json_name = "ram"];</code>
      * @return The bytes for ram.
      */
     @java.lang.Override
@@ -20077,10 +20134,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int CPU_FIELD_NUMBER = 5;
+    public static final int CPU_FIELD_NUMBER = 6;
     private volatile java.lang.Object cpu_;
     /**
-     * <code>string cpu = 5 [json_name = "cpu"];</code>
+     * <code>string cpu = 6 [json_name = "cpu"];</code>
      * @return The cpu.
      */
     @java.lang.Override
@@ -20097,7 +20154,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string cpu = 5 [json_name = "cpu"];</code>
+     * <code>string cpu = 6 [json_name = "cpu"];</code>
      * @return The bytes for cpu.
      */
     @java.lang.Override
@@ -20115,10 +20172,10 @@ public final class PaymentOuterClass {
       }
     }
 
-    public static final int PIPELINE_FIELD_NUMBER = 6;
+    public static final int PIPELINE_FIELD_NUMBER = 7;
     private volatile java.lang.Object pipeline_;
     /**
-     * <code>string pipeline = 6 [json_name = "pipeline"];</code>
+     * <code>string pipeline = 7 [json_name = "pipeline"];</code>
      * @return The pipeline.
      */
     @java.lang.Override
@@ -20135,7 +20192,7 @@ public final class PaymentOuterClass {
       }
     }
     /**
-     * <code>string pipeline = 6 [json_name = "pipeline"];</code>
+     * <code>string pipeline = 7 [json_name = "pipeline"];</code>
      * @return The bytes for pipeline.
      */
     @java.lang.Override
@@ -20176,14 +20233,17 @@ public final class PaymentOuterClass {
       if (!getProjectNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectName_);
       }
+      if (!getPlanBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, plan_);
+      }
       if (!getRamBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ram_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ram_);
       }
       if (!getCpuBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, cpu_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, cpu_);
       }
       if (!getPipelineBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pipeline_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pipeline_);
       }
       unknownFields.writeTo(output);
     }
@@ -20203,14 +20263,17 @@ public final class PaymentOuterClass {
       if (!getProjectNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectName_);
       }
+      if (!getPlanBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, plan_);
+      }
       if (!getRamBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ram_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ram_);
       }
       if (!getCpuBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, cpu_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, cpu_);
       }
       if (!getPipelineBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pipeline_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, pipeline_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -20233,6 +20296,8 @@ public final class PaymentOuterClass {
           .equals(other.getProjectId())) return false;
       if (!getProjectName()
           .equals(other.getProjectName())) return false;
+      if (!getPlan()
+          .equals(other.getPlan())) return false;
       if (!getRam()
           .equals(other.getRam())) return false;
       if (!getCpu()
@@ -20256,6 +20321,8 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + PROJECT_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getProjectName().hashCode();
+      hash = (37 * hash) + PLAN_FIELD_NUMBER;
+      hash = (53 * hash) + getPlan().hashCode();
       hash = (37 * hash) + RAM_FIELD_NUMBER;
       hash = (53 * hash) + getRam().hashCode();
       hash = (37 * hash) + CPU_FIELD_NUMBER;
@@ -20401,6 +20468,8 @@ public final class PaymentOuterClass {
 
         projectName_ = "";
 
+        plan_ = "";
+
         ram_ = "";
 
         cpu_ = "";
@@ -20436,6 +20505,7 @@ public final class PaymentOuterClass {
         result.id_ = id_;
         result.projectId_ = projectId_;
         result.projectName_ = projectName_;
+        result.plan_ = plan_;
         result.ram_ = ram_;
         result.cpu_ = cpu_;
         result.pipeline_ = pipeline_;
@@ -20497,6 +20567,10 @@ public final class PaymentOuterClass {
         }
         if (!other.getProjectName().isEmpty()) {
           projectName_ = other.projectName_;
+          onChanged();
+        }
+        if (!other.getPlan().isEmpty()) {
+          plan_ = other.plan_;
           onChanged();
         }
         if (!other.getRam().isEmpty()) {
@@ -20768,9 +20842,85 @@ public final class PaymentOuterClass {
         return this;
       }
 
+      private java.lang.Object plan_ = "";
+      /**
+       * <code>string plan = 4 [json_name = "plan"];</code>
+       * @return The plan.
+       */
+      public java.lang.String getPlan() {
+        java.lang.Object ref = plan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          plan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string plan = 4 [json_name = "plan"];</code>
+       * @return The bytes for plan.
+       */
+      public com.google.protobuf.ByteString
+          getPlanBytes() {
+        java.lang.Object ref = plan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          plan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string plan = 4 [json_name = "plan"];</code>
+       * @param value The plan to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlan(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        plan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plan = 4 [json_name = "plan"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlan() {
+        
+        plan_ = getDefaultInstance().getPlan();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plan = 4 [json_name = "plan"];</code>
+       * @param value The bytes for plan to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        plan_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object ram_ = "";
       /**
-       * <code>string ram = 4 [json_name = "ram"];</code>
+       * <code>string ram = 5 [json_name = "ram"];</code>
        * @return The ram.
        */
       public java.lang.String getRam() {
@@ -20786,7 +20936,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string ram = 4 [json_name = "ram"];</code>
+       * <code>string ram = 5 [json_name = "ram"];</code>
        * @return The bytes for ram.
        */
       public com.google.protobuf.ByteString
@@ -20803,7 +20953,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string ram = 4 [json_name = "ram"];</code>
+       * <code>string ram = 5 [json_name = "ram"];</code>
        * @param value The ram to set.
        * @return This builder for chaining.
        */
@@ -20818,7 +20968,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string ram = 4 [json_name = "ram"];</code>
+       * <code>string ram = 5 [json_name = "ram"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRam() {
@@ -20828,7 +20978,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string ram = 4 [json_name = "ram"];</code>
+       * <code>string ram = 5 [json_name = "ram"];</code>
        * @param value The bytes for ram to set.
        * @return This builder for chaining.
        */
@@ -20846,7 +20996,7 @@ public final class PaymentOuterClass {
 
       private java.lang.Object cpu_ = "";
       /**
-       * <code>string cpu = 5 [json_name = "cpu"];</code>
+       * <code>string cpu = 6 [json_name = "cpu"];</code>
        * @return The cpu.
        */
       public java.lang.String getCpu() {
@@ -20862,7 +21012,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string cpu = 5 [json_name = "cpu"];</code>
+       * <code>string cpu = 6 [json_name = "cpu"];</code>
        * @return The bytes for cpu.
        */
       public com.google.protobuf.ByteString
@@ -20879,7 +21029,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string cpu = 5 [json_name = "cpu"];</code>
+       * <code>string cpu = 6 [json_name = "cpu"];</code>
        * @param value The cpu to set.
        * @return This builder for chaining.
        */
@@ -20894,7 +21044,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string cpu = 5 [json_name = "cpu"];</code>
+       * <code>string cpu = 6 [json_name = "cpu"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCpu() {
@@ -20904,7 +21054,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string cpu = 5 [json_name = "cpu"];</code>
+       * <code>string cpu = 6 [json_name = "cpu"];</code>
        * @param value The bytes for cpu to set.
        * @return This builder for chaining.
        */
@@ -20922,7 +21072,7 @@ public final class PaymentOuterClass {
 
       private java.lang.Object pipeline_ = "";
       /**
-       * <code>string pipeline = 6 [json_name = "pipeline"];</code>
+       * <code>string pipeline = 7 [json_name = "pipeline"];</code>
        * @return The pipeline.
        */
       public java.lang.String getPipeline() {
@@ -20938,7 +21088,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string pipeline = 6 [json_name = "pipeline"];</code>
+       * <code>string pipeline = 7 [json_name = "pipeline"];</code>
        * @return The bytes for pipeline.
        */
       public com.google.protobuf.ByteString
@@ -20955,7 +21105,7 @@ public final class PaymentOuterClass {
         }
       }
       /**
-       * <code>string pipeline = 6 [json_name = "pipeline"];</code>
+       * <code>string pipeline = 7 [json_name = "pipeline"];</code>
        * @param value The pipeline to set.
        * @return This builder for chaining.
        */
@@ -20970,7 +21120,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string pipeline = 6 [json_name = "pipeline"];</code>
+       * <code>string pipeline = 7 [json_name = "pipeline"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPipeline() {
@@ -20980,7 +21130,7 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
-       * <code>string pipeline = 6 [json_name = "pipeline"];</code>
+       * <code>string pipeline = 7 [json_name = "pipeline"];</code>
        * @param value The bytes for pipeline to set.
        * @return This builder for chaining.
        */
@@ -24550,26 +24700,26 @@ public final class PaymentOuterClass {
       ">\n\013PaymentList\022/\n\005items\030\001 \003(\0132\031.payment." +
       "v1alpha1.PaymentR\005items\">\n\013ProjectList\022/" +
       "\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Project" +
-      "R\005items\"\242\001\n\016ProjectBilling\022\016\n\002id\030\001 \001(\tR\002" +
+      "R\005items\"\266\001\n\016ProjectBilling\022\016\n\002id\030\001 \001(\tR\002" +
       "id\022\035\n\nproject_id\030\002 \001(\tR\tprojectId\022!\n\014pro" +
-      "ject_name\030\003 \001(\tR\013projectName\022\020\n\003ram\030\004 \001(" +
-      "\tR\003ram\022\020\n\003cpu\030\005 \001(\tR\003cpu\022\032\n\010pipeline\030\006 \001" +
-      "(\tR\010pipeline\"L\n\022ProjectBillingList\0226\n\005it" +
-      "ems\030\001 \003(\0132 .payment.v1alpha1.ProjectBill" +
-      "ingR\005items\"\337\002\n\nBlockChain\022#\n\rblockchain_" +
-      "id\030\001 \001(\tR\014blockchainId\022\'\n\017blockchain_nam" +
-      "e\030\002 \001(\tR\016blockchainName\022\'\n\017blockchain_ty" +
-      "pe\030\003 \001(\tR\016blockchainType\022\035\n\nproject_id\030\004" +
-      " \001(\tR\tprojectId\022B\n\014subscription\030\005 \001(\0132\036." +
-      "payment.v1alpha1.SubscriptionR\014subscript" +
-      "ion\022\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nup" +
-      "dated_at\030\007 \001(\tR\tupdatedAt\022\026\n\006status\030\010 \001(" +
-      "\010R\006status\022!\n\014is_suspended\030\t \001(\010R\013isSuspe" +
-      "nded\"b\n\006Budget\022\022\n\004plan\030\001 \001(\tR\004plan\022\037\n\013bu" +
-      "dget_time\030\002 \001(\tR\nbudgetTime\022#\n\rbudget_am" +
-      "ount\030\003 \001(\tR\014budgetAmountB8Z6github.com/c" +
-      "uemby/ccp-payment-service/payment/v1alph" +
-      "a1b\006proto3"
+      "ject_name\030\003 \001(\tR\013projectName\022\022\n\004plan\030\004 \001" +
+      "(\tR\004plan\022\020\n\003ram\030\005 \001(\tR\003ram\022\020\n\003cpu\030\006 \001(\tR" +
+      "\003cpu\022\032\n\010pipeline\030\007 \001(\tR\010pipeline\"L\n\022Proj" +
+      "ectBillingList\0226\n\005items\030\001 \003(\0132 .payment." +
+      "v1alpha1.ProjectBillingR\005items\"\337\002\n\nBlock" +
+      "Chain\022#\n\rblockchain_id\030\001 \001(\tR\014blockchain" +
+      "Id\022\'\n\017blockchain_name\030\002 \001(\tR\016blockchainN" +
+      "ame\022\'\n\017blockchain_type\030\003 \001(\tR\016blockchain" +
+      "Type\022\035\n\nproject_id\030\004 \001(\tR\tprojectId\022B\n\014s" +
+      "ubscription\030\005 \001(\0132\036.payment.v1alpha1.Sub" +
+      "scriptionR\014subscription\022\035\n\ncreated_at\030\006 " +
+      "\001(\tR\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupda" +
+      "tedAt\022\026\n\006status\030\010 \001(\010R\006status\022!\n\014is_susp" +
+      "ended\030\t \001(\010R\013isSuspended\"b\n\006Budget\022\022\n\004pl" +
+      "an\030\001 \001(\tR\004plan\022\037\n\013budget_time\030\002 \001(\tR\nbud" +
+      "getTime\022#\n\rbudget_amount\030\003 \001(\tR\014budgetAm" +
+      "ountB8Z6github.com/cuemby/ccp-payment-se" +
+      "rvice/payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -24676,7 +24826,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_ProjectBilling_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ProjectBilling_descriptor,
-        new java.lang.String[] { "Id", "ProjectId", "ProjectName", "Ram", "Cpu", "Pipeline", });
+        new java.lang.String[] { "Id", "ProjectId", "ProjectName", "Plan", "Ram", "Cpu", "Pipeline", });
     internal_static_payment_v1alpha1_ProjectBillingList_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_payment_v1alpha1_ProjectBillingList_fieldAccessorTable = new

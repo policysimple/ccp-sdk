@@ -4759,9 +4759,10 @@ proto.payment.v1alpha1.ProjectBilling.toObject = function(includeInstance, msg) 
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     projectName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    ram: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    cpu: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    pipeline: jspb.Message.getFieldWithDefault(msg, 6, "")
+    plan: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    ram: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    cpu: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    pipeline: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -4812,13 +4813,17 @@ proto.payment.v1alpha1.ProjectBilling.deserializeBinaryFromReader = function(msg
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRam(value);
+      msg.setPlan(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCpu(value);
+      msg.setRam(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCpu(value);
+      break;
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setPipeline(value);
       break;
@@ -4872,24 +4877,31 @@ proto.payment.v1alpha1.ProjectBilling.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getRam();
+  f = message.getPlan();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getCpu();
+  f = message.getRam();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getPipeline();
+  f = message.getCpu();
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getPipeline();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -4951,10 +4963,10 @@ proto.payment.v1alpha1.ProjectBilling.prototype.setProjectName = function(value)
 
 
 /**
- * optional string ram = 4;
+ * optional string plan = 4;
  * @return {string}
  */
-proto.payment.v1alpha1.ProjectBilling.prototype.getRam = function() {
+proto.payment.v1alpha1.ProjectBilling.prototype.getPlan = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -4963,16 +4975,16 @@ proto.payment.v1alpha1.ProjectBilling.prototype.getRam = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.ProjectBilling} returns this
  */
-proto.payment.v1alpha1.ProjectBilling.prototype.setRam = function(value) {
+proto.payment.v1alpha1.ProjectBilling.prototype.setPlan = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string cpu = 5;
+ * optional string ram = 5;
  * @return {string}
  */
-proto.payment.v1alpha1.ProjectBilling.prototype.getCpu = function() {
+proto.payment.v1alpha1.ProjectBilling.prototype.getRam = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -4981,16 +4993,16 @@ proto.payment.v1alpha1.ProjectBilling.prototype.getCpu = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.ProjectBilling} returns this
  */
-proto.payment.v1alpha1.ProjectBilling.prototype.setCpu = function(value) {
+proto.payment.v1alpha1.ProjectBilling.prototype.setRam = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string pipeline = 6;
+ * optional string cpu = 6;
  * @return {string}
  */
-proto.payment.v1alpha1.ProjectBilling.prototype.getPipeline = function() {
+proto.payment.v1alpha1.ProjectBilling.prototype.getCpu = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -4999,8 +5011,26 @@ proto.payment.v1alpha1.ProjectBilling.prototype.getPipeline = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.ProjectBilling} returns this
  */
-proto.payment.v1alpha1.ProjectBilling.prototype.setPipeline = function(value) {
+proto.payment.v1alpha1.ProjectBilling.prototype.setCpu = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string pipeline = 7;
+ * @return {string}
+ */
+proto.payment.v1alpha1.ProjectBilling.prototype.getPipeline = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.ProjectBilling} returns this
+ */
+proto.payment.v1alpha1.ProjectBilling.prototype.setPipeline = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

@@ -133,9 +133,10 @@ message ProjectBilling {
   string id =1;
   string project_id = 2;
   string project_name = 3;
-  string ram = 4;
-  string cpu = 5;
-  string pipeline = 6;
+  string plan = 4;
+  string ram = 5;
+  string cpu = 6;
+  string pipeline = 7;
 }
 
 message ProjectBillingList {
