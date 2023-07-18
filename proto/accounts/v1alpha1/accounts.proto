@@ -44,6 +44,9 @@ message MemberProject {
 
     string status = 10;
     string expired_at = 11;
+    string invitation_created_at = 12;
+    string invitation_status = 13;
+
 
 
 }

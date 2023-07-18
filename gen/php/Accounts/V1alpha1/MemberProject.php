@@ -53,6 +53,14 @@ class MemberProject extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string expired_at = 11 [json_name = "expiredAt"];</code>
      */
     protected $expired_at = '';
+    /**
+     * Generated from protobuf field <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+     */
+    protected $invitation_created_at = '';
+    /**
+     * Generated from protobuf field <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+     */
+    protected $invitation_status = '';
 
     /**
      * Constructor.
@@ -70,6 +78,8 @@ class MemberProject extends \Google\Protobuf\Internal\Message
      *     @type string $uid
      *     @type string $status
      *     @type string $expired_at
+     *     @type string $invitation_created_at
+     *     @type string $invitation_status
      * }
      */
     public function __construct($data = NULL) {
@@ -303,6 +313,50 @@ class MemberProject extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->expired_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+     * @return string
+     */
+    public function getInvitationCreatedAt()
+    {
+        return $this->invitation_created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInvitationCreatedAt($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->invitation_created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+     * @return string
+     */
+    public function getInvitationStatus()
+    {
+        return $this->invitation_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInvitationStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->invitation_status = $var;
 
         return $this;
     }

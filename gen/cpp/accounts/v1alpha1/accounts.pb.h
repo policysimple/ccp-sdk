@@ -853,6 +853,8 @@ class MemberProject final :
     kUidFieldNumber = 9,
     kStatusFieldNumber = 10,
     kExpiredAtFieldNumber = 11,
+    kInvitationCreatedAtFieldNumber = 12,
+    kInvitationStatusFieldNumber = 13,
     kRoleFieldNumber = 7,
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 5,
@@ -955,6 +957,34 @@ class MemberProject final :
   std::string* _internal_mutable_expired_at();
   public:
 
+  // string invitation_created_at = 12 [json_name = "invitationCreatedAt"];
+  void clear_invitation_created_at();
+  const std::string& invitation_created_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_invitation_created_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_invitation_created_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_invitation_created_at();
+  void set_allocated_invitation_created_at(std::string* invitation_created_at);
+  private:
+  const std::string& _internal_invitation_created_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_invitation_created_at(const std::string& value);
+  std::string* _internal_mutable_invitation_created_at();
+  public:
+
+  // string invitation_status = 13 [json_name = "invitationStatus"];
+  void clear_invitation_status();
+  const std::string& invitation_status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_invitation_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_invitation_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_invitation_status();
+  void set_allocated_invitation_status(std::string* invitation_status);
+  private:
+  const std::string& _internal_invitation_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_invitation_status(const std::string& value);
+  std::string* _internal_mutable_invitation_status();
+  public:
+
   // .accounts.v1alpha1.Role role = 7 [json_name = "role"];
   bool has_role() const;
   private:
@@ -1005,6 +1035,8 @@ class MemberProject final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr expired_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invitation_created_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invitation_status_;
   ::accounts::v1alpha1::Role* role_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
@@ -3500,6 +3532,98 @@ inline void MemberProject::set_allocated_expired_at(std::string* expired_at) {
   expired_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), expired_at,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MemberProject.expired_at)
+}
+
+// string invitation_created_at = 12 [json_name = "invitationCreatedAt"];
+inline void MemberProject::clear_invitation_created_at() {
+  invitation_created_at_.ClearToEmpty();
+}
+inline const std::string& MemberProject::invitation_created_at() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MemberProject.invitation_created_at)
+  return _internal_invitation_created_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MemberProject::set_invitation_created_at(ArgT0&& arg0, ArgT... args) {
+ 
+ invitation_created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MemberProject.invitation_created_at)
+}
+inline std::string* MemberProject::mutable_invitation_created_at() {
+  std::string* _s = _internal_mutable_invitation_created_at();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MemberProject.invitation_created_at)
+  return _s;
+}
+inline const std::string& MemberProject::_internal_invitation_created_at() const {
+  return invitation_created_at_.Get();
+}
+inline void MemberProject::_internal_set_invitation_created_at(const std::string& value) {
+  
+  invitation_created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MemberProject::_internal_mutable_invitation_created_at() {
+  
+  return invitation_created_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MemberProject::release_invitation_created_at() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MemberProject.invitation_created_at)
+  return invitation_created_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MemberProject::set_allocated_invitation_created_at(std::string* invitation_created_at) {
+  if (invitation_created_at != nullptr) {
+    
+  } else {
+    
+  }
+  invitation_created_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), invitation_created_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MemberProject.invitation_created_at)
+}
+
+// string invitation_status = 13 [json_name = "invitationStatus"];
+inline void MemberProject::clear_invitation_status() {
+  invitation_status_.ClearToEmpty();
+}
+inline const std::string& MemberProject::invitation_status() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.MemberProject.invitation_status)
+  return _internal_invitation_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MemberProject::set_invitation_status(ArgT0&& arg0, ArgT... args) {
+ 
+ invitation_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.MemberProject.invitation_status)
+}
+inline std::string* MemberProject::mutable_invitation_status() {
+  std::string* _s = _internal_mutable_invitation_status();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.MemberProject.invitation_status)
+  return _s;
+}
+inline const std::string& MemberProject::_internal_invitation_status() const {
+  return invitation_status_.Get();
+}
+inline void MemberProject::_internal_set_invitation_status(const std::string& value) {
+  
+  invitation_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MemberProject::_internal_mutable_invitation_status() {
+  
+  return invitation_status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MemberProject::release_invitation_status() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.MemberProject.invitation_status)
+  return invitation_status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MemberProject::set_allocated_invitation_status(std::string* invitation_status) {
+  if (invitation_status != nullptr) {
+    
+  } else {
+    
+  }
+  invitation_status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), invitation_status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.MemberProject.invitation_status)
 }
 
 // -------------------------------------------------------------------
