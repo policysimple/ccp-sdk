@@ -1072,7 +1072,9 @@ proto.accounts.v1alpha1.MemberProject.toObject = function(includeInstance, msg) 
     role: (f = msg.getRole()) && proto.accounts.v1alpha1.Role.toObject(includeInstance, f),
     uid: jspb.Message.getFieldWithDefault(msg, 9, ""),
     status: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    expiredAt: jspb.Message.getFieldWithDefault(msg, 11, "")
+    expiredAt: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    invitationCreatedAt: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    invitationStatus: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -1149,6 +1151,14 @@ proto.accounts.v1alpha1.MemberProject.deserializeBinaryFromReader = function(msg
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setExpiredAt(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvitationCreatedAt(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInvitationStatus(value);
       break;
     default:
       reader.skipField();
@@ -1247,6 +1257,20 @@ proto.accounts.v1alpha1.MemberProject.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getInvitationCreatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getInvitationStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
       f
     );
   }
@@ -1449,6 +1473,42 @@ proto.accounts.v1alpha1.MemberProject.prototype.getExpiredAt = function() {
  */
 proto.accounts.v1alpha1.MemberProject.prototype.setExpiredAt = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string invitation_created_at = 12;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.MemberProject.prototype.getInvitationCreatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.MemberProject} returns this
+ */
+proto.accounts.v1alpha1.MemberProject.prototype.setInvitationCreatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string invitation_status = 13;
+ * @return {string}
+ */
+proto.accounts.v1alpha1.MemberProject.prototype.getInvitationStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.accounts.v1alpha1.MemberProject} returns this
+ */
+proto.accounts.v1alpha1.MemberProject.prototype.setInvitationStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 

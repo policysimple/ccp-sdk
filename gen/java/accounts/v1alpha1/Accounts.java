@@ -3769,6 +3769,30 @@ public final class Accounts {
      */
     com.google.protobuf.ByteString
         getExpiredAtBytes();
+
+    /**
+     * <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+     * @return The invitationCreatedAt.
+     */
+    java.lang.String getInvitationCreatedAt();
+    /**
+     * <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+     * @return The bytes for invitationCreatedAt.
+     */
+    com.google.protobuf.ByteString
+        getInvitationCreatedAtBytes();
+
+    /**
+     * <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+     * @return The invitationStatus.
+     */
+    java.lang.String getInvitationStatus();
+    /**
+     * <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+     * @return The bytes for invitationStatus.
+     */
+    com.google.protobuf.ByteString
+        getInvitationStatusBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.MemberProject}
@@ -3790,6 +3814,8 @@ public final class Accounts {
       uid_ = "";
       status_ = "";
       expiredAt_ = "";
+      invitationCreatedAt_ = "";
+      invitationStatus_ = "";
     }
 
     @java.lang.Override
@@ -3885,6 +3911,18 @@ public final class Accounts {
               java.lang.String s = input.readStringRequireUtf8();
 
               expiredAt_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              invitationCreatedAt_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              invitationStatus_ = s;
               break;
             }
             default: {
@@ -4233,6 +4271,82 @@ public final class Accounts {
       }
     }
 
+    public static final int INVITATION_CREATED_AT_FIELD_NUMBER = 12;
+    private volatile java.lang.Object invitationCreatedAt_;
+    /**
+     * <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+     * @return The invitationCreatedAt.
+     */
+    @java.lang.Override
+    public java.lang.String getInvitationCreatedAt() {
+      java.lang.Object ref = invitationCreatedAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        invitationCreatedAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+     * @return The bytes for invitationCreatedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInvitationCreatedAtBytes() {
+      java.lang.Object ref = invitationCreatedAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        invitationCreatedAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INVITATION_STATUS_FIELD_NUMBER = 13;
+    private volatile java.lang.Object invitationStatus_;
+    /**
+     * <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+     * @return The invitationStatus.
+     */
+    @java.lang.Override
+    public java.lang.String getInvitationStatus() {
+      java.lang.Object ref = invitationStatus_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        invitationStatus_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+     * @return The bytes for invitationStatus.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInvitationStatusBytes() {
+      java.lang.Object ref = invitationStatus_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        invitationStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4277,6 +4391,12 @@ public final class Accounts {
       if (!getExpiredAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, expiredAt_);
       }
+      if (!getInvitationCreatedAtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, invitationCreatedAt_);
+      }
+      if (!getInvitationStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, invitationStatus_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4319,6 +4439,12 @@ public final class Accounts {
       if (!getExpiredAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, expiredAt_);
       }
+      if (!getInvitationCreatedAtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, invitationCreatedAt_);
+      }
+      if (!getInvitationStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, invitationStatus_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4357,6 +4483,10 @@ public final class Accounts {
           .equals(other.getStatus())) return false;
       if (!getExpiredAt()
           .equals(other.getExpiredAt())) return false;
+      if (!getInvitationCreatedAt()
+          .equals(other.getInvitationCreatedAt())) return false;
+      if (!getInvitationStatus()
+          .equals(other.getInvitationStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4391,6 +4521,10 @@ public final class Accounts {
       hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + EXPIRED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getExpiredAt().hashCode();
+      hash = (37 * hash) + INVITATION_CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitationCreatedAt().hashCode();
+      hash = (37 * hash) + INVITATION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitationStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4548,6 +4682,10 @@ public final class Accounts {
 
         expiredAt_ = "";
 
+        invitationCreatedAt_ = "";
+
+        invitationStatus_ = "";
+
         return this;
       }
 
@@ -4588,6 +4726,8 @@ public final class Accounts {
         result.uid_ = uid_;
         result.status_ = status_;
         result.expiredAt_ = expiredAt_;
+        result.invitationCreatedAt_ = invitationCreatedAt_;
+        result.invitationStatus_ = invitationStatus_;
         onBuilt();
         return result;
       }
@@ -4671,6 +4811,14 @@ public final class Accounts {
         }
         if (!other.getExpiredAt().isEmpty()) {
           expiredAt_ = other.expiredAt_;
+          onChanged();
+        }
+        if (!other.getInvitationCreatedAt().isEmpty()) {
+          invitationCreatedAt_ = other.invitationCreatedAt_;
+          onChanged();
+        }
+        if (!other.getInvitationStatus().isEmpty()) {
+          invitationStatus_ = other.invitationStatus_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5411,6 +5559,158 @@ public final class Accounts {
   checkByteStringIsUtf8(value);
         
         expiredAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object invitationCreatedAt_ = "";
+      /**
+       * <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+       * @return The invitationCreatedAt.
+       */
+      public java.lang.String getInvitationCreatedAt() {
+        java.lang.Object ref = invitationCreatedAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          invitationCreatedAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+       * @return The bytes for invitationCreatedAt.
+       */
+      public com.google.protobuf.ByteString
+          getInvitationCreatedAtBytes() {
+        java.lang.Object ref = invitationCreatedAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          invitationCreatedAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+       * @param value The invitationCreatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInvitationCreatedAt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        invitationCreatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInvitationCreatedAt() {
+        
+        invitationCreatedAt_ = getDefaultInstance().getInvitationCreatedAt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string invitation_created_at = 12 [json_name = "invitationCreatedAt"];</code>
+       * @param value The bytes for invitationCreatedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInvitationCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        invitationCreatedAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object invitationStatus_ = "";
+      /**
+       * <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+       * @return The invitationStatus.
+       */
+      public java.lang.String getInvitationStatus() {
+        java.lang.Object ref = invitationStatus_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          invitationStatus_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+       * @return The bytes for invitationStatus.
+       */
+      public com.google.protobuf.ByteString
+          getInvitationStatusBytes() {
+        java.lang.Object ref = invitationStatus_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          invitationStatus_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+       * @param value The invitationStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInvitationStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        invitationStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInvitationStatus() {
+        
+        invitationStatus_ = getDefaultInstance().getInvitationStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string invitation_status = 13 [json_name = "invitationStatus"];</code>
+       * @param value The bytes for invitationStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInvitationStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        invitationStatus_ = value;
         onChanged();
         return this;
       }
@@ -16202,65 +16502,67 @@ public final class Accounts {
       "user\030\007 \001(\010R\013isSuperUser\022\024\n\005image\030\010 \001(\tR\005" +
       "image\"L\n\tMemberRol\022\022\n\004name\030\002 \001(\tR\004name\022\031" +
       "\n\010is_admin\030\003 \001(\010R\007isAdmin\022\020\n\003uid\030\004 \001(\tR\003" +
-      "uid\"\235\002\n\rMemberProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n" +
+      "uid\"\376\002\n\rMemberProject\022\016\n\002id\030\001 \001(\rR\002id\022\027\n" +
       "\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 \001" +
       "(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastNa" +
       "me\022\033\n\tis_active\030\005 \001(\010R\010isActive\022\024\n\005image" +
       "\030\006 \001(\tR\005image\022+\n\004role\030\007 \001(\0132\027.accounts.v" +
       "1alpha1.RoleR\004role\022\020\n\003uid\030\t \001(\tR\003uid\022\026\n\006" +
       "status\030\n \001(\tR\006status\022\035\n\nexpired_at\030\013 \001(\t" +
-      "R\texpiredAt\"y\n\nPermission\022\016\n\002id\030\001 \001(\rR\002i" +
-      "d\022\022\n\004name\030\002 \001(\tR\004name\022\026\n\006action\030\003 \001(\tR\006a" +
-      "ction\022\022\n\004type\030\004 \001(\tR\004type\022\033\n\tfull_name\030\005" +
-      " \001(\tR\010fullName\"\263\002\n\007Project\022\016\n\002id\030\n \001(\tR\002" +
-      "id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005i" +
-      "mage\022\'\n\017organization_id\030\004 \001(\tR\016organizat" +
-      "ionId\022 \n\013description\030\005 \001(\tR\013description\022" +
-      "\035\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdate" +
-      "d_at\030\007 \001(\tR\tupdatedAt\022-\n\005roles\030\010 \003(\0132\027.a" +
-      "ccounts.v1alpha1.RoleR\005roles\0226\n\005users\030\t " +
-      "\003(\0132 .accounts.v1alpha1.MemberProjectR\005u" +
-      "sers\"\230\002\n\014Organization\022\022\n\004name\030\002 \001(\tR\004nam" +
-      "e\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030\004" +
-      " \001(\tR\013description\0221\n\005owner\030\007 \001(\0132\033.accou" +
-      "nts.v1alpha1.UserListR\005owner\022-\n\005roles\030\010 " +
-      "\003(\0132\027.accounts.v1alpha1.RoleR\005roles\022\022\n\004s" +
-      "lug\030\t \001(\tR\004slug\0226\n\010projects\030\n \003(\0132\032.acco" +
-      "unts.v1alpha1.ProjectR\010projects\022\016\n\002id\030\013 " +
-      "\001(\tR\002id\"\361\t\n\nUserDetail\022\016\n\002id\030\001 \001(\rR\002id\022\027" +
-      "\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003 " +
-      "\001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010lastN" +
-      "ame\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_active\030\006" +
-      " \001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001(\tR\tcrea" +
-      "tedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022-\n\005" +
-      "roles\030\t \003(\0132\027.accounts.v1alpha1.RoleR\005ro" +
-      "les\022?\n\013permissions\030\n \003(\0132\035.accounts.v1al" +
-      "pha1.PermissionR\013permissions\022\"\n\ris_super" +
-      "_user\030\013 \001(\010R\013isSuperUser\022E\n\rorganization" +
-      "s\030\014 \003(\0132\037.accounts.v1alpha1.Organization" +
-      "R\rorganizations\022!\n\014phone_number\030\017 \001(\tR\013p" +
-      "honeNumber\022\030\n\007country\030\020 \001(\tR\007country\022\022\n\004" +
-      "city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022 \001(\tR\007zipC" +
-      "ode\022\030\n\007address\030\023 \001(\tR\007address\022\024\n\005state\030\024" +
-      " \001(\tR\005state\022#\n\remoji_country\030\025 \001(\tR\014emoj" +
-      "iCountry\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isMfaE" +
-      "nabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016e" +
-      "mail_verified\030\030 \001(\010R\remailVerified\022\032\n\010la" +
-      "nguage\030\032 \001(\tR\010language\022+\n\021push_notificat" +
-      "ion\030\033 \001(\010R\020pushNotification\022-\n\022email_not" +
-      "ification\030\034 \001(\010R\021emailNotification\0224\n\026ne" +
-      "w_login_notification\030\035 \001(\010R\024newLoginNoti" +
-      "fication\022/\n\023create_notification\030\036 \001(\010R\022c" +
-      "reateNotification\022/\n\023update_notification" +
-      "\030\037 \001(\010R\022updateNotification\022/\n\023delete_not" +
-      "ification\030  \001(\010R\022deleteNotification\0229\n\030a" +
-      "pplication_notification\030! \001(\010R\027applicati" +
-      "onNotification\022+\n\021read_notification\030\" \001(" +
-      "\010R\020readNotification\022\035\n\nphone_code\030# \001(\tR" +
-      "\tphoneCode\022)\n\020optional_address\030$ \001(\tR\017op" +
-      "tionalAddress\022\024\n\005image\030% \001(\tR\005imageB4Z2g" +
-      "ithub.com/cuemby/ccp-sdk/gen/go/accounts" +
-      "/v1alpha1b\006proto3"
+      "R\texpiredAt\0222\n\025invitation_created_at\030\014 \001" +
+      "(\tR\023invitationCreatedAt\022+\n\021invitation_st" +
+      "atus\030\r \001(\tR\020invitationStatus\"y\n\nPermissi" +
+      "on\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\026" +
+      "\n\006action\030\003 \001(\tR\006action\022\022\n\004type\030\004 \001(\tR\004ty" +
+      "pe\022\033\n\tfull_name\030\005 \001(\tR\010fullName\"\263\002\n\007Proj" +
+      "ect\022\016\n\002id\030\n \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
+      "\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organization_id" +
+      "\030\004 \001(\tR\016organizationId\022 \n\013description\030\005 " +
+      "\001(\tR\013description\022\035\n\ncreated_at\030\006 \001(\tR\tcr" +
+      "eatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022-" +
+      "\n\005roles\030\010 \003(\0132\027.accounts.v1alpha1.RoleR\005" +
+      "roles\0226\n\005users\030\t \003(\0132 .accounts.v1alpha1" +
+      ".MemberProjectR\005users\"\230\002\n\014Organization\022\022" +
+      "\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image" +
+      "\022 \n\013description\030\004 \001(\tR\013description\0221\n\005ow" +
+      "ner\030\007 \001(\0132\033.accounts.v1alpha1.UserListR\005" +
+      "owner\022-\n\005roles\030\010 \003(\0132\027.accounts.v1alpha1" +
+      ".RoleR\005roles\022\022\n\004slug\030\t \001(\tR\004slug\0226\n\010proj" +
+      "ects\030\n \003(\0132\032.accounts.v1alpha1.ProjectR\010" +
+      "projects\022\016\n\002id\030\013 \001(\tR\002id\"\361\t\n\nUserDetail\022" +
+      "\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId" +
+      "\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_" +
+      "name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005ema" +
+      "il\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\ncreat" +
+      "ed_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001" +
+      "(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027.accounts." +
+      "v1alpha1.RoleR\005roles\022?\n\013permissions\030\n \003(" +
+      "\0132\035.accounts.v1alpha1.PermissionR\013permis" +
+      "sions\022\"\n\ris_super_user\030\013 \001(\010R\013isSuperUse" +
+      "r\022E\n\rorganizations\030\014 \003(\0132\037.accounts.v1al" +
+      "pha1.OrganizationR\rorganizations\022!\n\014phon" +
+      "e_number\030\017 \001(\tR\013phoneNumber\022\030\n\007country\030\020" +
+      " \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip" +
+      "_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030\023 \001(\tR\007a" +
+      "ddress\022\024\n\005state\030\024 \001(\tR\005state\022#\n\remoji_co" +
+      "untry\030\025 \001(\tR\014emojiCountry\022$\n\016is_mfa_enab" +
+      "led\030\026 \001(\010R\014isMfaEnabled\022\033\n\ttoken_ccp\030\027 \001" +
+      "(\tR\010tokenCcp\022%\n\016email_verified\030\030 \001(\010R\rem" +
+      "ailVerified\022\032\n\010language\030\032 \001(\tR\010language\022" +
+      "+\n\021push_notification\030\033 \001(\010R\020pushNotifica" +
+      "tion\022-\n\022email_notification\030\034 \001(\010R\021emailN" +
+      "otification\0224\n\026new_login_notification\030\035 " +
+      "\001(\010R\024newLoginNotification\022/\n\023create_noti" +
+      "fication\030\036 \001(\010R\022createNotification\022/\n\023up" +
+      "date_notification\030\037 \001(\010R\022updateNotificat" +
+      "ion\022/\n\023delete_notification\030  \001(\010R\022delete" +
+      "Notification\0229\n\030application_notification" +
+      "\030! \001(\010R\027applicationNotification\022+\n\021read_" +
+      "notification\030\" \001(\010R\020readNotification\022\035\n\n" +
+      "phone_code\030# \001(\tR\tphoneCode\022)\n\020optional_" +
+      "address\030$ \001(\tR\017optionalAddress\022\024\n\005image\030" +
+      "% \001(\tR\005imageB4Z2github.com/cuemby/ccp-sd" +
+      "k/gen/go/accounts/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16289,7 +16591,7 @@ public final class Accounts {
     internal_static_accounts_v1alpha1_MemberProject_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_MemberProject_descriptor,
-        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "IsActive", "Image", "Role", "Uid", "Status", "ExpiredAt", });
+        new java.lang.String[] { "Id", "UserId", "FirstName", "LastName", "IsActive", "Image", "Role", "Uid", "Status", "ExpiredAt", "InvitationCreatedAt", "InvitationStatus", });
     internal_static_accounts_v1alpha1_Permission_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_accounts_v1alpha1_Permission_fieldAccessorTable = new
