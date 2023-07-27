@@ -284,7 +284,7 @@ struct PipelineRunListDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PipelineRunListDefaultTypeInternal _PipelineRunList_default_instance_;
 constexpr TaskRun::TaskRun(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : task_run_()
+  : task_run_step_()
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , reason_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -309,7 +309,8 @@ constexpr TaskRunStep::TaskRunStep(
   , started_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , finished_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , duration_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , task_run_step_status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , task_run_step_status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , logs_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct TaskRunStepDefaultTypeInternal {
   constexpr TaskRunStepDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -524,7 +525,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, finished_at_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, duration_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, task_run_status_),
-  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, task_run_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRun, task_run_step_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRunStep, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -537,6 +538,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRunStep, finished_at_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRunStep, duration_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRunStep, task_run_step_status_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::TaskRunStep, logs_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pipelines::tekton::v1alpha1::Params)},
@@ -677,28 +679,29 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2epr
   "tus\022=\n\010task_run\030\n \003(\0132\".pipelines.tekton"
   ".v1alpha1.TaskRunR\007taskRun\"O\n\017PipelineRu"
   "nList\022<\n\005items\030\001 \003(\0132&.pipelines.tekton."
-  "v1alpha1.PipelineRunR\005items\"\226\002\n\007TaskRun\022"
+  "v1alpha1.PipelineRunR\005items\"\237\002\n\007TaskRun\022"
   "\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 \001(\tR\007me"
   "ssage\022\026\n\006reason\030\003 \001(\tR\006reason\022\035\n\nstarted"
   "_at\030\004 \001(\tR\tstartedAt\022\037\n\013finished_at\030\005 \001("
   "\tR\nfinishedAt\022\032\n\010duration\030\006 \001(\tR\010duratio"
   "n\022&\n\017task_run_status\030\007 \001(\tR\rtaskRunStatu"
-  "s\022A\n\010task_run\030\010 \003(\0132&.pipelines.tekton.v"
-  "1alpha1.TaskRunStepR\007taskRun\"\340\001\n\013TaskRun"
-  "Step\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 \001("
-  "\tR\007message\022\026\n\006reason\030\003 \001(\tR\006reason\022\035\n\nst"
-  "arted_at\030\004 \001(\tR\tstartedAt\022\037\n\013finished_at"
-  "\030\005 \001(\tR\nfinishedAt\022\032\n\010duration\030\006 \001(\tR\010du"
-  "ration\022/\n\024task_run_step_status\030\007 \001(\tR\021ta"
-  "skRunStepStatusB\256\001\n#io.cuemby.pipelines."
-  "tekton.v1alpha1B\013TektonProtoP\001Z:github.c"
-  "om/cuemby/ccp-sdk/gen/go/pipelines/tekto"
-  "n/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Al"
-  "pha1\312\002\031Pipelines\\Tekton\\V1Alpha1b\006proto3"
+  "s\022J\n\rtask_run_step\030\010 \003(\0132&.pipelines.tek"
+  "ton.v1alpha1.TaskRunStepR\013taskRunStep\"\364\001"
+  "\n\013TaskRunStep\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007mes"
+  "sage\030\002 \001(\tR\007message\022\026\n\006reason\030\003 \001(\tR\006rea"
+  "son\022\035\n\nstarted_at\030\004 \001(\tR\tstartedAt\022\037\n\013fi"
+  "nished_at\030\005 \001(\tR\nfinishedAt\022\032\n\010duration\030"
+  "\006 \001(\tR\010duration\022/\n\024task_run_step_status\030"
+  "\007 \001(\tR\021taskRunStepStatus\022\022\n\004logs\030\010 \001(\tR\004"
+  "logsB\256\001\n#io.cuemby.pipelines.tekton.v1al"
+  "pha1B\013TektonProtoP\001Z:github.com/cuemby/c"
+  "cp-sdk/gen/go/pipelines/tekton/v1alpha1\242"
+  "\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipe"
+  "lines\\Tekton\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto = {
-  false, false, 4480, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
+  false, false, 4509, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, "pipelines/tekton/v1alpha1/tekton.proto", 
   &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto_once, nullptr, 0, 19,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
@@ -5631,7 +5634,7 @@ class TaskRun::_Internal {
 TaskRun::TaskRun(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  task_run_(arena) {
+  task_run_step_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -5640,7 +5643,7 @@ TaskRun::TaskRun(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 TaskRun::TaskRun(const TaskRun& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      task_run_(from.task_run_) {
+      task_run_step_(from.task_run_step_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
@@ -5724,7 +5727,7 @@ void TaskRun::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  task_run_.Clear();
+  task_run_step_.Clear();
   name_.ClearToEmpty();
   message_.ClearToEmpty();
   reason_.ClearToEmpty();
@@ -5804,13 +5807,13 @@ const char* TaskRun::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];
+      // repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_task_run(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_task_run_step(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
@@ -5915,12 +5918,12 @@ failure:
         7, this->_internal_task_run_status(), target);
   }
 
-  // repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];
+  // repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_task_run_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_task_run_step_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(8, this->_internal_task_run(i), target, stream);
+      InternalWriteMessage(8, this->_internal_task_run_step(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5939,9 +5942,9 @@ size_t TaskRun::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];
-  total_size += 1UL * this->_internal_task_run_size();
-  for (const auto& msg : this->task_run_) {
+  // repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];
+  total_size += 1UL * this->_internal_task_run_step_size();
+  for (const auto& msg : this->task_run_step_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -6023,7 +6026,7 @@ void TaskRun::MergeFrom(const TaskRun& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  task_run_.MergeFrom(from.task_run_);
+  task_run_step_.MergeFrom(from.task_run_step_);
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
@@ -6062,7 +6065,7 @@ bool TaskRun::IsInitialized() const {
 void TaskRun::InternalSwap(TaskRun* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  task_run_.InternalSwap(&other->task_run_);
+  task_run_step_.InternalSwap(&other->task_run_step_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, GetArenaForAllocation(),
@@ -6159,6 +6162,11 @@ TaskRunStep::TaskRunStep(const TaskRunStep& from)
     task_run_step_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_task_run_step_status(), 
       GetArenaForAllocation());
   }
+  logs_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_logs().empty()) {
+    logs_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_logs(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:pipelines.tekton.v1alpha1.TaskRunStep)
 }
 
@@ -6170,6 +6178,7 @@ started_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 finished_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 duration_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 task_run_step_status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+logs_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 TaskRunStep::~TaskRunStep() {
@@ -6188,6 +6197,7 @@ inline void TaskRunStep::SharedDtor() {
   finished_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   duration_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   task_run_step_status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  logs_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void TaskRunStep::ArenaDtor(void* object) {
@@ -6213,6 +6223,7 @@ void TaskRunStep::Clear() {
   finished_at_.ClearToEmpty();
   duration_.ClearToEmpty();
   task_run_step_status_.ClearToEmpty();
+  logs_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6282,6 +6293,15 @@ const char* TaskRunStep::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           auto str = _internal_mutable_task_run_step_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskRunStep.task_run_step_status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string logs = 8 [json_name = "logs"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_logs();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.TaskRunStep.logs"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6384,6 +6404,16 @@ failure:
         7, this->_internal_task_run_step_status(), target);
   }
 
+  // string logs = 8 [json_name = "logs"];
+  if (!this->_internal_logs().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_logs().data(), static_cast<int>(this->_internal_logs().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.TaskRunStep.logs");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_logs(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6449,6 +6479,13 @@ size_t TaskRunStep::ByteSizeLong() const {
         this->_internal_task_run_step_status());
   }
 
+  // string logs = 8 [json_name = "logs"];
+  if (!this->_internal_logs().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_logs());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -6497,6 +6534,9 @@ void TaskRunStep::MergeFrom(const TaskRunStep& from) {
   }
   if (!from._internal_task_run_step_status().empty()) {
     _internal_set_task_run_step_status(from._internal_task_run_step_status());
+  }
+  if (!from._internal_logs().empty()) {
+    _internal_set_logs(from._internal_logs());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -6549,6 +6589,11 @@ void TaskRunStep::InternalSwap(TaskRunStep* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &task_run_step_status_, GetArenaForAllocation(),
       &other->task_run_step_status_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &logs_, GetArenaForAllocation(),
+      &other->logs_, other->GetArenaForAllocation()
   );
 }
 

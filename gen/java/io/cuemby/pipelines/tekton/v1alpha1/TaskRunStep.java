@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     finishedAt_ = "";
     duration_ = "";
     taskRunStepStatus_ = "";
+    logs_ = "";
   }
 
   @java.lang.Override
@@ -95,6 +96,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             taskRunStepStatus_ = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            logs_ = s;
             break;
           }
           default: {
@@ -395,6 +402,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LOGS_FIELD_NUMBER = 8;
+  private volatile java.lang.Object logs_;
+  /**
+   * <code>string logs = 8 [json_name = "logs"];</code>
+   * @return The logs.
+   */
+  @java.lang.Override
+  public java.lang.String getLogs() {
+    java.lang.Object ref = logs_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      logs_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string logs = 8 [json_name = "logs"];</code>
+   * @return The bytes for logs.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLogsBytes() {
+    java.lang.Object ref = logs_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      logs_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -430,6 +475,9 @@ private static final long serialVersionUID = 0L;
     if (!getTaskRunStepStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, taskRunStepStatus_);
     }
+    if (!getLogsBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, logs_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -460,6 +508,9 @@ private static final long serialVersionUID = 0L;
     if (!getTaskRunStepStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, taskRunStepStatus_);
     }
+    if (!getLogsBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, logs_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -489,6 +540,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDuration())) return false;
     if (!getTaskRunStepStatus()
         .equals(other.getTaskRunStepStatus())) return false;
+    if (!getLogs()
+        .equals(other.getLogs())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -514,6 +567,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDuration().hashCode();
     hash = (37 * hash) + TASK_RUN_STEP_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getTaskRunStepStatus().hashCode();
+    hash = (37 * hash) + LOGS_FIELD_NUMBER;
+    hash = (53 * hash) + getLogs().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -661,6 +716,8 @@ private static final long serialVersionUID = 0L;
 
       taskRunStepStatus_ = "";
 
+      logs_ = "";
+
       return this;
     }
 
@@ -694,6 +751,7 @@ private static final long serialVersionUID = 0L;
       result.finishedAt_ = finishedAt_;
       result.duration_ = duration_;
       result.taskRunStepStatus_ = taskRunStepStatus_;
+      result.logs_ = logs_;
       onBuilt();
       return result;
     }
@@ -768,6 +826,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getTaskRunStepStatus().isEmpty()) {
         taskRunStepStatus_ = other.taskRunStepStatus_;
+        onChanged();
+      }
+      if (!other.getLogs().isEmpty()) {
+        logs_ = other.logs_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1327,6 +1389,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       taskRunStepStatus_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object logs_ = "";
+    /**
+     * <code>string logs = 8 [json_name = "logs"];</code>
+     * @return The logs.
+     */
+    public java.lang.String getLogs() {
+      java.lang.Object ref = logs_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logs_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string logs = 8 [json_name = "logs"];</code>
+     * @return The bytes for logs.
+     */
+    public com.google.protobuf.ByteString
+        getLogsBytes() {
+      java.lang.Object ref = logs_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        logs_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string logs = 8 [json_name = "logs"];</code>
+     * @param value The logs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogs(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      logs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string logs = 8 [json_name = "logs"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLogs() {
+      
+      logs_ = getDefaultInstance().getLogs();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string logs = 8 [json_name = "logs"];</code>
+     * @param value The bytes for logs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      logs_ = value;
       onChanged();
       return this;
     }

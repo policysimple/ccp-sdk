@@ -90,4 +90,16 @@ public interface TaskRunStepOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTaskRunStepStatusBytes();
+
+  /**
+   * <code>string logs = 8 [json_name = "logs"];</code>
+   * @return The logs.
+   */
+  java.lang.String getLogs();
+  /**
+   * <code>string logs = 8 [json_name = "logs"];</code>
+   * @return The bytes for logs.
+   */
+  com.google.protobuf.ByteString
+      getLogsBytes();
 }

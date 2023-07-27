@@ -130,7 +130,7 @@ message TaskRun {
     string finished_at = 5;
     string duration = 6;
     string task_run_status = 7;
-    repeated TaskRunStep task_run = 8;
+    repeated TaskRunStep task_run_step = 8;
 
 }
 
@@ -142,5 +142,6 @@ message TaskRunStep {
     string finished_at = 5;
     string duration = 6;
     string task_run_step_status = 7;
+    string logs = 8;
     
 }
