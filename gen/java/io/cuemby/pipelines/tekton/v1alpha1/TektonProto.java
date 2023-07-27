@@ -212,24 +212,25 @@ public final class TektonProto {
       "tus\022=\n\010task_run\030\n \003(\0132\".pipelines.tekton" +
       ".v1alpha1.TaskRunR\007taskRun\"O\n\017PipelineRu" +
       "nList\022<\n\005items\030\001 \003(\0132&.pipelines.tekton." +
-      "v1alpha1.PipelineRunR\005items\"\226\002\n\007TaskRun\022" +
+      "v1alpha1.PipelineRunR\005items\"\237\002\n\007TaskRun\022" +
       "\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 \001(\tR\007me" +
       "ssage\022\026\n\006reason\030\003 \001(\tR\006reason\022\035\n\nstarted" +
       "_at\030\004 \001(\tR\tstartedAt\022\037\n\013finished_at\030\005 \001(" +
       "\tR\nfinishedAt\022\032\n\010duration\030\006 \001(\tR\010duratio" +
       "n\022&\n\017task_run_status\030\007 \001(\tR\rtaskRunStatu" +
-      "s\022A\n\010task_run\030\010 \003(\0132&.pipelines.tekton.v" +
-      "1alpha1.TaskRunStepR\007taskRun\"\340\001\n\013TaskRun" +
-      "Step\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007message\030\002 \001(" +
-      "\tR\007message\022\026\n\006reason\030\003 \001(\tR\006reason\022\035\n\nst" +
-      "arted_at\030\004 \001(\tR\tstartedAt\022\037\n\013finished_at" +
-      "\030\005 \001(\tR\nfinishedAt\022\032\n\010duration\030\006 \001(\tR\010du" +
-      "ration\022/\n\024task_run_step_status\030\007 \001(\tR\021ta" +
-      "skRunStepStatusB\256\001\n#io.cuemby.pipelines." +
-      "tekton.v1alpha1B\013TektonProtoP\001Z:github.c" +
-      "om/cuemby/ccp-sdk/gen/go/pipelines/tekto" +
-      "n/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Al" +
-      "pha1\312\002\031Pipelines\\Tekton\\V1Alpha1b\006proto3"
+      "s\022J\n\rtask_run_step\030\010 \003(\0132&.pipelines.tek" +
+      "ton.v1alpha1.TaskRunStepR\013taskRunStep\"\364\001" +
+      "\n\013TaskRunStep\022\022\n\004name\030\001 \001(\tR\004name\022\030\n\007mes" +
+      "sage\030\002 \001(\tR\007message\022\026\n\006reason\030\003 \001(\tR\006rea" +
+      "son\022\035\n\nstarted_at\030\004 \001(\tR\tstartedAt\022\037\n\013fi" +
+      "nished_at\030\005 \001(\tR\nfinishedAt\022\032\n\010duration\030" +
+      "\006 \001(\tR\010duration\022/\n\024task_run_step_status\030" +
+      "\007 \001(\tR\021taskRunStepStatus\022\022\n\004logs\030\010 \001(\tR\004" +
+      "logsB\256\001\n#io.cuemby.pipelines.tekton.v1al" +
+      "pha1B\013TektonProtoP\001Z:github.com/cuemby/c" +
+      "cp-sdk/gen/go/pipelines/tekton/v1alpha1\242" +
+      "\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipe" +
+      "lines\\Tekton\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -342,13 +343,13 @@ public final class TektonProto {
     internal_static_pipelines_tekton_v1alpha1_TaskRun_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_TaskRun_descriptor,
-        new java.lang.String[] { "Name", "Message", "Reason", "StartedAt", "FinishedAt", "Duration", "TaskRunStatus", "TaskRun", });
+        new java.lang.String[] { "Name", "Message", "Reason", "StartedAt", "FinishedAt", "Duration", "TaskRunStatus", "TaskRunStep", });
     internal_static_pipelines_tekton_v1alpha1_TaskRunStep_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_pipelines_tekton_v1alpha1_TaskRunStep_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_TaskRunStep_descriptor,
-        new java.lang.String[] { "Name", "Message", "Reason", "StartedAt", "FinishedAt", "Duration", "TaskRunStepStatus", });
+        new java.lang.String[] { "Name", "Message", "Reason", "StartedAt", "FinishedAt", "Duration", "TaskRunStepStatus", "Logs", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

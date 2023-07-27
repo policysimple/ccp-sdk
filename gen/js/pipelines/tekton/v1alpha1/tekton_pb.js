@@ -4160,7 +4160,7 @@ proto.pipelines.tekton.v1alpha1.TaskRun.toObject = function(includeInstance, msg
     finishedAt: jspb.Message.getFieldWithDefault(msg, 5, ""),
     duration: jspb.Message.getFieldWithDefault(msg, 6, ""),
     taskRunStatus: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    taskRunList: jspb.Message.toObjectList(msg.getTaskRunList(),
+    taskRunStepList: jspb.Message.toObjectList(msg.getTaskRunStepList(),
     proto.pipelines.tekton.v1alpha1.TaskRunStep.toObject, includeInstance)
   };
 
@@ -4229,7 +4229,7 @@ proto.pipelines.tekton.v1alpha1.TaskRun.deserializeBinaryFromReader = function(m
     case 8:
       var value = new proto.pipelines.tekton.v1alpha1.TaskRunStep;
       reader.readMessage(value,proto.pipelines.tekton.v1alpha1.TaskRunStep.deserializeBinaryFromReader);
-      msg.addTaskRun(value);
+      msg.addTaskRunStep(value);
       break;
     default:
       reader.skipField();
@@ -4309,7 +4309,7 @@ proto.pipelines.tekton.v1alpha1.TaskRun.serializeBinaryToWriter = function(messa
       f
     );
   }
-  f = message.getTaskRunList();
+  f = message.getTaskRunStepList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       8,
@@ -4447,10 +4447,10 @@ proto.pipelines.tekton.v1alpha1.TaskRun.prototype.setTaskRunStatus = function(va
 
 
 /**
- * repeated TaskRunStep task_run = 8;
+ * repeated TaskRunStep task_run_step = 8;
  * @return {!Array<!proto.pipelines.tekton.v1alpha1.TaskRunStep>}
  */
-proto.pipelines.tekton.v1alpha1.TaskRun.prototype.getTaskRunList = function() {
+proto.pipelines.tekton.v1alpha1.TaskRun.prototype.getTaskRunStepList = function() {
   return /** @type{!Array<!proto.pipelines.tekton.v1alpha1.TaskRunStep>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.pipelines.tekton.v1alpha1.TaskRunStep, 8));
 };
@@ -4460,7 +4460,7 @@ proto.pipelines.tekton.v1alpha1.TaskRun.prototype.getTaskRunList = function() {
  * @param {!Array<!proto.pipelines.tekton.v1alpha1.TaskRunStep>} value
  * @return {!proto.pipelines.tekton.v1alpha1.TaskRun} returns this
 */
-proto.pipelines.tekton.v1alpha1.TaskRun.prototype.setTaskRunList = function(value) {
+proto.pipelines.tekton.v1alpha1.TaskRun.prototype.setTaskRunStepList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
@@ -4470,7 +4470,7 @@ proto.pipelines.tekton.v1alpha1.TaskRun.prototype.setTaskRunList = function(valu
  * @param {number=} opt_index
  * @return {!proto.pipelines.tekton.v1alpha1.TaskRunStep}
  */
-proto.pipelines.tekton.v1alpha1.TaskRun.prototype.addTaskRun = function(opt_value, opt_index) {
+proto.pipelines.tekton.v1alpha1.TaskRun.prototype.addTaskRunStep = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.pipelines.tekton.v1alpha1.TaskRunStep, opt_index);
 };
 
@@ -4479,8 +4479,8 @@ proto.pipelines.tekton.v1alpha1.TaskRun.prototype.addTaskRun = function(opt_valu
  * Clears the list making it empty but non-null.
  * @return {!proto.pipelines.tekton.v1alpha1.TaskRun} returns this
  */
-proto.pipelines.tekton.v1alpha1.TaskRun.prototype.clearTaskRunList = function() {
-  return this.setTaskRunList([]);
+proto.pipelines.tekton.v1alpha1.TaskRun.prototype.clearTaskRunStepList = function() {
+  return this.setTaskRunStepList([]);
 };
 
 
@@ -4522,7 +4522,8 @@ proto.pipelines.tekton.v1alpha1.TaskRunStep.toObject = function(includeInstance,
     startedAt: jspb.Message.getFieldWithDefault(msg, 4, ""),
     finishedAt: jspb.Message.getFieldWithDefault(msg, 5, ""),
     duration: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    taskRunStepStatus: jspb.Message.getFieldWithDefault(msg, 7, "")
+    taskRunStepStatus: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    logs: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -4586,6 +4587,10 @@ proto.pipelines.tekton.v1alpha1.TaskRunStep.deserializeBinaryFromReader = functi
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setTaskRunStepStatus(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLogs(value);
       break;
     default:
       reader.skipField();
@@ -4662,6 +4667,13 @@ proto.pipelines.tekton.v1alpha1.TaskRunStep.serializeBinaryToWriter = function(m
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getLogs();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -4791,6 +4803,24 @@ proto.pipelines.tekton.v1alpha1.TaskRunStep.prototype.getTaskRunStepStatus = fun
  */
 proto.pipelines.tekton.v1alpha1.TaskRunStep.prototype.setTaskRunStepStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string logs = 8;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.TaskRunStep.prototype.getLogs = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.TaskRunStep} returns this
+ */
+proto.pipelines.tekton.v1alpha1.TaskRunStep.prototype.setLogs = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

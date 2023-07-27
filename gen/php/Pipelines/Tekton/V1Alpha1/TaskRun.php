@@ -42,9 +42,9 @@ class TaskRun extends \Google\Protobuf\Internal\Message
      */
     protected $task_run_status = '';
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];</code>
      */
-    private $task_run;
+    private $task_run_step;
 
     /**
      * Constructor.
@@ -59,7 +59,7 @@ class TaskRun extends \Google\Protobuf\Internal\Message
      *     @type string $finished_at
      *     @type string $duration
      *     @type string $task_run_status
-     *     @type \Pipelines\Tekton\V1Alpha1\TaskRunStep[]|\Google\Protobuf\Internal\RepeatedField $task_run
+     *     @type \Pipelines\Tekton\V1Alpha1\TaskRunStep[]|\Google\Protobuf\Internal\RepeatedField $task_run_step
      * }
      */
     public function __construct($data = NULL) {
@@ -222,23 +222,23 @@ class TaskRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getTaskRun()
+    public function getTaskRunStep()
     {
-        return $this->task_run;
+        return $this->task_run_step;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
+     * Generated from protobuf field <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];</code>
      * @param \Pipelines\Tekton\V1Alpha1\TaskRunStep[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setTaskRun($var)
+    public function setTaskRunStep($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Pipelines\Tekton\V1Alpha1\TaskRunStep::class);
-        $this->task_run = $arr;
+        $this->task_run_step = $arr;
 
         return $this;
     }

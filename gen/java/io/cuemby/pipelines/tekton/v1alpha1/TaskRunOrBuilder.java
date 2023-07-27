@@ -92,26 +92,26 @@ public interface TaskRunOrBuilder extends
       getTaskRunStatusBytes();
 
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];</code>
    */
   java.util.List<io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep> 
-      getTaskRunList();
+      getTaskRunStepList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep getTaskRun(int index);
+  io.cuemby.pipelines.tekton.v1alpha1.TaskRunStep getTaskRunStep(int index);
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];</code>
    */
-  int getTaskRunCount();
+  int getTaskRunStepCount();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];</code>
    */
   java.util.List<? extends io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder> 
-      getTaskRunOrBuilderList();
+      getTaskRunStepOrBuilderList();
   /**
-   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run = 8 [json_name = "taskRun"];</code>
+   * <code>repeated .pipelines.tekton.v1alpha1.TaskRunStep task_run_step = 8 [json_name = "taskRunStep"];</code>
    */
-  io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder getTaskRunOrBuilder(
+  io.cuemby.pipelines.tekton.v1alpha1.TaskRunStepOrBuilder getTaskRunStepOrBuilder(
       int index);
 }

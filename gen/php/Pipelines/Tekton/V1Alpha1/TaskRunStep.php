@@ -41,6 +41,10 @@ class TaskRunStep extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string task_run_step_status = 7 [json_name = "taskRunStepStatus"];</code>
      */
     protected $task_run_step_status = '';
+    /**
+     * Generated from protobuf field <code>string logs = 8 [json_name = "logs"];</code>
+     */
+    protected $logs = '';
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class TaskRunStep extends \Google\Protobuf\Internal\Message
      *     @type string $finished_at
      *     @type string $duration
      *     @type string $task_run_step_status
+     *     @type string $logs
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +217,28 @@ class TaskRunStep extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->task_run_step_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string logs = 8 [json_name = "logs"];</code>
+     * @return string
+     */
+    public function getLogs()
+    {
+        return $this->logs;
+    }
+
+    /**
+     * Generated from protobuf field <code>string logs = 8 [json_name = "logs"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLogs($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->logs = $var;
 
         return $this;
     }
