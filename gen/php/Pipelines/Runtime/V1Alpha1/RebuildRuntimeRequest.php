@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class RebuildRuntimeRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
      */
-    protected $runtime_id = '';
+    protected $runtime = null;
     /**
      * Generated from protobuf field <code>string user_id = 2 [json_name = "userId"];</code>
      */
@@ -28,7 +28,7 @@ class RebuildRuntimeRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $runtime_id
+     *     @type \Pipelines\Runtime\V1Alpha1\Runtime $runtime
      *     @type string $user_id
      * }
      */
@@ -38,23 +38,33 @@ class RebuildRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
-     * @return string
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * @return \Pipelines\Runtime\V1Alpha1\Runtime|null
      */
-    public function getRuntimeId()
+    public function getRuntime()
     {
-        return $this->runtime_id;
+        return $this->runtime;
+    }
+
+    public function hasRuntime()
+    {
+        return isset($this->runtime);
+    }
+
+    public function clearRuntime()
+    {
+        unset($this->runtime);
     }
 
     /**
-     * Generated from protobuf field <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\Runtime $var
      * @return $this
      */
-    public function setRuntimeId($var)
+    public function setRuntime($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->runtime_id = $var;
+        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Runtime::class);
+        $this->runtime = $var;
 
         return $this;
     }

@@ -8,16 +8,19 @@ public interface RebuildRuntimeRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
-   * @return The runtimeId.
+   * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+   * @return Whether the runtime field is set.
    */
-  java.lang.String getRuntimeId();
+  boolean hasRuntime();
   /**
-   * <code>string runtime_id = 1 [json_name = "runtimeId"];</code>
-   * @return The bytes for runtimeId.
+   * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+   * @return The runtime.
    */
-  com.google.protobuf.ByteString
-      getRuntimeIdBytes();
+  io.cuemby.pipelines.runtime.v1alpha1.Runtime getRuntime();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.RuntimeOrBuilder getRuntimeOrBuilder();
 
   /**
    * <code>string user_id = 2 [json_name = "userId"];</code>
