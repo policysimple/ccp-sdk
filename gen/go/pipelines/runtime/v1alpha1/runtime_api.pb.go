@@ -1095,8 +1095,8 @@ type RebuildRuntimeRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RuntimeId string `protobuf:"bytes,1,opt,name=runtime_id,json=runtimeId,proto3" json:"runtime_id,omitempty"`
-	UserId    string `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Runtime *Runtime `protobuf:"bytes,1,opt,name=runtime,proto3" json:"runtime,omitempty"`
+	UserId  string   `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 }
 
 func (x *RebuildRuntimeRequest) Reset() {
@@ -1131,11 +1131,11 @@ func (*RebuildRuntimeRequest) Descriptor() ([]byte, []int) {
 	return file_pipelines_runtime_v1alpha1_runtime_api_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *RebuildRuntimeRequest) GetRuntimeId() string {
+func (x *RebuildRuntimeRequest) GetRuntime() *Runtime {
 	if x != nil {
-		return x.RuntimeId
+		return x.Runtime
 	}
-	return ""
+	return nil
 }
 
 func (x *RebuildRuntimeRequest) GetUserId() string {
@@ -1346,11 +1346,13 @@ var file_pipelines_runtime_v1alpha1_runtime_api_proto_rawDesc = []byte{
 	0x6d, 0x65, 0x42, 0x79, 0x41, 0x70, 0x70, 0x49, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03,
 	0x6d, 0x73, 0x67, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x22, 0x4f, 0x0a, 0x15, 0x52, 0x65, 0x62,
+	0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x22, 0x6f, 0x0a, 0x15, 0x52, 0x65, 0x62,
 	0x75, 0x69, 0x6c, 0x64, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x69, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x49,
-	0x64, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01,
+	0x73, 0x74, 0x12, 0x3d, 0x0a, 0x07, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e,
+	0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
+	0x2e, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x52, 0x07, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d,
+	0x65, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x22, 0x6f, 0x0a, 0x16, 0x52, 0x65,
 	0x62, 0x75, 0x69, 0x6c, 0x64, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x07, 0x72, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x18,
@@ -1507,32 +1509,33 @@ var file_pipelines_runtime_v1alpha1_runtime_api_proto_depIdxs = []int32{
 	20, // 5: pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeResponse.runtime:type_name -> pipelines.runtime.v1alpha1.Runtime
 	20, // 6: pipelines.runtime.v1alpha1.GetRuntimeResponse.runtime:type_name -> pipelines.runtime.v1alpha1.Runtime
 	21, // 7: pipelines.runtime.v1alpha1.ListRuntimesResponse.runtime_list:type_name -> pipelines.runtime.v1alpha1.RuntimeList
-	20, // 8: pipelines.runtime.v1alpha1.RebuildRuntimeResponse.runtime:type_name -> pipelines.runtime.v1alpha1.Runtime
-	12, // 9: pipelines.runtime.v1alpha1.RuntimeAPIService.GetRuntime:input_type -> pipelines.runtime.v1alpha1.GetRuntimeRequest
-	0,  // 10: pipelines.runtime.v1alpha1.RuntimeAPIService.CreateRuntime:input_type -> pipelines.runtime.v1alpha1.CreateRuntimeRequest
-	2,  // 11: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateRuntime:input_type -> pipelines.runtime.v1alpha1.UpdateRuntimeRequest
-	4,  // 12: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateResponseMessageRuntime:input_type -> pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeRequest
-	16, // 13: pipelines.runtime.v1alpha1.RuntimeAPIService.ResponseMessageDeleteRuntimeByAppId:input_type -> pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest
-	6,  // 14: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntime:input_type -> pipelines.runtime.v1alpha1.DeleteRuntimeRequest
-	8,  // 15: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByApplication:input_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest
-	10, // 16: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByEnvironment:input_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest
-	14, // 17: pipelines.runtime.v1alpha1.RuntimeAPIService.ListRuntimes:input_type -> pipelines.runtime.v1alpha1.ListRuntimesRequest
-	18, // 18: pipelines.runtime.v1alpha1.RuntimeAPIService.RebuildRuntime:input_type -> pipelines.runtime.v1alpha1.RebuildRuntimeRequest
-	13, // 19: pipelines.runtime.v1alpha1.RuntimeAPIService.GetRuntime:output_type -> pipelines.runtime.v1alpha1.GetRuntimeResponse
-	1,  // 20: pipelines.runtime.v1alpha1.RuntimeAPIService.CreateRuntime:output_type -> pipelines.runtime.v1alpha1.CreateRuntimeResponse
-	3,  // 21: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateRuntime:output_type -> pipelines.runtime.v1alpha1.UpdateRuntimeResponse
-	5,  // 22: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateResponseMessageRuntime:output_type -> pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeResponse
-	17, // 23: pipelines.runtime.v1alpha1.RuntimeAPIService.ResponseMessageDeleteRuntimeByAppId:output_type -> pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse
-	7,  // 24: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntime:output_type -> pipelines.runtime.v1alpha1.DeleteRuntimeResponse
-	9,  // 25: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByApplication:output_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse
-	11, // 26: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByEnvironment:output_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse
-	15, // 27: pipelines.runtime.v1alpha1.RuntimeAPIService.ListRuntimes:output_type -> pipelines.runtime.v1alpha1.ListRuntimesResponse
-	19, // 28: pipelines.runtime.v1alpha1.RuntimeAPIService.RebuildRuntime:output_type -> pipelines.runtime.v1alpha1.RebuildRuntimeResponse
-	19, // [19:29] is the sub-list for method output_type
-	9,  // [9:19] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	20, // 8: pipelines.runtime.v1alpha1.RebuildRuntimeRequest.runtime:type_name -> pipelines.runtime.v1alpha1.Runtime
+	20, // 9: pipelines.runtime.v1alpha1.RebuildRuntimeResponse.runtime:type_name -> pipelines.runtime.v1alpha1.Runtime
+	12, // 10: pipelines.runtime.v1alpha1.RuntimeAPIService.GetRuntime:input_type -> pipelines.runtime.v1alpha1.GetRuntimeRequest
+	0,  // 11: pipelines.runtime.v1alpha1.RuntimeAPIService.CreateRuntime:input_type -> pipelines.runtime.v1alpha1.CreateRuntimeRequest
+	2,  // 12: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateRuntime:input_type -> pipelines.runtime.v1alpha1.UpdateRuntimeRequest
+	4,  // 13: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateResponseMessageRuntime:input_type -> pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeRequest
+	16, // 14: pipelines.runtime.v1alpha1.RuntimeAPIService.ResponseMessageDeleteRuntimeByAppId:input_type -> pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdRequest
+	6,  // 15: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntime:input_type -> pipelines.runtime.v1alpha1.DeleteRuntimeRequest
+	8,  // 16: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByApplication:input_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationRequest
+	10, // 17: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByEnvironment:input_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentRequest
+	14, // 18: pipelines.runtime.v1alpha1.RuntimeAPIService.ListRuntimes:input_type -> pipelines.runtime.v1alpha1.ListRuntimesRequest
+	18, // 19: pipelines.runtime.v1alpha1.RuntimeAPIService.RebuildRuntime:input_type -> pipelines.runtime.v1alpha1.RebuildRuntimeRequest
+	13, // 20: pipelines.runtime.v1alpha1.RuntimeAPIService.GetRuntime:output_type -> pipelines.runtime.v1alpha1.GetRuntimeResponse
+	1,  // 21: pipelines.runtime.v1alpha1.RuntimeAPIService.CreateRuntime:output_type -> pipelines.runtime.v1alpha1.CreateRuntimeResponse
+	3,  // 22: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateRuntime:output_type -> pipelines.runtime.v1alpha1.UpdateRuntimeResponse
+	5,  // 23: pipelines.runtime.v1alpha1.RuntimeAPIService.UpdateResponseMessageRuntime:output_type -> pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeResponse
+	17, // 24: pipelines.runtime.v1alpha1.RuntimeAPIService.ResponseMessageDeleteRuntimeByAppId:output_type -> pipelines.runtime.v1alpha1.ResponseMessageDeleteRuntimeByAppIdResponse
+	7,  // 25: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntime:output_type -> pipelines.runtime.v1alpha1.DeleteRuntimeResponse
+	9,  // 26: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByApplication:output_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByApplicationResponse
+	11, // 27: pipelines.runtime.v1alpha1.RuntimeAPIService.DeleteRuntimesByEnvironment:output_type -> pipelines.runtime.v1alpha1.DeleteRuntimesByEnvironmentResponse
+	15, // 28: pipelines.runtime.v1alpha1.RuntimeAPIService.ListRuntimes:output_type -> pipelines.runtime.v1alpha1.ListRuntimesResponse
+	19, // 29: pipelines.runtime.v1alpha1.RuntimeAPIService.RebuildRuntime:output_type -> pipelines.runtime.v1alpha1.RebuildRuntimeResponse
+	20, // [20:30] is the sub-list for method output_type
+	10, // [10:20] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_pipelines_runtime_v1alpha1_runtime_api_proto_init() }

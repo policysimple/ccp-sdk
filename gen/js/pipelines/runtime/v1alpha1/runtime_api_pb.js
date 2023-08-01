@@ -3837,7 +3837,7 @@ proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.prototype.toObject = func
  */
 proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    runtimeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    runtime: (f = msg.getRuntime()) && pipelines_runtime_v1alpha1_runtime_pb.Runtime.toObject(includeInstance, f),
     userId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -3876,8 +3876,9 @@ proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRuntimeId(value);
+      var value = new pipelines_runtime_v1alpha1_runtime_pb.Runtime;
+      reader.readMessage(value,pipelines_runtime_v1alpha1_runtime_pb.Runtime.deserializeBinaryFromReader);
+      msg.setRuntime(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -3912,11 +3913,12 @@ proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.prototype.serializeBinary
  */
 proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRuntimeId();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getRuntime();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      pipelines_runtime_v1alpha1_runtime_pb.Runtime.serializeBinaryToWriter
     );
   }
   f = message.getUserId();
@@ -3930,20 +3932,39 @@ proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.serializeBinaryToWriter =
 
 
 /**
- * optional string runtime_id = 1;
- * @return {string}
+ * optional Runtime runtime = 1;
+ * @return {?proto.pipelines.runtime.v1alpha1.Runtime}
  */
-proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.prototype.getRuntimeId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.prototype.getRuntime = function() {
+  return /** @type{?proto.pipelines.runtime.v1alpha1.Runtime} */ (
+    jspb.Message.getWrapperField(this, pipelines_runtime_v1alpha1_runtime_pb.Runtime, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.pipelines.runtime.v1alpha1.Runtime|undefined} value
+ * @return {!proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest} returns this
+*/
+proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.prototype.setRuntime = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest} returns this
  */
-proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.prototype.setRuntimeId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.prototype.clearRuntime = function() {
+  return this.setRuntime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.pipelines.runtime.v1alpha1.RebuildRuntimeRequest.prototype.hasRuntime = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

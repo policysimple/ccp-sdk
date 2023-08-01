@@ -128,7 +128,7 @@ message ResponseMessageDeleteRuntimeByAppIdResponse {
 }
 
 message RebuildRuntimeRequest {
-    string runtime_id = 1;
+    pipelines.runtime.v1alpha1.Runtime runtime = 1;
     string user_id = 2;
 }
 
