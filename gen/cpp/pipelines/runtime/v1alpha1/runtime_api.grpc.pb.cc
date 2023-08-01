@@ -30,6 +30,7 @@ static const char* RuntimeAPIService_method_names[] = {
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByEnvironment",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/ListRuntimes",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/RebuildRuntime",
+  "/pipelines.runtime.v1alpha1.RuntimeAPIService/AlreadyExistsRuntime",
 };
 
 std::unique_ptr< RuntimeAPIService::Stub> RuntimeAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -49,6 +50,7 @@ RuntimeAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_DeleteRuntimesByEnvironment_(RuntimeAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListRuntimes_(RuntimeAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_RebuildRuntime_(RuntimeAPIService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AlreadyExistsRuntime_(RuntimeAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RuntimeAPIService::Stub::GetRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimeRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimeResponse* response) {
@@ -211,6 +213,22 @@ void RuntimeAPIService::Stub::experimental_async::RebuildRuntime(::grpc::ClientC
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_RebuildRuntime_, context, request, false);
 }
 
+::grpc::Status RuntimeAPIService::Stub::AlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AlreadyExistsRuntime_, context, request, response);
+}
+
+void RuntimeAPIService::Stub::experimental_async::AlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AlreadyExistsRuntime_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* RuntimeAPIService::Stub::AsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_AlreadyExistsRuntime_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* RuntimeAPIService::Stub::PrepareAsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_AlreadyExistsRuntime_, context, request, false);
+}
+
 RuntimeAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RuntimeAPIService_method_names[0],
@@ -262,6 +280,11 @@ RuntimeAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>(
           std::mem_fn(&RuntimeAPIService::Service::RebuildRuntime), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RuntimeAPIService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>(
+          std::mem_fn(&RuntimeAPIService::Service::AlreadyExistsRuntime), this)));
 }
 
 RuntimeAPIService::Service::~Service() {
@@ -331,6 +354,13 @@ RuntimeAPIService::Service::~Service() {
 }
 
 ::grpc::Status RuntimeAPIService::Service::RebuildRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest* request, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RuntimeAPIService::Service::AlreadyExistsRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) {
   (void) context;
   (void) request;
   (void) response;

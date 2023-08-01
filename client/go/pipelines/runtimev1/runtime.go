@@ -191,3 +191,20 @@ func RebuildRuntime(in *runtimepkgv1.RebuildRuntimeRequest) (response *runtimepk
 	}
 	return response, nil
 }
+
+func AlreadyExistsRuntime(in *runtimepkgv1.AlreadyExistsRuntimeRequest) (response *runtimepkgv1.AlreadyExistsRuntimeResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.AlreadyExistsRuntime(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "error Already Exists Runtime", err)
+		return nil, fmt.Errorf("[AlreadyExistsRuntime] %w", err)
+	}
+	return response, nil
+}

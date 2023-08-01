@@ -25,6 +25,7 @@ service RuntimeAPIService{
     rpc DeleteRuntimesByEnvironment(DeleteRuntimesByEnvironmentRequest) returns (DeleteRuntimesByEnvironmentResponse) {};
     rpc ListRuntimes(ListRuntimesRequest) returns (ListRuntimesResponse) {};
     rpc RebuildRuntime(RebuildRuntimeRequest) returns (RebuildRuntimeResponse) {};
+    rpc AlreadyExistsRuntime(AlreadyExistsRuntimeRequest) returns (AlreadyExistsRuntimeResponse) {};
 }
 
 message CreateRuntimeRequest {
@@ -134,5 +135,19 @@ message RebuildRuntimeRequest {
 
 message RebuildRuntimeResponse {
     pipelines.runtime.v1alpha1.Runtime runtime = 1;
+    string status = 2;
+}
+
+message AlreadyExistsRuntimeRequest {
+    string integration_id = 1;
+    map<string, string> integration = 2;
+    string environment_id = 3;
+    string project_id = 4;
+    string organization_id = 5;
+    string user_id = 6;
+}
+
+message AlreadyExistsRuntimeResponse {
+    string already_exists = 1;
     string status = 2;
 }
