@@ -375,4 +375,18 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * WebHook
+     * @param \Payment\V1alpha1\WebHookRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function WebHook(\Payment\V1alpha1\WebHookRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/WebHook',
+        $argument,
+        ['\Payment\V1alpha1\WebHookResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

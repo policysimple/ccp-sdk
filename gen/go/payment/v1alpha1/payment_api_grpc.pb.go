@@ -53,6 +53,8 @@ type PaymentAPIServiceClient interface {
 	StopProject(ctx context.Context, in *StopProjectRequest, opts ...grpc.CallOption) (*StopProjectResponse, error)
 	//BlockChain Subscription
 	BlockChainSubscription(ctx context.Context, in *BlockChainSubscriptionRequest, opts ...grpc.CallOption) (*BlockChainSubscriptionResponse, error)
+	//WebHook
+	WebHook(ctx context.Context, in *WebHookRequest, opts ...grpc.CallOption) (*WebHookResponse, error)
 }
 
 type paymentAPIServiceClient struct {
@@ -306,6 +308,15 @@ func (c *paymentAPIServiceClient) BlockChainSubscription(ctx context.Context, in
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) WebHook(ctx context.Context, in *WebHookRequest, opts ...grpc.CallOption) (*WebHookResponse, error) {
+	out := new(WebHookResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/WebHook", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PaymentAPIServiceServer is the server API for PaymentAPIService service.
 // All implementations should embed UnimplementedPaymentAPIServiceServer
 // for forward compatibility
@@ -345,6 +356,8 @@ type PaymentAPIServiceServer interface {
 	StopProject(context.Context, *StopProjectRequest) (*StopProjectResponse, error)
 	//BlockChain Subscription
 	BlockChainSubscription(context.Context, *BlockChainSubscriptionRequest) (*BlockChainSubscriptionResponse, error)
+	//WebHook
+	WebHook(context.Context, *WebHookRequest) (*WebHookResponse, error)
 }
 
 // UnimplementedPaymentAPIServiceServer should be embedded to have forward compatible implementations.
@@ -431,6 +444,9 @@ func (UnimplementedPaymentAPIServiceServer) StopProject(context.Context, *StopPr
 }
 func (UnimplementedPaymentAPIServiceServer) BlockChainSubscription(context.Context, *BlockChainSubscriptionRequest) (*BlockChainSubscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BlockChainSubscription not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) WebHook(context.Context, *WebHookRequest) (*WebHookResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WebHook not implemented")
 }
 
 // UnsafePaymentAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -930,6 +946,24 @@ func _PaymentAPIService_BlockChainSubscription_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_WebHook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WebHookRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).WebHook(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/WebHook",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).WebHook(ctx, req.(*WebHookRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // PaymentAPIService_ServiceDesc is the grpc.ServiceDesc for PaymentAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1044,6 +1078,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BlockChainSubscription",
 			Handler:    _PaymentAPIService_BlockChainSubscription_Handler,
+		},
+		{
+			MethodName: "WebHook",
+			Handler:    _PaymentAPIService_WebHook_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -600,6 +600,28 @@ function deserialize_payment_v1alpha1_UpdateSubscriptionResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.UpdateSubscriptionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_WebHookRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.WebHookRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.WebHookRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_WebHookRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.WebHookRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_WebHookResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.WebHookResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.WebHookResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_WebHookResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.WebHookResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
   // Create a new service 
@@ -906,6 +928,18 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_BlockChainSubscriptionRequest,
     responseSerialize: serialize_payment_v1alpha1_BlockChainSubscriptionResponse,
     responseDeserialize: deserialize_payment_v1alpha1_BlockChainSubscriptionResponse,
+  },
+  // WebHook
+  webHook: {
+    path: '/payment.v1alpha1.PaymentAPIService/WebHook',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.WebHookRequest,
+    responseType: payment_v1alpha1_payment_api_pb.WebHookResponse,
+    requestSerialize: serialize_payment_v1alpha1_WebHookRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_WebHookRequest,
+    responseSerialize: serialize_payment_v1alpha1_WebHookResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_WebHookResponse,
   },
 };
 
