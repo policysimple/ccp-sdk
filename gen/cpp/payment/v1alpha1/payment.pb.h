@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -46,7 +49,7 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[21]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -118,6 +121,9 @@ extern SubscriptionListDefaultTypeInternal _SubscriptionList_default_instance_;
 class Webhook;
 struct WebhookDefaultTypeInternal;
 extern WebhookDefaultTypeInternal _Webhook_default_instance_;
+class Webhook_DataEntry_DoNotUse;
+struct Webhook_DataEntry_DoNotUseDefaultTypeInternal;
+extern Webhook_DataEntry_DoNotUseDefaultTypeInternal _Webhook_DataEntry_DoNotUse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace payment
 PROTOBUF_NAMESPACE_OPEN
@@ -142,6 +148,7 @@ template<> ::payment::v1alpha1::SubscriptionItems* Arena::CreateMaybeMessage<::p
 template<> ::payment::v1alpha1::SubscriptionItemsList* Arena::CreateMaybeMessage<::payment::v1alpha1::SubscriptionItemsList>(Arena*);
 template<> ::payment::v1alpha1::SubscriptionList* Arena::CreateMaybeMessage<::payment::v1alpha1::SubscriptionList>(Arena*);
 template<> ::payment::v1alpha1::Webhook* Arena::CreateMaybeMessage<::payment::v1alpha1::Webhook>(Arena*);
+template<> ::payment::v1alpha1::Webhook_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::payment::v1alpha1::Webhook_DataEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace payment {
 namespace v1alpha1 {
@@ -4240,6 +4247,33 @@ class Budget final :
 };
 // -------------------------------------------------------------------
 
+class Webhook_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Webhook_DataEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Webhook_DataEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  Webhook_DataEntry_DoNotUse();
+  explicit constexpr Webhook_DataEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit Webhook_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Webhook_DataEntry_DoNotUse& other);
+  static const Webhook_DataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Webhook_DataEntry_DoNotUse*>(&_Webhook_DataEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "payment.v1alpha1.Webhook.DataEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "payment.v1alpha1.Webhook.DataEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
 class Webhook final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.Webhook) */ {
  public:
@@ -4284,7 +4318,7 @@ class Webhook final :
                &_Webhook_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(Webhook& a, Webhook& b) {
     a.Swap(&b);
@@ -4352,64 +4386,28 @@ class Webhook final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kUrlFieldNumber = 2,
-    kDescriptionFieldNumber = 3,
-    kStatusFieldNumber = 4,
+    kDataFieldNumber = 1,
   };
-  // string id = 1 [json_name = "id"];
-  void clear_id();
-  const std::string& id() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_id();
-  PROTOBUF_MUST_USE_RESULT std::string* release_id();
-  void set_allocated_id(std::string* id);
+  // map<string, string> data = 1 [json_name = "data"];
+  int data_size() const;
   private:
-  const std::string& _internal_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
+  int _internal_data_size() const;
   public:
-
-  // string url = 2 [json_name = "url"];
-  void clear_url();
-  const std::string& url() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_url(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_url();
-  PROTOBUF_MUST_USE_RESULT std::string* release_url();
-  void set_allocated_url(std::string* url);
+  void clear_data();
   private:
-  const std::string& _internal_url() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_url(const std::string& value);
-  std::string* _internal_mutable_url();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_data() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_data();
   public:
-
-  // string description = 3 [json_name = "description"];
-  void clear_description();
-  const std::string& description() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_description(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_description();
-  PROTOBUF_MUST_USE_RESULT std::string* release_description();
-  void set_allocated_description(std::string* description);
-  private:
-  const std::string& _internal_description() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_description(const std::string& value);
-  std::string* _internal_mutable_description();
-  public:
-
-  // bool status = 4 [json_name = "status"];
-  void clear_status();
-  bool status() const;
-  void set_status(bool value);
-  private:
-  bool _internal_status() const;
-  void _internal_set_status(bool value);
-  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      data() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_data();
 
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.Webhook)
  private:
@@ -4418,10 +4416,11 @@ class Webhook final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
-  bool status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Webhook_DataEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
 };
@@ -8814,169 +8813,44 @@ inline void Budget::set_allocated_budget_amount(std::string* budget_amount) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // Webhook
 
-// string id = 1 [json_name = "id"];
-inline void Webhook::clear_id() {
-  id_.ClearToEmpty();
+// map<string, string> data = 1 [json_name = "data"];
+inline int Webhook::_internal_data_size() const {
+  return data_.size();
 }
-inline const std::string& Webhook::id() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Webhook.id)
-  return _internal_id();
+inline int Webhook::data_size() const {
+  return _internal_data_size();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Webhook::set_id(ArgT0&& arg0, ArgT... args) {
- 
- id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Webhook.id)
+inline void Webhook::clear_data() {
+  data_.Clear();
 }
-inline std::string* Webhook::mutable_id() {
-  std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Webhook.id)
-  return _s;
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Webhook::_internal_data() const {
+  return data_.GetMap();
 }
-inline const std::string& Webhook::_internal_id() const {
-  return id_.Get();
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+Webhook::data() const {
+  // @@protoc_insertion_point(field_map:payment.v1alpha1.Webhook.data)
+  return _internal_data();
 }
-inline void Webhook::_internal_set_id(const std::string& value) {
-  
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Webhook::_internal_mutable_data() {
+  return data_.MutableMap();
 }
-inline std::string* Webhook::_internal_mutable_id() {
-  
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Webhook::release_id() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Webhook.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Webhook::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
-    
-  } else {
-    
-  }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Webhook.id)
-}
-
-// string url = 2 [json_name = "url"];
-inline void Webhook::clear_url() {
-  url_.ClearToEmpty();
-}
-inline const std::string& Webhook::url() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Webhook.url)
-  return _internal_url();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Webhook::set_url(ArgT0&& arg0, ArgT... args) {
- 
- url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Webhook.url)
-}
-inline std::string* Webhook::mutable_url() {
-  std::string* _s = _internal_mutable_url();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Webhook.url)
-  return _s;
-}
-inline const std::string& Webhook::_internal_url() const {
-  return url_.Get();
-}
-inline void Webhook::_internal_set_url(const std::string& value) {
-  
-  url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Webhook::_internal_mutable_url() {
-  
-  return url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Webhook::release_url() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Webhook.url)
-  return url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Webhook::set_allocated_url(std::string* url) {
-  if (url != nullptr) {
-    
-  } else {
-    
-  }
-  url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), url,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Webhook.url)
-}
-
-// string description = 3 [json_name = "description"];
-inline void Webhook::clear_description() {
-  description_.ClearToEmpty();
-}
-inline const std::string& Webhook::description() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Webhook.description)
-  return _internal_description();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Webhook::set_description(ArgT0&& arg0, ArgT... args) {
- 
- description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Webhook.description)
-}
-inline std::string* Webhook::mutable_description() {
-  std::string* _s = _internal_mutable_description();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Webhook.description)
-  return _s;
-}
-inline const std::string& Webhook::_internal_description() const {
-  return description_.Get();
-}
-inline void Webhook::_internal_set_description(const std::string& value) {
-  
-  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Webhook::_internal_mutable_description() {
-  
-  return description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Webhook::release_description() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Webhook.description)
-  return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Webhook::set_allocated_description(std::string* description) {
-  if (description != nullptr) {
-    
-  } else {
-    
-  }
-  description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Webhook.description)
-}
-
-// bool status = 4 [json_name = "status"];
-inline void Webhook::clear_status() {
-  status_ = false;
-}
-inline bool Webhook::_internal_status() const {
-  return status_;
-}
-inline bool Webhook::status() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Webhook.status)
-  return _internal_status();
-}
-inline void Webhook::_internal_set_status(bool value) {
-  
-  status_ = value;
-}
-inline void Webhook::set_status(bool value) {
-  _internal_set_status(value);
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Webhook.status)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+Webhook::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_map:payment.v1alpha1.Webhook.data)
+  return _internal_mutable_data();
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

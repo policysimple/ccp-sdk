@@ -11469,10 +11469,6 @@ proto.payment.v1alpha1.WebHookRequest.prototype.toObject = function(opt_includeI
  */
 proto.payment.v1alpha1.WebHookRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    eventType: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    eventId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    eventDate: jspb.Message.getFieldWithDefault(msg, 5, ""),
     webhook: (f = msg.getWebhook()) && payment_v1alpha1_payment_pb.Webhook.toObject(includeInstance, f)
   };
 
@@ -11511,22 +11507,6 @@ proto.payment.v1alpha1.WebHookRequest.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrganizationId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEventType(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEventId(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEventDate(value);
-      break;
-    case 6:
       var value = new payment_v1alpha1_payment_pb.Webhook;
       reader.readMessage(value,payment_v1alpha1_payment_pb.Webhook.deserializeBinaryFromReader);
       msg.setWebhook(value);
@@ -11560,38 +11540,10 @@ proto.payment.v1alpha1.WebHookRequest.prototype.serializeBinary = function() {
  */
 proto.payment.v1alpha1.WebHookRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrganizationId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getEventType();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getEventId();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getEventDate();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
   f = message.getWebhook();
   if (f != null) {
     writer.writeMessage(
-      6,
+      1,
       f,
       payment_v1alpha1_payment_pb.Webhook.serializeBinaryToWriter
     );
@@ -11600,84 +11552,12 @@ proto.payment.v1alpha1.WebHookRequest.serializeBinaryToWriter = function(message
 
 
 /**
- * optional string organization_id = 1;
- * @return {string}
- */
-proto.payment.v1alpha1.WebHookRequest.prototype.getOrganizationId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.WebHookRequest} returns this
- */
-proto.payment.v1alpha1.WebHookRequest.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string event_type = 3;
- * @return {string}
- */
-proto.payment.v1alpha1.WebHookRequest.prototype.getEventType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.WebHookRequest} returns this
- */
-proto.payment.v1alpha1.WebHookRequest.prototype.setEventType = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string event_id = 4;
- * @return {string}
- */
-proto.payment.v1alpha1.WebHookRequest.prototype.getEventId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.WebHookRequest} returns this
- */
-proto.payment.v1alpha1.WebHookRequest.prototype.setEventId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string event_date = 5;
- * @return {string}
- */
-proto.payment.v1alpha1.WebHookRequest.prototype.getEventDate = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.WebHookRequest} returns this
- */
-proto.payment.v1alpha1.WebHookRequest.prototype.setEventDate = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional Webhook webhook = 6;
+ * optional Webhook webhook = 1;
  * @return {?proto.payment.v1alpha1.Webhook}
  */
 proto.payment.v1alpha1.WebHookRequest.prototype.getWebhook = function() {
   return /** @type{?proto.payment.v1alpha1.Webhook} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Webhook, 6));
+    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Webhook, 1));
 };
 
 
@@ -11686,7 +11566,7 @@ proto.payment.v1alpha1.WebHookRequest.prototype.getWebhook = function() {
  * @return {!proto.payment.v1alpha1.WebHookRequest} returns this
 */
 proto.payment.v1alpha1.WebHookRequest.prototype.setWebhook = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -11704,7 +11584,7 @@ proto.payment.v1alpha1.WebHookRequest.prototype.clearWebhook = function() {
  * @return {boolean}
  */
 proto.payment.v1alpha1.WebHookRequest.prototype.hasWebhook = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -11740,7 +11620,7 @@ proto.payment.v1alpha1.WebHookResponse.prototype.toObject = function(opt_include
  */
 proto.payment.v1alpha1.WebHookResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    webhook: (f = msg.getWebhook()) && payment_v1alpha1_payment_pb.Webhook.toObject(includeInstance, f),
+    status: jspb.Message.getFieldWithDefault(msg, 1, ""),
     error: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -11779,9 +11659,8 @@ proto.payment.v1alpha1.WebHookResponse.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new payment_v1alpha1_payment_pb.Webhook;
-      reader.readMessage(value,payment_v1alpha1_payment_pb.Webhook.deserializeBinaryFromReader);
-      msg.setWebhook(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -11816,12 +11695,11 @@ proto.payment.v1alpha1.WebHookResponse.prototype.serializeBinary = function() {
  */
 proto.payment.v1alpha1.WebHookResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getWebhook();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      payment_v1alpha1_payment_pb.Webhook.serializeBinaryToWriter
+      f
     );
   }
   f = message.getError();
@@ -11835,39 +11713,20 @@ proto.payment.v1alpha1.WebHookResponse.serializeBinaryToWriter = function(messag
 
 
 /**
- * optional Webhook webhook = 1;
- * @return {?proto.payment.v1alpha1.Webhook}
+ * optional string status = 1;
+ * @return {string}
  */
-proto.payment.v1alpha1.WebHookResponse.prototype.getWebhook = function() {
-  return /** @type{?proto.payment.v1alpha1.Webhook} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Webhook, 1));
+proto.payment.v1alpha1.WebHookResponse.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.payment.v1alpha1.Webhook|undefined} value
- * @return {!proto.payment.v1alpha1.WebHookResponse} returns this
-*/
-proto.payment.v1alpha1.WebHookResponse.prototype.setWebhook = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.payment.v1alpha1.WebHookResponse} returns this
  */
-proto.payment.v1alpha1.WebHookResponse.prototype.clearWebhook = function() {
-  return this.setWebhook(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.payment.v1alpha1.WebHookResponse.prototype.hasWebhook = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.payment.v1alpha1.WebHookResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

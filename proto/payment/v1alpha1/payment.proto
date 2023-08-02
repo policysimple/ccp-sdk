@@ -163,8 +163,5 @@ message Budget {
 }
 
 message Webhook {
-  string id = 1;
-  string url = 2;
-  string description = 3;
-  bool status = 4;
+  map<string, string> data = 1;
 }

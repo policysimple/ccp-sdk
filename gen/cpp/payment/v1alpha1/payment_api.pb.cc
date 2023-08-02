@@ -770,11 +770,7 @@ struct UpdateProjectResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateProjectResponseDefaultTypeInternal _UpdateProjectResponse_default_instance_;
 constexpr WebHookRequest::WebHookRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , event_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , event_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , event_date_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , webhook_(nullptr){}
+  : webhook_(nullptr){}
 struct WebHookRequestDefaultTypeInternal {
   constexpr WebHookRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -786,8 +782,8 @@ struct WebHookRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT WebHookRequestDefaultTypeInternal _WebHookRequest_default_instance_;
 constexpr WebHookResponse::WebHookResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , webhook_(nullptr){}
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct WebHookResponseDefaultTypeInternal {
   constexpr WebHookResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1223,17 +1219,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::WebHookRequest, organization_id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::WebHookRequest, event_type_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::WebHookRequest, event_id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::WebHookRequest, event_date_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::WebHookRequest, webhook_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::WebHookResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::WebHookResponse, webhook_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::WebHookResponse, status_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::WebHookResponse, error_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -1294,7 +1286,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 400, -1, sizeof(::payment::v1alpha1::UpdateProjectRequest)},
   { 407, -1, sizeof(::payment::v1alpha1::UpdateProjectResponse)},
   { 414, -1, sizeof(::payment::v1alpha1::WebHookRequest)},
-  { 424, -1, sizeof(::payment::v1alpha1::WebHookResponse)},
+  { 420, -1, sizeof(::payment::v1alpha1::WebHookResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1517,14 +1509,10 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto[
   "tionId\0223\n\007project\030\002 \001(\0132\031.payment.v1alph"
   "a1.ProjectR\007project\"E\n\025UpdateProjectResp"
   "onse\022\026\n\006status\030\001 \001(\tR\006status\022\024\n\005error\030\002 "
-  "\001(\tR\005error\"\307\001\n\016WebHookRequest\022\'\n\017organiz"
-  "ation_id\030\001 \001(\tR\016organizationId\022\035\n\nevent_"
-  "type\030\003 \001(\tR\teventType\022\031\n\010event_id\030\004 \001(\tR"
-  "\007eventId\022\035\n\nevent_date\030\005 \001(\tR\teventDate\022"
-  "3\n\007webhook\030\006 \001(\0132\031.payment.v1alpha1.Webh"
-  "ookR\007webhook\"\\\n\017WebHookResponse\0223\n\007webho"
-  "ok\030\001 \001(\0132\031.payment.v1alpha1.WebhookR\007web"
-  "hook\022\024\n\005error\030\002 \001(\tR\005error2\341\026\n\021PaymentAP"
+  "\001(\tR\005error\"E\n\016WebHookRequest\0223\n\007webhook\030"
+  "\001 \001(\0132\031.payment.v1alpha1.WebhookR\007webhoo"
+  "k\"\?\n\017WebHookResponse\022\026\n\006status\030\001 \001(\tR\006st"
+  "atus\022\024\n\005error\030\002 \001(\tR\005error2\341\026\n\021PaymentAP"
   "IService\022e\n\016CreateCustomer\022\'.payment.v1a"
   "lpha1.CreateCustomerRequest\032(.payment.v1"
   "alpha1.CreateCustomerResponse\"\000\022q\n\022Creat"
@@ -1607,7 +1595,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto = {
-  false, false, 9608, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
+  false, false, 9448, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_5fapi_2eproto, "payment/v1alpha1/payment_api.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_once, descriptor_table_payment_2fv1alpha1_2fpayment_5fapi_2eproto_deps, 2, 58,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_5fapi_2eproto,
@@ -16207,26 +16195,6 @@ WebHookRequest::WebHookRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 WebHookRequest::WebHookRequest(const WebHookRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_organization_id().empty()) {
-    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
-      GetArenaForAllocation());
-  }
-  event_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_event_type().empty()) {
-    event_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_event_type(), 
-      GetArenaForAllocation());
-  }
-  event_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_event_id().empty()) {
-    event_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_event_id(), 
-      GetArenaForAllocation());
-  }
-  event_date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_event_date().empty()) {
-    event_date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_event_date(), 
-      GetArenaForAllocation());
-  }
   if (from._internal_has_webhook()) {
     webhook_ = new ::payment::v1alpha1::Webhook(*from.webhook_);
   } else {
@@ -16236,10 +16204,6 @@ WebHookRequest::WebHookRequest(const WebHookRequest& from)
 }
 
 inline void WebHookRequest::SharedCtor() {
-organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-event_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-event_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-event_date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 webhook_ = nullptr;
 }
 
@@ -16252,10 +16216,6 @@ WebHookRequest::~WebHookRequest() {
 
 inline void WebHookRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  event_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  event_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  event_date_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete webhook_;
 }
 
@@ -16275,10 +16235,6 @@ void WebHookRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  organization_id_.ClearToEmpty();
-  event_type_.ClearToEmpty();
-  event_id_.ClearToEmpty();
-  event_date_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && webhook_ != nullptr) {
     delete webhook_;
   }
@@ -16292,45 +16248,9 @@ const char* WebHookRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string organization_id = 1 [json_name = "organizationId"];
+      // .payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_organization_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.WebHookRequest.organization_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string event_type = 3 [json_name = "eventType"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_event_type();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.WebHookRequest.event_type"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string event_id = 4 [json_name = "eventId"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_event_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.WebHookRequest.event_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string event_date = 5 [json_name = "eventDate"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_event_date();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.WebHookRequest.event_date"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .payment.v1alpha1.Webhook webhook = 6 [json_name = "webhook"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_webhook(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -16364,52 +16284,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string organization_id = 1 [json_name = "organizationId"];
-  if (!this->_internal_organization_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.WebHookRequest.organization_id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_organization_id(), target);
-  }
-
-  // string event_type = 3 [json_name = "eventType"];
-  if (!this->_internal_event_type().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_event_type().data(), static_cast<int>(this->_internal_event_type().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.WebHookRequest.event_type");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_event_type(), target);
-  }
-
-  // string event_id = 4 [json_name = "eventId"];
-  if (!this->_internal_event_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_event_id().data(), static_cast<int>(this->_internal_event_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.WebHookRequest.event_id");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_event_id(), target);
-  }
-
-  // string event_date = 5 [json_name = "eventDate"];
-  if (!this->_internal_event_date().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_event_date().data(), static_cast<int>(this->_internal_event_date().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.WebHookRequest.event_date");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_event_date(), target);
-  }
-
-  // .payment.v1alpha1.Webhook webhook = 6 [json_name = "webhook"];
+  // .payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];
   if (this->_internal_has_webhook()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        6, _Internal::webhook(this), target, stream);
+        1, _Internal::webhook(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16428,35 +16308,7 @@ size_t WebHookRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string organization_id = 1 [json_name = "organizationId"];
-  if (!this->_internal_organization_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_organization_id());
-  }
-
-  // string event_type = 3 [json_name = "eventType"];
-  if (!this->_internal_event_type().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_event_type());
-  }
-
-  // string event_id = 4 [json_name = "eventId"];
-  if (!this->_internal_event_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_event_id());
-  }
-
-  // string event_date = 5 [json_name = "eventDate"];
-  if (!this->_internal_event_date().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_event_date());
-  }
-
-  // .payment.v1alpha1.Webhook webhook = 6 [json_name = "webhook"];
+  // .payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];
   if (this->_internal_has_webhook()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -16491,18 +16343,6 @@ void WebHookRequest::MergeFrom(const WebHookRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_organization_id().empty()) {
-    _internal_set_organization_id(from._internal_organization_id());
-  }
-  if (!from._internal_event_type().empty()) {
-    _internal_set_event_type(from._internal_event_type());
-  }
-  if (!from._internal_event_id().empty()) {
-    _internal_set_event_id(from._internal_event_id());
-  }
-  if (!from._internal_event_date().empty()) {
-    _internal_set_event_date(from._internal_event_date());
-  }
   if (from._internal_has_webhook()) {
     _internal_mutable_webhook()->::payment::v1alpha1::Webhook::MergeFrom(from._internal_webhook());
   }
@@ -16523,26 +16363,6 @@ bool WebHookRequest::IsInitialized() const {
 void WebHookRequest::InternalSwap(WebHookRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &organization_id_, GetArenaForAllocation(),
-      &other->organization_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &event_type_, GetArenaForAllocation(),
-      &other->event_type_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &event_id_, GetArenaForAllocation(),
-      &other->event_id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &event_date_, GetArenaForAllocation(),
-      &other->event_date_, other->GetArenaForAllocation()
-  );
   swap(webhook_, other->webhook_);
 }
 
@@ -16556,19 +16376,8 @@ void WebHookRequest::InternalSwap(WebHookRequest* other) {
 
 class WebHookResponse::_Internal {
  public:
-  static const ::payment::v1alpha1::Webhook& webhook(const WebHookResponse* msg);
 };
 
-const ::payment::v1alpha1::Webhook&
-WebHookResponse::_Internal::webhook(const WebHookResponse* msg) {
-  return *msg->webhook_;
-}
-void WebHookResponse::clear_webhook() {
-  if (GetArenaForAllocation() == nullptr && webhook_ != nullptr) {
-    delete webhook_;
-  }
-  webhook_ = nullptr;
-}
 WebHookResponse::WebHookResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -16581,22 +16390,22 @@ WebHookResponse::WebHookResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 WebHookResponse::WebHookResponse(const WebHookResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
   error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_error().empty()) {
     error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_webhook()) {
-    webhook_ = new ::payment::v1alpha1::Webhook(*from.webhook_);
-  } else {
-    webhook_ = nullptr;
-  }
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.WebHookResponse)
 }
 
 inline void WebHookResponse::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-webhook_ = nullptr;
 }
 
 WebHookResponse::~WebHookResponse() {
@@ -16608,8 +16417,8 @@ WebHookResponse::~WebHookResponse() {
 
 inline void WebHookResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete webhook_;
 }
 
 void WebHookResponse::ArenaDtor(void* object) {
@@ -16628,11 +16437,8 @@ void WebHookResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  status_.ClearToEmpty();
   error_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && webhook_ != nullptr) {
-    delete webhook_;
-  }
-  webhook_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -16642,10 +16448,12 @@ const char* WebHookResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];
+      // string status = 1 [json_name = "status"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_webhook(), ptr);
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.WebHookResponse.status"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -16687,12 +16495,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];
-  if (this->_internal_has_webhook()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::webhook(this), target, stream);
+  // string status = 1 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.WebHookResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_status(), target);
   }
 
   // string error = 2 [json_name = "error"];
@@ -16721,18 +16531,18 @@ size_t WebHookResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string status = 1 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
   // string error = 2 [json_name = "error"];
   if (!this->_internal_error().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_error());
-  }
-
-  // .payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];
-  if (this->_internal_has_webhook()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *webhook_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16763,11 +16573,11 @@ void WebHookResponse::MergeFrom(const WebHookResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
   if (!from._internal_error().empty()) {
     _internal_set_error(from._internal_error());
-  }
-  if (from._internal_has_webhook()) {
-    _internal_mutable_webhook()->::payment::v1alpha1::Webhook::MergeFrom(from._internal_webhook());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -16788,10 +16598,14 @@ void WebHookResponse::InternalSwap(WebHookResponse* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &error_, GetArenaForAllocation(),
       &other->error_, other->GetArenaForAllocation()
   );
-  swap(webhook_, other->webhook_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata WebHookResponse::GetMetadata() const {

@@ -333,12 +333,20 @@ struct BudgetDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BudgetDefaultTypeInternal _Budget_default_instance_;
+constexpr Webhook_DataEntry_DoNotUse::Webhook_DataEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct Webhook_DataEntry_DoNotUseDefaultTypeInternal {
+  constexpr Webhook_DataEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~Webhook_DataEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    Webhook_DataEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Webhook_DataEntry_DoNotUseDefaultTypeInternal _Webhook_DataEntry_DoNotUse_default_instance_;
 constexpr Webhook::Webhook(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , status_(false){}
+  : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}){}
 struct WebhookDefaultTypeInternal {
   constexpr WebhookDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -350,7 +358,7 @@ struct WebhookDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT WebhookDefaultTypeInternal _Webhook_default_instance_;
 }  // namespace v1alpha1
 }  // namespace payment
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto[21];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto[22];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto = nullptr;
 
@@ -550,15 +558,21 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Budget, plan_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Budget, budget_time_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Budget, budget_amount_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook_DataEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook_DataEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook_DataEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook_DataEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook, id_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook, url_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook, description_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook, status_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Webhook, data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::payment::v1alpha1::Customer)},
@@ -581,7 +595,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 167, -1, sizeof(::payment::v1alpha1::ProjectBillingList)},
   { 173, -1, sizeof(::payment::v1alpha1::BlockChain)},
   { 187, -1, sizeof(::payment::v1alpha1::Budget)},
-  { 195, -1, sizeof(::payment::v1alpha1::Webhook)},
+  { 195, 202, sizeof(::payment::v1alpha1::Webhook_DataEntry_DoNotUse)},
+  { 204, -1, sizeof(::payment::v1alpha1::Webhook)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -605,6 +620,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::payment::v1alpha1::_ProjectBillingList_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::payment::v1alpha1::_BlockChain_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::payment::v1alpha1::_Budget_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::payment::v1alpha1::_Webhook_DataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::payment::v1alpha1::_Webhook_default_instance_),
 };
 
@@ -696,16 +712,16 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "ended\030\t \001(\010R\013isSuspended\"b\n\006Budget\022\022\n\004pl"
   "an\030\001 \001(\tR\004plan\022\037\n\013budget_time\030\002 \001(\tR\nbud"
   "getTime\022#\n\rbudget_amount\030\003 \001(\tR\014budgetAm"
-  "ount\"e\n\007Webhook\022\016\n\002id\030\001 \001(\tR\002id\022\020\n\003url\030\002"
-  " \001(\tR\003url\022 \n\013description\030\003 \001(\tR\013descript"
-  "ion\022\026\n\006status\030\004 \001(\010R\006statusB8Z6github.co"
-  "m/cuemby/ccp-payment-service/payment/v1a"
-  "lpha1b\006proto3"
+  "ount\"{\n\007Webhook\0227\n\004data\030\001 \003(\0132#.payment."
+  "v1alpha1.Webhook.DataEntryR\004data\0327\n\tData"
+  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005"
+  "value:\0028\001B8Z6github.com/cuemby/ccp-payme"
+  "nt-service/payment/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 3653, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
-  &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 21,
+  false, false, 3675, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 22,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,
 };
@@ -7578,13 +7594,28 @@ void Budget::InternalSwap(Budget* other) {
 
 // ===================================================================
 
+Webhook_DataEntry_DoNotUse::Webhook_DataEntry_DoNotUse() {}
+Webhook_DataEntry_DoNotUse::Webhook_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void Webhook_DataEntry_DoNotUse::MergeFrom(const Webhook_DataEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata Webhook_DataEntry_DoNotUse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_getter, &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once,
+      file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto[20]);
+}
+
+// ===================================================================
+
 class Webhook::_Internal {
  public:
 };
 
 Webhook::Webhook(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  data_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -7594,30 +7625,11 @@ Webhook::Webhook(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 Webhook::Webhook(const Webhook& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_id().empty()) {
-    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
-      GetArenaForAllocation());
-  }
-  url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_url().empty()) {
-    url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_url(), 
-      GetArenaForAllocation());
-  }
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_description().empty()) {
-    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
-      GetArenaForAllocation());
-  }
-  status_ = from.status_;
+  data_.MergeFrom(from.data_);
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.Webhook)
 }
 
 inline void Webhook::SharedCtor() {
-id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-status_ = false;
 }
 
 Webhook::~Webhook() {
@@ -7629,16 +7641,17 @@ Webhook::~Webhook() {
 
 inline void Webhook::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Webhook::ArenaDtor(void* object) {
   Webhook* _this = reinterpret_cast< Webhook* >(object);
   (void)_this;
+  _this->data_. ~MapField();
 }
-void Webhook::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+inline void Webhook::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
+  if (arena != nullptr) {
+    arena->OwnCustomDestructor(this, &Webhook::ArenaDtor);
+  }
 }
 void Webhook::SetCachedSize(int size) const {
   _cached_size_.Set(size);
@@ -7650,10 +7663,7 @@ void Webhook::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_.ClearToEmpty();
-  url_.ClearToEmpty();
-  description_.ClearToEmpty();
-  status_ = false;
+  data_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7663,38 +7673,16 @@ const char* Webhook::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string id = 1 [json_name = "id"];
+      // map<string, string> data = 1 [json_name = "data"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Webhook.id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string url = 2 [json_name = "url"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_url();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Webhook.url"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string description = 3 [json_name = "description"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_description();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Webhook.description"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool status = 4 [json_name = "status"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&data_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -7726,40 +7714,50 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string id = 1 [json_name = "id"];
-  if (!this->_internal_id().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.Webhook.id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_id(), target);
-  }
+  // map<string, string> data = 1 [json_name = "data"];
+  if (!this->_internal_data().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        (void)p;
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "payment.v1alpha1.Webhook.DataEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "payment.v1alpha1.Webhook.DataEntry.value");
+      }
+    };
 
-  // string url = 2 [json_name = "url"];
-  if (!this->_internal_url().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_url().data(), static_cast<int>(this->_internal_url().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.Webhook.url");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_url(), target);
-  }
-
-  // string description = 3 [json_name = "description"];
-  if (!this->_internal_description().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.Webhook.description");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_description(), target);
-  }
-
-  // bool status = 4 [json_name = "status"];
-  if (this->_internal_status() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_status(), target);
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_data().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_data().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_data().begin();
+          it != this->_internal_data().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = Webhook_DataEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_data().begin();
+          it != this->_internal_data().end(); ++it) {
+        target = Webhook_DataEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7778,30 +7776,13 @@ size_t Webhook::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string id = 1 [json_name = "id"];
-  if (!this->_internal_id().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_id());
-  }
-
-  // string url = 2 [json_name = "url"];
-  if (!this->_internal_url().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_url());
-  }
-
-  // string description = 3 [json_name = "description"];
-  if (!this->_internal_description().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_description());
-  }
-
-  // bool status = 4 [json_name = "status"];
-  if (this->_internal_status() != 0) {
-    total_size += 1 + 1;
+  // map<string, string> data = 1 [json_name = "data"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_data_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_data().begin();
+      it != this->_internal_data().end(); ++it) {
+    total_size += Webhook_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7832,18 +7813,7 @@ void Webhook::MergeFrom(const Webhook& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_id().empty()) {
-    _internal_set_id(from._internal_id());
-  }
-  if (!from._internal_url().empty()) {
-    _internal_set_url(from._internal_url());
-  }
-  if (!from._internal_description().empty()) {
-    _internal_set_description(from._internal_description());
-  }
-  if (from._internal_status() != 0) {
-    _internal_set_status(from._internal_status());
-  }
+  data_.MergeFrom(from.data_);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7861,28 +7831,13 @@ bool Webhook::IsInitialized() const {
 void Webhook::InternalSwap(Webhook* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &id_, GetArenaForAllocation(),
-      &other->id_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &url_, GetArenaForAllocation(),
-      &other->url_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &description_, GetArenaForAllocation(),
-      &other->description_, other->GetArenaForAllocation()
-  );
-  swap(status_, other->status_);
+  data_.InternalSwap(&other->data_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Webhook::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_getter, &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once,
-      file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto[20]);
+      file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto[21]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -7948,6 +7903,9 @@ template<> PROTOBUF_NOINLINE ::payment::v1alpha1::BlockChain* Arena::CreateMaybe
 }
 template<> PROTOBUF_NOINLINE ::payment::v1alpha1::Budget* Arena::CreateMaybeMessage< ::payment::v1alpha1::Budget >(Arena* arena) {
   return Arena::CreateMessageInternal< ::payment::v1alpha1::Budget >(arena);
+}
+template<> PROTOBUF_NOINLINE ::payment::v1alpha1::Webhook_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::payment::v1alpha1::Webhook_DataEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::payment::v1alpha1::Webhook_DataEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::payment::v1alpha1::Webhook* Arena::CreateMaybeMessage< ::payment::v1alpha1::Webhook >(Arena* arena) {
   return Arena::CreateMessageInternal< ::payment::v1alpha1::Webhook >(arena);
