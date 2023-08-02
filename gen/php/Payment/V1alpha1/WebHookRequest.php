@@ -14,23 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class WebHookRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     */
-    protected $organization_id = '';
-    /**
-     * Generated from protobuf field <code>string event_type = 3 [json_name = "eventType"];</code>
-     */
-    protected $event_type = '';
-    /**
-     * Generated from protobuf field <code>string event_id = 4 [json_name = "eventId"];</code>
-     */
-    protected $event_id = '';
-    /**
-     * Generated from protobuf field <code>string event_date = 5 [json_name = "eventDate"];</code>
-     */
-    protected $event_date = '';
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 6 [json_name = "webhook"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];</code>
      */
     protected $webhook = null;
 
@@ -40,10 +24,6 @@ class WebHookRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $organization_id
-     *     @type string $event_type
-     *     @type string $event_id
-     *     @type string $event_date
      *     @type \Payment\V1alpha1\Webhook $webhook
      * }
      */
@@ -53,95 +33,7 @@ class WebHookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @return string
-     */
-    public function getOrganizationId()
-    {
-        return $this->organization_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setOrganizationId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->organization_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string event_type = 3 [json_name = "eventType"];</code>
-     * @return string
-     */
-    public function getEventType()
-    {
-        return $this->event_type;
-    }
-
-    /**
-     * Generated from protobuf field <code>string event_type = 3 [json_name = "eventType"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEventType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->event_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string event_id = 4 [json_name = "eventId"];</code>
-     * @return string
-     */
-    public function getEventId()
-    {
-        return $this->event_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string event_id = 4 [json_name = "eventId"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEventId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->event_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string event_date = 5 [json_name = "eventDate"];</code>
-     * @return string
-     */
-    public function getEventDate()
-    {
-        return $this->event_date;
-    }
-
-    /**
-     * Generated from protobuf field <code>string event_date = 5 [json_name = "eventDate"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEventDate($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->event_date = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 6 [json_name = "webhook"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];</code>
      * @return \Payment\V1alpha1\Webhook|null
      */
     public function getWebhook()
@@ -160,7 +52,7 @@ class WebHookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 6 [json_name = "webhook"];</code>
+     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];</code>
      * @param \Payment\V1alpha1\Webhook $var
      * @return $this
      */

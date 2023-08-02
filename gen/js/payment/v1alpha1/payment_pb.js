@@ -5829,10 +5829,7 @@ proto.payment.v1alpha1.Webhook.prototype.toObject = function(opt_includeInstance
  */
 proto.payment.v1alpha1.Webhook.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    url: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    status: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -5870,20 +5867,10 @@ proto.payment.v1alpha1.Webhook.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUrl(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 4:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStatus(value);
+      var value = msg.getDataMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -5914,107 +5901,33 @@ proto.payment.v1alpha1.Webhook.prototype.serializeBinary = function() {
  */
 proto.payment.v1alpha1.Webhook.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getUrl();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getStatus();
-  if (f) {
-    writer.writeBool(
-      4,
-      f
-    );
+  f = message.getDataMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
 
 /**
- * optional string id = 1;
- * @return {string}
+ * map<string, string> data = 1;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
  */
-proto.payment.v1alpha1.Webhook.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.payment.v1alpha1.Webhook.prototype.getDataMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {string} value
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.payment.v1alpha1.Webhook} returns this
  */
-proto.payment.v1alpha1.Webhook.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string url = 2;
- * @return {string}
- */
-proto.payment.v1alpha1.Webhook.prototype.getUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.Webhook} returns this
- */
-proto.payment.v1alpha1.Webhook.prototype.setUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string description = 3;
- * @return {string}
- */
-proto.payment.v1alpha1.Webhook.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.payment.v1alpha1.Webhook} returns this
- */
-proto.payment.v1alpha1.Webhook.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional bool status = 4;
- * @return {boolean}
- */
-proto.payment.v1alpha1.Webhook.prototype.getStatus = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.payment.v1alpha1.Webhook} returns this
- */
-proto.payment.v1alpha1.Webhook.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 4, value);
-};
+proto.payment.v1alpha1.Webhook.prototype.clearDataMap = function() {
+  this.getDataMap().clear();
+  return this;};
 
 
 goog.object.extend(exports, proto.payment.v1alpha1);

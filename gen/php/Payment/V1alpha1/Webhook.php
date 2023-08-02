@@ -14,21 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Webhook extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
+     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
      */
-    protected $id = '';
-    /**
-     * Generated from protobuf field <code>string url = 2 [json_name = "url"];</code>
-     */
-    protected $url = '';
-    /**
-     * Generated from protobuf field <code>string description = 3 [json_name = "description"];</code>
-     */
-    protected $description = '';
-    /**
-     * Generated from protobuf field <code>bool status = 4 [json_name = "status"];</code>
-     */
-    protected $status = false;
+    private $data;
 
     /**
      * Constructor.
@@ -36,10 +24,7 @@ class Webhook extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
-     *     @type string $url
-     *     @type string $description
-     *     @type bool $status
+     *     @type array|\Google\Protobuf\Internal\MapField $data
      * }
      */
     public function __construct($data = NULL) {
@@ -48,89 +33,23 @@ class Webhook extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
-     * @return string
+     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
-    public function getId()
+    public function getData()
     {
-        return $this->id;
+        return $this->data;
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setId($var)
+    public function setData($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string url = 2 [json_name = "url"];</code>
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string url = 2 [json_name = "url"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string description = 3 [json_name = "description"];</code>
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Generated from protobuf field <code>string description = 3 [json_name = "description"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setDescription($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->description = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool status = 4 [json_name = "status"];</code>
-     * @return bool
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool status = 4 [json_name = "status"];</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setStatus($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->status = $var;
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->data = $arr;
 
         return $this;
     }

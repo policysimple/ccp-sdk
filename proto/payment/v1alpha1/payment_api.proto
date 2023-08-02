@@ -357,14 +357,10 @@ message UpdateProjectResponse {
 }
 
 message WebHookRequest {
-    string organization_id = 1;
-    string event_type = 3;
-    string event_id = 4;
-    string event_date = 5;
-    payment.v1alpha1.Webhook webhook = 6;
+    payment.v1alpha1.Webhook webhook = 1;
 }
 
 message WebHookResponse{
-    payment.v1alpha1.Webhook webhook = 1;
+    string status = 1;
     string error = 2;
 }

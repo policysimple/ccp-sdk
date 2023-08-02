@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class WebHookResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];</code>
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
      */
-    protected $webhook = null;
+    protected $status = '';
     /**
      * Generated from protobuf field <code>string error = 2 [json_name = "error"];</code>
      */
@@ -28,7 +28,7 @@ class WebHookResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Webhook $webhook
+     *     @type string $status
      *     @type string $error
      * }
      */
@@ -38,33 +38,23 @@ class WebHookResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];</code>
-     * @return \Payment\V1alpha1\Webhook|null
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * @return string
      */
-    public function getWebhook()
+    public function getStatus()
     {
-        return $this->webhook;
-    }
-
-    public function hasWebhook()
-    {
-        return isset($this->webhook);
-    }
-
-    public function clearWebhook()
-    {
-        unset($this->webhook);
+        return $this->status;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];</code>
-     * @param \Payment\V1alpha1\Webhook $var
+     * Generated from protobuf field <code>string status = 1 [json_name = "status"];</code>
+     * @param string $var
      * @return $this
      */
-    public function setWebhook($var)
+    public function setStatus($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Webhook::class);
-        $this->webhook = $var;
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
 
         return $this;
     }
