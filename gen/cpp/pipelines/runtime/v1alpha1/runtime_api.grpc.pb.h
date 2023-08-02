@@ -107,6 +107,13 @@ class RuntimeAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>> PrepareAsyncRebuildRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>>(PrepareAsyncRebuildRuntimeRaw(context, request, cq));
     }
+    virtual ::grpc::Status AlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>> AsyncAlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>>(AsyncAlreadyExistsRuntimeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>> PrepareAsyncAlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>>(PrepareAsyncAlreadyExistsRuntimeRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -120,6 +127,7 @@ class RuntimeAPIService final {
       virtual void DeleteRuntimesByEnvironment(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RebuildRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest* request, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -143,6 +151,8 @@ class RuntimeAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>* PrepareAsyncListRuntimesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>* AsyncRebuildRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>* PrepareAsyncRebuildRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* AsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* PrepareAsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -217,6 +227,13 @@ class RuntimeAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>> PrepareAsyncRebuildRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>>(PrepareAsyncRebuildRuntimeRaw(context, request, cq));
     }
+    ::grpc::Status AlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>> AsyncAlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>>(AsyncAlreadyExistsRuntimeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>> PrepareAsyncAlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>>(PrepareAsyncAlreadyExistsRuntimeRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -230,6 +247,7 @@ class RuntimeAPIService final {
       void DeleteRuntimesByEnvironment(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse* response, std::function<void(::grpc::Status)>) override;
       void ListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response, std::function<void(::grpc::Status)>) override;
       void RebuildRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest* request, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse* response, std::function<void(::grpc::Status)>) override;
+      void AlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -261,6 +279,8 @@ class RuntimeAPIService final {
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::ListRuntimesResponse>* PrepareAsyncListRuntimesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>* AsyncRebuildRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>* PrepareAsyncRebuildRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* AsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* PrepareAsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateRuntime_;
@@ -271,6 +291,7 @@ class RuntimeAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_DeleteRuntimesByEnvironment_;
     const ::grpc::internal::RpcMethod rpcmethod_ListRuntimes_;
     const ::grpc::internal::RpcMethod rpcmethod_RebuildRuntime_;
+    const ::grpc::internal::RpcMethod rpcmethod_AlreadyExistsRuntime_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -288,6 +309,7 @@ class RuntimeAPIService final {
     virtual ::grpc::Status DeleteRuntimesByEnvironment(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByEnvironmentResponse* response);
     virtual ::grpc::Status ListRuntimes(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response);
     virtual ::grpc::Status RebuildRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest* request, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse* response);
+    virtual ::grpc::Status AlreadyExistsRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetRuntime : public BaseClass {
@@ -489,7 +511,27 @@ class RuntimeAPIService final {
       ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetRuntime<WithAsyncMethod_CreateRuntime<WithAsyncMethod_UpdateRuntime<WithAsyncMethod_UpdateResponseMessageRuntime<WithAsyncMethod_ResponseMessageDeleteRuntimeByAppId<WithAsyncMethod_DeleteRuntime<WithAsyncMethod_DeleteRuntimesByApplication<WithAsyncMethod_DeleteRuntimesByEnvironment<WithAsyncMethod_ListRuntimes<WithAsyncMethod_RebuildRuntime<Service > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_AlreadyExistsRuntime : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_AlreadyExistsRuntime() {
+      ::grpc::Service::MarkMethodAsync(10);
+    }
+    ~WithAsyncMethod_AlreadyExistsRuntime() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AlreadyExistsRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAlreadyExistsRuntime(::grpc::ServerContext* context, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::grpc::ServerAsyncResponseWriter< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_GetRuntime<WithAsyncMethod_CreateRuntime<WithAsyncMethod_UpdateRuntime<WithAsyncMethod_UpdateResponseMessageRuntime<WithAsyncMethod_ResponseMessageDeleteRuntimeByAppId<WithAsyncMethod_DeleteRuntime<WithAsyncMethod_DeleteRuntimesByApplication<WithAsyncMethod_DeleteRuntimesByEnvironment<WithAsyncMethod_ListRuntimes<WithAsyncMethod_RebuildRuntime<WithAsyncMethod_AlreadyExistsRuntime<Service > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_GetRuntime : public BaseClass {
    private:
@@ -656,6 +698,23 @@ class RuntimeAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status RebuildRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest* request, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AlreadyExistsRuntime : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_AlreadyExistsRuntime() {
+      ::grpc::Service::MarkMethodGeneric(10);
+    }
+    ~WithGenericMethod_AlreadyExistsRuntime() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AlreadyExistsRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -861,6 +920,26 @@ class RuntimeAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_AlreadyExistsRuntime : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_AlreadyExistsRuntime() {
+      ::grpc::Service::MarkMethodRaw(10);
+    }
+    ~WithRawMethod_AlreadyExistsRuntime() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AlreadyExistsRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAlreadyExistsRuntime(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetRuntime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1060,9 +1139,29 @@ class RuntimeAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedRebuildRuntime(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest,::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<Service > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AlreadyExistsRuntime : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AlreadyExistsRuntime() {
+      ::grpc::Service::MarkMethodStreamed(10,
+        new ::grpc::internal::StreamedUnaryHandler< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>(std::bind(&WithStreamedUnaryMethod_AlreadyExistsRuntime<BaseClass>::StreamedAlreadyExistsRuntime, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AlreadyExistsRuntime() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AlreadyExistsRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAlreadyExistsRuntime(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest,::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<Service > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<Service > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<Service > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1
