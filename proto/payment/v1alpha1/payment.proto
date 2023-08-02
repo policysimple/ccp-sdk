@@ -161,3 +161,10 @@ message Budget {
   string budget_time = 2;
   string budget_amount = 3;
 }
+
+message Webhook {
+  string id = 1;
+  string url = 2;
+  string description = 3;
+  bool status = 4;
+}

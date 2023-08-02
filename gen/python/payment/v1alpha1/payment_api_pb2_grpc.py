@@ -149,6 +149,11 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.BlockChainSubscriptionRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.BlockChainSubscriptionResponse.FromString,
         )
+    self.WebHook = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/WebHook',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.WebHookRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.WebHookResponse.FromString,
+        )
 
 
 class PaymentAPIServiceServicer(object):
@@ -344,6 +349,13 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def WebHook(self, request, context):
+    """WebHook
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_PaymentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -481,6 +493,11 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.BlockChainSubscription,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.BlockChainSubscriptionRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.BlockChainSubscriptionResponse.SerializeToString,
+      ),
+      'WebHook': grpc.unary_unary_rpc_method_handler(
+          servicer.WebHook,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.WebHookRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.WebHookResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

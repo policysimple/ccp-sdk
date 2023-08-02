@@ -513,3 +513,24 @@ func UpdateProject(in *paymentpkgv1.UpdateProjectRequest) (response *paymentpkgv
 	}
 	return response, nil
 }
+
+func Webhook(in *paymentpkgv1.WebhookRequest) (response *paymentpkgv1.WebhookResponse, err error) {
+	fmt.Println("Webhook")
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+
+	defer cancel()
+	response, err = client.Webhook(ctx, &paymentpkgv1.WebhookRequest{
+		OrganizationId: in.OrganizationId,
+		Webhook:        in.Webhook,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error webhook", err)
+		return nil, fmt.Errorf("%s: %w", "Error webhook", err)
+	}
+	return response, nil
+}

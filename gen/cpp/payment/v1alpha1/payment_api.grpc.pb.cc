@@ -46,6 +46,7 @@ static const char* PaymentAPIService_method_names[] = {
   "/payment.v1alpha1.PaymentAPIService/UpdateProject",
   "/payment.v1alpha1.PaymentAPIService/StopProject",
   "/payment.v1alpha1.PaymentAPIService/BlockChainSubscription",
+  "/payment.v1alpha1.PaymentAPIService/WebHook",
 };
 
 std::unique_ptr< PaymentAPIService::Stub> PaymentAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -82,6 +83,7 @@ PaymentAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_UpdateProject_(PaymentAPIService_method_names[24], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_StopProject_(PaymentAPIService_method_names[25], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_BlockChainSubscription_(PaymentAPIService_method_names[26], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_WebHook_(PaymentAPIService_method_names[27], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PaymentAPIService::Stub::CreateCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::payment::v1alpha1::CreateCustomerResponse* response) {
@@ -516,6 +518,22 @@ void PaymentAPIService::Stub::experimental_async::BlockChainSubscription(::grpc:
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::BlockChainSubscriptionResponse>::Create(channel_.get(), cq, rpcmethod_BlockChainSubscription_, context, request, false);
 }
 
+::grpc::Status PaymentAPIService::Stub::WebHook(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest& request, ::payment::v1alpha1::WebHookResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_WebHook_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::WebHook(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest* request, ::payment::v1alpha1::WebHookResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_WebHook_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::WebHookResponse>* PaymentAPIService::Stub::AsyncWebHookRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::WebHookResponse>::Create(channel_.get(), cq, rpcmethod_WebHook_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::WebHookResponse>* PaymentAPIService::Stub::PrepareAsyncWebHookRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::WebHookResponse>::Create(channel_.get(), cq, rpcmethod_WebHook_, context, request, false);
+}
+
 PaymentAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PaymentAPIService_method_names[0],
@@ -652,6 +670,11 @@ PaymentAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::BlockChainSubscriptionRequest, ::payment::v1alpha1::BlockChainSubscriptionResponse>(
           std::mem_fn(&PaymentAPIService::Service::BlockChainSubscription), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[27],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::WebHookRequest, ::payment::v1alpha1::WebHookResponse>(
+          std::mem_fn(&PaymentAPIService::Service::WebHook), this)));
 }
 
 PaymentAPIService::Service::~Service() {
@@ -840,6 +863,13 @@ PaymentAPIService::Service::~Service() {
 }
 
 ::grpc::Status PaymentAPIService::Service::BlockChainSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::WebHook(::grpc::ServerContext* context, const ::payment::v1alpha1::WebHookRequest* request, ::payment::v1alpha1::WebHookResponse* response) {
   (void) context;
   (void) request;
   (void) response;
