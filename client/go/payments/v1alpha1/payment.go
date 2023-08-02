@@ -514,7 +514,7 @@ func UpdateProject(in *paymentpkgv1.UpdateProjectRequest) (response *paymentpkgv
 	return response, nil
 }
 
-func Webhook(in *paymentpkgv1.WebhookRequest) (response *paymentpkgv1.WebhookResponse, err error) {
+func Webhook(in *paymentpkgv1.WebHookRequest) (response *paymentpkgv1.WebHookResponse, err error) {
 	fmt.Println("Webhook")
 	d, err := time.ParseDuration(paymentServiceTimeout)
 	if err != nil {
@@ -523,7 +523,7 @@ func Webhook(in *paymentpkgv1.WebhookRequest) (response *paymentpkgv1.WebhookRes
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 
 	defer cancel()
-	response, err = client.Webhook(ctx, &paymentpkgv1.WebhookRequest{
+	response, err = client.WebHook(ctx, &paymentpkgv1.WebHookRequest{
 		OrganizationId: in.OrganizationId,
 		Webhook:        in.Webhook,
 	})
