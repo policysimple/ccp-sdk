@@ -524,7 +524,6 @@ func Webhook(in *paymentpkgv1.WebHookRequest) (response *paymentpkgv1.WebHookRes
 
 	defer cancel()
 	response, err = client.WebHook(ctx, &paymentpkgv1.WebHookRequest{
-		OrganizationId: in.OrganizationId,
 		Webhook:        in.Webhook,
 	})
 
