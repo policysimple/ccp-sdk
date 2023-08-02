@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "pipelines/runtime/v1alpha1/runtime.pb.h"
 // @@protoc_insertion_point(includes)
@@ -47,7 +50,7 @@ struct TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[23]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,6 +60,15 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace pipelines {
 namespace runtime {
 namespace v1alpha1 {
+class AlreadyExistsRuntimeRequest;
+struct AlreadyExistsRuntimeRequestDefaultTypeInternal;
+extern AlreadyExistsRuntimeRequestDefaultTypeInternal _AlreadyExistsRuntimeRequest_default_instance_;
+class AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse;
+struct AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUseDefaultTypeInternal;
+extern AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUseDefaultTypeInternal _AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse_default_instance_;
+class AlreadyExistsRuntimeResponse;
+struct AlreadyExistsRuntimeResponseDefaultTypeInternal;
+extern AlreadyExistsRuntimeResponseDefaultTypeInternal _AlreadyExistsRuntimeResponse_default_instance_;
 class CreateRuntimeRequest;
 struct CreateRuntimeRequestDefaultTypeInternal;
 extern CreateRuntimeRequestDefaultTypeInternal _CreateRuntimeRequest_default_instance_;
@@ -121,6 +133,9 @@ extern UpdateRuntimeResponseDefaultTypeInternal _UpdateRuntimeResponse_default_i
 }  // namespace runtime
 }  // namespace pipelines
 PROTOBUF_NAMESPACE_OPEN
+template<> ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse>(Arena*);
+template<> ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::CreateRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::CreateRuntimeRequest>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::CreateRuntimeResponse* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::CreateRuntimeResponse>(Arena*);
 template<> ::pipelines::runtime::v1alpha1::DeleteRuntimeRequest* Arena::CreateMaybeMessage<::pipelines::runtime::v1alpha1::DeleteRuntimeRequest>(Arena*);
@@ -3546,6 +3561,425 @@ class RebuildRuntimeResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse();
+  explicit constexpr AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse& other);
+  static const AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse*>(&_AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.IntegrationEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.IntegrationEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class AlreadyExistsRuntimeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest) */ {
+ public:
+  inline AlreadyExistsRuntimeRequest() : AlreadyExistsRuntimeRequest(nullptr) {}
+  ~AlreadyExistsRuntimeRequest() override;
+  explicit constexpr AlreadyExistsRuntimeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AlreadyExistsRuntimeRequest(const AlreadyExistsRuntimeRequest& from);
+  AlreadyExistsRuntimeRequest(AlreadyExistsRuntimeRequest&& from) noexcept
+    : AlreadyExistsRuntimeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AlreadyExistsRuntimeRequest& operator=(const AlreadyExistsRuntimeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AlreadyExistsRuntimeRequest& operator=(AlreadyExistsRuntimeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AlreadyExistsRuntimeRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AlreadyExistsRuntimeRequest* internal_default_instance() {
+    return reinterpret_cast<const AlreadyExistsRuntimeRequest*>(
+               &_AlreadyExistsRuntimeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(AlreadyExistsRuntimeRequest& a, AlreadyExistsRuntimeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AlreadyExistsRuntimeRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AlreadyExistsRuntimeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AlreadyExistsRuntimeRequest* New() const final {
+    return new AlreadyExistsRuntimeRequest();
+  }
+
+  AlreadyExistsRuntimeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AlreadyExistsRuntimeRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AlreadyExistsRuntimeRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const AlreadyExistsRuntimeRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AlreadyExistsRuntimeRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest";
+  }
+  protected:
+  explicit AlreadyExistsRuntimeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIntegrationFieldNumber = 2,
+    kIntegrationIdFieldNumber = 1,
+    kEnvironmentIdFieldNumber = 3,
+    kProjectIdFieldNumber = 4,
+    kOrganizationIdFieldNumber = 5,
+    kUserIdFieldNumber = 6,
+  };
+  // map<string, string> integration = 2 [json_name = "integration"];
+  int integration_size() const;
+  private:
+  int _internal_integration_size() const;
+  public:
+  void clear_integration();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_integration() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_integration();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      integration() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_integration();
+
+  // string integration_id = 1 [json_name = "integrationId"];
+  void clear_integration_id();
+  const std::string& integration_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_integration_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_integration_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_integration_id();
+  void set_allocated_integration_id(std::string* integration_id);
+  private:
+  const std::string& _internal_integration_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_integration_id(const std::string& value);
+  std::string* _internal_mutable_integration_id();
+  public:
+
+  // string environment_id = 3 [json_name = "environmentId"];
+  void clear_environment_id();
+  const std::string& environment_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_environment_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_environment_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_environment_id();
+  void set_allocated_environment_id(std::string* environment_id);
+  private:
+  const std::string& _internal_environment_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_id(const std::string& value);
+  std::string* _internal_mutable_environment_id();
+  public:
+
+  // string project_id = 4 [json_name = "projectId"];
+  void clear_project_id();
+  const std::string& project_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_id();
+  void set_allocated_project_id(std::string* project_id);
+  private:
+  const std::string& _internal_project_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_id(const std::string& value);
+  std::string* _internal_mutable_project_id();
+  public:
+
+  // string organization_id = 5 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // string user_id = 6 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      AlreadyExistsRuntimeRequest_IntegrationEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> integration_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr integration_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AlreadyExistsRuntimeResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse) */ {
+ public:
+  inline AlreadyExistsRuntimeResponse() : AlreadyExistsRuntimeResponse(nullptr) {}
+  ~AlreadyExistsRuntimeResponse() override;
+  explicit constexpr AlreadyExistsRuntimeResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AlreadyExistsRuntimeResponse(const AlreadyExistsRuntimeResponse& from);
+  AlreadyExistsRuntimeResponse(AlreadyExistsRuntimeResponse&& from) noexcept
+    : AlreadyExistsRuntimeResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AlreadyExistsRuntimeResponse& operator=(const AlreadyExistsRuntimeResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AlreadyExistsRuntimeResponse& operator=(AlreadyExistsRuntimeResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AlreadyExistsRuntimeResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AlreadyExistsRuntimeResponse* internal_default_instance() {
+    return reinterpret_cast<const AlreadyExistsRuntimeResponse*>(
+               &_AlreadyExistsRuntimeResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(AlreadyExistsRuntimeResponse& a, AlreadyExistsRuntimeResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AlreadyExistsRuntimeResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AlreadyExistsRuntimeResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AlreadyExistsRuntimeResponse* New() const final {
+    return new AlreadyExistsRuntimeResponse();
+  }
+
+  AlreadyExistsRuntimeResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AlreadyExistsRuntimeResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AlreadyExistsRuntimeResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const AlreadyExistsRuntimeResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AlreadyExistsRuntimeResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse";
+  }
+  protected:
+  explicit AlreadyExistsRuntimeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAlreadyExistsFieldNumber = 1,
+    kStatusFieldNumber = 2,
+  };
+  // string already_exists = 1 [json_name = "alreadyExists"];
+  void clear_already_exists();
+  const std::string& already_exists() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_already_exists(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_already_exists();
+  PROTOBUF_MUST_USE_RESULT std::string* release_already_exists();
+  void set_allocated_already_exists(std::string* already_exists);
+  private:
+  const std::string& _internal_already_exists() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_already_exists(const std::string& value);
+  std::string* _internal_mutable_already_exists();
+  public:
+
+  // string status = 2 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr already_exists_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
+};
 // ===================================================================
 
 
@@ -6333,9 +6767,376 @@ inline void RebuildRuntimeResponse::set_allocated_status(std::string* status) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.RebuildRuntimeResponse.status)
 }
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// AlreadyExistsRuntimeRequest
+
+// string integration_id = 1 [json_name = "integrationId"];
+inline void AlreadyExistsRuntimeRequest::clear_integration_id() {
+  integration_id_.ClearToEmpty();
+}
+inline const std::string& AlreadyExistsRuntimeRequest::integration_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.integration_id)
+  return _internal_integration_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AlreadyExistsRuntimeRequest::set_integration_id(ArgT0&& arg0, ArgT... args) {
+ 
+ integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.integration_id)
+}
+inline std::string* AlreadyExistsRuntimeRequest::mutable_integration_id() {
+  std::string* _s = _internal_mutable_integration_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.integration_id)
+  return _s;
+}
+inline const std::string& AlreadyExistsRuntimeRequest::_internal_integration_id() const {
+  return integration_id_.Get();
+}
+inline void AlreadyExistsRuntimeRequest::_internal_set_integration_id(const std::string& value) {
+  
+  integration_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::_internal_mutable_integration_id() {
+  
+  return integration_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::release_integration_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.integration_id)
+  return integration_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AlreadyExistsRuntimeRequest::set_allocated_integration_id(std::string* integration_id) {
+  if (integration_id != nullptr) {
+    
+  } else {
+    
+  }
+  integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.integration_id)
+}
+
+// map<string, string> integration = 2 [json_name = "integration"];
+inline int AlreadyExistsRuntimeRequest::_internal_integration_size() const {
+  return integration_.size();
+}
+inline int AlreadyExistsRuntimeRequest::integration_size() const {
+  return _internal_integration_size();
+}
+inline void AlreadyExistsRuntimeRequest::clear_integration() {
+  integration_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+AlreadyExistsRuntimeRequest::_internal_integration() const {
+  return integration_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+AlreadyExistsRuntimeRequest::integration() const {
+  // @@protoc_insertion_point(field_map:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.integration)
+  return _internal_integration();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+AlreadyExistsRuntimeRequest::_internal_mutable_integration() {
+  return integration_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+AlreadyExistsRuntimeRequest::mutable_integration() {
+  // @@protoc_insertion_point(field_mutable_map:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.integration)
+  return _internal_mutable_integration();
+}
+
+// string environment_id = 3 [json_name = "environmentId"];
+inline void AlreadyExistsRuntimeRequest::clear_environment_id() {
+  environment_id_.ClearToEmpty();
+}
+inline const std::string& AlreadyExistsRuntimeRequest::environment_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.environment_id)
+  return _internal_environment_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AlreadyExistsRuntimeRequest::set_environment_id(ArgT0&& arg0, ArgT... args) {
+ 
+ environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.environment_id)
+}
+inline std::string* AlreadyExistsRuntimeRequest::mutable_environment_id() {
+  std::string* _s = _internal_mutable_environment_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.environment_id)
+  return _s;
+}
+inline const std::string& AlreadyExistsRuntimeRequest::_internal_environment_id() const {
+  return environment_id_.Get();
+}
+inline void AlreadyExistsRuntimeRequest::_internal_set_environment_id(const std::string& value) {
+  
+  environment_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::_internal_mutable_environment_id() {
+  
+  return environment_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::release_environment_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.environment_id)
+  return environment_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AlreadyExistsRuntimeRequest::set_allocated_environment_id(std::string* environment_id) {
+  if (environment_id != nullptr) {
+    
+  } else {
+    
+  }
+  environment_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.environment_id)
+}
+
+// string project_id = 4 [json_name = "projectId"];
+inline void AlreadyExistsRuntimeRequest::clear_project_id() {
+  project_id_.ClearToEmpty();
+}
+inline const std::string& AlreadyExistsRuntimeRequest::project_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.project_id)
+  return _internal_project_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AlreadyExistsRuntimeRequest::set_project_id(ArgT0&& arg0, ArgT... args) {
+ 
+ project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.project_id)
+}
+inline std::string* AlreadyExistsRuntimeRequest::mutable_project_id() {
+  std::string* _s = _internal_mutable_project_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.project_id)
+  return _s;
+}
+inline const std::string& AlreadyExistsRuntimeRequest::_internal_project_id() const {
+  return project_id_.Get();
+}
+inline void AlreadyExistsRuntimeRequest::_internal_set_project_id(const std::string& value) {
+  
+  project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::_internal_mutable_project_id() {
+  
+  return project_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::release_project_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.project_id)
+  return project_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AlreadyExistsRuntimeRequest::set_allocated_project_id(std::string* project_id) {
+  if (project_id != nullptr) {
+    
+  } else {
+    
+  }
+  project_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.project_id)
+}
+
+// string organization_id = 5 [json_name = "organizationId"];
+inline void AlreadyExistsRuntimeRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& AlreadyExistsRuntimeRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AlreadyExistsRuntimeRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.organization_id)
+}
+inline std::string* AlreadyExistsRuntimeRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.organization_id)
+  return _s;
+}
+inline const std::string& AlreadyExistsRuntimeRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void AlreadyExistsRuntimeRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AlreadyExistsRuntimeRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.organization_id)
+}
+
+// string user_id = 6 [json_name = "userId"];
+inline void AlreadyExistsRuntimeRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& AlreadyExistsRuntimeRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AlreadyExistsRuntimeRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.user_id)
+}
+inline std::string* AlreadyExistsRuntimeRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.user_id)
+  return _s;
+}
+inline const std::string& AlreadyExistsRuntimeRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void AlreadyExistsRuntimeRequest::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AlreadyExistsRuntimeRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest.user_id)
+}
+
+// -------------------------------------------------------------------
+
+// AlreadyExistsRuntimeResponse
+
+// string already_exists = 1 [json_name = "alreadyExists"];
+inline void AlreadyExistsRuntimeResponse::clear_already_exists() {
+  already_exists_.ClearToEmpty();
+}
+inline const std::string& AlreadyExistsRuntimeResponse::already_exists() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.already_exists)
+  return _internal_already_exists();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AlreadyExistsRuntimeResponse::set_already_exists(ArgT0&& arg0, ArgT... args) {
+ 
+ already_exists_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.already_exists)
+}
+inline std::string* AlreadyExistsRuntimeResponse::mutable_already_exists() {
+  std::string* _s = _internal_mutable_already_exists();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.already_exists)
+  return _s;
+}
+inline const std::string& AlreadyExistsRuntimeResponse::_internal_already_exists() const {
+  return already_exists_.Get();
+}
+inline void AlreadyExistsRuntimeResponse::_internal_set_already_exists(const std::string& value) {
+  
+  already_exists_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeResponse::_internal_mutable_already_exists() {
+  
+  return already_exists_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeResponse::release_already_exists() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.already_exists)
+  return already_exists_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AlreadyExistsRuntimeResponse::set_allocated_already_exists(std::string* already_exists) {
+  if (already_exists != nullptr) {
+    
+  } else {
+    
+  }
+  already_exists_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), already_exists,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.already_exists)
+}
+
+// string status = 2 [json_name = "status"];
+inline void AlreadyExistsRuntimeResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& AlreadyExistsRuntimeResponse::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AlreadyExistsRuntimeResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.status)
+}
+inline std::string* AlreadyExistsRuntimeResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.status)
+  return _s;
+}
+inline const std::string& AlreadyExistsRuntimeResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void AlreadyExistsRuntimeResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AlreadyExistsRuntimeResponse::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AlreadyExistsRuntimeResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse.status)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

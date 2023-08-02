@@ -5,6 +5,28 @@ var grpc = require('grpc');
 var pipelines_runtime_v1alpha1_runtime_api_pb = require('../../../pipelines/runtime/v1alpha1/runtime_api_pb.js');
 var pipelines_runtime_v1alpha1_runtime_pb = require('../../../pipelines/runtime/v1alpha1/runtime_pb.js');
 
+function serialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeRequest(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.AlreadyExistsRuntimeRequest)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.AlreadyExistsRuntimeRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeRequest(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.AlreadyExistsRuntimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeResponse(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.AlreadyExistsRuntimeResponse)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.AlreadyExistsRuntimeResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeResponse(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.AlreadyExistsRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_runtime_v1alpha1_CreateRuntimeRequest(arg) {
   if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.CreateRuntimeRequest)) {
     throw new Error('Expected argument of type pipelines.runtime.v1alpha1.CreateRuntimeRequest');
@@ -336,6 +358,17 @@ var RuntimeAPIServiceService = exports.RuntimeAPIServiceService = {
     requestDeserialize: deserialize_pipelines_runtime_v1alpha1_RebuildRuntimeRequest,
     responseSerialize: serialize_pipelines_runtime_v1alpha1_RebuildRuntimeResponse,
     responseDeserialize: deserialize_pipelines_runtime_v1alpha1_RebuildRuntimeResponse,
+  },
+  alreadyExistsRuntime: {
+    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/AlreadyExistsRuntime',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.AlreadyExistsRuntimeRequest,
+    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.AlreadyExistsRuntimeResponse,
+    requestSerialize: serialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeRequest,
+    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeRequest,
+    responseSerialize: serialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeResponse,
+    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeResponse,
   },
 };
 

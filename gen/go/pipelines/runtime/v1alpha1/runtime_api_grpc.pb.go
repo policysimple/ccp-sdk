@@ -28,6 +28,7 @@ type RuntimeAPIServiceClient interface {
 	DeleteRuntimesByEnvironment(ctx context.Context, in *DeleteRuntimesByEnvironmentRequest, opts ...grpc.CallOption) (*DeleteRuntimesByEnvironmentResponse, error)
 	ListRuntimes(ctx context.Context, in *ListRuntimesRequest, opts ...grpc.CallOption) (*ListRuntimesResponse, error)
 	RebuildRuntime(ctx context.Context, in *RebuildRuntimeRequest, opts ...grpc.CallOption) (*RebuildRuntimeResponse, error)
+	AlreadyExistsRuntime(ctx context.Context, in *AlreadyExistsRuntimeRequest, opts ...grpc.CallOption) (*AlreadyExistsRuntimeResponse, error)
 }
 
 type runtimeAPIServiceClient struct {
@@ -128,6 +129,15 @@ func (c *runtimeAPIServiceClient) RebuildRuntime(ctx context.Context, in *Rebuil
 	return out, nil
 }
 
+func (c *runtimeAPIServiceClient) AlreadyExistsRuntime(ctx context.Context, in *AlreadyExistsRuntimeRequest, opts ...grpc.CallOption) (*AlreadyExistsRuntimeResponse, error) {
+	out := new(AlreadyExistsRuntimeResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/AlreadyExistsRuntime", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RuntimeAPIServiceServer is the server API for RuntimeAPIService service.
 // All implementations should embed UnimplementedRuntimeAPIServiceServer
 // for forward compatibility
@@ -142,6 +152,7 @@ type RuntimeAPIServiceServer interface {
 	DeleteRuntimesByEnvironment(context.Context, *DeleteRuntimesByEnvironmentRequest) (*DeleteRuntimesByEnvironmentResponse, error)
 	ListRuntimes(context.Context, *ListRuntimesRequest) (*ListRuntimesResponse, error)
 	RebuildRuntime(context.Context, *RebuildRuntimeRequest) (*RebuildRuntimeResponse, error)
+	AlreadyExistsRuntime(context.Context, *AlreadyExistsRuntimeRequest) (*AlreadyExistsRuntimeResponse, error)
 }
 
 // UnimplementedRuntimeAPIServiceServer should be embedded to have forward compatible implementations.
@@ -177,6 +188,9 @@ func (UnimplementedRuntimeAPIServiceServer) ListRuntimes(context.Context, *ListR
 }
 func (UnimplementedRuntimeAPIServiceServer) RebuildRuntime(context.Context, *RebuildRuntimeRequest) (*RebuildRuntimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RebuildRuntime not implemented")
+}
+func (UnimplementedRuntimeAPIServiceServer) AlreadyExistsRuntime(context.Context, *AlreadyExistsRuntimeRequest) (*AlreadyExistsRuntimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AlreadyExistsRuntime not implemented")
 }
 
 // UnsafeRuntimeAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -370,6 +384,24 @@ func _RuntimeAPIService_RebuildRuntime_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RuntimeAPIService_AlreadyExistsRuntime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AlreadyExistsRuntimeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).AlreadyExistsRuntime(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/AlreadyExistsRuntime",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).AlreadyExistsRuntime(ctx, req.(*AlreadyExistsRuntimeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // RuntimeAPIService_ServiceDesc is the grpc.ServiceDesc for RuntimeAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -416,6 +448,10 @@ var RuntimeAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RebuildRuntime",
 			Handler:    _RuntimeAPIService_RebuildRuntime_Handler,
+		},
+		{
+			MethodName: "AlreadyExistsRuntime",
+			Handler:    _RuntimeAPIService_AlreadyExistsRuntime_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

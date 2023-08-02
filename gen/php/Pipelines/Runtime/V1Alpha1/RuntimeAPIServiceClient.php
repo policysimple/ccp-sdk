@@ -146,4 +146,17 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Runtime\V1Alpha1\AlreadyExistsRuntimeRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function AlreadyExistsRuntime(\Pipelines\Runtime\V1Alpha1\AlreadyExistsRuntimeRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/AlreadyExistsRuntime',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\AlreadyExistsRuntimeResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
