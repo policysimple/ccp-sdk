@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class WebHookRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];</code>
+     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
      */
-    protected $webhook = null;
+    private $data;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class WebHookRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Payment\V1alpha1\Webhook $webhook
+     *     @type array|\Google\Protobuf\Internal\MapField $data
      * }
      */
     public function __construct($data = NULL) {
@@ -33,33 +33,23 @@ class WebHookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];</code>
-     * @return \Payment\V1alpha1\Webhook|null
+     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
-    public function getWebhook()
+    public function getData()
     {
-        return $this->webhook;
-    }
-
-    public function hasWebhook()
-    {
-        return isset($this->webhook);
-    }
-
-    public function clearWebhook()
-    {
-        unset($this->webhook);
+        return $this->data;
     }
 
     /**
-     * Generated from protobuf field <code>.payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];</code>
-     * @param \Payment\V1alpha1\Webhook $var
+     * Generated from protobuf field <code>map<string, string> data = 1 [json_name = "data"];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setWebhook($var)
+    public function setData($var)
     {
-        GPBUtil::checkMessage($var, \Payment\V1alpha1\Webhook::class);
-        $this->webhook = $var;
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->data = $arr;
 
         return $this;
     }

@@ -11469,7 +11469,7 @@ proto.payment.v1alpha1.WebHookRequest.prototype.toObject = function(opt_includeI
  */
 proto.payment.v1alpha1.WebHookRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    webhook: (f = msg.getWebhook()) && payment_v1alpha1_payment_pb.Webhook.toObject(includeInstance, f)
+    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -11507,9 +11507,10 @@ proto.payment.v1alpha1.WebHookRequest.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new payment_v1alpha1_payment_pb.Webhook;
-      reader.readMessage(value,payment_v1alpha1_payment_pb.Webhook.deserializeBinaryFromReader);
-      msg.setWebhook(value);
+      var value = msg.getDataMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -11540,52 +11541,33 @@ proto.payment.v1alpha1.WebHookRequest.prototype.serializeBinary = function() {
  */
 proto.payment.v1alpha1.WebHookRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getWebhook();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      payment_v1alpha1_payment_pb.Webhook.serializeBinaryToWriter
-    );
+  f = message.getDataMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
 
 /**
- * optional Webhook webhook = 1;
- * @return {?proto.payment.v1alpha1.Webhook}
+ * map<string, string> data = 1;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
  */
-proto.payment.v1alpha1.WebHookRequest.prototype.getWebhook = function() {
-  return /** @type{?proto.payment.v1alpha1.Webhook} */ (
-    jspb.Message.getWrapperField(this, payment_v1alpha1_payment_pb.Webhook, 1));
+proto.payment.v1alpha1.WebHookRequest.prototype.getDataMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {?proto.payment.v1alpha1.Webhook|undefined} value
- * @return {!proto.payment.v1alpha1.WebHookRequest} returns this
-*/
-proto.payment.v1alpha1.WebHookRequest.prototype.setWebhook = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.payment.v1alpha1.WebHookRequest} returns this
  */
-proto.payment.v1alpha1.WebHookRequest.prototype.clearWebhook = function() {
-  return this.setWebhook(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.payment.v1alpha1.WebHookRequest.prototype.hasWebhook = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
+proto.payment.v1alpha1.WebHookRequest.prototype.clearDataMap = function() {
+  this.getDataMap().clear();
+  return this;};
 
 
 

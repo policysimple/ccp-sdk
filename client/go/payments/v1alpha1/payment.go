@@ -524,7 +524,7 @@ func Webhook(in *paymentpkgv1.WebHookRequest) (response *paymentpkgv1.WebHookRes
 
 	defer cancel()
 	response, err = client.WebHook(ctx, &paymentpkgv1.WebHookRequest{
-		Webhook:        in.Webhook,
+		Data: in.Data,
 	})
 
 	if err != nil {

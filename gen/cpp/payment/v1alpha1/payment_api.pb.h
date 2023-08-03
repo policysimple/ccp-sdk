@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/empty.pb.h>
 #include "payment/v1alpha1/payment.pb.h"
@@ -48,7 +51,7 @@ struct TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[58]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[59]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -228,6 +231,9 @@ extern UpdateSubscriptionResponseDefaultTypeInternal _UpdateSubscriptionResponse
 class WebHookRequest;
 struct WebHookRequestDefaultTypeInternal;
 extern WebHookRequestDefaultTypeInternal _WebHookRequest_default_instance_;
+class WebHookRequest_DataEntry_DoNotUse;
+struct WebHookRequest_DataEntry_DoNotUseDefaultTypeInternal;
+extern WebHookRequest_DataEntry_DoNotUseDefaultTypeInternal _WebHookRequest_DataEntry_DoNotUse_default_instance_;
 class WebHookResponse;
 struct WebHookResponseDefaultTypeInternal;
 extern WebHookResponseDefaultTypeInternal _WebHookResponse_default_instance_;
@@ -291,6 +297,7 @@ template<> ::payment::v1alpha1::UpdateProjectResponse* Arena::CreateMaybeMessage
 template<> ::payment::v1alpha1::UpdateSubscriptionRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::UpdateSubscriptionRequest>(Arena*);
 template<> ::payment::v1alpha1::UpdateSubscriptionResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::UpdateSubscriptionResponse>(Arena*);
 template<> ::payment::v1alpha1::WebHookRequest* Arena::CreateMaybeMessage<::payment::v1alpha1::WebHookRequest>(Arena*);
+template<> ::payment::v1alpha1::WebHookRequest_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::payment::v1alpha1::WebHookRequest_DataEntry_DoNotUse>(Arena*);
 template<> ::payment::v1alpha1::WebHookResponse* Arena::CreateMaybeMessage<::payment::v1alpha1::WebHookResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace payment {
@@ -9691,6 +9698,33 @@ class UpdateProjectResponse final :
 };
 // -------------------------------------------------------------------
 
+class WebHookRequest_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<WebHookRequest_DataEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<WebHookRequest_DataEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  WebHookRequest_DataEntry_DoNotUse();
+  explicit constexpr WebHookRequest_DataEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit WebHookRequest_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const WebHookRequest_DataEntry_DoNotUse& other);
+  static const WebHookRequest_DataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const WebHookRequest_DataEntry_DoNotUse*>(&_WebHookRequest_DataEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "payment.v1alpha1.WebHookRequest.DataEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "payment.v1alpha1.WebHookRequest.DataEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
 class WebHookRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:payment.v1alpha1.WebHookRequest) */ {
  public:
@@ -9735,7 +9769,7 @@ class WebHookRequest final :
                &_WebHookRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    57;
 
   friend void swap(WebHookRequest& a, WebHookRequest& b) {
     a.Swap(&b);
@@ -9803,28 +9837,28 @@ class WebHookRequest final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
   enum : int {
-    kWebhookFieldNumber = 1,
+    kDataFieldNumber = 1,
   };
-  // .payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];
-  bool has_webhook() const;
+  // map<string, string> data = 1 [json_name = "data"];
+  int data_size() const;
   private:
-  bool _internal_has_webhook() const;
+  int _internal_data_size() const;
   public:
-  void clear_webhook();
-  const ::payment::v1alpha1::Webhook& webhook() const;
-  PROTOBUF_MUST_USE_RESULT ::payment::v1alpha1::Webhook* release_webhook();
-  ::payment::v1alpha1::Webhook* mutable_webhook();
-  void set_allocated_webhook(::payment::v1alpha1::Webhook* webhook);
+  void clear_data();
   private:
-  const ::payment::v1alpha1::Webhook& _internal_webhook() const;
-  ::payment::v1alpha1::Webhook* _internal_mutable_webhook();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_data() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_data();
   public:
-  void unsafe_arena_set_allocated_webhook(
-      ::payment::v1alpha1::Webhook* webhook);
-  ::payment::v1alpha1::Webhook* unsafe_arena_release_webhook();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      data() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_data();
 
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.WebHookRequest)
  private:
@@ -9833,7 +9867,11 @@ class WebHookRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::payment::v1alpha1::Webhook* webhook_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      WebHookRequest_DataEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_5fapi_2eproto;
 };
@@ -9883,7 +9921,7 @@ class WebHookResponse final :
                &_WebHookResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    58;
 
   friend void swap(WebHookResponse& a, WebHookResponse& b) {
     a.Swap(&b);
@@ -17178,92 +17216,37 @@ inline void UpdateProjectResponse::set_allocated_error(std::string* error) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // WebHookRequest
 
-// .payment.v1alpha1.Webhook webhook = 1 [json_name = "webhook"];
-inline bool WebHookRequest::_internal_has_webhook() const {
-  return this != internal_default_instance() && webhook_ != nullptr;
+// map<string, string> data = 1 [json_name = "data"];
+inline int WebHookRequest::_internal_data_size() const {
+  return data_.size();
 }
-inline bool WebHookRequest::has_webhook() const {
-  return _internal_has_webhook();
+inline int WebHookRequest::data_size() const {
+  return _internal_data_size();
 }
-inline const ::payment::v1alpha1::Webhook& WebHookRequest::_internal_webhook() const {
-  const ::payment::v1alpha1::Webhook* p = webhook_;
-  return p != nullptr ? *p : reinterpret_cast<const ::payment::v1alpha1::Webhook&>(
-      ::payment::v1alpha1::_Webhook_default_instance_);
+inline void WebHookRequest::clear_data() {
+  data_.Clear();
 }
-inline const ::payment::v1alpha1::Webhook& WebHookRequest::webhook() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.WebHookRequest.webhook)
-  return _internal_webhook();
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+WebHookRequest::_internal_data() const {
+  return data_.GetMap();
 }
-inline void WebHookRequest::unsafe_arena_set_allocated_webhook(
-    ::payment::v1alpha1::Webhook* webhook) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(webhook_);
-  }
-  webhook_ = webhook;
-  if (webhook) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:payment.v1alpha1.WebHookRequest.webhook)
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+WebHookRequest::data() const {
+  // @@protoc_insertion_point(field_map:payment.v1alpha1.WebHookRequest.data)
+  return _internal_data();
 }
-inline ::payment::v1alpha1::Webhook* WebHookRequest::release_webhook() {
-  
-  ::payment::v1alpha1::Webhook* temp = webhook_;
-  webhook_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+WebHookRequest::_internal_mutable_data() {
+  return data_.MutableMap();
 }
-inline ::payment::v1alpha1::Webhook* WebHookRequest::unsafe_arena_release_webhook() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.WebHookRequest.webhook)
-  
-  ::payment::v1alpha1::Webhook* temp = webhook_;
-  webhook_ = nullptr;
-  return temp;
-}
-inline ::payment::v1alpha1::Webhook* WebHookRequest::_internal_mutable_webhook() {
-  
-  if (webhook_ == nullptr) {
-    auto* p = CreateMaybeMessage<::payment::v1alpha1::Webhook>(GetArenaForAllocation());
-    webhook_ = p;
-  }
-  return webhook_;
-}
-inline ::payment::v1alpha1::Webhook* WebHookRequest::mutable_webhook() {
-  ::payment::v1alpha1::Webhook* _msg = _internal_mutable_webhook();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.WebHookRequest.webhook)
-  return _msg;
-}
-inline void WebHookRequest::set_allocated_webhook(::payment::v1alpha1::Webhook* webhook) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(webhook_);
-  }
-  if (webhook) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(webhook));
-    if (message_arena != submessage_arena) {
-      webhook = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, webhook, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  webhook_ = webhook;
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.WebHookRequest.webhook)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+WebHookRequest::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_map:payment.v1alpha1.WebHookRequest.data)
+  return _internal_mutable_data();
 }
 
 // -------------------------------------------------------------------
@@ -17365,6 +17348,8 @@ inline void WebHookResponse::set_allocated_error(std::string* error) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

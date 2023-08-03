@@ -357,7 +357,7 @@ message UpdateProjectResponse {
 }
 
 message WebHookRequest {
-    payment.v1alpha1.Webhook webhook = 1;
+    map<string, string> data = 1;
 }
 
 message WebHookResponse{
