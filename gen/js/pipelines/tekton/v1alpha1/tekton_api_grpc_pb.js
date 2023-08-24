@@ -71,6 +71,28 @@ function deserialize_pipelines_tekton_v1alpha1_GetPipelineRunResponse(buffer_arg
   return pipelines_tekton_v1alpha1_tekton_api_pb.GetPipelineRunResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_tekton_v1alpha1_GetStatusRuntimeRequest(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.GetStatusRuntimeRequest)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.GetStatusRuntimeRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_GetStatusRuntimeRequest(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.GetStatusRuntimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_GetStatusRuntimeResponse(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.GetStatusRuntimeResponse)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.GetStatusRuntimeResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_GetStatusRuntimeResponse(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.GetStatusRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_tekton_v1alpha1_ListPipelineRunRequest(arg) {
   if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.ListPipelineRunRequest)) {
     throw new Error('Expected argument of type pipelines.tekton.v1alpha1.ListPipelineRunRequest');
@@ -171,6 +193,17 @@ var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = 
     requestDeserialize: deserialize_pipelines_tekton_v1alpha1_ListPipelineRunRequest,
     responseSerialize: serialize_pipelines_tekton_v1alpha1_ListPipelineRunResponse,
     responseDeserialize: deserialize_pipelines_tekton_v1alpha1_ListPipelineRunResponse,
+  },
+  getStatusRuntime: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetStatusRuntime',
+    requestStream: false,
+    responseStream: true,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.GetStatusRuntimeRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.GetStatusRuntimeResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_GetStatusRuntimeRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_GetStatusRuntimeRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_GetStatusRuntimeResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_GetStatusRuntimeResponse,
   },
 };
 

@@ -39,6 +39,11 @@ class TektonPipelineAPIServiceStub(object):
         request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunRequest.SerializeToString,
         response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunResponse.FromString,
         )
+    self.GetStatusRuntime = channel.unary_stream(
+        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetStatusRuntime',
+        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetStatusRuntimeRequest.SerializeToString,
+        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetStatusRuntimeResponse.FromString,
+        )
 
 
 class TektonPipelineAPIServiceServicer(object):
@@ -80,6 +85,13 @@ class TektonPipelineAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetStatusRuntime(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -107,6 +119,11 @@ def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
           servicer.ListPipelineRun,
           request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunRequest.FromString,
           response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ListPipelineRunResponse.SerializeToString,
+      ),
+      'GetStatusRuntime': grpc.unary_stream_rpc_method_handler(
+          servicer.GetStatusRuntime,
+          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetStatusRuntimeRequest.FromString,
+          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetStatusRuntimeResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

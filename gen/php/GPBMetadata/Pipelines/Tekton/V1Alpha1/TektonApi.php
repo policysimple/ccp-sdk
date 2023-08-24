@@ -17,7 +17,7 @@ class TektonApi
         \GPBMetadata\Pipelines\Tekton\V1Alpha1\Tekton::initOnce();
         $pool->internalAddGeneratedFile(
             '
-™
+ƒ
 *pipelines/tekton/v1alpha1/tekton_api.protopipelines.tekton.v1alpha1"Ñ
 CreateTektonPipelineRequestL
 tekton_pipeline (2#.pipelines.tekton.v1alpha1.PipelineRtektonPipeline
@@ -46,13 +46,26 @@ runtime_id (	R	runtimeId"{
 runtime_id (	R	runtimeId"â
 ListPipelineRunResponseV
 pipeline_run_list (2*.pipelines.tekton.v1alpha1.PipelineRunListRpipelineRunList
-status (	Rstatus2Ø
+status (	Rstatus"ä
+Event
+
+runtime_id (	R	runtimeId
+name (	Rname
+	namespace (	R	namespace
+reason (	Rreason
+message (	Rmessage"8
+GetStatusRuntimeRequest
+
+runtime_id (	R	runtimeId"R
+GetStatusRuntimeResponse6
+event (2 .pipelines.tekton.v1alpha1.EventRevent2Æ
 TektonPipelineAPIServiceá
 CreateTektonPipeline6.pipelines.tekton.v1alpha1.CreateTektonPipelineRequest7.pipelines.tekton.v1alpha1.CreateTektonPipelineResponseá
 DeleteTektonPipeline6.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest7.pipelines.tekton.v1alpha1.DeleteTektonPipelineResponseç
 ListTektonTaskPipeline8.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest9.pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponseu
 GetPipelineRun0.pipelines.tekton.v1alpha1.GetPipelineRunRequest1.pipelines.tekton.v1alpha1.GetPipelineRunResponsex
-ListPipelineRun1.pipelines.tekton.v1alpha1.ListPipelineRunRequest2.pipelines.tekton.v1alpha1.ListPipelineRunResponseB±
+ListPipelineRun1.pipelines.tekton.v1alpha1.ListPipelineRunRequest2.pipelines.tekton.v1alpha1.ListPipelineRunResponse}
+GetStatusRuntime2.pipelines.tekton.v1alpha1.GetStatusRuntimeRequest3.pipelines.tekton.v1alpha1.GetStatusRuntimeResponse0B±
 #io.cuemby.pipelines.tekton.v1alpha1BTektonAPIProtoPZ:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1¢PPX™Pipelines.Tekton.V1Alpha1 Pipelines\\Tekton\\V1Alpha1bproto3'
         , true);
 

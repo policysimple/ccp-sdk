@@ -25,6 +25,7 @@ static const char* TektonPipelineAPIService_method_names[] = {
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListTektonTaskPipeline",
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetPipelineRun",
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ListPipelineRun",
+  "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetStatusRuntime",
 };
 
 std::unique_ptr< TektonPipelineAPIService::Stub> TektonPipelineAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -39,6 +40,7 @@ TektonPipelineAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInter
   , rpcmethod_ListTektonTaskPipeline_(TektonPipelineAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetPipelineRun_(TektonPipelineAPIService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListPipelineRun_(TektonPipelineAPIService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetStatusRuntime_(TektonPipelineAPIService_method_names[5], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status TektonPipelineAPIService::Stub::CreateTektonPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonPipelineRequest& request, ::pipelines::tekton::v1alpha1::CreateTektonPipelineResponse* response) {
@@ -121,6 +123,18 @@ void TektonPipelineAPIService::Stub::experimental_async::ListPipelineRun(::grpc:
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::ListPipelineRunResponse>::Create(channel_.get(), cq, rpcmethod_ListPipelineRun_, context, request, false);
 }
 
+::grpc::ClientReader< ::pipelines::tekton::v1alpha1::GetStatusRuntimeResponse>* TektonPipelineAPIService::Stub::GetStatusRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetStatusRuntimeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::pipelines::tekton::v1alpha1::GetStatusRuntimeResponse>::Create(channel_.get(), rpcmethod_GetStatusRuntime_, context, request);
+}
+
+::grpc::ClientAsyncReader< ::pipelines::tekton::v1alpha1::GetStatusRuntimeResponse>* TektonPipelineAPIService::Stub::AsyncGetStatusRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetStatusRuntimeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::pipelines::tekton::v1alpha1::GetStatusRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_GetStatusRuntime_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::pipelines::tekton::v1alpha1::GetStatusRuntimeResponse>* TektonPipelineAPIService::Stub::PrepareAsyncGetStatusRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::GetStatusRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::pipelines::tekton::v1alpha1::GetStatusRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_GetStatusRuntime_, context, request, false, nullptr);
+}
+
 TektonPipelineAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TektonPipelineAPIService_method_names[0],
@@ -147,6 +161,11 @@ TektonPipelineAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::ListPipelineRunRequest, ::pipelines::tekton::v1alpha1::ListPipelineRunResponse>(
           std::mem_fn(&TektonPipelineAPIService::Service::ListPipelineRun), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TektonPipelineAPIService_method_names[5],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::GetStatusRuntimeRequest, ::pipelines::tekton::v1alpha1::GetStatusRuntimeResponse>(
+          std::mem_fn(&TektonPipelineAPIService::Service::GetStatusRuntime), this)));
 }
 
 TektonPipelineAPIService::Service::~Service() {
@@ -184,6 +203,13 @@ TektonPipelineAPIService::Service::~Service() {
   (void) context;
   (void) request;
   (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TektonPipelineAPIService::Service::GetStatusRuntime(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::GetStatusRuntimeRequest* request, ::grpc::ServerWriter< ::pipelines::tekton::v1alpha1::GetStatusRuntimeResponse>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 

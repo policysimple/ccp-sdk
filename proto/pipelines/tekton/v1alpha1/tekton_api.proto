@@ -19,6 +19,7 @@ service TektonPipelineAPIService{
     rpc ListTektonTaskPipeline(ListTektonTaskPipelineRequest) returns (ListTektonTaskPipelineResponse);
     rpc GetPipelineRun(GetPipelineRunRequest) returns (GetPipelineRunResponse);
     rpc ListPipelineRun(ListPipelineRunRequest) returns (ListPipelineRunResponse);
+    rpc GetStatusRuntime (GetStatusRuntimeRequest) returns (stream GetStatusRuntimeResponse);
 }
 
 
@@ -71,3 +72,18 @@ message ListPipelineRunResponse {
     string status = 2;
 }
 
+message Event {
+    string runtime_id = 1;
+    string name = 2;
+    string namespace = 3;
+    string reason = 4;
+    string message = 5;
+}
+
+message GetStatusRuntimeRequest {
+    string runtime_id = 1;
+}
+
+message GetStatusRuntimeResponse {
+    Event event = 1;
+}

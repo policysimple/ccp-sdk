@@ -125,3 +125,21 @@ func ListPipelineRun(in *tektonPipelinepkgv1.ListPipelineRunRequest) (response *
 	}
 	return response, nil
 }
+
+func GetStatusRuntime(in *tektonPipelinepkgv1.GetStatusRuntimeRequest) (response *tektonPipelinepkgv1.GetStatusRuntimeResponse, err error) {
+	bylogs.LogInfo("client: GetStatusRuntime")
+	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetStatusRuntime(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: GetStatusRuntime failed", err)
+		return nil, fmt.Errorf("[GetStatusRuntime] %w", err)
+	}
+	return response, nil
+}
