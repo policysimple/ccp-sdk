@@ -23,6 +23,7 @@ type TektonPipelineAPIServiceClient interface {
 	ListTektonTaskPipeline(ctx context.Context, in *ListTektonTaskPipelineRequest, opts ...grpc.CallOption) (*ListTektonTaskPipelineResponse, error)
 	GetPipelineRun(ctx context.Context, in *GetPipelineRunRequest, opts ...grpc.CallOption) (*GetPipelineRunResponse, error)
 	ListPipelineRun(ctx context.Context, in *ListPipelineRunRequest, opts ...grpc.CallOption) (*ListPipelineRunResponse, error)
+	GetStatusRuntime(ctx context.Context, in *GetStatusRuntimeRequest, opts ...grpc.CallOption) (TektonPipelineAPIService_GetStatusRuntimeClient, error)
 }
 
 type tektonPipelineAPIServiceClient struct {
@@ -78,6 +79,38 @@ func (c *tektonPipelineAPIServiceClient) ListPipelineRun(ctx context.Context, in
 	return out, nil
 }
 
+func (c *tektonPipelineAPIServiceClient) GetStatusRuntime(ctx context.Context, in *GetStatusRuntimeRequest, opts ...grpc.CallOption) (TektonPipelineAPIService_GetStatusRuntimeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &TektonPipelineAPIService_ServiceDesc.Streams[0], "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetStatusRuntime", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &tektonPipelineAPIServiceGetStatusRuntimeClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type TektonPipelineAPIService_GetStatusRuntimeClient interface {
+	Recv() (*GetStatusRuntimeResponse, error)
+	grpc.ClientStream
+}
+
+type tektonPipelineAPIServiceGetStatusRuntimeClient struct {
+	grpc.ClientStream
+}
+
+func (x *tektonPipelineAPIServiceGetStatusRuntimeClient) Recv() (*GetStatusRuntimeResponse, error) {
+	m := new(GetStatusRuntimeResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // TektonPipelineAPIServiceServer is the server API for TektonPipelineAPIService service.
 // All implementations should embed UnimplementedTektonPipelineAPIServiceServer
 // for forward compatibility
@@ -87,6 +120,7 @@ type TektonPipelineAPIServiceServer interface {
 	ListTektonTaskPipeline(context.Context, *ListTektonTaskPipelineRequest) (*ListTektonTaskPipelineResponse, error)
 	GetPipelineRun(context.Context, *GetPipelineRunRequest) (*GetPipelineRunResponse, error)
 	ListPipelineRun(context.Context, *ListPipelineRunRequest) (*ListPipelineRunResponse, error)
+	GetStatusRuntime(*GetStatusRuntimeRequest, TektonPipelineAPIService_GetStatusRuntimeServer) error
 }
 
 // UnimplementedTektonPipelineAPIServiceServer should be embedded to have forward compatible implementations.
@@ -107,6 +141,9 @@ func (UnimplementedTektonPipelineAPIServiceServer) GetPipelineRun(context.Contex
 }
 func (UnimplementedTektonPipelineAPIServiceServer) ListPipelineRun(context.Context, *ListPipelineRunRequest) (*ListPipelineRunResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListPipelineRun not implemented")
+}
+func (UnimplementedTektonPipelineAPIServiceServer) GetStatusRuntime(*GetStatusRuntimeRequest, TektonPipelineAPIService_GetStatusRuntimeServer) error {
+	return status.Errorf(codes.Unimplemented, "method GetStatusRuntime not implemented")
 }
 
 // UnsafeTektonPipelineAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -210,6 +247,27 @@ func _TektonPipelineAPIService_ListPipelineRun_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TektonPipelineAPIService_GetStatusRuntime_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(GetStatusRuntimeRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(TektonPipelineAPIServiceServer).GetStatusRuntime(m, &tektonPipelineAPIServiceGetStatusRuntimeServer{stream})
+}
+
+type TektonPipelineAPIService_GetStatusRuntimeServer interface {
+	Send(*GetStatusRuntimeResponse) error
+	grpc.ServerStream
+}
+
+type tektonPipelineAPIServiceGetStatusRuntimeServer struct {
+	grpc.ServerStream
+}
+
+func (x *tektonPipelineAPIServiceGetStatusRuntimeServer) Send(m *GetStatusRuntimeResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
 // TektonPipelineAPIService_ServiceDesc is the grpc.ServiceDesc for TektonPipelineAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -238,6 +296,12 @@ var TektonPipelineAPIService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _TektonPipelineAPIService_ListPipelineRun_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "GetStatusRuntime",
+			Handler:       _TektonPipelineAPIService_GetStatusRuntime_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "pipelines/tekton/v1alpha1/tekton_api.proto",
 }

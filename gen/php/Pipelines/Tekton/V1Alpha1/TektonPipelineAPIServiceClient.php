@@ -81,4 +81,17 @@ class TektonPipelineAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Tekton\V1Alpha1\GetStatusRuntimeRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetStatusRuntime(\Pipelines\Tekton\V1Alpha1\GetStatusRuntimeRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_serverStreamRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetStatusRuntime',
+        $argument,
+        ['\Pipelines\Tekton\V1Alpha1\GetStatusRuntimeResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
