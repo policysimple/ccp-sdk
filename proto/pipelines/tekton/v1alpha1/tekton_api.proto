@@ -19,7 +19,7 @@ service TektonPipelineAPIService{
     rpc ListTektonTaskPipeline(ListTektonTaskPipelineRequest) returns (ListTektonTaskPipelineResponse);
     rpc GetPipelineRun(GetPipelineRunRequest) returns (GetPipelineRunResponse);
     rpc ListPipelineRun(ListPipelineRunRequest) returns (ListPipelineRunResponse);
-    rpc GetStatusRuntime (GetStatusRuntimeRequest) returns (stream GetStatusRuntimeResponse);
+    rpc GetStatusRuntime(GetStatusRuntimeRequest) returns (stream GetStatusRuntimeResponse);
 }
 
 

@@ -126,7 +126,7 @@ func ListPipelineRun(in *tektonPipelinepkgv1.ListPipelineRunRequest) (response *
 	return response, nil
 }
 
-func GetStatusRuntime(in *tektonPipelinepkgv1.GetStatusRuntimeRequest) (response *tektonPipelinepkgv1.GetStatusRuntimeResponse, err error) {
+func GetStatusRuntime(in *tektonPipelinepkgv1.GetStatusRuntimeRequest) (response tektonPipelinepkgv1.TektonPipelineAPIService_GetStatusRuntimeClient, err error) {
 	bylogs.LogInfo("client: GetStatusRuntime")
 	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
 	if err != nil {
