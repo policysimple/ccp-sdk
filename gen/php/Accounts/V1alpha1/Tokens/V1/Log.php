@@ -41,6 +41,10 @@ class Log extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool status = 7 [json_name = "status"];</code>
      */
     protected $status = false;
+    /**
+     * Generated from protobuf field <code>string location = 8 [json_name = "location"];</code>
+     */
+    protected $location = '';
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class Log extends \Google\Protobuf\Internal\Message
      *     @type string $date
      *     @type string $token
      *     @type bool $status
+     *     @type string $location
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +217,28 @@ class Log extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string location = 8 [json_name = "location"];</code>
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * Generated from protobuf field <code>string location = 8 [json_name = "location"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocation($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->location = $var;
 
         return $this;
     }

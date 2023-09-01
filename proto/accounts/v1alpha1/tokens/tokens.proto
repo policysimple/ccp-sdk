@@ -56,6 +56,7 @@ message Log{
     string date = 5;
     string token = 6;
     bool status = 7;
+    string location = 8;
 }
 message SaveLogsRequest {
     Log log = 1;

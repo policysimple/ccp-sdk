@@ -109,6 +109,7 @@ constexpr Log::Log(
   , ip_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , date_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , location_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(false){}
 struct LogDefaultTypeInternal {
   constexpr LogDefaultTypeInternal()
@@ -286,6 +287,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2ftokens_2
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::Log, date_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::Log, token_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::Log, status_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::Log, location_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::tokens::v1::SaveLogsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -347,14 +349,14 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 33, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogoutTokenRequest)},
   { 39, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogoutTokenResponse)},
   { 45, -1, sizeof(::accounts::v1alpha1::tokens::v1::Log)},
-  { 57, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsRequest)},
-  { 63, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsResponse)},
-  { 69, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsRequest)},
-  { 75, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsResponse)},
-  { 81, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest)},
-  { 87, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse)},
-  { 94, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFARequest)},
-  { 101, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFAResponse)},
+  { 58, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsRequest)},
+  { 64, -1, sizeof(::accounts::v1alpha1::tokens::v1::SaveLogsResponse)},
+  { 70, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsRequest)},
+  { 76, -1, sizeof(::accounts::v1alpha1::tokens::v1::LogsResponse)},
+  { 82, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFARequest)},
+  { 88, -1, sizeof(::accounts::v1alpha1::tokens::v1::EnableOrDisableMFAResponse)},
+  { 95, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFARequest)},
+  { 102, -1, sizeof(::accounts::v1alpha1::tokens::v1::MFAResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -392,29 +394,30 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_2epro
   "(\003R\021timeExpirationMfa\022\027\n\007user_id\030\006 \001(\tR\006"
   "userId\"1\n\022LogoutTokenRequest\022\033\n\ttoken_cc"
   "p\030\001 \001(\tR\010tokenCcp\"\'\n\023LogoutTokenResponse"
-  "\022\020\n\003msg\030\001 \001(\tR\003msg\"\247\001\n\003Log\022\027\n\007user_id\030\001 "
+  "\022\020\n\003msg\030\001 \001(\tR\003msg\"\303\001\n\003Log\022\027\n\007user_id\030\001 "
   "\001(\tR\006userId\022\026\n\006system\030\002 \001(\tR\006system\022\035\n\nc"
   "lient_web\030\003 \001(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002"
   "ip\022\022\n\004date\030\005 \001(\tR\004date\022\024\n\005token\030\006 \001(\tR\005t"
-  "oken\022\026\n\006status\030\007 \001(\010R\006status\"E\n\017SaveLogs"
-  "Request\0222\n\003log\030\001 \001(\0132 .accounts.v1alpha1"
-  ".tokens.v1.LogR\003log\"$\n\020SaveLogsResponse\022"
-  "\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013LogsRequest\022\027\n\007user"
-  "_id\030\001 \001(\tR\006userId\"D\n\014LogsResponse\0224\n\004log"
-  "s\030\001 \003(\0132 .accounts.v1alpha1.tokens.v1.Lo"
-  "gR\004logs\"4\n\031EnableOrDisableMFARequest\022\027\n\007"
-  "user_id\030\001 \001(\tR\006userId\"D\n\032EnableOrDisable"
-  "MFAResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002"
-  " \001(\tR\005error\"\?\n\nMFARequest\022\027\n\007user_id\030\001 \001"
-  "(\tR\006userId\022\030\n\007numbers\030\003 \003(\005R\007numbers\"R\n\013"
-  "MFAResponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp"
-  "\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005error"
-  "B;Z9github.com/cuemby/ccp-sdk/gen/go/acc"
-  "ounts/v1alpha1/tokensb\006proto3"
+  "oken\022\026\n\006status\030\007 \001(\010R\006status\022\032\n\010location"
+  "\030\010 \001(\tR\010location\"E\n\017SaveLogsRequest\0222\n\003l"
+  "og\030\001 \001(\0132 .accounts.v1alpha1.tokens.v1.L"
+  "ogR\003log\"$\n\020SaveLogsResponse\022\020\n\003msg\030\001 \001(\t"
+  "R\003msg\"&\n\013LogsRequest\022\027\n\007user_id\030\001 \001(\tR\006u"
+  "serId\"D\n\014LogsResponse\0224\n\004logs\030\001 \003(\0132 .ac"
+  "counts.v1alpha1.tokens.v1.LogR\004logs\"4\n\031E"
+  "nableOrDisableMFARequest\022\027\n\007user_id\030\001 \001("
+  "\tR\006userId\"D\n\032EnableOrDisableMFAResponse\022"
+  "\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\""
+  "\?\n\nMFARequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030"
+  "\n\007numbers\030\003 \003(\005R\007numbers\"R\n\013MFAResponse\022"
+  "\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001("
+  "\tR\003msg\022\024\n\005error\030\003 \001(\tR\005errorB;Z9github.c"
+  "om/cuemby/ccp-sdk/gen/go/accounts/v1alph"
+  "a1/tokensb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto = {
-  false, false, 1389, descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, "accounts/v1alpha1/tokens/tokens.proto", 
+  false, false, 1417, descriptor_table_protodef_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, "accounts/v1alpha1/tokens/tokens.proto", 
   &descriptor_table_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto_once, nullptr, 0, 15,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto,
@@ -2017,6 +2020,11 @@ Log::Log(const Log& from)
     token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token(), 
       GetArenaForAllocation());
   }
+  location_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_location().empty()) {
+    location_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_location(), 
+      GetArenaForAllocation());
+  }
   status_ = from.status_;
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.tokens.v1.Log)
 }
@@ -2028,6 +2036,7 @@ client_web_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+location_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_ = false;
 }
 
@@ -2046,6 +2055,7 @@ inline void Log::SharedDtor() {
   ip_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   date_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  location_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Log::ArenaDtor(void* object) {
@@ -2070,6 +2080,7 @@ void Log::Clear() {
   ip_.ClearToEmpty();
   date_.ClearToEmpty();
   token_.ClearToEmpty();
+  location_.ClearToEmpty();
   status_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2138,6 +2149,15 @@ const char* Log::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::intern
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string location = 8 [json_name = "location"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_location();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.tokens.v1.Log.location"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2236,6 +2256,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_status(), target);
   }
 
+  // string location = 8 [json_name = "location"];
+  if (!this->_internal_location().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_location().data(), static_cast<int>(this->_internal_location().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.tokens.v1.Log.location");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_location(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2294,6 +2324,13 @@ size_t Log::ByteSizeLong() const {
         this->_internal_token());
   }
 
+  // string location = 8 [json_name = "location"];
+  if (!this->_internal_location().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_location());
+  }
+
   // bool status = 7 [json_name = "status"];
   if (this->_internal_status() != 0) {
     total_size += 1 + 1;
@@ -2345,6 +2382,9 @@ void Log::MergeFrom(const Log& from) {
   if (!from._internal_token().empty()) {
     _internal_set_token(from._internal_token());
   }
+  if (!from._internal_location().empty()) {
+    _internal_set_location(from._internal_location());
+  }
   if (from._internal_status() != 0) {
     _internal_set_status(from._internal_status());
   }
@@ -2394,6 +2434,11 @@ void Log::InternalSwap(Log* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &token_, GetArenaForAllocation(),
       &other->token_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &location_, GetArenaForAllocation(),
+      &other->location_, other->GetArenaForAllocation()
   );
   swap(status_, other->status_);
 }
