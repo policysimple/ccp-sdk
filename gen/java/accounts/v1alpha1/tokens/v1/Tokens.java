@@ -4688,6 +4688,18 @@ public final class Tokens {
      * @return The status.
      */
     boolean getStatus();
+
+    /**
+     * <code>string location = 8 [json_name = "location"];</code>
+     * @return The location.
+     */
+    java.lang.String getLocation();
+    /**
+     * <code>string location = 8 [json_name = "location"];</code>
+     * @return The bytes for location.
+     */
+    com.google.protobuf.ByteString
+        getLocationBytes();
   }
   /**
    * Protobuf type {@code accounts.v1alpha1.tokens.v1.Log}
@@ -4708,6 +4720,7 @@ public final class Tokens {
       ip_ = "";
       date_ = "";
       token_ = "";
+      location_ = "";
     }
 
     @java.lang.Override
@@ -4779,6 +4792,12 @@ public final class Tokens {
             case 56: {
 
               status_ = input.readBool();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              location_ = s;
               break;
             }
             default: {
@@ -5052,6 +5071,44 @@ public final class Tokens {
       return status_;
     }
 
+    public static final int LOCATION_FIELD_NUMBER = 8;
+    private volatile java.lang.Object location_;
+    /**
+     * <code>string location = 8 [json_name = "location"];</code>
+     * @return The location.
+     */
+    @java.lang.Override
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string location = 8 [json_name = "location"];</code>
+     * @return The bytes for location.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5087,6 +5144,9 @@ public final class Tokens {
       if (status_ != false) {
         output.writeBool(7, status_);
       }
+      if (!getLocationBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, location_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5118,6 +5178,9 @@ public final class Tokens {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, status_);
       }
+      if (!getLocationBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, location_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5147,6 +5210,8 @@ public final class Tokens {
           .equals(other.getToken())) return false;
       if (getStatus()
           != other.getStatus()) return false;
+      if (!getLocation()
+          .equals(other.getLocation())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5173,6 +5238,8 @@ public final class Tokens {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getStatus());
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5320,6 +5387,8 @@ public final class Tokens {
 
         status_ = false;
 
+        location_ = "";
+
         return this;
       }
 
@@ -5353,6 +5422,7 @@ public final class Tokens {
         result.date_ = date_;
         result.token_ = token_;
         result.status_ = status_;
+        result.location_ = location_;
         onBuilt();
         return result;
       }
@@ -5427,6 +5497,10 @@ public final class Tokens {
         }
         if (other.getStatus() != false) {
           setStatus(other.getStatus());
+        }
+        if (!other.getLocation().isEmpty()) {
+          location_ = other.location_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5940,6 +6014,82 @@ public final class Tokens {
       public Builder clearStatus() {
         
         status_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object location_ = "";
+      /**
+       * <code>string location = 8 [json_name = "location"];</code>
+       * @return The location.
+       */
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string location = 8 [json_name = "location"];</code>
+       * @return The bytes for location.
+       */
+      public com.google.protobuf.ByteString
+          getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string location = 8 [json_name = "location"];</code>
+       * @param value The location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocation(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        location_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string location = 8 [json_name = "location"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLocation() {
+        
+        location_ = getDefaultInstance().getLocation();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string location = 8 [json_name = "location"];</code>
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        location_ = value;
         onChanged();
         return this;
       }
@@ -11565,25 +11715,26 @@ public final class Tokens {
       "(\003R\021timeExpirationMfa\022\027\n\007user_id\030\006 \001(\tR\006" +
       "userId\"1\n\022LogoutTokenRequest\022\033\n\ttoken_cc" +
       "p\030\001 \001(\tR\010tokenCcp\"\'\n\023LogoutTokenResponse" +
-      "\022\020\n\003msg\030\001 \001(\tR\003msg\"\247\001\n\003Log\022\027\n\007user_id\030\001 " +
+      "\022\020\n\003msg\030\001 \001(\tR\003msg\"\303\001\n\003Log\022\027\n\007user_id\030\001 " +
       "\001(\tR\006userId\022\026\n\006system\030\002 \001(\tR\006system\022\035\n\nc" +
       "lient_web\030\003 \001(\tR\tclientWeb\022\016\n\002ip\030\004 \001(\tR\002" +
       "ip\022\022\n\004date\030\005 \001(\tR\004date\022\024\n\005token\030\006 \001(\tR\005t" +
-      "oken\022\026\n\006status\030\007 \001(\010R\006status\"E\n\017SaveLogs" +
-      "Request\0222\n\003log\030\001 \001(\0132 .accounts.v1alpha1" +
-      ".tokens.v1.LogR\003log\"$\n\020SaveLogsResponse\022" +
-      "\020\n\003msg\030\001 \001(\tR\003msg\"&\n\013LogsRequest\022\027\n\007user" +
-      "_id\030\001 \001(\tR\006userId\"D\n\014LogsResponse\0224\n\004log" +
-      "s\030\001 \003(\0132 .accounts.v1alpha1.tokens.v1.Lo" +
-      "gR\004logs\"4\n\031EnableOrDisableMFARequest\022\027\n\007" +
-      "user_id\030\001 \001(\tR\006userId\"D\n\032EnableOrDisable" +
-      "MFAResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002" +
-      " \001(\tR\005error\"?\n\nMFARequest\022\027\n\007user_id\030\001 \001" +
-      "(\tR\006userId\022\030\n\007numbers\030\003 \003(\005R\007numbers\"R\n\013" +
-      "MFAResponse\022\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp" +
-      "\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR\005error" +
-      "B;Z9github.com/cuemby/ccp-sdk/gen/go/acc" +
-      "ounts/v1alpha1/tokensb\006proto3"
+      "oken\022\026\n\006status\030\007 \001(\010R\006status\022\032\n\010location" +
+      "\030\010 \001(\tR\010location\"E\n\017SaveLogsRequest\0222\n\003l" +
+      "og\030\001 \001(\0132 .accounts.v1alpha1.tokens.v1.L" +
+      "ogR\003log\"$\n\020SaveLogsResponse\022\020\n\003msg\030\001 \001(\t" +
+      "R\003msg\"&\n\013LogsRequest\022\027\n\007user_id\030\001 \001(\tR\006u" +
+      "serId\"D\n\014LogsResponse\0224\n\004logs\030\001 \003(\0132 .ac" +
+      "counts.v1alpha1.tokens.v1.LogR\004logs\"4\n\031E" +
+      "nableOrDisableMFARequest\022\027\n\007user_id\030\001 \001(" +
+      "\tR\006userId\"D\n\032EnableOrDisableMFAResponse\022" +
+      "\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error\"" +
+      "?\n\nMFARequest\022\027\n\007user_id\030\001 \001(\tR\006userId\022\030" +
+      "\n\007numbers\030\003 \003(\005R\007numbers\"R\n\013MFAResponse\022" +
+      "\033\n\ttoken_ccp\030\001 \001(\tR\010tokenCcp\022\020\n\003msg\030\002 \001(" +
+      "\tR\003msg\022\024\n\005error\030\003 \001(\tR\005errorB;Z9github.c" +
+      "om/cuemby/ccp-sdk/gen/go/accounts/v1alph" +
+      "a1/tokensb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11630,7 +11781,7 @@ public final class Tokens {
     internal_static_accounts_v1alpha1_tokens_v1_Log_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_tokens_v1_Log_descriptor,
-        new java.lang.String[] { "UserId", "System", "ClientWeb", "Ip", "Date", "Token", "Status", });
+        new java.lang.String[] { "UserId", "System", "ClientWeb", "Ip", "Date", "Token", "Status", "Location", });
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_accounts_v1alpha1_tokens_v1_SaveLogsRequest_fieldAccessorTable = new

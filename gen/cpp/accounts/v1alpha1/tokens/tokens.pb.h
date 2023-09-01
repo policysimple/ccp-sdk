@@ -1248,6 +1248,7 @@ class Log final :
     kIpFieldNumber = 4,
     kDateFieldNumber = 5,
     kTokenFieldNumber = 6,
+    kLocationFieldNumber = 8,
     kStatusFieldNumber = 7,
   };
   // string user_id = 1 [json_name = "userId"];
@@ -1334,6 +1335,20 @@ class Log final :
   std::string* _internal_mutable_token();
   public:
 
+  // string location = 8 [json_name = "location"];
+  void clear_location();
+  const std::string& location() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_location(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_location();
+  PROTOBUF_MUST_USE_RESULT std::string* release_location();
+  void set_allocated_location(std::string* location);
+  private:
+  const std::string& _internal_location() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_location(const std::string& value);
+  std::string* _internal_mutable_location();
+  public:
+
   // bool status = 7 [json_name = "status"];
   void clear_status();
   bool status() const;
@@ -1356,6 +1371,7 @@ class Log final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr date_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr location_;
   bool status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2ftokens_2ftokens_2eproto;
@@ -3578,6 +3594,52 @@ inline void Log::_internal_set_status(bool value) {
 inline void Log::set_status(bool value) {
   _internal_set_status(value);
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.tokens.v1.Log.status)
+}
+
+// string location = 8 [json_name = "location"];
+inline void Log::clear_location() {
+  location_.ClearToEmpty();
+}
+inline const std::string& Log::location() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.tokens.v1.Log.location)
+  return _internal_location();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Log::set_location(ArgT0&& arg0, ArgT... args) {
+ 
+ location_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.tokens.v1.Log.location)
+}
+inline std::string* Log::mutable_location() {
+  std::string* _s = _internal_mutable_location();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.tokens.v1.Log.location)
+  return _s;
+}
+inline const std::string& Log::_internal_location() const {
+  return location_.Get();
+}
+inline void Log::_internal_set_location(const std::string& value) {
+  
+  location_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Log::_internal_mutable_location() {
+  
+  return location_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Log::release_location() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.tokens.v1.Log.location)
+  return location_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Log::set_allocated_location(std::string* location) {
+  if (location != nullptr) {
+    
+  } else {
+    
+  }
+  location_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), location,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.tokens.v1.Log.location)
 }
 
 // -------------------------------------------------------------------
