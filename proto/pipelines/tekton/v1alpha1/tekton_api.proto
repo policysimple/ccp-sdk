@@ -68,16 +68,8 @@ message ListPipelineRunRequest {
 }
 
 message ListPipelineRunResponse {
-    pipelines.tekton.v1alpha1.PipelineRunList pipeline_run_list = 1;
+    PipelineRunList pipeline_run_list = 1;
     string status = 2;
-}
-
-message Event {
-    string runtime_id = 1;
-    string name = 2;
-    string namespace = 3;
-    string reason = 4;
-    string message = 5;
 }
 
 message GetStatusRuntimeRequest {
@@ -85,5 +77,5 @@ message GetStatusRuntimeRequest {
 }
 
 message GetStatusRuntimeResponse {
-    Event event = 1;
+    pipelines.tekton.v1alpha1.Event event = 1;
 }
