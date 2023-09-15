@@ -49,7 +49,7 @@ struct TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[19]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,6 +59,9 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace pipelines {
 namespace tekton {
 namespace v1alpha1 {
+class Event;
+struct EventDefaultTypeInternal;
+extern EventDefaultTypeInternal _Event_default_instance_;
 class Params;
 struct ParamsDefaultTypeInternal;
 extern ParamsDefaultTypeInternal _Params_default_instance_;
@@ -120,6 +123,7 @@ extern WorkspacesDefaultTypeInternal _Workspaces_default_instance_;
 }  // namespace tekton
 }  // namespace pipelines
 PROTOBUF_NAMESPACE_OPEN
+template<> ::pipelines::tekton::v1alpha1::Event* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Event>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Params* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Params>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::Pipeline* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::Pipeline>(Arena*);
 template<> ::pipelines::tekton::v1alpha1::PipelineRun* Arena::CreateMaybeMessage<::pipelines::tekton::v1alpha1::PipelineRun>(Arena*);
@@ -3524,6 +3528,266 @@ class TaskRunStep final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr duration_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr task_run_step_status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr logs_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Event final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.tekton.v1alpha1.Event) */ {
+ public:
+  inline Event() : Event(nullptr) {}
+  ~Event() override;
+  explicit constexpr Event(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Event(const Event& from);
+  Event(Event&& from) noexcept
+    : Event() {
+    *this = ::std::move(from);
+  }
+
+  inline Event& operator=(const Event& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Event& operator=(Event&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Event& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Event* internal_default_instance() {
+    return reinterpret_cast<const Event*>(
+               &_Event_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(Event& a, Event& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Event* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Event* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Event* New() const final {
+    return new Event();
+  }
+
+  Event* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Event>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Event& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const Event& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Event* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.tekton.v1alpha1.Event";
+  }
+  protected:
+  explicit Event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRuntimeIdFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kNamespaceFieldNumber = 3,
+    kReasonFieldNumber = 4,
+    kMessageFieldNumber = 5,
+    kStatusFieldNumber = 6,
+    kEventTypeFieldNumber = 7,
+    kPipelineRunFieldNumber = 8,
+  };
+  // string runtime_id = 1 [json_name = "runtimeId"];
+  void clear_runtime_id();
+  const std::string& runtime_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_runtime_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_runtime_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_runtime_id();
+  void set_allocated_runtime_id(std::string* runtime_id);
+  private:
+  const std::string& _internal_runtime_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_runtime_id(const std::string& value);
+  std::string* _internal_mutable_runtime_id();
+  public:
+
+  // string name = 2 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string namespace = 3 [json_name = "namespace"];
+  void clear_namespace_();
+  const std::string& namespace_() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_namespace_(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_namespace_();
+  PROTOBUF_MUST_USE_RESULT std::string* release_namespace_();
+  void set_allocated_namespace_(std::string* namespace_);
+  private:
+  const std::string& _internal_namespace_() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_namespace_(const std::string& value);
+  std::string* _internal_mutable_namespace_();
+  public:
+
+  // string reason = 4 [json_name = "reason"];
+  void clear_reason();
+  const std::string& reason() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_reason(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_reason();
+  PROTOBUF_MUST_USE_RESULT std::string* release_reason();
+  void set_allocated_reason(std::string* reason);
+  private:
+  const std::string& _internal_reason() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_reason(const std::string& value);
+  std::string* _internal_mutable_reason();
+  public:
+
+  // string message = 5 [json_name = "message"];
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // string status = 6 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // string event_type = 7 [json_name = "eventType"];
+  void clear_event_type();
+  const std::string& event_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_event_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_event_type();
+  PROTOBUF_MUST_USE_RESULT std::string* release_event_type();
+  void set_allocated_event_type(std::string* event_type);
+  private:
+  const std::string& _internal_event_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_event_type(const std::string& value);
+  std::string* _internal_mutable_event_type();
+  public:
+
+  // .pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 8 [json_name = "pipelineRun"];
+  bool has_pipeline_run() const;
+  private:
+  bool _internal_has_pipeline_run() const;
+  public:
+  void clear_pipeline_run();
+  const ::pipelines::tekton::v1alpha1::PipelineRun& pipeline_run() const;
+  PROTOBUF_MUST_USE_RESULT ::pipelines::tekton::v1alpha1::PipelineRun* release_pipeline_run();
+  ::pipelines::tekton::v1alpha1::PipelineRun* mutable_pipeline_run();
+  void set_allocated_pipeline_run(::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run);
+  private:
+  const ::pipelines::tekton::v1alpha1::PipelineRun& _internal_pipeline_run() const;
+  ::pipelines::tekton::v1alpha1::PipelineRun* _internal_mutable_pipeline_run();
+  public:
+  void unsafe_arena_set_allocated_pipeline_run(
+      ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run);
+  ::pipelines::tekton::v1alpha1::PipelineRun* unsafe_arena_release_pipeline_run();
+
+  // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.Event)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reason_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr event_type_;
+  ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto;
 };
@@ -7506,9 +7770,427 @@ inline void TaskRunStep::set_allocated_logs(std::string* logs) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.TaskRunStep.logs)
 }
 
+// -------------------------------------------------------------------
+
+// Event
+
+// string runtime_id = 1 [json_name = "runtimeId"];
+inline void Event::clear_runtime_id() {
+  runtime_id_.ClearToEmpty();
+}
+inline const std::string& Event::runtime_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Event.runtime_id)
+  return _internal_runtime_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_runtime_id(ArgT0&& arg0, ArgT... args) {
+ 
+ runtime_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Event.runtime_id)
+}
+inline std::string* Event::mutable_runtime_id() {
+  std::string* _s = _internal_mutable_runtime_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Event.runtime_id)
+  return _s;
+}
+inline const std::string& Event::_internal_runtime_id() const {
+  return runtime_id_.Get();
+}
+inline void Event::_internal_set_runtime_id(const std::string& value) {
+  
+  runtime_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_runtime_id() {
+  
+  return runtime_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_runtime_id() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Event.runtime_id)
+  return runtime_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_runtime_id(std::string* runtime_id) {
+  if (runtime_id != nullptr) {
+    
+  } else {
+    
+  }
+  runtime_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), runtime_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Event.runtime_id)
+}
+
+// string name = 2 [json_name = "name"];
+inline void Event::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& Event::name() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Event.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Event.name)
+}
+inline std::string* Event::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Event.name)
+  return _s;
+}
+inline const std::string& Event::_internal_name() const {
+  return name_.Get();
+}
+inline void Event::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_name() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Event.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Event.name)
+}
+
+// string namespace = 3 [json_name = "namespace"];
+inline void Event::clear_namespace_() {
+  namespace__.ClearToEmpty();
+}
+inline const std::string& Event::namespace_() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Event.namespace)
+  return _internal_namespace_();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_namespace_(ArgT0&& arg0, ArgT... args) {
+ 
+ namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Event.namespace)
+}
+inline std::string* Event::mutable_namespace_() {
+  std::string* _s = _internal_mutable_namespace_();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Event.namespace)
+  return _s;
+}
+inline const std::string& Event::_internal_namespace_() const {
+  return namespace__.Get();
+}
+inline void Event::_internal_set_namespace_(const std::string& value) {
+  
+  namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_namespace_() {
+  
+  return namespace__.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_namespace_() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Event.namespace)
+  return namespace__.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_namespace_(std::string* namespace_) {
+  if (namespace_ != nullptr) {
+    
+  } else {
+    
+  }
+  namespace__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), namespace_,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Event.namespace)
+}
+
+// string reason = 4 [json_name = "reason"];
+inline void Event::clear_reason() {
+  reason_.ClearToEmpty();
+}
+inline const std::string& Event::reason() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Event.reason)
+  return _internal_reason();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_reason(ArgT0&& arg0, ArgT... args) {
+ 
+ reason_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Event.reason)
+}
+inline std::string* Event::mutable_reason() {
+  std::string* _s = _internal_mutable_reason();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Event.reason)
+  return _s;
+}
+inline const std::string& Event::_internal_reason() const {
+  return reason_.Get();
+}
+inline void Event::_internal_set_reason(const std::string& value) {
+  
+  reason_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_reason() {
+  
+  return reason_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_reason() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Event.reason)
+  return reason_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_reason(std::string* reason) {
+  if (reason != nullptr) {
+    
+  } else {
+    
+  }
+  reason_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reason,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Event.reason)
+}
+
+// string message = 5 [json_name = "message"];
+inline void Event::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& Event::message() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Event.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Event.message)
+}
+inline std::string* Event::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Event.message)
+  return _s;
+}
+inline const std::string& Event::_internal_message() const {
+  return message_.Get();
+}
+inline void Event::_internal_set_message(const std::string& value) {
+  
+  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_message() {
+  
+  return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_message() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Event.message)
+  return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Event.message)
+}
+
+// string status = 6 [json_name = "status"];
+inline void Event::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& Event::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Event.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Event.status)
+}
+inline std::string* Event::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Event.status)
+  return _s;
+}
+inline const std::string& Event::_internal_status() const {
+  return status_.Get();
+}
+inline void Event::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Event.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Event.status)
+}
+
+// string event_type = 7 [json_name = "eventType"];
+inline void Event::clear_event_type() {
+  event_type_.ClearToEmpty();
+}
+inline const std::string& Event::event_type() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Event.event_type)
+  return _internal_event_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Event::set_event_type(ArgT0&& arg0, ArgT... args) {
+ 
+ event_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Event.event_type)
+}
+inline std::string* Event::mutable_event_type() {
+  std::string* _s = _internal_mutable_event_type();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Event.event_type)
+  return _s;
+}
+inline const std::string& Event::_internal_event_type() const {
+  return event_type_.Get();
+}
+inline void Event::_internal_set_event_type(const std::string& value) {
+  
+  event_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Event::_internal_mutable_event_type() {
+  
+  return event_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Event::release_event_type() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Event.event_type)
+  return event_type_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Event::set_allocated_event_type(std::string* event_type) {
+  if (event_type != nullptr) {
+    
+  } else {
+    
+  }
+  event_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), event_type,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Event.event_type)
+}
+
+// .pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 8 [json_name = "pipelineRun"];
+inline bool Event::_internal_has_pipeline_run() const {
+  return this != internal_default_instance() && pipeline_run_ != nullptr;
+}
+inline bool Event::has_pipeline_run() const {
+  return _internal_has_pipeline_run();
+}
+inline void Event::clear_pipeline_run() {
+  if (GetArenaForAllocation() == nullptr && pipeline_run_ != nullptr) {
+    delete pipeline_run_;
+  }
+  pipeline_run_ = nullptr;
+}
+inline const ::pipelines::tekton::v1alpha1::PipelineRun& Event::_internal_pipeline_run() const {
+  const ::pipelines::tekton::v1alpha1::PipelineRun* p = pipeline_run_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::tekton::v1alpha1::PipelineRun&>(
+      ::pipelines::tekton::v1alpha1::_PipelineRun_default_instance_);
+}
+inline const ::pipelines::tekton::v1alpha1::PipelineRun& Event::pipeline_run() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Event.pipeline_run)
+  return _internal_pipeline_run();
+}
+inline void Event::unsafe_arena_set_allocated_pipeline_run(
+    ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pipeline_run_);
+  }
+  pipeline_run_ = pipeline_run;
+  if (pipeline_run) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.tekton.v1alpha1.Event.pipeline_run)
+}
+inline ::pipelines::tekton::v1alpha1::PipelineRun* Event::release_pipeline_run() {
+  
+  ::pipelines::tekton::v1alpha1::PipelineRun* temp = pipeline_run_;
+  pipeline_run_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pipelines::tekton::v1alpha1::PipelineRun* Event::unsafe_arena_release_pipeline_run() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Event.pipeline_run)
+  
+  ::pipelines::tekton::v1alpha1::PipelineRun* temp = pipeline_run_;
+  pipeline_run_ = nullptr;
+  return temp;
+}
+inline ::pipelines::tekton::v1alpha1::PipelineRun* Event::_internal_mutable_pipeline_run() {
+  
+  if (pipeline_run_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pipelines::tekton::v1alpha1::PipelineRun>(GetArenaForAllocation());
+    pipeline_run_ = p;
+  }
+  return pipeline_run_;
+}
+inline ::pipelines::tekton::v1alpha1::PipelineRun* Event::mutable_pipeline_run() {
+  ::pipelines::tekton::v1alpha1::PipelineRun* _msg = _internal_mutable_pipeline_run();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Event.pipeline_run)
+  return _msg;
+}
+inline void Event::set_allocated_pipeline_run(::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete pipeline_run_;
+  }
+  if (pipeline_run) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::pipelines::tekton::v1alpha1::PipelineRun>::GetOwningArena(pipeline_run);
+    if (message_arena != submessage_arena) {
+      pipeline_run = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, pipeline_run, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  pipeline_run_ = pipeline_run;
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Event.pipeline_run)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -145,3 +145,14 @@ message TaskRunStep {
     string logs = 8;
     
 }
+
+message Event {
+    string runtime_id = 1;
+    string name = 2;
+    string namespace = 3;
+    string reason = 4;
+    string message = 5;
+    string status = 6;
+    string event_type = 7;
+    PipelineRun pipeline_run = 8;
+}
