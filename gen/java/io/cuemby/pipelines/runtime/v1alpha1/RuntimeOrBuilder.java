@@ -565,4 +565,28 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAppLabelBytes();
+
+  /**
+   * <code>string created_at = 36 [json_name = "createdAt"];</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 36 [json_name = "createdAt"];</code>
+   * @return The bytes for createdAt.
+   */
+  com.google.protobuf.ByteString
+      getCreatedAtBytes();
+
+  /**
+   * <code>string updated_at = 37 [json_name = "updatedAt"];</code>
+   * @return The updatedAt.
+   */
+  java.lang.String getUpdatedAt();
+  /**
+   * <code>string updated_at = 37 [json_name = "updatedAt"];</code>
+   * @return The bytes for updatedAt.
+   */
+  com.google.protobuf.ByteString
+      getUpdatedAtBytes();
 }

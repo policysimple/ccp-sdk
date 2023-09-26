@@ -58,7 +58,8 @@ message Runtime {
   pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33;
   string host_url = 34;
   string app_label = 35;
-
+  string created_at = 36;
+  string updated_at = 37;
 }
 
 message RuntimeList {
