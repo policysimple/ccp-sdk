@@ -251,7 +251,9 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     pipelines_tekton_v1alpha1_tekton_pb.Params.toObject, includeInstance),
     pipelineRun: (f = msg.getPipelineRun()) && pipelines_tekton_v1alpha1_tekton_pb.PipelineRun.toObject(includeInstance, f),
     hostUrl: jspb.Message.getFieldWithDefault(msg, 34, ""),
-    appLabel: jspb.Message.getFieldWithDefault(msg, 35, "")
+    appLabel: jspb.Message.getFieldWithDefault(msg, 35, ""),
+    createdAt: jspb.Message.getFieldWithDefault(msg, 36, ""),
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 37, "")
   };
 
   if (includeInstance) {
@@ -443,6 +445,14 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 35:
       var value = /** @type {string} */ (reader.readString());
       msg.setAppLabel(value);
+      break;
+    case 36:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreatedAt(value);
+      break;
+    case 37:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUpdatedAt(value);
       break;
     default:
       reader.skipField();
@@ -706,6 +716,20 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       35,
+      f
+    );
+  }
+  f = message.getCreatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      36,
+      f
+    );
+  }
+  f = message.getUpdatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      37,
       f
     );
   }
@@ -1477,6 +1501,42 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getAppLabel = function() {
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setAppLabel = function(value) {
   return jspb.Message.setProto3StringField(this, 35, value);
+};
+
+
+/**
+ * optional string created_at = 36;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getCreatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 36, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setCreatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 36, value);
+};
+
+
+/**
+ * optional string updated_at = 37;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getUpdatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 37, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setUpdatedAt = function(value) {
+  return jspb.Message.setProto3StringField(this, 37, value);
 };
 
 

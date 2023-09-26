@@ -426,6 +426,8 @@ class Runtime final :
     kPodIngressCertFieldNumber = 30,
     kHostUrlFieldNumber = 34,
     kAppLabelFieldNumber = 35,
+    kCreatedAtFieldNumber = 36,
+    kUpdatedAtFieldNumber = 37,
     kApplicationDataFieldNumber = 26,
     kPipelineRunFieldNumber = 33,
     kTrafficTypeFieldNumber = 18,
@@ -857,6 +859,34 @@ class Runtime final :
   std::string* _internal_mutable_app_label();
   public:
 
+  // string created_at = 36 [json_name = "createdAt"];
+  void clear_created_at();
+  const std::string& created_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_created_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_created_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_created_at();
+  void set_allocated_created_at(std::string* created_at);
+  private:
+  const std::string& _internal_created_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_created_at(const std::string& value);
+  std::string* _internal_mutable_created_at();
+  public:
+
+  // string updated_at = 37 [json_name = "updatedAt"];
+  void clear_updated_at();
+  const std::string& updated_at() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_updated_at(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_updated_at();
+  PROTOBUF_MUST_USE_RESULT std::string* release_updated_at();
+  void set_allocated_updated_at(std::string* updated_at);
+  private:
+  const std::string& _internal_updated_at() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_updated_at(const std::string& value);
+  std::string* _internal_mutable_updated_at();
+  public:
+
   // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
   bool has_application_data() const;
   private:
@@ -993,6 +1023,8 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pod_ingress_cert_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_url_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr app_label_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::application::v1alpha1::Application* application_data_;
   ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run_;
   int traffic_type_;
@@ -3472,6 +3504,98 @@ inline void Runtime::set_allocated_app_label(std::string* app_label) {
   app_label_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), app_label,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.app_label)
+}
+
+// string created_at = 36 [json_name = "createdAt"];
+inline void Runtime::clear_created_at() {
+  created_at_.ClearToEmpty();
+}
+inline const std::string& Runtime::created_at() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.created_at)
+  return _internal_created_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_created_at(ArgT0&& arg0, ArgT... args) {
+ 
+ created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.created_at)
+}
+inline std::string* Runtime::mutable_created_at() {
+  std::string* _s = _internal_mutable_created_at();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.created_at)
+  return _s;
+}
+inline const std::string& Runtime::_internal_created_at() const {
+  return created_at_.Get();
+}
+inline void Runtime::_internal_set_created_at(const std::string& value) {
+  
+  created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_created_at() {
+  
+  return created_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_created_at() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.created_at)
+  return created_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_created_at(std::string* created_at) {
+  if (created_at != nullptr) {
+    
+  } else {
+    
+  }
+  created_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), created_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.created_at)
+}
+
+// string updated_at = 37 [json_name = "updatedAt"];
+inline void Runtime::clear_updated_at() {
+  updated_at_.ClearToEmpty();
+}
+inline const std::string& Runtime::updated_at() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.updated_at)
+  return _internal_updated_at();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_updated_at(ArgT0&& arg0, ArgT... args) {
+ 
+ updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.updated_at)
+}
+inline std::string* Runtime::mutable_updated_at() {
+  std::string* _s = _internal_mutable_updated_at();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.updated_at)
+  return _s;
+}
+inline const std::string& Runtime::_internal_updated_at() const {
+  return updated_at_.Get();
+}
+inline void Runtime::_internal_set_updated_at(const std::string& value) {
+  
+  updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_updated_at() {
+  
+  return updated_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_updated_at() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.updated_at)
+  return updated_at_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_updated_at(std::string* updated_at) {
+  if (updated_at != nullptr) {
+    
+  } else {
+    
+  }
+  updated_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updated_at,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.updated_at)
 }
 
 // -------------------------------------------------------------------
