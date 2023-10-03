@@ -20,6 +20,7 @@ service EnvironmentAPIService{
     rpc ListEnvironment(ListEnvironmentRequest) returns (ListEnvironmentResponse);
     rpc DeleteEnvironment(DeleteEnvironmentRequest) returns (DeleteEnvironmentResponse);
     rpc GetByNameEnvironment(GetByNameEnvironmentRequest) returns (GetByNameEnvironmentResponse);
+    rpc CreateVclusterOrganization(CreateVclusterOrganizationRequest) returns (CreateVclusterOrganizationResponse);
 }
 
 message CreateEnvironmentRequest {
@@ -76,3 +77,14 @@ message GetByNameEnvironmentResponse {
     pipelines.environment.v1alpha1.Environment environment = 1;
     string status = 2;
 }
+
+message CreateVclusterOrganizationRequest {
+    string organization_id = 2;
+}
+
+message CreateVclusterOrganizationResponse {
+    string status = 1;
+    string message = 2;
+}
+
+
