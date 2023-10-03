@@ -146,3 +146,22 @@ func GetByNameEnvironment(in *environmentpkgv1.GetByNameEnvironmentRequest) (res
 	}
 	return response, nil
 }
+
+func CreateVclusterOrganization(in *environmentpkgv1.CreateVclusterOrganizationRequest) (response *environmentpkgv1.CreateVclusterOrganizationResponse, err error) {
+	bylogs.LogInfo("client: create vcluster organization")
+	d, err := time.ParseDuration(environmentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.CreateVclusterOrganization(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: error create vcluster organization", err)
+		return nil, fmt.Errorf("[CreateVclusterOrganization] %w", err)
+
+	}
+	return response, nil
+}

@@ -94,4 +94,17 @@ class EnvironmentAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Environment\V1Alpha1\CreateVclusterOrganizationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateVclusterOrganization(\Pipelines\Environment\V1Alpha1\CreateVclusterOrganizationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.environment.v1alpha1.EnvironmentAPIService/CreateVclusterOrganization',
+        $argument,
+        ['\Pipelines\Environment\V1Alpha1\CreateVclusterOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

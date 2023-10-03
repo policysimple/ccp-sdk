@@ -47,7 +47,7 @@ struct TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eprot
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -63,6 +63,12 @@ extern CreateEnvironmentRequestDefaultTypeInternal _CreateEnvironmentRequest_def
 class CreateEnvironmentResponse;
 struct CreateEnvironmentResponseDefaultTypeInternal;
 extern CreateEnvironmentResponseDefaultTypeInternal _CreateEnvironmentResponse_default_instance_;
+class CreateVclusterOrganizationRequest;
+struct CreateVclusterOrganizationRequestDefaultTypeInternal;
+extern CreateVclusterOrganizationRequestDefaultTypeInternal _CreateVclusterOrganizationRequest_default_instance_;
+class CreateVclusterOrganizationResponse;
+struct CreateVclusterOrganizationResponseDefaultTypeInternal;
+extern CreateVclusterOrganizationResponseDefaultTypeInternal _CreateVclusterOrganizationResponse_default_instance_;
 class DeleteEnvironmentRequest;
 struct DeleteEnvironmentRequestDefaultTypeInternal;
 extern DeleteEnvironmentRequestDefaultTypeInternal _DeleteEnvironmentRequest_default_instance_;
@@ -99,6 +105,8 @@ extern UpdateEnvironmentResponseDefaultTypeInternal _UpdateEnvironmentResponse_d
 PROTOBUF_NAMESPACE_OPEN
 template<> ::pipelines::environment::v1alpha1::CreateEnvironmentRequest* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::CreateEnvironmentRequest>(Arena*);
 template<> ::pipelines::environment::v1alpha1::CreateEnvironmentResponse* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::CreateEnvironmentResponse>(Arena*);
+template<> ::pipelines::environment::v1alpha1::CreateVclusterOrganizationRequest* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::CreateVclusterOrganizationRequest>(Arena*);
+template<> ::pipelines::environment::v1alpha1::CreateVclusterOrganizationResponse* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::CreateVclusterOrganizationResponse>(Arena*);
 template<> ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::DeleteEnvironmentRequest>(Arena*);
 template<> ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>(Arena*);
 template<> ::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest>(Arena*);
@@ -1986,6 +1994,310 @@ class GetByNameEnvironmentResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class CreateVclusterOrganizationRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.environment.v1alpha1.CreateVclusterOrganizationRequest) */ {
+ public:
+  inline CreateVclusterOrganizationRequest() : CreateVclusterOrganizationRequest(nullptr) {}
+  ~CreateVclusterOrganizationRequest() override;
+  explicit constexpr CreateVclusterOrganizationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateVclusterOrganizationRequest(const CreateVclusterOrganizationRequest& from);
+  CreateVclusterOrganizationRequest(CreateVclusterOrganizationRequest&& from) noexcept
+    : CreateVclusterOrganizationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateVclusterOrganizationRequest& operator=(const CreateVclusterOrganizationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateVclusterOrganizationRequest& operator=(CreateVclusterOrganizationRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateVclusterOrganizationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateVclusterOrganizationRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateVclusterOrganizationRequest*>(
+               &_CreateVclusterOrganizationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(CreateVclusterOrganizationRequest& a, CreateVclusterOrganizationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateVclusterOrganizationRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateVclusterOrganizationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateVclusterOrganizationRequest* New() const final {
+    return new CreateVclusterOrganizationRequest();
+  }
+
+  CreateVclusterOrganizationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateVclusterOrganizationRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateVclusterOrganizationRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateVclusterOrganizationRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateVclusterOrganizationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.environment.v1alpha1.CreateVclusterOrganizationRequest";
+  }
+  protected:
+  explicit CreateVclusterOrganizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrganizationIdFieldNumber = 2,
+  };
+  // string organization_id = 2 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.CreateVclusterOrganizationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateVclusterOrganizationResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse) */ {
+ public:
+  inline CreateVclusterOrganizationResponse() : CreateVclusterOrganizationResponse(nullptr) {}
+  ~CreateVclusterOrganizationResponse() override;
+  explicit constexpr CreateVclusterOrganizationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CreateVclusterOrganizationResponse(const CreateVclusterOrganizationResponse& from);
+  CreateVclusterOrganizationResponse(CreateVclusterOrganizationResponse&& from) noexcept
+    : CreateVclusterOrganizationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateVclusterOrganizationResponse& operator=(const CreateVclusterOrganizationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateVclusterOrganizationResponse& operator=(CreateVclusterOrganizationResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateVclusterOrganizationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateVclusterOrganizationResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateVclusterOrganizationResponse*>(
+               &_CreateVclusterOrganizationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(CreateVclusterOrganizationResponse& a, CreateVclusterOrganizationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CreateVclusterOrganizationResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateVclusterOrganizationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateVclusterOrganizationResponse* New() const final {
+    return new CreateVclusterOrganizationResponse();
+  }
+
+  CreateVclusterOrganizationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CreateVclusterOrganizationResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CreateVclusterOrganizationResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CreateVclusterOrganizationResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateVclusterOrganizationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse";
+  }
+  protected:
+  explicit CreateVclusterOrganizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kStatusFieldNumber = 1,
+    kMessageFieldNumber = 2,
+  };
+  // string status = 1 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // string message = 2 [json_name = "message"];
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto;
+};
 // ===================================================================
 
 
@@ -3186,9 +3498,159 @@ inline void GetByNameEnvironmentResponse::set_allocated_status(std::string* stat
   // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.GetByNameEnvironmentResponse.status)
 }
 
+// -------------------------------------------------------------------
+
+// CreateVclusterOrganizationRequest
+
+// string organization_id = 2 [json_name = "organizationId"];
+inline void CreateVclusterOrganizationRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& CreateVclusterOrganizationRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.CreateVclusterOrganizationRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateVclusterOrganizationRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.CreateVclusterOrganizationRequest.organization_id)
+}
+inline std::string* CreateVclusterOrganizationRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.CreateVclusterOrganizationRequest.organization_id)
+  return _s;
+}
+inline const std::string& CreateVclusterOrganizationRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void CreateVclusterOrganizationRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateVclusterOrganizationRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateVclusterOrganizationRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.CreateVclusterOrganizationRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateVclusterOrganizationRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.CreateVclusterOrganizationRequest.organization_id)
+}
+
+// -------------------------------------------------------------------
+
+// CreateVclusterOrganizationResponse
+
+// string status = 1 [json_name = "status"];
+inline void CreateVclusterOrganizationResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& CreateVclusterOrganizationResponse::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateVclusterOrganizationResponse::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.status)
+}
+inline std::string* CreateVclusterOrganizationResponse::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.status)
+  return _s;
+}
+inline const std::string& CreateVclusterOrganizationResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void CreateVclusterOrganizationResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateVclusterOrganizationResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateVclusterOrganizationResponse::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateVclusterOrganizationResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.status)
+}
+
+// string message = 2 [json_name = "message"];
+inline void CreateVclusterOrganizationResponse::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& CreateVclusterOrganizationResponse::message() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateVclusterOrganizationResponse::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.message)
+}
+inline std::string* CreateVclusterOrganizationResponse::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.message)
+  return _s;
+}
+inline const std::string& CreateVclusterOrganizationResponse::_internal_message() const {
+  return message_.Get();
+}
+inline void CreateVclusterOrganizationResponse::_internal_set_message(const std::string& value) {
+  
+  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* CreateVclusterOrganizationResponse::_internal_mutable_message() {
+  
+  return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* CreateVclusterOrganizationResponse::release_message() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.message)
+  return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void CreateVclusterOrganizationResponse::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse.message)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -27,6 +27,28 @@ function deserialize_pipelines_environment_v1alpha1_CreateEnvironmentResponse(bu
   return pipelines_environment_v1alpha1_environment_api_pb.CreateEnvironmentResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_environment_v1alpha1_CreateVclusterOrganizationRequest(arg) {
+  if (!(arg instanceof pipelines_environment_v1alpha1_environment_api_pb.CreateVclusterOrganizationRequest)) {
+    throw new Error('Expected argument of type pipelines.environment.v1alpha1.CreateVclusterOrganizationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_environment_v1alpha1_CreateVclusterOrganizationRequest(buffer_arg) {
+  return pipelines_environment_v1alpha1_environment_api_pb.CreateVclusterOrganizationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_environment_v1alpha1_CreateVclusterOrganizationResponse(arg) {
+  if (!(arg instanceof pipelines_environment_v1alpha1_environment_api_pb.CreateVclusterOrganizationResponse)) {
+    throw new Error('Expected argument of type pipelines.environment.v1alpha1.CreateVclusterOrganizationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_environment_v1alpha1_CreateVclusterOrganizationResponse(buffer_arg) {
+  return pipelines_environment_v1alpha1_environment_api_pb.CreateVclusterOrganizationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_environment_v1alpha1_DeleteEnvironmentRequest(arg) {
   if (!(arg instanceof pipelines_environment_v1alpha1_environment_api_pb.DeleteEnvironmentRequest)) {
     throw new Error('Expected argument of type pipelines.environment.v1alpha1.DeleteEnvironmentRequest');
@@ -204,6 +226,17 @@ var EnvironmentAPIServiceService = exports.EnvironmentAPIServiceService = {
     requestDeserialize: deserialize_pipelines_environment_v1alpha1_GetByNameEnvironmentRequest,
     responseSerialize: serialize_pipelines_environment_v1alpha1_GetByNameEnvironmentResponse,
     responseDeserialize: deserialize_pipelines_environment_v1alpha1_GetByNameEnvironmentResponse,
+  },
+  createVclusterOrganization: {
+    path: '/pipelines.environment.v1alpha1.EnvironmentAPIService/CreateVclusterOrganization',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_environment_v1alpha1_environment_api_pb.CreateVclusterOrganizationRequest,
+    responseType: pipelines_environment_v1alpha1_environment_api_pb.CreateVclusterOrganizationResponse,
+    requestSerialize: serialize_pipelines_environment_v1alpha1_CreateVclusterOrganizationRequest,
+    requestDeserialize: deserialize_pipelines_environment_v1alpha1_CreateVclusterOrganizationRequest,
+    responseSerialize: serialize_pipelines_environment_v1alpha1_CreateVclusterOrganizationResponse,
+    responseDeserialize: deserialize_pipelines_environment_v1alpha1_CreateVclusterOrganizationResponse,
   },
 };
 

@@ -44,6 +44,11 @@ class EnvironmentAPIServiceStub(object):
         request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.GetByNameEnvironmentRequest.SerializeToString,
         response_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.GetByNameEnvironmentResponse.FromString,
         )
+    self.CreateVclusterOrganization = channel.unary_unary(
+        '/pipelines.environment.v1alpha1.EnvironmentAPIService/CreateVclusterOrganization',
+        request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateVclusterOrganizationRequest.SerializeToString,
+        response_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateVclusterOrganizationResponse.FromString,
+        )
 
 
 class EnvironmentAPIServiceServicer(object):
@@ -92,6 +97,13 @@ class EnvironmentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateVclusterOrganization(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_EnvironmentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -124,6 +136,11 @@ def add_EnvironmentAPIServiceServicer_to_server(servicer, server):
           servicer.GetByNameEnvironment,
           request_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.GetByNameEnvironmentRequest.FromString,
           response_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.GetByNameEnvironmentResponse.SerializeToString,
+      ),
+      'CreateVclusterOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateVclusterOrganization,
+          request_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateVclusterOrganizationRequest.FromString,
+          response_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateVclusterOrganizationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
