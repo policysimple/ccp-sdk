@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-Û
+ý
 payment/v1alpha1/payment.protopayment.v1alpha1"Û
 Customer
 id (	Rid
@@ -153,12 +153,9 @@ updated_at (	R	updatedAt
 plan (	Rplan
 budget_time (	R
 budgetTime#
-budget_amount (	RbudgetAmount"{
-Webhook7
-data (2#.payment.v1alpha1.Webhook.DataEntryRdata7
-	DataEntry
-key (	Rkey
-value (	Rvalue:8B8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
+budget_amount (	RbudgetAmount"
+Webhook
+data (	RdataB8Z6github.com/cuemby/ccp-payment-service/payment/v1alpha1bproto3'
         , true);
 
         static::$is_initialized = true;

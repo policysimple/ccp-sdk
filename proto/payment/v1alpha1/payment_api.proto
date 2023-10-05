@@ -357,7 +357,7 @@ message UpdateProjectResponse {
 }
 
 message WebHookRequest {
-    map<string, string> data = 1;
+    string data = 1;
 }
 
 message WebHookResponse{
