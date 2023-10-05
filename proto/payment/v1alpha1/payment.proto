@@ -163,5 +163,5 @@ message Budget {
 }
 
 message Webhook {
-  map<string, string> data = 1;
+  string data = 1;
 }

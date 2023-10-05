@@ -11469,7 +11469,7 @@ proto.payment.v1alpha1.WebHookRequest.prototype.toObject = function(opt_includeI
  */
 proto.payment.v1alpha1.WebHookRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : []
+    data: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -11507,10 +11507,8 @@ proto.payment.v1alpha1.WebHookRequest.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = msg.getDataMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
+      var value = /** @type {string} */ (reader.readString());
+      msg.setData(value);
       break;
     default:
       reader.skipField();
@@ -11541,33 +11539,32 @@ proto.payment.v1alpha1.WebHookRequest.prototype.serializeBinary = function() {
  */
 proto.payment.v1alpha1.WebHookRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDataMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  f = message.getData();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
   }
 };
 
 
 /**
- * map<string, string> data = 1;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
+ * optional string data = 1;
+ * @return {string}
  */
-proto.payment.v1alpha1.WebHookRequest.prototype.getDataMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      null));
+proto.payment.v1alpha1.WebHookRequest.prototype.getData = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {string} value
  * @return {!proto.payment.v1alpha1.WebHookRequest} returns this
  */
-proto.payment.v1alpha1.WebHookRequest.prototype.clearDataMap = function() {
-  this.getDataMap().clear();
-  return this;};
+proto.payment.v1alpha1.WebHookRequest.prototype.setData = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
 
 
 

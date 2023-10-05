@@ -86,10 +86,11 @@ func EnableOrDisableMFA(userId string) (*accountpkgv1.EnableOrDisableMFAResponse
 
 func GetOneTokenCCP(token string, log *accountpkgv1.Log) (*accountpkgv1.GetOneTokenCCPResponse, error) {
 	bylogs.LogInfo("GetOneTokenCCP Client Sdk")
-	d, err := time.ParseDuration(accountServiceTimeout)
+	d, err := time.ParseDuration("30s")
 	if err != nil {
 		return nil, err
 	}
+	fmt.Println("D-----", d)
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
 	defer cancel()
 
