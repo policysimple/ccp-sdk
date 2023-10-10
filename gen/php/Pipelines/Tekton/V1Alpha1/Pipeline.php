@@ -111,6 +111,10 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_not_exist_dockerfile = 24 [json_name = "isNotExistDockerfile"];</code>
      */
     protected $is_not_exist_dockerfile = false;
+    /**
+     * Generated from protobuf field <code>string host_url = 25 [json_name = "hostUrl"];</code>
+     */
+    protected $host_url = '';
 
     /**
      * Constructor.
@@ -142,6 +146,7 @@ class Pipeline extends \Google\Protobuf\Internal\Message
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $before_deploy_tasks
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $after_deploy_tasks
      *     @type bool $is_not_exist_dockerfile
+     *     @type string $host_url
      * }
      */
     public function __construct($data = NULL) {
@@ -673,6 +678,28 @@ class Pipeline extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_not_exist_dockerfile = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string host_url = 25 [json_name = "hostUrl"];</code>
+     * @return string
+     */
+    public function getHostUrl()
+    {
+        return $this->host_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string host_url = 25 [json_name = "hostUrl"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHostUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->host_url = $var;
 
         return $this;
     }

@@ -16,7 +16,7 @@ class Tekton
         }
         $pool->internalAddGeneratedFile(
             '
-¬%
+Ç%
 &pipelines/tekton/v1alpha1/tekton.protopipelines.tekton.v1alpha1"
 Params
 name (	Rname!
@@ -54,7 +54,7 @@ taskParams
 description (	Rdescription#
 before_deploy	 (RbeforeDeploy!
 after_deploy
- (RafterDeploy"Š
+ (RafterDeploy"¥
 Pipeline
 id (	Rid
 name (	Rname!
@@ -85,7 +85,8 @@ is_default (R	isDefault
 custom_pipeline (RcustomPipelineO
 before_deploy_tasks (2.pipelines.tekton.v1alpha1.TaskRbeforeDeployTasksM
 after_deploy_tasks (2.pipelines.tekton.v1alpha1.TaskRafterDeployTasks5
-is_not_exist_dockerfile (RisNotExistDockerfile>
+is_not_exist_dockerfile (RisNotExistDockerfile
+host_url (	RhostUrl>
 IntegrationEntry
 key (	Rkey
 value (	Rvalue:8G

@@ -1603,7 +1603,8 @@ proto.pipelines.tekton.v1alpha1.Pipeline.toObject = function(includeInstance, ms
     proto.pipelines.tekton.v1alpha1.Task.toObject, includeInstance),
     afterDeployTasksList: jspb.Message.toObjectList(msg.getAfterDeployTasksList(),
     proto.pipelines.tekton.v1alpha1.Task.toObject, includeInstance),
-    isNotExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 24, false)
+    isNotExistDockerfile: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
+    hostUrl: jspb.Message.getFieldWithDefault(msg, 25, "")
   };
 
   if (includeInstance) {
@@ -1751,6 +1752,10 @@ proto.pipelines.tekton.v1alpha1.Pipeline.deserializeBinaryFromReader = function(
     case 24:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsNotExistDockerfile(value);
+      break;
+    case 25:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHostUrl(value);
       break;
     default:
       reader.skipField();
@@ -1932,6 +1937,13 @@ proto.pipelines.tekton.v1alpha1.Pipeline.serializeBinaryToWriter = function(mess
   if (f) {
     writer.writeBool(
       24,
+      f
+    );
+  }
+  f = message.getHostUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      25,
       f
     );
   }
@@ -2471,6 +2483,24 @@ proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getIsNotExistDockerfile = fun
  */
 proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setIsNotExistDockerfile = function(value) {
   return jspb.Message.setProto3BooleanField(this, 24, value);
+};
+
+
+/**
+ * optional string host_url = 25;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.getHostUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.Pipeline} returns this
+ */
+proto.pipelines.tekton.v1alpha1.Pipeline.prototype.setHostUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 25, value);
 };
 
 

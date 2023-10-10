@@ -1355,6 +1355,7 @@ class Pipeline final :
     kApplicationIdFieldNumber = 8,
     kRuntimeIdFieldNumber = 9,
     kStatusTypeFieldNumber = 12,
+    kHostUrlFieldNumber = 25,
     kTrafficTypeFieldNumber = 3,
     kIsDefaultFieldNumber = 19,
     kActiveFieldNumber = 20,
@@ -1661,6 +1662,20 @@ class Pipeline final :
   std::string* _internal_mutable_status_type();
   public:
 
+  // string host_url = 25 [json_name = "hostUrl"];
+  void clear_host_url();
+  const std::string& host_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_host_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_host_url();
+  PROTOBUF_MUST_USE_RESULT std::string* release_host_url();
+  void set_allocated_host_url(std::string* host_url);
+  private:
+  const std::string& _internal_host_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_host_url(const std::string& value);
+  std::string* _internal_mutable_host_url();
+  public:
+
   // int32 traffic_type = 3 [json_name = "trafficType"];
   void clear_traffic_type();
   ::PROTOBUF_NAMESPACE_ID::int32 traffic_type() const;
@@ -1756,6 +1771,7 @@ class Pipeline final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_url_;
   ::PROTOBUF_NAMESPACE_ID::int32 traffic_type_;
   bool is_default_;
   bool active_;
@@ -5757,6 +5773,52 @@ inline void Pipeline::_internal_set_is_not_exist_dockerfile(bool value) {
 inline void Pipeline::set_is_not_exist_dockerfile(bool value) {
   _internal_set_is_not_exist_dockerfile(value);
   // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.is_not_exist_dockerfile)
+}
+
+// string host_url = 25 [json_name = "hostUrl"];
+inline void Pipeline::clear_host_url() {
+  host_url_.ClearToEmpty();
+}
+inline const std::string& Pipeline::host_url() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.Pipeline.host_url)
+  return _internal_host_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Pipeline::set_host_url(ArgT0&& arg0, ArgT... args) {
+ 
+ host_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.Pipeline.host_url)
+}
+inline std::string* Pipeline::mutable_host_url() {
+  std::string* _s = _internal_mutable_host_url();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.Pipeline.host_url)
+  return _s;
+}
+inline const std::string& Pipeline::_internal_host_url() const {
+  return host_url_.Get();
+}
+inline void Pipeline::_internal_set_host_url(const std::string& value) {
+  
+  host_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Pipeline::_internal_mutable_host_url() {
+  
+  return host_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Pipeline::release_host_url() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.Pipeline.host_url)
+  return host_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Pipeline::set_allocated_host_url(std::string* host_url) {
+  if (host_url != nullptr) {
+    
+  } else {
+    
+  }
+  host_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), host_url,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.Pipeline.host_url)
 }
 
 // -------------------------------------------------------------------
