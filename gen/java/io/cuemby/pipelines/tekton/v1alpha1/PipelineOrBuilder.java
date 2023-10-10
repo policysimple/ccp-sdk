@@ -444,4 +444,16 @@ public interface PipelineOrBuilder extends
    * @return The isNotExistDockerfile.
    */
   boolean getIsNotExistDockerfile();
+
+  /**
+   * <code>string host_url = 25 [json_name = "hostUrl"];</code>
+   * @return The hostUrl.
+   */
+  java.lang.String getHostUrl();
+  /**
+   * <code>string host_url = 25 [json_name = "hostUrl"];</code>
+   * @return The bytes for hostUrl.
+   */
+  com.google.protobuf.ByteString
+      getHostUrlBytes();
 }
