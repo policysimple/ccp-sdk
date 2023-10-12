@@ -69,6 +69,11 @@ class RuntimeAPIServiceStub(object):
         request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.AlreadyExistsRuntimeRequest.SerializeToString,
         response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.AlreadyExistsRuntimeResponse.FromString,
         )
+    self.GetRuntimesInLast24Hours = channel.unary_unary(
+        '/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesInLast24Hours',
+        request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.GetRuntimesInLast24HoursRequest.SerializeToString,
+        response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.GetRuntimesInLast24HoursResponse.FromString,
+        )
 
 
 class RuntimeAPIServiceServicer(object):
@@ -152,6 +157,13 @@ class RuntimeAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetRuntimesInLast24Hours(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_RuntimeAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -209,6 +221,11 @@ def add_RuntimeAPIServiceServicer_to_server(servicer, server):
           servicer.AlreadyExistsRuntime,
           request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.AlreadyExistsRuntimeRequest.FromString,
           response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.AlreadyExistsRuntimeResponse.SerializeToString,
+      ),
+      'GetRuntimesInLast24Hours': grpc.unary_unary_rpc_method_handler(
+          servicer.GetRuntimesInLast24Hours,
+          request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.GetRuntimesInLast24HoursRequest.FromString,
+          response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.GetRuntimesInLast24HoursResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
