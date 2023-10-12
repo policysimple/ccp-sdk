@@ -31,6 +31,7 @@ static const char* RuntimeAPIService_method_names[] = {
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/ListRuntimes",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/RebuildRuntime",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/AlreadyExistsRuntime",
+  "/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesInLast24Hours",
 };
 
 std::unique_ptr< RuntimeAPIService::Stub> RuntimeAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -51,6 +52,7 @@ RuntimeAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_ListRuntimes_(RuntimeAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_RebuildRuntime_(RuntimeAPIService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_AlreadyExistsRuntime_(RuntimeAPIService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetRuntimesInLast24Hours_(RuntimeAPIService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RuntimeAPIService::Stub::GetRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimeRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimeResponse* response) {
@@ -229,6 +231,22 @@ void RuntimeAPIService::Stub::experimental_async::AlreadyExistsRuntime(::grpc::C
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_AlreadyExistsRuntime_, context, request, false);
 }
 
+::grpc::Status RuntimeAPIService::Stub::GetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetRuntimesInLast24Hours_, context, request, response);
+}
+
+void RuntimeAPIService::Stub::experimental_async::GetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetRuntimesInLast24Hours_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>* RuntimeAPIService::Stub::AsyncGetRuntimesInLast24HoursRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>::Create(channel_.get(), cq, rpcmethod_GetRuntimesInLast24Hours_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>* RuntimeAPIService::Stub::PrepareAsyncGetRuntimesInLast24HoursRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>::Create(channel_.get(), cq, rpcmethod_GetRuntimesInLast24Hours_, context, request, false);
+}
+
 RuntimeAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RuntimeAPIService_method_names[0],
@@ -285,6 +303,11 @@ RuntimeAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>(
           std::mem_fn(&RuntimeAPIService::Service::AlreadyExistsRuntime), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RuntimeAPIService_method_names[11],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>(
+          std::mem_fn(&RuntimeAPIService::Service::GetRuntimesInLast24Hours), this)));
 }
 
 RuntimeAPIService::Service::~Service() {
@@ -361,6 +384,13 @@ RuntimeAPIService::Service::~Service() {
 }
 
 ::grpc::Status RuntimeAPIService::Service::AlreadyExistsRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RuntimeAPIService::Service::GetRuntimesInLast24Hours(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response) {
   (void) context;
   (void) request;
   (void) response;

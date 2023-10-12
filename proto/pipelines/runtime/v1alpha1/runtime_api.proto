@@ -26,6 +26,7 @@ service RuntimeAPIService{
     rpc ListRuntimes(ListRuntimesRequest) returns (ListRuntimesResponse) {};
     rpc RebuildRuntime(RebuildRuntimeRequest) returns (RebuildRuntimeResponse) {};
     rpc AlreadyExistsRuntime(AlreadyExistsRuntimeRequest) returns (AlreadyExistsRuntimeResponse) {};
+    rpc GetRuntimesInLast24Hours(GetRuntimesInLast24HoursRequest) returns (GetRuntimesInLast24HoursResponse) {};
 }
 
 message CreateRuntimeRequest {
@@ -149,5 +150,13 @@ message AlreadyExistsRuntimeRequest {
 
 message AlreadyExistsRuntimeResponse {
     string already_exists = 1;
+    string status = 2;
+}
+
+message GetRuntimesInLast24HoursRequest {
+}
+
+message GetRuntimesInLast24HoursResponse {
+    pipelines.runtime.v1alpha1.RuntimeList runtime_list = 1;
     string status = 2;
 }

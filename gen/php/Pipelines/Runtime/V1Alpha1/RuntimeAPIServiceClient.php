@@ -159,4 +159,17 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Runtime\V1Alpha1\GetRuntimesInLast24HoursRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetRuntimesInLast24Hours(\Pipelines\Runtime\V1Alpha1\GetRuntimesInLast24HoursRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesInLast24Hours',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\GetRuntimesInLast24HoursResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

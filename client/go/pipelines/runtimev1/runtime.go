@@ -208,3 +208,20 @@ func AlreadyExistsRuntime(in *runtimepkgv1.AlreadyExistsRuntimeRequest) (respons
 	}
 	return response, nil
 }
+
+func GetRuntimesInLast24Hours(in *runtimepkgv1.GetRuntimesInLast24HoursRequest) (response *runtimepkgv1.GetRuntimesInLast24HoursResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetRuntimesInLast24Hours(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error getting runtimes", err)
+		return nil, fmt.Errorf("[GetRuntimesInLast24Hours] %w", err)
+	}
+	return response, nil
+}

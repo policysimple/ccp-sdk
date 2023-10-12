@@ -137,6 +137,28 @@ function deserialize_pipelines_runtime_v1alpha1_GetRuntimeResponse(buffer_arg) {
   return pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_runtime_v1alpha1_GetRuntimesInLast24HoursRequest(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimesInLast24HoursRequest)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.GetRuntimesInLast24HoursRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_GetRuntimesInLast24HoursRequest(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimesInLast24HoursRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_runtime_v1alpha1_GetRuntimesInLast24HoursResponse(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimesInLast24HoursResponse)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.GetRuntimesInLast24HoursResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_GetRuntimesInLast24HoursResponse(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimesInLast24HoursResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_runtime_v1alpha1_ListRuntimesRequest(arg) {
   if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesRequest)) {
     throw new Error('Expected argument of type pipelines.runtime.v1alpha1.ListRuntimesRequest');
@@ -369,6 +391,17 @@ var RuntimeAPIServiceService = exports.RuntimeAPIServiceService = {
     requestDeserialize: deserialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeRequest,
     responseSerialize: serialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeResponse,
     responseDeserialize: deserialize_pipelines_runtime_v1alpha1_AlreadyExistsRuntimeResponse,
+  },
+  getRuntimesInLast24Hours: {
+    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesInLast24Hours',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimesInLast24HoursRequest,
+    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimesInLast24HoursResponse,
+    requestSerialize: serialize_pipelines_runtime_v1alpha1_GetRuntimesInLast24HoursRequest,
+    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_GetRuntimesInLast24HoursRequest,
+    responseSerialize: serialize_pipelines_runtime_v1alpha1_GetRuntimesInLast24HoursResponse,
+    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_GetRuntimesInLast24HoursResponse,
   },
 };
 

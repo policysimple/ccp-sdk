@@ -114,6 +114,13 @@ class RuntimeAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>> PrepareAsyncAlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>>(PrepareAsyncAlreadyExistsRuntimeRaw(context, request, cq));
     }
+    virtual ::grpc::Status GetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>> AsyncGetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>>(AsyncGetRuntimesInLast24HoursRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>> PrepareAsyncGetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>>(PrepareAsyncGetRuntimesInLast24HoursRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -128,6 +135,7 @@ class RuntimeAPIService final {
       virtual void ListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RebuildRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest* request, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -153,6 +161,8 @@ class RuntimeAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>* PrepareAsyncRebuildRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* AsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* PrepareAsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>* AsyncGetRuntimesInLast24HoursRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>* PrepareAsyncGetRuntimesInLast24HoursRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -234,6 +244,13 @@ class RuntimeAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>> PrepareAsyncAlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>>(PrepareAsyncAlreadyExistsRuntimeRaw(context, request, cq));
     }
+    ::grpc::Status GetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>> AsyncGetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>>(AsyncGetRuntimesInLast24HoursRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>> PrepareAsyncGetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>>(PrepareAsyncGetRuntimesInLast24HoursRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -248,6 +265,7 @@ class RuntimeAPIService final {
       void ListRuntimes(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response, std::function<void(::grpc::Status)>) override;
       void RebuildRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest* request, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse* response, std::function<void(::grpc::Status)>) override;
       void AlreadyExistsRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetRuntimesInLast24Hours(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -281,6 +299,8 @@ class RuntimeAPIService final {
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse>* PrepareAsyncRebuildRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* AsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* PrepareAsyncAlreadyExistsRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>* AsyncGetRuntimesInLast24HoursRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>* PrepareAsyncGetRuntimesInLast24HoursRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateRuntime_;
@@ -292,6 +312,7 @@ class RuntimeAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_ListRuntimes_;
     const ::grpc::internal::RpcMethod rpcmethod_RebuildRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_AlreadyExistsRuntime_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetRuntimesInLast24Hours_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -310,6 +331,7 @@ class RuntimeAPIService final {
     virtual ::grpc::Status ListRuntimes(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::ListRuntimesRequest* request, ::pipelines::runtime::v1alpha1::ListRuntimesResponse* response);
     virtual ::grpc::Status RebuildRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::RebuildRuntimeRequest* request, ::pipelines::runtime::v1alpha1::RebuildRuntimeResponse* response);
     virtual ::grpc::Status AlreadyExistsRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response);
+    virtual ::grpc::Status GetRuntimesInLast24Hours(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetRuntime : public BaseClass {
@@ -531,7 +553,27 @@ class RuntimeAPIService final {
       ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetRuntime<WithAsyncMethod_CreateRuntime<WithAsyncMethod_UpdateRuntime<WithAsyncMethod_UpdateResponseMessageRuntime<WithAsyncMethod_ResponseMessageDeleteRuntimeByAppId<WithAsyncMethod_DeleteRuntime<WithAsyncMethod_DeleteRuntimesByApplication<WithAsyncMethod_DeleteRuntimesByEnvironment<WithAsyncMethod_ListRuntimes<WithAsyncMethod_RebuildRuntime<WithAsyncMethod_AlreadyExistsRuntime<Service > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetRuntimesInLast24Hours : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetRuntimesInLast24Hours() {
+      ::grpc::Service::MarkMethodAsync(11);
+    }
+    ~WithAsyncMethod_GetRuntimesInLast24Hours() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRuntimesInLast24Hours(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetRuntimesInLast24Hours(::grpc::ServerContext* context, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::grpc::ServerAsyncResponseWriter< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_GetRuntime<WithAsyncMethod_CreateRuntime<WithAsyncMethod_UpdateRuntime<WithAsyncMethod_UpdateResponseMessageRuntime<WithAsyncMethod_ResponseMessageDeleteRuntimeByAppId<WithAsyncMethod_DeleteRuntime<WithAsyncMethod_DeleteRuntimesByApplication<WithAsyncMethod_DeleteRuntimesByEnvironment<WithAsyncMethod_ListRuntimes<WithAsyncMethod_RebuildRuntime<WithAsyncMethod_AlreadyExistsRuntime<WithAsyncMethod_GetRuntimesInLast24Hours<Service > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_GetRuntime : public BaseClass {
    private:
@@ -715,6 +757,23 @@ class RuntimeAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status AlreadyExistsRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest* request, ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetRuntimesInLast24Hours : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetRuntimesInLast24Hours() {
+      ::grpc::Service::MarkMethodGeneric(11);
+    }
+    ~WithGenericMethod_GetRuntimesInLast24Hours() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRuntimesInLast24Hours(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -940,6 +999,26 @@ class RuntimeAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetRuntimesInLast24Hours : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetRuntimesInLast24Hours() {
+      ::grpc::Service::MarkMethodRaw(11);
+    }
+    ~WithRawMethod_GetRuntimesInLast24Hours() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRuntimesInLast24Hours(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetRuntimesInLast24Hours(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetRuntime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1159,9 +1238,29 @@ class RuntimeAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedAlreadyExistsRuntime(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeRequest,::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<Service > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetRuntimesInLast24Hours : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetRuntimesInLast24Hours() {
+      ::grpc::Service::MarkMethodStreamed(11,
+        new ::grpc::internal::StreamedUnaryHandler< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>(std::bind(&WithStreamedUnaryMethod_GetRuntimesInLast24Hours<BaseClass>::StreamedGetRuntimesInLast24Hours, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetRuntimesInLast24Hours() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetRuntimesInLast24Hours(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetRuntimesInLast24Hours(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest,::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<WithStreamedUnaryMethod_GetRuntimesInLast24Hours<Service > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<Service > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<WithStreamedUnaryMethod_GetRuntimesInLast24Hours<Service > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1
