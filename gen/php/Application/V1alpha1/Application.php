@@ -73,6 +73,10 @@ class Application extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool no_docker_exists = 15 [json_name = "noDockerExists"];</code>
      */
     protected $no_docker_exists = false;
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+     */
+    protected $container_registry = null;
 
     /**
      * Constructor.
@@ -95,6 +99,7 @@ class Application extends \Google\Protobuf\Internal\Message
      *     @type bool $integration_status
      *     @type int $docker_image_buildpack
      *     @type bool $no_docker_exists
+     *     @type \Application\V1alpha1\ContainerRegistry $container_registry
      * }
      */
     public function __construct($data = NULL) {
@@ -458,6 +463,38 @@ class Application extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->no_docker_exists = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+     * @return \Application\V1alpha1\ContainerRegistry|null
+     */
+    public function getContainerRegistry()
+    {
+        return $this->container_registry;
+    }
+
+    public function hasContainerRegistry()
+    {
+        return isset($this->container_registry);
+    }
+
+    public function clearContainerRegistry()
+    {
+        unset($this->container_registry);
+    }
+
+    /**
+     * Generated from protobuf field <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+     * @param \Application\V1alpha1\ContainerRegistry $var
+     * @return $this
+     */
+    public function setContainerRegistry($var)
+    {
+        GPBUtil::checkMessage($var, \Application\V1alpha1\ContainerRegistry::class);
+        $this->container_registry = $var;
 
         return $this;
     }

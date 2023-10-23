@@ -109,6 +109,20 @@ struct ScalingDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ScalingDefaultTypeInternal _Scaling_default_instance_;
+constexpr ContainerRegistry::ContainerRegistry(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : registry_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , password_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ContainerRegistryDefaultTypeInternal {
+  constexpr ContainerRegistryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ContainerRegistryDefaultTypeInternal() {}
+  union {
+    ContainerRegistry _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ContainerRegistryDefaultTypeInternal _ContainerRegistry_default_instance_;
 constexpr Application::Application(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -122,6 +136,7 @@ constexpr Application::Application(
   , repository_(nullptr)
   , configuration_(nullptr)
   , scaling_(nullptr)
+  , container_registry_(nullptr)
   , traffic_type_(0)
 
   , docker_image_buildpack_(0)
@@ -156,7 +171,7 @@ struct ListApplicationDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListApplicationDefaultTypeInternal _ListApplication_default_instance_;
 }  // namespace v1alpha1
 }  // namespace application
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[9];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto = nullptr;
 
@@ -217,6 +232,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, max_replica_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Scaling, memory_rule_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ContainerRegistry, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ContainerRegistry, registry_url_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ContainerRegistry, user_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ContainerRegistry, password_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -236,6 +259,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_application_2fv1alpha1_2fappli
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, integration_status_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, docker_image_buildpack_),
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, no_docker_exists_),
+  PROTOBUF_FIELD_OFFSET(::application::v1alpha1::Application, container_registry_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::application::v1alpha1::ListApplication, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -255,8 +279,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 27, -1, sizeof(::application::v1alpha1::Env)},
   { 35, -1, sizeof(::application::v1alpha1::Configuration)},
   { 44, -1, sizeof(::application::v1alpha1::Scaling)},
-  { 55, -1, sizeof(::application::v1alpha1::Application)},
-  { 75, -1, sizeof(::application::v1alpha1::ListApplication)},
+  { 55, -1, sizeof(::application::v1alpha1::ContainerRegistry)},
+  { 63, -1, sizeof(::application::v1alpha1::Application)},
+  { 84, -1, sizeof(::application::v1alpha1::ListApplication)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -266,6 +291,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Env_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Configuration_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Scaling_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_ContainerRegistry_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_Application_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::application::v1alpha1::_ListApplication_default_instance_),
 };
@@ -293,45 +319,50 @@ const char descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eprot
   "val\030\003 \001(\tR\017pollingInterval\022\037\n\013min_replic"
   "a\030\004 \001(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\t"
   "R\nmaxReplica\022\037\n\013memory_rule\030\006 \001(\tR\nmemor"
-  "yRule\"\333\005\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n"
-  "\004name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001(\tR\013"
-  "integration\022@\n\nrepository\030\004 \001(\0132 .applic"
-  "ation.v1alpha1.RepositoryR\nrepository\022I\n"
-  "\rconfiguration\030\005 \001(\0132#.application.v1alp"
-  "ha1.ConfigurationR\rconfiguration\022\035\n\nproj"
-  "ect_id\030\006 \001(\tR\tprojectId\022!\n\014name_project\030"
-  "\007 \001(\tR\013nameProject\022#\n\rproject_image\030\010 \001("
-  "\tR\014projectImage\022/\n\023project_description\030\t"
-  " \001(\tR\022projectDescription\022\'\n\017organization"
-  "_id\030\n \001(\tR\016organizationId\0227\n\007scaling\030\013 \001"
-  "(\0132\035.application.v1alpha1.ScalingR\007scali"
-  "ng\022D\n\014traffic_type\030\014 \001(\0162!.application.v"
-  "1alpha1.TrafficTypeR\013trafficType\022-\n\022inte"
-  "gration_status\030\r \001(\010R\021integrationStatus\022"
-  "`\n\026docker_image_buildpack\030\016 \001(\0162*.applic"
-  "ation.v1alpha1.DockerImageBuildpackR\024doc"
-  "kerImageBuildpack\022(\n\020no_docker_exists\030\017 "
-  "\001(\010R\016noDockerExists\"\356\001\n\017ListApplication\022"
-  "\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022@\n\nr"
-  "epository\030\003 \001(\0132 .application.v1alpha1.R"
-  "epositoryR\nrepository\022\035\n\nproject_id\030\006 \001("
-  "\tR\tprojectId\022\'\n\017organization_id\030\007 \001(\tR\016o"
-  "rganizationId\022-\n\022integration_status\030\010 \001("
-  "\010R\021integrationStatus*a\n\013TrafficType\022\034\n\030T"
-  "RAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYP"
-  "E_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002*"
-  "\314\001\n\024DockerImageBuildpack\022&\n\"DOCKER_IMAGE"
-  "_BUILDPACK_UNSPECIFIED\020\000\022!\n\035DOCKER_IMAGE"
-  "_BUILDPACK_GOLANG\020\001\022\037\n\033DOCKER_IMAGE_BUIL"
-  "DPACK_JAVA\020\002\022%\n!DOCKER_IMAGE_BUILDPACK_J"
-  "AVASCRIPT\020\003\022!\n\035DOCKER_IMAGE_BUILDPACK_PY"
-  "THON\020\004B7Z5github.com/cuemby/ccp-sdk/gen/"
-  "go/application/v1alpha1b\006proto3"
+  "yRule\"f\n\021ContainerRegistry\022!\n\014registry_u"
+  "rl\030\001 \001(\tR\013registryUrl\022\022\n\004user\030\002 \001(\tR\004use"
+  "r\022\032\n\010password\030\003 \001(\tR\010password\"\263\006\n\013Applic"
+  "ation\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam"
+  "e\022 \n\013integration\030\003 \001(\tR\013integration\022@\n\nr"
+  "epository\030\004 \001(\0132 .application.v1alpha1.R"
+  "epositoryR\nrepository\022I\n\rconfiguration\030\005"
+  " \001(\0132#.application.v1alpha1.Configuratio"
+  "nR\rconfiguration\022\035\n\nproject_id\030\006 \001(\tR\tpr"
+  "ojectId\022!\n\014name_project\030\007 \001(\tR\013nameProje"
+  "ct\022#\n\rproject_image\030\010 \001(\tR\014projectImage\022"
+  "/\n\023project_description\030\t \001(\tR\022projectDes"
+  "cription\022\'\n\017organization_id\030\n \001(\tR\016organ"
+  "izationId\0227\n\007scaling\030\013 \001(\0132\035.application"
+  ".v1alpha1.ScalingR\007scaling\022D\n\014traffic_ty"
+  "pe\030\014 \001(\0162!.application.v1alpha1.TrafficT"
+  "ypeR\013trafficType\022-\n\022integration_status\030\r"
+  " \001(\010R\021integrationStatus\022`\n\026docker_image_"
+  "buildpack\030\016 \001(\0162*.application.v1alpha1.D"
+  "ockerImageBuildpackR\024dockerImageBuildpac"
+  "k\022(\n\020no_docker_exists\030\017 \001(\010R\016noDockerExi"
+  "sts\022V\n\022container_registry\030\020 \001(\0132\'.applic"
+  "ation.v1alpha1.ContainerRegistryR\021contai"
+  "nerRegistry\"\356\001\n\017ListApplication\022\016\n\002id\030\001 "
+  "\001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022@\n\nrepositor"
+  "y\030\003 \001(\0132 .application.v1alpha1.Repositor"
+  "yR\nrepository\022\035\n\nproject_id\030\006 \001(\tR\tproje"
+  "ctId\022\'\n\017organization_id\030\007 \001(\tR\016organizat"
+  "ionId\022-\n\022integration_status\030\010 \001(\010R\021integ"
+  "rationStatus*a\n\013TrafficType\022\034\n\030TRAFFIC_T"
+  "YPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERN"
+  "AL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002*\314\001\n\024Dock"
+  "erImageBuildpack\022&\n\"DOCKER_IMAGE_BUILDPA"
+  "CK_UNSPECIFIED\020\000\022!\n\035DOCKER_IMAGE_BUILDPA"
+  "CK_GOLANG\020\001\022\037\n\033DOCKER_IMAGE_BUILDPACK_JA"
+  "VA\020\002\022%\n!DOCKER_IMAGE_BUILDPACK_JAVASCRIP"
+  "T\020\003\022!\n\035DOCKER_IMAGE_BUILDPACK_PYTHON\020\004B7"
+  "Z5github.com/cuemby/ccp-sdk/gen/go/appli"
+  "cation/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_application_2fv1alpha1_2fapplication_2eproto = {
-  false, false, 2231, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
-  &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 8,
+  false, false, 2423, descriptor_table_protodef_application_2fv1alpha1_2fapplication_2eproto, "application/v1alpha1/application.proto", 
+  &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once, nullptr, 0, 9,
   schemas, file_default_instances, TableStruct_application_2fv1alpha1_2fapplication_2eproto::offsets,
   file_level_metadata_application_2fv1alpha1_2fapplication_2eproto, file_level_enum_descriptors_application_2fv1alpha1_2fapplication_2eproto, file_level_service_descriptors_application_2fv1alpha1_2fapplication_2eproto,
 };
@@ -2296,11 +2327,296 @@ void Scaling::InternalSwap(Scaling* other) {
 
 // ===================================================================
 
+class ContainerRegistry::_Internal {
+ public:
+};
+
+ContainerRegistry::ContainerRegistry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:application.v1alpha1.ContainerRegistry)
+}
+ContainerRegistry::ContainerRegistry(const ContainerRegistry& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  registry_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_registry_url().empty()) {
+    registry_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_registry_url(), 
+      GetArenaForAllocation());
+  }
+  user_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user().empty()) {
+    user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user(), 
+      GetArenaForAllocation());
+  }
+  password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_password().empty()) {
+    password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_password(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:application.v1alpha1.ContainerRegistry)
+}
+
+inline void ContainerRegistry::SharedCtor() {
+registry_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ContainerRegistry::~ContainerRegistry() {
+  // @@protoc_insertion_point(destructor:application.v1alpha1.ContainerRegistry)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ContainerRegistry::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  registry_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  password_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ContainerRegistry::ArenaDtor(void* object) {
+  ContainerRegistry* _this = reinterpret_cast< ContainerRegistry* >(object);
+  (void)_this;
+}
+void ContainerRegistry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ContainerRegistry::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ContainerRegistry::Clear() {
+// @@protoc_insertion_point(message_clear_start:application.v1alpha1.ContainerRegistry)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  registry_url_.ClearToEmpty();
+  user_.ClearToEmpty();
+  password_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ContainerRegistry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string registry_url = 1 [json_name = "registryUrl"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_registry_url();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.ContainerRegistry.registry_url"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user = 2 [json_name = "user"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_user();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.ContainerRegistry.user"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string password = 3 [json_name = "password"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_password();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "application.v1alpha1.ContainerRegistry.password"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ContainerRegistry::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:application.v1alpha1.ContainerRegistry)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string registry_url = 1 [json_name = "registryUrl"];
+  if (!this->_internal_registry_url().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_registry_url().data(), static_cast<int>(this->_internal_registry_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.ContainerRegistry.registry_url");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_registry_url(), target);
+  }
+
+  // string user = 2 [json_name = "user"];
+  if (!this->_internal_user().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user().data(), static_cast<int>(this->_internal_user().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.ContainerRegistry.user");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_user(), target);
+  }
+
+  // string password = 3 [json_name = "password"];
+  if (!this->_internal_password().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_password().data(), static_cast<int>(this->_internal_password().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "application.v1alpha1.ContainerRegistry.password");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_password(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:application.v1alpha1.ContainerRegistry)
+  return target;
+}
+
+size_t ContainerRegistry::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:application.v1alpha1.ContainerRegistry)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string registry_url = 1 [json_name = "registryUrl"];
+  if (!this->_internal_registry_url().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_registry_url());
+  }
+
+  // string user = 2 [json_name = "user"];
+  if (!this->_internal_user().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user());
+  }
+
+  // string password = 3 [json_name = "password"];
+  if (!this->_internal_password().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_password());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ContainerRegistry::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ContainerRegistry::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ContainerRegistry::GetClassData() const { return &_class_data_; }
+
+void ContainerRegistry::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<ContainerRegistry *>(to)->MergeFrom(
+      static_cast<const ContainerRegistry &>(from));
+}
+
+
+void ContainerRegistry::MergeFrom(const ContainerRegistry& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:application.v1alpha1.ContainerRegistry)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_registry_url().empty()) {
+    _internal_set_registry_url(from._internal_registry_url());
+  }
+  if (!from._internal_user().empty()) {
+    _internal_set_user(from._internal_user());
+  }
+  if (!from._internal_password().empty()) {
+    _internal_set_password(from._internal_password());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ContainerRegistry::CopyFrom(const ContainerRegistry& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:application.v1alpha1.ContainerRegistry)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ContainerRegistry::IsInitialized() const {
+  return true;
+}
+
+void ContainerRegistry::InternalSwap(ContainerRegistry* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &registry_url_, GetArenaForAllocation(),
+      &other->registry_url_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_, GetArenaForAllocation(),
+      &other->user_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &password_, GetArenaForAllocation(),
+      &other->password_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ContainerRegistry::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[6]);
+}
+
+// ===================================================================
+
 class Application::_Internal {
  public:
   static const ::application::v1alpha1::Repository& repository(const Application* msg);
   static const ::application::v1alpha1::Configuration& configuration(const Application* msg);
   static const ::application::v1alpha1::Scaling& scaling(const Application* msg);
+  static const ::application::v1alpha1::ContainerRegistry& container_registry(const Application* msg);
 };
 
 const ::application::v1alpha1::Repository&
@@ -2314,6 +2630,10 @@ Application::_Internal::configuration(const Application* msg) {
 const ::application::v1alpha1::Scaling&
 Application::_Internal::scaling(const Application* msg) {
   return *msg->scaling_;
+}
+const ::application::v1alpha1::ContainerRegistry&
+Application::_Internal::container_registry(const Application* msg) {
+  return *msg->container_registry_;
 }
 Application::Application(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2382,6 +2702,11 @@ Application::Application(const Application& from)
   } else {
     scaling_ = nullptr;
   }
+  if (from._internal_has_container_registry()) {
+    container_registry_ = new ::application::v1alpha1::ContainerRegistry(*from.container_registry_);
+  } else {
+    container_registry_ = nullptr;
+  }
   ::memcpy(&traffic_type_, &from.traffic_type_,
     static_cast<size_t>(reinterpret_cast<char*>(&no_docker_exists_) -
     reinterpret_cast<char*>(&traffic_type_)) + sizeof(no_docker_exists_));
@@ -2423,6 +2748,7 @@ inline void Application::SharedDtor() {
   if (this != internal_default_instance()) delete repository_;
   if (this != internal_default_instance()) delete configuration_;
   if (this != internal_default_instance()) delete scaling_;
+  if (this != internal_default_instance()) delete container_registry_;
 }
 
 void Application::ArenaDtor(void* object) {
@@ -2461,6 +2787,10 @@ void Application::Clear() {
     delete scaling_;
   }
   scaling_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && container_registry_ != nullptr) {
+    delete container_registry_;
+  }
+  container_registry_ = nullptr;
   ::memset(&traffic_type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&no_docker_exists_) -
       reinterpret_cast<char*>(&traffic_type_)) + sizeof(no_docker_exists_));
@@ -2593,6 +2923,13 @@ const char* Application::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 120)) {
           no_docker_exists_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          ptr = ctx->ParseMessage(_internal_mutable_container_registry(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2755,6 +3092,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(15, this->_internal_no_docker_exists(), target);
   }
 
+  // .application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];
+  if (this->_internal_has_container_registry()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        16, _Internal::container_registry(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2848,6 +3193,13 @@ size_t Application::ByteSizeLong() const {
         *scaling_);
   }
 
+  // .application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];
+  if (this->_internal_has_container_registry()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *container_registry_);
+  }
+
   // .application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];
   if (this->_internal_traffic_type() != 0) {
     total_size += 1 +
@@ -2931,6 +3283,9 @@ void Application::MergeFrom(const Application& from) {
   if (from._internal_has_scaling()) {
     _internal_mutable_scaling()->::application::v1alpha1::Scaling::MergeFrom(from._internal_scaling());
   }
+  if (from._internal_has_container_registry()) {
+    _internal_mutable_container_registry()->::application::v1alpha1::ContainerRegistry::MergeFrom(from._internal_container_registry());
+  }
   if (from._internal_traffic_type() != 0) {
     _internal_set_traffic_type(from._internal_traffic_type());
   }
@@ -3011,7 +3366,7 @@ void Application::InternalSwap(Application* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Application::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[6]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[7]);
 }
 
 // ===================================================================
@@ -3410,7 +3765,7 @@ void ListApplication::InternalSwap(ListApplication* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListApplication::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_getter, &descriptor_table_application_2fv1alpha1_2fapplication_2eproto_once,
-      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[7]);
+      file_level_metadata_application_2fv1alpha1_2fapplication_2eproto[8]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -3434,6 +3789,9 @@ template<> PROTOBUF_NOINLINE ::application::v1alpha1::Configuration* Arena::Crea
 }
 template<> PROTOBUF_NOINLINE ::application::v1alpha1::Scaling* Arena::CreateMaybeMessage< ::application::v1alpha1::Scaling >(Arena* arena) {
   return Arena::CreateMessageInternal< ::application::v1alpha1::Scaling >(arena);
+}
+template<> PROTOBUF_NOINLINE ::application::v1alpha1::ContainerRegistry* Arena::CreateMaybeMessage< ::application::v1alpha1::ContainerRegistry >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::application::v1alpha1::ContainerRegistry >(arena);
 }
 template<> PROTOBUF_NOINLINE ::application::v1alpha1::Application* Arena::CreateMaybeMessage< ::application::v1alpha1::Application >(Arena* arena) {
   return Arena::CreateMessageInternal< ::application::v1alpha1::Application >(arena);

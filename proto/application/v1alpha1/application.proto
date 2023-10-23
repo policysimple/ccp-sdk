@@ -63,6 +63,12 @@ enum DockerImageBuildpack {
     DOCKER_IMAGE_BUILDPACK_PYTHON = 4;
 }
 
+message ContainerRegistry {
+    string registry_url = 1;
+    string user = 2;
+    string password = 3;
+}
+
 message Application {
     string id = 1;
     string name = 2;
@@ -79,6 +85,7 @@ message Application {
     bool integration_status = 13;
     DockerImageBuildpack docker_image_buildpack = 14;
     bool no_docker_exists = 15;
+    ContainerRegistry container_registry = 16;
 }
 
 message ListApplication {

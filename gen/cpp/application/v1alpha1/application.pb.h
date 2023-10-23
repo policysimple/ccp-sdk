@@ -47,7 +47,7 @@ struct TableStruct_application_2fv1alpha1_2fapplication_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -68,6 +68,9 @@ extern CommandDefaultTypeInternal _Command_default_instance_;
 class Configuration;
 struct ConfigurationDefaultTypeInternal;
 extern ConfigurationDefaultTypeInternal _Configuration_default_instance_;
+class ContainerRegistry;
+struct ContainerRegistryDefaultTypeInternal;
+extern ContainerRegistryDefaultTypeInternal _ContainerRegistry_default_instance_;
 class Env;
 struct EnvDefaultTypeInternal;
 extern EnvDefaultTypeInternal _Env_default_instance_;
@@ -87,6 +90,7 @@ template<> ::application::v1alpha1::Application* Arena::CreateMaybeMessage<::app
 template<> ::application::v1alpha1::Branch* Arena::CreateMaybeMessage<::application::v1alpha1::Branch>(Arena*);
 template<> ::application::v1alpha1::Command* Arena::CreateMaybeMessage<::application::v1alpha1::Command>(Arena*);
 template<> ::application::v1alpha1::Configuration* Arena::CreateMaybeMessage<::application::v1alpha1::Configuration>(Arena*);
+template<> ::application::v1alpha1::ContainerRegistry* Arena::CreateMaybeMessage<::application::v1alpha1::ContainerRegistry>(Arena*);
 template<> ::application::v1alpha1::Env* Arena::CreateMaybeMessage<::application::v1alpha1::Env>(Arena*);
 template<> ::application::v1alpha1::ListApplication* Arena::CreateMaybeMessage<::application::v1alpha1::ListApplication>(Arena*);
 template<> ::application::v1alpha1::Repository* Arena::CreateMaybeMessage<::application::v1alpha1::Repository>(Arena*);
@@ -1311,6 +1315,182 @@ class Scaling final :
 };
 // -------------------------------------------------------------------
 
+class ContainerRegistry final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.ContainerRegistry) */ {
+ public:
+  inline ContainerRegistry() : ContainerRegistry(nullptr) {}
+  ~ContainerRegistry() override;
+  explicit constexpr ContainerRegistry(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ContainerRegistry(const ContainerRegistry& from);
+  ContainerRegistry(ContainerRegistry&& from) noexcept
+    : ContainerRegistry() {
+    *this = ::std::move(from);
+  }
+
+  inline ContainerRegistry& operator=(const ContainerRegistry& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ContainerRegistry& operator=(ContainerRegistry&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ContainerRegistry& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ContainerRegistry* internal_default_instance() {
+    return reinterpret_cast<const ContainerRegistry*>(
+               &_ContainerRegistry_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(ContainerRegistry& a, ContainerRegistry& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ContainerRegistry* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ContainerRegistry* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ContainerRegistry* New() const final {
+    return new ContainerRegistry();
+  }
+
+  ContainerRegistry* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ContainerRegistry>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ContainerRegistry& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ContainerRegistry& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ContainerRegistry* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "application.v1alpha1.ContainerRegistry";
+  }
+  protected:
+  explicit ContainerRegistry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegistryUrlFieldNumber = 1,
+    kUserFieldNumber = 2,
+    kPasswordFieldNumber = 3,
+  };
+  // string registry_url = 1 [json_name = "registryUrl"];
+  void clear_registry_url();
+  const std::string& registry_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_registry_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_registry_url();
+  PROTOBUF_MUST_USE_RESULT std::string* release_registry_url();
+  void set_allocated_registry_url(std::string* registry_url);
+  private:
+  const std::string& _internal_registry_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_registry_url(const std::string& value);
+  std::string* _internal_mutable_registry_url();
+  public:
+
+  // string user = 2 [json_name = "user"];
+  void clear_user();
+  const std::string& user() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user();
+  void set_allocated_user(std::string* user);
+  private:
+  const std::string& _internal_user() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user(const std::string& value);
+  std::string* _internal_mutable_user();
+  public:
+
+  // string password = 3 [json_name = "password"];
+  void clear_password();
+  const std::string& password() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_password(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_password();
+  PROTOBUF_MUST_USE_RESULT std::string* release_password();
+  void set_allocated_password(std::string* password);
+  private:
+  const std::string& _internal_password() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_password(const std::string& value);
+  std::string* _internal_mutable_password();
+  public:
+
+  // @@protoc_insertion_point(class_scope:application.v1alpha1.ContainerRegistry)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr registry_url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr password_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_application_2fv1alpha1_2fapplication_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Application final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:application.v1alpha1.Application) */ {
  public:
@@ -1355,7 +1535,7 @@ class Application final :
                &_Application_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(Application& a, Application& b) {
     a.Swap(&b);
@@ -1437,6 +1617,7 @@ class Application final :
     kRepositoryFieldNumber = 4,
     kConfigurationFieldNumber = 5,
     kScalingFieldNumber = 11,
+    kContainerRegistryFieldNumber = 16,
     kTrafficTypeFieldNumber = 12,
     kDockerImageBuildpackFieldNumber = 14,
     kIntegrationStatusFieldNumber = 13,
@@ -1608,6 +1789,24 @@ class Application final :
       ::application::v1alpha1::Scaling* scaling);
   ::application::v1alpha1::Scaling* unsafe_arena_release_scaling();
 
+  // .application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];
+  bool has_container_registry() const;
+  private:
+  bool _internal_has_container_registry() const;
+  public:
+  void clear_container_registry();
+  const ::application::v1alpha1::ContainerRegistry& container_registry() const;
+  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::ContainerRegistry* release_container_registry();
+  ::application::v1alpha1::ContainerRegistry* mutable_container_registry();
+  void set_allocated_container_registry(::application::v1alpha1::ContainerRegistry* container_registry);
+  private:
+  const ::application::v1alpha1::ContainerRegistry& _internal_container_registry() const;
+  ::application::v1alpha1::ContainerRegistry* _internal_mutable_container_registry();
+  public:
+  void unsafe_arena_set_allocated_container_registry(
+      ::application::v1alpha1::ContainerRegistry* container_registry);
+  ::application::v1alpha1::ContainerRegistry* unsafe_arena_release_container_registry();
+
   // .application.v1alpha1.TrafficType traffic_type = 12 [json_name = "trafficType"];
   void clear_traffic_type();
   ::application::v1alpha1::TrafficType traffic_type() const;
@@ -1662,6 +1861,7 @@ class Application final :
   ::application::v1alpha1::Repository* repository_;
   ::application::v1alpha1::Configuration* configuration_;
   ::application::v1alpha1::Scaling* scaling_;
+  ::application::v1alpha1::ContainerRegistry* container_registry_;
   int traffic_type_;
   int docker_image_buildpack_;
   bool integration_status_;
@@ -1715,7 +1915,7 @@ class ListApplication final :
                &_ListApplication_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(ListApplication& a, ListApplication& b) {
     a.Swap(&b);
@@ -3003,6 +3203,148 @@ inline void Scaling::set_allocated_memory_rule(std::string* memory_rule) {
 
 // -------------------------------------------------------------------
 
+// ContainerRegistry
+
+// string registry_url = 1 [json_name = "registryUrl"];
+inline void ContainerRegistry::clear_registry_url() {
+  registry_url_.ClearToEmpty();
+}
+inline const std::string& ContainerRegistry::registry_url() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ContainerRegistry.registry_url)
+  return _internal_registry_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ContainerRegistry::set_registry_url(ArgT0&& arg0, ArgT... args) {
+ 
+ registry_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.ContainerRegistry.registry_url)
+}
+inline std::string* ContainerRegistry::mutable_registry_url() {
+  std::string* _s = _internal_mutable_registry_url();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.ContainerRegistry.registry_url)
+  return _s;
+}
+inline const std::string& ContainerRegistry::_internal_registry_url() const {
+  return registry_url_.Get();
+}
+inline void ContainerRegistry::_internal_set_registry_url(const std::string& value) {
+  
+  registry_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ContainerRegistry::_internal_mutable_registry_url() {
+  
+  return registry_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ContainerRegistry::release_registry_url() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.ContainerRegistry.registry_url)
+  return registry_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ContainerRegistry::set_allocated_registry_url(std::string* registry_url) {
+  if (registry_url != nullptr) {
+    
+  } else {
+    
+  }
+  registry_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), registry_url,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.ContainerRegistry.registry_url)
+}
+
+// string user = 2 [json_name = "user"];
+inline void ContainerRegistry::clear_user() {
+  user_.ClearToEmpty();
+}
+inline const std::string& ContainerRegistry::user() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ContainerRegistry.user)
+  return _internal_user();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ContainerRegistry::set_user(ArgT0&& arg0, ArgT... args) {
+ 
+ user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.ContainerRegistry.user)
+}
+inline std::string* ContainerRegistry::mutable_user() {
+  std::string* _s = _internal_mutable_user();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.ContainerRegistry.user)
+  return _s;
+}
+inline const std::string& ContainerRegistry::_internal_user() const {
+  return user_.Get();
+}
+inline void ContainerRegistry::_internal_set_user(const std::string& value) {
+  
+  user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ContainerRegistry::_internal_mutable_user() {
+  
+  return user_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ContainerRegistry::release_user() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.ContainerRegistry.user)
+  return user_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ContainerRegistry::set_allocated_user(std::string* user) {
+  if (user != nullptr) {
+    
+  } else {
+    
+  }
+  user_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.ContainerRegistry.user)
+}
+
+// string password = 3 [json_name = "password"];
+inline void ContainerRegistry::clear_password() {
+  password_.ClearToEmpty();
+}
+inline const std::string& ContainerRegistry::password() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.ContainerRegistry.password)
+  return _internal_password();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ContainerRegistry::set_password(ArgT0&& arg0, ArgT... args) {
+ 
+ password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:application.v1alpha1.ContainerRegistry.password)
+}
+inline std::string* ContainerRegistry::mutable_password() {
+  std::string* _s = _internal_mutable_password();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.ContainerRegistry.password)
+  return _s;
+}
+inline const std::string& ContainerRegistry::_internal_password() const {
+  return password_.Get();
+}
+inline void ContainerRegistry::_internal_set_password(const std::string& value) {
+  
+  password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ContainerRegistry::_internal_mutable_password() {
+  
+  return password_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ContainerRegistry::release_password() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.ContainerRegistry.password)
+  return password_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ContainerRegistry::set_allocated_password(std::string* password) {
+  if (password != nullptr) {
+    
+  } else {
+    
+  }
+  password_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), password,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.ContainerRegistry.password)
+}
+
+// -------------------------------------------------------------------
+
 // Application
 
 // string id = 1 [json_name = "id"];
@@ -3723,6 +4065,96 @@ inline void Application::set_no_docker_exists(bool value) {
   // @@protoc_insertion_point(field_set:application.v1alpha1.Application.no_docker_exists)
 }
 
+// .application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];
+inline bool Application::_internal_has_container_registry() const {
+  return this != internal_default_instance() && container_registry_ != nullptr;
+}
+inline bool Application::has_container_registry() const {
+  return _internal_has_container_registry();
+}
+inline void Application::clear_container_registry() {
+  if (GetArenaForAllocation() == nullptr && container_registry_ != nullptr) {
+    delete container_registry_;
+  }
+  container_registry_ = nullptr;
+}
+inline const ::application::v1alpha1::ContainerRegistry& Application::_internal_container_registry() const {
+  const ::application::v1alpha1::ContainerRegistry* p = container_registry_;
+  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::ContainerRegistry&>(
+      ::application::v1alpha1::_ContainerRegistry_default_instance_);
+}
+inline const ::application::v1alpha1::ContainerRegistry& Application::container_registry() const {
+  // @@protoc_insertion_point(field_get:application.v1alpha1.Application.container_registry)
+  return _internal_container_registry();
+}
+inline void Application::unsafe_arena_set_allocated_container_registry(
+    ::application::v1alpha1::ContainerRegistry* container_registry) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(container_registry_);
+  }
+  container_registry_ = container_registry;
+  if (container_registry) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:application.v1alpha1.Application.container_registry)
+}
+inline ::application::v1alpha1::ContainerRegistry* Application::release_container_registry() {
+  
+  ::application::v1alpha1::ContainerRegistry* temp = container_registry_;
+  container_registry_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::application::v1alpha1::ContainerRegistry* Application::unsafe_arena_release_container_registry() {
+  // @@protoc_insertion_point(field_release:application.v1alpha1.Application.container_registry)
+  
+  ::application::v1alpha1::ContainerRegistry* temp = container_registry_;
+  container_registry_ = nullptr;
+  return temp;
+}
+inline ::application::v1alpha1::ContainerRegistry* Application::_internal_mutable_container_registry() {
+  
+  if (container_registry_ == nullptr) {
+    auto* p = CreateMaybeMessage<::application::v1alpha1::ContainerRegistry>(GetArenaForAllocation());
+    container_registry_ = p;
+  }
+  return container_registry_;
+}
+inline ::application::v1alpha1::ContainerRegistry* Application::mutable_container_registry() {
+  ::application::v1alpha1::ContainerRegistry* _msg = _internal_mutable_container_registry();
+  // @@protoc_insertion_point(field_mutable:application.v1alpha1.Application.container_registry)
+  return _msg;
+}
+inline void Application::set_allocated_container_registry(::application::v1alpha1::ContainerRegistry* container_registry) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete container_registry_;
+  }
+  if (container_registry) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::application::v1alpha1::ContainerRegistry>::GetOwningArena(container_registry);
+    if (message_arena != submessage_arena) {
+      container_registry = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, container_registry, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  container_registry_ = container_registry;
+  // @@protoc_insertion_point(field_set_allocated:application.v1alpha1.Application.container_registry)
+}
+
 // -------------------------------------------------------------------
 
 // ListApplication
@@ -4024,6 +4456,8 @@ inline void ListApplication::set_integration_status(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
