@@ -6707,6 +6707,874 @@ public final class ApplicationOuterClass {
 
   }
 
+  public interface ContainerRegistryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:application.v1alpha1.ContainerRegistry)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string registry_url = 1 [json_name = "registryUrl"];</code>
+     * @return The registryUrl.
+     */
+    java.lang.String getRegistryUrl();
+    /**
+     * <code>string registry_url = 1 [json_name = "registryUrl"];</code>
+     * @return The bytes for registryUrl.
+     */
+    com.google.protobuf.ByteString
+        getRegistryUrlBytes();
+
+    /**
+     * <code>string user = 2 [json_name = "user"];</code>
+     * @return The user.
+     */
+    java.lang.String getUser();
+    /**
+     * <code>string user = 2 [json_name = "user"];</code>
+     * @return The bytes for user.
+     */
+    com.google.protobuf.ByteString
+        getUserBytes();
+
+    /**
+     * <code>string password = 3 [json_name = "password"];</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 3 [json_name = "password"];</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+  }
+  /**
+   * Protobuf type {@code application.v1alpha1.ContainerRegistry}
+   */
+  public static final class ContainerRegistry extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:application.v1alpha1.ContainerRegistry)
+      ContainerRegistryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ContainerRegistry.newBuilder() to construct.
+    private ContainerRegistry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ContainerRegistry() {
+      registryUrl_ = "";
+      user_ = "";
+      password_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ContainerRegistry();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ContainerRegistry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              registryUrl_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              user_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_ContainerRegistry_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_ContainerRegistry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              application.v1alpha1.ApplicationOuterClass.ContainerRegistry.class, application.v1alpha1.ApplicationOuterClass.ContainerRegistry.Builder.class);
+    }
+
+    public static final int REGISTRY_URL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object registryUrl_;
+    /**
+     * <code>string registry_url = 1 [json_name = "registryUrl"];</code>
+     * @return The registryUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getRegistryUrl() {
+      java.lang.Object ref = registryUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        registryUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string registry_url = 1 [json_name = "registryUrl"];</code>
+     * @return The bytes for registryUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRegistryUrlBytes() {
+      java.lang.Object ref = registryUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        registryUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object user_;
+    /**
+     * <code>string user = 2 [json_name = "user"];</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        user_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user = 2 [json_name = "user"];</code>
+     * @return The bytes for user.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserBytes() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        user_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 3;
+    private volatile java.lang.Object password_;
+    /**
+     * <code>string password = 3 [json_name = "password"];</code>
+     * @return The password.
+     */
+    @java.lang.Override
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string password = 3 [json_name = "password"];</code>
+     * @return The bytes for password.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getRegistryUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, registryUrl_);
+      }
+      if (!getUserBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, user_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, password_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRegistryUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, registryUrl_);
+      }
+      if (!getUserBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, user_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, password_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof application.v1alpha1.ApplicationOuterClass.ContainerRegistry)) {
+        return super.equals(obj);
+      }
+      application.v1alpha1.ApplicationOuterClass.ContainerRegistry other = (application.v1alpha1.ApplicationOuterClass.ContainerRegistry) obj;
+
+      if (!getRegistryUrl()
+          .equals(other.getRegistryUrl())) return false;
+      if (!getUser()
+          .equals(other.getUser())) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REGISTRY_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getRegistryUrl().hashCode();
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(application.v1alpha1.ApplicationOuterClass.ContainerRegistry prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code application.v1alpha1.ContainerRegistry}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:application.v1alpha1.ContainerRegistry)
+        application.v1alpha1.ApplicationOuterClass.ContainerRegistryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_ContainerRegistry_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_ContainerRegistry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                application.v1alpha1.ApplicationOuterClass.ContainerRegistry.class, application.v1alpha1.ApplicationOuterClass.ContainerRegistry.Builder.class);
+      }
+
+      // Construct using application.v1alpha1.ApplicationOuterClass.ContainerRegistry.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        registryUrl_ = "";
+
+        user_ = "";
+
+        password_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return application.v1alpha1.ApplicationOuterClass.internal_static_application_v1alpha1_ContainerRegistry_descriptor;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.ContainerRegistry getDefaultInstanceForType() {
+        return application.v1alpha1.ApplicationOuterClass.ContainerRegistry.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.ContainerRegistry build() {
+        application.v1alpha1.ApplicationOuterClass.ContainerRegistry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public application.v1alpha1.ApplicationOuterClass.ContainerRegistry buildPartial() {
+        application.v1alpha1.ApplicationOuterClass.ContainerRegistry result = new application.v1alpha1.ApplicationOuterClass.ContainerRegistry(this);
+        result.registryUrl_ = registryUrl_;
+        result.user_ = user_;
+        result.password_ = password_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof application.v1alpha1.ApplicationOuterClass.ContainerRegistry) {
+          return mergeFrom((application.v1alpha1.ApplicationOuterClass.ContainerRegistry)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(application.v1alpha1.ApplicationOuterClass.ContainerRegistry other) {
+        if (other == application.v1alpha1.ApplicationOuterClass.ContainerRegistry.getDefaultInstance()) return this;
+        if (!other.getRegistryUrl().isEmpty()) {
+          registryUrl_ = other.registryUrl_;
+          onChanged();
+        }
+        if (!other.getUser().isEmpty()) {
+          user_ = other.user_;
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        application.v1alpha1.ApplicationOuterClass.ContainerRegistry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (application.v1alpha1.ApplicationOuterClass.ContainerRegistry) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object registryUrl_ = "";
+      /**
+       * <code>string registry_url = 1 [json_name = "registryUrl"];</code>
+       * @return The registryUrl.
+       */
+      public java.lang.String getRegistryUrl() {
+        java.lang.Object ref = registryUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          registryUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string registry_url = 1 [json_name = "registryUrl"];</code>
+       * @return The bytes for registryUrl.
+       */
+      public com.google.protobuf.ByteString
+          getRegistryUrlBytes() {
+        java.lang.Object ref = registryUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          registryUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string registry_url = 1 [json_name = "registryUrl"];</code>
+       * @param value The registryUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegistryUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        registryUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string registry_url = 1 [json_name = "registryUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegistryUrl() {
+        
+        registryUrl_ = getDefaultInstance().getRegistryUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string registry_url = 1 [json_name = "registryUrl"];</code>
+       * @param value The bytes for registryUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegistryUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        registryUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object user_ = "";
+      /**
+       * <code>string user = 2 [json_name = "user"];</code>
+       * @return The user.
+       */
+      public java.lang.String getUser() {
+        java.lang.Object ref = user_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          user_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user = 2 [json_name = "user"];</code>
+       * @return The bytes for user.
+       */
+      public com.google.protobuf.ByteString
+          getUserBytes() {
+        java.lang.Object ref = user_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          user_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user = 2 [json_name = "user"];</code>
+       * @param value The user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUser(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        user_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user = 2 [json_name = "user"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUser() {
+        
+        user_ = getDefaultInstance().getUser();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user = 2 [json_name = "user"];</code>
+       * @param value The bytes for user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        user_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>string password = 3 [json_name = "password"];</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string password = 3 [json_name = "password"];</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string password = 3 [json_name = "password"];</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 3 [json_name = "password"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 3 [json_name = "password"];</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:application.v1alpha1.ContainerRegistry)
+    }
+
+    // @@protoc_insertion_point(class_scope:application.v1alpha1.ContainerRegistry)
+    private static final application.v1alpha1.ApplicationOuterClass.ContainerRegistry DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new application.v1alpha1.ApplicationOuterClass.ContainerRegistry();
+    }
+
+    public static application.v1alpha1.ApplicationOuterClass.ContainerRegistry getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ContainerRegistry>
+        PARSER = new com.google.protobuf.AbstractParser<ContainerRegistry>() {
+      @java.lang.Override
+      public ContainerRegistry parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ContainerRegistry(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ContainerRegistry> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ContainerRegistry> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.ContainerRegistry getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ApplicationOrBuilder extends
       // @@protoc_insertion_point(interface_extends:application.v1alpha1.Application)
       com.google.protobuf.MessageOrBuilder {
@@ -6885,6 +7753,21 @@ public final class ApplicationOuterClass {
      * @return The noDockerExists.
      */
     boolean getNoDockerExists();
+
+    /**
+     * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+     * @return Whether the containerRegistry field is set.
+     */
+    boolean hasContainerRegistry();
+    /**
+     * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+     * @return The containerRegistry.
+     */
+    application.v1alpha1.ApplicationOuterClass.ContainerRegistry getContainerRegistry();
+    /**
+     * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+     */
+    application.v1alpha1.ApplicationOuterClass.ContainerRegistryOrBuilder getContainerRegistryOrBuilder();
   }
   /**
    * Protobuf type {@code application.v1alpha1.Application}
@@ -7048,6 +7931,19 @@ public final class ApplicationOuterClass {
             case 120: {
 
               noDockerExists_ = input.readBool();
+              break;
+            }
+            case 130: {
+              application.v1alpha1.ApplicationOuterClass.ContainerRegistry.Builder subBuilder = null;
+              if (containerRegistry_ != null) {
+                subBuilder = containerRegistry_.toBuilder();
+              }
+              containerRegistry_ = input.readMessage(application.v1alpha1.ApplicationOuterClass.ContainerRegistry.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(containerRegistry_);
+                containerRegistry_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -7524,6 +8420,32 @@ public final class ApplicationOuterClass {
       return noDockerExists_;
     }
 
+    public static final int CONTAINER_REGISTRY_FIELD_NUMBER = 16;
+    private application.v1alpha1.ApplicationOuterClass.ContainerRegistry containerRegistry_;
+    /**
+     * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+     * @return Whether the containerRegistry field is set.
+     */
+    @java.lang.Override
+    public boolean hasContainerRegistry() {
+      return containerRegistry_ != null;
+    }
+    /**
+     * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+     * @return The containerRegistry.
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.ContainerRegistry getContainerRegistry() {
+      return containerRegistry_ == null ? application.v1alpha1.ApplicationOuterClass.ContainerRegistry.getDefaultInstance() : containerRegistry_;
+    }
+    /**
+     * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+     */
+    @java.lang.Override
+    public application.v1alpha1.ApplicationOuterClass.ContainerRegistryOrBuilder getContainerRegistryOrBuilder() {
+      return getContainerRegistry();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7582,6 +8504,9 @@ public final class ApplicationOuterClass {
       }
       if (noDockerExists_ != false) {
         output.writeBool(15, noDockerExists_);
+      }
+      if (containerRegistry_ != null) {
+        output.writeMessage(16, getContainerRegistry());
       }
       unknownFields.writeTo(output);
     }
@@ -7644,6 +8569,10 @@ public final class ApplicationOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, noDockerExists_);
       }
+      if (containerRegistry_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, getContainerRegistry());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7696,6 +8625,11 @@ public final class ApplicationOuterClass {
       if (dockerImageBuildpack_ != other.dockerImageBuildpack_) return false;
       if (getNoDockerExists()
           != other.getNoDockerExists()) return false;
+      if (hasContainerRegistry() != other.hasContainerRegistry()) return false;
+      if (hasContainerRegistry()) {
+        if (!getContainerRegistry()
+            .equals(other.getContainerRegistry())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7745,6 +8679,10 @@ public final class ApplicationOuterClass {
       hash = (37 * hash) + NO_DOCKER_EXISTS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNoDockerExists());
+      if (hasContainerRegistry()) {
+        hash = (37 * hash) + CONTAINER_REGISTRY_FIELD_NUMBER;
+        hash = (53 * hash) + getContainerRegistry().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7920,6 +8858,12 @@ public final class ApplicationOuterClass {
 
         noDockerExists_ = false;
 
+        if (containerRegistryBuilder_ == null) {
+          containerRegistry_ = null;
+        } else {
+          containerRegistry_ = null;
+          containerRegistryBuilder_ = null;
+        }
         return this;
       }
 
@@ -7973,6 +8917,11 @@ public final class ApplicationOuterClass {
         result.integrationStatus_ = integrationStatus_;
         result.dockerImageBuildpack_ = dockerImageBuildpack_;
         result.noDockerExists_ = noDockerExists_;
+        if (containerRegistryBuilder_ == null) {
+          result.containerRegistry_ = containerRegistry_;
+        } else {
+          result.containerRegistry_ = containerRegistryBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -8073,6 +9022,9 @@ public final class ApplicationOuterClass {
         }
         if (other.getNoDockerExists() != false) {
           setNoDockerExists(other.getNoDockerExists());
+        }
+        if (other.hasContainerRegistry()) {
+          mergeContainerRegistry(other.getContainerRegistry());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9236,6 +10188,125 @@ public final class ApplicationOuterClass {
         noDockerExists_ = false;
         onChanged();
         return this;
+      }
+
+      private application.v1alpha1.ApplicationOuterClass.ContainerRegistry containerRegistry_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.ContainerRegistry, application.v1alpha1.ApplicationOuterClass.ContainerRegistry.Builder, application.v1alpha1.ApplicationOuterClass.ContainerRegistryOrBuilder> containerRegistryBuilder_;
+      /**
+       * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+       * @return Whether the containerRegistry field is set.
+       */
+      public boolean hasContainerRegistry() {
+        return containerRegistryBuilder_ != null || containerRegistry_ != null;
+      }
+      /**
+       * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+       * @return The containerRegistry.
+       */
+      public application.v1alpha1.ApplicationOuterClass.ContainerRegistry getContainerRegistry() {
+        if (containerRegistryBuilder_ == null) {
+          return containerRegistry_ == null ? application.v1alpha1.ApplicationOuterClass.ContainerRegistry.getDefaultInstance() : containerRegistry_;
+        } else {
+          return containerRegistryBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+       */
+      public Builder setContainerRegistry(application.v1alpha1.ApplicationOuterClass.ContainerRegistry value) {
+        if (containerRegistryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          containerRegistry_ = value;
+          onChanged();
+        } else {
+          containerRegistryBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+       */
+      public Builder setContainerRegistry(
+          application.v1alpha1.ApplicationOuterClass.ContainerRegistry.Builder builderForValue) {
+        if (containerRegistryBuilder_ == null) {
+          containerRegistry_ = builderForValue.build();
+          onChanged();
+        } else {
+          containerRegistryBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+       */
+      public Builder mergeContainerRegistry(application.v1alpha1.ApplicationOuterClass.ContainerRegistry value) {
+        if (containerRegistryBuilder_ == null) {
+          if (containerRegistry_ != null) {
+            containerRegistry_ =
+              application.v1alpha1.ApplicationOuterClass.ContainerRegistry.newBuilder(containerRegistry_).mergeFrom(value).buildPartial();
+          } else {
+            containerRegistry_ = value;
+          }
+          onChanged();
+        } else {
+          containerRegistryBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+       */
+      public Builder clearContainerRegistry() {
+        if (containerRegistryBuilder_ == null) {
+          containerRegistry_ = null;
+          onChanged();
+        } else {
+          containerRegistry_ = null;
+          containerRegistryBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.ContainerRegistry.Builder getContainerRegistryBuilder() {
+        
+        onChanged();
+        return getContainerRegistryFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+       */
+      public application.v1alpha1.ApplicationOuterClass.ContainerRegistryOrBuilder getContainerRegistryOrBuilder() {
+        if (containerRegistryBuilder_ != null) {
+          return containerRegistryBuilder_.getMessageOrBuilder();
+        } else {
+          return containerRegistry_ == null ?
+              application.v1alpha1.ApplicationOuterClass.ContainerRegistry.getDefaultInstance() : containerRegistry_;
+        }
+      }
+      /**
+       * <code>.application.v1alpha1.ContainerRegistry container_registry = 16 [json_name = "containerRegistry"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          application.v1alpha1.ApplicationOuterClass.ContainerRegistry, application.v1alpha1.ApplicationOuterClass.ContainerRegistry.Builder, application.v1alpha1.ApplicationOuterClass.ContainerRegistryOrBuilder> 
+          getContainerRegistryFieldBuilder() {
+        if (containerRegistryBuilder_ == null) {
+          containerRegistryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              application.v1alpha1.ApplicationOuterClass.ContainerRegistry, application.v1alpha1.ApplicationOuterClass.ContainerRegistry.Builder, application.v1alpha1.ApplicationOuterClass.ContainerRegistryOrBuilder>(
+                  getContainerRegistry(),
+                  getParentForChildren(),
+                  isClean());
+          containerRegistry_ = null;
+        }
+        return containerRegistryBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10613,6 +11684,11 @@ public final class ApplicationOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_application_v1alpha1_Scaling_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_application_v1alpha1_ContainerRegistry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_application_v1alpha1_ContainerRegistry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_application_v1alpha1_Application_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -10653,40 +11729,45 @@ public final class ApplicationOuterClass {
       "val\030\003 \001(\tR\017pollingInterval\022\037\n\013min_replic" +
       "a\030\004 \001(\tR\nminReplica\022\037\n\013max_replica\030\005 \001(\t" +
       "R\nmaxReplica\022\037\n\013memory_rule\030\006 \001(\tR\nmemor" +
-      "yRule\"\333\005\n\013Application\022\016\n\002id\030\001 \001(\tR\002id\022\022\n" +
-      "\004name\030\002 \001(\tR\004name\022 \n\013integration\030\003 \001(\tR\013" +
-      "integration\022@\n\nrepository\030\004 \001(\0132 .applic" +
-      "ation.v1alpha1.RepositoryR\nrepository\022I\n" +
-      "\rconfiguration\030\005 \001(\0132#.application.v1alp" +
-      "ha1.ConfigurationR\rconfiguration\022\035\n\nproj" +
-      "ect_id\030\006 \001(\tR\tprojectId\022!\n\014name_project\030" +
-      "\007 \001(\tR\013nameProject\022#\n\rproject_image\030\010 \001(" +
-      "\tR\014projectImage\022/\n\023project_description\030\t" +
-      " \001(\tR\022projectDescription\022\'\n\017organization" +
-      "_id\030\n \001(\tR\016organizationId\0227\n\007scaling\030\013 \001" +
-      "(\0132\035.application.v1alpha1.ScalingR\007scali" +
-      "ng\022D\n\014traffic_type\030\014 \001(\0162!.application.v" +
-      "1alpha1.TrafficTypeR\013trafficType\022-\n\022inte" +
-      "gration_status\030\r \001(\010R\021integrationStatus\022" +
-      "`\n\026docker_image_buildpack\030\016 \001(\0162*.applic" +
-      "ation.v1alpha1.DockerImageBuildpackR\024doc" +
-      "kerImageBuildpack\022(\n\020no_docker_exists\030\017 " +
-      "\001(\010R\016noDockerExists\"\356\001\n\017ListApplication\022" +
-      "\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022@\n\nr" +
-      "epository\030\003 \001(\0132 .application.v1alpha1.R" +
-      "epositoryR\nrepository\022\035\n\nproject_id\030\006 \001(" +
-      "\tR\tprojectId\022\'\n\017organization_id\030\007 \001(\tR\016o" +
-      "rganizationId\022-\n\022integration_status\030\010 \001(" +
-      "\010R\021integrationStatus*a\n\013TrafficType\022\034\n\030T" +
-      "RAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYP" +
-      "E_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002*" +
-      "\314\001\n\024DockerImageBuildpack\022&\n\"DOCKER_IMAGE" +
-      "_BUILDPACK_UNSPECIFIED\020\000\022!\n\035DOCKER_IMAGE" +
-      "_BUILDPACK_GOLANG\020\001\022\037\n\033DOCKER_IMAGE_BUIL" +
-      "DPACK_JAVA\020\002\022%\n!DOCKER_IMAGE_BUILDPACK_J" +
-      "AVASCRIPT\020\003\022!\n\035DOCKER_IMAGE_BUILDPACK_PY" +
-      "THON\020\004B7Z5github.com/cuemby/ccp-sdk/gen/" +
-      "go/application/v1alpha1b\006proto3"
+      "yRule\"f\n\021ContainerRegistry\022!\n\014registry_u" +
+      "rl\030\001 \001(\tR\013registryUrl\022\022\n\004user\030\002 \001(\tR\004use" +
+      "r\022\032\n\010password\030\003 \001(\tR\010password\"\263\006\n\013Applic" +
+      "ation\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam" +
+      "e\022 \n\013integration\030\003 \001(\tR\013integration\022@\n\nr" +
+      "epository\030\004 \001(\0132 .application.v1alpha1.R" +
+      "epositoryR\nrepository\022I\n\rconfiguration\030\005" +
+      " \001(\0132#.application.v1alpha1.Configuratio" +
+      "nR\rconfiguration\022\035\n\nproject_id\030\006 \001(\tR\tpr" +
+      "ojectId\022!\n\014name_project\030\007 \001(\tR\013nameProje" +
+      "ct\022#\n\rproject_image\030\010 \001(\tR\014projectImage\022" +
+      "/\n\023project_description\030\t \001(\tR\022projectDes" +
+      "cription\022\'\n\017organization_id\030\n \001(\tR\016organ" +
+      "izationId\0227\n\007scaling\030\013 \001(\0132\035.application" +
+      ".v1alpha1.ScalingR\007scaling\022D\n\014traffic_ty" +
+      "pe\030\014 \001(\0162!.application.v1alpha1.TrafficT" +
+      "ypeR\013trafficType\022-\n\022integration_status\030\r" +
+      " \001(\010R\021integrationStatus\022`\n\026docker_image_" +
+      "buildpack\030\016 \001(\0162*.application.v1alpha1.D" +
+      "ockerImageBuildpackR\024dockerImageBuildpac" +
+      "k\022(\n\020no_docker_exists\030\017 \001(\010R\016noDockerExi" +
+      "sts\022V\n\022container_registry\030\020 \001(\0132\'.applic" +
+      "ation.v1alpha1.ContainerRegistryR\021contai" +
+      "nerRegistry\"\356\001\n\017ListApplication\022\016\n\002id\030\001 " +
+      "\001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022@\n\nrepositor" +
+      "y\030\003 \001(\0132 .application.v1alpha1.Repositor" +
+      "yR\nrepository\022\035\n\nproject_id\030\006 \001(\tR\tproje" +
+      "ctId\022\'\n\017organization_id\030\007 \001(\tR\016organizat" +
+      "ionId\022-\n\022integration_status\030\010 \001(\010R\021integ" +
+      "rationStatus*a\n\013TrafficType\022\034\n\030TRAFFIC_T" +
+      "YPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERN" +
+      "AL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002*\314\001\n\024Dock" +
+      "erImageBuildpack\022&\n\"DOCKER_IMAGE_BUILDPA" +
+      "CK_UNSPECIFIED\020\000\022!\n\035DOCKER_IMAGE_BUILDPA" +
+      "CK_GOLANG\020\001\022\037\n\033DOCKER_IMAGE_BUILDPACK_JA" +
+      "VA\020\002\022%\n!DOCKER_IMAGE_BUILDPACK_JAVASCRIP" +
+      "T\020\003\022!\n\035DOCKER_IMAGE_BUILDPACK_PYTHON\020\004B7" +
+      "Z5github.com/cuemby/ccp-sdk/gen/go/appli" +
+      "cation/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10728,14 +11809,20 @@ public final class ApplicationOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Scaling_descriptor,
         new java.lang.String[] { "CpuRule", "CoolDownPeriod", "PollingInterval", "MinReplica", "MaxReplica", "MemoryRule", });
-    internal_static_application_v1alpha1_Application_descriptor =
+    internal_static_application_v1alpha1_ContainerRegistry_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_application_v1alpha1_ContainerRegistry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_application_v1alpha1_ContainerRegistry_descriptor,
+        new java.lang.String[] { "RegistryUrl", "User", "Password", });
+    internal_static_application_v1alpha1_Application_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_application_v1alpha1_Application_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_Application_descriptor,
-        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "NameProject", "ProjectImage", "ProjectDescription", "OrganizationId", "Scaling", "TrafficType", "IntegrationStatus", "DockerImageBuildpack", "NoDockerExists", });
+        new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "NameProject", "ProjectImage", "ProjectDescription", "OrganizationId", "Scaling", "TrafficType", "IntegrationStatus", "DockerImageBuildpack", "NoDockerExists", "ContainerRegistry", });
     internal_static_application_v1alpha1_ListApplication_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_application_v1alpha1_ListApplication_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_application_v1alpha1_ListApplication_descriptor,
