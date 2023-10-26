@@ -265,19 +265,6 @@ private static final long serialVersionUID = 0L;
             integrationId_ = s;
             break;
           }
-          case 210: {
-            application.v1alpha1.ApplicationOuterClass.Application.Builder subBuilder = null;
-            if (applicationData_ != null) {
-              subBuilder = applicationData_.toBuilder();
-            }
-            applicationData_ = input.readMessage(application.v1alpha1.ApplicationOuterClass.Application.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(applicationData_);
-              applicationData_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 216: {
 
             customPipeline_ = input.readBool();
@@ -1516,32 +1503,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int APPLICATION_DATA_FIELD_NUMBER = 26;
-  private application.v1alpha1.ApplicationOuterClass.Application applicationData_;
-  /**
-   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-   * @return Whether the applicationData field is set.
-   */
-  @java.lang.Override
-  public boolean hasApplicationData() {
-    return applicationData_ != null;
-  }
-  /**
-   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-   * @return The applicationData.
-   */
-  @java.lang.Override
-  public application.v1alpha1.ApplicationOuterClass.Application getApplicationData() {
-    return applicationData_ == null ? application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance() : applicationData_;
-  }
-  /**
-   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-   */
-  @java.lang.Override
-  public application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationDataOrBuilder() {
-    return getApplicationData();
-  }
-
   public static final int CUSTOM_PIPELINE_FIELD_NUMBER = 27;
   private boolean customPipeline_;
   /**
@@ -2004,9 +1965,6 @@ private static final long serialVersionUID = 0L;
     if (!getIntegrationIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, integrationId_);
     }
-    if (applicationData_ != null) {
-      output.writeMessage(26, getApplicationData());
-    }
     if (customPipeline_ != false) {
       output.writeBool(27, customPipeline_);
     }
@@ -2163,10 +2121,6 @@ private static final long serialVersionUID = 0L;
     if (!getIntegrationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, integrationId_);
     }
-    if (applicationData_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(26, getApplicationData());
-    }
     if (customPipeline_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(27, customPipeline_);
@@ -2270,11 +2224,6 @@ private static final long serialVersionUID = 0L;
         != other.getStorageLimit()) return false;
     if (!getIntegrationId()
         .equals(other.getIntegrationId())) return false;
-    if (hasApplicationData() != other.hasApplicationData()) return false;
-    if (hasApplicationData()) {
-      if (!getApplicationData()
-          .equals(other.getApplicationData())) return false;
-    }
     if (getCustomPipeline()
         != other.getCustomPipeline()) return false;
     if (!getBeforeDeployTasksList()
@@ -2373,10 +2322,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getStorageLimit();
     hash = (37 * hash) + INTEGRATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getIntegrationId().hashCode();
-    if (hasApplicationData()) {
-      hash = (37 * hash) + APPLICATION_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getApplicationData().hashCode();
-    }
     hash = (37 * hash) + CUSTOM_PIPELINE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getCustomPipeline());
@@ -2637,12 +2582,6 @@ private static final long serialVersionUID = 0L;
 
       integrationId_ = "";
 
-      if (applicationDataBuilder_ == null) {
-        applicationData_ = null;
-      } else {
-        applicationData_ = null;
-        applicationDataBuilder_ = null;
-      }
       customPipeline_ = false;
 
       if (beforeDeployTasksBuilder_ == null) {
@@ -2746,11 +2685,6 @@ private static final long serialVersionUID = 0L;
       result.storageUsed_ = storageUsed_;
       result.storageLimit_ = storageLimit_;
       result.integrationId_ = integrationId_;
-      if (applicationDataBuilder_ == null) {
-        result.applicationData_ = applicationData_;
-      } else {
-        result.applicationData_ = applicationDataBuilder_.build();
-      }
       result.customPipeline_ = customPipeline_;
       if (beforeDeployTasksBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0)) {
@@ -2946,9 +2880,6 @@ private static final long serialVersionUID = 0L;
       if (!other.getIntegrationId().isEmpty()) {
         integrationId_ = other.integrationId_;
         onChanged();
-      }
-      if (other.hasApplicationData()) {
-        mergeApplicationData(other.getApplicationData());
       }
       if (other.getCustomPipeline() != false) {
         setCustomPipeline(other.getCustomPipeline());
@@ -5297,125 +5228,6 @@ private static final long serialVersionUID = 0L;
       integrationId_ = value;
       onChanged();
       return this;
-    }
-
-    private application.v1alpha1.ApplicationOuterClass.Application applicationData_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> applicationDataBuilder_;
-    /**
-     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     * @return Whether the applicationData field is set.
-     */
-    public boolean hasApplicationData() {
-      return applicationDataBuilder_ != null || applicationData_ != null;
-    }
-    /**
-     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     * @return The applicationData.
-     */
-    public application.v1alpha1.ApplicationOuterClass.Application getApplicationData() {
-      if (applicationDataBuilder_ == null) {
-        return applicationData_ == null ? application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance() : applicationData_;
-      } else {
-        return applicationDataBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     */
-    public Builder setApplicationData(application.v1alpha1.ApplicationOuterClass.Application value) {
-      if (applicationDataBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        applicationData_ = value;
-        onChanged();
-      } else {
-        applicationDataBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     */
-    public Builder setApplicationData(
-        application.v1alpha1.ApplicationOuterClass.Application.Builder builderForValue) {
-      if (applicationDataBuilder_ == null) {
-        applicationData_ = builderForValue.build();
-        onChanged();
-      } else {
-        applicationDataBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     */
-    public Builder mergeApplicationData(application.v1alpha1.ApplicationOuterClass.Application value) {
-      if (applicationDataBuilder_ == null) {
-        if (applicationData_ != null) {
-          applicationData_ =
-            application.v1alpha1.ApplicationOuterClass.Application.newBuilder(applicationData_).mergeFrom(value).buildPartial();
-        } else {
-          applicationData_ = value;
-        }
-        onChanged();
-      } else {
-        applicationDataBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     */
-    public Builder clearApplicationData() {
-      if (applicationDataBuilder_ == null) {
-        applicationData_ = null;
-        onChanged();
-      } else {
-        applicationData_ = null;
-        applicationDataBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     */
-    public application.v1alpha1.ApplicationOuterClass.Application.Builder getApplicationDataBuilder() {
-      
-      onChanged();
-      return getApplicationDataFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     */
-    public application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationDataOrBuilder() {
-      if (applicationDataBuilder_ != null) {
-        return applicationDataBuilder_.getMessageOrBuilder();
-      } else {
-        return applicationData_ == null ?
-            application.v1alpha1.ApplicationOuterClass.Application.getDefaultInstance() : applicationData_;
-      }
-    }
-    /**
-     * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder> 
-        getApplicationDataFieldBuilder() {
-      if (applicationDataBuilder_ == null) {
-        applicationDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            application.v1alpha1.ApplicationOuterClass.Application, application.v1alpha1.ApplicationOuterClass.Application.Builder, application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder>(
-                getApplicationData(),
-                getParentForChildren(),
-                isClean());
-        applicationData_ = null;
-      }
-      return applicationDataBuilder_;
     }
 
     private boolean customPipeline_ ;

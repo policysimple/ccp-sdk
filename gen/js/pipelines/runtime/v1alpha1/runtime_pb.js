@@ -15,8 +15,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var application_v1alpha1_application_pb = require('../../../application/v1alpha1/application_pb.js');
-goog.object.extend(proto, application_v1alpha1_application_pb);
 var pipelines_tekton_v1alpha1_tekton_pb = require('../../../pipelines/tekton/v1alpha1/tekton_pb.js');
 goog.object.extend(proto, pipelines_tekton_v1alpha1_tekton_pb);
 goog.exportSymbol('proto.pipelines.runtime.v1alpha1.IntanceType', null, global);
@@ -239,7 +237,6 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     storageUsed: jspb.Message.getFieldWithDefault(msg, 23, 0),
     storageLimit: jspb.Message.getFieldWithDefault(msg, 24, 0),
     integrationId: jspb.Message.getFieldWithDefault(msg, 25, ""),
-    applicationData: (f = msg.getApplicationData()) && application_v1alpha1_application_pb.Application.toObject(includeInstance, f),
     customPipeline: jspb.Message.getBooleanFieldWithDefault(msg, 27, false),
     beforeDeployTasksList: jspb.Message.toObjectList(msg.getBeforeDeployTasksList(),
     pipelines_tekton_v1alpha1_tekton_pb.Task.toObject, includeInstance),
@@ -400,11 +397,6 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 25:
       var value = /** @type {string} */ (reader.readString());
       msg.setIntegrationId(value);
-      break;
-    case 26:
-      var value = new application_v1alpha1_application_pb.Application;
-      reader.readMessage(value,application_v1alpha1_application_pb.Application.deserializeBinaryFromReader);
-      msg.setApplicationData(value);
       break;
     case 27:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -642,14 +634,6 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
     writer.writeString(
       25,
       f
-    );
-  }
-  f = message.getApplicationData();
-  if (f != null) {
-    writer.writeMessage(
-      26,
-      f,
-      application_v1alpha1_application_pb.Application.serializeBinaryToWriter
     );
   }
   f = message.getCustomPipeline();
@@ -1223,43 +1207,6 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIntegrationId = function()
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setIntegrationId = function(value) {
   return jspb.Message.setProto3StringField(this, 25, value);
-};
-
-
-/**
- * optional application.v1alpha1.Application application_data = 26;
- * @return {?proto.application.v1alpha1.Application}
- */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.getApplicationData = function() {
-  return /** @type{?proto.application.v1alpha1.Application} */ (
-    jspb.Message.getWrapperField(this, application_v1alpha1_application_pb.Application, 26));
-};
-
-
-/**
- * @param {?proto.application.v1alpha1.Application|undefined} value
- * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
-*/
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.setApplicationData = function(value) {
-  return jspb.Message.setWrapperField(this, 26, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
- */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearApplicationData = function() {
-  return this.setApplicationData(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.hasApplicationData = function() {
-  return jspb.Message.getField(this, 26) != null;
 };
 
 

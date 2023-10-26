@@ -35,7 +35,6 @@
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "application/v1alpha1/application.pb.h"
 #include "pipelines/tekton/v1alpha1/tekton.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -428,7 +427,6 @@ class Runtime final :
     kAppLabelFieldNumber = 35,
     kCreatedAtFieldNumber = 36,
     kUpdatedAtFieldNumber = 37,
-    kApplicationDataFieldNumber = 26,
     kPipelineRunFieldNumber = 33,
     kTrafficTypeFieldNumber = 18,
     kStorageUsedFieldNumber = 23,
@@ -887,24 +885,6 @@ class Runtime final :
   std::string* _internal_mutable_updated_at();
   public:
 
-  // .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
-  bool has_application_data() const;
-  private:
-  bool _internal_has_application_data() const;
-  public:
-  void clear_application_data();
-  const ::application::v1alpha1::Application& application_data() const;
-  PROTOBUF_MUST_USE_RESULT ::application::v1alpha1::Application* release_application_data();
-  ::application::v1alpha1::Application* mutable_application_data();
-  void set_allocated_application_data(::application::v1alpha1::Application* application_data);
-  private:
-  const ::application::v1alpha1::Application& _internal_application_data() const;
-  ::application::v1alpha1::Application* _internal_mutable_application_data();
-  public:
-  void unsafe_arena_set_allocated_application_data(
-      ::application::v1alpha1::Application* application_data);
-  ::application::v1alpha1::Application* unsafe_arena_release_application_data();
-
   // .pipelines.tekton.v1alpha1.PipelineRun pipeline_run = 33 [json_name = "pipelineRun"];
   bool has_pipeline_run() const;
   private:
@@ -1025,7 +1005,6 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr app_label_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
-  ::application::v1alpha1::Application* application_data_;
   ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run_;
   int traffic_type_;
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_used_;
@@ -3043,92 +3022,6 @@ inline void Runtime::set_allocated_integration_id(std::string* integration_id) {
   integration_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), integration_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.integration_id)
-}
-
-// .application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
-inline bool Runtime::_internal_has_application_data() const {
-  return this != internal_default_instance() && application_data_ != nullptr;
-}
-inline bool Runtime::has_application_data() const {
-  return _internal_has_application_data();
-}
-inline const ::application::v1alpha1::Application& Runtime::_internal_application_data() const {
-  const ::application::v1alpha1::Application* p = application_data_;
-  return p != nullptr ? *p : reinterpret_cast<const ::application::v1alpha1::Application&>(
-      ::application::v1alpha1::_Application_default_instance_);
-}
-inline const ::application::v1alpha1::Application& Runtime::application_data() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.application_data)
-  return _internal_application_data();
-}
-inline void Runtime::unsafe_arena_set_allocated_application_data(
-    ::application::v1alpha1::Application* application_data) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_data_);
-  }
-  application_data_ = application_data;
-  if (application_data) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_data)
-}
-inline ::application::v1alpha1::Application* Runtime::release_application_data() {
-  
-  ::application::v1alpha1::Application* temp = application_data_;
-  application_data_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::application::v1alpha1::Application* Runtime::unsafe_arena_release_application_data() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.application_data)
-  
-  ::application::v1alpha1::Application* temp = application_data_;
-  application_data_ = nullptr;
-  return temp;
-}
-inline ::application::v1alpha1::Application* Runtime::_internal_mutable_application_data() {
-  
-  if (application_data_ == nullptr) {
-    auto* p = CreateMaybeMessage<::application::v1alpha1::Application>(GetArenaForAllocation());
-    application_data_ = p;
-  }
-  return application_data_;
-}
-inline ::application::v1alpha1::Application* Runtime::mutable_application_data() {
-  ::application::v1alpha1::Application* _msg = _internal_mutable_application_data();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.application_data)
-  return _msg;
-}
-inline void Runtime::set_allocated_application_data(::application::v1alpha1::Application* application_data) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_data_);
-  }
-  if (application_data) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(application_data));
-    if (message_arena != submessage_arena) {
-      application_data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, application_data, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  application_data_ = application_data;
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_data)
 }
 
 // bool custom_pipeline = 27 [json_name = "customPipeline"];

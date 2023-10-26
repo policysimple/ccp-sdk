@@ -116,10 +116,6 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $integration_id = '';
     /**
-     * Generated from protobuf field <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     */
-    protected $application_data = null;
-    /**
      * Generated from protobuf field <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
      */
     protected $custom_pipeline = false;
@@ -195,7 +191,6 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type int $storage_used
      *     @type int $storage_limit
      *     @type string $integration_id
-     *     @type \Application\V1alpha1\Application $application_data
      *     @type bool $custom_pipeline
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $before_deploy_tasks
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $after_deploy_tasks
@@ -760,38 +755,6 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->integration_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     * @return \Application\V1alpha1\Application|null
-     */
-    public function getApplicationData()
-    {
-        return $this->application_data;
-    }
-
-    public function hasApplicationData()
-    {
-        return isset($this->application_data);
-    }
-
-    public function clearApplicationData()
-    {
-        unset($this->application_data);
-    }
-
-    /**
-     * Generated from protobuf field <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-     * @param \Application\V1alpha1\Application $var
-     * @return $this
-     */
-    public function setApplicationData($var)
-    {
-        GPBUtil::checkMessage($var, \Application\V1alpha1\Application::class);
-        $this->application_data = $var;
 
         return $this;
     }
