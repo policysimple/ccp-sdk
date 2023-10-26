@@ -417,21 +417,6 @@ public interface RuntimeOrBuilder extends
       getIntegrationIdBytes();
 
   /**
-   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-   * @return Whether the applicationData field is set.
-   */
-  boolean hasApplicationData();
-  /**
-   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-   * @return The applicationData.
-   */
-  application.v1alpha1.ApplicationOuterClass.Application getApplicationData();
-  /**
-   * <code>.application.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
-   */
-  application.v1alpha1.ApplicationOuterClass.ApplicationOrBuilder getApplicationDataOrBuilder();
-
-  /**
    * <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
    * @return The customPipeline.
    */
