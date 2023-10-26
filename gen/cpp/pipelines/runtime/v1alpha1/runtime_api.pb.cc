@@ -354,10 +354,64 @@ struct GetRuntimesInLast24HoursResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetRuntimesInLast24HoursResponseDefaultTypeInternal _GetRuntimesInLast24HoursResponse_default_instance_;
+constexpr GetRuntimesByApplicationRequest::GetRuntimesByApplicationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GetRuntimesByApplicationRequestDefaultTypeInternal {
+  constexpr GetRuntimesByApplicationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetRuntimesByApplicationRequestDefaultTypeInternal() {}
+  union {
+    GetRuntimesByApplicationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetRuntimesByApplicationRequestDefaultTypeInternal _GetRuntimesByApplicationRequest_default_instance_;
+constexpr GetRuntimesByApplicationResponse::GetRuntimesByApplicationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , runtime_list_(nullptr){}
+struct GetRuntimesByApplicationResponseDefaultTypeInternal {
+  constexpr GetRuntimesByApplicationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetRuntimesByApplicationResponseDefaultTypeInternal() {}
+  union {
+    GetRuntimesByApplicationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetRuntimesByApplicationResponseDefaultTypeInternal _GetRuntimesByApplicationResponse_default_instance_;
+constexpr ChangeStatusRuntimeAndApplicationRequest::ChangeStatusRuntimeAndApplicationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ChangeStatusRuntimeAndApplicationRequestDefaultTypeInternal {
+  constexpr ChangeStatusRuntimeAndApplicationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ChangeStatusRuntimeAndApplicationRequestDefaultTypeInternal() {}
+  union {
+    ChangeStatusRuntimeAndApplicationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ChangeStatusRuntimeAndApplicationRequestDefaultTypeInternal _ChangeStatusRuntimeAndApplicationRequest_default_instance_;
+constexpr ChangeStatusRuntimeAndApplicationResponse::ChangeStatusRuntimeAndApplicationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : msg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ChangeStatusRuntimeAndApplicationResponseDefaultTypeInternal {
+  constexpr ChangeStatusRuntimeAndApplicationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ChangeStatusRuntimeAndApplicationResponseDefaultTypeInternal() {}
+  union {
+    ChangeStatusRuntimeAndApplicationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ChangeStatusRuntimeAndApplicationResponseDefaultTypeInternal _ChangeStatusRuntimeAndApplicationResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace runtime
 }  // namespace pipelines
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto[25];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto[29];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto = nullptr;
 
@@ -551,6 +605,36 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse, runtime_list_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse, status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest, application_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest, project_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest, organization_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse, runtime_list_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse, status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, application_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, project_id_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, organization_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse, msg_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse, error_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pipelines::runtime::v1alpha1::CreateRuntimeRequest)},
@@ -578,6 +662,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 170, -1, sizeof(::pipelines::runtime::v1alpha1::AlreadyExistsRuntimeResponse)},
   { 177, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursRequest)},
   { 182, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse)},
+  { 189, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest)},
+  { 197, -1, sizeof(::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse)},
+  { 204, -1, sizeof(::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest)},
+  { 212, -1, sizeof(::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -606,6 +694,10 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_AlreadyExistsRuntimeResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_GetRuntimesInLast24HoursRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_GetRuntimesInLast24HoursResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_GetRuntimesByApplicationRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_GetRuntimesByApplicationResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_ChangeStatusRuntimeAndApplicationRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pipelines::runtime::v1alpha1::_ChangeStatusRuntimeAndApplicationResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -688,62 +780,84 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5f
   "RuntimesInLast24HoursResponse\022J\n\014runtime"
   "_list\030\001 \001(\0132\'.pipelines.runtime.v1alpha1"
   ".RuntimeListR\013runtimeList\022\026\n\006status\030\002 \001("
-  "\tR\006status2\251\r\n\021RuntimeAPIService\022m\n\nGetRu"
-  "ntime\022-.pipelines.runtime.v1alpha1.GetRu"
-  "ntimeRequest\032..pipelines.runtime.v1alpha"
-  "1.GetRuntimeResponse\"\000\022v\n\rCreateRuntime\022"
-  "0.pipelines.runtime.v1alpha1.CreateRunti"
-  "meRequest\0321.pipelines.runtime.v1alpha1.C"
-  "reateRuntimeResponse\"\000\022v\n\rUpdateRuntime\022"
-  "0.pipelines.runtime.v1alpha1.UpdateRunti"
-  "meRequest\0321.pipelines.runtime.v1alpha1.U"
-  "pdateRuntimeResponse\"\000\022\243\001\n\034UpdateRespons"
-  "eMessageRuntime\022\?.pipelines.runtime.v1al"
-  "pha1.UpdateResponseMessageRuntimeRequest"
-  "\032@.pipelines.runtime.v1alpha1.UpdateResp"
-  "onseMessageRuntimeResponse\"\000\022\270\001\n#Respons"
-  "eMessageDeleteRuntimeByAppId\022F.pipelines"
-  ".runtime.v1alpha1.ResponseMessageDeleteR"
-  "untimeByAppIdRequest\032G.pipelines.runtime"
-  ".v1alpha1.ResponseMessageDeleteRuntimeBy"
-  "AppIdResponse\"\000\022v\n\rDeleteRuntime\0220.pipel"
-  "ines.runtime.v1alpha1.DeleteRuntimeReque"
-  "st\0321.pipelines.runtime.v1alpha1.DeleteRu"
-  "ntimeResponse\"\000\022\240\001\n\033DeleteRuntimesByAppl"
-  "ication\022>.pipelines.runtime.v1alpha1.Del"
-  "eteRuntimesByApplicationRequest\032\?.pipeli"
-  "nes.runtime.v1alpha1.DeleteRuntimesByApp"
-  "licationResponse\"\000\022\240\001\n\033DeleteRuntimesByE"
-  "nvironment\022>.pipelines.runtime.v1alpha1."
-  "DeleteRuntimesByEnvironmentRequest\032\?.pip"
-  "elines.runtime.v1alpha1.DeleteRuntimesBy"
-  "EnvironmentResponse\"\000\022s\n\014ListRuntimes\022/."
-  "pipelines.runtime.v1alpha1.ListRuntimesR"
-  "equest\0320.pipelines.runtime.v1alpha1.List"
-  "RuntimesResponse\"\000\022y\n\016RebuildRuntime\0221.p"
-  "ipelines.runtime.v1alpha1.RebuildRuntime"
-  "Request\0322.pipelines.runtime.v1alpha1.Reb"
-  "uildRuntimeResponse\"\000\022\213\001\n\024AlreadyExistsR"
-  "untime\0227.pipelines.runtime.v1alpha1.Alre"
-  "adyExistsRuntimeRequest\0328.pipelines.runt"
-  "ime.v1alpha1.AlreadyExistsRuntimeRespons"
-  "e\"\000\022\227\001\n\030GetRuntimesInLast24Hours\022;.pipel"
-  "ines.runtime.v1alpha1.GetRuntimesInLast2"
-  "4HoursRequest\032<.pipelines.runtime.v1alph"
-  "a1.GetRuntimesInLast24HoursResponse\"\000B\260\001"
-  "\n$io.cuemby.pipelines.runtime.v1alpha1B\017"
-  "RuntimeAPIProtoP\001Z5github.com/cuemby/ccp"
-  "-runtime-service/runtimev1alpha1\242\002\003PPX\252\002"
-  "\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\"
-  "Runtime\\V1Alpha1b\006proto3"
+  "\tR\006status\"\220\001\n\037GetRuntimesByApplicationRe"
+  "quest\022%\n\016application_id\030\001 \001(\tR\rapplicati"
+  "onId\022\035\n\nproject_id\030\002 \001(\tR\tprojectId\022\'\n\017o"
+  "rganization_id\030\003 \001(\tR\016organizationId\"\206\001\n"
+  " GetRuntimesByApplicationResponse\022J\n\014run"
+  "time_list\030\001 \001(\0132\'.pipelines.runtime.v1al"
+  "pha1.RuntimeListR\013runtimeList\022\026\n\006status\030"
+  "\002 \001(\tR\006status\"\231\001\n(ChangeStatusRuntimeAnd"
+  "ApplicationRequest\022%\n\016application_id\030\001 \001"
+  "(\tR\rapplicationId\022\035\n\nproject_id\030\002 \001(\tR\tp"
+  "rojectId\022\'\n\017organization_id\030\003 \001(\tR\016organ"
+  "izationId\"S\n)ChangeStatusRuntimeAndAppli"
+  "cationResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005erro"
+  "r\030\002 \001(\tR\005error2\370\017\n\021RuntimeAPIService\022m\n\n"
+  "GetRuntime\022-.pipelines.runtime.v1alpha1."
+  "GetRuntimeRequest\032..pipelines.runtime.v1"
+  "alpha1.GetRuntimeResponse\"\000\022v\n\rCreateRun"
+  "time\0220.pipelines.runtime.v1alpha1.Create"
+  "RuntimeRequest\0321.pipelines.runtime.v1alp"
+  "ha1.CreateRuntimeResponse\"\000\022v\n\rUpdateRun"
+  "time\0220.pipelines.runtime.v1alpha1.Update"
+  "RuntimeRequest\0321.pipelines.runtime.v1alp"
+  "ha1.UpdateRuntimeResponse\"\000\022\243\001\n\034UpdateRe"
+  "sponseMessageRuntime\022\?.pipelines.runtime"
+  ".v1alpha1.UpdateResponseMessageRuntimeRe"
+  "quest\032@.pipelines.runtime.v1alpha1.Updat"
+  "eResponseMessageRuntimeResponse\"\000\022\270\001\n#Re"
+  "sponseMessageDeleteRuntimeByAppId\022F.pipe"
+  "lines.runtime.v1alpha1.ResponseMessageDe"
+  "leteRuntimeByAppIdRequest\032G.pipelines.ru"
+  "ntime.v1alpha1.ResponseMessageDeleteRunt"
+  "imeByAppIdResponse\"\000\022v\n\rDeleteRuntime\0220."
+  "pipelines.runtime.v1alpha1.DeleteRuntime"
+  "Request\0321.pipelines.runtime.v1alpha1.Del"
+  "eteRuntimeResponse\"\000\022\240\001\n\033DeleteRuntimesB"
+  "yApplication\022>.pipelines.runtime.v1alpha"
+  "1.DeleteRuntimesByApplicationRequest\032\?.p"
+  "ipelines.runtime.v1alpha1.DeleteRuntimes"
+  "ByApplicationResponse\"\000\022\240\001\n\033DeleteRuntim"
+  "esByEnvironment\022>.pipelines.runtime.v1al"
+  "pha1.DeleteRuntimesByEnvironmentRequest\032"
+  "\?.pipelines.runtime.v1alpha1.DeleteRunti"
+  "mesByEnvironmentResponse\"\000\022s\n\014ListRuntim"
+  "es\022/.pipelines.runtime.v1alpha1.ListRunt"
+  "imesRequest\0320.pipelines.runtime.v1alpha1"
+  ".ListRuntimesResponse\"\000\022y\n\016RebuildRuntim"
+  "e\0221.pipelines.runtime.v1alpha1.RebuildRu"
+  "ntimeRequest\0322.pipelines.runtime.v1alpha"
+  "1.RebuildRuntimeResponse\"\000\022\213\001\n\024AlreadyEx"
+  "istsRuntime\0227.pipelines.runtime.v1alpha1"
+  ".AlreadyExistsRuntimeRequest\0328.pipelines"
+  ".runtime.v1alpha1.AlreadyExistsRuntimeRe"
+  "sponse\"\000\022\227\001\n\030GetRuntimesInLast24Hours\022;."
+  "pipelines.runtime.v1alpha1.GetRuntimesIn"
+  "Last24HoursRequest\032<.pipelines.runtime.v"
+  "1alpha1.GetRuntimesInLast24HoursResponse"
+  "\"\000\022\227\001\n\030GetRuntimesByApplication\022;.pipeli"
+  "nes.runtime.v1alpha1.GetRuntimesByApplic"
+  "ationRequest\032<.pipelines.runtime.v1alpha"
+  "1.GetRuntimesByApplicationResponse\"\000\022\262\001\n"
+  "!ChangeStatusRuntimeAndApplication\022D.pip"
+  "elines.runtime.v1alpha1.ChangeStatusRunt"
+  "imeAndApplicationRequest\032E.pipelines.run"
+  "time.v1alpha1.ChangeStatusRuntimeAndAppl"
+  "icationResponse\"\000B\260\001\n$io.cuemby.pipeline"
+  "s.runtime.v1alpha1B\017RuntimeAPIProtoP\001Z5g"
+  "ithub.com/cuemby/ccp-runtime-service/run"
+  "timev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V"
+  "1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto = {
-  false, false, 5064, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
-  &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps, 1, 25,
+  false, false, 5924, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, "pipelines/runtime/v1alpha1/runtime_api.proto", 
+  &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_deps, 1, 29,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto,
 };
@@ -7178,6 +7292,1064 @@ void GetRuntimesInLast24HoursResponse::InternalSwap(GetRuntimesInLast24HoursResp
       file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto[24]);
 }
 
+// ===================================================================
+
+class GetRuntimesByApplicationRequest::_Internal {
+ public:
+};
+
+GetRuntimesByApplicationRequest::GetRuntimesByApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest)
+}
+GetRuntimesByApplicationRequest::GetRuntimesByApplicationRequest(const GetRuntimesByApplicationRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_application_id().empty()) {
+    application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
+      GetArenaForAllocation());
+  }
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest)
+}
+
+inline void GetRuntimesByApplicationRequest::SharedCtor() {
+application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+GetRuntimesByApplicationRequest::~GetRuntimesByApplicationRequest() {
+  // @@protoc_insertion_point(destructor:pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetRuntimesByApplicationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void GetRuntimesByApplicationRequest::ArenaDtor(void* object) {
+  GetRuntimesByApplicationRequest* _this = reinterpret_cast< GetRuntimesByApplicationRequest* >(object);
+  (void)_this;
+}
+void GetRuntimesByApplicationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetRuntimesByApplicationRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetRuntimesByApplicationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  application_id_.ClearToEmpty();
+  project_id_.ClearToEmpty();
+  organization_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetRuntimesByApplicationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string application_id = 1 [json_name = "applicationId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_application_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest.application_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string project_id = 2 [json_name = "projectId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest.project_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string organization_id = 3 [json_name = "organizationId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest.organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetRuntimesByApplicationRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string application_id = 1 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_application_id().data(), static_cast<int>(this->_internal_application_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest.application_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_application_id(), target);
+  }
+
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_project_id(), target);
+  }
+
+  // string organization_id = 3 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_organization_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest)
+  return target;
+}
+
+size_t GetRuntimesByApplicationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string application_id = 1 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_application_id());
+  }
+
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
+  // string organization_id = 3 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRuntimesByApplicationRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetRuntimesByApplicationRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRuntimesByApplicationRequest::GetClassData() const { return &_class_data_; }
+
+void GetRuntimesByApplicationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<GetRuntimesByApplicationRequest *>(to)->MergeFrom(
+      static_cast<const GetRuntimesByApplicationRequest &>(from));
+}
+
+
+void GetRuntimesByApplicationRequest::MergeFrom(const GetRuntimesByApplicationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_application_id().empty()) {
+    _internal_set_application_id(from._internal_application_id());
+  }
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
+  }
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetRuntimesByApplicationRequest::CopyFrom(const GetRuntimesByApplicationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRuntimesByApplicationRequest::IsInitialized() const {
+  return true;
+}
+
+void GetRuntimesByApplicationRequest::InternalSwap(GetRuntimesByApplicationRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &application_id_, GetArenaForAllocation(),
+      &other->application_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRuntimesByApplicationRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once,
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto[25]);
+}
+
+// ===================================================================
+
+class GetRuntimesByApplicationResponse::_Internal {
+ public:
+  static const ::pipelines::runtime::v1alpha1::RuntimeList& runtime_list(const GetRuntimesByApplicationResponse* msg);
+};
+
+const ::pipelines::runtime::v1alpha1::RuntimeList&
+GetRuntimesByApplicationResponse::_Internal::runtime_list(const GetRuntimesByApplicationResponse* msg) {
+  return *msg->runtime_list_;
+}
+void GetRuntimesByApplicationResponse::clear_runtime_list() {
+  if (GetArenaForAllocation() == nullptr && runtime_list_ != nullptr) {
+    delete runtime_list_;
+  }
+  runtime_list_ = nullptr;
+}
+GetRuntimesByApplicationResponse::GetRuntimesByApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse)
+}
+GetRuntimesByApplicationResponse::GetRuntimesByApplicationResponse(const GetRuntimesByApplicationResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_runtime_list()) {
+    runtime_list_ = new ::pipelines::runtime::v1alpha1::RuntimeList(*from.runtime_list_);
+  } else {
+    runtime_list_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse)
+}
+
+inline void GetRuntimesByApplicationResponse::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+runtime_list_ = nullptr;
+}
+
+GetRuntimesByApplicationResponse::~GetRuntimesByApplicationResponse() {
+  // @@protoc_insertion_point(destructor:pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetRuntimesByApplicationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete runtime_list_;
+}
+
+void GetRuntimesByApplicationResponse::ArenaDtor(void* object) {
+  GetRuntimesByApplicationResponse* _this = reinterpret_cast< GetRuntimesByApplicationResponse* >(object);
+  (void)_this;
+}
+void GetRuntimesByApplicationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetRuntimesByApplicationResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetRuntimesByApplicationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  status_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && runtime_list_ != nullptr) {
+    delete runtime_list_;
+  }
+  runtime_list_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetRuntimesByApplicationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .pipelines.runtime.v1alpha1.RuntimeList runtime_list = 1 [json_name = "runtimeList"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_runtime_list(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse.status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetRuntimesByApplicationResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .pipelines.runtime.v1alpha1.RuntimeList runtime_list = 1 [json_name = "runtimeList"];
+  if (this->_internal_has_runtime_list()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::runtime_list(this), target, stream);
+  }
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse)
+  return target;
+}
+
+size_t GetRuntimesByApplicationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  // .pipelines.runtime.v1alpha1.RuntimeList runtime_list = 1 [json_name = "runtimeList"];
+  if (this->_internal_has_runtime_list()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *runtime_list_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRuntimesByApplicationResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetRuntimesByApplicationResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRuntimesByApplicationResponse::GetClassData() const { return &_class_data_; }
+
+void GetRuntimesByApplicationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<GetRuntimesByApplicationResponse *>(to)->MergeFrom(
+      static_cast<const GetRuntimesByApplicationResponse &>(from));
+}
+
+
+void GetRuntimesByApplicationResponse::MergeFrom(const GetRuntimesByApplicationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
+  if (from._internal_has_runtime_list()) {
+    _internal_mutable_runtime_list()->::pipelines::runtime::v1alpha1::RuntimeList::MergeFrom(from._internal_runtime_list());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetRuntimesByApplicationResponse::CopyFrom(const GetRuntimesByApplicationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.runtime.v1alpha1.GetRuntimesByApplicationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRuntimesByApplicationResponse::IsInitialized() const {
+  return true;
+}
+
+void GetRuntimesByApplicationResponse::InternalSwap(GetRuntimesByApplicationResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
+  swap(runtime_list_, other->runtime_list_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRuntimesByApplicationResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once,
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto[26]);
+}
+
+// ===================================================================
+
+class ChangeStatusRuntimeAndApplicationRequest::_Internal {
+ public:
+};
+
+ChangeStatusRuntimeAndApplicationRequest::ChangeStatusRuntimeAndApplicationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
+}
+ChangeStatusRuntimeAndApplicationRequest::ChangeStatusRuntimeAndApplicationRequest(const ChangeStatusRuntimeAndApplicationRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_application_id().empty()) {
+    application_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_id(), 
+      GetArenaForAllocation());
+  }
+  project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_id().empty()) {
+    project_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_id(), 
+      GetArenaForAllocation());
+  }
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
+}
+
+inline void ChangeStatusRuntimeAndApplicationRequest::SharedCtor() {
+application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ChangeStatusRuntimeAndApplicationRequest::~ChangeStatusRuntimeAndApplicationRequest() {
+  // @@protoc_insertion_point(destructor:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ChangeStatusRuntimeAndApplicationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  application_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ChangeStatusRuntimeAndApplicationRequest::ArenaDtor(void* object) {
+  ChangeStatusRuntimeAndApplicationRequest* _this = reinterpret_cast< ChangeStatusRuntimeAndApplicationRequest* >(object);
+  (void)_this;
+}
+void ChangeStatusRuntimeAndApplicationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ChangeStatusRuntimeAndApplicationRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ChangeStatusRuntimeAndApplicationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  application_id_.ClearToEmpty();
+  project_id_.ClearToEmpty();
+  organization_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ChangeStatusRuntimeAndApplicationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string application_id = 1 [json_name = "applicationId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_application_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.application_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string project_id = 2 [json_name = "projectId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_project_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.project_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string organization_id = 3 [json_name = "organizationId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ChangeStatusRuntimeAndApplicationRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string application_id = 1 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_application_id().data(), static_cast<int>(this->_internal_application_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.application_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_application_id(), target);
+  }
+
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_id().data(), static_cast<int>(this->_internal_project_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.project_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_project_id(), target);
+  }
+
+  // string organization_id = 3 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_organization_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
+  return target;
+}
+
+size_t ChangeStatusRuntimeAndApplicationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string application_id = 1 [json_name = "applicationId"];
+  if (!this->_internal_application_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_application_id());
+  }
+
+  // string project_id = 2 [json_name = "projectId"];
+  if (!this->_internal_project_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_id());
+  }
+
+  // string organization_id = 3 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ChangeStatusRuntimeAndApplicationRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ChangeStatusRuntimeAndApplicationRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ChangeStatusRuntimeAndApplicationRequest::GetClassData() const { return &_class_data_; }
+
+void ChangeStatusRuntimeAndApplicationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<ChangeStatusRuntimeAndApplicationRequest *>(to)->MergeFrom(
+      static_cast<const ChangeStatusRuntimeAndApplicationRequest &>(from));
+}
+
+
+void ChangeStatusRuntimeAndApplicationRequest::MergeFrom(const ChangeStatusRuntimeAndApplicationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_application_id().empty()) {
+    _internal_set_application_id(from._internal_application_id());
+  }
+  if (!from._internal_project_id().empty()) {
+    _internal_set_project_id(from._internal_project_id());
+  }
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ChangeStatusRuntimeAndApplicationRequest::CopyFrom(const ChangeStatusRuntimeAndApplicationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ChangeStatusRuntimeAndApplicationRequest::IsInitialized() const {
+  return true;
+}
+
+void ChangeStatusRuntimeAndApplicationRequest::InternalSwap(ChangeStatusRuntimeAndApplicationRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &application_id_, GetArenaForAllocation(),
+      &other->application_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_id_, GetArenaForAllocation(),
+      &other->project_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ChangeStatusRuntimeAndApplicationRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once,
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto[27]);
+}
+
+// ===================================================================
+
+class ChangeStatusRuntimeAndApplicationResponse::_Internal {
+ public:
+};
+
+ChangeStatusRuntimeAndApplicationResponse::ChangeStatusRuntimeAndApplicationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse)
+}
+ChangeStatusRuntimeAndApplicationResponse::ChangeStatusRuntimeAndApplicationResponse(const ChangeStatusRuntimeAndApplicationResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_msg().empty()) {
+    msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_msg(), 
+      GetArenaForAllocation());
+  }
+  error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_error().empty()) {
+    error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse)
+}
+
+inline void ChangeStatusRuntimeAndApplicationResponse::SharedCtor() {
+msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ChangeStatusRuntimeAndApplicationResponse::~ChangeStatusRuntimeAndApplicationResponse() {
+  // @@protoc_insertion_point(destructor:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ChangeStatusRuntimeAndApplicationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  msg_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ChangeStatusRuntimeAndApplicationResponse::ArenaDtor(void* object) {
+  ChangeStatusRuntimeAndApplicationResponse* _this = reinterpret_cast< ChangeStatusRuntimeAndApplicationResponse* >(object);
+  (void)_this;
+}
+void ChangeStatusRuntimeAndApplicationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ChangeStatusRuntimeAndApplicationResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ChangeStatusRuntimeAndApplicationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  msg_.ClearToEmpty();
+  error_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ChangeStatusRuntimeAndApplicationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string msg = 1 [json_name = "msg"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_msg();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse.msg"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string error = 2 [json_name = "error"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_error();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse.error"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ChangeStatusRuntimeAndApplicationResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_msg().data(), static_cast<int>(this->_internal_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse.msg");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_msg(), target);
+  }
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error().data(), static_cast<int>(this->_internal_error().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse.error");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse)
+  return target;
+}
+
+size_t ChangeStatusRuntimeAndApplicationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string msg = 1 [json_name = "msg"];
+  if (!this->_internal_msg().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_msg());
+  }
+
+  // string error = 2 [json_name = "error"];
+  if (!this->_internal_error().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ChangeStatusRuntimeAndApplicationResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ChangeStatusRuntimeAndApplicationResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ChangeStatusRuntimeAndApplicationResponse::GetClassData() const { return &_class_data_; }
+
+void ChangeStatusRuntimeAndApplicationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<ChangeStatusRuntimeAndApplicationResponse *>(to)->MergeFrom(
+      static_cast<const ChangeStatusRuntimeAndApplicationResponse &>(from));
+}
+
+
+void ChangeStatusRuntimeAndApplicationResponse::MergeFrom(const ChangeStatusRuntimeAndApplicationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_msg().empty()) {
+    _internal_set_msg(from._internal_msg());
+  }
+  if (!from._internal_error().empty()) {
+    _internal_set_error(from._internal_error());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ChangeStatusRuntimeAndApplicationResponse::CopyFrom(const ChangeStatusRuntimeAndApplicationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ChangeStatusRuntimeAndApplicationResponse::IsInitialized() const {
+  return true;
+}
+
+void ChangeStatusRuntimeAndApplicationResponse::InternalSwap(ChangeStatusRuntimeAndApplicationResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &msg_, GetArenaForAllocation(),
+      &other->msg_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &error_, GetArenaForAllocation(),
+      &other->error_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ChangeStatusRuntimeAndApplicationResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_getter, &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto_once,
+      file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto[28]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace runtime
@@ -7257,6 +8429,18 @@ template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::GetRuntimesInLast24
 }
 template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::GetRuntimesInLast24HoursResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse* Arena::CreateMaybeMessage< ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

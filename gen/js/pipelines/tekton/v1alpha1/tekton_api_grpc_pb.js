@@ -5,6 +5,28 @@ var grpc = require('grpc');
 var pipelines_tekton_v1alpha1_tekton_api_pb = require('../../../pipelines/tekton/v1alpha1/tekton_api_pb.js');
 var pipelines_tekton_v1alpha1_tekton_pb = require('../../../pipelines/tekton/v1alpha1/tekton_pb.js');
 
+function serialize_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationRequest(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.ChangeStatusRuntimeAndApplicationRequest)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationRequest(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.ChangeStatusRuntimeAndApplicationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationResponse(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.ChangeStatusRuntimeAndApplicationResponse)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationResponse(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.ChangeStatusRuntimeAndApplicationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_tekton_v1alpha1_CreateTektonPipelineRequest(arg) {
   if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.CreateTektonPipelineRequest)) {
     throw new Error('Expected argument of type pipelines.tekton.v1alpha1.CreateTektonPipelineRequest');
@@ -204,6 +226,17 @@ var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = 
     requestDeserialize: deserialize_pipelines_tekton_v1alpha1_GetStatusRuntimeRequest,
     responseSerialize: serialize_pipelines_tekton_v1alpha1_GetStatusRuntimeResponse,
     responseDeserialize: deserialize_pipelines_tekton_v1alpha1_GetStatusRuntimeResponse,
+  },
+  changeStatusRuntimeAndApplication: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ChangeStatusRuntimeAndApplication',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.ChangeStatusRuntimeAndApplicationRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.ChangeStatusRuntimeAndApplicationResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationResponse,
   },
 };
 

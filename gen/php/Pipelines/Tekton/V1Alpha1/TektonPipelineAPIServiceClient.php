@@ -94,4 +94,17 @@ class TektonPipelineAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Tekton\V1Alpha1\ChangeStatusRuntimeAndApplicationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ChangeStatusRuntimeAndApplication(\Pipelines\Tekton\V1Alpha1\ChangeStatusRuntimeAndApplicationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ChangeStatusRuntimeAndApplication',
+        $argument,
+        ['\Pipelines\Tekton\V1Alpha1\ChangeStatusRuntimeAndApplicationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
