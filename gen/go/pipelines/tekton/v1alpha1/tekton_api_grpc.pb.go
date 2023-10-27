@@ -24,6 +24,7 @@ type TektonPipelineAPIServiceClient interface {
 	GetPipelineRun(ctx context.Context, in *GetPipelineRunRequest, opts ...grpc.CallOption) (*GetPipelineRunResponse, error)
 	ListPipelineRun(ctx context.Context, in *ListPipelineRunRequest, opts ...grpc.CallOption) (*ListPipelineRunResponse, error)
 	GetStatusRuntime(ctx context.Context, in *GetStatusRuntimeRequest, opts ...grpc.CallOption) (TektonPipelineAPIService_GetStatusRuntimeClient, error)
+	ChangeStatusRuntimeAndApplication(ctx context.Context, in *ChangeStatusRuntimeAndApplicationRequest, opts ...grpc.CallOption) (*ChangeStatusRuntimeAndApplicationResponse, error)
 }
 
 type tektonPipelineAPIServiceClient struct {
@@ -111,6 +112,15 @@ func (x *tektonPipelineAPIServiceGetStatusRuntimeClient) Recv() (*GetStatusRunti
 	return m, nil
 }
 
+func (c *tektonPipelineAPIServiceClient) ChangeStatusRuntimeAndApplication(ctx context.Context, in *ChangeStatusRuntimeAndApplicationRequest, opts ...grpc.CallOption) (*ChangeStatusRuntimeAndApplicationResponse, error) {
+	out := new(ChangeStatusRuntimeAndApplicationResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ChangeStatusRuntimeAndApplication", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TektonPipelineAPIServiceServer is the server API for TektonPipelineAPIService service.
 // All implementations should embed UnimplementedTektonPipelineAPIServiceServer
 // for forward compatibility
@@ -121,6 +131,7 @@ type TektonPipelineAPIServiceServer interface {
 	GetPipelineRun(context.Context, *GetPipelineRunRequest) (*GetPipelineRunResponse, error)
 	ListPipelineRun(context.Context, *ListPipelineRunRequest) (*ListPipelineRunResponse, error)
 	GetStatusRuntime(*GetStatusRuntimeRequest, TektonPipelineAPIService_GetStatusRuntimeServer) error
+	ChangeStatusRuntimeAndApplication(context.Context, *ChangeStatusRuntimeAndApplicationRequest) (*ChangeStatusRuntimeAndApplicationResponse, error)
 }
 
 // UnimplementedTektonPipelineAPIServiceServer should be embedded to have forward compatible implementations.
@@ -144,6 +155,9 @@ func (UnimplementedTektonPipelineAPIServiceServer) ListPipelineRun(context.Conte
 }
 func (UnimplementedTektonPipelineAPIServiceServer) GetStatusRuntime(*GetStatusRuntimeRequest, TektonPipelineAPIService_GetStatusRuntimeServer) error {
 	return status.Errorf(codes.Unimplemented, "method GetStatusRuntime not implemented")
+}
+func (UnimplementedTektonPipelineAPIServiceServer) ChangeStatusRuntimeAndApplication(context.Context, *ChangeStatusRuntimeAndApplicationRequest) (*ChangeStatusRuntimeAndApplicationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChangeStatusRuntimeAndApplication not implemented")
 }
 
 // UnsafeTektonPipelineAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -268,6 +282,24 @@ func (x *tektonPipelineAPIServiceGetStatusRuntimeServer) Send(m *GetStatusRuntim
 	return x.ServerStream.SendMsg(m)
 }
 
+func _TektonPipelineAPIService_ChangeStatusRuntimeAndApplication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ChangeStatusRuntimeAndApplicationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TektonPipelineAPIServiceServer).ChangeStatusRuntimeAndApplication(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ChangeStatusRuntimeAndApplication",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TektonPipelineAPIServiceServer).ChangeStatusRuntimeAndApplication(ctx, req.(*ChangeStatusRuntimeAndApplicationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TektonPipelineAPIService_ServiceDesc is the grpc.ServiceDesc for TektonPipelineAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -294,6 +326,10 @@ var TektonPipelineAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListPipelineRun",
 			Handler:    _TektonPipelineAPIService_ListPipelineRun_Handler,
+		},
+		{
+			MethodName: "ChangeStatusRuntimeAndApplication",
+			Handler:    _TektonPipelineAPIService_ChangeStatusRuntimeAndApplication_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

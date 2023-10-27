@@ -172,4 +172,30 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Runtime\V1Alpha1\GetRuntimesByApplicationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetRuntimesByApplication(\Pipelines\Runtime\V1Alpha1\GetRuntimesByApplicationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesByApplication',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\GetRuntimesByApplicationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Pipelines\Runtime\V1Alpha1\ChangeStatusRuntimeAndApplicationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ChangeStatusRuntimeAndApplication(\Pipelines\Runtime\V1Alpha1\ChangeStatusRuntimeAndApplicationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/ChangeStatusRuntimeAndApplication',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\ChangeStatusRuntimeAndApplicationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

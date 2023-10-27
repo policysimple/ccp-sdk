@@ -30,6 +30,8 @@ type RuntimeAPIServiceClient interface {
 	RebuildRuntime(ctx context.Context, in *RebuildRuntimeRequest, opts ...grpc.CallOption) (*RebuildRuntimeResponse, error)
 	AlreadyExistsRuntime(ctx context.Context, in *AlreadyExistsRuntimeRequest, opts ...grpc.CallOption) (*AlreadyExistsRuntimeResponse, error)
 	GetRuntimesInLast24Hours(ctx context.Context, in *GetRuntimesInLast24HoursRequest, opts ...grpc.CallOption) (*GetRuntimesInLast24HoursResponse, error)
+	GetRuntimesByApplication(ctx context.Context, in *GetRuntimesByApplicationRequest, opts ...grpc.CallOption) (*GetRuntimesByApplicationResponse, error)
+	ChangeStatusRuntimeAndApplication(ctx context.Context, in *ChangeStatusRuntimeAndApplicationRequest, opts ...grpc.CallOption) (*ChangeStatusRuntimeAndApplicationResponse, error)
 }
 
 type runtimeAPIServiceClient struct {
@@ -148,6 +150,24 @@ func (c *runtimeAPIServiceClient) GetRuntimesInLast24Hours(ctx context.Context, 
 	return out, nil
 }
 
+func (c *runtimeAPIServiceClient) GetRuntimesByApplication(ctx context.Context, in *GetRuntimesByApplicationRequest, opts ...grpc.CallOption) (*GetRuntimesByApplicationResponse, error) {
+	out := new(GetRuntimesByApplicationResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesByApplication", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *runtimeAPIServiceClient) ChangeStatusRuntimeAndApplication(ctx context.Context, in *ChangeStatusRuntimeAndApplicationRequest, opts ...grpc.CallOption) (*ChangeStatusRuntimeAndApplicationResponse, error) {
+	out := new(ChangeStatusRuntimeAndApplicationResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/ChangeStatusRuntimeAndApplication", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RuntimeAPIServiceServer is the server API for RuntimeAPIService service.
 // All implementations should embed UnimplementedRuntimeAPIServiceServer
 // for forward compatibility
@@ -164,6 +184,8 @@ type RuntimeAPIServiceServer interface {
 	RebuildRuntime(context.Context, *RebuildRuntimeRequest) (*RebuildRuntimeResponse, error)
 	AlreadyExistsRuntime(context.Context, *AlreadyExistsRuntimeRequest) (*AlreadyExistsRuntimeResponse, error)
 	GetRuntimesInLast24Hours(context.Context, *GetRuntimesInLast24HoursRequest) (*GetRuntimesInLast24HoursResponse, error)
+	GetRuntimesByApplication(context.Context, *GetRuntimesByApplicationRequest) (*GetRuntimesByApplicationResponse, error)
+	ChangeStatusRuntimeAndApplication(context.Context, *ChangeStatusRuntimeAndApplicationRequest) (*ChangeStatusRuntimeAndApplicationResponse, error)
 }
 
 // UnimplementedRuntimeAPIServiceServer should be embedded to have forward compatible implementations.
@@ -205,6 +227,12 @@ func (UnimplementedRuntimeAPIServiceServer) AlreadyExistsRuntime(context.Context
 }
 func (UnimplementedRuntimeAPIServiceServer) GetRuntimesInLast24Hours(context.Context, *GetRuntimesInLast24HoursRequest) (*GetRuntimesInLast24HoursResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRuntimesInLast24Hours not implemented")
+}
+func (UnimplementedRuntimeAPIServiceServer) GetRuntimesByApplication(context.Context, *GetRuntimesByApplicationRequest) (*GetRuntimesByApplicationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRuntimesByApplication not implemented")
+}
+func (UnimplementedRuntimeAPIServiceServer) ChangeStatusRuntimeAndApplication(context.Context, *ChangeStatusRuntimeAndApplicationRequest) (*ChangeStatusRuntimeAndApplicationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChangeStatusRuntimeAndApplication not implemented")
 }
 
 // UnsafeRuntimeAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -434,6 +462,42 @@ func _RuntimeAPIService_GetRuntimesInLast24Hours_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RuntimeAPIService_GetRuntimesByApplication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRuntimesByApplicationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).GetRuntimesByApplication(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesByApplication",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).GetRuntimesByApplication(ctx, req.(*GetRuntimesByApplicationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RuntimeAPIService_ChangeStatusRuntimeAndApplication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ChangeStatusRuntimeAndApplicationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).ChangeStatusRuntimeAndApplication(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/ChangeStatusRuntimeAndApplication",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).ChangeStatusRuntimeAndApplication(ctx, req.(*ChangeStatusRuntimeAndApplicationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // RuntimeAPIService_ServiceDesc is the grpc.ServiceDesc for RuntimeAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -488,6 +552,14 @@ var RuntimeAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetRuntimesInLast24Hours",
 			Handler:    _RuntimeAPIService_GetRuntimesInLast24Hours_Handler,
+		},
+		{
+			MethodName: "GetRuntimesByApplication",
+			Handler:    _RuntimeAPIService_GetRuntimesByApplication_Handler,
+		},
+		{
+			MethodName: "ChangeStatusRuntimeAndApplication",
+			Handler:    _RuntimeAPIService_ChangeStatusRuntimeAndApplication_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

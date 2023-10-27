@@ -74,6 +74,16 @@ public final class TektonAPIProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_tekton_v1alpha1_GetStatusRuntimeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -114,32 +124,44 @@ public final class TektonAPIProto {
       "atus\"8\n\027GetStatusRuntimeRequest\022\035\n\nrunti" +
       "me_id\030\001 \001(\tR\truntimeId\"R\n\030GetStatusRunti" +
       "meResponse\0226\n\005event\030\001 \001(\0132 .pipelines.te" +
-      "kton.v1alpha1.EventR\005event2\256\006\n\030TektonPip" +
-      "elineAPIService\022\207\001\n\024CreateTektonPipeline" +
-      "\0226.pipelines.tekton.v1alpha1.CreateTekto" +
-      "nPipelineRequest\0327.pipelines.tekton.v1al" +
-      "pha1.CreateTektonPipelineResponse\022\207\001\n\024De" +
-      "leteTektonPipeline\0226.pipelines.tekton.v1" +
-      "alpha1.DeleteTektonPipelineRequest\0327.pip" +
-      "elines.tekton.v1alpha1.DeleteTektonPipel" +
-      "ineResponse\022\215\001\n\026ListTektonTaskPipeline\0228" +
-      ".pipelines.tekton.v1alpha1.ListTektonTas" +
-      "kPipelineRequest\0329.pipelines.tekton.v1al" +
-      "pha1.ListTektonTaskPipelineResponse\022u\n\016G" +
-      "etPipelineRun\0220.pipelines.tekton.v1alpha" +
-      "1.GetPipelineRunRequest\0321.pipelines.tekt" +
-      "on.v1alpha1.GetPipelineRunResponse\022x\n\017Li" +
-      "stPipelineRun\0221.pipelines.tekton.v1alpha" +
-      "1.ListPipelineRunRequest\0322.pipelines.tek" +
-      "ton.v1alpha1.ListPipelineRunResponse\022}\n\020" +
-      "GetStatusRuntime\0222.pipelines.tekton.v1al" +
-      "pha1.GetStatusRuntimeRequest\0323.pipelines" +
-      ".tekton.v1alpha1.GetStatusRuntimeRespons" +
-      "e0\001B\261\001\n#io.cuemby.pipelines.tekton.v1alp" +
-      "ha1B\016TektonAPIProtoP\001Z:github.com/cuemby" +
-      "/ccp-sdk/gen/go/pipelines/tekton/v1alpha" +
-      "1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pi" +
-      "pelines\\Tekton\\V1Alpha1b\006proto3"
+      "kton.v1alpha1.EventR\005event\"\274\001\n(ChangeSta" +
+      "tusRuntimeAndApplicationRequest\022%\n\016appli" +
+      "cation_id\030\001 \001(\tR\rapplicationId\022\035\n\nprojec" +
+      "t_id\030\002 \001(\tR\tprojectId\022\'\n\017organization_id" +
+      "\030\003 \001(\tR\016organizationId\022!\n\014runtime_name\030\004" +
+      " \001(\tR\013runtimeName\"S\n)ChangeStatusRuntime" +
+      "AndApplicationResponse\022\020\n\003msg\030\001 \001(\tR\003msg" +
+      "\022\024\n\005error\030\002 \001(\tR\005error2\341\007\n\030TektonPipelin" +
+      "eAPIService\022\207\001\n\024CreateTektonPipeline\0226.p" +
+      "ipelines.tekton.v1alpha1.CreateTektonPip" +
+      "elineRequest\0327.pipelines.tekton.v1alpha1" +
+      ".CreateTektonPipelineResponse\022\207\001\n\024Delete" +
+      "TektonPipeline\0226.pipelines.tekton.v1alph" +
+      "a1.DeleteTektonPipelineRequest\0327.pipelin" +
+      "es.tekton.v1alpha1.DeleteTektonPipelineR" +
+      "esponse\022\215\001\n\026ListTektonTaskPipeline\0228.pip" +
+      "elines.tekton.v1alpha1.ListTektonTaskPip" +
+      "elineRequest\0329.pipelines.tekton.v1alpha1" +
+      ".ListTektonTaskPipelineResponse\022u\n\016GetPi" +
+      "pelineRun\0220.pipelines.tekton.v1alpha1.Ge" +
+      "tPipelineRunRequest\0321.pipelines.tekton.v" +
+      "1alpha1.GetPipelineRunResponse\022x\n\017ListPi" +
+      "pelineRun\0221.pipelines.tekton.v1alpha1.Li" +
+      "stPipelineRunRequest\0322.pipelines.tekton." +
+      "v1alpha1.ListPipelineRunResponse\022}\n\020GetS" +
+      "tatusRuntime\0222.pipelines.tekton.v1alpha1" +
+      ".GetStatusRuntimeRequest\0323.pipelines.tek" +
+      "ton.v1alpha1.GetStatusRuntimeResponse0\001\022" +
+      "\260\001\n!ChangeStatusRuntimeAndApplication\022C." +
+      "pipelines.tekton.v1alpha1.ChangeStatusRu" +
+      "ntimeAndApplicationRequest\032D.pipelines.t" +
+      "ekton.v1alpha1.ChangeStatusRuntimeAndApp" +
+      "licationResponse\"\000B\261\001\n#io.cuemby.pipelin" +
+      "es.tekton.v1alpha1B\016TektonAPIProtoP\001Z:gi" +
+      "thub.com/cuemby/ccp-sdk/gen/go/pipelines" +
+      "/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekto" +
+      "n.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -218,6 +240,18 @@ public final class TektonAPIProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_GetStatusRuntimeResponse_descriptor,
         new java.lang.String[] { "Event", });
+    internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationRequest_descriptor,
+        new java.lang.String[] { "ApplicationId", "ProjectId", "OrganizationId", "RuntimeName", });
+    internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_ChangeStatusRuntimeAndApplicationResponse_descriptor,
+        new java.lang.String[] { "Msg", "Error", });
     io.cuemby.pipelines.tekton.v1alpha1.TektonProto.getDescriptor();
   }
 

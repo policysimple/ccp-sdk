@@ -44,6 +44,11 @@ class TektonPipelineAPIServiceStub(object):
         request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetStatusRuntimeRequest.SerializeToString,
         response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetStatusRuntimeResponse.FromString,
         )
+    self.ChangeStatusRuntimeAndApplication = channel.unary_unary(
+        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ChangeStatusRuntimeAndApplication',
+        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ChangeStatusRuntimeAndApplicationRequest.SerializeToString,
+        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ChangeStatusRuntimeAndApplicationResponse.FromString,
+        )
 
 
 class TektonPipelineAPIServiceServicer(object):
@@ -92,6 +97,13 @@ class TektonPipelineAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ChangeStatusRuntimeAndApplication(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -124,6 +136,11 @@ def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
           servicer.GetStatusRuntime,
           request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetStatusRuntimeRequest.FromString,
           response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.GetStatusRuntimeResponse.SerializeToString,
+      ),
+      'ChangeStatusRuntimeAndApplication': grpc.unary_unary_rpc_method_handler(
+          servicer.ChangeStatusRuntimeAndApplication,
+          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ChangeStatusRuntimeAndApplicationRequest.FromString,
+          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ChangeStatusRuntimeAndApplicationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
