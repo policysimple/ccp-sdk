@@ -194,3 +194,23 @@ func GetOneProject(req *accountpkgv1.GetOneProjectRequest) (*accountpkgv1.GetOne
 	bylogs.LogInfo("GetOneProject Client Sdk", "Success")
 	return response, nil
 }
+
+func ListProjectByOrganization(req *accountpkgv1.ListProjectByOrganizationRequest) (*accountpkgv1.ListProjectByOrganizationResponse, error) {
+	bylogs.LogInfo("ListProjectByOrganization Client Sdk")
+	d, err := time.ParseDuration(accountServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.ListProjectByOrganization(ctx, req)
+	if err != nil {
+		bylogs.LogErr("ListProjectByOrganization Client Sdk", err)
+		return nil, fmt.Errorf("[ListProjectByOrganization] %w", err)
+
+	}
+	bylogs.LogInfo("ListProjectByOrganization Client Sdk", "Success")
+	return response, nil
+}

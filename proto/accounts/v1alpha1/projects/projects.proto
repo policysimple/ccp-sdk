@@ -40,6 +40,10 @@ message UpdateProjectRequest {
     string id = 3;
 
 }
+
+message ListProjectByOrganizationRequest {
+    string organization_id = 1;
+}
 /*
     Responses
 */
@@ -85,6 +89,10 @@ message GetOneProjectResponse {
     string id = 10;
     string  organization_id = 11;
 
+}
+
+message ListProjectByOrganizationResponse {
+    repeated Project projects = 1;
 }
 
 /*

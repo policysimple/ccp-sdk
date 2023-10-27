@@ -16,4 +16,5 @@ service ProjectService {
     // EDITTS AND DELETE USERS
     rpc DeleteUserByProject(DeleteUserByProjectRequest) returns (DeleteUserByProjectResponse);
     rpc EditRoleUserByProject(EditRoleUserByProjectRequest) returns (EditRoleUserByProjectResponse);
+    rpc ListProjectByOrganization(ListProjectByOrganizationRequest) returns (ListProjectByOrganizationResponse);
 }
