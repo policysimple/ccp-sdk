@@ -5473,7 +5473,8 @@ proto.pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.toObje
   var f, obj = {
     applicationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    organizationId: jspb.Message.getFieldWithDefault(msg, 3, "")
+    organizationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -5522,6 +5523,10 @@ proto.pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.deseri
       var value = /** @type {string} */ (reader.readString());
       msg.setOrganizationId(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5569,6 +5574,13 @@ proto.pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.serial
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -5626,6 +5638,24 @@ proto.pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.protot
  */
 proto.pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.setOrganizationId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string status = 4;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest} returns this
+ */
+proto.pipelines.runtime.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

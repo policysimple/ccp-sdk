@@ -25,6 +25,10 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
      * Generated from protobuf field <code>string organization_id = 3 [json_name = "organizationId"];</code>
      */
     protected $organization_id = '';
+    /**
+     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     */
+    protected $status = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
      *     @type string $application_id
      *     @type string $project_id
      *     @type string $organization_id
+     *     @type string $status
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
     {
         GPBUtil::checkString($var, True);
         $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
 
         return $this;
     }
