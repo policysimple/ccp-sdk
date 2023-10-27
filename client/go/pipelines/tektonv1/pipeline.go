@@ -137,3 +137,21 @@ func GetStatusRuntime(in *tektonPipelinepkgv1.GetStatusRuntimeRequest) (response
 	}
 	return response, nil
 }
+
+func ChangeStatusRuntimeAndApplication(in *tektonPipelinepkgv1.ChangeStatusRuntimeAndApplicationRequest) (response *tektonPipelinepkgv1.ChangeStatusRuntimeAndApplicationResponse, err error) {
+	bylogs.LogInfo("client: ChangeStatusRuntimeAndApplication run")
+	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ChangeStatusRuntimeAndApplication(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: ChangeStatusRuntimeAndApplication failed", err)
+		return nil, fmt.Errorf("[ChangeStatusRuntimeAndApplication] %w", err)
+	}
+	return response, nil
+}

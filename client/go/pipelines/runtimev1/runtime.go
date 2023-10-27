@@ -225,3 +225,37 @@ func GetRuntimesInLast24Hours(in *runtimepkgv1.GetRuntimesInLast24HoursRequest) 
 	}
 	return response, nil
 }
+
+func GetRuntimesByApplication(in *runtimepkgv1.GetRuntimesByApplicationRequest) (response *runtimepkgv1.GetRuntimesByApplicationResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetRuntimesByApplication(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error getting runtimes by apps", err)
+		return nil, fmt.Errorf("[GetRuntimesByApplication] %w", err)
+	}
+	return response, nil
+}
+
+func ChangeStatusRuntimeAndApplication(in *runtimepkgv1.ChangeStatusRuntimeAndApplicationRequest) (response *runtimepkgv1.ChangeStatusRuntimeAndApplicationResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ChangeStatusRuntimeAndApplication(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error getting runtimes by apps", err)
+		return nil, fmt.Errorf("[ChangeStatusRuntimeAndApplication] %w", err)
+	}
+	return response, nil
+}
