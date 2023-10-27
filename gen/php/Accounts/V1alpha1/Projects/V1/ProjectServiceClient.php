@@ -122,4 +122,17 @@ class ProjectServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Accounts\V1alpha1\Projects\V1\ListProjectByOrganizationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListProjectByOrganization(\Accounts\V1alpha1\Projects\V1\ListProjectByOrganizationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.projects.v1.ProjectService/ListProjectByOrganization',
+        $argument,
+        ['\Accounts\V1alpha1\Projects\V1\ListProjectByOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

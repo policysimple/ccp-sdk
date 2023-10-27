@@ -29,6 +29,7 @@ static const char* ProjectService_method_names[] = {
   "/accounts.v1alpha1.projects.v1.ProjectService/ListProjectPagination",
   "/accounts.v1alpha1.projects.v1.ProjectService/DeleteUserByProject",
   "/accounts.v1alpha1.projects.v1.ProjectService/EditRoleUserByProject",
+  "/accounts.v1alpha1.projects.v1.ProjectService/ListProjectByOrganization",
 };
 
 std::unique_ptr< ProjectService::Stub> ProjectService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -46,6 +47,7 @@ ProjectService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_ListProjectPagination_(ProjectService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteUserByProject_(ProjectService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_EditRoleUserByProject_(ProjectService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListProjectByOrganization_(ProjectService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status ProjectService::Stub::CreateProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::CreateProjectRequest& request, ::accounts::v1alpha1::projects::v1::CreateProjectResponse* response) {
@@ -176,6 +178,22 @@ void ProjectService::Stub::experimental_async::EditRoleUserByProject(::grpc::Cli
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse>::Create(channel_.get(), cq, rpcmethod_EditRoleUserByProject_, context, request, false);
 }
 
+::grpc::Status ProjectService::Stub::ListProjectByOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest& request, ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListProjectByOrganization_, context, request, response);
+}
+
+void ProjectService::Stub::experimental_async::ListProjectByOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest* request, ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListProjectByOrganization_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>* ProjectService::Stub::AsyncListProjectByOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_ListProjectByOrganization_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>* ProjectService::Stub::PrepareAsyncListProjectByOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_ListProjectByOrganization_, context, request, false);
+}
+
 ProjectService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ProjectService_method_names[0],
@@ -217,6 +235,11 @@ ProjectService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< ProjectService::Service, ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest, ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse>(
           std::mem_fn(&ProjectService::Service::EditRoleUserByProject), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ProjectService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< ProjectService::Service, ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest, ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>(
+          std::mem_fn(&ProjectService::Service::ListProjectByOrganization), this)));
 }
 
 ProjectService::Service::~Service() {
@@ -272,6 +295,13 @@ ProjectService::Service::~Service() {
 }
 
 ::grpc::Status ProjectService::Service::EditRoleUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status ProjectService::Service::ListProjectByOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest* request, ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse* response) {
   (void) context;
   (void) request;
   (void) response;

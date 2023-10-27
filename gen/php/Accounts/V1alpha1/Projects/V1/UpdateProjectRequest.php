@@ -9,8 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Responses
- *
  * Generated from protobuf message <code>accounts.v1alpha1.projects.v1.UpdateProjectRequest</code>
  */
 class UpdateProjectRequest extends \Google\Protobuf\Internal\Message

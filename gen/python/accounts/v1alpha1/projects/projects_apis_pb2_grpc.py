@@ -54,6 +54,11 @@ class ProjectServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.EditRoleUserByProjectRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.EditRoleUserByProjectResponse.FromString,
         )
+    self.ListProjectByOrganization = channel.unary_unary(
+        '/accounts.v1alpha1.projects.v1.ProjectService/ListProjectByOrganization',
+        request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationResponse.FromString,
+        )
 
 
 class ProjectServiceServicer(object):
@@ -116,6 +121,13 @@ class ProjectServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListProjectByOrganization(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ProjectServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -158,6 +170,11 @@ def add_ProjectServiceServicer_to_server(servicer, server):
           servicer.EditRoleUserByProject,
           request_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.EditRoleUserByProjectRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.EditRoleUserByProjectResponse.SerializeToString,
+      ),
+      'ListProjectByOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.ListProjectByOrganization,
+          request_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

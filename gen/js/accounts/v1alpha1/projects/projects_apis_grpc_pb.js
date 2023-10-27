@@ -114,6 +114,28 @@ function deserialize_accounts_v1alpha1_projects_v1_GetOneProjectResponse(buffer_
   return accounts_v1alpha1_projects_projects_pb.GetOneProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.ListProjectByOrganizationRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.ListProjectByOrganizationRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationRequest(buffer_arg) {
+  return accounts_v1alpha1_projects_projects_pb.ListProjectByOrganizationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.ListProjectByOrganizationResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.ListProjectByOrganizationResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationResponse(buffer_arg) {
+  return accounts_v1alpha1_projects_projects_pb.ListProjectByOrganizationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_projects_v1_ListProjectPaginationRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.ListProjectPaginationRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.ListProjectPaginationRequest');
@@ -271,6 +293,17 @@ var ProjectServiceService = exports.ProjectServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_projects_v1_EditRoleUserByProjectRequest,
     responseSerialize: serialize_accounts_v1alpha1_projects_v1_EditRoleUserByProjectResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_projects_v1_EditRoleUserByProjectResponse,
+  },
+  listProjectByOrganization: {
+    path: '/accounts.v1alpha1.projects.v1.ProjectService/ListProjectByOrganization',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_projects_projects_pb.ListProjectByOrganizationRequest,
+    responseType: accounts_v1alpha1_projects_projects_pb.ListProjectByOrganizationResponse,
+    requestSerialize: serialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationRequest,
+    responseSerialize: serialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationResponse,
   },
 };
 
