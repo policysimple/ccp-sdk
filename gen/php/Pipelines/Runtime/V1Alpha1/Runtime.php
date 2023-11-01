@@ -116,6 +116,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $integration_id = '';
     /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     */
+    protected $application_data = null;
+    /**
      * Generated from protobuf field <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
      */
     protected $custom_pipeline = false;
@@ -159,6 +163,14 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string updated_at = 37 [json_name = "updatedAt"];</code>
      */
     protected $updated_at = '';
+    /**
+     * Generated from protobuf field <code>string application_status = 38 [json_name = "applicationStatus"];</code>
+     */
+    protected $application_status = '';
+    /**
+     * Generated from protobuf field <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
+     */
+    protected $runtime_status = '';
 
     /**
      * Constructor.
@@ -191,6 +203,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type int $storage_used
      *     @type int $storage_limit
      *     @type string $integration_id
+     *     @type \Pipelines\Runtime\V1Alpha1\Application $application_data
      *     @type bool $custom_pipeline
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $before_deploy_tasks
      *     @type \Pipelines\Tekton\V1Alpha1\Task[]|\Google\Protobuf\Internal\RepeatedField $after_deploy_tasks
@@ -202,6 +215,8 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $app_label
      *     @type string $created_at
      *     @type string $updated_at
+     *     @type string $application_status
+     *     @type string $runtime_status
      * }
      */
     public function __construct($data = NULL) {
@@ -760,6 +775,38 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     * @return \Pipelines\Runtime\V1Alpha1\Application|null
+     */
+    public function getApplicationData()
+    {
+        return $this->application_data;
+    }
+
+    public function hasApplicationData()
+    {
+        return isset($this->application_data);
+    }
+
+    public function clearApplicationData()
+    {
+        unset($this->application_data);
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\Application $var
+     * @return $this
+     */
+    public function setApplicationData($var)
+    {
+        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Application::class);
+        $this->application_data = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
      * @return bool
      */
@@ -1007,6 +1054,50 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_status = 38 [json_name = "applicationStatus"];</code>
+     * @return string
+     */
+    public function getApplicationStatus()
+    {
+        return $this->application_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_status = 38 [json_name = "applicationStatus"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
+     * @return string
+     */
+    public function getRuntimeStatus()
+    {
+        return $this->runtime_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRuntimeStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runtime_status = $var;
 
         return $this;
     }

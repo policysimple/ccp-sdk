@@ -417,6 +417,21 @@ public interface RuntimeOrBuilder extends
       getIntegrationIdBytes();
 
   /**
+   * <code>.pipelines.runtime.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   * @return Whether the applicationData field is set.
+   */
+  boolean hasApplicationData();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   * @return The applicationData.
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.Application getApplicationData();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Application application_data = 26 [json_name = "applicationData"];</code>
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.ApplicationOrBuilder getApplicationDataOrBuilder();
+
+  /**
    * <code>bool custom_pipeline = 27 [json_name = "customPipeline"];</code>
    * @return The customPipeline.
    */
@@ -574,4 +589,28 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUpdatedAtBytes();
+
+  /**
+   * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
+   * @return The applicationStatus.
+   */
+  java.lang.String getApplicationStatus();
+  /**
+   * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
+   * @return The bytes for applicationStatus.
+   */
+  com.google.protobuf.ByteString
+      getApplicationStatusBytes();
+
+  /**
+   * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
+   * @return The runtimeStatus.
+   */
+  java.lang.String getRuntimeStatus();
+  /**
+   * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
+   * @return The bytes for runtimeStatus.
+   */
+  com.google.protobuf.ByteString
+      getRuntimeStatusBytes();
 }
