@@ -94,7 +94,7 @@ public enum TrafficType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.getDescriptor().getEnumTypes().get(0);
+    return io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final TrafficType[] VALUES = values();

@@ -21,10 +21,51 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$io.cuemby.pipelines.runtime.v1alpha1B\014RuntimeProtoP\001Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\x1a&pipelines/tekton/v1alpha1/tekton.proto\"\xce\x10\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12N\n\x0einstance_types\x18\x03 \x03(\x0b\x32\'.pipelines.runtime.v1alpha1.IntanceTypeR\rinstanceTypes\x12\'\n\x0forganization_id\x18\x04 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x05 \x01(\tR\tprojectId\x12!\n\x0cname_project\x18\x06 \x01(\tR\x0bnameProject\x12%\n\x0e\x61pplication_id\x18\x07 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x08 \x01(\tR\x0bworkspaceId\x12%\n\x0e\x65nvironment_id\x18\t \x01(\tR\renvironmentId\x12\x16\n\x06scaler\x18\n \x01(\tR\x06scaler\x12\x1d\n\npod_status\x18\x0b \x01(\tR\tpodStatus\x12$\n\x0epod_status_msg\x18\x0c \x01(\tR\x0cpodStatusMsg\x12V\n\x0bintegration\x18\r \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0e \x03(\x0b\x32=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0f \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x10 \x03(\x0b\x32\x30.pipelines.runtime.v1alpha1.Runtime.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x11 \x03(\x0b\x32\x32.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR\textraArgs\x12J\n\x0ctraffic_type\x18\x12 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12)\n\x10response_message\x18\x13 \x01(\tR\x0fresponseMessage\x12)\n\x10\x65nvironment_name\x18\x14 \x01(\tR\x0f\x65nvironmentName\x12:\n\x19\x65nvironment_internal_name\x18\x15 \x01(\tR\x17\x65nvironmentInternalName\x12)\n\x10\x61pplication_name\x18\x16 \x01(\tR\x0f\x61pplicationName\x12!\n\x0cstorage_used\x18\x17 \x01(\rR\x0bstorageUsed\x12#\n\rstorage_limit\x18\x18 \x01(\rR\x0cstorageLimit\x12%\n\x0eintegration_id\x18\x19 \x01(\tR\rintegrationId\x12\'\n\x0f\x63ustom_pipeline\x18\x1b \x01(\x08R\x0e\x63ustomPipeline\x12O\n\x13\x62\x65\x66ore_deploy_tasks\x18\x1c \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x11\x62\x65\x66oreDeployTasks\x12M\n\x12\x61\x66ter_deploy_tasks\x18\x1d \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x10\x61\x66terDeployTasks\x12(\n\x10pod_ingress_cert\x18\x1e \x01(\tR\x0epodIngressCert\x12\x35\n\x17is_not_exist_dockerfile\x18\x1f \x01(\x08R\x14isNotExistDockerfile\x12\x39\n\x06params\x18  \x03(\x0b\x32!.pipelines.tekton.v1alpha1.ParamsR\x06params\x12I\n\x0cpipeline_run\x18! \x01(\x0b\x32&.pipelines.tekton.v1alpha1.PipelineRunR\x0bpipelineRun\x12\x19\n\x08host_url\x18\" \x01(\tR\x07hostUrl\x12\x1b\n\tapp_label\x18# \x01(\tR\x08\x61ppLabel\x12\x1d\n\ncreated_at\x18$ \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18% \x01(\tR\tupdatedAt\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"H\n\x0bRuntimeList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x05items\"\x86\x01\n\x0bIntanceType\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12S\n\x0fresources_rules\x18\x03 \x03(\x0b\x32*.pipelines.runtime.v1alpha1.ResourcesRulesR\x0eresourcesRules\"\x88\x01\n\x0eResourcesRules\x12\x37\n\x05limit\x18\x01 \x03(\x0b\x32!.pipelines.runtime.v1alpha1.LimitR\x05limit\x12=\n\x07request\x18\x02 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RequestR\x07request\"+\n\x05Limit\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"-\n\x07Request\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"\x85\x01\n\x0bPipelineRun\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05label\x18\x02 \x01(\tR\x05label\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12.\n\x13pipeline_run_status\x18\x04 \x01(\tR\x11pipelineRunStatus*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\x1a&pipelines/tekton/v1alpha1/tekton.proto\"@\n\x06\x42ranch\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n\x03sha\x18\x02 \x01(\tR\x03sha\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\xe6\x01\n\nRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x04 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x05 \x01(\tR\x08\x63loneUrl\x12\x18\n\x07private\x18\x06 \x01(\x08R\x07private\x12:\n\x06\x62ranch\x18\x07 \x01(\x0b\x32\".pipelines.runtime.v1alpha1.BranchR\x06\x62ranch\"1\n\x07\x43ommand\x12\x14\n\x05\x62uild\x18\x01 \x01(\tR\x05\x62uild\x12\x10\n\x03run\x18\x02 \x01(\tR\x03run\"K\n\x03\x45nv\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n\x03key\x18\x02 \x01(\tR\x03key\x12\x1c\n\tencrypted\x18\x03 \x01(\x08R\tencrypted\"\xbc\x01\n\rConfiguration\x12\x33\n\x04\x65nvs\x18\x01 \x03(\x0b\x32\x1f.pipelines.runtime.v1alpha1.EnvR\x04\x65nvs\x12?\n\x08\x63ommands\x18\x02 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.CommandR\x08\x63ommands\x12\x12\n\x04port\x18\x03 \x01(\x05R\x04port\x12!\n\x0cruntime_type\x18\x04 \x01(\tR\x0bruntimeType\"\xdc\x01\n\x07Scaling\x12\x19\n\x08\x63pu_rule\x18\x01 \x01(\tR\x07\x63puRule\x12(\n\x10\x63ool_down_period\x18\x02 \x01(\tR\x0e\x63oolDownPeriod\x12)\n\x10polling_interval\x18\x03 \x01(\tR\x0fpollingInterval\x12\x1f\n\x0bmin_replica\x18\x04 \x01(\tR\nminReplica\x12\x1f\n\x0bmax_replica\x18\x05 \x01(\tR\nmaxReplica\x12\x1f\n\x0bmemory_rule\x18\x06 \x01(\tR\nmemoryRule\"\x9e\x01\n\x11\x43ontainerRegistry\x12!\n\x0cregistry_url\x18\x01 \x01(\tR\x0bregistryUrl\x12#\n\rregistry_user\x18\x02 \x01(\tR\x0cregistryUser\x12\"\n\rreg_cred_auth\x18\x03 \x01(\tR\x0bregCredAuth\x12\x1d\n\nimage_name\x18\x04 \x01(\tR\timageName\"\xb2\x07\n\x0b\x41pplication\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12\x46\n\nrepository\x18\x04 \x01(\x0b\x32&.pipelines.runtime.v1alpha1.RepositoryR\nrepository\x12O\n\rconfiguration\x18\x05 \x01(\x0b\x32).pipelines.runtime.v1alpha1.ConfigurationR\rconfiguration\x12\x1d\n\nproject_id\x18\x06 \x01(\tR\tprojectId\x12!\n\x0cname_project\x18\x07 \x01(\tR\x0bnameProject\x12#\n\rproject_image\x18\x08 \x01(\tR\x0cprojectImage\x12/\n\x13project_description\x18\t \x01(\tR\x12projectDescription\x12\'\n\x0forganization_id\x18\n \x01(\tR\x0eorganizationId\x12=\n\x07scaling\x18\x0b \x01(\x0b\x32#.pipelines.runtime.v1alpha1.ScalingR\x07scaling\x12J\n\x0ctraffic_type\x18\x0c \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12-\n\x12integration_status\x18\r \x01(\x08R\x11integrationStatus\x12\x66\n\x16\x64ocker_image_buildpack\x18\x0e \x01(\x0e\x32\x30.pipelines.runtime.v1alpha1.DockerImageBuildpackR\x14\x64ockerImageBuildpack\x12(\n\x10no_docker_exists\x18\x0f \x01(\x08R\x0enoDockerExists\x12\\\n\x12\x63ontainer_registry\x18\x10 \x01(\x0b\x32-.pipelines.runtime.v1alpha1.ContainerRegistryR\x11\x63ontainerRegistry\x12*\n\x11\x64ocker_image_name\x18\x11 \x01(\tR\x0f\x64ockerImageName\x12-\n\x12\x61pplication_status\x18\x12 \x01(\tR\x11\x61pplicationStatus\"\xf8\x11\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12N\n\x0einstance_types\x18\x03 \x03(\x0b\x32\'.pipelines.runtime.v1alpha1.IntanceTypeR\rinstanceTypes\x12\'\n\x0forganization_id\x18\x04 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x05 \x01(\tR\tprojectId\x12!\n\x0cname_project\x18\x06 \x01(\tR\x0bnameProject\x12%\n\x0e\x61pplication_id\x18\x07 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x08 \x01(\tR\x0bworkspaceId\x12%\n\x0e\x65nvironment_id\x18\t \x01(\tR\renvironmentId\x12\x16\n\x06scaler\x18\n \x01(\tR\x06scaler\x12\x1d\n\npod_status\x18\x0b \x01(\tR\tpodStatus\x12$\n\x0epod_status_msg\x18\x0c \x01(\tR\x0cpodStatusMsg\x12V\n\x0bintegration\x18\r \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0e \x03(\x0b\x32=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0f \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x10 \x03(\x0b\x32\x30.pipelines.runtime.v1alpha1.Runtime.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x11 \x03(\x0b\x32\x32.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR\textraArgs\x12J\n\x0ctraffic_type\x18\x12 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12)\n\x10response_message\x18\x13 \x01(\tR\x0fresponseMessage\x12)\n\x10\x65nvironment_name\x18\x14 \x01(\tR\x0f\x65nvironmentName\x12:\n\x19\x65nvironment_internal_name\x18\x15 \x01(\tR\x17\x65nvironmentInternalName\x12)\n\x10\x61pplication_name\x18\x16 \x01(\tR\x0f\x61pplicationName\x12!\n\x0cstorage_used\x18\x17 \x01(\rR\x0bstorageUsed\x12#\n\rstorage_limit\x18\x18 \x01(\rR\x0cstorageLimit\x12%\n\x0eintegration_id\x18\x19 \x01(\tR\rintegrationId\x12R\n\x10\x61pplication_data\x18\x1a \x01(\x0b\x32\'.pipelines.runtime.v1alpha1.ApplicationR\x0f\x61pplicationData\x12\'\n\x0f\x63ustom_pipeline\x18\x1b \x01(\x08R\x0e\x63ustomPipeline\x12O\n\x13\x62\x65\x66ore_deploy_tasks\x18\x1c \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x11\x62\x65\x66oreDeployTasks\x12M\n\x12\x61\x66ter_deploy_tasks\x18\x1d \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x10\x61\x66terDeployTasks\x12(\n\x10pod_ingress_cert\x18\x1e \x01(\tR\x0epodIngressCert\x12\x35\n\x17is_not_exist_dockerfile\x18\x1f \x01(\x08R\x14isNotExistDockerfile\x12\x39\n\x06params\x18  \x03(\x0b\x32!.pipelines.tekton.v1alpha1.ParamsR\x06params\x12I\n\x0cpipeline_run\x18! \x01(\x0b\x32&.pipelines.tekton.v1alpha1.PipelineRunR\x0bpipelineRun\x12\x19\n\x08host_url\x18\" \x01(\tR\x07hostUrl\x12\x1b\n\tapp_label\x18# \x01(\tR\x08\x61ppLabel\x12\x1d\n\ncreated_at\x18$ \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18% \x01(\tR\tupdatedAt\x12-\n\x12\x61pplication_status\x18& \x01(\tR\x11\x61pplicationStatus\x12%\n\x0eruntime_status\x18\' \x01(\tR\rruntimeStatus\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"H\n\x0bRuntimeList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x05items\"\x86\x01\n\x0bIntanceType\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12S\n\x0fresources_rules\x18\x03 \x03(\x0b\x32*.pipelines.runtime.v1alpha1.ResourcesRulesR\x0eresourcesRules\"\x88\x01\n\x0eResourcesRules\x12\x37\n\x05limit\x18\x01 \x03(\x0b\x32!.pipelines.runtime.v1alpha1.LimitR\x05limit\x12=\n\x07request\x18\x02 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RequestR\x07request\"+\n\x05Limit\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"-\n\x07Request\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"\x85\x01\n\x0bPipelineRun\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05label\x18\x02 \x01(\tR\x05label\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12.\n\x13pipeline_run_status\x18\x04 \x01(\tR\x11pipelineRunStatus*\xcc\x01\n\x14\x44ockerImageBuildpack\x12&\n\"DOCKER_IMAGE_BUILDPACK_UNSPECIFIED\x10\x00\x12!\n\x1d\x44OCKER_IMAGE_BUILDPACK_GOLANG\x10\x01\x12\x1f\n\x1b\x44OCKER_IMAGE_BUILDPACK_JAVA\x10\x02\x12%\n!DOCKER_IMAGE_BUILDPACK_JAVASCRIPT\x10\x03\x12!\n\x1d\x44OCKER_IMAGE_BUILDPACK_PYTHON\x10\x04*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
   ,
   dependencies=[pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2.DESCRIPTOR,])
 
+_DOCKERIMAGEBUILDPACK = _descriptor.EnumDescriptor(
+  name='DockerImageBuildpack',
+  full_name='pipelines.runtime.v1alpha1.DockerImageBuildpack',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='DOCKER_IMAGE_BUILDPACK_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DOCKER_IMAGE_BUILDPACK_GOLANG', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DOCKER_IMAGE_BUILDPACK_JAVA', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DOCKER_IMAGE_BUILDPACK_JAVASCRIPT', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DOCKER_IMAGE_BUILDPACK_PYTHON', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4941,
+  serialized_end=5145,
+)
+_sym_db.RegisterEnumDescriptor(_DOCKERIMAGEBUILDPACK)
+
+DockerImageBuildpack = enum_type_wrapper.EnumTypeWrapper(_DOCKERIMAGEBUILDPACK)
 _TRAFFICTYPE = _descriptor.EnumDescriptor(
   name='TrafficType',
   full_name='pipelines.runtime.v1alpha1.TrafficType',
@@ -50,16 +91,550 @@ _TRAFFICTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2819,
-  serialized_end=2916,
+  serialized_start=5147,
+  serialized_end=5244,
 )
 _sym_db.RegisterEnumDescriptor(_TRAFFICTYPE)
 
 TrafficType = enum_type_wrapper.EnumTypeWrapper(_TRAFFICTYPE)
+DOCKER_IMAGE_BUILDPACK_UNSPECIFIED = 0
+DOCKER_IMAGE_BUILDPACK_GOLANG = 1
+DOCKER_IMAGE_BUILDPACK_JAVA = 2
+DOCKER_IMAGE_BUILDPACK_JAVASCRIPT = 3
+DOCKER_IMAGE_BUILDPACK_PYTHON = 4
 TRAFFIC_TYPE_UNSPECIFIED = 0
 TRAFFIC_TYPE_EXTERNAL = 1
 TRAFFIC_TYPE_INTERNAL = 2
 
+
+
+_BRANCH = _descriptor.Descriptor(
+  name='Branch',
+  full_name='pipelines.runtime.v1alpha1.Branch',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='pipelines.runtime.v1alpha1.Branch.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sha', full_name='pipelines.runtime.v1alpha1.Branch.sha', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='sha', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='url', full_name='pipelines.runtime.v1alpha1.Branch.url', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='url', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=112,
+  serialized_end=176,
+)
+
+
+_REPOSITORY = _descriptor.Descriptor(
+  name='Repository',
+  full_name='pipelines.runtime.v1alpha1.Repository',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='pipelines.runtime.v1alpha1.Repository.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='full_name', full_name='pipelines.runtime.v1alpha1.Repository.full_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='fullName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='pipelines.runtime.v1alpha1.Repository.description', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='description', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fork', full_name='pipelines.runtime.v1alpha1.Repository.fork', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='fork', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='clone_url', full_name='pipelines.runtime.v1alpha1.Repository.clone_url', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='cloneUrl', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='private', full_name='pipelines.runtime.v1alpha1.Repository.private', index=5,
+      number=6, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='private', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='branch', full_name='pipelines.runtime.v1alpha1.Repository.branch', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='branch', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=179,
+  serialized_end=409,
+)
+
+
+_COMMAND = _descriptor.Descriptor(
+  name='Command',
+  full_name='pipelines.runtime.v1alpha1.Command',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='build', full_name='pipelines.runtime.v1alpha1.Command.build', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='build', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='run', full_name='pipelines.runtime.v1alpha1.Command.run', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='run', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=411,
+  serialized_end=460,
+)
+
+
+_ENV = _descriptor.Descriptor(
+  name='Env',
+  full_name='pipelines.runtime.v1alpha1.Env',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='pipelines.runtime.v1alpha1.Env.value', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='key', full_name='pipelines.runtime.v1alpha1.Env.key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='encrypted', full_name='pipelines.runtime.v1alpha1.Env.encrypted', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='encrypted', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=462,
+  serialized_end=537,
+)
+
+
+_CONFIGURATION = _descriptor.Descriptor(
+  name='Configuration',
+  full_name='pipelines.runtime.v1alpha1.Configuration',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='envs', full_name='pipelines.runtime.v1alpha1.Configuration.envs', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='envs', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='commands', full_name='pipelines.runtime.v1alpha1.Configuration.commands', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='commands', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='pipelines.runtime.v1alpha1.Configuration.port', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='port', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='runtime_type', full_name='pipelines.runtime.v1alpha1.Configuration.runtime_type', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='runtimeType', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=540,
+  serialized_end=728,
+)
+
+
+_SCALING = _descriptor.Descriptor(
+  name='Scaling',
+  full_name='pipelines.runtime.v1alpha1.Scaling',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cpu_rule', full_name='pipelines.runtime.v1alpha1.Scaling.cpu_rule', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='cpuRule', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cool_down_period', full_name='pipelines.runtime.v1alpha1.Scaling.cool_down_period', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='coolDownPeriod', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='polling_interval', full_name='pipelines.runtime.v1alpha1.Scaling.polling_interval', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='pollingInterval', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='min_replica', full_name='pipelines.runtime.v1alpha1.Scaling.min_replica', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='minReplica', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max_replica', full_name='pipelines.runtime.v1alpha1.Scaling.max_replica', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='maxReplica', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='memory_rule', full_name='pipelines.runtime.v1alpha1.Scaling.memory_rule', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='memoryRule', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=731,
+  serialized_end=951,
+)
+
+
+_CONTAINERREGISTRY = _descriptor.Descriptor(
+  name='ContainerRegistry',
+  full_name='pipelines.runtime.v1alpha1.ContainerRegistry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='registry_url', full_name='pipelines.runtime.v1alpha1.ContainerRegistry.registry_url', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='registryUrl', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='registry_user', full_name='pipelines.runtime.v1alpha1.ContainerRegistry.registry_user', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='registryUser', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reg_cred_auth', full_name='pipelines.runtime.v1alpha1.ContainerRegistry.reg_cred_auth', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='regCredAuth', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='image_name', full_name='pipelines.runtime.v1alpha1.ContainerRegistry.image_name', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='imageName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=954,
+  serialized_end=1112,
+)
+
+
+_APPLICATION = _descriptor.Descriptor(
+  name='Application',
+  full_name='pipelines.runtime.v1alpha1.Application',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='pipelines.runtime.v1alpha1.Application.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='pipelines.runtime.v1alpha1.Application.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='name', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='integration', full_name='pipelines.runtime.v1alpha1.Application.integration', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='integration', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='repository', full_name='pipelines.runtime.v1alpha1.Application.repository', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='repository', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='configuration', full_name='pipelines.runtime.v1alpha1.Application.configuration', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='configuration', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='project_id', full_name='pipelines.runtime.v1alpha1.Application.project_id', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name_project', full_name='pipelines.runtime.v1alpha1.Application.name_project', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='nameProject', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='project_image', full_name='pipelines.runtime.v1alpha1.Application.project_image', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='projectImage', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='project_description', full_name='pipelines.runtime.v1alpha1.Application.project_description', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='projectDescription', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='pipelines.runtime.v1alpha1.Application.organization_id', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='scaling', full_name='pipelines.runtime.v1alpha1.Application.scaling', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='scaling', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='traffic_type', full_name='pipelines.runtime.v1alpha1.Application.traffic_type', index=11,
+      number=12, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='trafficType', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='integration_status', full_name='pipelines.runtime.v1alpha1.Application.integration_status', index=12,
+      number=13, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='integrationStatus', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='docker_image_buildpack', full_name='pipelines.runtime.v1alpha1.Application.docker_image_buildpack', index=13,
+      number=14, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='dockerImageBuildpack', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='no_docker_exists', full_name='pipelines.runtime.v1alpha1.Application.no_docker_exists', index=14,
+      number=15, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='noDockerExists', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='container_registry', full_name='pipelines.runtime.v1alpha1.Application.container_registry', index=15,
+      number=16, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='containerRegistry', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='docker_image_name', full_name='pipelines.runtime.v1alpha1.Application.docker_image_name', index=16,
+      number=17, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='dockerImageName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='application_status', full_name='pipelines.runtime.v1alpha1.Application.application_status', index=17,
+      number=18, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='applicationStatus', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1115,
+  serialized_end=2061,
+)
 
 
 _RUNTIME_INTEGRATIONENTRY = _descriptor.Descriptor(
@@ -96,8 +671,8 @@ _RUNTIME_INTEGRATIONENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1921,
-  serialized_end=1983,
+  serialized_start=4042,
+  serialized_end=4104,
 )
 
 _RUNTIME_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
@@ -134,8 +709,8 @@ _RUNTIME_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1985,
-  serialized_end=2056,
+  serialized_start=4106,
+  serialized_end=4177,
 )
 
 _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
@@ -172,8 +747,8 @@ _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2058,
-  serialized_end=2117,
+  serialized_start=4179,
+  serialized_end=4238,
 )
 
 _RUNTIME_SECRETSENTRY = _descriptor.Descriptor(
@@ -210,8 +785,8 @@ _RUNTIME_SECRETSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2119,
-  serialized_end=2177,
+  serialized_start=4240,
+  serialized_end=4298,
 )
 
 _RUNTIME_EXTRAARGSENTRY = _descriptor.Descriptor(
@@ -248,8 +823,8 @@ _RUNTIME_EXTRAARGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2179,
-  serialized_end=2239,
+  serialized_start=4300,
+  serialized_end=4360,
 )
 
 _RUNTIME = _descriptor.Descriptor(
@@ -436,82 +1011,103 @@ _RUNTIME = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='integrationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='custom_pipeline', full_name='pipelines.runtime.v1alpha1.Runtime.custom_pipeline', index=25,
+      name='application_data', full_name='pipelines.runtime.v1alpha1.Runtime.application_data', index=25,
+      number=26, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='applicationData', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='custom_pipeline', full_name='pipelines.runtime.v1alpha1.Runtime.custom_pipeline', index=26,
       number=27, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='customPipeline', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='before_deploy_tasks', full_name='pipelines.runtime.v1alpha1.Runtime.before_deploy_tasks', index=26,
+      name='before_deploy_tasks', full_name='pipelines.runtime.v1alpha1.Runtime.before_deploy_tasks', index=27,
       number=28, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='beforeDeployTasks', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='after_deploy_tasks', full_name='pipelines.runtime.v1alpha1.Runtime.after_deploy_tasks', index=27,
+      name='after_deploy_tasks', full_name='pipelines.runtime.v1alpha1.Runtime.after_deploy_tasks', index=28,
       number=29, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='afterDeployTasks', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pod_ingress_cert', full_name='pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert', index=28,
+      name='pod_ingress_cert', full_name='pipelines.runtime.v1alpha1.Runtime.pod_ingress_cert', index=29,
       number=30, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='podIngressCert', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_not_exist_dockerfile', full_name='pipelines.runtime.v1alpha1.Runtime.is_not_exist_dockerfile', index=29,
+      name='is_not_exist_dockerfile', full_name='pipelines.runtime.v1alpha1.Runtime.is_not_exist_dockerfile', index=30,
       number=31, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='isNotExistDockerfile', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='params', full_name='pipelines.runtime.v1alpha1.Runtime.params', index=30,
+      name='params', full_name='pipelines.runtime.v1alpha1.Runtime.params', index=31,
       number=32, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='params', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pipeline_run', full_name='pipelines.runtime.v1alpha1.Runtime.pipeline_run', index=31,
+      name='pipeline_run', full_name='pipelines.runtime.v1alpha1.Runtime.pipeline_run', index=32,
       number=33, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='pipelineRun', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='host_url', full_name='pipelines.runtime.v1alpha1.Runtime.host_url', index=32,
+      name='host_url', full_name='pipelines.runtime.v1alpha1.Runtime.host_url', index=33,
       number=34, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='hostUrl', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='app_label', full_name='pipelines.runtime.v1alpha1.Runtime.app_label', index=33,
+      name='app_label', full_name='pipelines.runtime.v1alpha1.Runtime.app_label', index=34,
       number=35, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='appLabel', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created_at', full_name='pipelines.runtime.v1alpha1.Runtime.created_at', index=34,
+      name='created_at', full_name='pipelines.runtime.v1alpha1.Runtime.created_at', index=35,
       number=36, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='createdAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='updated_at', full_name='pipelines.runtime.v1alpha1.Runtime.updated_at', index=35,
+      name='updated_at', full_name='pipelines.runtime.v1alpha1.Runtime.updated_at', index=36,
       number=37, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='updatedAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='application_status', full_name='pipelines.runtime.v1alpha1.Runtime.application_status', index=37,
+      number=38, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='applicationStatus', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='runtime_status', full_name='pipelines.runtime.v1alpha1.Runtime.runtime_status', index=38,
+      number=39, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='runtimeStatus', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -524,8 +1120,8 @@ _RUNTIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=113,
-  serialized_end=2239,
+  serialized_start=2064,
+  serialized_end=4360,
 )
 
 
@@ -556,8 +1152,8 @@ _RUNTIMELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2241,
-  serialized_end=2313,
+  serialized_start=4362,
+  serialized_end=4434,
 )
 
 
@@ -602,8 +1198,8 @@ _INTANCETYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2316,
-  serialized_end=2450,
+  serialized_start=4437,
+  serialized_end=4571,
 )
 
 
@@ -641,8 +1237,8 @@ _RESOURCESRULES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2453,
-  serialized_end=2589,
+  serialized_start=4574,
+  serialized_end=4710,
 )
 
 
@@ -680,8 +1276,8 @@ _LIMIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2591,
-  serialized_end=2634,
+  serialized_start=4712,
+  serialized_end=4755,
 )
 
 
@@ -719,8 +1315,8 @@ _REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2636,
-  serialized_end=2681,
+  serialized_start=4757,
+  serialized_end=4802,
 )
 
 
@@ -772,10 +1368,19 @@ _PIPELINERUN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2684,
-  serialized_end=2817,
+  serialized_start=4805,
+  serialized_end=4938,
 )
 
+_REPOSITORY.fields_by_name['branch'].message_type = _BRANCH
+_CONFIGURATION.fields_by_name['envs'].message_type = _ENV
+_CONFIGURATION.fields_by_name['commands'].message_type = _COMMAND
+_APPLICATION.fields_by_name['repository'].message_type = _REPOSITORY
+_APPLICATION.fields_by_name['configuration'].message_type = _CONFIGURATION
+_APPLICATION.fields_by_name['scaling'].message_type = _SCALING
+_APPLICATION.fields_by_name['traffic_type'].enum_type = _TRAFFICTYPE
+_APPLICATION.fields_by_name['docker_image_buildpack'].enum_type = _DOCKERIMAGEBUILDPACK
+_APPLICATION.fields_by_name['container_registry'].message_type = _CONTAINERREGISTRY
 _RUNTIME_INTEGRATIONENTRY.containing_type = _RUNTIME
 _RUNTIME_ENVIRONMENTVARIABLESENTRY.containing_type = _RUNTIME
 _RUNTIME_COMMANDSENTRY.containing_type = _RUNTIME
@@ -788,6 +1393,7 @@ _RUNTIME.fields_by_name['commands'].message_type = _RUNTIME_COMMANDSENTRY
 _RUNTIME.fields_by_name['secrets'].message_type = _RUNTIME_SECRETSENTRY
 _RUNTIME.fields_by_name['extra_args'].message_type = _RUNTIME_EXTRAARGSENTRY
 _RUNTIME.fields_by_name['traffic_type'].enum_type = _TRAFFICTYPE
+_RUNTIME.fields_by_name['application_data'].message_type = _APPLICATION
 _RUNTIME.fields_by_name['before_deploy_tasks'].message_type = pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2._TASK
 _RUNTIME.fields_by_name['after_deploy_tasks'].message_type = pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2._TASK
 _RUNTIME.fields_by_name['params'].message_type = pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2._PARAMS
@@ -796,6 +1402,14 @@ _RUNTIMELIST.fields_by_name['items'].message_type = _RUNTIME
 _INTANCETYPE.fields_by_name['resources_rules'].message_type = _RESOURCESRULES
 _RESOURCESRULES.fields_by_name['limit'].message_type = _LIMIT
 _RESOURCESRULES.fields_by_name['request'].message_type = _REQUEST
+DESCRIPTOR.message_types_by_name['Branch'] = _BRANCH
+DESCRIPTOR.message_types_by_name['Repository'] = _REPOSITORY
+DESCRIPTOR.message_types_by_name['Command'] = _COMMAND
+DESCRIPTOR.message_types_by_name['Env'] = _ENV
+DESCRIPTOR.message_types_by_name['Configuration'] = _CONFIGURATION
+DESCRIPTOR.message_types_by_name['Scaling'] = _SCALING
+DESCRIPTOR.message_types_by_name['ContainerRegistry'] = _CONTAINERREGISTRY
+DESCRIPTOR.message_types_by_name['Application'] = _APPLICATION
 DESCRIPTOR.message_types_by_name['Runtime'] = _RUNTIME
 DESCRIPTOR.message_types_by_name['RuntimeList'] = _RUNTIMELIST
 DESCRIPTOR.message_types_by_name['IntanceType'] = _INTANCETYPE
@@ -803,8 +1417,65 @@ DESCRIPTOR.message_types_by_name['ResourcesRules'] = _RESOURCESRULES
 DESCRIPTOR.message_types_by_name['Limit'] = _LIMIT
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 DESCRIPTOR.message_types_by_name['PipelineRun'] = _PIPELINERUN
+DESCRIPTOR.enum_types_by_name['DockerImageBuildpack'] = _DOCKERIMAGEBUILDPACK
 DESCRIPTOR.enum_types_by_name['TrafficType'] = _TRAFFICTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+Branch = _reflection.GeneratedProtocolMessageType('Branch', (_message.Message,), {
+  'DESCRIPTOR' : _BRANCH,
+  '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Branch)
+  })
+_sym_db.RegisterMessage(Branch)
+
+Repository = _reflection.GeneratedProtocolMessageType('Repository', (_message.Message,), {
+  'DESCRIPTOR' : _REPOSITORY,
+  '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Repository)
+  })
+_sym_db.RegisterMessage(Repository)
+
+Command = _reflection.GeneratedProtocolMessageType('Command', (_message.Message,), {
+  'DESCRIPTOR' : _COMMAND,
+  '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Command)
+  })
+_sym_db.RegisterMessage(Command)
+
+Env = _reflection.GeneratedProtocolMessageType('Env', (_message.Message,), {
+  'DESCRIPTOR' : _ENV,
+  '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Env)
+  })
+_sym_db.RegisterMessage(Env)
+
+Configuration = _reflection.GeneratedProtocolMessageType('Configuration', (_message.Message,), {
+  'DESCRIPTOR' : _CONFIGURATION,
+  '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Configuration)
+  })
+_sym_db.RegisterMessage(Configuration)
+
+Scaling = _reflection.GeneratedProtocolMessageType('Scaling', (_message.Message,), {
+  'DESCRIPTOR' : _SCALING,
+  '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Scaling)
+  })
+_sym_db.RegisterMessage(Scaling)
+
+ContainerRegistry = _reflection.GeneratedProtocolMessageType('ContainerRegistry', (_message.Message,), {
+  'DESCRIPTOR' : _CONTAINERREGISTRY,
+  '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.ContainerRegistry)
+  })
+_sym_db.RegisterMessage(ContainerRegistry)
+
+Application = _reflection.GeneratedProtocolMessageType('Application', (_message.Message,), {
+  'DESCRIPTOR' : _APPLICATION,
+  '__module__' : 'pipelines.runtime.v1alpha1.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Application)
+  })
+_sym_db.RegisterMessage(Application)
 
 Runtime = _reflection.GeneratedProtocolMessageType('Runtime', (_message.Message,), {
 

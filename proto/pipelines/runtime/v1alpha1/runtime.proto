@@ -13,6 +13,89 @@ option php_namespace = "Pipelines\\Runtime\\V1Alpha1";
 import "pipelines/tekton/v1alpha1/tekton.proto";
 //import "../../tekton/v1alpha1/tekton.proto";
 
+
+// APPLICATION
+
+message Branch {
+  string name = 1;
+  string sha = 2;
+  string url = 3;
+}
+
+message Repository {
+  string name = 1;
+  string full_name = 2;
+  string description = 3;
+  bool fork = 4;
+  string clone_url = 5;
+  bool private =6;
+  Branch branch = 7;
+}
+
+message  Command {
+  string build = 1;
+  string run = 2;
+}
+
+message Env {
+  string value = 1;
+  string key = 2;
+  bool encrypted = 3;
+}
+
+message Configuration {
+  repeated Env envs = 1;
+  repeated Command commands = 2;
+  int32 port = 3;
+  string runtime_type = 4;
+}
+
+message Scaling  {
+	string cpu_rule = 1;
+	string cool_down_period = 2;  
+	string polling_interval = 3; 
+	string min_replica = 4;      
+	string max_replica = 5;      
+  string memory_rule = 6;
+}
+
+enum DockerImageBuildpack {
+  DOCKER_IMAGE_BUILDPACK_UNSPECIFIED = 0;
+  DOCKER_IMAGE_BUILDPACK_GOLANG = 1;
+  DOCKER_IMAGE_BUILDPACK_JAVA = 2;
+  DOCKER_IMAGE_BUILDPACK_JAVASCRIPT = 3;
+  DOCKER_IMAGE_BUILDPACK_PYTHON = 4;
+}
+
+message ContainerRegistry {
+  string registry_url = 1;
+  string registry_user = 2;
+  string reg_cred_auth = 3;
+  string image_name = 4;
+}
+
+message Application {
+  string id = 1;
+  string name = 2;
+  string integration = 3;
+  Repository repository = 4;
+  Configuration configuration = 5;
+  string project_id = 6;
+  string name_project = 7;
+  string project_image = 8;
+  string project_description = 9;
+  string organization_id = 10;
+  Scaling scaling = 11;
+  TrafficType traffic_type = 12;
+  bool integration_status = 13;
+  DockerImageBuildpack docker_image_buildpack = 14;
+  bool no_docker_exists = 15;
+  ContainerRegistry container_registry = 16;
+  string docker_image_name = 17;
+  string application_status = 18;
+}
+
+
 enum TrafficType {
   TRAFFIC_TYPE_UNSPECIFIED = 0;
   TRAFFIC_TYPE_EXTERNAL = 1;
@@ -46,6 +129,7 @@ message Runtime {
   uint32 storage_used = 23;
 	uint32 storage_limit = 24;
   string integration_id = 25;
+  Application application_data = 26;
   bool custom_pipeline = 27;
   repeated pipelines.tekton.v1alpha1.Task before_deploy_tasks = 28;
   repeated pipelines.tekton.v1alpha1.Task after_deploy_tasks = 29;
@@ -57,6 +141,8 @@ message Runtime {
   string app_label = 35;
   string created_at = 36;
   string updated_at = 37;
+  string application_status = 38;
+  string runtime_status = 39;
 }
 
 message RuntimeList {
