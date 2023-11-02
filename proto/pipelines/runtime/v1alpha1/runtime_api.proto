@@ -178,7 +178,8 @@ message ChangeStatusRuntimeAndApplicationRequest {
     string application_id = 1;
     string project_id = 2;
     string organization_id = 3;
-    string status = 4;
+    string runtime_id = 4;
+    string status = 5;
 }
 
 message ChangeStatusRuntimeAndApplicationResponse {

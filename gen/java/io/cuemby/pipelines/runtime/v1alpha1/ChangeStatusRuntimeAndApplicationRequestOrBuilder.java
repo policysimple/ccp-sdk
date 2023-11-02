@@ -44,12 +44,24 @@ public interface ChangeStatusRuntimeAndApplicationRequestOrBuilder extends
       getOrganizationIdBytes();
 
   /**
-   * <code>string status = 4 [json_name = "status"];</code>
+   * <code>string runtime_id = 4 [json_name = "runtimeId"];</code>
+   * @return The runtimeId.
+   */
+  java.lang.String getRuntimeId();
+  /**
+   * <code>string runtime_id = 4 [json_name = "runtimeId"];</code>
+   * @return The bytes for runtimeId.
+   */
+  com.google.protobuf.ByteString
+      getRuntimeIdBytes();
+
+  /**
+   * <code>string status = 5 [json_name = "status"];</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <code>string status = 4 [json_name = "status"];</code>
+   * <code>string status = 5 [json_name = "status"];</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString
