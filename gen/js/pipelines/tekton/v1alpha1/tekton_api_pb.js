@@ -2227,7 +2227,9 @@ proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.toObjec
     applicationId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     projectId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     organizationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    runtimeName: jspb.Message.getFieldWithDefault(msg, 4, "")
+    runtimeName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    runtimeId: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -2279,6 +2281,14 @@ proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.deseria
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setRuntimeName(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRuntimeId(value);
       break;
     default:
       reader.skipField();
@@ -2334,6 +2344,20 @@ proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.seriali
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getRuntimeId();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -2409,6 +2433,42 @@ proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototy
  */
 proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.setRuntimeName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string namespace = 5;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest} returns this
+ */
+proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string runtime_id = 6;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.getRuntimeId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest} returns this
+ */
+proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.setRuntimeId = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

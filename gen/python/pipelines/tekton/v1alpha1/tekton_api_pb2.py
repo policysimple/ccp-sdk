@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#io.cuemby.pipelines.tekton.v1alpha1B\016TektonAPIProtoP\001Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*pipelines/tekton/v1alpha1/tekton_api.proto\x12\x19pipelines.tekton.v1alpha1\x1a&pipelines/tekton/v1alpha1/tekton.proto\"\x84\x01\n\x1b\x43reateTektonPipelineRequest\x12L\n\x0ftekton_pipeline\x18\x01 \x01(\x0b\x32#.pipelines.tekton.v1alpha1.PipelineR\x0etektonPipeline\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\x84\x01\n\x1c\x43reateTektonPipelineResponse\x12L\n\x0ftekton_pipeline\x18\x01 \x01(\x0b\x32#.pipelines.tekton.v1alpha1.PipelineR\x0etektonPipeline\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\x8e\x01\n\x1b\x44\x65leteTektonPipelineRequest\x12!\n\x0cruntime_name\x18\x01 \x01(\tR\x0bruntimeName\x12%\n\x0e\x61pplication_id\x18\x02 \x01(\tR\rapplicationId\x12%\n\x0e\x65nvironment_id\x18\x03 \x01(\tR\renvironmentId\"6\n\x1c\x44\x65leteTektonPipelineResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"\x1f\n\x1dListTektonTaskPipelineRequest\"\x80\x01\n\x1eListTektonTaskPipelineResponse\x12\x46\n\ttask_list\x18\x01 \x01(\x0b\x32).pipelines.tekton.v1alpha1.TektonTaskListR\x08taskList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"6\n\x15GetPipelineRunRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"{\n\x16GetPipelineRunResponse\x12I\n\x0cpipeline_run\x18\x01 \x01(\x0b\x32&.pipelines.tekton.v1alpha1.PipelineRunR\x0bpipelineRun\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"7\n\x16ListPipelineRunRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"\x89\x01\n\x17ListPipelineRunResponse\x12V\n\x11pipeline_run_list\x18\x01 \x01(\x0b\x32*.pipelines.tekton.v1alpha1.PipelineRunListR\x0fpipelineRunList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"8\n\x17GetStatusRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"R\n\x18GetStatusRuntimeResponse\x12\x36\n\x05\x65vent\x18\x01 \x01(\x0b\x32 .pipelines.tekton.v1alpha1.EventR\x05\x65vent\"\xbc\x01\n(ChangeStatusRuntimeAndApplicationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\'\n\x0forganization_id\x18\x03 \x01(\tR\x0eorganizationId\x12!\n\x0cruntime_name\x18\x04 \x01(\tR\x0bruntimeName\"S\n)ChangeStatusRuntimeAndApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\xe1\x07\n\x18TektonPipelineAPIService\x12\x87\x01\n\x14\x43reateTektonPipeline\x12\x36.pipelines.tekton.v1alpha1.CreateTektonPipelineRequest\x1a\x37.pipelines.tekton.v1alpha1.CreateTektonPipelineResponse\x12\x87\x01\n\x14\x44\x65leteTektonPipeline\x12\x36.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest\x1a\x37.pipelines.tekton.v1alpha1.DeleteTektonPipelineResponse\x12\x8d\x01\n\x16ListTektonTaskPipeline\x12\x38.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest\x1a\x39.pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse\x12u\n\x0eGetPipelineRun\x12\x30.pipelines.tekton.v1alpha1.GetPipelineRunRequest\x1a\x31.pipelines.tekton.v1alpha1.GetPipelineRunResponse\x12x\n\x0fListPipelineRun\x12\x31.pipelines.tekton.v1alpha1.ListPipelineRunRequest\x1a\x32.pipelines.tekton.v1alpha1.ListPipelineRunResponse\x12}\n\x10GetStatusRuntime\x12\x32.pipelines.tekton.v1alpha1.GetStatusRuntimeRequest\x1a\x33.pipelines.tekton.v1alpha1.GetStatusRuntimeResponse0\x01\x12\xb0\x01\n!ChangeStatusRuntimeAndApplication\x12\x43.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest\x1a\x44.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationResponse\"\x00\x42\xb1\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0eTektonAPIProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n*pipelines/tekton/v1alpha1/tekton_api.proto\x12\x19pipelines.tekton.v1alpha1\x1a&pipelines/tekton/v1alpha1/tekton.proto\"\x84\x01\n\x1b\x43reateTektonPipelineRequest\x12L\n\x0ftekton_pipeline\x18\x01 \x01(\x0b\x32#.pipelines.tekton.v1alpha1.PipelineR\x0etektonPipeline\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\x84\x01\n\x1c\x43reateTektonPipelineResponse\x12L\n\x0ftekton_pipeline\x18\x01 \x01(\x0b\x32#.pipelines.tekton.v1alpha1.PipelineR\x0etektonPipeline\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"\x8e\x01\n\x1b\x44\x65leteTektonPipelineRequest\x12!\n\x0cruntime_name\x18\x01 \x01(\tR\x0bruntimeName\x12%\n\x0e\x61pplication_id\x18\x02 \x01(\tR\rapplicationId\x12%\n\x0e\x65nvironment_id\x18\x03 \x01(\tR\renvironmentId\"6\n\x1c\x44\x65leteTektonPipelineResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status\"\x1f\n\x1dListTektonTaskPipelineRequest\"\x80\x01\n\x1eListTektonTaskPipelineResponse\x12\x46\n\ttask_list\x18\x01 \x01(\x0b\x32).pipelines.tekton.v1alpha1.TektonTaskListR\x08taskList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"6\n\x15GetPipelineRunRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"{\n\x16GetPipelineRunResponse\x12I\n\x0cpipeline_run\x18\x01 \x01(\x0b\x32&.pipelines.tekton.v1alpha1.PipelineRunR\x0bpipelineRun\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"7\n\x16ListPipelineRunRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"\x89\x01\n\x17ListPipelineRunResponse\x12V\n\x11pipeline_run_list\x18\x01 \x01(\x0b\x32*.pipelines.tekton.v1alpha1.PipelineRunListR\x0fpipelineRunList\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"8\n\x17GetStatusRuntimeRequest\x12\x1d\n\nruntime_id\x18\x01 \x01(\tR\truntimeId\"R\n\x18GetStatusRuntimeResponse\x12\x36\n\x05\x65vent\x18\x01 \x01(\x0b\x32 .pipelines.tekton.v1alpha1.EventR\x05\x65vent\"\xf9\x01\n(ChangeStatusRuntimeAndApplicationRequest\x12%\n\x0e\x61pplication_id\x18\x01 \x01(\tR\rapplicationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\'\n\x0forganization_id\x18\x03 \x01(\tR\x0eorganizationId\x12!\n\x0cruntime_name\x18\x04 \x01(\tR\x0bruntimeName\x12\x1c\n\tnamespace\x18\x05 \x01(\tR\tnamespace\x12\x1d\n\nruntime_id\x18\x06 \x01(\tR\truntimeId\"S\n)ChangeStatusRuntimeAndApplicationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x14\n\x05\x65rror\x18\x02 \x01(\tR\x05\x65rror2\xe1\x07\n\x18TektonPipelineAPIService\x12\x87\x01\n\x14\x43reateTektonPipeline\x12\x36.pipelines.tekton.v1alpha1.CreateTektonPipelineRequest\x1a\x37.pipelines.tekton.v1alpha1.CreateTektonPipelineResponse\x12\x87\x01\n\x14\x44\x65leteTektonPipeline\x12\x36.pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest\x1a\x37.pipelines.tekton.v1alpha1.DeleteTektonPipelineResponse\x12\x8d\x01\n\x16ListTektonTaskPipeline\x12\x38.pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest\x1a\x39.pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse\x12u\n\x0eGetPipelineRun\x12\x30.pipelines.tekton.v1alpha1.GetPipelineRunRequest\x1a\x31.pipelines.tekton.v1alpha1.GetPipelineRunResponse\x12x\n\x0fListPipelineRun\x12\x31.pipelines.tekton.v1alpha1.ListPipelineRunRequest\x1a\x32.pipelines.tekton.v1alpha1.ListPipelineRunResponse\x12}\n\x10GetStatusRuntime\x12\x32.pipelines.tekton.v1alpha1.GetStatusRuntimeRequest\x1a\x33.pipelines.tekton.v1alpha1.GetStatusRuntimeResponse0\x01\x12\xb0\x01\n!ChangeStatusRuntimeAndApplication\x12\x43.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest\x1a\x44.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationResponse\"\x00\x42\xb1\x01\n#io.cuemby.pipelines.tekton.v1alpha1B\x0eTektonAPIProtoP\x01Z:github.com/cuemby/ccp-sdk/gen/go/pipelines/tekton/v1alpha1\xa2\x02\x03PPX\xaa\x02\x19Pipelines.Tekton.V1Alpha1\xca\x02\x19Pipelines\\Tekton\\V1Alpha1b\x06proto3'
   ,
   dependencies=[pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2.DESCRIPTOR,])
 
@@ -489,6 +489,20 @@ _CHANGESTATUSRUNTIMEANDAPPLICATIONREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='runtimeName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.namespace', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='namespace', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='runtime_id', full_name='pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.runtime_id', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='runtimeId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -502,7 +516,7 @@ _CHANGESTATUSRUNTIMEANDAPPLICATIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1269,
-  serialized_end=1457,
+  serialized_end=1518,
 )
 
 
@@ -540,8 +554,8 @@ _CHANGESTATUSRUNTIMEANDAPPLICATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1459,
-  serialized_end=1542,
+  serialized_start=1520,
+  serialized_end=1603,
 )
 
 _CREATETEKTONPIPELINEREQUEST.fields_by_name['tekton_pipeline'].message_type = pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2._PIPELINE
@@ -674,8 +688,8 @@ _TEKTONPIPELINEAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1545,
-  serialized_end=2538,
+  serialized_start=1606,
+  serialized_end=2599,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateTektonPipeline',

@@ -174,7 +174,9 @@ constexpr ChangeStatusRuntimeAndApplicationRequest::ChangeStatusRuntimeAndApplic
   : application_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , project_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , runtime_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , runtime_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , namespace__(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , runtime_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct ChangeStatusRuntimeAndApplicationRequestDefaultTypeInternal {
   constexpr ChangeStatusRuntimeAndApplicationRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -292,6 +294,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2ftekton_2fv1alpha1_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, project_id_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, organization_id_),
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, runtime_name_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, namespace__),
+  PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, runtime_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::tekton::v1alpha1::ChangeStatusRuntimeAndApplicationResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -314,7 +318,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 66, -1, sizeof(::pipelines::tekton::v1alpha1::GetStatusRuntimeRequest)},
   { 72, -1, sizeof(::pipelines::tekton::v1alpha1::GetStatusRuntimeResponse)},
   { 78, -1, sizeof(::pipelines::tekton::v1alpha1::ChangeStatusRuntimeAndApplicationRequest)},
-  { 87, -1, sizeof(::pipelines::tekton::v1alpha1::ChangeStatusRuntimeAndApplicationResponse)},
+  { 89, -1, sizeof(::pipelines::tekton::v1alpha1::ChangeStatusRuntimeAndApplicationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -366,51 +370,52 @@ const char descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_5fap
   "atus\"8\n\027GetStatusRuntimeRequest\022\035\n\nrunti"
   "me_id\030\001 \001(\tR\truntimeId\"R\n\030GetStatusRunti"
   "meResponse\0226\n\005event\030\001 \001(\0132 .pipelines.te"
-  "kton.v1alpha1.EventR\005event\"\274\001\n(ChangeSta"
+  "kton.v1alpha1.EventR\005event\"\371\001\n(ChangeSta"
   "tusRuntimeAndApplicationRequest\022%\n\016appli"
   "cation_id\030\001 \001(\tR\rapplicationId\022\035\n\nprojec"
   "t_id\030\002 \001(\tR\tprojectId\022\'\n\017organization_id"
   "\030\003 \001(\tR\016organizationId\022!\n\014runtime_name\030\004"
-  " \001(\tR\013runtimeName\"S\n)ChangeStatusRuntime"
-  "AndApplicationResponse\022\020\n\003msg\030\001 \001(\tR\003msg"
-  "\022\024\n\005error\030\002 \001(\tR\005error2\341\007\n\030TektonPipelin"
-  "eAPIService\022\207\001\n\024CreateTektonPipeline\0226.p"
-  "ipelines.tekton.v1alpha1.CreateTektonPip"
-  "elineRequest\0327.pipelines.tekton.v1alpha1"
-  ".CreateTektonPipelineResponse\022\207\001\n\024Delete"
-  "TektonPipeline\0226.pipelines.tekton.v1alph"
-  "a1.DeleteTektonPipelineRequest\0327.pipelin"
-  "es.tekton.v1alpha1.DeleteTektonPipelineR"
-  "esponse\022\215\001\n\026ListTektonTaskPipeline\0228.pip"
-  "elines.tekton.v1alpha1.ListTektonTaskPip"
-  "elineRequest\0329.pipelines.tekton.v1alpha1"
-  ".ListTektonTaskPipelineResponse\022u\n\016GetPi"
-  "pelineRun\0220.pipelines.tekton.v1alpha1.Ge"
-  "tPipelineRunRequest\0321.pipelines.tekton.v"
-  "1alpha1.GetPipelineRunResponse\022x\n\017ListPi"
-  "pelineRun\0221.pipelines.tekton.v1alpha1.Li"
-  "stPipelineRunRequest\0322.pipelines.tekton."
-  "v1alpha1.ListPipelineRunResponse\022}\n\020GetS"
-  "tatusRuntime\0222.pipelines.tekton.v1alpha1"
-  ".GetStatusRuntimeRequest\0323.pipelines.tek"
-  "ton.v1alpha1.GetStatusRuntimeResponse0\001\022"
-  "\260\001\n!ChangeStatusRuntimeAndApplication\022C."
-  "pipelines.tekton.v1alpha1.ChangeStatusRu"
-  "ntimeAndApplicationRequest\032D.pipelines.t"
-  "ekton.v1alpha1.ChangeStatusRuntimeAndApp"
-  "licationResponse\"\000B\261\001\n#io.cuemby.pipelin"
-  "es.tekton.v1alpha1B\016TektonAPIProtoP\001Z:gi"
-  "thub.com/cuemby/ccp-sdk/gen/go/pipelines"
-  "/tekton/v1alpha1\242\002\003PPX\252\002\031Pipelines.Tekto"
-  "n.V1Alpha1\312\002\031Pipelines\\Tekton\\V1Alpha1b\006"
-  "proto3"
+  " \001(\tR\013runtimeName\022\034\n\tnamespace\030\005 \001(\tR\tna"
+  "mespace\022\035\n\nruntime_id\030\006 \001(\tR\truntimeId\"S"
+  "\n)ChangeStatusRuntimeAndApplicationRespo"
+  "nse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005er"
+  "ror2\341\007\n\030TektonPipelineAPIService\022\207\001\n\024Cre"
+  "ateTektonPipeline\0226.pipelines.tekton.v1a"
+  "lpha1.CreateTektonPipelineRequest\0327.pipe"
+  "lines.tekton.v1alpha1.CreateTektonPipeli"
+  "neResponse\022\207\001\n\024DeleteTektonPipeline\0226.pi"
+  "pelines.tekton.v1alpha1.DeleteTektonPipe"
+  "lineRequest\0327.pipelines.tekton.v1alpha1."
+  "DeleteTektonPipelineResponse\022\215\001\n\026ListTek"
+  "tonTaskPipeline\0228.pipelines.tekton.v1alp"
+  "ha1.ListTektonTaskPipelineRequest\0329.pipe"
+  "lines.tekton.v1alpha1.ListTektonTaskPipe"
+  "lineResponse\022u\n\016GetPipelineRun\0220.pipelin"
+  "es.tekton.v1alpha1.GetPipelineRunRequest"
+  "\0321.pipelines.tekton.v1alpha1.GetPipeline"
+  "RunResponse\022x\n\017ListPipelineRun\0221.pipelin"
+  "es.tekton.v1alpha1.ListPipelineRunReques"
+  "t\0322.pipelines.tekton.v1alpha1.ListPipeli"
+  "neRunResponse\022}\n\020GetStatusRuntime\0222.pipe"
+  "lines.tekton.v1alpha1.GetStatusRuntimeRe"
+  "quest\0323.pipelines.tekton.v1alpha1.GetSta"
+  "tusRuntimeResponse0\001\022\260\001\n!ChangeStatusRun"
+  "timeAndApplication\022C.pipelines.tekton.v1"
+  "alpha1.ChangeStatusRuntimeAndApplication"
+  "Request\032D.pipelines.tekton.v1alpha1.Chan"
+  "geStatusRuntimeAndApplicationResponse\"\000B"
+  "\261\001\n#io.cuemby.pipelines.tekton.v1alpha1B"
+  "\016TektonAPIProtoP\001Z:github.com/cuemby/ccp"
+  "-sdk/gen/go/pipelines/tekton/v1alpha1\242\002\003"
+  "PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipeli"
+  "nes\\Tekton\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto = {
-  false, false, 2726, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto, "pipelines/tekton/v1alpha1/tekton_api.proto", 
+  false, false, 2787, descriptor_table_protodef_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto, "pipelines/tekton/v1alpha1/tekton_api.proto", 
   &descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto_once, descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto::offsets,
   file_level_metadata_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto, file_level_enum_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto, file_level_service_descriptors_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto,
@@ -3146,6 +3151,16 @@ ChangeStatusRuntimeAndApplicationRequest::ChangeStatusRuntimeAndApplicationReque
     runtime_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_runtime_name(), 
       GetArenaForAllocation());
   }
+  namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_namespace_().empty()) {
+    namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_namespace_(), 
+      GetArenaForAllocation());
+  }
+  runtime_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_runtime_id().empty()) {
+    runtime_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_runtime_id(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
 }
 
@@ -3154,6 +3169,8 @@ application_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStr
 project_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 runtime_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+namespace__.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+runtime_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ChangeStatusRuntimeAndApplicationRequest::~ChangeStatusRuntimeAndApplicationRequest() {
@@ -3169,6 +3186,8 @@ inline void ChangeStatusRuntimeAndApplicationRequest::SharedDtor() {
   project_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   runtime_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  namespace__.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  runtime_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ChangeStatusRuntimeAndApplicationRequest::ArenaDtor(void* object) {
@@ -3191,6 +3210,8 @@ void ChangeStatusRuntimeAndApplicationRequest::Clear() {
   project_id_.ClearToEmpty();
   organization_id_.ClearToEmpty();
   runtime_name_.ClearToEmpty();
+  namespace__.ClearToEmpty();
+  runtime_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3233,6 +3254,24 @@ const char* ChangeStatusRuntimeAndApplicationRequest::_InternalParse(const char*
           auto str = _internal_mutable_runtime_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.runtime_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string namespace = 5 [json_name = "namespace"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_namespace_();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.namespace"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string runtime_id = 6 [json_name = "runtimeId"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_runtime_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.runtime_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3305,6 +3344,26 @@ failure:
         4, this->_internal_runtime_name(), target);
   }
 
+  // string namespace = 5 [json_name = "namespace"];
+  if (!this->_internal_namespace_().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_namespace_().data(), static_cast<int>(this->_internal_namespace_().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.namespace");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_namespace_(), target);
+  }
+
+  // string runtime_id = 6 [json_name = "runtimeId"];
+  if (!this->_internal_runtime_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_runtime_id().data(), static_cast<int>(this->_internal_runtime_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.runtime_id");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_runtime_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3349,6 +3408,20 @@ size_t ChangeStatusRuntimeAndApplicationRequest::ByteSizeLong() const {
         this->_internal_runtime_name());
   }
 
+  // string namespace = 5 [json_name = "namespace"];
+  if (!this->_internal_namespace_().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_namespace_());
+  }
+
+  // string runtime_id = 6 [json_name = "runtimeId"];
+  if (!this->_internal_runtime_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_runtime_id());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -3389,6 +3462,12 @@ void ChangeStatusRuntimeAndApplicationRequest::MergeFrom(const ChangeStatusRunti
   if (!from._internal_runtime_name().empty()) {
     _internal_set_runtime_name(from._internal_runtime_name());
   }
+  if (!from._internal_namespace_().empty()) {
+    _internal_set_namespace_(from._internal_namespace_());
+  }
+  if (!from._internal_runtime_id().empty()) {
+    _internal_set_runtime_id(from._internal_runtime_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3425,6 +3504,16 @@ void ChangeStatusRuntimeAndApplicationRequest::InternalSwap(ChangeStatusRuntimeA
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &runtime_name_, GetArenaForAllocation(),
       &other->runtime_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &namespace__, GetArenaForAllocation(),
+      &other->namespace__, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &runtime_id_, GetArenaForAllocation(),
+      &other->runtime_id_, other->GetArenaForAllocation()
   );
 }
 

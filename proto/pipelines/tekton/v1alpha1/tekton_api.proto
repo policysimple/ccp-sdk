@@ -86,7 +86,10 @@ message ChangeStatusRuntimeAndApplicationRequest {
     string project_id = 2;
     string organization_id = 3;
     string runtime_name = 4;
+    string namespace = 5;
+    string runtime_id = 6;
 }
+
 
 message ChangeStatusRuntimeAndApplicationResponse {
     string msg = 1;
