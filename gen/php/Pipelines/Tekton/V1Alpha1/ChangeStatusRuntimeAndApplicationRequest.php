@@ -29,6 +29,14 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
      * Generated from protobuf field <code>string runtime_name = 4 [json_name = "runtimeName"];</code>
      */
     protected $runtime_name = '';
+    /**
+     * Generated from protobuf field <code>string namespace = 5 [json_name = "namespace"];</code>
+     */
+    protected $namespace = '';
+    /**
+     * Generated from protobuf field <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+     */
+    protected $runtime_id = '';
 
     /**
      * Constructor.
@@ -40,6 +48,8 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
      *     @type string $project_id
      *     @type string $organization_id
      *     @type string $runtime_name
+     *     @type string $namespace
+     *     @type string $runtime_id
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +141,50 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
     {
         GPBUtil::checkString($var, True);
         $this->runtime_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 5 [json_name = "namespace"];</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 5 [json_name = "namespace"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+     * @return string
+     */
+    public function getRuntimeId()
+    {
+        return $this->runtime_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRuntimeId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runtime_id = $var;
 
         return $this;
     }

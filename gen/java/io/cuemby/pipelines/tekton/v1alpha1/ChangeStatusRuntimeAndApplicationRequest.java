@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     projectId_ = "";
     organizationId_ = "";
     runtimeName_ = "";
+    namespace_ = "";
+    runtimeId_ = "";
   }
 
   @java.lang.Override
@@ -74,6 +76,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             runtimeName_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            namespace_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            runtimeId_ = s;
             break;
           }
           default: {
@@ -260,6 +274,82 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int NAMESPACE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object namespace_;
+  /**
+   * <code>string namespace = 5 [json_name = "namespace"];</code>
+   * @return The namespace.
+   */
+  @java.lang.Override
+  public java.lang.String getNamespace() {
+    java.lang.Object ref = namespace_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      namespace_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string namespace = 5 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNamespaceBytes() {
+    java.lang.Object ref = namespace_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      namespace_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RUNTIME_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object runtimeId_;
+  /**
+   * <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+   * @return The runtimeId.
+   */
+  @java.lang.Override
+  public java.lang.String getRuntimeId() {
+    java.lang.Object ref = runtimeId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      runtimeId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+   * @return The bytes for runtimeId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRuntimeIdBytes() {
+    java.lang.Object ref = runtimeId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      runtimeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -286,6 +376,12 @@ private static final long serialVersionUID = 0L;
     if (!getRuntimeNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, runtimeName_);
     }
+    if (!getNamespaceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, namespace_);
+    }
+    if (!getRuntimeIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, runtimeId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -306,6 +402,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRuntimeNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, runtimeName_);
+    }
+    if (!getNamespaceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, namespace_);
+    }
+    if (!getRuntimeIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, runtimeId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,6 +432,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getOrganizationId())) return false;
     if (!getRuntimeName()
         .equals(other.getRuntimeName())) return false;
+    if (!getNamespace()
+        .equals(other.getNamespace())) return false;
+    if (!getRuntimeId()
+        .equals(other.getRuntimeId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -349,6 +455,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOrganizationId().hashCode();
     hash = (37 * hash) + RUNTIME_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getRuntimeName().hashCode();
+    hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+    hash = (53 * hash) + getNamespace().hashCode();
+    hash = (37 * hash) + RUNTIME_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRuntimeId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -490,6 +600,10 @@ private static final long serialVersionUID = 0L;
 
       runtimeName_ = "";
 
+      namespace_ = "";
+
+      runtimeId_ = "";
+
       return this;
     }
 
@@ -520,6 +634,8 @@ private static final long serialVersionUID = 0L;
       result.projectId_ = projectId_;
       result.organizationId_ = organizationId_;
       result.runtimeName_ = runtimeName_;
+      result.namespace_ = namespace_;
+      result.runtimeId_ = runtimeId_;
       onBuilt();
       return result;
     }
@@ -582,6 +698,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRuntimeName().isEmpty()) {
         runtimeName_ = other.runtimeName_;
+        onChanged();
+      }
+      if (!other.getNamespace().isEmpty()) {
+        namespace_ = other.namespace_;
+        onChanged();
+      }
+      if (!other.getRuntimeId().isEmpty()) {
+        runtimeId_ = other.runtimeId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -913,6 +1037,158 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       runtimeName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object namespace_ = "";
+    /**
+     * <code>string namespace = 5 [json_name = "namespace"];</code>
+     * @return The namespace.
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string namespace = 5 [json_name = "namespace"];</code>
+     * @return The bytes for namespace.
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string namespace = 5 [json_name = "namespace"];</code>
+     * @param value The namespace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNamespace(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      namespace_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string namespace = 5 [json_name = "namespace"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNamespace() {
+      
+      namespace_ = getDefaultInstance().getNamespace();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string namespace = 5 [json_name = "namespace"];</code>
+     * @param value The bytes for namespace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNamespaceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      namespace_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object runtimeId_ = "";
+    /**
+     * <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+     * @return The runtimeId.
+     */
+    public java.lang.String getRuntimeId() {
+      java.lang.Object ref = runtimeId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        runtimeId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+     * @return The bytes for runtimeId.
+     */
+    public com.google.protobuf.ByteString
+        getRuntimeIdBytes() {
+      java.lang.Object ref = runtimeId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        runtimeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+     * @param value The runtimeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRuntimeId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      runtimeId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRuntimeId() {
+      
+      runtimeId_ = getDefaultInstance().getRuntimeId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+     * @param value The bytes for runtimeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRuntimeIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      runtimeId_ = value;
       onChanged();
       return this;
     }

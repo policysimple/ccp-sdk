@@ -54,4 +54,28 @@ public interface ChangeStatusRuntimeAndApplicationRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRuntimeNameBytes();
+
+  /**
+   * <code>string namespace = 5 [json_name = "namespace"];</code>
+   * @return The namespace.
+   */
+  java.lang.String getNamespace();
+  /**
+   * <code>string namespace = 5 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
+   */
+  com.google.protobuf.ByteString
+      getNamespaceBytes();
+
+  /**
+   * <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+   * @return The runtimeId.
+   */
+  java.lang.String getRuntimeId();
+  /**
+   * <code>string runtime_id = 6 [json_name = "runtimeId"];</code>
+   * @return The bytes for runtimeId.
+   */
+  com.google.protobuf.ByteString
+      getRuntimeIdBytes();
 }
