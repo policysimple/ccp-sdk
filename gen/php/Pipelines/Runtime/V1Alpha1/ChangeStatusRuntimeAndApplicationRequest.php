@@ -26,7 +26,11 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
      */
     protected $organization_id = '';
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string runtime_id = 4 [json_name = "runtimeId"];</code>
+     */
+    protected $runtime_id = '';
+    /**
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      */
     protected $status = '';
 
@@ -39,6 +43,7 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
      *     @type string $application_id
      *     @type string $project_id
      *     @type string $organization_id
+     *     @type string $runtime_id
      *     @type string $status
      * }
      */
@@ -114,7 +119,29 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string runtime_id = 4 [json_name = "runtimeId"];</code>
+     * @return string
+     */
+    public function getRuntimeId()
+    {
+        return $this->runtime_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime_id = 4 [json_name = "runtimeId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRuntimeId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runtime_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      * @return string
      */
     public function getStatus()
@@ -123,7 +150,7 @@ class ChangeStatusRuntimeAndApplicationRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4 [json_name = "status"];</code>
+     * Generated from protobuf field <code>string status = 5 [json_name = "status"];</code>
      * @param string $var
      * @return $this
      */
