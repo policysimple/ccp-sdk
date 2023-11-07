@@ -2091,6 +2091,7 @@ class ChangeStatusRuntimeAndApplicationRequest final :
     kRuntimeNameFieldNumber = 4,
     kNamespaceFieldNumber = 5,
     kRuntimeIdFieldNumber = 6,
+    kStatusFieldNumber = 7,
   };
   // string application_id = 1 [json_name = "applicationId"];
   void clear_application_id();
@@ -2176,6 +2177,20 @@ class ChangeStatusRuntimeAndApplicationRequest final :
   std::string* _internal_mutable_runtime_id();
   public:
 
+  // string status = 7 [json_name = "status"];
+  void clear_status();
+  const std::string& status() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_status(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_status();
+  PROTOBUF_MUST_USE_RESULT std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest)
  private:
   class _Internal;
@@ -2189,6 +2204,7 @@ class ChangeStatusRuntimeAndApplicationRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
 };
@@ -3753,6 +3769,52 @@ inline void ChangeStatusRuntimeAndApplicationRequest::set_allocated_runtime_id(s
   runtime_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), runtime_id,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.runtime_id)
+}
+
+// string status = 7 [json_name = "status"];
+inline void ChangeStatusRuntimeAndApplicationRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& ChangeStatusRuntimeAndApplicationRequest::status() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.status)
+  return _internal_status();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ChangeStatusRuntimeAndApplicationRequest::set_status(ArgT0&& arg0, ArgT... args) {
+ 
+ status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.status)
+}
+inline std::string* ChangeStatusRuntimeAndApplicationRequest::mutable_status() {
+  std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.status)
+  return _s;
+}
+inline const std::string& ChangeStatusRuntimeAndApplicationRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void ChangeStatusRuntimeAndApplicationRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ChangeStatusRuntimeAndApplicationRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ChangeStatusRuntimeAndApplicationRequest::release_status() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ChangeStatusRuntimeAndApplicationRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.status)
 }
 
 // -------------------------------------------------------------------

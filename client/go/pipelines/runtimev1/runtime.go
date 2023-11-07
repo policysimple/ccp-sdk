@@ -259,3 +259,20 @@ func ChangeStatusRuntimeAndApplication(in *runtimepkgv1.ChangeStatusRuntimeAndAp
 	}
 	return response, nil
 }
+
+func UpdateApplicationChanges(in *runtimepkgv1.UpdateApplicationChangesRequest) (response *runtimepkgv1.UpdateApplicationChangesResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.UpdateApplicationChanges(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error updating runtimes by apps changes", err)
+		return nil, fmt.Errorf("[UpdateApplicationChanges] %w", err)
+	}
+	return response, nil
+}

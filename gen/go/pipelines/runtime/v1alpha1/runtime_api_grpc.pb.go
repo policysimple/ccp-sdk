@@ -32,6 +32,7 @@ type RuntimeAPIServiceClient interface {
 	GetRuntimesInLast24Hours(ctx context.Context, in *GetRuntimesInLast24HoursRequest, opts ...grpc.CallOption) (*GetRuntimesInLast24HoursResponse, error)
 	GetRuntimesByApplication(ctx context.Context, in *GetRuntimesByApplicationRequest, opts ...grpc.CallOption) (*GetRuntimesByApplicationResponse, error)
 	ChangeStatusRuntimeAndApplication(ctx context.Context, in *ChangeStatusRuntimeAndApplicationRequest, opts ...grpc.CallOption) (*ChangeStatusRuntimeAndApplicationResponse, error)
+	UpdateApplicationChanges(ctx context.Context, in *UpdateApplicationChangesRequest, opts ...grpc.CallOption) (*UpdateApplicationChangesResponse, error)
 }
 
 type runtimeAPIServiceClient struct {
@@ -168,6 +169,15 @@ func (c *runtimeAPIServiceClient) ChangeStatusRuntimeAndApplication(ctx context.
 	return out, nil
 }
 
+func (c *runtimeAPIServiceClient) UpdateApplicationChanges(ctx context.Context, in *UpdateApplicationChangesRequest, opts ...grpc.CallOption) (*UpdateApplicationChangesResponse, error) {
+	out := new(UpdateApplicationChangesResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateApplicationChanges", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RuntimeAPIServiceServer is the server API for RuntimeAPIService service.
 // All implementations should embed UnimplementedRuntimeAPIServiceServer
 // for forward compatibility
@@ -186,6 +196,7 @@ type RuntimeAPIServiceServer interface {
 	GetRuntimesInLast24Hours(context.Context, *GetRuntimesInLast24HoursRequest) (*GetRuntimesInLast24HoursResponse, error)
 	GetRuntimesByApplication(context.Context, *GetRuntimesByApplicationRequest) (*GetRuntimesByApplicationResponse, error)
 	ChangeStatusRuntimeAndApplication(context.Context, *ChangeStatusRuntimeAndApplicationRequest) (*ChangeStatusRuntimeAndApplicationResponse, error)
+	UpdateApplicationChanges(context.Context, *UpdateApplicationChangesRequest) (*UpdateApplicationChangesResponse, error)
 }
 
 // UnimplementedRuntimeAPIServiceServer should be embedded to have forward compatible implementations.
@@ -233,6 +244,9 @@ func (UnimplementedRuntimeAPIServiceServer) GetRuntimesByApplication(context.Con
 }
 func (UnimplementedRuntimeAPIServiceServer) ChangeStatusRuntimeAndApplication(context.Context, *ChangeStatusRuntimeAndApplicationRequest) (*ChangeStatusRuntimeAndApplicationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ChangeStatusRuntimeAndApplication not implemented")
+}
+func (UnimplementedRuntimeAPIServiceServer) UpdateApplicationChanges(context.Context, *UpdateApplicationChangesRequest) (*UpdateApplicationChangesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateApplicationChanges not implemented")
 }
 
 // UnsafeRuntimeAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -498,6 +512,24 @@ func _RuntimeAPIService_ChangeStatusRuntimeAndApplication_Handler(srv interface{
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RuntimeAPIService_UpdateApplicationChanges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateApplicationChangesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).UpdateApplicationChanges(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateApplicationChanges",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).UpdateApplicationChanges(ctx, req.(*UpdateApplicationChangesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // RuntimeAPIService_ServiceDesc is the grpc.ServiceDesc for RuntimeAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -560,6 +592,10 @@ var RuntimeAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ChangeStatusRuntimeAndApplication",
 			Handler:    _RuntimeAPIService_ChangeStatusRuntimeAndApplication_Handler,
+		},
+		{
+			MethodName: "UpdateApplicationChanges",
+			Handler:    _RuntimeAPIService_UpdateApplicationChanges_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -29,6 +29,7 @@ service RuntimeAPIService{
     rpc GetRuntimesInLast24Hours(GetRuntimesInLast24HoursRequest) returns (GetRuntimesInLast24HoursResponse) {};
     rpc GetRuntimesByApplication(GetRuntimesByApplicationRequest) returns (GetRuntimesByApplicationResponse) {};
     rpc ChangeStatusRuntimeAndApplication(ChangeStatusRuntimeAndApplicationRequest) returns (ChangeStatusRuntimeAndApplicationResponse) {};
+    rpc UpdateApplicationChanges(UpdateApplicationChangesRequest) returns (UpdateApplicationChangesResponse) {};
 }
 
 message CreateRuntimeRequest {
@@ -183,6 +184,18 @@ message ChangeStatusRuntimeAndApplicationRequest {
 }
 
 message ChangeStatusRuntimeAndApplicationResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message UpdateApplicationChangesRequest {
+    string application_id = 1;
+    string project_id = 2;
+    string organization_id = 3;
+    string runtime_id = 4;
+}
+
+message UpdateApplicationChangesResponse {
     string msg = 1;
     string error = 2;
 }

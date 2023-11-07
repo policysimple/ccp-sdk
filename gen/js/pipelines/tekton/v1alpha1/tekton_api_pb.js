@@ -2229,7 +2229,8 @@ proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.toObjec
     organizationId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     runtimeName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    runtimeId: jspb.Message.getFieldWithDefault(msg, 6, "")
+    runtimeId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -2289,6 +2290,10 @@ proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.deseria
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setRuntimeId(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -2358,6 +2363,13 @@ proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.seriali
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -2469,6 +2481,24 @@ proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototy
  */
 proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.setRuntimeId = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string status = 7;
+ * @return {string}
+ */
+proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest} returns this
+ */
+proto.pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

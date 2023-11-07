@@ -198,4 +198,17 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Runtime\V1Alpha1\UpdateApplicationChangesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateApplicationChanges(\Pipelines\Runtime\V1Alpha1\UpdateApplicationChangesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateApplicationChanges',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\UpdateApplicationChangesResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
