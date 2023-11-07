@@ -269,6 +269,28 @@ function deserialize_pipelines_runtime_v1alpha1_ResponseMessageDeleteRuntimeByAp
   return pipelines_runtime_v1alpha1_runtime_api_pb.ResponseMessageDeleteRuntimeByAppIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesRequest(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.UpdateApplicationChangesRequest)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.UpdateApplicationChangesRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesRequest(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.UpdateApplicationChangesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesResponse(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.UpdateApplicationChangesResponse)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.UpdateApplicationChangesResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesResponse(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.UpdateApplicationChangesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_runtime_v1alpha1_UpdateResponseMessageRuntimeRequest(arg) {
   if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.UpdateResponseMessageRuntimeRequest)) {
     throw new Error('Expected argument of type pipelines.runtime.v1alpha1.UpdateResponseMessageRuntimeRequest');
@@ -468,6 +490,17 @@ var RuntimeAPIServiceService = exports.RuntimeAPIServiceService = {
     requestDeserialize: deserialize_pipelines_runtime_v1alpha1_ChangeStatusRuntimeAndApplicationRequest,
     responseSerialize: serialize_pipelines_runtime_v1alpha1_ChangeStatusRuntimeAndApplicationResponse,
     responseDeserialize: deserialize_pipelines_runtime_v1alpha1_ChangeStatusRuntimeAndApplicationResponse,
+  },
+  updateApplicationChanges: {
+    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateApplicationChanges',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.UpdateApplicationChangesRequest,
+    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.UpdateApplicationChangesResponse,
+    requestSerialize: serialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesRequest,
+    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesRequest,
+    responseSerialize: serialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesResponse,
+    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesResponse,
   },
 };
 

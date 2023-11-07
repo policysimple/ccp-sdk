@@ -34,6 +34,7 @@ static const char* RuntimeAPIService_method_names[] = {
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesInLast24Hours",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesByApplication",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/ChangeStatusRuntimeAndApplication",
+  "/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateApplicationChanges",
 };
 
 std::unique_ptr< RuntimeAPIService::Stub> RuntimeAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -57,6 +58,7 @@ RuntimeAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_GetRuntimesInLast24Hours_(RuntimeAPIService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetRuntimesByApplication_(RuntimeAPIService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ChangeStatusRuntimeAndApplication_(RuntimeAPIService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateApplicationChanges_(RuntimeAPIService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RuntimeAPIService::Stub::GetRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimeRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimeResponse* response) {
@@ -283,6 +285,22 @@ void RuntimeAPIService::Stub::experimental_async::ChangeStatusRuntimeAndApplicat
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse>::Create(channel_.get(), cq, rpcmethod_ChangeStatusRuntimeAndApplication_, context, request, false);
 }
 
+::grpc::Status RuntimeAPIService::Stub::UpdateApplicationChanges(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest& request, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateApplicationChanges_, context, request, response);
+}
+
+void RuntimeAPIService::Stub::experimental_async::UpdateApplicationChanges(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest* request, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateApplicationChanges_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>* RuntimeAPIService::Stub::AsyncUpdateApplicationChangesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>::Create(channel_.get(), cq, rpcmethod_UpdateApplicationChanges_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>* RuntimeAPIService::Stub::PrepareAsyncUpdateApplicationChangesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>::Create(channel_.get(), cq, rpcmethod_UpdateApplicationChanges_, context, request, false);
+}
+
 RuntimeAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RuntimeAPIService_method_names[0],
@@ -354,6 +372,11 @@ RuntimeAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest, ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse>(
           std::mem_fn(&RuntimeAPIService::Service::ChangeStatusRuntimeAndApplication), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RuntimeAPIService_method_names[14],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>(
+          std::mem_fn(&RuntimeAPIService::Service::UpdateApplicationChanges), this)));
 }
 
 RuntimeAPIService::Service::~Service() {
@@ -451,6 +474,13 @@ RuntimeAPIService::Service::~Service() {
 }
 
 ::grpc::Status RuntimeAPIService::Service::ChangeStatusRuntimeAndApplication(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest* request, ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RuntimeAPIService::Service::UpdateApplicationChanges(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest* request, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse* response) {
   (void) context;
   (void) request;
   (void) response;

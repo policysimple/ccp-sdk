@@ -78,4 +78,16 @@ public interface ChangeStatusRuntimeAndApplicationRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRuntimeIdBytes();
+
+  /**
+   * <code>string status = 7 [json_name = "status"];</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <code>string status = 7 [json_name = "status"];</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
 }
