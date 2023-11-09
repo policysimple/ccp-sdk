@@ -143,6 +143,8 @@ message Runtime {
   string updated_at = 37;
   string application_status = 38;
   string runtime_status = 39;
+  Configuration configuration = 40;
+  Scaling scaling = 41;
 }
 
 message RuntimeList {

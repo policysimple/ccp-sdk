@@ -2255,6 +2255,8 @@ class Runtime final :
     kRuntimeStatusFieldNumber = 39,
     kApplicationDataFieldNumber = 26,
     kPipelineRunFieldNumber = 33,
+    kConfigurationFieldNumber = 40,
+    kScalingFieldNumber = 41,
     kTrafficTypeFieldNumber = 18,
     kStorageUsedFieldNumber = 23,
     kStorageLimitFieldNumber = 24,
@@ -2776,6 +2778,42 @@ class Runtime final :
       ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run);
   ::pipelines::tekton::v1alpha1::PipelineRun* unsafe_arena_release_pipeline_run();
 
+  // .pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];
+  bool has_configuration() const;
+  private:
+  bool _internal_has_configuration() const;
+  public:
+  void clear_configuration();
+  const ::pipelines::runtime::v1alpha1::Configuration& configuration() const;
+  PROTOBUF_MUST_USE_RESULT ::pipelines::runtime::v1alpha1::Configuration* release_configuration();
+  ::pipelines::runtime::v1alpha1::Configuration* mutable_configuration();
+  void set_allocated_configuration(::pipelines::runtime::v1alpha1::Configuration* configuration);
+  private:
+  const ::pipelines::runtime::v1alpha1::Configuration& _internal_configuration() const;
+  ::pipelines::runtime::v1alpha1::Configuration* _internal_mutable_configuration();
+  public:
+  void unsafe_arena_set_allocated_configuration(
+      ::pipelines::runtime::v1alpha1::Configuration* configuration);
+  ::pipelines::runtime::v1alpha1::Configuration* unsafe_arena_release_configuration();
+
+  // .pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];
+  bool has_scaling() const;
+  private:
+  bool _internal_has_scaling() const;
+  public:
+  void clear_scaling();
+  const ::pipelines::runtime::v1alpha1::Scaling& scaling() const;
+  PROTOBUF_MUST_USE_RESULT ::pipelines::runtime::v1alpha1::Scaling* release_scaling();
+  ::pipelines::runtime::v1alpha1::Scaling* mutable_scaling();
+  void set_allocated_scaling(::pipelines::runtime::v1alpha1::Scaling* scaling);
+  private:
+  const ::pipelines::runtime::v1alpha1::Scaling& _internal_scaling() const;
+  ::pipelines::runtime::v1alpha1::Scaling* _internal_mutable_scaling();
+  public:
+  void unsafe_arena_set_allocated_scaling(
+      ::pipelines::runtime::v1alpha1::Scaling* scaling);
+  ::pipelines::runtime::v1alpha1::Scaling* unsafe_arena_release_scaling();
+
   // .pipelines.runtime.v1alpha1.TrafficType traffic_type = 18 [json_name = "trafficType"];
   void clear_traffic_type();
   ::pipelines::runtime::v1alpha1::TrafficType traffic_type() const;
@@ -2882,6 +2920,8 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_status_;
   ::pipelines::runtime::v1alpha1::Application* application_data_;
   ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run_;
+  ::pipelines::runtime::v1alpha1::Configuration* configuration_;
+  ::pipelines::runtime::v1alpha1::Scaling* scaling_;
   int traffic_type_;
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_used_;
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit_;
@@ -7741,6 +7781,186 @@ inline void Runtime::set_allocated_runtime_status(std::string* runtime_status) {
   runtime_status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), runtime_status,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.runtime_status)
+}
+
+// .pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];
+inline bool Runtime::_internal_has_configuration() const {
+  return this != internal_default_instance() && configuration_ != nullptr;
+}
+inline bool Runtime::has_configuration() const {
+  return _internal_has_configuration();
+}
+inline void Runtime::clear_configuration() {
+  if (GetArenaForAllocation() == nullptr && configuration_ != nullptr) {
+    delete configuration_;
+  }
+  configuration_ = nullptr;
+}
+inline const ::pipelines::runtime::v1alpha1::Configuration& Runtime::_internal_configuration() const {
+  const ::pipelines::runtime::v1alpha1::Configuration* p = configuration_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::runtime::v1alpha1::Configuration&>(
+      ::pipelines::runtime::v1alpha1::_Configuration_default_instance_);
+}
+inline const ::pipelines::runtime::v1alpha1::Configuration& Runtime::configuration() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.configuration)
+  return _internal_configuration();
+}
+inline void Runtime::unsafe_arena_set_allocated_configuration(
+    ::pipelines::runtime::v1alpha1::Configuration* configuration) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(configuration_);
+  }
+  configuration_ = configuration;
+  if (configuration) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.runtime.v1alpha1.Runtime.configuration)
+}
+inline ::pipelines::runtime::v1alpha1::Configuration* Runtime::release_configuration() {
+  
+  ::pipelines::runtime::v1alpha1::Configuration* temp = configuration_;
+  configuration_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pipelines::runtime::v1alpha1::Configuration* Runtime::unsafe_arena_release_configuration() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.configuration)
+  
+  ::pipelines::runtime::v1alpha1::Configuration* temp = configuration_;
+  configuration_ = nullptr;
+  return temp;
+}
+inline ::pipelines::runtime::v1alpha1::Configuration* Runtime::_internal_mutable_configuration() {
+  
+  if (configuration_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pipelines::runtime::v1alpha1::Configuration>(GetArenaForAllocation());
+    configuration_ = p;
+  }
+  return configuration_;
+}
+inline ::pipelines::runtime::v1alpha1::Configuration* Runtime::mutable_configuration() {
+  ::pipelines::runtime::v1alpha1::Configuration* _msg = _internal_mutable_configuration();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.configuration)
+  return _msg;
+}
+inline void Runtime::set_allocated_configuration(::pipelines::runtime::v1alpha1::Configuration* configuration) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete configuration_;
+  }
+  if (configuration) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::pipelines::runtime::v1alpha1::Configuration>::GetOwningArena(configuration);
+    if (message_arena != submessage_arena) {
+      configuration = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, configuration, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  configuration_ = configuration;
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.configuration)
+}
+
+// .pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];
+inline bool Runtime::_internal_has_scaling() const {
+  return this != internal_default_instance() && scaling_ != nullptr;
+}
+inline bool Runtime::has_scaling() const {
+  return _internal_has_scaling();
+}
+inline void Runtime::clear_scaling() {
+  if (GetArenaForAllocation() == nullptr && scaling_ != nullptr) {
+    delete scaling_;
+  }
+  scaling_ = nullptr;
+}
+inline const ::pipelines::runtime::v1alpha1::Scaling& Runtime::_internal_scaling() const {
+  const ::pipelines::runtime::v1alpha1::Scaling* p = scaling_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::runtime::v1alpha1::Scaling&>(
+      ::pipelines::runtime::v1alpha1::_Scaling_default_instance_);
+}
+inline const ::pipelines::runtime::v1alpha1::Scaling& Runtime::scaling() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.scaling)
+  return _internal_scaling();
+}
+inline void Runtime::unsafe_arena_set_allocated_scaling(
+    ::pipelines::runtime::v1alpha1::Scaling* scaling) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(scaling_);
+  }
+  scaling_ = scaling;
+  if (scaling) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.runtime.v1alpha1.Runtime.scaling)
+}
+inline ::pipelines::runtime::v1alpha1::Scaling* Runtime::release_scaling() {
+  
+  ::pipelines::runtime::v1alpha1::Scaling* temp = scaling_;
+  scaling_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pipelines::runtime::v1alpha1::Scaling* Runtime::unsafe_arena_release_scaling() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.scaling)
+  
+  ::pipelines::runtime::v1alpha1::Scaling* temp = scaling_;
+  scaling_ = nullptr;
+  return temp;
+}
+inline ::pipelines::runtime::v1alpha1::Scaling* Runtime::_internal_mutable_scaling() {
+  
+  if (scaling_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pipelines::runtime::v1alpha1::Scaling>(GetArenaForAllocation());
+    scaling_ = p;
+  }
+  return scaling_;
+}
+inline ::pipelines::runtime::v1alpha1::Scaling* Runtime::mutable_scaling() {
+  ::pipelines::runtime::v1alpha1::Scaling* _msg = _internal_mutable_scaling();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.scaling)
+  return _msg;
+}
+inline void Runtime::set_allocated_scaling(::pipelines::runtime::v1alpha1::Scaling* scaling) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete scaling_;
+  }
+  if (scaling) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::pipelines::runtime::v1alpha1::Scaling>::GetOwningArena(scaling);
+    if (message_arena != submessage_arena) {
+      scaling = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, scaling, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  scaling_ = scaling;
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.scaling)
 }
 
 // -------------------------------------------------------------------
