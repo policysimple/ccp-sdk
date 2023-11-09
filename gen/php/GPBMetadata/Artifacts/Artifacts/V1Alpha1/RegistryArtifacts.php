@@ -28,9 +28,9 @@ class RegistryArtifacts
 digest (	Rdigest
 	pull_time (	RpullTime
 	push_time (	RpushTime
-size (Rsize
+size (Rsize
 active (Ractive6
-tags (2".artifacts.artifacts.v1alpha1.TagsRtagsBÅ
+tags (2".artifacts.artifacts.v1alpha1.TagsRtagsBÅ
 &io.cuemby.artifacts.artifacts.v1alpha1BRegistryArtifactsProtoPZ=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1¢PPXªArtifacts.Artifacts.V1Alpha1ÊArtifacts\\Artifacts\\V1Alpha1bproto3'
         , true);
 

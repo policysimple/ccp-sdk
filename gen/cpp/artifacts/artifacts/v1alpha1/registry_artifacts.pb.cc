@@ -36,12 +36,12 @@ struct TagsDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TagsDefaultTypeInternal _Tags_default_instance_;
 constexpr ArtifactsRegistry::ArtifactsRegistry(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : tags_()
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , digest_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , pull_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , push_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , tags_(nullptr)
-  , size_(0u)
+  , size_(int64_t{0})
   , active_(false){}
 struct ArtifactsRegistryDefaultTypeInternal {
   constexpr ArtifactsRegistryDefaultTypeInternal()
@@ -101,8 +101,8 @@ const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry
   "ageLimit\"\331\001\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001"
   "(\tR\002id\022\026\n\006digest\030\002 \001(\tR\006digest\022\033\n\tpull_t"
   "ime\030\003 \001(\tR\010pullTime\022\033\n\tpush_time\030\004 \001(\tR\010"
-  "pushTime\022\022\n\004size\030\005 \001(\rR\004size\022\026\n\006active\030\006"
-  " \001(\010R\006active\0226\n\004tags\030\007 \001(\0132\".artifacts.a"
+  "pushTime\022\022\n\004size\030\005 \001(\003R\004size\022\026\n\006active\030\006"
+  " \001(\010R\006active\0226\n\004tags\030\007 \003(\0132\".artifacts.a"
   "rtifacts.v1alpha1.TagsR\004tagsB\305\001\n&io.cuem"
   "by.artifacts.artifacts.v1alpha1B\026Registr"
   "yArtifactsProtoP\001Z=github.com/cuemby/ccp"
@@ -442,16 +442,12 @@ void Tags::InternalSwap(Tags* other) {
 
 class ArtifactsRegistry::_Internal {
  public:
-  static const ::artifacts::artifacts::v1alpha1::Tags& tags(const ArtifactsRegistry* msg);
 };
 
-const ::artifacts::artifacts::v1alpha1::Tags&
-ArtifactsRegistry::_Internal::tags(const ArtifactsRegistry* msg) {
-  return *msg->tags_;
-}
 ArtifactsRegistry::ArtifactsRegistry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  tags_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -459,7 +455,8 @@ ArtifactsRegistry::ArtifactsRegistry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:artifacts.artifacts.v1alpha1.ArtifactsRegistry)
 }
 ArtifactsRegistry::ArtifactsRegistry(const ArtifactsRegistry& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      tags_(from.tags_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
@@ -481,11 +478,6 @@ ArtifactsRegistry::ArtifactsRegistry(const ArtifactsRegistry& from)
     push_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_push_time(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_tags()) {
-    tags_ = new ::artifacts::artifacts::v1alpha1::Tags(*from.tags_);
-  } else {
-    tags_ = nullptr;
-  }
   ::memcpy(&size_, &from.size_,
     static_cast<size_t>(reinterpret_cast<char*>(&active_) -
     reinterpret_cast<char*>(&size_)) + sizeof(active_));
@@ -498,9 +490,9 @@ digest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlrea
 pull_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 push_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&tags_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&size_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&active_) -
-    reinterpret_cast<char*>(&tags_)) + sizeof(active_));
+    reinterpret_cast<char*>(&size_)) + sizeof(active_));
 }
 
 ArtifactsRegistry::~ArtifactsRegistry() {
@@ -516,7 +508,6 @@ inline void ArtifactsRegistry::SharedDtor() {
   digest_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   pull_time_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   push_time_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete tags_;
 }
 
 void ArtifactsRegistry::ArenaDtor(void* object) {
@@ -535,14 +526,11 @@ void ArtifactsRegistry::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  tags_.Clear();
   id_.ClearToEmpty();
   digest_.ClearToEmpty();
   pull_time_.ClearToEmpty();
   push_time_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && tags_ != nullptr) {
-    delete tags_;
-  }
-  tags_ = nullptr;
   ::memset(&size_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&active_) -
       reinterpret_cast<char*>(&size_)) + sizeof(active_));
@@ -591,10 +579,10 @@ const char* ArtifactsRegistry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 size = 5 [json_name = "size"];
+      // int64 size = 5 [json_name = "size"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -605,11 +593,16 @@ const char* ArtifactsRegistry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
+      // repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          ptr = ctx->ParseMessage(_internal_mutable_tags(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_tags(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -681,10 +674,10 @@ failure:
         4, this->_internal_push_time(), target);
   }
 
-  // uint32 size = 5 [json_name = "size"];
+  // int64 size = 5 [json_name = "size"];
   if (this->_internal_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_size(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_size(), target);
   }
 
   // bool active = 6 [json_name = "active"];
@@ -693,12 +686,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_active(), target);
   }
 
-  // .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
-  if (this->_internal_has_tags()) {
+  // repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_tags_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        7, _Internal::tags(this), target, stream);
+      InternalWriteMessage(7, this->_internal_tags(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -716,6 +709,13 @@ size_t ArtifactsRegistry::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
+  total_size += 1UL * this->_internal_tags_size();
+  for (const auto& msg : this->tags_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   // string id = 1 [json_name = "id"];
   if (!this->_internal_id().empty()) {
@@ -745,17 +745,10 @@ size_t ArtifactsRegistry::ByteSizeLong() const {
         this->_internal_push_time());
   }
 
-  // .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
-  if (this->_internal_has_tags()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *tags_);
-  }
-
-  // uint32 size = 5 [json_name = "size"];
+  // int64 size = 5 [json_name = "size"];
   if (this->_internal_size() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_size());
   }
 
@@ -792,6 +785,7 @@ void ArtifactsRegistry::MergeFrom(const ArtifactsRegistry& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  tags_.MergeFrom(from.tags_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -803,9 +797,6 @@ void ArtifactsRegistry::MergeFrom(const ArtifactsRegistry& from) {
   }
   if (!from._internal_push_time().empty()) {
     _internal_set_push_time(from._internal_push_time());
-  }
-  if (from._internal_has_tags()) {
-    _internal_mutable_tags()->::artifacts::artifacts::v1alpha1::Tags::MergeFrom(from._internal_tags());
   }
   if (from._internal_size() != 0) {
     _internal_set_size(from._internal_size());
@@ -830,6 +821,7 @@ bool ArtifactsRegistry::IsInitialized() const {
 void ArtifactsRegistry::InternalSwap(ArtifactsRegistry* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  tags_.InternalSwap(&other->tags_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
@@ -853,9 +845,9 @@ void ArtifactsRegistry::InternalSwap(ArtifactsRegistry* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ArtifactsRegistry, active_)
       + sizeof(ArtifactsRegistry::active_)
-      - PROTOBUF_FIELD_OFFSET(ArtifactsRegistry, tags_)>(
-          reinterpret_cast<char*>(&tags_),
-          reinterpret_cast<char*>(&other->tags_));
+      - PROTOBUF_FIELD_OFFSET(ArtifactsRegistry, size_)>(
+          reinterpret_cast<char*>(&size_),
+          reinterpret_cast<char*>(&other->size_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ArtifactsRegistry::GetMetadata() const {

@@ -377,14 +377,32 @@ class ArtifactsRegistry final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kTagsFieldNumber = 7,
     kIdFieldNumber = 1,
     kDigestFieldNumber = 2,
     kPullTimeFieldNumber = 3,
     kPushTimeFieldNumber = 4,
-    kTagsFieldNumber = 7,
     kSizeFieldNumber = 5,
     kActiveFieldNumber = 6,
   };
+  // repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
+  int tags_size() const;
+  private:
+  int _internal_tags_size() const;
+  public:
+  void clear_tags();
+  ::artifacts::artifacts::v1alpha1::Tags* mutable_tags(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::artifacts::v1alpha1::Tags >*
+      mutable_tags();
+  private:
+  const ::artifacts::artifacts::v1alpha1::Tags& _internal_tags(int index) const;
+  ::artifacts::artifacts::v1alpha1::Tags* _internal_add_tags();
+  public:
+  const ::artifacts::artifacts::v1alpha1::Tags& tags(int index) const;
+  ::artifacts::artifacts::v1alpha1::Tags* add_tags();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::artifacts::v1alpha1::Tags >&
+      tags() const;
+
   // string id = 1 [json_name = "id"];
   void clear_id();
   const std::string& id() const;
@@ -441,31 +459,13 @@ class ArtifactsRegistry final :
   std::string* _internal_mutable_push_time();
   public:
 
-  // .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
-  bool has_tags() const;
-  private:
-  bool _internal_has_tags() const;
-  public:
-  void clear_tags();
-  const ::artifacts::artifacts::v1alpha1::Tags& tags() const;
-  PROTOBUF_MUST_USE_RESULT ::artifacts::artifacts::v1alpha1::Tags* release_tags();
-  ::artifacts::artifacts::v1alpha1::Tags* mutable_tags();
-  void set_allocated_tags(::artifacts::artifacts::v1alpha1::Tags* tags);
-  private:
-  const ::artifacts::artifacts::v1alpha1::Tags& _internal_tags() const;
-  ::artifacts::artifacts::v1alpha1::Tags* _internal_mutable_tags();
-  public:
-  void unsafe_arena_set_allocated_tags(
-      ::artifacts::artifacts::v1alpha1::Tags* tags);
-  ::artifacts::artifacts::v1alpha1::Tags* unsafe_arena_release_tags();
-
-  // uint32 size = 5 [json_name = "size"];
+  // int64 size = 5 [json_name = "size"];
   void clear_size();
-  ::PROTOBUF_NAMESPACE_ID::uint32 size() const;
-  void set_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 size() const;
+  void set_size(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_size() const;
-  void _internal_set_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_size() const;
+  void _internal_set_size(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // bool active = 6 [json_name = "active"];
@@ -484,12 +484,12 @@ class ArtifactsRegistry final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::artifacts::v1alpha1::Tags > tags_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr digest_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pull_time_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr push_time_;
-  ::artifacts::artifacts::v1alpha1::Tags* tags_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 size_;
+  ::PROTOBUF_NAMESPACE_ID::int64 size_;
   bool active_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto;
@@ -851,22 +851,22 @@ inline void ArtifactsRegistry::set_allocated_push_time(std::string* push_time) {
   // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.push_time)
 }
 
-// uint32 size = 5 [json_name = "size"];
+// int64 size = 5 [json_name = "size"];
 inline void ArtifactsRegistry::clear_size() {
-  size_ = 0u;
+  size_ = int64_t{0};
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ArtifactsRegistry::_internal_size() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 ArtifactsRegistry::_internal_size() const {
   return size_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ArtifactsRegistry::size() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 ArtifactsRegistry::size() const {
   // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.size)
   return _internal_size();
 }
-inline void ArtifactsRegistry::_internal_set_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void ArtifactsRegistry::_internal_set_size(::PROTOBUF_NAMESPACE_ID::int64 value) {
   
   size_ = value;
 }
-inline void ArtifactsRegistry::set_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void ArtifactsRegistry::set_size(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_size(value);
   // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.size)
 }
@@ -891,94 +891,44 @@ inline void ArtifactsRegistry::set_active(bool value) {
   // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.active)
 }
 
-// .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
-inline bool ArtifactsRegistry::_internal_has_tags() const {
-  return this != internal_default_instance() && tags_ != nullptr;
+// repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
+inline int ArtifactsRegistry::_internal_tags_size() const {
+  return tags_.size();
 }
-inline bool ArtifactsRegistry::has_tags() const {
-  return _internal_has_tags();
+inline int ArtifactsRegistry::tags_size() const {
+  return _internal_tags_size();
 }
 inline void ArtifactsRegistry::clear_tags() {
-  if (GetArenaForAllocation() == nullptr && tags_ != nullptr) {
-    delete tags_;
-  }
-  tags_ = nullptr;
+  tags_.Clear();
 }
-inline const ::artifacts::artifacts::v1alpha1::Tags& ArtifactsRegistry::_internal_tags() const {
-  const ::artifacts::artifacts::v1alpha1::Tags* p = tags_;
-  return p != nullptr ? *p : reinterpret_cast<const ::artifacts::artifacts::v1alpha1::Tags&>(
-      ::artifacts::artifacts::v1alpha1::_Tags_default_instance_);
-}
-inline const ::artifacts::artifacts::v1alpha1::Tags& ArtifactsRegistry::tags() const {
-  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
-  return _internal_tags();
-}
-inline void ArtifactsRegistry::unsafe_arena_set_allocated_tags(
-    ::artifacts::artifacts::v1alpha1::Tags* tags) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tags_);
-  }
-  tags_ = tags;
-  if (tags) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
-}
-inline ::artifacts::artifacts::v1alpha1::Tags* ArtifactsRegistry::release_tags() {
-  
-  ::artifacts::artifacts::v1alpha1::Tags* temp = tags_;
-  tags_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::artifacts::artifacts::v1alpha1::Tags* ArtifactsRegistry::unsafe_arena_release_tags() {
-  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
-  
-  ::artifacts::artifacts::v1alpha1::Tags* temp = tags_;
-  tags_ = nullptr;
-  return temp;
-}
-inline ::artifacts::artifacts::v1alpha1::Tags* ArtifactsRegistry::_internal_mutable_tags() {
-  
-  if (tags_ == nullptr) {
-    auto* p = CreateMaybeMessage<::artifacts::artifacts::v1alpha1::Tags>(GetArenaForAllocation());
-    tags_ = p;
-  }
-  return tags_;
-}
-inline ::artifacts::artifacts::v1alpha1::Tags* ArtifactsRegistry::mutable_tags() {
-  ::artifacts::artifacts::v1alpha1::Tags* _msg = _internal_mutable_tags();
+inline ::artifacts::artifacts::v1alpha1::Tags* ArtifactsRegistry::mutable_tags(int index) {
   // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
-  return _msg;
+  return tags_.Mutable(index);
 }
-inline void ArtifactsRegistry::set_allocated_tags(::artifacts::artifacts::v1alpha1::Tags* tags) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete tags_;
-  }
-  if (tags) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::artifacts::artifacts::v1alpha1::Tags>::GetOwningArena(tags);
-    if (message_arena != submessage_arena) {
-      tags = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, tags, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  tags_ = tags;
-  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::artifacts::v1alpha1::Tags >*
+ArtifactsRegistry::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
+  return &tags_;
+}
+inline const ::artifacts::artifacts::v1alpha1::Tags& ArtifactsRegistry::_internal_tags(int index) const {
+  return tags_.Get(index);
+}
+inline const ::artifacts::artifacts::v1alpha1::Tags& ArtifactsRegistry::tags(int index) const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
+  return _internal_tags(index);
+}
+inline ::artifacts::artifacts::v1alpha1::Tags* ArtifactsRegistry::_internal_add_tags() {
+  return tags_.Add();
+}
+inline ::artifacts::artifacts::v1alpha1::Tags* ArtifactsRegistry::add_tags() {
+  ::artifacts::artifacts::v1alpha1::Tags* _add = _internal_add_tags();
+  // @@protoc_insertion_point(field_add:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::artifacts::v1alpha1::Tags >&
+ArtifactsRegistry::tags() const {
+  // @@protoc_insertion_point(field_list:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
+  return tags_;
 }
 
 #ifdef __GNUC__
