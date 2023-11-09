@@ -613,4 +613,34 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRuntimeStatusBytes();
+
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+   * @return Whether the configuration field is set.
+   */
+  boolean hasConfiguration();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+   * @return The configuration.
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.Configuration getConfiguration();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.ConfigurationOrBuilder getConfigurationOrBuilder();
+
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+   * @return Whether the scaling field is set.
+   */
+  boolean hasScaling();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+   * @return The scaling.
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.Scaling getScaling();
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+   */
+  io.cuemby.pipelines.runtime.v1alpha1.ScalingOrBuilder getScalingOrBuilder();
 }

@@ -171,6 +171,14 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
      */
     protected $runtime_status = '';
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     */
+    protected $configuration = null;
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     */
+    protected $scaling = null;
 
     /**
      * Constructor.
@@ -217,6 +225,8 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $updated_at
      *     @type string $application_status
      *     @type string $runtime_status
+     *     @type \Pipelines\Runtime\V1Alpha1\Configuration $configuration
+     *     @type \Pipelines\Runtime\V1Alpha1\Scaling $scaling
      * }
      */
     public function __construct($data = NULL) {
@@ -1098,6 +1108,70 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->runtime_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     * @return \Pipelines\Runtime\V1Alpha1\Configuration|null
+     */
+    public function getConfiguration()
+    {
+        return $this->configuration;
+    }
+
+    public function hasConfiguration()
+    {
+        return isset($this->configuration);
+    }
+
+    public function clearConfiguration()
+    {
+        unset($this->configuration);
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\Configuration $var
+     * @return $this
+     */
+    public function setConfiguration($var)
+    {
+        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Configuration::class);
+        $this->configuration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     * @return \Pipelines\Runtime\V1Alpha1\Scaling|null
+     */
+    public function getScaling()
+    {
+        return $this->scaling;
+    }
+
+    public function hasScaling()
+    {
+        return isset($this->scaling);
+    }
+
+    public function clearScaling()
+    {
+        unset($this->scaling);
+    }
+
+    /**
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\Scaling $var
+     * @return $this
+     */
+    public function setScaling($var)
+    {
+        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Scaling::class);
+        $this->scaling = $var;
 
         return $this;
     }

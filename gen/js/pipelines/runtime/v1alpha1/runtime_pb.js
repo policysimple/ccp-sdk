@@ -2798,7 +2798,9 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     createdAt: jspb.Message.getFieldWithDefault(msg, 36, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 37, ""),
     applicationStatus: jspb.Message.getFieldWithDefault(msg, 38, ""),
-    runtimeStatus: jspb.Message.getFieldWithDefault(msg, 39, "")
+    runtimeStatus: jspb.Message.getFieldWithDefault(msg, 39, ""),
+    configuration: (f = msg.getConfiguration()) && proto.pipelines.runtime.v1alpha1.Configuration.toObject(includeInstance, f),
+    scaling: (f = msg.getScaling()) && proto.pipelines.runtime.v1alpha1.Scaling.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3006,6 +3008,16 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 39:
       var value = /** @type {string} */ (reader.readString());
       msg.setRuntimeStatus(value);
+      break;
+    case 40:
+      var value = new proto.pipelines.runtime.v1alpha1.Configuration;
+      reader.readMessage(value,proto.pipelines.runtime.v1alpha1.Configuration.deserializeBinaryFromReader);
+      msg.setConfiguration(value);
+      break;
+    case 41:
+      var value = new proto.pipelines.runtime.v1alpha1.Scaling;
+      reader.readMessage(value,proto.pipelines.runtime.v1alpha1.Scaling.deserializeBinaryFromReader);
+      msg.setScaling(value);
       break;
     default:
       reader.skipField();
@@ -3298,6 +3310,22 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
     writer.writeString(
       39,
       f
+    );
+  }
+  f = message.getConfiguration();
+  if (f != null) {
+    writer.writeMessage(
+      40,
+      f,
+      proto.pipelines.runtime.v1alpha1.Configuration.serializeBinaryToWriter
+    );
+  }
+  f = message.getScaling();
+  if (f != null) {
+    writer.writeMessage(
+      41,
+      f,
+      proto.pipelines.runtime.v1alpha1.Scaling.serializeBinaryToWriter
     );
   }
 };
@@ -4140,6 +4168,80 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getRuntimeStatus = function()
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setRuntimeStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 39, value);
+};
+
+
+/**
+ * optional Configuration configuration = 40;
+ * @return {?proto.pipelines.runtime.v1alpha1.Configuration}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getConfiguration = function() {
+  return /** @type{?proto.pipelines.runtime.v1alpha1.Configuration} */ (
+    jspb.Message.getWrapperField(this, proto.pipelines.runtime.v1alpha1.Configuration, 40));
+};
+
+
+/**
+ * @param {?proto.pipelines.runtime.v1alpha1.Configuration|undefined} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+*/
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setConfiguration = function(value) {
+  return jspb.Message.setWrapperField(this, 40, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearConfiguration = function() {
+  return this.setConfiguration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.hasConfiguration = function() {
+  return jspb.Message.getField(this, 40) != null;
+};
+
+
+/**
+ * optional Scaling scaling = 41;
+ * @return {?proto.pipelines.runtime.v1alpha1.Scaling}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getScaling = function() {
+  return /** @type{?proto.pipelines.runtime.v1alpha1.Scaling} */ (
+    jspb.Message.getWrapperField(this, proto.pipelines.runtime.v1alpha1.Scaling, 41));
+};
+
+
+/**
+ * @param {?proto.pipelines.runtime.v1alpha1.Scaling|undefined} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+*/
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setScaling = function(value) {
+  return jspb.Message.setWrapperField(this, 41, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearScaling = function() {
+  return this.setScaling(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.hasScaling = function() {
+  return jspb.Message.getField(this, 41) != null;
 };
 
 

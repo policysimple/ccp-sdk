@@ -11,7 +11,7 @@ option objc_class_prefix = "PPX";
 option php_namespace = "Artifacts\\Artifacts\\V1Alpha1";
 
 import "artifacts/artifacts/v1alpha1/registry_artifacts.proto";
-// import "registry_artifacts.proto";
+//import "registry_artifacts.proto";
 
 service RegistryArtifactsAPIService{
     rpc ListArtifactsRegistry(ListArtifactsRegistryRequest) returns (ListArtifactsRegistryResponse);

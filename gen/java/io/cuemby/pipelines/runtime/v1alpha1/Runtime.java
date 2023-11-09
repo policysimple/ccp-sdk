@@ -372,6 +372,32 @@ private static final long serialVersionUID = 0L;
             runtimeStatus_ = s;
             break;
           }
+          case 322: {
+            io.cuemby.pipelines.runtime.v1alpha1.Configuration.Builder subBuilder = null;
+            if (configuration_ != null) {
+              subBuilder = configuration_.toBuilder();
+            }
+            configuration_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.Configuration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(configuration_);
+              configuration_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 330: {
+            io.cuemby.pipelines.runtime.v1alpha1.Scaling.Builder subBuilder = null;
+            if (scaling_ != null) {
+              subBuilder = scaling_.toBuilder();
+            }
+            scaling_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.Scaling.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(scaling_);
+              scaling_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1990,6 +2016,58 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONFIGURATION_FIELD_NUMBER = 40;
+  private io.cuemby.pipelines.runtime.v1alpha1.Configuration configuration_;
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+   * @return Whether the configuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfiguration() {
+    return configuration_ != null;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+   * @return The configuration.
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.Configuration getConfiguration() {
+    return configuration_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Configuration.getDefaultInstance() : configuration_;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.ConfigurationOrBuilder getConfigurationOrBuilder() {
+    return getConfiguration();
+  }
+
+  public static final int SCALING_FIELD_NUMBER = 41;
+  private io.cuemby.pipelines.runtime.v1alpha1.Scaling scaling_;
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+   * @return Whether the scaling field is set.
+   */
+  @java.lang.Override
+  public boolean hasScaling() {
+    return scaling_ != null;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+   * @return The scaling.
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.Scaling getScaling() {
+    return scaling_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Scaling.getDefaultInstance() : scaling_;
+  }
+  /**
+   * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.pipelines.runtime.v1alpha1.ScalingOrBuilder getScalingOrBuilder() {
+    return getScaling();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2135,6 +2213,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRuntimeStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 39, runtimeStatus_);
+    }
+    if (configuration_ != null) {
+      output.writeMessage(40, getConfiguration());
+    }
+    if (scaling_ != null) {
+      output.writeMessage(41, getScaling());
     }
     unknownFields.writeTo(output);
   }
@@ -2308,6 +2392,14 @@ private static final long serialVersionUID = 0L;
     if (!getRuntimeStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39, runtimeStatus_);
     }
+    if (configuration_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(40, getConfiguration());
+    }
+    if (scaling_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(41, getScaling());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2406,6 +2498,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getApplicationStatus())) return false;
     if (!getRuntimeStatus()
         .equals(other.getRuntimeStatus())) return false;
+    if (hasConfiguration() != other.hasConfiguration()) return false;
+    if (hasConfiguration()) {
+      if (!getConfiguration()
+          .equals(other.getConfiguration())) return false;
+    }
+    if (hasScaling() != other.hasScaling()) return false;
+    if (hasScaling()) {
+      if (!getScaling()
+          .equals(other.getScaling())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2519,6 +2621,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getApplicationStatus().hashCode();
     hash = (37 * hash) + RUNTIME_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getRuntimeStatus().hashCode();
+    if (hasConfiguration()) {
+      hash = (37 * hash) + CONFIGURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getConfiguration().hashCode();
+    }
+    if (hasScaling()) {
+      hash = (37 * hash) + SCALING_FIELD_NUMBER;
+      hash = (53 * hash) + getScaling().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2795,6 +2905,18 @@ private static final long serialVersionUID = 0L;
 
       runtimeStatus_ = "";
 
+      if (configurationBuilder_ == null) {
+        configuration_ = null;
+      } else {
+        configuration_ = null;
+        configurationBuilder_ = null;
+      }
+      if (scalingBuilder_ == null) {
+        scaling_ = null;
+      } else {
+        scaling_ = null;
+        scalingBuilder_ = null;
+      }
       return this;
     }
 
@@ -2906,6 +3028,16 @@ private static final long serialVersionUID = 0L;
       result.updatedAt_ = updatedAt_;
       result.applicationStatus_ = applicationStatus_;
       result.runtimeStatus_ = runtimeStatus_;
+      if (configurationBuilder_ == null) {
+        result.configuration_ = configuration_;
+      } else {
+        result.configuration_ = configurationBuilder_.build();
+      }
+      if (scalingBuilder_ == null) {
+        result.scaling_ = scaling_;
+      } else {
+        result.scaling_ = scalingBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -3180,6 +3312,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getRuntimeStatus().isEmpty()) {
         runtimeStatus_ = other.runtimeStatus_;
         onChanged();
+      }
+      if (other.hasConfiguration()) {
+        mergeConfiguration(other.getConfiguration());
+      }
+      if (other.hasScaling()) {
+        mergeScaling(other.getScaling());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6973,6 +7111,244 @@ private static final long serialVersionUID = 0L;
       runtimeStatus_ = value;
       onChanged();
       return this;
+    }
+
+    private io.cuemby.pipelines.runtime.v1alpha1.Configuration configuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.Configuration, io.cuemby.pipelines.runtime.v1alpha1.Configuration.Builder, io.cuemby.pipelines.runtime.v1alpha1.ConfigurationOrBuilder> configurationBuilder_;
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     * @return Whether the configuration field is set.
+     */
+    public boolean hasConfiguration() {
+      return configurationBuilder_ != null || configuration_ != null;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     * @return The configuration.
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.Configuration getConfiguration() {
+      if (configurationBuilder_ == null) {
+        return configuration_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Configuration.getDefaultInstance() : configuration_;
+      } else {
+        return configurationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     */
+    public Builder setConfiguration(io.cuemby.pipelines.runtime.v1alpha1.Configuration value) {
+      if (configurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        configuration_ = value;
+        onChanged();
+      } else {
+        configurationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     */
+    public Builder setConfiguration(
+        io.cuemby.pipelines.runtime.v1alpha1.Configuration.Builder builderForValue) {
+      if (configurationBuilder_ == null) {
+        configuration_ = builderForValue.build();
+        onChanged();
+      } else {
+        configurationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     */
+    public Builder mergeConfiguration(io.cuemby.pipelines.runtime.v1alpha1.Configuration value) {
+      if (configurationBuilder_ == null) {
+        if (configuration_ != null) {
+          configuration_ =
+            io.cuemby.pipelines.runtime.v1alpha1.Configuration.newBuilder(configuration_).mergeFrom(value).buildPartial();
+        } else {
+          configuration_ = value;
+        }
+        onChanged();
+      } else {
+        configurationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     */
+    public Builder clearConfiguration() {
+      if (configurationBuilder_ == null) {
+        configuration_ = null;
+        onChanged();
+      } else {
+        configuration_ = null;
+        configurationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.Configuration.Builder getConfigurationBuilder() {
+      
+      onChanged();
+      return getConfigurationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.ConfigurationOrBuilder getConfigurationOrBuilder() {
+      if (configurationBuilder_ != null) {
+        return configurationBuilder_.getMessageOrBuilder();
+      } else {
+        return configuration_ == null ?
+            io.cuemby.pipelines.runtime.v1alpha1.Configuration.getDefaultInstance() : configuration_;
+      }
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.Configuration, io.cuemby.pipelines.runtime.v1alpha1.Configuration.Builder, io.cuemby.pipelines.runtime.v1alpha1.ConfigurationOrBuilder> 
+        getConfigurationFieldBuilder() {
+      if (configurationBuilder_ == null) {
+        configurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.pipelines.runtime.v1alpha1.Configuration, io.cuemby.pipelines.runtime.v1alpha1.Configuration.Builder, io.cuemby.pipelines.runtime.v1alpha1.ConfigurationOrBuilder>(
+                getConfiguration(),
+                getParentForChildren(),
+                isClean());
+        configuration_ = null;
+      }
+      return configurationBuilder_;
+    }
+
+    private io.cuemby.pipelines.runtime.v1alpha1.Scaling scaling_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.Scaling, io.cuemby.pipelines.runtime.v1alpha1.Scaling.Builder, io.cuemby.pipelines.runtime.v1alpha1.ScalingOrBuilder> scalingBuilder_;
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     * @return Whether the scaling field is set.
+     */
+    public boolean hasScaling() {
+      return scalingBuilder_ != null || scaling_ != null;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     * @return The scaling.
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.Scaling getScaling() {
+      if (scalingBuilder_ == null) {
+        return scaling_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Scaling.getDefaultInstance() : scaling_;
+      } else {
+        return scalingBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     */
+    public Builder setScaling(io.cuemby.pipelines.runtime.v1alpha1.Scaling value) {
+      if (scalingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scaling_ = value;
+        onChanged();
+      } else {
+        scalingBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     */
+    public Builder setScaling(
+        io.cuemby.pipelines.runtime.v1alpha1.Scaling.Builder builderForValue) {
+      if (scalingBuilder_ == null) {
+        scaling_ = builderForValue.build();
+        onChanged();
+      } else {
+        scalingBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     */
+    public Builder mergeScaling(io.cuemby.pipelines.runtime.v1alpha1.Scaling value) {
+      if (scalingBuilder_ == null) {
+        if (scaling_ != null) {
+          scaling_ =
+            io.cuemby.pipelines.runtime.v1alpha1.Scaling.newBuilder(scaling_).mergeFrom(value).buildPartial();
+        } else {
+          scaling_ = value;
+        }
+        onChanged();
+      } else {
+        scalingBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     */
+    public Builder clearScaling() {
+      if (scalingBuilder_ == null) {
+        scaling_ = null;
+        onChanged();
+      } else {
+        scaling_ = null;
+        scalingBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.Scaling.Builder getScalingBuilder() {
+      
+      onChanged();
+      return getScalingFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     */
+    public io.cuemby.pipelines.runtime.v1alpha1.ScalingOrBuilder getScalingOrBuilder() {
+      if (scalingBuilder_ != null) {
+        return scalingBuilder_.getMessageOrBuilder();
+      } else {
+        return scaling_ == null ?
+            io.cuemby.pipelines.runtime.v1alpha1.Scaling.getDefaultInstance() : scaling_;
+      }
+    }
+    /**
+     * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.cuemby.pipelines.runtime.v1alpha1.Scaling, io.cuemby.pipelines.runtime.v1alpha1.Scaling.Builder, io.cuemby.pipelines.runtime.v1alpha1.ScalingOrBuilder> 
+        getScalingFieldBuilder() {
+      if (scalingBuilder_ == null) {
+        scalingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.cuemby.pipelines.runtime.v1alpha1.Scaling, io.cuemby.pipelines.runtime.v1alpha1.Scaling.Builder, io.cuemby.pipelines.runtime.v1alpha1.ScalingOrBuilder>(
+                getScaling(),
+                getParentForChildren(),
+                isClean());
+        scaling_ = null;
+      }
+      return scalingBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
