@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package artifacts.artifacts.v1alpha1;
+
+option csharp_namespace = "Artifacts.Artifacts.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RegistryArtifactsProto";
+option java_package = "io.cuemby.artifacts.artifacts.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Artifacts\\Artifacts\\V1Alpha1";
+
+message Tags {
+    string name = 1;
+    string pull_time = 2;
+    string push_time = 3;
+    uint32 storage_limit = 4;
+}
+
+message ArtifactsRegistry {
+    string id = 1;
+    string digest = 2;
+    string pull_time = 3;
+    string push_time = 4;
+    uint32 size = 5;
+    bool active = 6;
+    Tags tags = 7;
+}
