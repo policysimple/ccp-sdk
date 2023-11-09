@@ -56,10 +56,10 @@ public interface ArtifactsRegistryOrBuilder extends
       getPushTimeBytes();
 
   /**
-   * <code>uint32 size = 5 [json_name = "size"];</code>
+   * <code>int64 size = 5 [json_name = "size"];</code>
    * @return The size.
    */
-  int getSize();
+  long getSize();
 
   /**
    * <code>bool active = 6 [json_name = "active"];</code>
@@ -68,17 +68,26 @@ public interface ArtifactsRegistryOrBuilder extends
   boolean getActive();
 
   /**
-   * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
-   * @return Whether the tags field is set.
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
    */
-  boolean hasTags();
+  java.util.List<io.cuemby.artifacts.artifacts.v1alpha1.Tags> 
+      getTagsList();
   /**
-   * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
-   * @return The tags.
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
    */
-  io.cuemby.artifacts.artifacts.v1alpha1.Tags getTags();
+  io.cuemby.artifacts.artifacts.v1alpha1.Tags getTags(int index);
   /**
-   * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
    */
-  io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder getTagsOrBuilder();
+  int getTagsCount();
+  /**
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+   */
+  java.util.List<? extends io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder> 
+      getTagsOrBuilderList();
+  /**
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+   */
+  io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder getTagsOrBuilder(
+      int index);
 }

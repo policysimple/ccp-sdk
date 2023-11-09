@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     digest_ = "";
     pullTime_ = "";
     pushTime_ = "";
+    tags_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -42,6 +43,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,7 +80,7 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
-            size_ = input.readUInt32();
+            size_ = input.readInt64();
             break;
           }
           case 48: {
@@ -87,16 +89,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder subBuilder = null;
-            if (tags_ != null) {
-              subBuilder = tags_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              tags_ = new java.util.ArrayList<io.cuemby.artifacts.artifacts.v1alpha1.Tags>();
+              mutable_bitField0_ |= 0x00000001;
             }
-            tags_ = input.readMessage(io.cuemby.artifacts.artifacts.v1alpha1.Tags.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(tags_);
-              tags_ = subBuilder.buildPartial();
-            }
-
+            tags_.add(
+                input.readMessage(io.cuemby.artifacts.artifacts.v1alpha1.Tags.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -114,6 +112,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        tags_ = java.util.Collections.unmodifiableList(tags_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -284,13 +285,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SIZE_FIELD_NUMBER = 5;
-  private int size_;
+  private long size_;
   /**
-   * <code>uint32 size = 5 [json_name = "size"];</code>
+   * <code>int64 size = 5 [json_name = "size"];</code>
    * @return The size.
    */
   @java.lang.Override
-  public int getSize() {
+  public long getSize() {
     return size_;
   }
 
@@ -306,29 +307,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TAGS_FIELD_NUMBER = 7;
-  private io.cuemby.artifacts.artifacts.v1alpha1.Tags tags_;
+  private java.util.List<io.cuemby.artifacts.artifacts.v1alpha1.Tags> tags_;
   /**
-   * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
-   * @return Whether the tags field is set.
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
    */
   @java.lang.Override
-  public boolean hasTags() {
-    return tags_ != null;
+  public java.util.List<io.cuemby.artifacts.artifacts.v1alpha1.Tags> getTagsList() {
+    return tags_;
   }
   /**
-   * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
-   * @return The tags.
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
    */
   @java.lang.Override
-  public io.cuemby.artifacts.artifacts.v1alpha1.Tags getTags() {
-    return tags_ == null ? io.cuemby.artifacts.artifacts.v1alpha1.Tags.getDefaultInstance() : tags_;
+  public java.util.List<? extends io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder> 
+      getTagsOrBuilderList() {
+    return tags_;
   }
   /**
-   * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
    */
   @java.lang.Override
-  public io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder getTagsOrBuilder() {
-    return getTags();
+  public int getTagsCount() {
+    return tags_.size();
+  }
+  /**
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.artifacts.artifacts.v1alpha1.Tags getTags(int index) {
+    return tags_.get(index);
+  }
+  /**
+   * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+   */
+  @java.lang.Override
+  public io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder getTagsOrBuilder(
+      int index) {
+    return tags_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -357,14 +372,14 @@ private static final long serialVersionUID = 0L;
     if (!getPushTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pushTime_);
     }
-    if (size_ != 0) {
-      output.writeUInt32(5, size_);
+    if (size_ != 0L) {
+      output.writeInt64(5, size_);
     }
     if (active_ != false) {
       output.writeBool(6, active_);
     }
-    if (tags_ != null) {
-      output.writeMessage(7, getTags());
+    for (int i = 0; i < tags_.size(); i++) {
+      output.writeMessage(7, tags_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -387,17 +402,17 @@ private static final long serialVersionUID = 0L;
     if (!getPushTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pushTime_);
     }
-    if (size_ != 0) {
+    if (size_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(5, size_);
+        .computeInt64Size(5, size_);
     }
     if (active_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, active_);
     }
-    if (tags_ != null) {
+    for (int i = 0; i < tags_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getTags());
+        .computeMessageSize(7, tags_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -426,11 +441,8 @@ private static final long serialVersionUID = 0L;
         != other.getSize()) return false;
     if (getActive()
         != other.getActive()) return false;
-    if (hasTags() != other.hasTags()) return false;
-    if (hasTags()) {
-      if (!getTags()
-          .equals(other.getTags())) return false;
-    }
+    if (!getTagsList()
+        .equals(other.getTagsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -451,13 +463,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PUSH_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getPushTime().hashCode();
     hash = (37 * hash) + SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getSize();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSize());
     hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getActive());
-    if (hasTags()) {
+    if (getTagsCount() > 0) {
       hash = (37 * hash) + TAGS_FIELD_NUMBER;
-      hash = (53 * hash) + getTags().hashCode();
+      hash = (53 * hash) + getTagsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -587,6 +600,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getTagsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -600,15 +614,15 @@ private static final long serialVersionUID = 0L;
 
       pushTime_ = "";
 
-      size_ = 0;
+      size_ = 0L;
 
       active_ = false;
 
       if (tagsBuilder_ == null) {
-        tags_ = null;
+        tags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        tags_ = null;
-        tagsBuilder_ = null;
+        tagsBuilder_.clear();
       }
       return this;
     }
@@ -636,6 +650,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.cuemby.artifacts.artifacts.v1alpha1.ArtifactsRegistry buildPartial() {
       io.cuemby.artifacts.artifacts.v1alpha1.ArtifactsRegistry result = new io.cuemby.artifacts.artifacts.v1alpha1.ArtifactsRegistry(this);
+      int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.digest_ = digest_;
       result.pullTime_ = pullTime_;
@@ -643,6 +658,10 @@ private static final long serialVersionUID = 0L;
       result.size_ = size_;
       result.active_ = active_;
       if (tagsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tags_ = java.util.Collections.unmodifiableList(tags_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
         result.tags_ = tags_;
       } else {
         result.tags_ = tagsBuilder_.build();
@@ -711,14 +730,37 @@ private static final long serialVersionUID = 0L;
         pushTime_ = other.pushTime_;
         onChanged();
       }
-      if (other.getSize() != 0) {
+      if (other.getSize() != 0L) {
         setSize(other.getSize());
       }
       if (other.getActive() != false) {
         setActive(other.getActive());
       }
-      if (other.hasTags()) {
-        mergeTags(other.getTags());
+      if (tagsBuilder_ == null) {
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tags_.isEmpty()) {
+          if (tagsBuilder_.isEmpty()) {
+            tagsBuilder_.dispose();
+            tagsBuilder_ = null;
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            tagsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTagsFieldBuilder() : null;
+          } else {
+            tagsBuilder_.addAllMessages(other.tags_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -748,6 +790,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1053,33 +1096,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int size_ ;
+    private long size_ ;
     /**
-     * <code>uint32 size = 5 [json_name = "size"];</code>
+     * <code>int64 size = 5 [json_name = "size"];</code>
      * @return The size.
      */
     @java.lang.Override
-    public int getSize() {
+    public long getSize() {
       return size_;
     }
     /**
-     * <code>uint32 size = 5 [json_name = "size"];</code>
+     * <code>int64 size = 5 [json_name = "size"];</code>
      * @param value The size to set.
      * @return This builder for chaining.
      */
-    public Builder setSize(int value) {
+    public Builder setSize(long value) {
       
       size_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 size = 5 [json_name = "size"];</code>
+     * <code>int64 size = 5 [json_name = "size"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSize() {
       
-      size_ = 0;
+      size_ = 0L;
       onChanged();
       return this;
     }
@@ -1115,118 +1158,239 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.cuemby.artifacts.artifacts.v1alpha1.Tags tags_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.artifacts.artifacts.v1alpha1.Tags, io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder, io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder> tagsBuilder_;
-    /**
-     * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
-     * @return Whether the tags field is set.
-     */
-    public boolean hasTags() {
-      return tagsBuilder_ != null || tags_ != null;
+    private java.util.List<io.cuemby.artifacts.artifacts.v1alpha1.Tags> tags_ =
+      java.util.Collections.emptyList();
+    private void ensureTagsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        tags_ = new java.util.ArrayList<io.cuemby.artifacts.artifacts.v1alpha1.Tags>(tags_);
+        bitField0_ |= 0x00000001;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        io.cuemby.artifacts.artifacts.v1alpha1.Tags, io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder, io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder> tagsBuilder_;
+
     /**
-     * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
-     * @return The tags.
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
-    public io.cuemby.artifacts.artifacts.v1alpha1.Tags getTags() {
+    public java.util.List<io.cuemby.artifacts.artifacts.v1alpha1.Tags> getTagsList() {
       if (tagsBuilder_ == null) {
-        return tags_ == null ? io.cuemby.artifacts.artifacts.v1alpha1.Tags.getDefaultInstance() : tags_;
+        return java.util.Collections.unmodifiableList(tags_);
       } else {
-        return tagsBuilder_.getMessage();
+        return tagsBuilder_.getMessageList();
       }
     }
     /**
-     * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
-    public Builder setTags(io.cuemby.artifacts.artifacts.v1alpha1.Tags value) {
+    public int getTagsCount() {
+      if (tagsBuilder_ == null) {
+        return tags_.size();
+      } else {
+        return tagsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public io.cuemby.artifacts.artifacts.v1alpha1.Tags getTags(int index) {
+      if (tagsBuilder_ == null) {
+        return tags_.get(index);
+      } else {
+        return tagsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public Builder setTags(
+        int index, io.cuemby.artifacts.artifacts.v1alpha1.Tags value) {
       if (tagsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        tags_ = value;
+        ensureTagsIsMutable();
+        tags_.set(index, value);
         onChanged();
       } else {
-        tagsBuilder_.setMessage(value);
+        tagsBuilder_.setMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
     public Builder setTags(
+        int index, io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder builderForValue) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public Builder addTags(io.cuemby.artifacts.artifacts.v1alpha1.Tags value) {
+      if (tagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public Builder addTags(
+        int index, io.cuemby.artifacts.artifacts.v1alpha1.Tags value) {
+      if (tagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.add(index, value);
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public Builder addTags(
         io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder builderForValue) {
       if (tagsBuilder_ == null) {
-        tags_ = builderForValue.build();
+        ensureTagsIsMutable();
+        tags_.add(builderForValue.build());
         onChanged();
       } else {
-        tagsBuilder_.setMessage(builderForValue.build());
+        tagsBuilder_.addMessage(builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
-    public Builder mergeTags(io.cuemby.artifacts.artifacts.v1alpha1.Tags value) {
+    public Builder addTags(
+        int index, io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder builderForValue) {
       if (tagsBuilder_ == null) {
-        if (tags_ != null) {
-          tags_ =
-            io.cuemby.artifacts.artifacts.v1alpha1.Tags.newBuilder(tags_).mergeFrom(value).buildPartial();
-        } else {
-          tags_ = value;
-        }
+        ensureTagsIsMutable();
+        tags_.add(index, builderForValue.build());
         onChanged();
       } else {
-        tagsBuilder_.mergeFrom(value);
+        tagsBuilder_.addMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public Builder addAllTags(
+        java.lang.Iterable<? extends io.cuemby.artifacts.artifacts.v1alpha1.Tags> values) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+      } else {
+        tagsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
     public Builder clearTags() {
       if (tagsBuilder_ == null) {
-        tags_ = null;
+        tags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        tags_ = null;
-        tagsBuilder_ = null;
+        tagsBuilder_.clear();
       }
-
       return this;
     }
     /**
-     * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
-    public io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder getTagsBuilder() {
-      
-      onChanged();
-      return getTagsFieldBuilder().getBuilder();
+    public Builder removeTags(int index) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.remove(index);
+        onChanged();
+      } else {
+        tagsBuilder_.remove(index);
+      }
+      return this;
     }
     /**
-     * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
-    public io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder getTagsOrBuilder() {
-      if (tagsBuilder_ != null) {
-        return tagsBuilder_.getMessageOrBuilder();
-      } else {
-        return tags_ == null ?
-            io.cuemby.artifacts.artifacts.v1alpha1.Tags.getDefaultInstance() : tags_;
+    public io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder getTagsBuilder(
+        int index) {
+      return getTagsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder getTagsOrBuilder(
+        int index) {
+      if (tagsBuilder_ == null) {
+        return tags_.get(index);  } else {
+        return tagsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    public java.util.List<? extends io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder> 
+         getTagsOrBuilderList() {
+      if (tagsBuilder_ != null) {
+        return tagsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tags_);
+      }
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder addTagsBuilder() {
+      return getTagsFieldBuilder().addBuilder(
+          io.cuemby.artifacts.artifacts.v1alpha1.Tags.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder addTagsBuilder(
+        int index) {
+      return getTagsFieldBuilder().addBuilder(
+          index, io.cuemby.artifacts.artifacts.v1alpha1.Tags.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     */
+    public java.util.List<io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder> 
+         getTagsBuilderList() {
+      return getTagsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         io.cuemby.artifacts.artifacts.v1alpha1.Tags, io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder, io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder> 
         getTagsFieldBuilder() {
       if (tagsBuilder_ == null) {
-        tagsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        tagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             io.cuemby.artifacts.artifacts.v1alpha1.Tags, io.cuemby.artifacts.artifacts.v1alpha1.Tags.Builder, io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder>(
-                getTags(),
+                tags_,
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         tags_ = null;

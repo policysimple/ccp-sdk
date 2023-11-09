@@ -41,8 +41,8 @@ public final class RegistryArtifactsProto {
       "ageLimit\"\331\001\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001" +
       "(\tR\002id\022\026\n\006digest\030\002 \001(\tR\006digest\022\033\n\tpull_t" +
       "ime\030\003 \001(\tR\010pullTime\022\033\n\tpush_time\030\004 \001(\tR\010" +
-      "pushTime\022\022\n\004size\030\005 \001(\rR\004size\022\026\n\006active\030\006" +
-      " \001(\010R\006active\0226\n\004tags\030\007 \001(\0132\".artifacts.a" +
+      "pushTime\022\022\n\004size\030\005 \001(\003R\004size\022\026\n\006active\030\006" +
+      " \001(\010R\006active\0226\n\004tags\030\007 \003(\0132\".artifacts.a" +
       "rtifacts.v1alpha1.TagsR\004tagsB\305\001\n&io.cuem" +
       "by.artifacts.artifacts.v1alpha1B\026Registr" +
       "yArtifactsProtoP\001Z=github.com/cuemby/ccp" +

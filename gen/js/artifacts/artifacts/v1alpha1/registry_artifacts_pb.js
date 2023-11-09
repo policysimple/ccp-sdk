@@ -49,7 +49,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.repeatedFields_, null);
 };
 goog.inherits(proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -280,6 +280,13 @@ proto.artifacts.artifacts.v1alpha1.Tags.prototype.setStorageLimit = function(val
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.repeatedFields_ = [7];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -317,7 +324,8 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.toObject = function(include
     pushTime: jspb.Message.getFieldWithDefault(msg, 4, ""),
     size: jspb.Message.getFieldWithDefault(msg, 5, 0),
     active: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    tags: (f = msg.getTags()) && proto.artifacts.artifacts.v1alpha1.Tags.toObject(includeInstance, f)
+    tagsList: jspb.Message.toObjectList(msg.getTagsList(),
+    proto.artifacts.artifacts.v1alpha1.Tags.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -371,7 +379,7 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.deserializeBinaryFromReader
       msg.setPushTime(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setSize(value);
       break;
     case 6:
@@ -381,7 +389,7 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.deserializeBinaryFromReader
     case 7:
       var value = new proto.artifacts.artifacts.v1alpha1.Tags;
       reader.readMessage(value,proto.artifacts.artifacts.v1alpha1.Tags.deserializeBinaryFromReader);
-      msg.setTags(value);
+      msg.addTags(value);
       break;
     default:
       reader.skipField();
@@ -442,7 +450,7 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.serializeBinaryToWriter = f
   }
   f = message.getSize();
   if (f !== 0) {
-    writer.writeUint32(
+    writer.writeInt64(
       5,
       f
     );
@@ -454,9 +462,9 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.serializeBinaryToWriter = f
       f
     );
   }
-  f = message.getTags();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       7,
       f,
       proto.artifacts.artifacts.v1alpha1.Tags.serializeBinaryToWriter
@@ -538,7 +546,7 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setPushTime = fun
 
 
 /**
- * optional uint32 size = 5;
+ * optional int64 size = 5;
  * @return {number}
  */
 proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getSize = function() {
@@ -574,39 +582,40 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setActive = funct
 
 
 /**
- * optional Tags tags = 7;
- * @return {?proto.artifacts.artifacts.v1alpha1.Tags}
+ * repeated Tags tags = 7;
+ * @return {!Array<!proto.artifacts.artifacts.v1alpha1.Tags>}
  */
-proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getTags = function() {
-  return /** @type{?proto.artifacts.artifacts.v1alpha1.Tags} */ (
-    jspb.Message.getWrapperField(this, proto.artifacts.artifacts.v1alpha1.Tags, 7));
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getTagsList = function() {
+  return /** @type{!Array<!proto.artifacts.artifacts.v1alpha1.Tags>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.artifacts.artifacts.v1alpha1.Tags, 7));
 };
 
 
 /**
- * @param {?proto.artifacts.artifacts.v1alpha1.Tags|undefined} value
+ * @param {!Array<!proto.artifacts.artifacts.v1alpha1.Tags>} value
  * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
 */
-proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setTags = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setTagsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.artifacts.artifacts.v1alpha1.Tags=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.artifacts.artifacts.v1alpha1.Tags}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.addTags = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.artifacts.artifacts.v1alpha1.Tags, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
  */
-proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.clearTags = function() {
-  return this.setTags(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.hasTags = function() {
-  return jspb.Message.getField(this, 7) != null;
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.clearTagsList = function() {
+  return this.setTagsList([]);
 };
 
 

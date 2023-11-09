@@ -22,7 +22,7 @@ message ArtifactsRegistry {
     string digest = 2;
     string pull_time = 3;
     string push_time = 4;
-    uint32 size = 5;
+    int64 size = 5;
     bool active = 6;
-    Tags tags = 7;
+    repeated Tags tags = 7;
 }

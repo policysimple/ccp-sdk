@@ -30,7 +30,7 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      */
     protected $push_time = '';
     /**
-     * Generated from protobuf field <code>uint32 size = 5 [json_name = "size"];</code>
+     * Generated from protobuf field <code>int64 size = 5 [json_name = "size"];</code>
      */
     protected $size = 0;
     /**
@@ -38,9 +38,9 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      */
     protected $active = false;
     /**
-     * Generated from protobuf field <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * Generated from protobuf field <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
-    protected $tags = null;
+    private $tags;
 
     /**
      * Constructor.
@@ -52,9 +52,9 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      *     @type string $digest
      *     @type string $pull_time
      *     @type string $push_time
-     *     @type int $size
+     *     @type int|string $size
      *     @type bool $active
-     *     @type \Artifacts\Artifacts\V1Alpha1\Tags $tags
+     *     @type \Artifacts\Artifacts\V1Alpha1\Tags[]|\Google\Protobuf\Internal\RepeatedField $tags
      * }
      */
     public function __construct($data = NULL) {
@@ -151,8 +151,8 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 size = 5 [json_name = "size"];</code>
-     * @return int
+     * Generated from protobuf field <code>int64 size = 5 [json_name = "size"];</code>
+     * @return int|string
      */
     public function getSize()
     {
@@ -160,13 +160,13 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 size = 5 [json_name = "size"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>int64 size = 5 [json_name = "size"];</code>
+     * @param int|string $var
      * @return $this
      */
     public function setSize($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt64($var);
         $this->size = $var;
 
         return $this;
@@ -195,33 +195,23 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
-     * @return \Artifacts\Artifacts\V1Alpha1\Tags|null
+     * Generated from protobuf field <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTags()
     {
         return $this->tags;
     }
 
-    public function hasTags()
-    {
-        return isset($this->tags);
-    }
-
-    public function clearTags()
-    {
-        unset($this->tags);
-    }
-
     /**
-     * Generated from protobuf field <code>.artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
-     * @param \Artifacts\Artifacts\V1Alpha1\Tags $var
+     * Generated from protobuf field <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
+     * @param \Artifacts\Artifacts\V1Alpha1\Tags[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTags($var)
     {
-        GPBUtil::checkMessage($var, \Artifacts\Artifacts\V1Alpha1\Tags::class);
-        $this->tags = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Artifacts\Artifacts\V1Alpha1\Tags::class);
+        $this->tags = $arr;
 
         return $this;
     }
