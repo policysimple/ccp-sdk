@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package artifacts.artifacts.v1alpha1;
+
+option csharp_namespace = "Artifacts.Artifacts.V1Alpha1";
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1";
+option java_multiple_files = true;
+option java_outer_classname = "RegistryArtifactsProtoAPI";
+option java_package = "io.cuemby.artifacts.artifacts.v1alpha1";
+option objc_class_prefix = "PPX";
+option php_namespace = "Artifacts\\Artifacts\\V1Alpha1";
+
+import "artifacts/artifacts/v1alpha1/registry_artifacts.proto";
+// import "registry_artifacts.proto";
+
+service RegistryArtifactsAPIService{
+    rpc ListArtifactsRegistry(ListArtifactsRegistryRequest) returns (ListArtifactsRegistryResponse);
+}
+
+message ListArtifactsRegistryRequest {
+    string organization_id = 1;
+    string project_id = 2;
+    string runtime_id = 3;
+}
+
+message ListArtifactsRegistryResponse {
+    repeated artifacts.v1alpha1.ArtifactsRegistry artifacts_registry = 1;
+    string status = 2;
+}
+
