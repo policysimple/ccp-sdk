@@ -21,6 +21,7 @@ service TektonPipelineAPIService{
     rpc ListPipelineRun(ListPipelineRunRequest) returns (ListPipelineRunResponse);
     rpc GetStatusRuntime(GetStatusRuntimeRequest) returns (stream GetStatusRuntimeResponse);
     rpc ChangeStatusRuntimeAndApplication(ChangeStatusRuntimeAndApplicationRequest) returns (ChangeStatusRuntimeAndApplicationResponse) {};
+    rpc RebuildTektonPipeline(RebuildTektonPipelineRequest) returns (RebuildTektonPipelineResponse);
 }
 
 
@@ -95,4 +96,14 @@ message ChangeStatusRuntimeAndApplicationRequest {
 message ChangeStatusRuntimeAndApplicationResponse {
     string msg = 1;
     string error = 2;
+}
+
+message RebuildTektonPipelineRequest {
+    pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1;
+    string user_id = 2;
+}
+
+message RebuildTektonPipelineResponse {
+    pipelines.tekton.v1alpha1.Pipeline tekton_pipeline = 1;
+    string status = 2;
 }

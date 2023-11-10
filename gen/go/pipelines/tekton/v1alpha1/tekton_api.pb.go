@@ -782,6 +782,116 @@ func (x *ChangeStatusRuntimeAndApplicationResponse) GetError() string {
 	return ""
 }
 
+type RebuildTektonPipelineRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TektonPipeline *Pipeline `protobuf:"bytes,1,opt,name=tekton_pipeline,json=tektonPipeline,proto3" json:"tekton_pipeline,omitempty"`
+	UserId         string    `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+}
+
+func (x *RebuildTektonPipelineRequest) Reset() {
+	*x = RebuildTektonPipelineRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pipelines_tekton_v1alpha1_tekton_api_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RebuildTektonPipelineRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RebuildTektonPipelineRequest) ProtoMessage() {}
+
+func (x *RebuildTektonPipelineRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_pipelines_tekton_v1alpha1_tekton_api_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RebuildTektonPipelineRequest.ProtoReflect.Descriptor instead.
+func (*RebuildTektonPipelineRequest) Descriptor() ([]byte, []int) {
+	return file_pipelines_tekton_v1alpha1_tekton_api_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *RebuildTektonPipelineRequest) GetTektonPipeline() *Pipeline {
+	if x != nil {
+		return x.TektonPipeline
+	}
+	return nil
+}
+
+func (x *RebuildTektonPipelineRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type RebuildTektonPipelineResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TektonPipeline *Pipeline `protobuf:"bytes,1,opt,name=tekton_pipeline,json=tektonPipeline,proto3" json:"tekton_pipeline,omitempty"`
+	Status         string    `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+}
+
+func (x *RebuildTektonPipelineResponse) Reset() {
+	*x = RebuildTektonPipelineResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pipelines_tekton_v1alpha1_tekton_api_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RebuildTektonPipelineResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RebuildTektonPipelineResponse) ProtoMessage() {}
+
+func (x *RebuildTektonPipelineResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_pipelines_tekton_v1alpha1_tekton_api_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RebuildTektonPipelineResponse.ProtoReflect.Descriptor instead.
+func (*RebuildTektonPipelineResponse) Descriptor() ([]byte, []int) {
+	return file_pipelines_tekton_v1alpha1_tekton_api_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *RebuildTektonPipelineResponse) GetTektonPipeline() *Pipeline {
+	if x != nil {
+		return x.TektonPipeline
+	}
+	return nil
+}
+
+func (x *RebuildTektonPipelineResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
 var File_pipelines_tekton_v1alpha1_tekton_api_proto protoreflect.FileDescriptor
 
 var file_pipelines_tekton_v1alpha1_tekton_api_proto_rawDesc = []byte{
@@ -886,7 +996,24 @@ var file_pipelines_tekton_v1alpha1_tekton_api_proto_rawDesc = []byte{
 	0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x03, 0x6d, 0x73, 0x67, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x32, 0xe1, 0x07, 0x0a, 0x18,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x22, 0x85, 0x01, 0x0a, 0x1c,
+	0x52, 0x65, 0x62, 0x75, 0x69, 0x6c, 0x64, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x50, 0x69, 0x70,
+	0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x4c, 0x0a, 0x0f,
+	0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x5f, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65,
+	0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61,
+	0x31, 0x2e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x0e, 0x74, 0x65, 0x6b, 0x74,
+	0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73,
+	0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65,
+	0x72, 0x49, 0x64, 0x22, 0x85, 0x01, 0x0a, 0x1d, 0x52, 0x65, 0x62, 0x75, 0x69, 0x6c, 0x64, 0x54,
+	0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4c, 0x0a, 0x0f, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x5f,
+	0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23,
+	0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f,
+	0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x50, 0x69, 0x70, 0x65, 0x6c,
+	0x69, 0x6e, 0x65, 0x52, 0x0e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c,
+	0x69, 0x6e, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x32, 0xee, 0x08, 0x0a, 0x18,
 	0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x41, 0x50,
 	0x49, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x87, 0x01, 0x0a, 0x14, 0x43, 0x72, 0x65,
 	0x61, 0x74, 0x65, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e,
@@ -948,19 +1075,28 @@ var file_pipelines_tekton_v1alpha1_tekton_api_proto_rawDesc = []byte{
 	0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70,
 	0x68, 0x61, 0x31, 0x2e, 0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73,
 	0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x41, 0x6e, 0x64, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42,
-	0xb1, 0x01, 0x0a, 0x23, 0x69, 0x6f, 0x2e, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2e, 0x70, 0x69,
-	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76,
-	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x42, 0x0e, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x41,
-	0x50, 0x49, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70,
-	0x2d, 0x73, 0x64, 0x6b, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x70, 0x69, 0x70, 0x65,
-	0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2f, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x61,
-	0x6c, 0x70, 0x68, 0x61, 0x31, 0xa2, 0x02, 0x03, 0x50, 0x50, 0x58, 0xaa, 0x02, 0x19, 0x50, 0x69,
-	0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x56,
-	0x31, 0x41, 0x6c, 0x70, 0x68, 0x61, 0x31, 0xca, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69,
-	0x6e, 0x65, 0x73, 0x5c, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x5c, 0x56, 0x31, 0x41, 0x6c, 0x70,
-	0x68, 0x61, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
+	0x8a, 0x01, 0x0a, 0x15, 0x52, 0x65, 0x62, 0x75, 0x69, 0x6c, 0x64, 0x54, 0x65, 0x6b, 0x74, 0x6f,
+	0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x12, 0x37, 0x2e, 0x70, 0x69, 0x70, 0x65,
+	0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61,
+	0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52, 0x65, 0x62, 0x75, 0x69, 0x6c, 0x64, 0x54, 0x65, 0x6b,
+	0x74, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x38, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74,
+	0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x52,
+	0x65, 0x62, 0x75, 0x69, 0x6c, 0x64, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x50, 0x69, 0x70, 0x65,
+	0x6c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0xb1, 0x01, 0x0a,
+	0x23, 0x69, 0x6f, 0x2e, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2e, 0x70, 0x69, 0x70, 0x65, 0x6c,
+	0x69, 0x6e, 0x65, 0x73, 0x2e, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x61, 0x6c,
+	0x70, 0x68, 0x61, 0x31, 0x42, 0x0e, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x41, 0x50, 0x49, 0x50,
+	0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d, 0x73, 0x64,
+	0x6b, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x70, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e,
+	0x65, 0x73, 0x2f, 0x74, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
+	0x61, 0x31, 0xa2, 0x02, 0x03, 0x50, 0x50, 0x58, 0xaa, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65, 0x6c,
+	0x69, 0x6e, 0x65, 0x73, 0x2e, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x2e, 0x56, 0x31, 0x41, 0x6c,
+	0x70, 0x68, 0x61, 0x31, 0xca, 0x02, 0x19, 0x50, 0x69, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x65, 0x73,
+	0x5c, 0x54, 0x65, 0x6b, 0x74, 0x6f, 0x6e, 0x5c, 0x56, 0x31, 0x41, 0x6c, 0x70, 0x68, 0x61, 0x31,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -975,7 +1111,7 @@ func file_pipelines_tekton_v1alpha1_tekton_api_proto_rawDescGZIP() []byte {
 	return file_pipelines_tekton_v1alpha1_tekton_api_proto_rawDescData
 }
 
-var file_pipelines_tekton_v1alpha1_tekton_api_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_pipelines_tekton_v1alpha1_tekton_api_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
 var file_pipelines_tekton_v1alpha1_tekton_api_proto_goTypes = []interface{}{
 	(*CreateTektonPipelineRequest)(nil),               // 0: pipelines.tekton.v1alpha1.CreateTektonPipelineRequest
 	(*CreateTektonPipelineResponse)(nil),              // 1: pipelines.tekton.v1alpha1.CreateTektonPipelineResponse
@@ -991,38 +1127,44 @@ var file_pipelines_tekton_v1alpha1_tekton_api_proto_goTypes = []interface{}{
 	(*GetStatusRuntimeResponse)(nil),                  // 11: pipelines.tekton.v1alpha1.GetStatusRuntimeResponse
 	(*ChangeStatusRuntimeAndApplicationRequest)(nil),  // 12: pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest
 	(*ChangeStatusRuntimeAndApplicationResponse)(nil), // 13: pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationResponse
-	(*Pipeline)(nil),                                  // 14: pipelines.tekton.v1alpha1.Pipeline
-	(*TektonTaskList)(nil),                            // 15: pipelines.tekton.v1alpha1.TektonTaskList
-	(*PipelineRun)(nil),                               // 16: pipelines.tekton.v1alpha1.PipelineRun
-	(*PipelineRunList)(nil),                           // 17: pipelines.tekton.v1alpha1.PipelineRunList
-	(*Event)(nil),                                     // 18: pipelines.tekton.v1alpha1.Event
+	(*RebuildTektonPipelineRequest)(nil),              // 14: pipelines.tekton.v1alpha1.RebuildTektonPipelineRequest
+	(*RebuildTektonPipelineResponse)(nil),             // 15: pipelines.tekton.v1alpha1.RebuildTektonPipelineResponse
+	(*Pipeline)(nil),                                  // 16: pipelines.tekton.v1alpha1.Pipeline
+	(*TektonTaskList)(nil),                            // 17: pipelines.tekton.v1alpha1.TektonTaskList
+	(*PipelineRun)(nil),                               // 18: pipelines.tekton.v1alpha1.PipelineRun
+	(*PipelineRunList)(nil),                           // 19: pipelines.tekton.v1alpha1.PipelineRunList
+	(*Event)(nil),                                     // 20: pipelines.tekton.v1alpha1.Event
 }
 var file_pipelines_tekton_v1alpha1_tekton_api_proto_depIdxs = []int32{
-	14, // 0: pipelines.tekton.v1alpha1.CreateTektonPipelineRequest.tekton_pipeline:type_name -> pipelines.tekton.v1alpha1.Pipeline
-	14, // 1: pipelines.tekton.v1alpha1.CreateTektonPipelineResponse.tekton_pipeline:type_name -> pipelines.tekton.v1alpha1.Pipeline
-	15, // 2: pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse.task_list:type_name -> pipelines.tekton.v1alpha1.TektonTaskList
-	16, // 3: pipelines.tekton.v1alpha1.GetPipelineRunResponse.pipeline_run:type_name -> pipelines.tekton.v1alpha1.PipelineRun
-	17, // 4: pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list:type_name -> pipelines.tekton.v1alpha1.PipelineRunList
-	18, // 5: pipelines.tekton.v1alpha1.GetStatusRuntimeResponse.event:type_name -> pipelines.tekton.v1alpha1.Event
-	0,  // 6: pipelines.tekton.v1alpha1.TektonPipelineAPIService.CreateTektonPipeline:input_type -> pipelines.tekton.v1alpha1.CreateTektonPipelineRequest
-	2,  // 7: pipelines.tekton.v1alpha1.TektonPipelineAPIService.DeleteTektonPipeline:input_type -> pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest
-	4,  // 8: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ListTektonTaskPipeline:input_type -> pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest
-	6,  // 9: pipelines.tekton.v1alpha1.TektonPipelineAPIService.GetPipelineRun:input_type -> pipelines.tekton.v1alpha1.GetPipelineRunRequest
-	8,  // 10: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ListPipelineRun:input_type -> pipelines.tekton.v1alpha1.ListPipelineRunRequest
-	10, // 11: pipelines.tekton.v1alpha1.TektonPipelineAPIService.GetStatusRuntime:input_type -> pipelines.tekton.v1alpha1.GetStatusRuntimeRequest
-	12, // 12: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ChangeStatusRuntimeAndApplication:input_type -> pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest
-	1,  // 13: pipelines.tekton.v1alpha1.TektonPipelineAPIService.CreateTektonPipeline:output_type -> pipelines.tekton.v1alpha1.CreateTektonPipelineResponse
-	3,  // 14: pipelines.tekton.v1alpha1.TektonPipelineAPIService.DeleteTektonPipeline:output_type -> pipelines.tekton.v1alpha1.DeleteTektonPipelineResponse
-	5,  // 15: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ListTektonTaskPipeline:output_type -> pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse
-	7,  // 16: pipelines.tekton.v1alpha1.TektonPipelineAPIService.GetPipelineRun:output_type -> pipelines.tekton.v1alpha1.GetPipelineRunResponse
-	9,  // 17: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ListPipelineRun:output_type -> pipelines.tekton.v1alpha1.ListPipelineRunResponse
-	11, // 18: pipelines.tekton.v1alpha1.TektonPipelineAPIService.GetStatusRuntime:output_type -> pipelines.tekton.v1alpha1.GetStatusRuntimeResponse
-	13, // 19: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ChangeStatusRuntimeAndApplication:output_type -> pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationResponse
-	13, // [13:20] is the sub-list for method output_type
-	6,  // [6:13] is the sub-list for method input_type
-	6,  // [6:6] is the sub-list for extension type_name
-	6,  // [6:6] is the sub-list for extension extendee
-	0,  // [0:6] is the sub-list for field type_name
+	16, // 0: pipelines.tekton.v1alpha1.CreateTektonPipelineRequest.tekton_pipeline:type_name -> pipelines.tekton.v1alpha1.Pipeline
+	16, // 1: pipelines.tekton.v1alpha1.CreateTektonPipelineResponse.tekton_pipeline:type_name -> pipelines.tekton.v1alpha1.Pipeline
+	17, // 2: pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse.task_list:type_name -> pipelines.tekton.v1alpha1.TektonTaskList
+	18, // 3: pipelines.tekton.v1alpha1.GetPipelineRunResponse.pipeline_run:type_name -> pipelines.tekton.v1alpha1.PipelineRun
+	19, // 4: pipelines.tekton.v1alpha1.ListPipelineRunResponse.pipeline_run_list:type_name -> pipelines.tekton.v1alpha1.PipelineRunList
+	20, // 5: pipelines.tekton.v1alpha1.GetStatusRuntimeResponse.event:type_name -> pipelines.tekton.v1alpha1.Event
+	16, // 6: pipelines.tekton.v1alpha1.RebuildTektonPipelineRequest.tekton_pipeline:type_name -> pipelines.tekton.v1alpha1.Pipeline
+	16, // 7: pipelines.tekton.v1alpha1.RebuildTektonPipelineResponse.tekton_pipeline:type_name -> pipelines.tekton.v1alpha1.Pipeline
+	0,  // 8: pipelines.tekton.v1alpha1.TektonPipelineAPIService.CreateTektonPipeline:input_type -> pipelines.tekton.v1alpha1.CreateTektonPipelineRequest
+	2,  // 9: pipelines.tekton.v1alpha1.TektonPipelineAPIService.DeleteTektonPipeline:input_type -> pipelines.tekton.v1alpha1.DeleteTektonPipelineRequest
+	4,  // 10: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ListTektonTaskPipeline:input_type -> pipelines.tekton.v1alpha1.ListTektonTaskPipelineRequest
+	6,  // 11: pipelines.tekton.v1alpha1.TektonPipelineAPIService.GetPipelineRun:input_type -> pipelines.tekton.v1alpha1.GetPipelineRunRequest
+	8,  // 12: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ListPipelineRun:input_type -> pipelines.tekton.v1alpha1.ListPipelineRunRequest
+	10, // 13: pipelines.tekton.v1alpha1.TektonPipelineAPIService.GetStatusRuntime:input_type -> pipelines.tekton.v1alpha1.GetStatusRuntimeRequest
+	12, // 14: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ChangeStatusRuntimeAndApplication:input_type -> pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationRequest
+	14, // 15: pipelines.tekton.v1alpha1.TektonPipelineAPIService.RebuildTektonPipeline:input_type -> pipelines.tekton.v1alpha1.RebuildTektonPipelineRequest
+	1,  // 16: pipelines.tekton.v1alpha1.TektonPipelineAPIService.CreateTektonPipeline:output_type -> pipelines.tekton.v1alpha1.CreateTektonPipelineResponse
+	3,  // 17: pipelines.tekton.v1alpha1.TektonPipelineAPIService.DeleteTektonPipeline:output_type -> pipelines.tekton.v1alpha1.DeleteTektonPipelineResponse
+	5,  // 18: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ListTektonTaskPipeline:output_type -> pipelines.tekton.v1alpha1.ListTektonTaskPipelineResponse
+	7,  // 19: pipelines.tekton.v1alpha1.TektonPipelineAPIService.GetPipelineRun:output_type -> pipelines.tekton.v1alpha1.GetPipelineRunResponse
+	9,  // 20: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ListPipelineRun:output_type -> pipelines.tekton.v1alpha1.ListPipelineRunResponse
+	11, // 21: pipelines.tekton.v1alpha1.TektonPipelineAPIService.GetStatusRuntime:output_type -> pipelines.tekton.v1alpha1.GetStatusRuntimeResponse
+	13, // 22: pipelines.tekton.v1alpha1.TektonPipelineAPIService.ChangeStatusRuntimeAndApplication:output_type -> pipelines.tekton.v1alpha1.ChangeStatusRuntimeAndApplicationResponse
+	15, // 23: pipelines.tekton.v1alpha1.TektonPipelineAPIService.RebuildTektonPipeline:output_type -> pipelines.tekton.v1alpha1.RebuildTektonPipelineResponse
+	16, // [16:24] is the sub-list for method output_type
+	8,  // [8:16] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_pipelines_tekton_v1alpha1_tekton_api_proto_init() }
@@ -1200,6 +1342,30 @@ func file_pipelines_tekton_v1alpha1_tekton_api_proto_init() {
 				return nil
 			}
 		}
+		file_pipelines_tekton_v1alpha1_tekton_api_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RebuildTektonPipelineRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pipelines_tekton_v1alpha1_tekton_api_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RebuildTektonPipelineResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1207,7 +1373,7 @@ func file_pipelines_tekton_v1alpha1_tekton_api_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_pipelines_tekton_v1alpha1_tekton_api_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   14,
+			NumMessages:   16,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
