@@ -155,3 +155,21 @@ func ChangeStatusRuntimeAndApplication(in *tektonPipelinepkgv1.ChangeStatusRunti
 	}
 	return response, nil
 }
+
+func RebuildTektonPipeline(in *tektonPipelinepkgv1.RebuildTektonPipelineRequest) (response *tektonPipelinepkgv1.RebuildTektonPipelineResponse, err error) {
+	bylogs.LogInfo("client: create tekton pipeline")
+	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.RebuildTektonPipeline(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: create tekton pipeline failed", err)
+		return nil, fmt.Errorf("[RebuildTektonPipeline] %w", err)
+	}
+	return response, nil
+}

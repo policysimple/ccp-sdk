@@ -49,6 +49,11 @@ class TektonPipelineAPIServiceStub(object):
         request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ChangeStatusRuntimeAndApplicationRequest.SerializeToString,
         response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ChangeStatusRuntimeAndApplicationResponse.FromString,
         )
+    self.RebuildTektonPipeline = channel.unary_unary(
+        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/RebuildTektonPipeline',
+        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.RebuildTektonPipelineRequest.SerializeToString,
+        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.RebuildTektonPipelineResponse.FromString,
+        )
 
 
 class TektonPipelineAPIServiceServicer(object):
@@ -104,6 +109,13 @@ class TektonPipelineAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def RebuildTektonPipeline(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -141,6 +153,11 @@ def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
           servicer.ChangeStatusRuntimeAndApplication,
           request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ChangeStatusRuntimeAndApplicationRequest.FromString,
           response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.ChangeStatusRuntimeAndApplicationResponse.SerializeToString,
+      ),
+      'RebuildTektonPipeline': grpc.unary_unary_rpc_method_handler(
+          servicer.RebuildTektonPipeline,
+          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.RebuildTektonPipelineRequest.FromString,
+          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.RebuildTektonPipelineResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
