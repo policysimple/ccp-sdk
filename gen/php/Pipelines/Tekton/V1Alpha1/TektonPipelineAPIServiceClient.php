@@ -120,4 +120,17 @@ class TektonPipelineAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Tekton\V1Alpha1\MakeRollbackRuntimeRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function MakeRollbackRuntime(\Pipelines\Tekton\V1Alpha1\MakeRollbackRuntimeRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.tekton.v1alpha1.TektonPipelineAPIService/MakeRollbackRuntime',
+        $argument,
+        ['\Pipelines\Tekton\V1Alpha1\MakeRollbackRuntimeResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

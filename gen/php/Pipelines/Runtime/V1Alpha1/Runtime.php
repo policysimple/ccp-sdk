@@ -179,6 +179,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
      */
     protected $scaling = null;
+    /**
+     * Generated from protobuf field <code>string tag_name = 42 [json_name = "tagName"];</code>
+     */
+    protected $tag_name = '';
 
     /**
      * Constructor.
@@ -227,6 +231,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $runtime_status
      *     @type \Pipelines\Runtime\V1Alpha1\Configuration $configuration
      *     @type \Pipelines\Runtime\V1Alpha1\Scaling $scaling
+     *     @type string $tag_name
      * }
      */
     public function __construct($data = NULL) {
@@ -1172,6 +1177,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Scaling::class);
         $this->scaling = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tag_name = 42 [json_name = "tagName"];</code>
+     * @return string
+     */
+    public function getTagName()
+    {
+        return $this->tag_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tag_name = 42 [json_name = "tagName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTagName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tag_name = $var;
 
         return $this;
     }

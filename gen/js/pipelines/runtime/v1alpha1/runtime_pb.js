@@ -2800,7 +2800,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     applicationStatus: jspb.Message.getFieldWithDefault(msg, 38, ""),
     runtimeStatus: jspb.Message.getFieldWithDefault(msg, 39, ""),
     configuration: (f = msg.getConfiguration()) && proto.pipelines.runtime.v1alpha1.Configuration.toObject(includeInstance, f),
-    scaling: (f = msg.getScaling()) && proto.pipelines.runtime.v1alpha1.Scaling.toObject(includeInstance, f)
+    scaling: (f = msg.getScaling()) && proto.pipelines.runtime.v1alpha1.Scaling.toObject(includeInstance, f),
+    tagName: jspb.Message.getFieldWithDefault(msg, 42, "")
   };
 
   if (includeInstance) {
@@ -3018,6 +3019,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
       var value = new proto.pipelines.runtime.v1alpha1.Scaling;
       reader.readMessage(value,proto.pipelines.runtime.v1alpha1.Scaling.deserializeBinaryFromReader);
       msg.setScaling(value);
+      break;
+    case 42:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTagName(value);
       break;
     default:
       reader.skipField();
@@ -3326,6 +3331,13 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
       41,
       f,
       proto.pipelines.runtime.v1alpha1.Scaling.serializeBinaryToWriter
+    );
+  }
+  f = message.getTagName();
+  if (f.length > 0) {
+    writer.writeString(
+      42,
+      f
     );
   }
 };
@@ -4242,6 +4254,24 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.clearScaling = function() {
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.hasScaling = function() {
   return jspb.Message.getField(this, 41) != null;
+};
+
+
+/**
+ * optional string tag_name = 42;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getTagName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 42, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setTagName = function(value) {
+  return jspb.Message.setProto3StringField(this, 42, value);
 };
 
 

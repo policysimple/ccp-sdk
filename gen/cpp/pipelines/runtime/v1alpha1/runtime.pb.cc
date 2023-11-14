@@ -245,6 +245,7 @@ constexpr Runtime::Runtime(
   , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , application_status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , runtime_status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tag_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , application_data_(nullptr)
   , pipeline_run_(nullptr)
   , configuration_(nullptr)
@@ -530,6 +531,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pipelines_2fruntime_2fv1alpha1
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, runtime_status_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, configuration_),
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, scaling_),
+  PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::Runtime, tag_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pipelines::runtime::v1alpha1::RuntimeList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -590,12 +592,12 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 114, 121, sizeof(::pipelines::runtime::v1alpha1::Runtime_SecretsEntry_DoNotUse)},
   { 123, 130, sizeof(::pipelines::runtime::v1alpha1::Runtime_ExtraArgsEntry_DoNotUse)},
   { 132, -1, sizeof(::pipelines::runtime::v1alpha1::Runtime)},
-  { 178, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
-  { 184, -1, sizeof(::pipelines::runtime::v1alpha1::IntanceType)},
-  { 192, -1, sizeof(::pipelines::runtime::v1alpha1::ResourcesRules)},
-  { 199, -1, sizeof(::pipelines::runtime::v1alpha1::Limit)},
-  { 206, -1, sizeof(::pipelines::runtime::v1alpha1::Request)},
-  { 213, -1, sizeof(::pipelines::runtime::v1alpha1::PipelineRun)},
+  { 179, -1, sizeof(::pipelines::runtime::v1alpha1::RuntimeList)},
+  { 185, -1, sizeof(::pipelines::runtime::v1alpha1::IntanceType)},
+  { 193, -1, sizeof(::pipelines::runtime::v1alpha1::ResourcesRules)},
+  { 200, -1, sizeof(::pipelines::runtime::v1alpha1::Limit)},
+  { 207, -1, sizeof(::pipelines::runtime::v1alpha1::Request)},
+  { 214, -1, sizeof(::pipelines::runtime::v1alpha1::PipelineRun)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -673,7 +675,7 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "time.v1alpha1.ContainerRegistryR\021contain"
   "erRegistry\022*\n\021docker_image_name\030\021 \001(\tR\017d"
   "ockerImageName\022-\n\022application_status\030\022 \001"
-  "(\tR\021applicationStatus\"\210\023\n\007Runtime\022\016\n\002id\030"
+  "(\tR\021applicationStatus\"\243\023\n\007Runtime\022\016\n\002id\030"
   "\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022N\n\016instanc"
   "e_types\030\003 \003(\0132\'.pipelines.runtime.v1alph"
   "a1.IntanceTypeR\rinstanceTypes\022\'\n\017organiz"
@@ -726,49 +728,49 @@ const char descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2e
   "\022O\n\rconfiguration\030( \001(\0132).pipelines.runt"
   "ime.v1alpha1.ConfigurationR\rconfiguratio"
   "n\022=\n\007scaling\030) \001(\0132#.pipelines.runtime.v"
-  "1alpha1.ScalingR\007scaling\032>\n\020IntegrationE"
-  "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v"
-  "alue:\0028\001\032G\n\031EnvironmentVariablesEntry\022\020\n"
-  "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028"
-  "\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005"
-  "value\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020"
-  "\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\002"
-  "8\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
-  "\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013RuntimeList\022"
-  "9\n\005items\030\001 \003(\0132#.pipelines.runtime.v1alp"
-  "ha1.RuntimeR\005items\"\206\001\n\013IntanceType\022\016\n\002id"
-  "\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022S\n\017resour"
-  "ces_rules\030\003 \003(\0132*.pipelines.runtime.v1al"
-  "pha1.ResourcesRulesR\016resourcesRules\"\210\001\n\016"
-  "ResourcesRules\0227\n\005limit\030\001 \003(\0132!.pipeline"
-  "s.runtime.v1alpha1.LimitR\005limit\022=\n\007reque"
-  "st\030\002 \003(\0132#.pipelines.runtime.v1alpha1.Re"
-  "questR\007request\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cp"
-  "u\022\020\n\003ram\030\002 \001(\tR\003ram\"-\n\007Request\022\020\n\003cpu\030\001 "
-  "\001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"\205\001\n\013PipelineR"
-  "un\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\tR\005l"
-  "abel\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022.\n\023pi"
-  "peline_run_status\030\004 \001(\tR\021pipelineRunStat"
-  "us*\314\001\n\024DockerImageBuildpack\022&\n\"DOCKER_IM"
-  "AGE_BUILDPACK_UNSPECIFIED\020\000\022!\n\035DOCKER_IM"
-  "AGE_BUILDPACK_GOLANG\020\001\022\037\n\033DOCKER_IMAGE_B"
-  "UILDPACK_JAVA\020\002\022%\n!DOCKER_IMAGE_BUILDPAC"
-  "K_JAVASCRIPT\020\003\022!\n\035DOCKER_IMAGE_BUILDPACK"
-  "_PYTHON\020\004*a\n\013TrafficType\022\034\n\030TRAFFIC_TYPE"
-  "_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL\020"
-  "\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cuem"
-  "by.pipelines.runtime.v1alpha1B\014RuntimePr"
-  "otoP\001Z5github.com/cuemby/ccp-runtime-ser"
-  "vice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.R"
-  "untime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Al"
-  "pha1b\006proto3"
+  "1alpha1.ScalingR\007scaling\022\031\n\010tag_name\030* \001"
+  "(\tR\007tagName\032>\n\020IntegrationEntry\022\020\n\003key\030\001"
+  " \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031E"
+  "nvironmentVariablesEntry\022\020\n\003key\030\001 \001(\tR\003k"
+  "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rCommands"
+  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005"
+  "value:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003"
+  "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraAr"
+  "gsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
+  "R\005value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003("
+  "\0132#.pipelines.runtime.v1alpha1.RuntimeR\005"
+  "items\"\206\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002id\022\022\n"
+  "\004name\030\002 \001(\tR\004name\022S\n\017resources_rules\030\003 \003"
+  "(\0132*.pipelines.runtime.v1alpha1.Resource"
+  "sRulesR\016resourcesRules\"\210\001\n\016ResourcesRule"
+  "s\0227\n\005limit\030\001 \003(\0132!.pipelines.runtime.v1a"
+  "lpha1.LimitR\005limit\022=\n\007request\030\002 \003(\0132#.pi"
+  "pelines.runtime.v1alpha1.RequestR\007reques"
+  "t\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001("
+  "\tR\003ram\"-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003r"
+  "am\030\002 \001(\tR\003ram\"\205\001\n\013PipelineRun\022\022\n\004name\030\001 "
+  "\001(\tR\004name\022\024\n\005label\030\002 \001(\tR\005label\022\034\n\tnames"
+  "pace\030\003 \001(\tR\tnamespace\022.\n\023pipeline_run_st"
+  "atus\030\004 \001(\tR\021pipelineRunStatus*\314\001\n\024Docker"
+  "ImageBuildpack\022&\n\"DOCKER_IMAGE_BUILDPACK"
+  "_UNSPECIFIED\020\000\022!\n\035DOCKER_IMAGE_BUILDPACK"
+  "_GOLANG\020\001\022\037\n\033DOCKER_IMAGE_BUILDPACK_JAVA"
+  "\020\002\022%\n!DOCKER_IMAGE_BUILDPACK_JAVASCRIPT\020"
+  "\003\022!\n\035DOCKER_IMAGE_BUILDPACK_PYTHON\020\004*a\n\013"
+  "TrafficType\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020"
+  "\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_"
+  "TYPE_INTERNAL\020\002B\255\001\n$io.cuemby.pipelines."
+  "runtime.v1alpha1B\014RuntimeProtoP\001Z5github"
+  ".com/cuemby/ccp-runtime-service/runtimev"
+  "1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alph"
+  "a1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps[1] = {
   &::descriptor_table_pipelines_2ftekton_2fv1alpha1_2ftekton_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto = {
-  false, false, 5572, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
+  false, false, 5599, descriptor_table_protodef_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, "pipelines/runtime/v1alpha1/runtime.proto", 
   &descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_once, descriptor_table_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto_deps, 1, 20,
   schemas, file_default_instances, TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto::offsets,
   file_level_metadata_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_enum_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto, file_level_service_descriptors_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto,
@@ -4159,6 +4161,11 @@ Runtime::Runtime(const Runtime& from)
     runtime_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_runtime_status(), 
       GetArenaForAllocation());
   }
+  tag_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tag_name().empty()) {
+    tag_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tag_name(), 
+      GetArenaForAllocation());
+  }
   if (from._internal_has_application_data()) {
     application_data_ = new ::pipelines::runtime::v1alpha1::Application(*from.application_data_);
   } else {
@@ -4209,6 +4216,7 @@ created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 application_status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 runtime_status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+tag_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&application_data_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&is_not_exist_dockerfile_) -
@@ -4247,6 +4255,7 @@ inline void Runtime::SharedDtor() {
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   application_status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   runtime_status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tag_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete application_data_;
   if (this != internal_default_instance()) delete pipeline_run_;
   if (this != internal_default_instance()) delete configuration_;
@@ -4309,6 +4318,7 @@ void Runtime::Clear() {
   updated_at_.ClearToEmpty();
   application_status_.ClearToEmpty();
   runtime_status_.ClearToEmpty();
+  tag_name_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && application_data_ != nullptr) {
     delete application_data_;
   }
@@ -4713,6 +4723,15 @@ const char* Runtime::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
       case 41:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_scaling(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string tag_name = 42 [json_name = "tagName"];
+      case 42:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_tag_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pipelines.runtime.v1alpha1.Runtime.tag_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5300,6 +5319,16 @@ failure:
         41, _Internal::scaling(this), target, stream);
   }
 
+  // string tag_name = 42 [json_name = "tagName"];
+  if (!this->_internal_tag_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tag_name().data(), static_cast<int>(this->_internal_tag_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pipelines.runtime.v1alpha1.Runtime.tag_name");
+    target = stream->WriteStringMaybeAliased(
+        42, this->_internal_tag_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5550,6 +5579,13 @@ size_t Runtime::ByteSizeLong() const {
         this->_internal_runtime_status());
   }
 
+  // string tag_name = 42 [json_name = "tagName"];
+  if (!this->_internal_tag_name().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tag_name());
+  }
+
   // .pipelines.runtime.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
   if (this->_internal_has_application_data()) {
     total_size += 2 +
@@ -5713,6 +5749,9 @@ void Runtime::MergeFrom(const Runtime& from) {
   }
   if (!from._internal_runtime_status().empty()) {
     _internal_set_runtime_status(from._internal_runtime_status());
+  }
+  if (!from._internal_tag_name().empty()) {
+    _internal_set_tag_name(from._internal_tag_name());
   }
   if (from._internal_has_application_data()) {
     _internal_mutable_application_data()->::pipelines::runtime::v1alpha1::Application::MergeFrom(from._internal_application_data());
@@ -5881,6 +5920,11 @@ void Runtime::InternalSwap(Runtime* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &runtime_status_, GetArenaForAllocation(),
       &other->runtime_status_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &tag_name_, GetArenaForAllocation(),
+      &other->tag_name_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Runtime, is_not_exist_dockerfile_)

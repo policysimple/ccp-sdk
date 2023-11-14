@@ -276,3 +276,20 @@ func UpdateApplicationChanges(in *runtimepkgv1.UpdateApplicationChangesRequest) 
 	}
 	return response, nil
 }
+
+func MakeRollbackRuntime(in *runtimepkgv1.MakeRollbackRuntimeRequest) (response *runtimepkgv1.MakeRollbackRuntimeResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.MakeRollbackRuntime(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error making rollback runtimes", err)
+		return nil, fmt.Errorf("[MakeRollbackRuntime] %w", err)
+	}
+	return response, nil
+}

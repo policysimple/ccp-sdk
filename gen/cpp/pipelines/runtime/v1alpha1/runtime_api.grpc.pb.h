@@ -142,6 +142,13 @@ class RuntimeAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>> PrepareAsyncUpdateApplicationChanges(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>>(PrepareAsyncUpdateApplicationChangesRaw(context, request, cq));
     }
+    virtual ::grpc::Status MakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>> AsyncMakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>>(AsyncMakeRollbackRuntimeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>> PrepareAsyncMakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>>(PrepareAsyncMakeRollbackRuntimeRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -160,6 +167,7 @@ class RuntimeAPIService final {
       virtual void GetRuntimesByApplication(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ChangeStatusRuntimeAndApplication(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest* request, ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateApplicationChanges(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest* request, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void MakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -193,6 +201,8 @@ class RuntimeAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse>* PrepareAsyncChangeStatusRuntimeAndApplicationRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>* AsyncUpdateApplicationChangesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>* PrepareAsyncUpdateApplicationChangesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>* AsyncMakeRollbackRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>* PrepareAsyncMakeRollbackRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -302,6 +312,13 @@ class RuntimeAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>> PrepareAsyncUpdateApplicationChanges(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>>(PrepareAsyncUpdateApplicationChangesRaw(context, request, cq));
     }
+    ::grpc::Status MakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>> AsyncMakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>>(AsyncMakeRollbackRuntimeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>> PrepareAsyncMakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>>(PrepareAsyncMakeRollbackRuntimeRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -320,6 +337,7 @@ class RuntimeAPIService final {
       void GetRuntimesByApplication(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse* response, std::function<void(::grpc::Status)>) override;
       void ChangeStatusRuntimeAndApplication(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest* request, ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateApplicationChanges(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest* request, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse* response, std::function<void(::grpc::Status)>) override;
+      void MakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -361,6 +379,8 @@ class RuntimeAPIService final {
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse>* PrepareAsyncChangeStatusRuntimeAndApplicationRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>* AsyncUpdateApplicationChangesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>* PrepareAsyncUpdateApplicationChangesRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>* AsyncMakeRollbackRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>* PrepareAsyncMakeRollbackRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateRuntime_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateRuntime_;
@@ -376,6 +396,7 @@ class RuntimeAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_GetRuntimesByApplication_;
     const ::grpc::internal::RpcMethod rpcmethod_ChangeStatusRuntimeAndApplication_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateApplicationChanges_;
+    const ::grpc::internal::RpcMethod rpcmethod_MakeRollbackRuntime_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -398,6 +419,7 @@ class RuntimeAPIService final {
     virtual ::grpc::Status GetRuntimesByApplication(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationRequest* request, ::pipelines::runtime::v1alpha1::GetRuntimesByApplicationResponse* response);
     virtual ::grpc::Status ChangeStatusRuntimeAndApplication(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationRequest* request, ::pipelines::runtime::v1alpha1::ChangeStatusRuntimeAndApplicationResponse* response);
     virtual ::grpc::Status UpdateApplicationChanges(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest* request, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse* response);
+    virtual ::grpc::Status MakeRollbackRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetRuntime : public BaseClass {
@@ -699,7 +721,27 @@ class RuntimeAPIService final {
       ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetRuntime<WithAsyncMethod_CreateRuntime<WithAsyncMethod_UpdateRuntime<WithAsyncMethod_UpdateResponseMessageRuntime<WithAsyncMethod_ResponseMessageDeleteRuntimeByAppId<WithAsyncMethod_DeleteRuntime<WithAsyncMethod_DeleteRuntimesByApplication<WithAsyncMethod_DeleteRuntimesByEnvironment<WithAsyncMethod_ListRuntimes<WithAsyncMethod_RebuildRuntime<WithAsyncMethod_AlreadyExistsRuntime<WithAsyncMethod_GetRuntimesInLast24Hours<WithAsyncMethod_GetRuntimesByApplication<WithAsyncMethod_ChangeStatusRuntimeAndApplication<WithAsyncMethod_UpdateApplicationChanges<Service > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_MakeRollbackRuntime : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_MakeRollbackRuntime() {
+      ::grpc::Service::MarkMethodAsync(15);
+    }
+    ~WithAsyncMethod_MakeRollbackRuntime() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status MakeRollbackRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestMakeRollbackRuntime(::grpc::ServerContext* context, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::grpc::ServerAsyncResponseWriter< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_GetRuntime<WithAsyncMethod_CreateRuntime<WithAsyncMethod_UpdateRuntime<WithAsyncMethod_UpdateResponseMessageRuntime<WithAsyncMethod_ResponseMessageDeleteRuntimeByAppId<WithAsyncMethod_DeleteRuntime<WithAsyncMethod_DeleteRuntimesByApplication<WithAsyncMethod_DeleteRuntimesByEnvironment<WithAsyncMethod_ListRuntimes<WithAsyncMethod_RebuildRuntime<WithAsyncMethod_AlreadyExistsRuntime<WithAsyncMethod_GetRuntimesInLast24Hours<WithAsyncMethod_GetRuntimesByApplication<WithAsyncMethod_ChangeStatusRuntimeAndApplication<WithAsyncMethod_UpdateApplicationChanges<WithAsyncMethod_MakeRollbackRuntime<Service > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_GetRuntime : public BaseClass {
    private:
@@ -951,6 +993,23 @@ class RuntimeAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status UpdateApplicationChanges(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest* request, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_MakeRollbackRuntime : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_MakeRollbackRuntime() {
+      ::grpc::Service::MarkMethodGeneric(15);
+    }
+    ~WithGenericMethod_MakeRollbackRuntime() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status MakeRollbackRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1256,6 +1315,26 @@ class RuntimeAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_MakeRollbackRuntime : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_MakeRollbackRuntime() {
+      ::grpc::Service::MarkMethodRaw(15);
+    }
+    ~WithRawMethod_MakeRollbackRuntime() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status MakeRollbackRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestMakeRollbackRuntime(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetRuntime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1555,9 +1634,29 @@ class RuntimeAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedUpdateApplicationChanges(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest,::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<WithStreamedUnaryMethod_GetRuntimesInLast24Hours<WithStreamedUnaryMethod_GetRuntimesByApplication<WithStreamedUnaryMethod_ChangeStatusRuntimeAndApplication<WithStreamedUnaryMethod_UpdateApplicationChanges<Service > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_MakeRollbackRuntime : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_MakeRollbackRuntime() {
+      ::grpc::Service::MarkMethodStreamed(15,
+        new ::grpc::internal::StreamedUnaryHandler< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>(std::bind(&WithStreamedUnaryMethod_MakeRollbackRuntime<BaseClass>::StreamedMakeRollbackRuntime, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_MakeRollbackRuntime() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status MakeRollbackRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedMakeRollbackRuntime(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest,::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<WithStreamedUnaryMethod_GetRuntimesInLast24Hours<WithStreamedUnaryMethod_GetRuntimesByApplication<WithStreamedUnaryMethod_ChangeStatusRuntimeAndApplication<WithStreamedUnaryMethod_UpdateApplicationChanges<WithStreamedUnaryMethod_MakeRollbackRuntime<Service > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<WithStreamedUnaryMethod_GetRuntimesInLast24Hours<WithStreamedUnaryMethod_GetRuntimesByApplication<WithStreamedUnaryMethod_ChangeStatusRuntimeAndApplication<WithStreamedUnaryMethod_UpdateApplicationChanges<Service > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetRuntime<WithStreamedUnaryMethod_CreateRuntime<WithStreamedUnaryMethod_UpdateRuntime<WithStreamedUnaryMethod_UpdateResponseMessageRuntime<WithStreamedUnaryMethod_ResponseMessageDeleteRuntimeByAppId<WithStreamedUnaryMethod_DeleteRuntime<WithStreamedUnaryMethod_DeleteRuntimesByApplication<WithStreamedUnaryMethod_DeleteRuntimesByEnvironment<WithStreamedUnaryMethod_ListRuntimes<WithStreamedUnaryMethod_RebuildRuntime<WithStreamedUnaryMethod_AlreadyExistsRuntime<WithStreamedUnaryMethod_GetRuntimesInLast24Hours<WithStreamedUnaryMethod_GetRuntimesByApplication<WithStreamedUnaryMethod_ChangeStatusRuntimeAndApplication<WithStreamedUnaryMethod_UpdateApplicationChanges<WithStreamedUnaryMethod_MakeRollbackRuntime<Service > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

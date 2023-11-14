@@ -173,3 +173,21 @@ func RebuildTektonPipeline(in *tektonPipelinepkgv1.RebuildTektonPipelineRequest)
 	}
 	return response, nil
 }
+
+func MakeRollbackRuntime(in *tektonPipelinepkgv1.MakeRollbackRuntimeRequest) (response *tektonPipelinepkgv1.MakeRollbackRuntimeResponse, err error) {
+	bylogs.LogInfo("client: MakeRollbackRuntime")
+	d, err := time.ParseDuration(tektonPipelineServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.MakeRollbackRuntime(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: create tekton pipeline failed", err)
+		return nil, fmt.Errorf("[MakeRollbackRuntime] %w", err)
+	}
+	return response, nil
+}

@@ -159,6 +159,28 @@ function deserialize_pipelines_tekton_v1alpha1_ListTektonTaskPipelineResponse(bu
   return pipelines_tekton_v1alpha1_tekton_api_pb.ListTektonTaskPipelineResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.MakeRollbackRuntimeRequest)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.MakeRollbackRuntimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse(arg) {
+  if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.MakeRollbackRuntimeResponse)) {
+    throw new Error('Expected argument of type pipelines.tekton.v1alpha1.MakeRollbackRuntimeResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse(buffer_arg) {
+  return pipelines_tekton_v1alpha1_tekton_api_pb.MakeRollbackRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_tekton_v1alpha1_RebuildTektonPipelineRequest(arg) {
   if (!(arg instanceof pipelines_tekton_v1alpha1_tekton_api_pb.RebuildTektonPipelineRequest)) {
     throw new Error('Expected argument of type pipelines.tekton.v1alpha1.RebuildTektonPipelineRequest');
@@ -270,6 +292,17 @@ var TektonPipelineAPIServiceService = exports.TektonPipelineAPIServiceService = 
     requestDeserialize: deserialize_pipelines_tekton_v1alpha1_RebuildTektonPipelineRequest,
     responseSerialize: serialize_pipelines_tekton_v1alpha1_RebuildTektonPipelineResponse,
     responseDeserialize: deserialize_pipelines_tekton_v1alpha1_RebuildTektonPipelineResponse,
+  },
+  makeRollbackRuntime: {
+    path: '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/MakeRollbackRuntime',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_tekton_v1alpha1_tekton_api_pb.MakeRollbackRuntimeRequest,
+    responseType: pipelines_tekton_v1alpha1_tekton_api_pb.MakeRollbackRuntimeResponse,
+    requestSerialize: serialize_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest,
+    requestDeserialize: deserialize_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest,
+    responseSerialize: serialize_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse,
+    responseDeserialize: deserialize_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse,
   },
 };
 

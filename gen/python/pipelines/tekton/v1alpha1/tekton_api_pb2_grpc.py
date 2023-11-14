@@ -54,6 +54,11 @@ class TektonPipelineAPIServiceStub(object):
         request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.RebuildTektonPipelineRequest.SerializeToString,
         response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.RebuildTektonPipelineResponse.FromString,
         )
+    self.MakeRollbackRuntime = channel.unary_unary(
+        '/pipelines.tekton.v1alpha1.TektonPipelineAPIService/MakeRollbackRuntime',
+        request_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.MakeRollbackRuntimeRequest.SerializeToString,
+        response_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.MakeRollbackRuntimeResponse.FromString,
+        )
 
 
 class TektonPipelineAPIServiceServicer(object):
@@ -116,6 +121,13 @@ class TektonPipelineAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def MakeRollbackRuntime(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -158,6 +170,11 @@ def add_TektonPipelineAPIServiceServicer_to_server(servicer, server):
           servicer.RebuildTektonPipeline,
           request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.RebuildTektonPipelineRequest.FromString,
           response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.RebuildTektonPipelineResponse.SerializeToString,
+      ),
+      'MakeRollbackRuntime': grpc.unary_unary_rpc_method_handler(
+          servicer.MakeRollbackRuntime,
+          request_deserializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.MakeRollbackRuntimeRequest.FromString,
+          response_serializer=pipelines_dot_tekton_dot_v1alpha1_dot_tekton__api__pb2.MakeRollbackRuntimeResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

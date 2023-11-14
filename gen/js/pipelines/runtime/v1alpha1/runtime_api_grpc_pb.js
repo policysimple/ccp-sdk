@@ -225,6 +225,28 @@ function deserialize_pipelines_runtime_v1alpha1_ListRuntimesResponse(buffer_arg)
   return pipelines_runtime_v1alpha1_runtime_api_pb.ListRuntimesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeRequest(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.MakeRollbackRuntimeRequest)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.MakeRollbackRuntimeRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeRequest(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.MakeRollbackRuntimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeResponse(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.MakeRollbackRuntimeResponse)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.MakeRollbackRuntimeResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeResponse(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.MakeRollbackRuntimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_runtime_v1alpha1_RebuildRuntimeRequest(arg) {
   if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.RebuildRuntimeRequest)) {
     throw new Error('Expected argument of type pipelines.runtime.v1alpha1.RebuildRuntimeRequest');
@@ -501,6 +523,17 @@ var RuntimeAPIServiceService = exports.RuntimeAPIServiceService = {
     requestDeserialize: deserialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesRequest,
     responseSerialize: serialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesResponse,
     responseDeserialize: deserialize_pipelines_runtime_v1alpha1_UpdateApplicationChangesResponse,
+  },
+  makeRollbackRuntime: {
+    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/MakeRollbackRuntime',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.MakeRollbackRuntimeRequest,
+    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.MakeRollbackRuntimeResponse,
+    requestSerialize: serialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeRequest,
+    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeRequest,
+    responseSerialize: serialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeResponse,
+    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeResponse,
   },
 };
 

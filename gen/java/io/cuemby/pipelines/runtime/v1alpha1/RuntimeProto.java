@@ -174,7 +174,7 @@ public final class RuntimeProto {
       "time.v1alpha1.ContainerRegistryR\021contain" +
       "erRegistry\022*\n\021docker_image_name\030\021 \001(\tR\017d" +
       "ockerImageName\022-\n\022application_status\030\022 \001" +
-      "(\tR\021applicationStatus\"\210\023\n\007Runtime\022\016\n\002id\030" +
+      "(\tR\021applicationStatus\"\243\023\n\007Runtime\022\016\n\002id\030" +
       "\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022N\n\016instanc" +
       "e_types\030\003 \003(\0132\'.pipelines.runtime.v1alph" +
       "a1.IntanceTypeR\rinstanceTypes\022\'\n\017organiz" +
@@ -227,42 +227,42 @@ public final class RuntimeProto {
       "\022O\n\rconfiguration\030( \001(\0132).pipelines.runt" +
       "ime.v1alpha1.ConfigurationR\rconfiguratio" +
       "n\022=\n\007scaling\030) \001(\0132#.pipelines.runtime.v" +
-      "1alpha1.ScalingR\007scaling\032>\n\020IntegrationE" +
-      "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v" +
-      "alue:\0028\001\032G\n\031EnvironmentVariablesEntry\022\020\n" +
-      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
-      "\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005" +
-      "value\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020" +
-      "\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\002" +
-      "8\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
-      "\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013RuntimeList\022" +
-      "9\n\005items\030\001 \003(\0132#.pipelines.runtime.v1alp" +
-      "ha1.RuntimeR\005items\"\206\001\n\013IntanceType\022\016\n\002id" +
-      "\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022S\n\017resour" +
-      "ces_rules\030\003 \003(\0132*.pipelines.runtime.v1al" +
-      "pha1.ResourcesRulesR\016resourcesRules\"\210\001\n\016" +
-      "ResourcesRules\0227\n\005limit\030\001 \003(\0132!.pipeline" +
-      "s.runtime.v1alpha1.LimitR\005limit\022=\n\007reque" +
-      "st\030\002 \003(\0132#.pipelines.runtime.v1alpha1.Re" +
-      "questR\007request\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cp" +
-      "u\022\020\n\003ram\030\002 \001(\tR\003ram\"-\n\007Request\022\020\n\003cpu\030\001 " +
-      "\001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"\205\001\n\013PipelineR" +
-      "un\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001(\tR\005l" +
-      "abel\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022.\n\023pi" +
-      "peline_run_status\030\004 \001(\tR\021pipelineRunStat" +
-      "us*\314\001\n\024DockerImageBuildpack\022&\n\"DOCKER_IM" +
-      "AGE_BUILDPACK_UNSPECIFIED\020\000\022!\n\035DOCKER_IM" +
-      "AGE_BUILDPACK_GOLANG\020\001\022\037\n\033DOCKER_IMAGE_B" +
-      "UILDPACK_JAVA\020\002\022%\n!DOCKER_IMAGE_BUILDPAC" +
-      "K_JAVASCRIPT\020\003\022!\n\035DOCKER_IMAGE_BUILDPACK" +
-      "_PYTHON\020\004*a\n\013TrafficType\022\034\n\030TRAFFIC_TYPE" +
-      "_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL\020" +
-      "\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io.cuem" +
-      "by.pipelines.runtime.v1alpha1B\014RuntimePr" +
-      "otoP\001Z5github.com/cuemby/ccp-runtime-ser" +
-      "vice/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.R" +
-      "untime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Al" +
-      "pha1b\006proto3"
+      "1alpha1.ScalingR\007scaling\022\031\n\010tag_name\030* \001" +
+      "(\tR\007tagName\032>\n\020IntegrationEntry\022\020\n\003key\030\001" +
+      " \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032G\n\031E" +
+      "nvironmentVariablesEntry\022\020\n\003key\030\001 \001(\tR\003k" +
+      "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032;\n\rCommands" +
+      "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005" +
+      "value:\0028\001\032:\n\014SecretsEntry\022\020\n\003key\030\001 \001(\tR\003" +
+      "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032<\n\016ExtraAr" +
+      "gsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
+      "R\005value:\0028\001\"H\n\013RuntimeList\0229\n\005items\030\001 \003(" +
+      "\0132#.pipelines.runtime.v1alpha1.RuntimeR\005" +
+      "items\"\206\001\n\013IntanceType\022\016\n\002id\030\001 \001(\tR\002id\022\022\n" +
+      "\004name\030\002 \001(\tR\004name\022S\n\017resources_rules\030\003 \003" +
+      "(\0132*.pipelines.runtime.v1alpha1.Resource" +
+      "sRulesR\016resourcesRules\"\210\001\n\016ResourcesRule" +
+      "s\0227\n\005limit\030\001 \003(\0132!.pipelines.runtime.v1a" +
+      "lpha1.LimitR\005limit\022=\n\007request\030\002 \003(\0132#.pi" +
+      "pelines.runtime.v1alpha1.RequestR\007reques" +
+      "t\"+\n\005Limit\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(" +
+      "\tR\003ram\"-\n\007Request\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003r" +
+      "am\030\002 \001(\tR\003ram\"\205\001\n\013PipelineRun\022\022\n\004name\030\001 " +
+      "\001(\tR\004name\022\024\n\005label\030\002 \001(\tR\005label\022\034\n\tnames" +
+      "pace\030\003 \001(\tR\tnamespace\022.\n\023pipeline_run_st" +
+      "atus\030\004 \001(\tR\021pipelineRunStatus*\314\001\n\024Docker" +
+      "ImageBuildpack\022&\n\"DOCKER_IMAGE_BUILDPACK" +
+      "_UNSPECIFIED\020\000\022!\n\035DOCKER_IMAGE_BUILDPACK" +
+      "_GOLANG\020\001\022\037\n\033DOCKER_IMAGE_BUILDPACK_JAVA" +
+      "\020\002\022%\n!DOCKER_IMAGE_BUILDPACK_JAVASCRIPT\020" +
+      "\003\022!\n\035DOCKER_IMAGE_BUILDPACK_PYTHON\020\004*a\n\013" +
+      "TrafficType\022\034\n\030TRAFFIC_TYPE_UNSPECIFIED\020" +
+      "\000\022\031\n\025TRAFFIC_TYPE_EXTERNAL\020\001\022\031\n\025TRAFFIC_" +
+      "TYPE_INTERNAL\020\002B\255\001\n$io.cuemby.pipelines." +
+      "runtime.v1alpha1B\014RuntimeProtoP\001Z5github" +
+      ".com/cuemby/ccp-runtime-service/runtimev" +
+      "1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alph" +
+      "a1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -322,7 +322,7 @@ public final class RuntimeProto {
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
-        new java.lang.String[] { "Id", "Name", "InstanceTypes", "OrganizationId", "ProjectId", "NameProject", "ApplicationId", "WorkspaceId", "EnvironmentId", "Scaler", "PodStatus", "PodStatusMsg", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", "TrafficType", "ResponseMessage", "EnvironmentName", "EnvironmentInternalName", "ApplicationName", "StorageUsed", "StorageLimit", "IntegrationId", "ApplicationData", "CustomPipeline", "BeforeDeployTasks", "AfterDeployTasks", "PodIngressCert", "IsNotExistDockerfile", "Params", "PipelineRun", "HostUrl", "AppLabel", "CreatedAt", "UpdatedAt", "ApplicationStatus", "RuntimeStatus", "Configuration", "Scaling", });
+        new java.lang.String[] { "Id", "Name", "InstanceTypes", "OrganizationId", "ProjectId", "NameProject", "ApplicationId", "WorkspaceId", "EnvironmentId", "Scaler", "PodStatus", "PodStatusMsg", "Integration", "EnvironmentVariables", "Commands", "Secrets", "ExtraArgs", "TrafficType", "ResponseMessage", "EnvironmentName", "EnvironmentInternalName", "ApplicationName", "StorageUsed", "StorageLimit", "IntegrationId", "ApplicationData", "CustomPipeline", "BeforeDeployTasks", "AfterDeployTasks", "PodIngressCert", "IsNotExistDockerfile", "Params", "PipelineRun", "HostUrl", "AppLabel", "CreatedAt", "UpdatedAt", "ApplicationStatus", "RuntimeStatus", "Configuration", "Scaling", "TagName", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_descriptor =
       internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor.getNestedTypes().get(0);
     internal_static_pipelines_runtime_v1alpha1_Runtime_IntegrationEntry_fieldAccessorTable = new

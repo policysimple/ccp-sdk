@@ -94,6 +94,16 @@ public final class TektonAPIProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_tekton_v1alpha1_RebuildTektonPipelineResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -150,40 +160,50 @@ public final class TektonAPIProto {
       "rId\"\205\001\n\035RebuildTektonPipelineResponse\022L\n" +
       "\017tekton_pipeline\030\001 \001(\0132#.pipelines.tekto" +
       "n.v1alpha1.PipelineR\016tektonPipeline\022\026\n\006s" +
-      "tatus\030\002 \001(\tR\006status2\356\010\n\030TektonPipelineAP" +
-      "IService\022\207\001\n\024CreateTektonPipeline\0226.pipe" +
-      "lines.tekton.v1alpha1.CreateTektonPipeli" +
-      "neRequest\0327.pipelines.tekton.v1alpha1.Cr" +
-      "eateTektonPipelineResponse\022\207\001\n\024DeleteTek" +
-      "tonPipeline\0226.pipelines.tekton.v1alpha1." +
-      "DeleteTektonPipelineRequest\0327.pipelines." +
-      "tekton.v1alpha1.DeleteTektonPipelineResp" +
-      "onse\022\215\001\n\026ListTektonTaskPipeline\0228.pipeli" +
-      "nes.tekton.v1alpha1.ListTektonTaskPipeli" +
-      "neRequest\0329.pipelines.tekton.v1alpha1.Li" +
-      "stTektonTaskPipelineResponse\022u\n\016GetPipel" +
-      "ineRun\0220.pipelines.tekton.v1alpha1.GetPi" +
-      "pelineRunRequest\0321.pipelines.tekton.v1al" +
-      "pha1.GetPipelineRunResponse\022x\n\017ListPipel" +
-      "ineRun\0221.pipelines.tekton.v1alpha1.ListP" +
-      "ipelineRunRequest\0322.pipelines.tekton.v1a" +
-      "lpha1.ListPipelineRunResponse\022}\n\020GetStat" +
-      "usRuntime\0222.pipelines.tekton.v1alpha1.Ge" +
-      "tStatusRuntimeRequest\0323.pipelines.tekton" +
-      ".v1alpha1.GetStatusRuntimeResponse0\001\022\260\001\n" +
-      "!ChangeStatusRuntimeAndApplication\022C.pip" +
-      "elines.tekton.v1alpha1.ChangeStatusRunti" +
-      "meAndApplicationRequest\032D.pipelines.tekt" +
-      "on.v1alpha1.ChangeStatusRuntimeAndApplic" +
-      "ationResponse\"\000\022\212\001\n\025RebuildTektonPipelin" +
-      "e\0227.pipelines.tekton.v1alpha1.RebuildTek" +
-      "tonPipelineRequest\0328.pipelines.tekton.v1" +
-      "alpha1.RebuildTektonPipelineResponseB\261\001\n" +
-      "#io.cuemby.pipelines.tekton.v1alpha1B\016Te" +
-      "ktonAPIProtoP\001Z:github.com/cuemby/ccp-sd" +
-      "k/gen/go/pipelines/tekton/v1alpha1\242\002\003PPX" +
-      "\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031Pipelines" +
-      "\\Tekton\\V1Alpha1b\006proto3"
+      "tatus\030\002 \001(\tR\006status\"\305\001\n\032MakeRollbackRunt" +
+      "imeRequest\022%\n\016application_id\030\001 \001(\tR\rappl" +
+      "icationId\022\035\n\nproject_id\030\002 \001(\tR\tprojectId" +
+      "\022\'\n\017organization_id\030\003 \001(\tR\016organizationI" +
+      "d\022\035\n\nruntime_id\030\004 \001(\tR\truntimeId\022\031\n\010tag_" +
+      "name\030\005 \001(\tR\007tagName\"E\n\033MakeRollbackRunti" +
+      "meResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 " +
+      "\001(\tR\005error2\367\t\n\030TektonPipelineAPIService\022" +
+      "\207\001\n\024CreateTektonPipeline\0226.pipelines.tek" +
+      "ton.v1alpha1.CreateTektonPipelineRequest" +
+      "\0327.pipelines.tekton.v1alpha1.CreateTekto" +
+      "nPipelineResponse\022\207\001\n\024DeleteTektonPipeli" +
+      "ne\0226.pipelines.tekton.v1alpha1.DeleteTek" +
+      "tonPipelineRequest\0327.pipelines.tekton.v1" +
+      "alpha1.DeleteTektonPipelineResponse\022\215\001\n\026" +
+      "ListTektonTaskPipeline\0228.pipelines.tekto" +
+      "n.v1alpha1.ListTektonTaskPipelineRequest" +
+      "\0329.pipelines.tekton.v1alpha1.ListTektonT" +
+      "askPipelineResponse\022u\n\016GetPipelineRun\0220." +
+      "pipelines.tekton.v1alpha1.GetPipelineRun" +
+      "Request\0321.pipelines.tekton.v1alpha1.GetP" +
+      "ipelineRunResponse\022x\n\017ListPipelineRun\0221." +
+      "pipelines.tekton.v1alpha1.ListPipelineRu" +
+      "nRequest\0322.pipelines.tekton.v1alpha1.Lis" +
+      "tPipelineRunResponse\022}\n\020GetStatusRuntime" +
+      "\0222.pipelines.tekton.v1alpha1.GetStatusRu" +
+      "ntimeRequest\0323.pipelines.tekton.v1alpha1" +
+      ".GetStatusRuntimeResponse0\001\022\260\001\n!ChangeSt" +
+      "atusRuntimeAndApplication\022C.pipelines.te" +
+      "kton.v1alpha1.ChangeStatusRuntimeAndAppl" +
+      "icationRequest\032D.pipelines.tekton.v1alph" +
+      "a1.ChangeStatusRuntimeAndApplicationResp" +
+      "onse\"\000\022\212\001\n\025RebuildTektonPipeline\0227.pipel" +
+      "ines.tekton.v1alpha1.RebuildTektonPipeli" +
+      "neRequest\0328.pipelines.tekton.v1alpha1.Re" +
+      "buildTektonPipelineResponse\022\206\001\n\023MakeRoll" +
+      "backRuntime\0225.pipelines.tekton.v1alpha1." +
+      "MakeRollbackRuntimeRequest\0326.pipelines.t" +
+      "ekton.v1alpha1.MakeRollbackRuntimeRespon" +
+      "se\"\000B\261\001\n#io.cuemby.pipelines.tekton.v1al" +
+      "pha1B\016TektonAPIProtoP\001Z:github.com/cuemb" +
+      "y/ccp-sdk/gen/go/pipelines/tekton/v1alph" +
+      "a1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031P" +
+      "ipelines\\Tekton\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -286,6 +306,18 @@ public final class TektonAPIProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_RebuildTektonPipelineResponse_descriptor,
         new java.lang.String[] { "TektonPipeline", "Status", });
+    internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest_descriptor,
+        new java.lang.String[] { "ApplicationId", "ProjectId", "OrganizationId", "RuntimeId", "TagName", });
+    internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse_descriptor,
+        new java.lang.String[] { "Msg", "Error", });
     io.cuemby.pipelines.tekton.v1alpha1.TektonProto.getDescriptor();
   }
 

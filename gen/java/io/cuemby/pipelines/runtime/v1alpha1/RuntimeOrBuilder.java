@@ -643,4 +643,16 @@ public interface RuntimeOrBuilder extends
    * <code>.pipelines.runtime.v1alpha1.Scaling scaling = 41 [json_name = "scaling"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.ScalingOrBuilder getScalingOrBuilder();
+
+  /**
+   * <code>string tag_name = 42 [json_name = "tagName"];</code>
+   * @return The tagName.
+   */
+  java.lang.String getTagName();
+  /**
+   * <code>string tag_name = 42 [json_name = "tagName"];</code>
+   * @return The bytes for tagName.
+   */
+  com.google.protobuf.ByteString
+      getTagNameBytes();
 }
