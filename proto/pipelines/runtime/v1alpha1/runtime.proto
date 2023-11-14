@@ -145,6 +145,7 @@ message Runtime {
   string runtime_status = 39;
   Configuration configuration = 40;
   Scaling scaling = 41;
+  string tag_name = 42;
 }
 
 message RuntimeList {

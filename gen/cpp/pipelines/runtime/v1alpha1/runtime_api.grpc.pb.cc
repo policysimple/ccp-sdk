@@ -35,6 +35,7 @@ static const char* RuntimeAPIService_method_names[] = {
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/GetRuntimesByApplication",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/ChangeStatusRuntimeAndApplication",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateApplicationChanges",
+  "/pipelines.runtime.v1alpha1.RuntimeAPIService/MakeRollbackRuntime",
 };
 
 std::unique_ptr< RuntimeAPIService::Stub> RuntimeAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -59,6 +60,7 @@ RuntimeAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_GetRuntimesByApplication_(RuntimeAPIService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ChangeStatusRuntimeAndApplication_(RuntimeAPIService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateApplicationChanges_(RuntimeAPIService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MakeRollbackRuntime_(RuntimeAPIService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RuntimeAPIService::Stub::GetRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimeRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimeResponse* response) {
@@ -301,6 +303,22 @@ void RuntimeAPIService::Stub::experimental_async::UpdateApplicationChanges(::grp
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>::Create(channel_.get(), cq, rpcmethod_UpdateApplicationChanges_, context, request, false);
 }
 
+::grpc::Status RuntimeAPIService::Stub::MakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_MakeRollbackRuntime_, context, request, response);
+}
+
+void RuntimeAPIService::Stub::experimental_async::MakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MakeRollbackRuntime_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>* RuntimeAPIService::Stub::AsyncMakeRollbackRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_MakeRollbackRuntime_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>* RuntimeAPIService::Stub::PrepareAsyncMakeRollbackRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_MakeRollbackRuntime_, context, request, false);
+}
+
 RuntimeAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RuntimeAPIService_method_names[0],
@@ -377,6 +395,11 @@ RuntimeAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse>(
           std::mem_fn(&RuntimeAPIService::Service::UpdateApplicationChanges), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RuntimeAPIService_method_names[15],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>(
+          std::mem_fn(&RuntimeAPIService::Service::MakeRollbackRuntime), this)));
 }
 
 RuntimeAPIService::Service::~Service() {
@@ -481,6 +504,13 @@ RuntimeAPIService::Service::~Service() {
 }
 
 ::grpc::Status RuntimeAPIService::Service::UpdateApplicationChanges(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::UpdateApplicationChangesRequest* request, ::pipelines::runtime::v1alpha1::UpdateApplicationChangesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RuntimeAPIService::Service::MakeRollbackRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -30,6 +30,8 @@ service RuntimeAPIService{
     rpc GetRuntimesByApplication(GetRuntimesByApplicationRequest) returns (GetRuntimesByApplicationResponse) {};
     rpc ChangeStatusRuntimeAndApplication(ChangeStatusRuntimeAndApplicationRequest) returns (ChangeStatusRuntimeAndApplicationResponse) {};
     rpc UpdateApplicationChanges(UpdateApplicationChangesRequest) returns (UpdateApplicationChangesResponse) {};
+    rpc MakeRollbackRuntime(MakeRollbackRuntimeRequest) returns (MakeRollbackRuntimeResponse) {};
+    
 }
 
 message CreateRuntimeRequest {
@@ -196,6 +198,19 @@ message UpdateApplicationChangesRequest {
 }
 
 message UpdateApplicationChangesResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message MakeRollbackRuntimeRequest {
+    string application_id = 1;
+    string project_id = 2;
+    string organization_id = 3;
+    string runtime_id = 4;
+    string tag_name = 5;
+}
+
+message MakeRollbackRuntimeResponse {
     string msg = 1;
     string error = 2;
 }

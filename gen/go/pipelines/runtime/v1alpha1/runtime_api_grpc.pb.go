@@ -33,6 +33,7 @@ type RuntimeAPIServiceClient interface {
 	GetRuntimesByApplication(ctx context.Context, in *GetRuntimesByApplicationRequest, opts ...grpc.CallOption) (*GetRuntimesByApplicationResponse, error)
 	ChangeStatusRuntimeAndApplication(ctx context.Context, in *ChangeStatusRuntimeAndApplicationRequest, opts ...grpc.CallOption) (*ChangeStatusRuntimeAndApplicationResponse, error)
 	UpdateApplicationChanges(ctx context.Context, in *UpdateApplicationChangesRequest, opts ...grpc.CallOption) (*UpdateApplicationChangesResponse, error)
+	MakeRollbackRuntime(ctx context.Context, in *MakeRollbackRuntimeRequest, opts ...grpc.CallOption) (*MakeRollbackRuntimeResponse, error)
 }
 
 type runtimeAPIServiceClient struct {
@@ -178,6 +179,15 @@ func (c *runtimeAPIServiceClient) UpdateApplicationChanges(ctx context.Context, 
 	return out, nil
 }
 
+func (c *runtimeAPIServiceClient) MakeRollbackRuntime(ctx context.Context, in *MakeRollbackRuntimeRequest, opts ...grpc.CallOption) (*MakeRollbackRuntimeResponse, error) {
+	out := new(MakeRollbackRuntimeResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/MakeRollbackRuntime", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RuntimeAPIServiceServer is the server API for RuntimeAPIService service.
 // All implementations should embed UnimplementedRuntimeAPIServiceServer
 // for forward compatibility
@@ -197,6 +207,7 @@ type RuntimeAPIServiceServer interface {
 	GetRuntimesByApplication(context.Context, *GetRuntimesByApplicationRequest) (*GetRuntimesByApplicationResponse, error)
 	ChangeStatusRuntimeAndApplication(context.Context, *ChangeStatusRuntimeAndApplicationRequest) (*ChangeStatusRuntimeAndApplicationResponse, error)
 	UpdateApplicationChanges(context.Context, *UpdateApplicationChangesRequest) (*UpdateApplicationChangesResponse, error)
+	MakeRollbackRuntime(context.Context, *MakeRollbackRuntimeRequest) (*MakeRollbackRuntimeResponse, error)
 }
 
 // UnimplementedRuntimeAPIServiceServer should be embedded to have forward compatible implementations.
@@ -247,6 +258,9 @@ func (UnimplementedRuntimeAPIServiceServer) ChangeStatusRuntimeAndApplication(co
 }
 func (UnimplementedRuntimeAPIServiceServer) UpdateApplicationChanges(context.Context, *UpdateApplicationChangesRequest) (*UpdateApplicationChangesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateApplicationChanges not implemented")
+}
+func (UnimplementedRuntimeAPIServiceServer) MakeRollbackRuntime(context.Context, *MakeRollbackRuntimeRequest) (*MakeRollbackRuntimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MakeRollbackRuntime not implemented")
 }
 
 // UnsafeRuntimeAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -530,6 +544,24 @@ func _RuntimeAPIService_UpdateApplicationChanges_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RuntimeAPIService_MakeRollbackRuntime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MakeRollbackRuntimeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).MakeRollbackRuntime(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/MakeRollbackRuntime",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).MakeRollbackRuntime(ctx, req.(*MakeRollbackRuntimeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // RuntimeAPIService_ServiceDesc is the grpc.ServiceDesc for RuntimeAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -596,6 +628,10 @@ var RuntimeAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateApplicationChanges",
 			Handler:    _RuntimeAPIService_UpdateApplicationChanges_Handler,
+		},
+		{
+			MethodName: "MakeRollbackRuntime",
+			Handler:    _RuntimeAPIService_MakeRollbackRuntime_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

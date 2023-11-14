@@ -48,6 +48,7 @@ private static final long serialVersionUID = 0L;
     updatedAt_ = "";
     applicationStatus_ = "";
     runtimeStatus_ = "";
+    tagName_ = "";
   }
 
   @java.lang.Override
@@ -396,6 +397,12 @@ private static final long serialVersionUID = 0L;
               scaling_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 338: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            tagName_ = s;
             break;
           }
           default: {
@@ -2068,6 +2075,44 @@ private static final long serialVersionUID = 0L;
     return getScaling();
   }
 
+  public static final int TAG_NAME_FIELD_NUMBER = 42;
+  private volatile java.lang.Object tagName_;
+  /**
+   * <code>string tag_name = 42 [json_name = "tagName"];</code>
+   * @return The tagName.
+   */
+  @java.lang.Override
+  public java.lang.String getTagName() {
+    java.lang.Object ref = tagName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tagName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string tag_name = 42 [json_name = "tagName"];</code>
+   * @return The bytes for tagName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTagNameBytes() {
+    java.lang.Object ref = tagName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      tagName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2219,6 +2264,9 @@ private static final long serialVersionUID = 0L;
     }
     if (scaling_ != null) {
       output.writeMessage(41, getScaling());
+    }
+    if (!getTagNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 42, tagName_);
     }
     unknownFields.writeTo(output);
   }
@@ -2400,6 +2448,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(41, getScaling());
     }
+    if (!getTagNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42, tagName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2508,6 +2559,8 @@ private static final long serialVersionUID = 0L;
       if (!getScaling()
           .equals(other.getScaling())) return false;
     }
+    if (!getTagName()
+        .equals(other.getTagName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2629,6 +2682,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SCALING_FIELD_NUMBER;
       hash = (53 * hash) + getScaling().hashCode();
     }
+    hash = (37 * hash) + TAG_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTagName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2917,6 +2972,8 @@ private static final long serialVersionUID = 0L;
         scaling_ = null;
         scalingBuilder_ = null;
       }
+      tagName_ = "";
+
       return this;
     }
 
@@ -3038,6 +3095,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.scaling_ = scalingBuilder_.build();
       }
+      result.tagName_ = tagName_;
       onBuilt();
       return result;
     }
@@ -3318,6 +3376,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasScaling()) {
         mergeScaling(other.getScaling());
+      }
+      if (!other.getTagName().isEmpty()) {
+        tagName_ = other.tagName_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7349,6 +7411,82 @@ private static final long serialVersionUID = 0L;
         scaling_ = null;
       }
       return scalingBuilder_;
+    }
+
+    private java.lang.Object tagName_ = "";
+    /**
+     * <code>string tag_name = 42 [json_name = "tagName"];</code>
+     * @return The tagName.
+     */
+    public java.lang.String getTagName() {
+      java.lang.Object ref = tagName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tagName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string tag_name = 42 [json_name = "tagName"];</code>
+     * @return The bytes for tagName.
+     */
+    public com.google.protobuf.ByteString
+        getTagNameBytes() {
+      java.lang.Object ref = tagName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tagName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string tag_name = 42 [json_name = "tagName"];</code>
+     * @param value The tagName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTagName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      tagName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tag_name = 42 [json_name = "tagName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTagName() {
+      
+      tagName_ = getDefaultInstance().getTagName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tag_name = 42 [json_name = "tagName"];</code>
+     * @param value The bytes for tagName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTagNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      tagName_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

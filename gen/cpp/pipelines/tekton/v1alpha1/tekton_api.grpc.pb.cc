@@ -28,6 +28,7 @@ static const char* TektonPipelineAPIService_method_names[] = {
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/GetStatusRuntime",
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/ChangeStatusRuntimeAndApplication",
   "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/RebuildTektonPipeline",
+  "/pipelines.tekton.v1alpha1.TektonPipelineAPIService/MakeRollbackRuntime",
 };
 
 std::unique_ptr< TektonPipelineAPIService::Stub> TektonPipelineAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -45,6 +46,7 @@ TektonPipelineAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInter
   , rpcmethod_GetStatusRuntime_(TektonPipelineAPIService_method_names[5], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   , rpcmethod_ChangeStatusRuntimeAndApplication_(TektonPipelineAPIService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_RebuildTektonPipeline_(TektonPipelineAPIService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MakeRollbackRuntime_(TektonPipelineAPIService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status TektonPipelineAPIService::Stub::CreateTektonPipeline(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::CreateTektonPipelineRequest& request, ::pipelines::tekton::v1alpha1::CreateTektonPipelineResponse* response) {
@@ -171,6 +173,22 @@ void TektonPipelineAPIService::Stub::experimental_async::RebuildTektonPipeline(:
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::RebuildTektonPipelineResponse>::Create(channel_.get(), cq, rpcmethod_RebuildTektonPipeline_, context, request, false);
 }
 
+::grpc::Status TektonPipelineAPIService::Stub::MakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeRequest& request, ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_MakeRollbackRuntime_, context, request, response);
+}
+
+void TektonPipelineAPIService::Stub::experimental_async::MakeRollbackRuntime(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MakeRollbackRuntime_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeResponse>* TektonPipelineAPIService::Stub::AsyncMakeRollbackRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_MakeRollbackRuntime_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeResponse>* TektonPipelineAPIService::Stub::PrepareAsyncMakeRollbackRuntimeRaw(::grpc::ClientContext* context, const ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_MakeRollbackRuntime_, context, request, false);
+}
+
 TektonPipelineAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TektonPipelineAPIService_method_names[0],
@@ -212,6 +230,11 @@ TektonPipelineAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::RebuildTektonPipelineRequest, ::pipelines::tekton::v1alpha1::RebuildTektonPipelineResponse>(
           std::mem_fn(&TektonPipelineAPIService::Service::RebuildTektonPipeline), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TektonPipelineAPIService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TektonPipelineAPIService::Service, ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeRequest, ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeResponse>(
+          std::mem_fn(&TektonPipelineAPIService::Service::MakeRollbackRuntime), this)));
 }
 
 TektonPipelineAPIService::Service::~Service() {
@@ -267,6 +290,13 @@ TektonPipelineAPIService::Service::~Service() {
 }
 
 ::grpc::Status TektonPipelineAPIService::Service::RebuildTektonPipeline(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::RebuildTektonPipelineRequest* request, ::pipelines::tekton::v1alpha1::RebuildTektonPipelineResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TektonPipelineAPIService::Service::MakeRollbackRuntime(::grpc::ServerContext* context, const ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::tekton::v1alpha1::MakeRollbackRuntimeResponse* response) {
   (void) context;
   (void) request;
   (void) response;
