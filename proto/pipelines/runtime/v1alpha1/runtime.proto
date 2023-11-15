@@ -141,8 +141,8 @@ message Runtime {
   string app_label = 35;
   string created_at = 36;
   string updated_at = 37;
-  string application_status = 38;
-  string runtime_status = 39;
+  bool is_enabled_application = 38;
+  bool is_enabled = 39;
   Configuration configuration = 40;
   Scaling scaling = 41;
   string tag_name = 42;

@@ -66,4 +66,28 @@ public interface MakeRollbackRuntimeRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTagNameBytes();
+
+  /**
+   * <code>string runtime_name = 6 [json_name = "runtimeName"];</code>
+   * @return The runtimeName.
+   */
+  java.lang.String getRuntimeName();
+  /**
+   * <code>string runtime_name = 6 [json_name = "runtimeName"];</code>
+   * @return The bytes for runtimeName.
+   */
+  com.google.protobuf.ByteString
+      getRuntimeNameBytes();
+
+  /**
+   * <code>string namespace = 7 [json_name = "namespace"];</code>
+   * @return The namespace.
+   */
+  java.lang.String getNamespace();
+  /**
+   * <code>string namespace = 7 [json_name = "namespace"];</code>
+   * @return The bytes for namespace.
+   */
+  com.google.protobuf.ByteString
+      getNamespaceBytes();
 }

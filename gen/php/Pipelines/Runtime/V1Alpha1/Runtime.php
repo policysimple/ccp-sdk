@@ -164,13 +164,13 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $updated_at = '';
     /**
-     * Generated from protobuf field <code>string application_status = 38 [json_name = "applicationStatus"];</code>
+     * Generated from protobuf field <code>bool is_enabled_application = 38 [json_name = "isEnabledApplication"];</code>
      */
-    protected $application_status = '';
+    protected $is_enabled_application = false;
     /**
-     * Generated from protobuf field <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
+     * Generated from protobuf field <code>bool is_enabled = 39 [json_name = "isEnabled"];</code>
      */
-    protected $runtime_status = '';
+    protected $is_enabled = false;
     /**
      * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>
      */
@@ -227,8 +227,8 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type string $app_label
      *     @type string $created_at
      *     @type string $updated_at
-     *     @type string $application_status
-     *     @type string $runtime_status
+     *     @type bool $is_enabled_application
+     *     @type bool $is_enabled
      *     @type \Pipelines\Runtime\V1Alpha1\Configuration $configuration
      *     @type \Pipelines\Runtime\V1Alpha1\Scaling $scaling
      *     @type string $tag_name
@@ -1074,45 +1074,45 @@ class Runtime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-     * @return string
+     * Generated from protobuf field <code>bool is_enabled_application = 38 [json_name = "isEnabledApplication"];</code>
+     * @return bool
      */
-    public function getApplicationStatus()
+    public function getIsEnabledApplication()
     {
-        return $this->application_status;
+        return $this->is_enabled_application;
     }
 
     /**
-     * Generated from protobuf field <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>bool is_enabled_application = 38 [json_name = "isEnabledApplication"];</code>
+     * @param bool $var
      * @return $this
      */
-    public function setApplicationStatus($var)
+    public function setIsEnabledApplication($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->application_status = $var;
+        GPBUtil::checkBool($var);
+        $this->is_enabled_application = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-     * @return string
+     * Generated from protobuf field <code>bool is_enabled = 39 [json_name = "isEnabled"];</code>
+     * @return bool
      */
-    public function getRuntimeStatus()
+    public function getIsEnabled()
     {
-        return $this->runtime_status;
+        return $this->is_enabled;
     }
 
     /**
-     * Generated from protobuf field <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-     * @param string $var
+     * Generated from protobuf field <code>bool is_enabled = 39 [json_name = "isEnabled"];</code>
+     * @param bool $var
      * @return $this
      */
-    public function setRuntimeStatus($var)
+    public function setIsEnabled($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->runtime_status = $var;
+        GPBUtil::checkBool($var);
+        $this->is_enabled = $var;
 
         return $this;
     }
