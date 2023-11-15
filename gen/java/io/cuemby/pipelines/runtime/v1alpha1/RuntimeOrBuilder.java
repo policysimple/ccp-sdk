@@ -591,28 +591,16 @@ public interface RuntimeOrBuilder extends
       getUpdatedAtBytes();
 
   /**
-   * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-   * @return The applicationStatus.
+   * <code>bool is_enabled_application = 38 [json_name = "isEnabledApplication"];</code>
+   * @return The isEnabledApplication.
    */
-  java.lang.String getApplicationStatus();
-  /**
-   * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-   * @return The bytes for applicationStatus.
-   */
-  com.google.protobuf.ByteString
-      getApplicationStatusBytes();
+  boolean getIsEnabledApplication();
 
   /**
-   * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-   * @return The runtimeStatus.
+   * <code>bool is_enabled = 39 [json_name = "isEnabled"];</code>
+   * @return The isEnabled.
    */
-  java.lang.String getRuntimeStatus();
-  /**
-   * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-   * @return The bytes for runtimeStatus.
-   */
-  com.google.protobuf.ByteString
-      getRuntimeStatusBytes();
+  boolean getIsEnabled();
 
   /**
    * <code>.pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];</code>

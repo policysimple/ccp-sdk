@@ -115,6 +115,8 @@ message MakeRollbackRuntimeRequest {
     string organization_id = 3;
     string runtime_id = 4;
     string tag_name = 5;
+    string runtime_name = 6;
+    string namespace = 7;
 }
 
 message MakeRollbackRuntimeResponse {

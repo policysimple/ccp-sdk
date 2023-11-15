@@ -2251,8 +2251,6 @@ class Runtime final :
     kAppLabelFieldNumber = 35,
     kCreatedAtFieldNumber = 36,
     kUpdatedAtFieldNumber = 37,
-    kApplicationStatusFieldNumber = 38,
-    kRuntimeStatusFieldNumber = 39,
     kTagNameFieldNumber = 42,
     kApplicationDataFieldNumber = 26,
     kPipelineRunFieldNumber = 33,
@@ -2263,6 +2261,8 @@ class Runtime final :
     kStorageLimitFieldNumber = 24,
     kCustomPipelineFieldNumber = 27,
     kIsNotExistDockerfileFieldNumber = 31,
+    kIsEnabledApplicationFieldNumber = 38,
+    kIsEnabledFieldNumber = 39,
   };
   // repeated .pipelines.runtime.v1alpha1.IntanceType instance_types = 3 [json_name = "instanceTypes"];
   int instance_types_size() const;
@@ -2715,34 +2715,6 @@ class Runtime final :
   std::string* _internal_mutable_updated_at();
   public:
 
-  // string application_status = 38 [json_name = "applicationStatus"];
-  void clear_application_status();
-  const std::string& application_status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_application_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_application_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_application_status();
-  void set_allocated_application_status(std::string* application_status);
-  private:
-  const std::string& _internal_application_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_status(const std::string& value);
-  std::string* _internal_mutable_application_status();
-  public:
-
-  // string runtime_status = 39 [json_name = "runtimeStatus"];
-  void clear_runtime_status();
-  const std::string& runtime_status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_runtime_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_runtime_status();
-  PROTOBUF_MUST_USE_RESULT std::string* release_runtime_status();
-  void set_allocated_runtime_status(std::string* runtime_status);
-  private:
-  const std::string& _internal_runtime_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_runtime_status(const std::string& value);
-  std::string* _internal_mutable_runtime_status();
-  public:
-
   // string tag_name = 42 [json_name = "tagName"];
   void clear_tag_name();
   const std::string& tag_name() const;
@@ -2874,6 +2846,24 @@ class Runtime final :
   void _internal_set_is_not_exist_dockerfile(bool value);
   public:
 
+  // bool is_enabled_application = 38 [json_name = "isEnabledApplication"];
+  void clear_is_enabled_application();
+  bool is_enabled_application() const;
+  void set_is_enabled_application(bool value);
+  private:
+  bool _internal_is_enabled_application() const;
+  void _internal_set_is_enabled_application(bool value);
+  public:
+
+  // bool is_enabled = 39 [json_name = "isEnabled"];
+  void clear_is_enabled();
+  bool is_enabled() const;
+  void set_is_enabled(bool value);
+  private:
+  bool _internal_is_enabled() const;
+  void _internal_set_is_enabled(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Runtime)
  private:
   class _Internal;
@@ -2931,8 +2921,6 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr app_label_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_status_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tag_name_;
   ::pipelines::runtime::v1alpha1::Application* application_data_;
   ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run_;
@@ -2943,6 +2931,8 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::uint32 storage_limit_;
   bool custom_pipeline_;
   bool is_not_exist_dockerfile_;
+  bool is_enabled_application_;
+  bool is_enabled_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
 };
@@ -7707,96 +7697,44 @@ inline void Runtime::set_allocated_updated_at(std::string* updated_at) {
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.updated_at)
 }
 
-// string application_status = 38 [json_name = "applicationStatus"];
-inline void Runtime::clear_application_status() {
-  application_status_.ClearToEmpty();
+// bool is_enabled_application = 38 [json_name = "isEnabledApplication"];
+inline void Runtime::clear_is_enabled_application() {
+  is_enabled_application_ = false;
 }
-inline const std::string& Runtime::application_status() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.application_status)
-  return _internal_application_status();
+inline bool Runtime::_internal_is_enabled_application() const {
+  return is_enabled_application_;
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Runtime::set_application_status(ArgT0&& arg0, ArgT... args) {
- 
- application_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.application_status)
+inline bool Runtime::is_enabled_application() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.is_enabled_application)
+  return _internal_is_enabled_application();
 }
-inline std::string* Runtime::mutable_application_status() {
-  std::string* _s = _internal_mutable_application_status();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.application_status)
-  return _s;
-}
-inline const std::string& Runtime::_internal_application_status() const {
-  return application_status_.Get();
-}
-inline void Runtime::_internal_set_application_status(const std::string& value) {
+inline void Runtime::_internal_set_is_enabled_application(bool value) {
   
-  application_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  is_enabled_application_ = value;
 }
-inline std::string* Runtime::_internal_mutable_application_status() {
-  
-  return application_status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Runtime::release_application_status() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.application_status)
-  return application_status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Runtime::set_allocated_application_status(std::string* application_status) {
-  if (application_status != nullptr) {
-    
-  } else {
-    
-  }
-  application_status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.application_status)
+inline void Runtime::set_is_enabled_application(bool value) {
+  _internal_set_is_enabled_application(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.is_enabled_application)
 }
 
-// string runtime_status = 39 [json_name = "runtimeStatus"];
-inline void Runtime::clear_runtime_status() {
-  runtime_status_.ClearToEmpty();
+// bool is_enabled = 39 [json_name = "isEnabled"];
+inline void Runtime::clear_is_enabled() {
+  is_enabled_ = false;
 }
-inline const std::string& Runtime::runtime_status() const {
-  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.runtime_status)
-  return _internal_runtime_status();
+inline bool Runtime::_internal_is_enabled() const {
+  return is_enabled_;
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Runtime::set_runtime_status(ArgT0&& arg0, ArgT... args) {
- 
- runtime_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.runtime_status)
+inline bool Runtime::is_enabled() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.is_enabled)
+  return _internal_is_enabled();
 }
-inline std::string* Runtime::mutable_runtime_status() {
-  std::string* _s = _internal_mutable_runtime_status();
-  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.runtime_status)
-  return _s;
-}
-inline const std::string& Runtime::_internal_runtime_status() const {
-  return runtime_status_.Get();
-}
-inline void Runtime::_internal_set_runtime_status(const std::string& value) {
+inline void Runtime::_internal_set_is_enabled(bool value) {
   
-  runtime_status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  is_enabled_ = value;
 }
-inline std::string* Runtime::_internal_mutable_runtime_status() {
-  
-  return runtime_status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Runtime::release_runtime_status() {
-  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.runtime_status)
-  return runtime_status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void Runtime::set_allocated_runtime_status(std::string* runtime_status) {
-  if (runtime_status != nullptr) {
-    
-  } else {
-    
-  }
-  runtime_status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), runtime_status,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.runtime_status)
+inline void Runtime::set_is_enabled(bool value) {
+  _internal_set_is_enabled(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.is_enabled)
 }
 
 // .pipelines.runtime.v1alpha1.Configuration configuration = 40 [json_name = "configuration"];

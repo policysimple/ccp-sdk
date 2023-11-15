@@ -2834,6 +2834,8 @@ class MakeRollbackRuntimeRequest final :
     kOrganizationIdFieldNumber = 3,
     kRuntimeIdFieldNumber = 4,
     kTagNameFieldNumber = 5,
+    kRuntimeNameFieldNumber = 6,
+    kNamespaceFieldNumber = 7,
   };
   // string application_id = 1 [json_name = "applicationId"];
   void clear_application_id();
@@ -2905,6 +2907,34 @@ class MakeRollbackRuntimeRequest final :
   std::string* _internal_mutable_tag_name();
   public:
 
+  // string runtime_name = 6 [json_name = "runtimeName"];
+  void clear_runtime_name();
+  const std::string& runtime_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_runtime_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_runtime_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_runtime_name();
+  void set_allocated_runtime_name(std::string* runtime_name);
+  private:
+  const std::string& _internal_runtime_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_runtime_name(const std::string& value);
+  std::string* _internal_mutable_runtime_name();
+  public:
+
+  // string namespace = 7 [json_name = "namespace"];
+  void clear_namespace_();
+  const std::string& namespace_() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_namespace_(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_namespace_();
+  PROTOBUF_MUST_USE_RESULT std::string* release_namespace_();
+  void set_allocated_namespace_(std::string* namespace_);
+  private:
+  const std::string& _internal_namespace_() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_namespace_(const std::string& value);
+  std::string* _internal_mutable_namespace_();
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest)
  private:
   class _Internal;
@@ -2917,6 +2947,8 @@ class MakeRollbackRuntimeRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tag_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr runtime_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr namespace__;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2ftekton_2fv1alpha1_2ftekton_5fapi_2eproto;
 };
@@ -5129,6 +5161,98 @@ inline void MakeRollbackRuntimeRequest::set_allocated_tag_name(std::string* tag_
   tag_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tag_name,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.tag_name)
+}
+
+// string runtime_name = 6 [json_name = "runtimeName"];
+inline void MakeRollbackRuntimeRequest::clear_runtime_name() {
+  runtime_name_.ClearToEmpty();
+}
+inline const std::string& MakeRollbackRuntimeRequest::runtime_name() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.runtime_name)
+  return _internal_runtime_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MakeRollbackRuntimeRequest::set_runtime_name(ArgT0&& arg0, ArgT... args) {
+ 
+ runtime_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.runtime_name)
+}
+inline std::string* MakeRollbackRuntimeRequest::mutable_runtime_name() {
+  std::string* _s = _internal_mutable_runtime_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.runtime_name)
+  return _s;
+}
+inline const std::string& MakeRollbackRuntimeRequest::_internal_runtime_name() const {
+  return runtime_name_.Get();
+}
+inline void MakeRollbackRuntimeRequest::_internal_set_runtime_name(const std::string& value) {
+  
+  runtime_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MakeRollbackRuntimeRequest::_internal_mutable_runtime_name() {
+  
+  return runtime_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MakeRollbackRuntimeRequest::release_runtime_name() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.runtime_name)
+  return runtime_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MakeRollbackRuntimeRequest::set_allocated_runtime_name(std::string* runtime_name) {
+  if (runtime_name != nullptr) {
+    
+  } else {
+    
+  }
+  runtime_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), runtime_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.runtime_name)
+}
+
+// string namespace = 7 [json_name = "namespace"];
+inline void MakeRollbackRuntimeRequest::clear_namespace_() {
+  namespace__.ClearToEmpty();
+}
+inline const std::string& MakeRollbackRuntimeRequest::namespace_() const {
+  // @@protoc_insertion_point(field_get:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.namespace)
+  return _internal_namespace_();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void MakeRollbackRuntimeRequest::set_namespace_(ArgT0&& arg0, ArgT... args) {
+ 
+ namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.namespace)
+}
+inline std::string* MakeRollbackRuntimeRequest::mutable_namespace_() {
+  std::string* _s = _internal_mutable_namespace_();
+  // @@protoc_insertion_point(field_mutable:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.namespace)
+  return _s;
+}
+inline const std::string& MakeRollbackRuntimeRequest::_internal_namespace_() const {
+  return namespace__.Get();
+}
+inline void MakeRollbackRuntimeRequest::_internal_set_namespace_(const std::string& value) {
+  
+  namespace__.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* MakeRollbackRuntimeRequest::_internal_mutable_namespace_() {
+  
+  return namespace__.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* MakeRollbackRuntimeRequest::release_namespace_() {
+  // @@protoc_insertion_point(field_release:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.namespace)
+  return namespace__.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void MakeRollbackRuntimeRequest::set_allocated_namespace_(std::string* namespace_) {
+  if (namespace_ != nullptr) {
+    
+  } else {
+    
+  }
+  namespace__.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), namespace_,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.tekton.v1alpha1.MakeRollbackRuntimeRequest.namespace)
 }
 
 // -------------------------------------------------------------------

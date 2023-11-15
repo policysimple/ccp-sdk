@@ -160,50 +160,52 @@ public final class TektonAPIProto {
       "rId\"\205\001\n\035RebuildTektonPipelineResponse\022L\n" +
       "\017tekton_pipeline\030\001 \001(\0132#.pipelines.tekto" +
       "n.v1alpha1.PipelineR\016tektonPipeline\022\026\n\006s" +
-      "tatus\030\002 \001(\tR\006status\"\305\001\n\032MakeRollbackRunt" +
+      "tatus\030\002 \001(\tR\006status\"\206\002\n\032MakeRollbackRunt" +
       "imeRequest\022%\n\016application_id\030\001 \001(\tR\rappl" +
       "icationId\022\035\n\nproject_id\030\002 \001(\tR\tprojectId" +
       "\022\'\n\017organization_id\030\003 \001(\tR\016organizationI" +
       "d\022\035\n\nruntime_id\030\004 \001(\tR\truntimeId\022\031\n\010tag_" +
-      "name\030\005 \001(\tR\007tagName\"E\n\033MakeRollbackRunti" +
-      "meResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 " +
-      "\001(\tR\005error2\367\t\n\030TektonPipelineAPIService\022" +
-      "\207\001\n\024CreateTektonPipeline\0226.pipelines.tek" +
-      "ton.v1alpha1.CreateTektonPipelineRequest" +
-      "\0327.pipelines.tekton.v1alpha1.CreateTekto" +
-      "nPipelineResponse\022\207\001\n\024DeleteTektonPipeli" +
-      "ne\0226.pipelines.tekton.v1alpha1.DeleteTek" +
-      "tonPipelineRequest\0327.pipelines.tekton.v1" +
-      "alpha1.DeleteTektonPipelineResponse\022\215\001\n\026" +
-      "ListTektonTaskPipeline\0228.pipelines.tekto" +
-      "n.v1alpha1.ListTektonTaskPipelineRequest" +
-      "\0329.pipelines.tekton.v1alpha1.ListTektonT" +
-      "askPipelineResponse\022u\n\016GetPipelineRun\0220." +
-      "pipelines.tekton.v1alpha1.GetPipelineRun" +
-      "Request\0321.pipelines.tekton.v1alpha1.GetP" +
-      "ipelineRunResponse\022x\n\017ListPipelineRun\0221." +
-      "pipelines.tekton.v1alpha1.ListPipelineRu" +
-      "nRequest\0322.pipelines.tekton.v1alpha1.Lis" +
-      "tPipelineRunResponse\022}\n\020GetStatusRuntime" +
-      "\0222.pipelines.tekton.v1alpha1.GetStatusRu" +
-      "ntimeRequest\0323.pipelines.tekton.v1alpha1" +
-      ".GetStatusRuntimeResponse0\001\022\260\001\n!ChangeSt" +
-      "atusRuntimeAndApplication\022C.pipelines.te" +
-      "kton.v1alpha1.ChangeStatusRuntimeAndAppl" +
-      "icationRequest\032D.pipelines.tekton.v1alph" +
-      "a1.ChangeStatusRuntimeAndApplicationResp" +
-      "onse\"\000\022\212\001\n\025RebuildTektonPipeline\0227.pipel" +
-      "ines.tekton.v1alpha1.RebuildTektonPipeli" +
-      "neRequest\0328.pipelines.tekton.v1alpha1.Re" +
-      "buildTektonPipelineResponse\022\206\001\n\023MakeRoll" +
-      "backRuntime\0225.pipelines.tekton.v1alpha1." +
-      "MakeRollbackRuntimeRequest\0326.pipelines.t" +
-      "ekton.v1alpha1.MakeRollbackRuntimeRespon" +
-      "se\"\000B\261\001\n#io.cuemby.pipelines.tekton.v1al" +
-      "pha1B\016TektonAPIProtoP\001Z:github.com/cuemb" +
-      "y/ccp-sdk/gen/go/pipelines/tekton/v1alph" +
-      "a1\242\002\003PPX\252\002\031Pipelines.Tekton.V1Alpha1\312\002\031P" +
-      "ipelines\\Tekton\\V1Alpha1b\006proto3"
+      "name\030\005 \001(\tR\007tagName\022!\n\014runtime_name\030\006 \001(" +
+      "\tR\013runtimeName\022\034\n\tnamespace\030\007 \001(\tR\tnames" +
+      "pace\"E\n\033MakeRollbackRuntimeResponse\022\020\n\003m" +
+      "sg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error2\367\t\n\030" +
+      "TektonPipelineAPIService\022\207\001\n\024CreateTekto" +
+      "nPipeline\0226.pipelines.tekton.v1alpha1.Cr" +
+      "eateTektonPipelineRequest\0327.pipelines.te" +
+      "kton.v1alpha1.CreateTektonPipelineRespon" +
+      "se\022\207\001\n\024DeleteTektonPipeline\0226.pipelines." +
+      "tekton.v1alpha1.DeleteTektonPipelineRequ" +
+      "est\0327.pipelines.tekton.v1alpha1.DeleteTe" +
+      "ktonPipelineResponse\022\215\001\n\026ListTektonTaskP" +
+      "ipeline\0228.pipelines.tekton.v1alpha1.List" +
+      "TektonTaskPipelineRequest\0329.pipelines.te" +
+      "kton.v1alpha1.ListTektonTaskPipelineResp" +
+      "onse\022u\n\016GetPipelineRun\0220.pipelines.tekto" +
+      "n.v1alpha1.GetPipelineRunRequest\0321.pipel" +
+      "ines.tekton.v1alpha1.GetPipelineRunRespo" +
+      "nse\022x\n\017ListPipelineRun\0221.pipelines.tekto" +
+      "n.v1alpha1.ListPipelineRunRequest\0322.pipe" +
+      "lines.tekton.v1alpha1.ListPipelineRunRes" +
+      "ponse\022}\n\020GetStatusRuntime\0222.pipelines.te" +
+      "kton.v1alpha1.GetStatusRuntimeRequest\0323." +
+      "pipelines.tekton.v1alpha1.GetStatusRunti" +
+      "meResponse0\001\022\260\001\n!ChangeStatusRuntimeAndA" +
+      "pplication\022C.pipelines.tekton.v1alpha1.C" +
+      "hangeStatusRuntimeAndApplicationRequest\032" +
+      "D.pipelines.tekton.v1alpha1.ChangeStatus" +
+      "RuntimeAndApplicationResponse\"\000\022\212\001\n\025Rebu" +
+      "ildTektonPipeline\0227.pipelines.tekton.v1a" +
+      "lpha1.RebuildTektonPipelineRequest\0328.pip" +
+      "elines.tekton.v1alpha1.RebuildTektonPipe" +
+      "lineResponse\022\206\001\n\023MakeRollbackRuntime\0225.p" +
+      "ipelines.tekton.v1alpha1.MakeRollbackRun" +
+      "timeRequest\0326.pipelines.tekton.v1alpha1." +
+      "MakeRollbackRuntimeResponse\"\000B\261\001\n#io.cue" +
+      "mby.pipelines.tekton.v1alpha1B\016TektonAPI" +
+      "ProtoP\001Z:github.com/cuemby/ccp-sdk/gen/g" +
+      "o/pipelines/tekton/v1alpha1\242\002\003PPX\252\002\031Pipe" +
+      "lines.Tekton.V1Alpha1\312\002\031Pipelines\\Tekton" +
+      "\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -311,7 +313,7 @@ public final class TektonAPIProto {
     internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeRequest_descriptor,
-        new java.lang.String[] { "ApplicationId", "ProjectId", "OrganizationId", "RuntimeId", "TagName", });
+        new java.lang.String[] { "ApplicationId", "ProjectId", "OrganizationId", "RuntimeId", "TagName", "RuntimeName", "Namespace", });
     internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_pipelines_tekton_v1alpha1_MakeRollbackRuntimeResponse_fieldAccessorTable = new

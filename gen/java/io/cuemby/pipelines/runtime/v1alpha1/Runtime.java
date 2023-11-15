@@ -46,8 +46,6 @@ private static final long serialVersionUID = 0L;
     appLabel_ = "";
     createdAt_ = "";
     updatedAt_ = "";
-    applicationStatus_ = "";
-    runtimeStatus_ = "";
     tagName_ = "";
   }
 
@@ -361,16 +359,14 @@ private static final long serialVersionUID = 0L;
             updatedAt_ = s;
             break;
           }
-          case 306: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 304: {
 
-            applicationStatus_ = s;
+            isEnabledApplication_ = input.readBool();
             break;
           }
-          case 314: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 312: {
 
-            runtimeStatus_ = s;
+            isEnabled_ = input.readBool();
             break;
           }
           case 322: {
@@ -1947,80 +1943,26 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int APPLICATION_STATUS_FIELD_NUMBER = 38;
-  private volatile java.lang.Object applicationStatus_;
+  public static final int IS_ENABLED_APPLICATION_FIELD_NUMBER = 38;
+  private boolean isEnabledApplication_;
   /**
-   * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-   * @return The applicationStatus.
+   * <code>bool is_enabled_application = 38 [json_name = "isEnabledApplication"];</code>
+   * @return The isEnabledApplication.
    */
   @java.lang.Override
-  public java.lang.String getApplicationStatus() {
-    java.lang.Object ref = applicationStatus_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      applicationStatus_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-   * @return The bytes for applicationStatus.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getApplicationStatusBytes() {
-    java.lang.Object ref = applicationStatus_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      applicationStatus_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public boolean getIsEnabledApplication() {
+    return isEnabledApplication_;
   }
 
-  public static final int RUNTIME_STATUS_FIELD_NUMBER = 39;
-  private volatile java.lang.Object runtimeStatus_;
+  public static final int IS_ENABLED_FIELD_NUMBER = 39;
+  private boolean isEnabled_;
   /**
-   * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-   * @return The runtimeStatus.
+   * <code>bool is_enabled = 39 [json_name = "isEnabled"];</code>
+   * @return The isEnabled.
    */
   @java.lang.Override
-  public java.lang.String getRuntimeStatus() {
-    java.lang.Object ref = runtimeStatus_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      runtimeStatus_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-   * @return The bytes for runtimeStatus.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRuntimeStatusBytes() {
-    java.lang.Object ref = runtimeStatus_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      runtimeStatus_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public boolean getIsEnabled() {
+    return isEnabled_;
   }
 
   public static final int CONFIGURATION_FIELD_NUMBER = 40;
@@ -2253,11 +2195,11 @@ private static final long serialVersionUID = 0L;
     if (!getUpdatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37, updatedAt_);
     }
-    if (!getApplicationStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 38, applicationStatus_);
+    if (isEnabledApplication_ != false) {
+      output.writeBool(38, isEnabledApplication_);
     }
-    if (!getRuntimeStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 39, runtimeStatus_);
+    if (isEnabled_ != false) {
+      output.writeBool(39, isEnabled_);
     }
     if (configuration_ != null) {
       output.writeMessage(40, getConfiguration());
@@ -2434,11 +2376,13 @@ private static final long serialVersionUID = 0L;
     if (!getUpdatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, updatedAt_);
     }
-    if (!getApplicationStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38, applicationStatus_);
+    if (isEnabledApplication_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(38, isEnabledApplication_);
     }
-    if (!getRuntimeStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39, runtimeStatus_);
+    if (isEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(39, isEnabled_);
     }
     if (configuration_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -2545,10 +2489,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
         .equals(other.getUpdatedAt())) return false;
-    if (!getApplicationStatus()
-        .equals(other.getApplicationStatus())) return false;
-    if (!getRuntimeStatus()
-        .equals(other.getRuntimeStatus())) return false;
+    if (getIsEnabledApplication()
+        != other.getIsEnabledApplication()) return false;
+    if (getIsEnabled()
+        != other.getIsEnabled()) return false;
     if (hasConfiguration() != other.hasConfiguration()) return false;
     if (hasConfiguration()) {
       if (!getConfiguration()
@@ -2670,10 +2614,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getUpdatedAt().hashCode();
-    hash = (37 * hash) + APPLICATION_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getApplicationStatus().hashCode();
-    hash = (37 * hash) + RUNTIME_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getRuntimeStatus().hashCode();
+    hash = (37 * hash) + IS_ENABLED_APPLICATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsEnabledApplication());
+    hash = (37 * hash) + IS_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsEnabled());
     if (hasConfiguration()) {
       hash = (37 * hash) + CONFIGURATION_FIELD_NUMBER;
       hash = (53 * hash) + getConfiguration().hashCode();
@@ -2956,9 +2902,9 @@ private static final long serialVersionUID = 0L;
 
       updatedAt_ = "";
 
-      applicationStatus_ = "";
+      isEnabledApplication_ = false;
 
-      runtimeStatus_ = "";
+      isEnabled_ = false;
 
       if (configurationBuilder_ == null) {
         configuration_ = null;
@@ -3083,8 +3029,8 @@ private static final long serialVersionUID = 0L;
       result.appLabel_ = appLabel_;
       result.createdAt_ = createdAt_;
       result.updatedAt_ = updatedAt_;
-      result.applicationStatus_ = applicationStatus_;
-      result.runtimeStatus_ = runtimeStatus_;
+      result.isEnabledApplication_ = isEnabledApplication_;
+      result.isEnabled_ = isEnabled_;
       if (configurationBuilder_ == null) {
         result.configuration_ = configuration_;
       } else {
@@ -3363,13 +3309,11 @@ private static final long serialVersionUID = 0L;
         updatedAt_ = other.updatedAt_;
         onChanged();
       }
-      if (!other.getApplicationStatus().isEmpty()) {
-        applicationStatus_ = other.applicationStatus_;
-        onChanged();
+      if (other.getIsEnabledApplication() != false) {
+        setIsEnabledApplication(other.getIsEnabledApplication());
       }
-      if (!other.getRuntimeStatus().isEmpty()) {
-        runtimeStatus_ = other.runtimeStatus_;
-        onChanged();
+      if (other.getIsEnabled() != false) {
+        setIsEnabled(other.getIsEnabled());
       }
       if (other.hasConfiguration()) {
         mergeConfiguration(other.getConfiguration());
@@ -7023,154 +6967,64 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object applicationStatus_ = "";
+    private boolean isEnabledApplication_ ;
     /**
-     * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-     * @return The applicationStatus.
+     * <code>bool is_enabled_application = 38 [json_name = "isEnabledApplication"];</code>
+     * @return The isEnabledApplication.
      */
-    public java.lang.String getApplicationStatus() {
-      java.lang.Object ref = applicationStatus_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        applicationStatus_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public boolean getIsEnabledApplication() {
+      return isEnabledApplication_;
     }
     /**
-     * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-     * @return The bytes for applicationStatus.
-     */
-    public com.google.protobuf.ByteString
-        getApplicationStatusBytes() {
-      java.lang.Object ref = applicationStatus_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        applicationStatus_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-     * @param value The applicationStatus to set.
+     * <code>bool is_enabled_application = 38 [json_name = "isEnabledApplication"];</code>
+     * @param value The isEnabledApplication to set.
      * @return This builder for chaining.
      */
-    public Builder setApplicationStatus(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      applicationStatus_ = value;
+    public Builder setIsEnabledApplication(boolean value) {
+      
+      isEnabledApplication_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
+     * <code>bool is_enabled_application = 38 [json_name = "isEnabledApplication"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearApplicationStatus() {
+    public Builder clearIsEnabledApplication() {
       
-      applicationStatus_ = getDefaultInstance().getApplicationStatus();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string application_status = 38 [json_name = "applicationStatus"];</code>
-     * @param value The bytes for applicationStatus to set.
-     * @return This builder for chaining.
-     */
-    public Builder setApplicationStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      applicationStatus_ = value;
+      isEnabledApplication_ = false;
       onChanged();
       return this;
     }
 
-    private java.lang.Object runtimeStatus_ = "";
+    private boolean isEnabled_ ;
     /**
-     * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-     * @return The runtimeStatus.
+     * <code>bool is_enabled = 39 [json_name = "isEnabled"];</code>
+     * @return The isEnabled.
      */
-    public java.lang.String getRuntimeStatus() {
-      java.lang.Object ref = runtimeStatus_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        runtimeStatus_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public boolean getIsEnabled() {
+      return isEnabled_;
     }
     /**
-     * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-     * @return The bytes for runtimeStatus.
-     */
-    public com.google.protobuf.ByteString
-        getRuntimeStatusBytes() {
-      java.lang.Object ref = runtimeStatus_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        runtimeStatus_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-     * @param value The runtimeStatus to set.
+     * <code>bool is_enabled = 39 [json_name = "isEnabled"];</code>
+     * @param value The isEnabled to set.
      * @return This builder for chaining.
      */
-    public Builder setRuntimeStatus(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      runtimeStatus_ = value;
+    public Builder setIsEnabled(boolean value) {
+      
+      isEnabled_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
+     * <code>bool is_enabled = 39 [json_name = "isEnabled"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearRuntimeStatus() {
+    public Builder clearIsEnabled() {
       
-      runtimeStatus_ = getDefaultInstance().getRuntimeStatus();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string runtime_status = 39 [json_name = "runtimeStatus"];</code>
-     * @param value The bytes for runtimeStatus to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRuntimeStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      runtimeStatus_ = value;
+      isEnabled_ = false;
       onChanged();
       return this;
     }

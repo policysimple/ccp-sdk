@@ -2797,8 +2797,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     appLabel: jspb.Message.getFieldWithDefault(msg, 35, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 36, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 37, ""),
-    applicationStatus: jspb.Message.getFieldWithDefault(msg, 38, ""),
-    runtimeStatus: jspb.Message.getFieldWithDefault(msg, 39, ""),
+    isEnabledApplication: jspb.Message.getBooleanFieldWithDefault(msg, 38, false),
+    isEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 39, false),
     configuration: (f = msg.getConfiguration()) && proto.pipelines.runtime.v1alpha1.Configuration.toObject(includeInstance, f),
     scaling: (f = msg.getScaling()) && proto.pipelines.runtime.v1alpha1.Scaling.toObject(includeInstance, f),
     tagName: jspb.Message.getFieldWithDefault(msg, 42, "")
@@ -3003,12 +3003,12 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
       msg.setUpdatedAt(value);
       break;
     case 38:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setApplicationStatus(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsEnabledApplication(value);
       break;
     case 39:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRuntimeStatus(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsEnabled(value);
       break;
     case 40:
       var value = new proto.pipelines.runtime.v1alpha1.Configuration;
@@ -3303,16 +3303,16 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getApplicationStatus();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIsEnabledApplication();
+  if (f) {
+    writer.writeBool(
       38,
       f
     );
   }
-  f = message.getRuntimeStatus();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIsEnabled();
+  if (f) {
+    writer.writeBool(
       39,
       f
     );
@@ -4148,38 +4148,38 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.setUpdatedAt = function(value
 
 
 /**
- * optional string application_status = 38;
- * @return {string}
+ * optional bool is_enabled_application = 38;
+ * @return {boolean}
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.getApplicationStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 38, ""));
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIsEnabledApplication = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 38, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.setApplicationStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 38, value);
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setIsEnabledApplication = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 38, value);
 };
 
 
 /**
- * optional string runtime_status = 39;
- * @return {string}
+ * optional bool is_enabled = 39;
+ * @return {boolean}
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.getRuntimeStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 39, ""));
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getIsEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 39, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
  */
-proto.pipelines.runtime.v1alpha1.Runtime.prototype.setRuntimeStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 39, value);
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setIsEnabled = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 39, value);
 };
 
 

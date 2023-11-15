@@ -33,6 +33,14 @@ class MakeRollbackRuntimeRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string tag_name = 5 [json_name = "tagName"];</code>
      */
     protected $tag_name = '';
+    /**
+     * Generated from protobuf field <code>string runtime_name = 6 [json_name = "runtimeName"];</code>
+     */
+    protected $runtime_name = '';
+    /**
+     * Generated from protobuf field <code>string namespace = 7 [json_name = "namespace"];</code>
+     */
+    protected $namespace = '';
 
     /**
      * Constructor.
@@ -45,6 +53,8 @@ class MakeRollbackRuntimeRequest extends \Google\Protobuf\Internal\Message
      *     @type string $organization_id
      *     @type string $runtime_id
      *     @type string $tag_name
+     *     @type string $runtime_name
+     *     @type string $namespace
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +168,50 @@ class MakeRollbackRuntimeRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tag_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime_name = 6 [json_name = "runtimeName"];</code>
+     * @return string
+     */
+    public function getRuntimeName()
+    {
+        return $this->runtime_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime_name = 6 [json_name = "runtimeName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRuntimeName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runtime_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 7 [json_name = "namespace"];</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 7 [json_name = "namespace"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
 
         return $this;
     }
