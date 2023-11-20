@@ -263,6 +263,7 @@ message Repository {
     bool fork = 5;
     string clone_url = 6;
     string branch = 7;
+    int32 repository_id = 8;
 }
 
 message AccountIntegration {

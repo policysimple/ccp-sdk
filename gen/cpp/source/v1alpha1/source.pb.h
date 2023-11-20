@@ -5490,6 +5490,7 @@ class Repository final :
     kBranchFieldNumber = 7,
     kPrivateFieldNumber = 2,
     kForkFieldNumber = 5,
+    kRepositoryIdFieldNumber = 8,
   };
   // string name = 1 [json_name = "name"];
   void clear_name();
@@ -5579,6 +5580,15 @@ class Repository final :
   void _internal_set_fork(bool value);
   public:
 
+  // int32 repository_id = 8 [json_name = "repositoryId"];
+  void clear_repository_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 repository_id() const;
+  void set_repository_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_repository_id() const;
+  void _internal_set_repository_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:source.v1alpha1.Repository)
  private:
   class _Internal;
@@ -5593,6 +5603,7 @@ class Repository final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr branch_;
   bool private__;
   bool fork_;
+  ::PROTOBUF_NAMESPACE_ID::int32 repository_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_source_2fv1alpha1_2fsource_2eproto;
 };
@@ -13614,6 +13625,26 @@ inline void Repository::set_allocated_branch(std::string* branch) {
   branch_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), branch,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:source.v1alpha1.Repository.branch)
+}
+
+// int32 repository_id = 8 [json_name = "repositoryId"];
+inline void Repository::clear_repository_id() {
+  repository_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Repository::_internal_repository_id() const {
+  return repository_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Repository::repository_id() const {
+  // @@protoc_insertion_point(field_get:source.v1alpha1.Repository.repository_id)
+  return _internal_repository_id();
+}
+inline void Repository::_internal_set_repository_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  repository_id_ = value;
+}
+inline void Repository::set_repository_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_repository_id(value);
+  // @@protoc_insertion_point(field_set:source.v1alpha1.Repository.repository_id)
 }
 
 // -------------------------------------------------------------------
