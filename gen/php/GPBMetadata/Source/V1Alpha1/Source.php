@@ -16,7 +16,7 @@ class Source
         }
         $pool->internalAddGeneratedFile(
             '
-ËH
+ðH
 source/v1alpha1/source.protosource.v1alpha1"ä
 ,CreateIntegrationWithExternalProviderRequestB
 provider (2&.source.v1alpha1.CreateProviderRequestRprovider
@@ -156,7 +156,7 @@ repository",
 value (	Rvalue:8;
 MetadataEntry
 key (	Rkey
-value (	Rvalue:8"Á
+value (	Rvalue:8"æ
 
 Repository
 name (	Rname
@@ -165,7 +165,8 @@ Repository
 description (	Rdescription
 fork (Rfork
 	clone_url (	RcloneUrl
-branch (	Rbranch"<
+branch (	Rbranch#
+repository_id (RrepositoryId"<
 AccountIntegration
 name (	Rname
 type (	Rtype"ä

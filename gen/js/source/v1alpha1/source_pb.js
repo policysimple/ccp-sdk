@@ -6812,7 +6812,8 @@ proto.source.v1alpha1.Repository.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
     fork: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     cloneUrl: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    branch: jspb.Message.getFieldWithDefault(msg, 7, "")
+    branch: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    repositoryId: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -6876,6 +6877,10 @@ proto.source.v1alpha1.Repository.deserializeBinaryFromReader = function(msg, rea
     case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setBranch(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRepositoryId(value);
       break;
     default:
       reader.skipField();
@@ -6952,6 +6957,13 @@ proto.source.v1alpha1.Repository.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeString(
       7,
+      f
+    );
+  }
+  f = message.getRepositoryId();
+  if (f !== 0) {
+    writer.writeInt32(
+      8,
       f
     );
   }
@@ -7081,6 +7093,24 @@ proto.source.v1alpha1.Repository.prototype.getBranch = function() {
  */
 proto.source.v1alpha1.Repository.prototype.setBranch = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional int32 repository_id = 8;
+ * @return {number}
+ */
+proto.source.v1alpha1.Repository.prototype.getRepositoryId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.source.v1alpha1.Repository} returns this
+ */
+proto.source.v1alpha1.Repository.prototype.setRepositoryId = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
