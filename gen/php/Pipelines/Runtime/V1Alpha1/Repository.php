@@ -41,6 +41,10 @@ class Repository extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
      */
     protected $branch = null;
+    /**
+     * Generated from protobuf field <code>int32 repository_id = 8 [json_name = "repositoryId"];</code>
+     */
+    protected $repository_id = 0;
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class Repository extends \Google\Protobuf\Internal\Message
      *     @type string $clone_url
      *     @type bool $private
      *     @type \Pipelines\Runtime\V1Alpha1\Branch $branch
+     *     @type int $repository_id
      * }
      */
     public function __construct($data = NULL) {
@@ -222,6 +227,28 @@ class Repository extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Branch::class);
         $this->branch = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 repository_id = 8 [json_name = "repositoryId"];</code>
+     * @return int
+     */
+    public function getRepositoryId()
+    {
+        return $this->repository_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 repository_id = 8 [json_name = "repositoryId"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRepositoryId($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->repository_id = $var;
 
         return $this;
     }
