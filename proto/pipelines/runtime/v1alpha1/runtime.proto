@@ -30,6 +30,7 @@ message Repository {
   string clone_url = 5;
   bool private =6;
   Branch branch = 7;
+  int32 repository_id = 8;
 }
 
 message  Command {

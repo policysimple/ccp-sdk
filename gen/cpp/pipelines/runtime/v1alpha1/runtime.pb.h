@@ -504,6 +504,7 @@ class Repository final :
     kBranchFieldNumber = 7,
     kForkFieldNumber = 4,
     kPrivateFieldNumber = 6,
+    kRepositoryIdFieldNumber = 8,
   };
   // string name = 1 [json_name = "name"];
   void clear_name();
@@ -597,6 +598,15 @@ class Repository final :
   void _internal_set_private_(bool value);
   public:
 
+  // int32 repository_id = 8 [json_name = "repositoryId"];
+  void clear_repository_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 repository_id() const;
+  void set_repository_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_repository_id() const;
+  void _internal_set_repository_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.Repository)
  private:
   class _Internal;
@@ -611,6 +621,7 @@ class Repository final :
   ::pipelines::runtime::v1alpha1::Branch* branch_;
   bool fork_;
   bool private__;
+  ::PROTOBUF_NAMESPACE_ID::int32 repository_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_2eproto;
 };
@@ -4409,6 +4420,26 @@ inline void Repository::set_allocated_branch(::pipelines::runtime::v1alpha1::Bra
   }
   branch_ = branch;
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Repository.branch)
+}
+
+// int32 repository_id = 8 [json_name = "repositoryId"];
+inline void Repository::clear_repository_id() {
+  repository_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Repository::_internal_repository_id() const {
+  return repository_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Repository::repository_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Repository.repository_id)
+  return _internal_repository_id();
+}
+inline void Repository::_internal_set_repository_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  repository_id_ = value;
+}
+inline void Repository::set_repository_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_repository_id(value);
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Repository.repository_id)
 }
 
 // -------------------------------------------------------------------

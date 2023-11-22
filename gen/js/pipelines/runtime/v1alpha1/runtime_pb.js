@@ -577,7 +577,8 @@ proto.pipelines.runtime.v1alpha1.Repository.toObject = function(includeInstance,
     fork: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     cloneUrl: jspb.Message.getFieldWithDefault(msg, 5, ""),
     pb_private: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    branch: (f = msg.getBranch()) && proto.pipelines.runtime.v1alpha1.Branch.toObject(includeInstance, f)
+    branch: (f = msg.getBranch()) && proto.pipelines.runtime.v1alpha1.Branch.toObject(includeInstance, f),
+    repositoryId: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -642,6 +643,10 @@ proto.pipelines.runtime.v1alpha1.Repository.deserializeBinaryFromReader = functi
       var value = new proto.pipelines.runtime.v1alpha1.Branch;
       reader.readMessage(value,proto.pipelines.runtime.v1alpha1.Branch.deserializeBinaryFromReader);
       msg.setBranch(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRepositoryId(value);
       break;
     default:
       reader.skipField();
@@ -720,6 +725,13 @@ proto.pipelines.runtime.v1alpha1.Repository.serializeBinaryToWriter = function(m
       7,
       f,
       proto.pipelines.runtime.v1alpha1.Branch.serializeBinaryToWriter
+    );
+  }
+  f = message.getRepositoryId();
+  if (f !== 0) {
+    writer.writeInt32(
+      8,
+      f
     );
   }
 };
@@ -867,6 +879,24 @@ proto.pipelines.runtime.v1alpha1.Repository.prototype.clearBranch = function() {
  */
 proto.pipelines.runtime.v1alpha1.Repository.prototype.hasBranch = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional int32 repository_id = 8;
+ * @return {number}
+ */
+proto.pipelines.runtime.v1alpha1.Repository.prototype.getRepositoryId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Repository} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Repository.prototype.setRepositoryId = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 

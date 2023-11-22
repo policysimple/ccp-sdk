@@ -99,6 +99,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 64: {
+
+            repositoryId_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -331,6 +336,17 @@ private static final long serialVersionUID = 0L;
     return getBranch();
   }
 
+  public static final int REPOSITORY_ID_FIELD_NUMBER = 8;
+  private int repositoryId_;
+  /**
+   * <code>int32 repository_id = 8 [json_name = "repositoryId"];</code>
+   * @return The repositoryId.
+   */
+  @java.lang.Override
+  public int getRepositoryId() {
+    return repositoryId_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -366,6 +382,9 @@ private static final long serialVersionUID = 0L;
     if (branch_ != null) {
       output.writeMessage(7, getBranch());
     }
+    if (repositoryId_ != 0) {
+      output.writeInt32(8, repositoryId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -399,6 +418,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getBranch());
     }
+    if (repositoryId_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(8, repositoryId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -431,6 +454,8 @@ private static final long serialVersionUID = 0L;
       if (!getBranch()
           .equals(other.getBranch())) return false;
     }
+    if (getRepositoryId()
+        != other.getRepositoryId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -460,6 +485,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BRANCH_FIELD_NUMBER;
       hash = (53 * hash) + getBranch().hashCode();
     }
+    hash = (37 * hash) + REPOSITORY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRepositoryId();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -611,6 +638,8 @@ private static final long serialVersionUID = 0L;
         branch_ = null;
         branchBuilder_ = null;
       }
+      repositoryId_ = 0;
+
       return this;
     }
 
@@ -648,6 +677,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.branch_ = branchBuilder_.build();
       }
+      result.repositoryId_ = repositoryId_;
       onBuilt();
       return result;
     }
@@ -720,6 +750,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasBranch()) {
         mergeBranch(other.getBranch());
+      }
+      if (other.getRepositoryId() != 0) {
+        setRepositoryId(other.getRepositoryId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1233,6 +1266,37 @@ private static final long serialVersionUID = 0L;
         branch_ = null;
       }
       return branchBuilder_;
+    }
+
+    private int repositoryId_ ;
+    /**
+     * <code>int32 repository_id = 8 [json_name = "repositoryId"];</code>
+     * @return The repositoryId.
+     */
+    @java.lang.Override
+    public int getRepositoryId() {
+      return repositoryId_;
+    }
+    /**
+     * <code>int32 repository_id = 8 [json_name = "repositoryId"];</code>
+     * @param value The repositoryId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRepositoryId(int value) {
+      
+      repositoryId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 repository_id = 8 [json_name = "repositoryId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRepositoryId() {
+      
+      repositoryId_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

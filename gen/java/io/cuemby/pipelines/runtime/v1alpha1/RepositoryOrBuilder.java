@@ -81,4 +81,10 @@ public interface RepositoryOrBuilder extends
    * <code>.pipelines.runtime.v1alpha1.Branch branch = 7 [json_name = "branch"];</code>
    */
   io.cuemby.pipelines.runtime.v1alpha1.BranchOrBuilder getBranchOrBuilder();
+
+  /**
+   * <code>int32 repository_id = 8 [json_name = "repositoryId"];</code>
+   * @return The repositoryId.
+   */
+  int getRepositoryId();
 }
