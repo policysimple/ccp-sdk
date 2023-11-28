@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n&io.cuemby.artifacts.artifacts.v1alpha1B\026RegistryArtifactsProtoP\001Z=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1\242\002\003PPX\252\002\034Artifacts.Artifacts.V1Alpha1\312\002\034Artifacts\\Artifacts\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n5artifacts/artifacts/v1alpha1/registry_artifacts.proto\x12\x1c\x61rtifacts.artifacts.v1alpha1\"y\n\x04Tags\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1b\n\tpull_time\x18\x02 \x01(\tR\x08pullTime\x12\x1b\n\tpush_time\x18\x03 \x01(\tR\x08pushTime\x12#\n\rstorage_limit\x18\x04 \x01(\rR\x0cstorageLimit\"\xd9\x01\n\x11\x41rtifactsRegistry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n\x06\x64igest\x18\x02 \x01(\tR\x06\x64igest\x12\x1b\n\tpull_time\x18\x03 \x01(\tR\x08pullTime\x12\x1b\n\tpush_time\x18\x04 \x01(\tR\x08pushTime\x12\x12\n\x04size\x18\x05 \x01(\x03R\x04size\x12\x16\n\x06\x61\x63tive\x18\x06 \x01(\x08R\x06\x61\x63tive\x12\x36\n\x04tags\x18\x07 \x03(\x0b\x32\".artifacts.artifacts.v1alpha1.TagsR\x04tagsB\xc5\x01\n&io.cuemby.artifacts.artifacts.v1alpha1B\x16RegistryArtifactsProtoP\x01Z=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1c\x41rtifacts.Artifacts.V1Alpha1\xca\x02\x1c\x41rtifacts\\Artifacts\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n5artifacts/artifacts/v1alpha1/registry_artifacts.proto\x12\x1c\x61rtifacts.artifacts.v1alpha1\"y\n\x04Tags\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1b\n\tpull_time\x18\x02 \x01(\tR\x08pullTime\x12\x1b\n\tpush_time\x18\x03 \x01(\tR\x08pushTime\x12#\n\rstorage_limit\x18\x04 \x01(\rR\x0cstorageLimit\"\xbb\x03\n\x11\x41rtifactsRegistry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n\x06\x64igest\x18\x02 \x01(\tR\x06\x64igest\x12\x1b\n\tpull_time\x18\x03 \x01(\tR\x08pullTime\x12\x1b\n\tpush_time\x18\x04 \x01(\tR\x08pushTime\x12\x12\n\x04size\x18\x05 \x01(\x03R\x04size\x12\x16\n\x06\x61\x63tive\x18\x06 \x01(\x08R\x06\x61\x63tive\x12\x36\n\x04tags\x18\x07 \x03(\x0b\x32\".artifacts.artifacts.v1alpha1.TagsR\x04tags\x12+\n\x11organization_name\x18\x08 \x01(\tR\x10organizationName\x12!\n\x0cproject_name\x18\t \x01(\tR\x0bprojectName\x12)\n\x10\x65nvironment_name\x18\n \x01(\tR\x0f\x65nvironmentName\x12)\n\x10\x61pplication_name\x18\x0b \x01(\tR\x0f\x61pplicationName\x12\x19\n\x08url_repo\x18\x0c \x01(\tR\x07urlRepo\x12\x1f\n\x0b\x62ranch_repo\x18\r \x01(\tR\nbranchRepoB\xc5\x01\n&io.cuemby.artifacts.artifacts.v1alpha1B\x16RegistryArtifactsProtoP\x01Z=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1c\x41rtifacts.Artifacts.V1Alpha1\xca\x02\x1c\x41rtifacts\\Artifacts\\V1Alpha1b\x06proto3'
 )
 
 
@@ -135,6 +135,48 @@ _ARTIFACTSREGISTRY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='tags', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='organization_name', full_name='artifacts.artifacts.v1alpha1.ArtifactsRegistry.organization_name', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizationName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='project_name', full_name='artifacts.artifacts.v1alpha1.ArtifactsRegistry.project_name', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='projectName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='environment_name', full_name='artifacts.artifacts.v1alpha1.ArtifactsRegistry.environment_name', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='environmentName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='application_name', full_name='artifacts.artifacts.v1alpha1.ArtifactsRegistry.application_name', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='applicationName', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='url_repo', full_name='artifacts.artifacts.v1alpha1.ArtifactsRegistry.url_repo', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='urlRepo', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='branch_repo', full_name='artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='branchRepo', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -148,7 +190,7 @@ _ARTIFACTSREGISTRY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=211,
-  serialized_end=428,
+  serialized_end=654,
 )
 
 _ARTIFACTSREGISTRY.fields_by_name['tags'].message_type = _TAGS

@@ -25,4 +25,10 @@ message ArtifactsRegistry {
     int64 size = 5;
     bool active = 6;
     repeated Tags tags = 7;
+    string organization_name = 8;
+    string project_name = 9;
+    string environment_name = 10;
+    string application_name = 11;
+    string url_repo = 12;
+    string branch_repo = 13;
 }

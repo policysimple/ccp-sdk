@@ -382,6 +382,12 @@ class ArtifactsRegistry final :
     kDigestFieldNumber = 2,
     kPullTimeFieldNumber = 3,
     kPushTimeFieldNumber = 4,
+    kOrganizationNameFieldNumber = 8,
+    kProjectNameFieldNumber = 9,
+    kEnvironmentNameFieldNumber = 10,
+    kApplicationNameFieldNumber = 11,
+    kUrlRepoFieldNumber = 12,
+    kBranchRepoFieldNumber = 13,
     kSizeFieldNumber = 5,
     kActiveFieldNumber = 6,
   };
@@ -459,6 +465,90 @@ class ArtifactsRegistry final :
   std::string* _internal_mutable_push_time();
   public:
 
+  // string organization_name = 8 [json_name = "organizationName"];
+  void clear_organization_name();
+  const std::string& organization_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_name();
+  void set_allocated_organization_name(std::string* organization_name);
+  private:
+  const std::string& _internal_organization_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_name(const std::string& value);
+  std::string* _internal_mutable_organization_name();
+  public:
+
+  // string project_name = 9 [json_name = "projectName"];
+  void clear_project_name();
+  const std::string& project_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_name();
+  void set_allocated_project_name(std::string* project_name);
+  private:
+  const std::string& _internal_project_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_name(const std::string& value);
+  std::string* _internal_mutable_project_name();
+  public:
+
+  // string environment_name = 10 [json_name = "environmentName"];
+  void clear_environment_name();
+  const std::string& environment_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_environment_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_environment_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_environment_name();
+  void set_allocated_environment_name(std::string* environment_name);
+  private:
+  const std::string& _internal_environment_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_name(const std::string& value);
+  std::string* _internal_mutable_environment_name();
+  public:
+
+  // string application_name = 11 [json_name = "applicationName"];
+  void clear_application_name();
+  const std::string& application_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_application_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_application_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_application_name();
+  void set_allocated_application_name(std::string* application_name);
+  private:
+  const std::string& _internal_application_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_application_name(const std::string& value);
+  std::string* _internal_mutable_application_name();
+  public:
+
+  // string url_repo = 12 [json_name = "urlRepo"];
+  void clear_url_repo();
+  const std::string& url_repo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_url_repo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_url_repo();
+  PROTOBUF_MUST_USE_RESULT std::string* release_url_repo();
+  void set_allocated_url_repo(std::string* url_repo);
+  private:
+  const std::string& _internal_url_repo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_url_repo(const std::string& value);
+  std::string* _internal_mutable_url_repo();
+  public:
+
+  // string branch_repo = 13 [json_name = "branchRepo"];
+  void clear_branch_repo();
+  const std::string& branch_repo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_branch_repo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_branch_repo();
+  PROTOBUF_MUST_USE_RESULT std::string* release_branch_repo();
+  void set_allocated_branch_repo(std::string* branch_repo);
+  private:
+  const std::string& _internal_branch_repo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_branch_repo(const std::string& value);
+  std::string* _internal_mutable_branch_repo();
+  public:
+
   // int64 size = 5 [json_name = "size"];
   void clear_size();
   ::PROTOBUF_NAMESPACE_ID::int64 size() const;
@@ -489,6 +579,12 @@ class ArtifactsRegistry final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr digest_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pull_time_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr push_time_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_repo_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr branch_repo_;
   ::PROTOBUF_NAMESPACE_ID::int64 size_;
   bool active_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -929,6 +1025,282 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::artifacts::artifacts::
 ArtifactsRegistry::tags() const {
   // @@protoc_insertion_point(field_list:artifacts.artifacts.v1alpha1.ArtifactsRegistry.tags)
   return tags_;
+}
+
+// string organization_name = 8 [json_name = "organizationName"];
+inline void ArtifactsRegistry::clear_organization_name() {
+  organization_name_.ClearToEmpty();
+}
+inline const std::string& ArtifactsRegistry::organization_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.organization_name)
+  return _internal_organization_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ArtifactsRegistry::set_organization_name(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.organization_name)
+}
+inline std::string* ArtifactsRegistry::mutable_organization_name() {
+  std::string* _s = _internal_mutable_organization_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.ArtifactsRegistry.organization_name)
+  return _s;
+}
+inline const std::string& ArtifactsRegistry::_internal_organization_name() const {
+  return organization_name_.Get();
+}
+inline void ArtifactsRegistry::_internal_set_organization_name(const std::string& value) {
+  
+  organization_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::_internal_mutable_organization_name() {
+  
+  return organization_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::release_organization_name() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.ArtifactsRegistry.organization_name)
+  return organization_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ArtifactsRegistry::set_allocated_organization_name(std::string* organization_name) {
+  if (organization_name != nullptr) {
+    
+  } else {
+    
+  }
+  organization_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.organization_name)
+}
+
+// string project_name = 9 [json_name = "projectName"];
+inline void ArtifactsRegistry::clear_project_name() {
+  project_name_.ClearToEmpty();
+}
+inline const std::string& ArtifactsRegistry::project_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.project_name)
+  return _internal_project_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ArtifactsRegistry::set_project_name(ArgT0&& arg0, ArgT... args) {
+ 
+ project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.project_name)
+}
+inline std::string* ArtifactsRegistry::mutable_project_name() {
+  std::string* _s = _internal_mutable_project_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.ArtifactsRegistry.project_name)
+  return _s;
+}
+inline const std::string& ArtifactsRegistry::_internal_project_name() const {
+  return project_name_.Get();
+}
+inline void ArtifactsRegistry::_internal_set_project_name(const std::string& value) {
+  
+  project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::_internal_mutable_project_name() {
+  
+  return project_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::release_project_name() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.ArtifactsRegistry.project_name)
+  return project_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ArtifactsRegistry::set_allocated_project_name(std::string* project_name) {
+  if (project_name != nullptr) {
+    
+  } else {
+    
+  }
+  project_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.project_name)
+}
+
+// string environment_name = 10 [json_name = "environmentName"];
+inline void ArtifactsRegistry::clear_environment_name() {
+  environment_name_.ClearToEmpty();
+}
+inline const std::string& ArtifactsRegistry::environment_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.environment_name)
+  return _internal_environment_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ArtifactsRegistry::set_environment_name(ArgT0&& arg0, ArgT... args) {
+ 
+ environment_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.environment_name)
+}
+inline std::string* ArtifactsRegistry::mutable_environment_name() {
+  std::string* _s = _internal_mutable_environment_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.ArtifactsRegistry.environment_name)
+  return _s;
+}
+inline const std::string& ArtifactsRegistry::_internal_environment_name() const {
+  return environment_name_.Get();
+}
+inline void ArtifactsRegistry::_internal_set_environment_name(const std::string& value) {
+  
+  environment_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::_internal_mutable_environment_name() {
+  
+  return environment_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::release_environment_name() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.ArtifactsRegistry.environment_name)
+  return environment_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ArtifactsRegistry::set_allocated_environment_name(std::string* environment_name) {
+  if (environment_name != nullptr) {
+    
+  } else {
+    
+  }
+  environment_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.environment_name)
+}
+
+// string application_name = 11 [json_name = "applicationName"];
+inline void ArtifactsRegistry::clear_application_name() {
+  application_name_.ClearToEmpty();
+}
+inline const std::string& ArtifactsRegistry::application_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.application_name)
+  return _internal_application_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ArtifactsRegistry::set_application_name(ArgT0&& arg0, ArgT... args) {
+ 
+ application_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.application_name)
+}
+inline std::string* ArtifactsRegistry::mutable_application_name() {
+  std::string* _s = _internal_mutable_application_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.ArtifactsRegistry.application_name)
+  return _s;
+}
+inline const std::string& ArtifactsRegistry::_internal_application_name() const {
+  return application_name_.Get();
+}
+inline void ArtifactsRegistry::_internal_set_application_name(const std::string& value) {
+  
+  application_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::_internal_mutable_application_name() {
+  
+  return application_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::release_application_name() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.ArtifactsRegistry.application_name)
+  return application_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ArtifactsRegistry::set_allocated_application_name(std::string* application_name) {
+  if (application_name != nullptr) {
+    
+  } else {
+    
+  }
+  application_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.application_name)
+}
+
+// string url_repo = 12 [json_name = "urlRepo"];
+inline void ArtifactsRegistry::clear_url_repo() {
+  url_repo_.ClearToEmpty();
+}
+inline const std::string& ArtifactsRegistry::url_repo() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.url_repo)
+  return _internal_url_repo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ArtifactsRegistry::set_url_repo(ArgT0&& arg0, ArgT... args) {
+ 
+ url_repo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.url_repo)
+}
+inline std::string* ArtifactsRegistry::mutable_url_repo() {
+  std::string* _s = _internal_mutable_url_repo();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.ArtifactsRegistry.url_repo)
+  return _s;
+}
+inline const std::string& ArtifactsRegistry::_internal_url_repo() const {
+  return url_repo_.Get();
+}
+inline void ArtifactsRegistry::_internal_set_url_repo(const std::string& value) {
+  
+  url_repo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::_internal_mutable_url_repo() {
+  
+  return url_repo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::release_url_repo() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.ArtifactsRegistry.url_repo)
+  return url_repo_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ArtifactsRegistry::set_allocated_url_repo(std::string* url_repo) {
+  if (url_repo != nullptr) {
+    
+  } else {
+    
+  }
+  url_repo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), url_repo,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.url_repo)
+}
+
+// string branch_repo = 13 [json_name = "branchRepo"];
+inline void ArtifactsRegistry::clear_branch_repo() {
+  branch_repo_.ClearToEmpty();
+}
+inline const std::string& ArtifactsRegistry::branch_repo() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo)
+  return _internal_branch_repo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ArtifactsRegistry::set_branch_repo(ArgT0&& arg0, ArgT... args) {
+ 
+ branch_repo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo)
+}
+inline std::string* ArtifactsRegistry::mutable_branch_repo() {
+  std::string* _s = _internal_mutable_branch_repo();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo)
+  return _s;
+}
+inline const std::string& ArtifactsRegistry::_internal_branch_repo() const {
+  return branch_repo_.Get();
+}
+inline void ArtifactsRegistry::_internal_set_branch_repo(const std::string& value) {
+  
+  branch_repo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::_internal_mutable_branch_repo() {
+  
+  return branch_repo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::release_branch_repo() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo)
+  return branch_repo_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ArtifactsRegistry::set_allocated_branch_repo(std::string* branch_repo) {
+  if (branch_repo != nullptr) {
+    
+  } else {
+    
+  }
+  branch_repo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), branch_repo,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo)
 }
 
 #ifdef __GNUC__

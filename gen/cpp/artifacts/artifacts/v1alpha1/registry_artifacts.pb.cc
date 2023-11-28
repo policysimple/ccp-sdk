@@ -41,6 +41,12 @@ constexpr ArtifactsRegistry::ArtifactsRegistry(
   , digest_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , pull_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , push_time_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organization_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , project_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , environment_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , application_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , url_repo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , branch_repo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , size_(int64_t{0})
   , active_(false){}
 struct ArtifactsRegistryDefaultTypeInternal {
@@ -81,6 +87,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_artifacts_2fartifacts_2fv1alph
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, size_),
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, active_),
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, tags_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, organization_name_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, project_name_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, environment_name_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, application_name_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, url_repo_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, branch_repo_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::artifacts::artifacts::v1alpha1::Tags)},
@@ -98,21 +110,27 @@ const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry
   "lpha1\"y\n\004Tags\022\022\n\004name\030\001 \001(\tR\004name\022\033\n\tpul"
   "l_time\030\002 \001(\tR\010pullTime\022\033\n\tpush_time\030\003 \001("
   "\tR\010pushTime\022#\n\rstorage_limit\030\004 \001(\rR\014stor"
-  "ageLimit\"\331\001\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001"
+  "ageLimit\"\273\003\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001"
   "(\tR\002id\022\026\n\006digest\030\002 \001(\tR\006digest\022\033\n\tpull_t"
   "ime\030\003 \001(\tR\010pullTime\022\033\n\tpush_time\030\004 \001(\tR\010"
   "pushTime\022\022\n\004size\030\005 \001(\003R\004size\022\026\n\006active\030\006"
   " \001(\010R\006active\0226\n\004tags\030\007 \003(\0132\".artifacts.a"
-  "rtifacts.v1alpha1.TagsR\004tagsB\305\001\n&io.cuem"
-  "by.artifacts.artifacts.v1alpha1B\026Registr"
-  "yArtifactsProtoP\001Z=github.com/cuemby/ccp"
-  "-sdk/gen/go/artifacts/artifacts/v1alpha1"
-  "\242\002\003PPX\252\002\034Artifacts.Artifacts.V1Alpha1\312\002\034"
-  "Artifacts\\Artifacts\\V1Alpha1b\006proto3"
+  "rtifacts.v1alpha1.TagsR\004tags\022+\n\021organiza"
+  "tion_name\030\010 \001(\tR\020organizationName\022!\n\014pro"
+  "ject_name\030\t \001(\tR\013projectName\022)\n\020environm"
+  "ent_name\030\n \001(\tR\017environmentName\022)\n\020appli"
+  "cation_name\030\013 \001(\tR\017applicationName\022\031\n\010ur"
+  "l_repo\030\014 \001(\tR\007urlRepo\022\037\n\013branch_repo\030\r \001"
+  "(\tR\nbranchRepoB\305\001\n&io.cuemby.artifacts.a"
+  "rtifacts.v1alpha1B\026RegistryArtifactsProt"
+  "oP\001Z=github.com/cuemby/ccp-sdk/gen/go/ar"
+  "tifacts/artifacts/v1alpha1\242\002\003PPX\252\002\034Artif"
+  "acts.Artifacts.V1Alpha1\312\002\034Artifacts\\Arti"
+  "facts\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto = {
-  false, false, 636, descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, "artifacts/artifacts/v1alpha1/registry_artifacts.proto", 
+  false, false, 862, descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, "artifacts/artifacts/v1alpha1/registry_artifacts.proto", 
   &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto::offsets,
   file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, file_level_enum_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, file_level_service_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto,
@@ -478,6 +496,36 @@ ArtifactsRegistry::ArtifactsRegistry(const ArtifactsRegistry& from)
     push_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_push_time(), 
       GetArenaForAllocation());
   }
+  organization_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_name().empty()) {
+    organization_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_name(), 
+      GetArenaForAllocation());
+  }
+  project_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_project_name().empty()) {
+    project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project_name(), 
+      GetArenaForAllocation());
+  }
+  environment_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_environment_name().empty()) {
+    environment_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_environment_name(), 
+      GetArenaForAllocation());
+  }
+  application_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_application_name().empty()) {
+    application_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_name(), 
+      GetArenaForAllocation());
+  }
+  url_repo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_url_repo().empty()) {
+    url_repo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_url_repo(), 
+      GetArenaForAllocation());
+  }
+  branch_repo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_branch_repo().empty()) {
+    branch_repo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_branch_repo(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&size_, &from.size_,
     static_cast<size_t>(reinterpret_cast<char*>(&active_) -
     reinterpret_cast<char*>(&size_)) + sizeof(active_));
@@ -489,6 +537,12 @@ id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyIn
 digest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 pull_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 push_time_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+organization_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+project_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+environment_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+application_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+url_repo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+branch_repo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&size_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&active_) -
@@ -508,6 +562,12 @@ inline void ArtifactsRegistry::SharedDtor() {
   digest_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   pull_time_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   push_time_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  project_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  environment_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  application_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  url_repo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  branch_repo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ArtifactsRegistry::ArenaDtor(void* object) {
@@ -531,6 +591,12 @@ void ArtifactsRegistry::Clear() {
   digest_.ClearToEmpty();
   pull_time_.ClearToEmpty();
   push_time_.ClearToEmpty();
+  organization_name_.ClearToEmpty();
+  project_name_.ClearToEmpty();
+  environment_name_.ClearToEmpty();
+  application_name_.ClearToEmpty();
+  url_repo_.ClearToEmpty();
+  branch_repo_.ClearToEmpty();
   ::memset(&size_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&active_) -
       reinterpret_cast<char*>(&size_)) + sizeof(active_));
@@ -603,6 +669,60 @@ const char* ArtifactsRegistry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string organization_name = 8 [json_name = "organizationName"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_organization_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.ArtifactsRegistry.organization_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string project_name = 9 [json_name = "projectName"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_project_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.ArtifactsRegistry.project_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string environment_name = 10 [json_name = "environmentName"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_environment_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.ArtifactsRegistry.environment_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string application_name = 11 [json_name = "applicationName"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          auto str = _internal_mutable_application_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.ArtifactsRegistry.application_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string url_repo = 12 [json_name = "urlRepo"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          auto str = _internal_mutable_url_repo();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.ArtifactsRegistry.url_repo"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string branch_repo = 13 [json_name = "branchRepo"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          auto str = _internal_mutable_branch_repo();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -694,6 +814,66 @@ failure:
       InternalWriteMessage(7, this->_internal_tags(i), target, stream);
   }
 
+  // string organization_name = 8 [json_name = "organizationName"];
+  if (!this->_internal_organization_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_name().data(), static_cast<int>(this->_internal_organization_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.ArtifactsRegistry.organization_name");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_organization_name(), target);
+  }
+
+  // string project_name = 9 [json_name = "projectName"];
+  if (!this->_internal_project_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_project_name().data(), static_cast<int>(this->_internal_project_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.ArtifactsRegistry.project_name");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_project_name(), target);
+  }
+
+  // string environment_name = 10 [json_name = "environmentName"];
+  if (!this->_internal_environment_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_environment_name().data(), static_cast<int>(this->_internal_environment_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.ArtifactsRegistry.environment_name");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_environment_name(), target);
+  }
+
+  // string application_name = 11 [json_name = "applicationName"];
+  if (!this->_internal_application_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_application_name().data(), static_cast<int>(this->_internal_application_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.ArtifactsRegistry.application_name");
+    target = stream->WriteStringMaybeAliased(
+        11, this->_internal_application_name(), target);
+  }
+
+  // string url_repo = 12 [json_name = "urlRepo"];
+  if (!this->_internal_url_repo().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_url_repo().data(), static_cast<int>(this->_internal_url_repo().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.ArtifactsRegistry.url_repo");
+    target = stream->WriteStringMaybeAliased(
+        12, this->_internal_url_repo(), target);
+  }
+
+  // string branch_repo = 13 [json_name = "branchRepo"];
+  if (!this->_internal_branch_repo().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_branch_repo().data(), static_cast<int>(this->_internal_branch_repo().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo");
+    target = stream->WriteStringMaybeAliased(
+        13, this->_internal_branch_repo(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -743,6 +923,48 @@ size_t ArtifactsRegistry::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_push_time());
+  }
+
+  // string organization_name = 8 [json_name = "organizationName"];
+  if (!this->_internal_organization_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_name());
+  }
+
+  // string project_name = 9 [json_name = "projectName"];
+  if (!this->_internal_project_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_project_name());
+  }
+
+  // string environment_name = 10 [json_name = "environmentName"];
+  if (!this->_internal_environment_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_environment_name());
+  }
+
+  // string application_name = 11 [json_name = "applicationName"];
+  if (!this->_internal_application_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_application_name());
+  }
+
+  // string url_repo = 12 [json_name = "urlRepo"];
+  if (!this->_internal_url_repo().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_url_repo());
+  }
+
+  // string branch_repo = 13 [json_name = "branchRepo"];
+  if (!this->_internal_branch_repo().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_branch_repo());
   }
 
   // int64 size = 5 [json_name = "size"];
@@ -798,6 +1020,24 @@ void ArtifactsRegistry::MergeFrom(const ArtifactsRegistry& from) {
   if (!from._internal_push_time().empty()) {
     _internal_set_push_time(from._internal_push_time());
   }
+  if (!from._internal_organization_name().empty()) {
+    _internal_set_organization_name(from._internal_organization_name());
+  }
+  if (!from._internal_project_name().empty()) {
+    _internal_set_project_name(from._internal_project_name());
+  }
+  if (!from._internal_environment_name().empty()) {
+    _internal_set_environment_name(from._internal_environment_name());
+  }
+  if (!from._internal_application_name().empty()) {
+    _internal_set_application_name(from._internal_application_name());
+  }
+  if (!from._internal_url_repo().empty()) {
+    _internal_set_url_repo(from._internal_url_repo());
+  }
+  if (!from._internal_branch_repo().empty()) {
+    _internal_set_branch_repo(from._internal_branch_repo());
+  }
   if (from._internal_size() != 0) {
     _internal_set_size(from._internal_size());
   }
@@ -841,6 +1081,36 @@ void ArtifactsRegistry::InternalSwap(ArtifactsRegistry* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &push_time_, GetArenaForAllocation(),
       &other->push_time_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_name_, GetArenaForAllocation(),
+      &other->organization_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &project_name_, GetArenaForAllocation(),
+      &other->project_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &environment_name_, GetArenaForAllocation(),
+      &other->environment_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &application_name_, GetArenaForAllocation(),
+      &other->application_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &url_repo_, GetArenaForAllocation(),
+      &other->url_repo_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &branch_repo_, GetArenaForAllocation(),
+      &other->branch_repo_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ArtifactsRegistry, active_)
