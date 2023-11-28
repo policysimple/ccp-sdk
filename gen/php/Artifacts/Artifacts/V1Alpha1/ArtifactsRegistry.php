@@ -41,6 +41,30 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];</code>
      */
     private $tags;
+    /**
+     * Generated from protobuf field <code>string organization_name = 8 [json_name = "organizationName"];</code>
+     */
+    protected $organization_name = '';
+    /**
+     * Generated from protobuf field <code>string project_name = 9 [json_name = "projectName"];</code>
+     */
+    protected $project_name = '';
+    /**
+     * Generated from protobuf field <code>string environment_name = 10 [json_name = "environmentName"];</code>
+     */
+    protected $environment_name = '';
+    /**
+     * Generated from protobuf field <code>string application_name = 11 [json_name = "applicationName"];</code>
+     */
+    protected $application_name = '';
+    /**
+     * Generated from protobuf field <code>string url_repo = 12 [json_name = "urlRepo"];</code>
+     */
+    protected $url_repo = '';
+    /**
+     * Generated from protobuf field <code>string branch_repo = 13 [json_name = "branchRepo"];</code>
+     */
+    protected $branch_repo = '';
 
     /**
      * Constructor.
@@ -55,6 +79,12 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      *     @type int|string $size
      *     @type bool $active
      *     @type \Artifacts\Artifacts\V1Alpha1\Tags[]|\Google\Protobuf\Internal\RepeatedField $tags
+     *     @type string $organization_name
+     *     @type string $project_name
+     *     @type string $environment_name
+     *     @type string $application_name
+     *     @type string $url_repo
+     *     @type string $branch_repo
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +242,138 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Artifacts\Artifacts\V1Alpha1\Tags::class);
         $this->tags = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_name = 8 [json_name = "organizationName"];</code>
+     * @return string
+     */
+    public function getOrganizationName()
+    {
+        return $this->organization_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string organization_name = 8 [json_name = "organizationName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrganizationName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->organization_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_name = 9 [json_name = "projectName"];</code>
+     * @return string
+     */
+    public function getProjectName()
+    {
+        return $this->project_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_name = 9 [json_name = "projectName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_name = 10 [json_name = "environmentName"];</code>
+     * @return string
+     */
+    public function getEnvironmentName()
+    {
+        return $this->environment_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string environment_name = 10 [json_name = "environmentName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEnvironmentName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->environment_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_name = 11 [json_name = "applicationName"];</code>
+     * @return string
+     */
+    public function getApplicationName()
+    {
+        return $this->application_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_name = 11 [json_name = "applicationName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url_repo = 12 [json_name = "urlRepo"];</code>
+     * @return string
+     */
+    public function getUrlRepo()
+    {
+        return $this->url_repo;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url_repo = 12 [json_name = "urlRepo"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrlRepo($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url_repo = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string branch_repo = 13 [json_name = "branchRepo"];</code>
+     * @return string
+     */
+    public function getBranchRepo()
+    {
+        return $this->branch_repo;
+    }
+
+    /**
+     * Generated from protobuf field <code>string branch_repo = 13 [json_name = "branchRepo"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBranchRepo($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->branch_repo = $var;
 
         return $this;
     }

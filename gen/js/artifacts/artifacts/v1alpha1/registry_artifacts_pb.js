@@ -325,7 +325,13 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.toObject = function(include
     size: jspb.Message.getFieldWithDefault(msg, 5, 0),
     active: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     tagsList: jspb.Message.toObjectList(msg.getTagsList(),
-    proto.artifacts.artifacts.v1alpha1.Tags.toObject, includeInstance)
+    proto.artifacts.artifacts.v1alpha1.Tags.toObject, includeInstance),
+    organizationName: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    projectName: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    environmentName: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    applicationName: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    urlRepo: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    branchRepo: jspb.Message.getFieldWithDefault(msg, 13, "")
   };
 
   if (includeInstance) {
@@ -390,6 +396,30 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.deserializeBinaryFromReader
       var value = new proto.artifacts.artifacts.v1alpha1.Tags;
       reader.readMessage(value,proto.artifacts.artifacts.v1alpha1.Tags.deserializeBinaryFromReader);
       msg.addTags(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrganizationName(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProjectName(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEnvironmentName(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApplicationName(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrlRepo(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBranchRepo(value);
       break;
     default:
       reader.skipField();
@@ -468,6 +498,48 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.serializeBinaryToWriter = f
       7,
       f,
       proto.artifacts.artifacts.v1alpha1.Tags.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrganizationName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getProjectName();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getEnvironmentName();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getApplicationName();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getUrlRepo();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getBranchRepo();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
     );
   }
 };
@@ -616,6 +688,114 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.addTags = functio
  */
 proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.clearTagsList = function() {
   return this.setTagsList([]);
+};
+
+
+/**
+ * optional string organization_name = 8;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getOrganizationName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setOrganizationName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string project_name = 9;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getProjectName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setProjectName = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string environment_name = 10;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getEnvironmentName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setEnvironmentName = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string application_name = 11;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getApplicationName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setApplicationName = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string url_repo = 12;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getUrlRepo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setUrlRepo = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string branch_repo = 13;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getBranchRepo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setBranchRepo = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 

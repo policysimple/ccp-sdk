@@ -90,4 +90,76 @@ public interface ArtifactsRegistryOrBuilder extends
    */
   io.cuemby.artifacts.artifacts.v1alpha1.TagsOrBuilder getTagsOrBuilder(
       int index);
+
+  /**
+   * <code>string organization_name = 8 [json_name = "organizationName"];</code>
+   * @return The organizationName.
+   */
+  java.lang.String getOrganizationName();
+  /**
+   * <code>string organization_name = 8 [json_name = "organizationName"];</code>
+   * @return The bytes for organizationName.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationNameBytes();
+
+  /**
+   * <code>string project_name = 9 [json_name = "projectName"];</code>
+   * @return The projectName.
+   */
+  java.lang.String getProjectName();
+  /**
+   * <code>string project_name = 9 [json_name = "projectName"];</code>
+   * @return The bytes for projectName.
+   */
+  com.google.protobuf.ByteString
+      getProjectNameBytes();
+
+  /**
+   * <code>string environment_name = 10 [json_name = "environmentName"];</code>
+   * @return The environmentName.
+   */
+  java.lang.String getEnvironmentName();
+  /**
+   * <code>string environment_name = 10 [json_name = "environmentName"];</code>
+   * @return The bytes for environmentName.
+   */
+  com.google.protobuf.ByteString
+      getEnvironmentNameBytes();
+
+  /**
+   * <code>string application_name = 11 [json_name = "applicationName"];</code>
+   * @return The applicationName.
+   */
+  java.lang.String getApplicationName();
+  /**
+   * <code>string application_name = 11 [json_name = "applicationName"];</code>
+   * @return The bytes for applicationName.
+   */
+  com.google.protobuf.ByteString
+      getApplicationNameBytes();
+
+  /**
+   * <code>string url_repo = 12 [json_name = "urlRepo"];</code>
+   * @return The urlRepo.
+   */
+  java.lang.String getUrlRepo();
+  /**
+   * <code>string url_repo = 12 [json_name = "urlRepo"];</code>
+   * @return The bytes for urlRepo.
+   */
+  com.google.protobuf.ByteString
+      getUrlRepoBytes();
+
+  /**
+   * <code>string branch_repo = 13 [json_name = "branchRepo"];</code>
+   * @return The branchRepo.
+   */
+  java.lang.String getBranchRepo();
+  /**
+   * <code>string branch_repo = 13 [json_name = "branchRepo"];</code>
+   * @return The bytes for branchRepo.
+   */
+  com.google.protobuf.ByteString
+      getBranchRepoBytes();
 }

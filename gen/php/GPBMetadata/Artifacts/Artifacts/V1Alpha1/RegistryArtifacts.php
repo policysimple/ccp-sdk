@@ -16,13 +16,13 @@ class RegistryArtifacts
         }
         $pool->internalAddGeneratedFile(
             '
-ü
+Þ
 5artifacts/artifacts/v1alpha1/registry_artifacts.protoartifacts.artifacts.v1alpha1"y
 Tags
 name (	Rname
 	pull_time (	RpullTime
 	push_time (	RpushTime#
-storage_limit (RstorageLimit"Ù
+storage_limit (RstorageLimit"»
 ArtifactsRegistry
 id (	Rid
 digest (	Rdigest
@@ -30,7 +30,15 @@ class RegistryArtifacts
 	push_time (	RpushTime
 size (Rsize
 active (Ractive6
-tags (2".artifacts.artifacts.v1alpha1.TagsRtagsBÅ
+tags (2".artifacts.artifacts.v1alpha1.TagsRtags+
+organization_name (	RorganizationName!
+project_name	 (	RprojectName)
+environment_name
+ (	RenvironmentName)
+application_name (	RapplicationName
+url_repo (	RurlRepo
+branch_repo (	R
+branchRepoBÅ
 &io.cuemby.artifacts.artifacts.v1alpha1BRegistryArtifactsProtoPZ=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1¢PPXªArtifacts.Artifacts.V1Alpha1ÊArtifacts\\Artifacts\\V1Alpha1bproto3'
         , true);
 
