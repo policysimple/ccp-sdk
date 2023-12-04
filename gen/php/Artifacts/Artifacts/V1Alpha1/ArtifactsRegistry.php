@@ -65,6 +65,10 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string branch_repo = 13 [json_name = "branchRepo"];</code>
      */
     protected $branch_repo = '';
+    /**
+     * Generated from protobuf field <code>bool current_tag = 14 [json_name = "currentTag"];</code>
+     */
+    protected $current_tag = false;
 
     /**
      * Constructor.
@@ -85,6 +89,7 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      *     @type string $application_name
      *     @type string $url_repo
      *     @type string $branch_repo
+     *     @type bool $current_tag
      * }
      */
     public function __construct($data = NULL) {
@@ -374,6 +379,28 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->branch_repo = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool current_tag = 14 [json_name = "currentTag"];</code>
+     * @return bool
+     */
+    public function getCurrentTag()
+    {
+        return $this->current_tag;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool current_tag = 14 [json_name = "currentTag"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCurrentTag($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->current_tag = $var;
 
         return $this;
     }

@@ -390,6 +390,7 @@ class ArtifactsRegistry final :
     kBranchRepoFieldNumber = 13,
     kSizeFieldNumber = 5,
     kActiveFieldNumber = 6,
+    kCurrentTagFieldNumber = 14,
   };
   // repeated .artifacts.artifacts.v1alpha1.Tags tags = 7 [json_name = "tags"];
   int tags_size() const;
@@ -567,6 +568,15 @@ class ArtifactsRegistry final :
   void _internal_set_active(bool value);
   public:
 
+  // bool current_tag = 14 [json_name = "currentTag"];
+  void clear_current_tag();
+  bool current_tag() const;
+  void set_current_tag(bool value);
+  private:
+  bool _internal_current_tag() const;
+  void _internal_set_current_tag(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:artifacts.artifacts.v1alpha1.ArtifactsRegistry)
  private:
   class _Internal;
@@ -587,6 +597,7 @@ class ArtifactsRegistry final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr branch_repo_;
   ::PROTOBUF_NAMESPACE_ID::int64 size_;
   bool active_;
+  bool current_tag_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto;
 };
@@ -1301,6 +1312,26 @@ inline void ArtifactsRegistry::set_allocated_branch_repo(std::string* branch_rep
   branch_repo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), branch_repo,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo)
+}
+
+// bool current_tag = 14 [json_name = "currentTag"];
+inline void ArtifactsRegistry::clear_current_tag() {
+  current_tag_ = false;
+}
+inline bool ArtifactsRegistry::_internal_current_tag() const {
+  return current_tag_;
+}
+inline bool ArtifactsRegistry::current_tag() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.current_tag)
+  return _internal_current_tag();
+}
+inline void ArtifactsRegistry::_internal_set_current_tag(bool value) {
+  
+  current_tag_ = value;
+}
+inline void ArtifactsRegistry::set_current_tag(bool value) {
+  _internal_set_current_tag(value);
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.current_tag)
 }
 
 #ifdef __GNUC__

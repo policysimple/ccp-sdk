@@ -48,7 +48,8 @@ constexpr ArtifactsRegistry::ArtifactsRegistry(
   , url_repo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , branch_repo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , size_(int64_t{0})
-  , active_(false){}
+  , active_(false)
+  , current_tag_(false){}
 struct ArtifactsRegistryDefaultTypeInternal {
   constexpr ArtifactsRegistryDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -93,6 +94,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_artifacts_2fartifacts_2fv1alph
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, application_name_),
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, url_repo_),
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, branch_repo_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, current_tag_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::artifacts::artifacts::v1alpha1::Tags)},
@@ -110,7 +112,7 @@ const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry
   "lpha1\"y\n\004Tags\022\022\n\004name\030\001 \001(\tR\004name\022\033\n\tpul"
   "l_time\030\002 \001(\tR\010pullTime\022\033\n\tpush_time\030\003 \001("
   "\tR\010pushTime\022#\n\rstorage_limit\030\004 \001(\rR\014stor"
-  "ageLimit\"\273\003\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001"
+  "ageLimit\"\334\003\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001"
   "(\tR\002id\022\026\n\006digest\030\002 \001(\tR\006digest\022\033\n\tpull_t"
   "ime\030\003 \001(\tR\010pullTime\022\033\n\tpush_time\030\004 \001(\tR\010"
   "pushTime\022\022\n\004size\030\005 \001(\003R\004size\022\026\n\006active\030\006"
@@ -121,16 +123,17 @@ const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry
   "ent_name\030\n \001(\tR\017environmentName\022)\n\020appli"
   "cation_name\030\013 \001(\tR\017applicationName\022\031\n\010ur"
   "l_repo\030\014 \001(\tR\007urlRepo\022\037\n\013branch_repo\030\r \001"
-  "(\tR\nbranchRepoB\305\001\n&io.cuemby.artifacts.a"
-  "rtifacts.v1alpha1B\026RegistryArtifactsProt"
-  "oP\001Z=github.com/cuemby/ccp-sdk/gen/go/ar"
-  "tifacts/artifacts/v1alpha1\242\002\003PPX\252\002\034Artif"
-  "acts.Artifacts.V1Alpha1\312\002\034Artifacts\\Arti"
-  "facts\\V1Alpha1b\006proto3"
+  "(\tR\nbranchRepo\022\037\n\013current_tag\030\016 \001(\010R\ncur"
+  "rentTagB\305\001\n&io.cuemby.artifacts.artifact"
+  "s.v1alpha1B\026RegistryArtifactsProtoP\001Z=gi"
+  "thub.com/cuemby/ccp-sdk/gen/go/artifacts"
+  "/artifacts/v1alpha1\242\002\003PPX\252\002\034Artifacts.Ar"
+  "tifacts.V1Alpha1\312\002\034Artifacts\\Artifacts\\V"
+  "1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto = {
-  false, false, 862, descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, "artifacts/artifacts/v1alpha1/registry_artifacts.proto", 
+  false, false, 895, descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, "artifacts/artifacts/v1alpha1/registry_artifacts.proto", 
   &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto::offsets,
   file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, file_level_enum_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, file_level_service_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto,
@@ -527,8 +530,8 @@ ArtifactsRegistry::ArtifactsRegistry(const ArtifactsRegistry& from)
       GetArenaForAllocation());
   }
   ::memcpy(&size_, &from.size_,
-    static_cast<size_t>(reinterpret_cast<char*>(&active_) -
-    reinterpret_cast<char*>(&size_)) + sizeof(active_));
+    static_cast<size_t>(reinterpret_cast<char*>(&current_tag_) -
+    reinterpret_cast<char*>(&size_)) + sizeof(current_tag_));
   // @@protoc_insertion_point(copy_constructor:artifacts.artifacts.v1alpha1.ArtifactsRegistry)
 }
 
@@ -545,8 +548,8 @@ url_repo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlr
 branch_repo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&size_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&active_) -
-    reinterpret_cast<char*>(&size_)) + sizeof(active_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&current_tag_) -
+    reinterpret_cast<char*>(&size_)) + sizeof(current_tag_));
 }
 
 ArtifactsRegistry::~ArtifactsRegistry() {
@@ -598,8 +601,8 @@ void ArtifactsRegistry::Clear() {
   url_repo_.ClearToEmpty();
   branch_repo_.ClearToEmpty();
   ::memset(&size_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&active_) -
-      reinterpret_cast<char*>(&size_)) + sizeof(active_));
+      reinterpret_cast<char*>(&current_tag_) -
+      reinterpret_cast<char*>(&size_)) + sizeof(current_tag_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -722,6 +725,13 @@ const char* ArtifactsRegistry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           auto str = _internal_mutable_branch_repo();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.ArtifactsRegistry.branch_repo"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool current_tag = 14 [json_name = "currentTag"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 112)) {
+          current_tag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -874,6 +884,12 @@ failure:
         13, this->_internal_branch_repo(), target);
   }
 
+  // bool current_tag = 14 [json_name = "currentTag"];
+  if (this->_internal_current_tag() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(14, this->_internal_current_tag(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -979,6 +995,11 @@ size_t ArtifactsRegistry::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
+  // bool current_tag = 14 [json_name = "currentTag"];
+  if (this->_internal_current_tag() != 0) {
+    total_size += 1 + 1;
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1043,6 +1064,9 @@ void ArtifactsRegistry::MergeFrom(const ArtifactsRegistry& from) {
   }
   if (from._internal_active() != 0) {
     _internal_set_active(from._internal_active());
+  }
+  if (from._internal_current_tag() != 0) {
+    _internal_set_current_tag(from._internal_current_tag());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1113,8 +1137,8 @@ void ArtifactsRegistry::InternalSwap(ArtifactsRegistry* other) {
       &other->branch_repo_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ArtifactsRegistry, active_)
-      + sizeof(ArtifactsRegistry::active_)
+      PROTOBUF_FIELD_OFFSET(ArtifactsRegistry, current_tag_)
+      + sizeof(ArtifactsRegistry::current_tag_)
       - PROTOBUF_FIELD_OFFSET(ArtifactsRegistry, size_)>(
           reinterpret_cast<char*>(&size_),
           reinterpret_cast<char*>(&other->size_));
