@@ -162,4 +162,10 @@ public interface ArtifactsRegistryOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBranchRepoBytes();
+
+  /**
+   * <code>bool current_tag = 14 [json_name = "currentTag"];</code>
+   * @return The currentTag.
+   */
+  boolean getCurrentTag();
 }

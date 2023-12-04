@@ -31,4 +31,5 @@ message ArtifactsRegistry {
     string application_name = 11;
     string url_repo = 12;
     string branch_repo = 13;
+    bool current_tag = 14;
 }

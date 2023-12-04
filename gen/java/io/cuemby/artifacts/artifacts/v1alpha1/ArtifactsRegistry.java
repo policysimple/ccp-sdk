@@ -139,6 +139,11 @@ private static final long serialVersionUID = 0L;
             branchRepo_ = s;
             break;
           }
+          case 112: {
+
+            currentTag_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -616,6 +621,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CURRENT_TAG_FIELD_NUMBER = 14;
+  private boolean currentTag_;
+  /**
+   * <code>bool current_tag = 14 [json_name = "currentTag"];</code>
+   * @return The currentTag.
+   */
+  @java.lang.Override
+  public boolean getCurrentTag() {
+    return currentTag_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -669,6 +685,9 @@ private static final long serialVersionUID = 0L;
     if (!getBranchRepoBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, branchRepo_);
     }
+    if (currentTag_ != false) {
+      output.writeBool(14, currentTag_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -720,6 +739,10 @@ private static final long serialVersionUID = 0L;
     if (!getBranchRepoBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, branchRepo_);
     }
+    if (currentTag_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(14, currentTag_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -761,6 +784,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUrlRepo())) return false;
     if (!getBranchRepo()
         .equals(other.getBranchRepo())) return false;
+    if (getCurrentTag()
+        != other.getCurrentTag()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -802,6 +827,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUrlRepo().hashCode();
     hash = (37 * hash) + BRANCH_REPO_FIELD_NUMBER;
     hash = (53 * hash) + getBranchRepo().hashCode();
+    hash = (37 * hash) + CURRENT_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getCurrentTag());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -966,6 +994,8 @@ private static final long serialVersionUID = 0L;
 
       branchRepo_ = "";
 
+      currentTag_ = false;
+
       return this;
     }
 
@@ -1014,6 +1044,7 @@ private static final long serialVersionUID = 0L;
       result.applicationName_ = applicationName_;
       result.urlRepo_ = urlRepo_;
       result.branchRepo_ = branchRepo_;
+      result.currentTag_ = currentTag_;
       onBuilt();
       return result;
     }
@@ -1133,6 +1164,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getBranchRepo().isEmpty()) {
         branchRepo_ = other.branchRepo_;
         onChanged();
+      }
+      if (other.getCurrentTag() != false) {
+        setCurrentTag(other.getCurrentTag());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2222,6 +2256,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       branchRepo_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean currentTag_ ;
+    /**
+     * <code>bool current_tag = 14 [json_name = "currentTag"];</code>
+     * @return The currentTag.
+     */
+    @java.lang.Override
+    public boolean getCurrentTag() {
+      return currentTag_;
+    }
+    /**
+     * <code>bool current_tag = 14 [json_name = "currentTag"];</code>
+     * @param value The currentTag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentTag(boolean value) {
+      
+      currentTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool current_tag = 14 [json_name = "currentTag"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCurrentTag() {
+      
+      currentTag_ = false;
       onChanged();
       return this;
     }

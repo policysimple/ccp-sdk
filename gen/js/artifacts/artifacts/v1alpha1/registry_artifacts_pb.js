@@ -331,7 +331,8 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.toObject = function(include
     environmentName: jspb.Message.getFieldWithDefault(msg, 10, ""),
     applicationName: jspb.Message.getFieldWithDefault(msg, 11, ""),
     urlRepo: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    branchRepo: jspb.Message.getFieldWithDefault(msg, 13, "")
+    branchRepo: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    currentTag: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
   };
 
   if (includeInstance) {
@@ -420,6 +421,10 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.deserializeBinaryFromReader
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setBranchRepo(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCurrentTag(value);
       break;
     default:
       reader.skipField();
@@ -539,6 +544,13 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.serializeBinaryToWriter = f
   if (f.length > 0) {
     writer.writeString(
       13,
+      f
+    );
+  }
+  f = message.getCurrentTag();
+  if (f) {
+    writer.writeBool(
+      14,
       f
     );
   }
@@ -796,6 +808,24 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getBranchRepo = f
  */
 proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setBranchRepo = function(value) {
   return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional bool current_tag = 14;
+ * @return {boolean}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getCurrentTag = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setCurrentTag = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
 };
 
 
