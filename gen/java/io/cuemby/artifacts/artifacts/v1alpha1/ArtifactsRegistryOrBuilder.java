@@ -168,4 +168,28 @@ public interface ArtifactsRegistryOrBuilder extends
    * @return The currentTag.
    */
   boolean getCurrentTag();
+
+  /**
+   * <code>string user = 15 [json_name = "user"];</code>
+   * @return The user.
+   */
+  java.lang.String getUser();
+  /**
+   * <code>string user = 15 [json_name = "user"];</code>
+   * @return The bytes for user.
+   */
+  com.google.protobuf.ByteString
+      getUserBytes();
+
+  /**
+   * <code>string user_email = 16 [json_name = "userEmail"];</code>
+   * @return The userEmail.
+   */
+  java.lang.String getUserEmail();
+  /**
+   * <code>string user_email = 16 [json_name = "userEmail"];</code>
+   * @return The bytes for userEmail.
+   */
+  com.google.protobuf.ByteString
+      getUserEmailBytes();
 }

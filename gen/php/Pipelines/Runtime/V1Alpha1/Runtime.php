@@ -183,6 +183,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string tag_name = 42 [json_name = "tagName"];</code>
      */
     protected $tag_name = '';
+    /**
+     * Generated from protobuf field <code>string user_id = 43 [json_name = "userId"];</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -232,6 +236,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *     @type \Pipelines\Runtime\V1Alpha1\Configuration $configuration
      *     @type \Pipelines\Runtime\V1Alpha1\Scaling $scaling
      *     @type string $tag_name
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -1199,6 +1204,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tag_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 43 [json_name = "userId"];</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 43 [json_name = "userId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

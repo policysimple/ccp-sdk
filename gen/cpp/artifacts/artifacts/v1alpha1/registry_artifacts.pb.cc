@@ -47,6 +47,8 @@ constexpr ArtifactsRegistry::ArtifactsRegistry(
   , application_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , url_repo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , branch_repo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , user_email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , size_(int64_t{0})
   , active_(false)
   , current_tag_(false){}
@@ -95,6 +97,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_artifacts_2fartifacts_2fv1alph
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, url_repo_),
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, branch_repo_),
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, current_tag_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, user_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ArtifactsRegistry, user_email_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::artifacts::artifacts::v1alpha1::Tags)},
@@ -112,7 +116,7 @@ const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry
   "lpha1\"y\n\004Tags\022\022\n\004name\030\001 \001(\tR\004name\022\033\n\tpul"
   "l_time\030\002 \001(\tR\010pullTime\022\033\n\tpush_time\030\003 \001("
   "\tR\010pushTime\022#\n\rstorage_limit\030\004 \001(\rR\014stor"
-  "ageLimit\"\334\003\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001"
+  "ageLimit\"\217\004\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001"
   "(\tR\002id\022\026\n\006digest\030\002 \001(\tR\006digest\022\033\n\tpull_t"
   "ime\030\003 \001(\tR\010pullTime\022\033\n\tpush_time\030\004 \001(\tR\010"
   "pushTime\022\022\n\004size\030\005 \001(\003R\004size\022\026\n\006active\030\006"
@@ -124,16 +128,17 @@ const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry
   "cation_name\030\013 \001(\tR\017applicationName\022\031\n\010ur"
   "l_repo\030\014 \001(\tR\007urlRepo\022\037\n\013branch_repo\030\r \001"
   "(\tR\nbranchRepo\022\037\n\013current_tag\030\016 \001(\010R\ncur"
-  "rentTagB\305\001\n&io.cuemby.artifacts.artifact"
-  "s.v1alpha1B\026RegistryArtifactsProtoP\001Z=gi"
-  "thub.com/cuemby/ccp-sdk/gen/go/artifacts"
-  "/artifacts/v1alpha1\242\002\003PPX\252\002\034Artifacts.Ar"
-  "tifacts.V1Alpha1\312\002\034Artifacts\\Artifacts\\V"
-  "1Alpha1b\006proto3"
+  "rentTag\022\022\n\004user\030\017 \001(\tR\004user\022\035\n\nuser_emai"
+  "l\030\020 \001(\tR\tuserEmailB\305\001\n&io.cuemby.artifac"
+  "ts.artifacts.v1alpha1B\026RegistryArtifacts"
+  "ProtoP\001Z=github.com/cuemby/ccp-sdk/gen/g"
+  "o/artifacts/artifacts/v1alpha1\242\002\003PPX\252\002\034A"
+  "rtifacts.Artifacts.V1Alpha1\312\002\034Artifacts\\"
+  "Artifacts\\V1Alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto = {
-  false, false, 895, descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, "artifacts/artifacts/v1alpha1/registry_artifacts.proto", 
+  false, false, 946, descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, "artifacts/artifacts/v1alpha1/registry_artifacts.proto", 
   &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto::offsets,
   file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, file_level_enum_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto, file_level_service_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto,
@@ -529,6 +534,16 @@ ArtifactsRegistry::ArtifactsRegistry(const ArtifactsRegistry& from)
     branch_repo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_branch_repo(), 
       GetArenaForAllocation());
   }
+  user_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user().empty()) {
+    user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user(), 
+      GetArenaForAllocation());
+  }
+  user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_email().empty()) {
+    user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_email(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&size_, &from.size_,
     static_cast<size_t>(reinterpret_cast<char*>(&current_tag_) -
     reinterpret_cast<char*>(&size_)) + sizeof(current_tag_));
@@ -546,6 +561,8 @@ environment_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyS
 application_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 url_repo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 branch_repo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+user_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&size_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&current_tag_) -
@@ -571,6 +588,8 @@ inline void ArtifactsRegistry::SharedDtor() {
   application_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   url_repo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   branch_repo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  user_email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ArtifactsRegistry::ArenaDtor(void* object) {
@@ -600,6 +619,8 @@ void ArtifactsRegistry::Clear() {
   application_name_.ClearToEmpty();
   url_repo_.ClearToEmpty();
   branch_repo_.ClearToEmpty();
+  user_.ClearToEmpty();
+  user_email_.ClearToEmpty();
   ::memset(&size_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&current_tag_) -
       reinterpret_cast<char*>(&size_)) + sizeof(current_tag_));
@@ -732,6 +753,24 @@ const char* ArtifactsRegistry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 112)) {
           current_tag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user = 15 [json_name = "user"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+          auto str = _internal_mutable_user();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.ArtifactsRegistry.user"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_email = 16 [json_name = "userEmail"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          auto str = _internal_mutable_user_email();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.ArtifactsRegistry.user_email"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -890,6 +929,26 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(14, this->_internal_current_tag(), target);
   }
 
+  // string user = 15 [json_name = "user"];
+  if (!this->_internal_user().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user().data(), static_cast<int>(this->_internal_user().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.ArtifactsRegistry.user");
+    target = stream->WriteStringMaybeAliased(
+        15, this->_internal_user(), target);
+  }
+
+  // string user_email = 16 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_email().data(), static_cast<int>(this->_internal_user_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.ArtifactsRegistry.user_email");
+    target = stream->WriteStringMaybeAliased(
+        16, this->_internal_user_email(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -983,6 +1042,20 @@ size_t ArtifactsRegistry::ByteSizeLong() const {
         this->_internal_branch_repo());
   }
 
+  // string user = 15 [json_name = "user"];
+  if (!this->_internal_user().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user());
+  }
+
+  // string user_email = 16 [json_name = "userEmail"];
+  if (!this->_internal_user_email().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_email());
+  }
+
   // int64 size = 5 [json_name = "size"];
   if (this->_internal_size() != 0) {
     total_size += 1 +
@@ -1058,6 +1131,12 @@ void ArtifactsRegistry::MergeFrom(const ArtifactsRegistry& from) {
   }
   if (!from._internal_branch_repo().empty()) {
     _internal_set_branch_repo(from._internal_branch_repo());
+  }
+  if (!from._internal_user().empty()) {
+    _internal_set_user(from._internal_user());
+  }
+  if (!from._internal_user_email().empty()) {
+    _internal_set_user_email(from._internal_user_email());
   }
   if (from._internal_size() != 0) {
     _internal_set_size(from._internal_size());
@@ -1135,6 +1214,16 @@ void ArtifactsRegistry::InternalSwap(ArtifactsRegistry* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &branch_repo_, GetArenaForAllocation(),
       &other->branch_repo_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_, GetArenaForAllocation(),
+      &other->user_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_email_, GetArenaForAllocation(),
+      &other->user_email_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ArtifactsRegistry, current_tag_)

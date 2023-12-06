@@ -388,6 +388,8 @@ class ArtifactsRegistry final :
     kApplicationNameFieldNumber = 11,
     kUrlRepoFieldNumber = 12,
     kBranchRepoFieldNumber = 13,
+    kUserFieldNumber = 15,
+    kUserEmailFieldNumber = 16,
     kSizeFieldNumber = 5,
     kActiveFieldNumber = 6,
     kCurrentTagFieldNumber = 14,
@@ -550,6 +552,34 @@ class ArtifactsRegistry final :
   std::string* _internal_mutable_branch_repo();
   public:
 
+  // string user = 15 [json_name = "user"];
+  void clear_user();
+  const std::string& user() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user();
+  void set_allocated_user(std::string* user);
+  private:
+  const std::string& _internal_user() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user(const std::string& value);
+  std::string* _internal_mutable_user();
+  public:
+
+  // string user_email = 16 [json_name = "userEmail"];
+  void clear_user_email();
+  const std::string& user_email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_email();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_email();
+  void set_allocated_user_email(std::string* user_email);
+  private:
+  const std::string& _internal_user_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_email(const std::string& value);
+  std::string* _internal_mutable_user_email();
+  public:
+
   // int64 size = 5 [json_name = "size"];
   void clear_size();
   ::PROTOBUF_NAMESPACE_ID::int64 size() const;
@@ -595,6 +625,8 @@ class ArtifactsRegistry final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_repo_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr branch_repo_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_email_;
   ::PROTOBUF_NAMESPACE_ID::int64 size_;
   bool active_;
   bool current_tag_;
@@ -1332,6 +1364,98 @@ inline void ArtifactsRegistry::_internal_set_current_tag(bool value) {
 inline void ArtifactsRegistry::set_current_tag(bool value) {
   _internal_set_current_tag(value);
   // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.current_tag)
+}
+
+// string user = 15 [json_name = "user"];
+inline void ArtifactsRegistry::clear_user() {
+  user_.ClearToEmpty();
+}
+inline const std::string& ArtifactsRegistry::user() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user)
+  return _internal_user();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ArtifactsRegistry::set_user(ArgT0&& arg0, ArgT... args) {
+ 
+ user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user)
+}
+inline std::string* ArtifactsRegistry::mutable_user() {
+  std::string* _s = _internal_mutable_user();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user)
+  return _s;
+}
+inline const std::string& ArtifactsRegistry::_internal_user() const {
+  return user_.Get();
+}
+inline void ArtifactsRegistry::_internal_set_user(const std::string& value) {
+  
+  user_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::_internal_mutable_user() {
+  
+  return user_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::release_user() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user)
+  return user_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ArtifactsRegistry::set_allocated_user(std::string* user) {
+  if (user != nullptr) {
+    
+  } else {
+    
+  }
+  user_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user)
+}
+
+// string user_email = 16 [json_name = "userEmail"];
+inline void ArtifactsRegistry::clear_user_email() {
+  user_email_.ClearToEmpty();
+}
+inline const std::string& ArtifactsRegistry::user_email() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user_email)
+  return _internal_user_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ArtifactsRegistry::set_user_email(ArgT0&& arg0, ArgT... args) {
+ 
+ user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user_email)
+}
+inline std::string* ArtifactsRegistry::mutable_user_email() {
+  std::string* _s = _internal_mutable_user_email();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user_email)
+  return _s;
+}
+inline const std::string& ArtifactsRegistry::_internal_user_email() const {
+  return user_email_.Get();
+}
+inline void ArtifactsRegistry::_internal_set_user_email(const std::string& value) {
+  
+  user_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::_internal_mutable_user_email() {
+  
+  return user_email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ArtifactsRegistry::release_user_email() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user_email)
+  return user_email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ArtifactsRegistry::set_allocated_user_email(std::string* user_email) {
+  if (user_email != nullptr) {
+    
+  } else {
+    
+  }
+  user_email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_email,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user_email)
 }
 
 #ifdef __GNUC__

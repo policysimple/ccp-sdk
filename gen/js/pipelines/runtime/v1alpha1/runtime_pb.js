@@ -2831,7 +2831,8 @@ proto.pipelines.runtime.v1alpha1.Runtime.toObject = function(includeInstance, ms
     isEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 39, false),
     configuration: (f = msg.getConfiguration()) && proto.pipelines.runtime.v1alpha1.Configuration.toObject(includeInstance, f),
     scaling: (f = msg.getScaling()) && proto.pipelines.runtime.v1alpha1.Scaling.toObject(includeInstance, f),
-    tagName: jspb.Message.getFieldWithDefault(msg, 42, "")
+    tagName: jspb.Message.getFieldWithDefault(msg, 42, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 43, "")
   };
 
   if (includeInstance) {
@@ -3053,6 +3054,10 @@ proto.pipelines.runtime.v1alpha1.Runtime.deserializeBinaryFromReader = function(
     case 42:
       var value = /** @type {string} */ (reader.readString());
       msg.setTagName(value);
+      break;
+    case 43:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -3367,6 +3372,13 @@ proto.pipelines.runtime.v1alpha1.Runtime.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       42,
+      f
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      43,
       f
     );
   }
@@ -4302,6 +4314,24 @@ proto.pipelines.runtime.v1alpha1.Runtime.prototype.getTagName = function() {
  */
 proto.pipelines.runtime.v1alpha1.Runtime.prototype.setTagName = function(value) {
   return jspb.Message.setProto3StringField(this, 42, value);
+};
+
+
+/**
+ * optional string user_id = 43;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 43, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Runtime} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Runtime.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 43, value);
 };
 
 

@@ -147,6 +147,7 @@ message Runtime {
   Configuration configuration = 40;
   Scaling scaling = 41;
   string tag_name = 42;
+  string user_id = 43;
 }
 
 message RuntimeList {

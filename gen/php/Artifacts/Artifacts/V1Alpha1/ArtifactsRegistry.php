@@ -69,6 +69,14 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool current_tag = 14 [json_name = "currentTag"];</code>
      */
     protected $current_tag = false;
+    /**
+     * Generated from protobuf field <code>string user = 15 [json_name = "user"];</code>
+     */
+    protected $user = '';
+    /**
+     * Generated from protobuf field <code>string user_email = 16 [json_name = "userEmail"];</code>
+     */
+    protected $user_email = '';
 
     /**
      * Constructor.
@@ -90,6 +98,8 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      *     @type string $url_repo
      *     @type string $branch_repo
      *     @type bool $current_tag
+     *     @type string $user
+     *     @type string $user_email
      * }
      */
     public function __construct($data = NULL) {
@@ -401,6 +411,50 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->current_tag = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user = 15 [json_name = "user"];</code>
+     * @return string
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user = 15 [json_name = "user"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUser($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_email = 16 [json_name = "userEmail"];</code>
+     * @return string
+     */
+    public function getUserEmail()
+    {
+        return $this->user_email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_email = 16 [json_name = "userEmail"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_email = $var;
 
         return $this;
     }
