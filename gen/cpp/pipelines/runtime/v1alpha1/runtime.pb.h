@@ -2263,6 +2263,7 @@ class Runtime final :
     kCreatedAtFieldNumber = 36,
     kUpdatedAtFieldNumber = 37,
     kTagNameFieldNumber = 42,
+    kUserIdFieldNumber = 43,
     kApplicationDataFieldNumber = 26,
     kPipelineRunFieldNumber = 33,
     kConfigurationFieldNumber = 40,
@@ -2740,6 +2741,20 @@ class Runtime final :
   std::string* _internal_mutable_tag_name();
   public:
 
+  // string user_id = 43 [json_name = "userId"];
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
   // .pipelines.runtime.v1alpha1.Application application_data = 26 [json_name = "applicationData"];
   bool has_application_data() const;
   private:
@@ -2933,6 +2948,7 @@ class Runtime final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tag_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   ::pipelines::runtime::v1alpha1::Application* application_data_;
   ::pipelines::tekton::v1alpha1::PipelineRun* pipeline_run_;
   ::pipelines::runtime::v1alpha1::Configuration* configuration_;
@@ -7992,6 +8008,52 @@ inline void Runtime::set_allocated_tag_name(std::string* tag_name) {
   tag_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tag_name,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.tag_name)
+}
+
+// string user_id = 43 [json_name = "userId"];
+inline void Runtime::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& Runtime::user_id() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Runtime.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Runtime::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Runtime.user_id)
+}
+inline std::string* Runtime::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Runtime.user_id)
+  return _s;
+}
+inline const std::string& Runtime::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void Runtime::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Runtime::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Runtime::release_user_id() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Runtime.user_id)
+  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Runtime::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Runtime.user_id)
 }
 
 // -------------------------------------------------------------------

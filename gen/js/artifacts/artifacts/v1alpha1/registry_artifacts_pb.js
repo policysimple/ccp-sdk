@@ -332,7 +332,9 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.toObject = function(include
     applicationName: jspb.Message.getFieldWithDefault(msg, 11, ""),
     urlRepo: jspb.Message.getFieldWithDefault(msg, 12, ""),
     branchRepo: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    currentTag: jspb.Message.getBooleanFieldWithDefault(msg, 14, false)
+    currentTag: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    user: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    userEmail: jspb.Message.getFieldWithDefault(msg, 16, "")
   };
 
   if (includeInstance) {
@@ -425,6 +427,14 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.deserializeBinaryFromReader
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCurrentTag(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUser(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserEmail(value);
       break;
     default:
       reader.skipField();
@@ -551,6 +561,20 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.serializeBinaryToWriter = f
   if (f) {
     writer.writeBool(
       14,
+      f
+    );
+  }
+  f = message.getUser();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
+      f
+    );
+  }
+  f = message.getUserEmail();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
       f
     );
   }
@@ -826,6 +850,42 @@ proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getCurrentTag = f
  */
 proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setCurrentTag = function(value) {
   return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+/**
+ * optional string user = 15;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getUser = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setUser = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional string user_email = 16;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.getUserEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.ArtifactsRegistry.prototype.setUserEmail = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 

@@ -643,4 +643,16 @@ public interface RuntimeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTagNameBytes();
+
+  /**
+   * <code>string user_id = 43 [json_name = "userId"];</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <code>string user_id = 43 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 }

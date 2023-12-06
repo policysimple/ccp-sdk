@@ -16,13 +16,13 @@ class RegistryArtifacts
         }
         $pool->internalAddGeneratedFile(
             '
-ˇ
+≤
 5artifacts/artifacts/v1alpha1/registry_artifacts.protoartifacts.artifacts.v1alpha1"y
 Tags
 name (	Rname
 	pull_time (	RpullTime
 	push_time (	RpushTime#
-storage_limit (RstorageLimit"‹
+storage_limit (RstorageLimit"è
 ArtifactsRegistry
 id (	Rid
 digest (	Rdigest
@@ -40,7 +40,10 @@ class RegistryArtifacts
 branch_repo (	R
 branchRepo
 current_tag (R
-currentTagB≈
+currentTag
+user (	Ruser
+
+user_email (	R	userEmailB≈
 &io.cuemby.artifacts.artifacts.v1alpha1BRegistryArtifactsProtoPZ=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1¢PPX™Artifacts.Artifacts.V1Alpha1 Artifacts\\Artifacts\\V1Alpha1bproto3'
         , true);
 
