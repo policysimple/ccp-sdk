@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     fullName_ = "";
     description_ = "";
     cloneUrl_ = "";
+    providerName_ = "";
   }
 
   @java.lang.Override
@@ -102,6 +103,12 @@ private static final long serialVersionUID = 0L;
           case 64: {
 
             repositoryId_ = input.readInt32();
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            providerName_ = s;
             break;
           }
           default: {
@@ -347,6 +354,44 @@ private static final long serialVersionUID = 0L;
     return repositoryId_;
   }
 
+  public static final int PROVIDER_NAME_FIELD_NUMBER = 9;
+  private volatile java.lang.Object providerName_;
+  /**
+   * <code>string provider_name = 9 [json_name = "providerName"];</code>
+   * @return The providerName.
+   */
+  @java.lang.Override
+  public java.lang.String getProviderName() {
+    java.lang.Object ref = providerName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      providerName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string provider_name = 9 [json_name = "providerName"];</code>
+   * @return The bytes for providerName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProviderNameBytes() {
+    java.lang.Object ref = providerName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      providerName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -385,6 +430,9 @@ private static final long serialVersionUID = 0L;
     if (repositoryId_ != 0) {
       output.writeInt32(8, repositoryId_);
     }
+    if (!getProviderNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, providerName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -422,6 +470,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(8, repositoryId_);
     }
+    if (!getProviderNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, providerName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -456,6 +507,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getRepositoryId()
         != other.getRepositoryId()) return false;
+    if (!getProviderName()
+        .equals(other.getProviderName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -487,6 +540,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + REPOSITORY_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRepositoryId();
+    hash = (37 * hash) + PROVIDER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getProviderName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -640,6 +695,8 @@ private static final long serialVersionUID = 0L;
       }
       repositoryId_ = 0;
 
+      providerName_ = "";
+
       return this;
     }
 
@@ -678,6 +735,7 @@ private static final long serialVersionUID = 0L;
         result.branch_ = branchBuilder_.build();
       }
       result.repositoryId_ = repositoryId_;
+      result.providerName_ = providerName_;
       onBuilt();
       return result;
     }
@@ -753,6 +811,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRepositoryId() != 0) {
         setRepositoryId(other.getRepositoryId());
+      }
+      if (!other.getProviderName().isEmpty()) {
+        providerName_ = other.providerName_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1295,6 +1357,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearRepositoryId() {
       
       repositoryId_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object providerName_ = "";
+    /**
+     * <code>string provider_name = 9 [json_name = "providerName"];</code>
+     * @return The providerName.
+     */
+    public java.lang.String getProviderName() {
+      java.lang.Object ref = providerName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        providerName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string provider_name = 9 [json_name = "providerName"];</code>
+     * @return The bytes for providerName.
+     */
+    public com.google.protobuf.ByteString
+        getProviderNameBytes() {
+      java.lang.Object ref = providerName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        providerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string provider_name = 9 [json_name = "providerName"];</code>
+     * @param value The providerName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      providerName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider_name = 9 [json_name = "providerName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProviderName() {
+      
+      providerName_ = getDefaultInstance().getProviderName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider_name = 9 [json_name = "providerName"];</code>
+     * @param value The bytes for providerName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      providerName_ = value;
       onChanged();
       return this;
     }

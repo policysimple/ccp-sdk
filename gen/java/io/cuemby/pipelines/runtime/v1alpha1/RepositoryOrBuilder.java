@@ -87,4 +87,16 @@ public interface RepositoryOrBuilder extends
    * @return The repositoryId.
    */
   int getRepositoryId();
+
+  /**
+   * <code>string provider_name = 9 [json_name = "providerName"];</code>
+   * @return The providerName.
+   */
+  java.lang.String getProviderName();
+  /**
+   * <code>string provider_name = 9 [json_name = "providerName"];</code>
+   * @return The bytes for providerName.
+   */
+  com.google.protobuf.ByteString
+      getProviderNameBytes();
 }

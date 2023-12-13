@@ -45,6 +45,10 @@ class Repository extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 repository_id = 8 [json_name = "repositoryId"];</code>
      */
     protected $repository_id = 0;
+    /**
+     * Generated from protobuf field <code>string provider_name = 9 [json_name = "providerName"];</code>
+     */
+    protected $provider_name = '';
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class Repository extends \Google\Protobuf\Internal\Message
      *     @type bool $private
      *     @type \Pipelines\Runtime\V1Alpha1\Branch $branch
      *     @type int $repository_id
+     *     @type string $provider_name
      * }
      */
     public function __construct($data = NULL) {
@@ -249,6 +254,28 @@ class Repository extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->repository_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string provider_name = 9 [json_name = "providerName"];</code>
+     * @return string
+     */
+    public function getProviderName()
+    {
+        return $this->provider_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string provider_name = 9 [json_name = "providerName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProviderName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->provider_name = $var;
 
         return $this;
     }
