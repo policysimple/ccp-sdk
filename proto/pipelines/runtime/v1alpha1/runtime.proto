@@ -31,6 +31,7 @@ message Repository {
   bool private =6;
   Branch branch = 7;
   int32 repository_id = 8;
+  string provider_name = 9;
 }
 
 message  Command {
