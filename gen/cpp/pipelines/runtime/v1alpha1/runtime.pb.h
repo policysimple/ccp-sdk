@@ -501,6 +501,7 @@ class Repository final :
     kFullNameFieldNumber = 2,
     kDescriptionFieldNumber = 3,
     kCloneUrlFieldNumber = 5,
+    kProviderNameFieldNumber = 9,
     kBranchFieldNumber = 7,
     kForkFieldNumber = 4,
     kPrivateFieldNumber = 6,
@@ -562,6 +563,20 @@ class Repository final :
   std::string* _internal_mutable_clone_url();
   public:
 
+  // string provider_name = 9 [json_name = "providerName"];
+  void clear_provider_name();
+  const std::string& provider_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_provider_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_provider_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_provider_name();
+  void set_allocated_provider_name(std::string* provider_name);
+  private:
+  const std::string& _internal_provider_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_provider_name(const std::string& value);
+  std::string* _internal_mutable_provider_name();
+  public:
+
   // .pipelines.runtime.v1alpha1.Branch branch = 7 [json_name = "branch"];
   bool has_branch() const;
   private:
@@ -618,6 +633,7 @@ class Repository final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr full_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clone_url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr provider_name_;
   ::pipelines::runtime::v1alpha1::Branch* branch_;
   bool fork_;
   bool private__;
@@ -4456,6 +4472,52 @@ inline void Repository::_internal_set_repository_id(::PROTOBUF_NAMESPACE_ID::int
 inline void Repository::set_repository_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_repository_id(value);
   // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Repository.repository_id)
+}
+
+// string provider_name = 9 [json_name = "providerName"];
+inline void Repository::clear_provider_name() {
+  provider_name_.ClearToEmpty();
+}
+inline const std::string& Repository::provider_name() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Repository.provider_name)
+  return _internal_provider_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Repository::set_provider_name(ArgT0&& arg0, ArgT... args) {
+ 
+ provider_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Repository.provider_name)
+}
+inline std::string* Repository::mutable_provider_name() {
+  std::string* _s = _internal_mutable_provider_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Repository.provider_name)
+  return _s;
+}
+inline const std::string& Repository::_internal_provider_name() const {
+  return provider_name_.Get();
+}
+inline void Repository::_internal_set_provider_name(const std::string& value) {
+  
+  provider_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Repository::_internal_mutable_provider_name() {
+  
+  return provider_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Repository::release_provider_name() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Repository.provider_name)
+  return provider_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Repository::set_allocated_provider_name(std::string* provider_name) {
+  if (provider_name != nullptr) {
+    
+  } else {
+    
+  }
+  provider_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), provider_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Repository.provider_name)
 }
 
 // -------------------------------------------------------------------

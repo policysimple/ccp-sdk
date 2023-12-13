@@ -578,7 +578,8 @@ proto.pipelines.runtime.v1alpha1.Repository.toObject = function(includeInstance,
     cloneUrl: jspb.Message.getFieldWithDefault(msg, 5, ""),
     pb_private: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     branch: (f = msg.getBranch()) && proto.pipelines.runtime.v1alpha1.Branch.toObject(includeInstance, f),
-    repositoryId: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    repositoryId: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    providerName: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -647,6 +648,10 @@ proto.pipelines.runtime.v1alpha1.Repository.deserializeBinaryFromReader = functi
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setRepositoryId(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProviderName(value);
       break;
     default:
       reader.skipField();
@@ -731,6 +736,13 @@ proto.pipelines.runtime.v1alpha1.Repository.serializeBinaryToWriter = function(m
   if (f !== 0) {
     writer.writeInt32(
       8,
+      f
+    );
+  }
+  f = message.getProviderName();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -897,6 +909,24 @@ proto.pipelines.runtime.v1alpha1.Repository.prototype.getRepositoryId = function
  */
 proto.pipelines.runtime.v1alpha1.Repository.prototype.setRepositoryId = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional string provider_name = 9;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Repository.prototype.getProviderName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Repository} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Repository.prototype.setProviderName = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
