@@ -1145,7 +1145,7 @@ proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.prototype.toObject = funct
  */
 proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    runtime: (f = msg.getRuntime()) && pipelines_runtime_v1alpha1_runtime_pb.Runtime.toObject(includeInstance, f),
+    runtime: (f = msg.getRuntime()) && pipelines_runtime_v1alpha1_runtime_pb.UpdateRuntime.toObject(includeInstance, f),
     status: jspb.Message.getFieldWithDefault(msg, 2, ""),
     userId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -1185,8 +1185,8 @@ proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new pipelines_runtime_v1alpha1_runtime_pb.Runtime;
-      reader.readMessage(value,pipelines_runtime_v1alpha1_runtime_pb.Runtime.deserializeBinaryFromReader);
+      var value = new pipelines_runtime_v1alpha1_runtime_pb.UpdateRuntime;
+      reader.readMessage(value,pipelines_runtime_v1alpha1_runtime_pb.UpdateRuntime.deserializeBinaryFromReader);
       msg.setRuntime(value);
       break;
     case 2:
@@ -1231,7 +1231,7 @@ proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.serializeBinaryToWriter = 
     writer.writeMessage(
       1,
       f,
-      pipelines_runtime_v1alpha1_runtime_pb.Runtime.serializeBinaryToWriter
+      pipelines_runtime_v1alpha1_runtime_pb.UpdateRuntime.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
@@ -1252,17 +1252,17 @@ proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.serializeBinaryToWriter = 
 
 
 /**
- * optional Runtime runtime = 1;
- * @return {?proto.pipelines.runtime.v1alpha1.Runtime}
+ * optional UpdateRuntime runtime = 1;
+ * @return {?proto.pipelines.runtime.v1alpha1.UpdateRuntime}
  */
 proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.prototype.getRuntime = function() {
-  return /** @type{?proto.pipelines.runtime.v1alpha1.Runtime} */ (
-    jspb.Message.getWrapperField(this, pipelines_runtime_v1alpha1_runtime_pb.Runtime, 1));
+  return /** @type{?proto.pipelines.runtime.v1alpha1.UpdateRuntime} */ (
+    jspb.Message.getWrapperField(this, pipelines_runtime_v1alpha1_runtime_pb.UpdateRuntime, 1));
 };
 
 
 /**
- * @param {?proto.pipelines.runtime.v1alpha1.Runtime|undefined} value
+ * @param {?proto.pipelines.runtime.v1alpha1.UpdateRuntime|undefined} value
  * @return {!proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest} returns this
 */
 proto.pipelines.runtime.v1alpha1.UpdateRuntimeRequest.prototype.setRuntime = function(value) {

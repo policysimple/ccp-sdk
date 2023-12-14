@@ -40,6 +40,11 @@ public final class RuntimeProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_runtime_v1alpha1_Configuration_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_runtime_v1alpha1_ConfigurationUpdate_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_runtime_v1alpha1_ConfigurationUpdate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_pipelines_runtime_v1alpha1_Scaling_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -84,6 +89,11 @@ public final class RuntimeProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_runtime_v1alpha1_Runtime_ExtraArgsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_runtime_v1alpha1_UpdateRuntime_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_runtime_v1alpha1_UpdateRuntime_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_pipelines_runtime_v1alpha1_RuntimeList_descriptor;
   static final 
@@ -143,129 +153,141 @@ public final class RuntimeProto {
       "vs\022?\n\010commands\030\002 \003(\0132#.pipelines.runtime" +
       ".v1alpha1.CommandR\010commands\022\022\n\004port\030\003 \001(" +
       "\005R\004port\022!\n\014runtime_type\030\004 \001(\tR\013runtimeTy" +
-      "pe\"\334\001\n\007Scaling\022\031\n\010cpu_rule\030\001 \001(\tR\007cpuRul" +
-      "e\022(\n\020cool_down_period\030\002 \001(\tR\016coolDownPer" +
-      "iod\022)\n\020polling_interval\030\003 \001(\tR\017pollingIn" +
-      "terval\022\037\n\013min_replica\030\004 \001(\tR\nminReplica\022" +
-      "\037\n\013max_replica\030\005 \001(\tR\nmaxReplica\022\037\n\013memo" +
-      "ry_rule\030\006 \001(\tR\nmemoryRule\"\236\001\n\021ContainerR" +
-      "egistry\022!\n\014registry_url\030\001 \001(\tR\013registryU" +
-      "rl\022#\n\rregistry_user\030\002 \001(\tR\014registryUser\022" +
-      "\"\n\rreg_cred_auth\030\003 \001(\tR\013regCredAuth\022\035\n\ni" +
-      "mage_name\030\004 \001(\tR\timageName\"\262\007\n\013Applicati" +
-      "on\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 " +
-      "\n\013integration\030\003 \001(\tR\013integration\022F\n\nrepo" +
-      "sitory\030\004 \001(\0132&.pipelines.runtime.v1alpha" +
-      "1.RepositoryR\nrepository\022O\n\rconfiguratio" +
-      "n\030\005 \001(\0132).pipelines.runtime.v1alpha1.Con" +
-      "figurationR\rconfiguration\022\035\n\nproject_id\030" +
-      "\006 \001(\tR\tprojectId\022!\n\014name_project\030\007 \001(\tR\013" +
-      "nameProject\022#\n\rproject_image\030\010 \001(\tR\014proj" +
-      "ectImage\022/\n\023project_description\030\t \001(\tR\022p" +
-      "rojectDescription\022\'\n\017organization_id\030\n \001" +
-      "(\tR\016organizationId\022=\n\007scaling\030\013 \001(\0132#.pi" +
-      "pelines.runtime.v1alpha1.ScalingR\007scalin" +
-      "g\022J\n\014traffic_type\030\014 \001(\0162\'.pipelines.runt" +
-      "ime.v1alpha1.TrafficTypeR\013trafficType\022-\n" +
-      "\022integration_status\030\r \001(\010R\021integrationSt" +
-      "atus\022f\n\026docker_image_buildpack\030\016 \001(\01620.p" +
-      "ipelines.runtime.v1alpha1.DockerImageBui" +
-      "ldpackR\024dockerImageBuildpack\022(\n\020no_docke" +
-      "r_exists\030\017 \001(\010R\016noDockerExists\022\\\n\022contai" +
-      "ner_registry\030\020 \001(\0132-.pipelines.runtime.v" +
-      "1alpha1.ContainerRegistryR\021containerRegi" +
-      "stry\022*\n\021docker_image_name\030\021 \001(\tR\017dockerI" +
-      "mageName\022-\n\022application_status\030\022 \001(\tR\021ap" +
-      "plicationStatus\"\273\023\n\007Runtime\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\022\022\n\004name\030\002 \001(\tR\004name\022N\n\016instance_type" +
-      "s\030\003 \003(\0132\'.pipelines.runtime.v1alpha1.Int" +
-      "anceTypeR\rinstanceTypes\022\'\n\017organization_" +
-      "id\030\004 \001(\tR\016organizationId\022\035\n\nproject_id\030\005" +
-      " \001(\tR\tprojectId\022!\n\014name_project\030\006 \001(\tR\013n" +
-      "ameProject\022%\n\016application_id\030\007 \001(\tR\rappl" +
-      "icationId\022!\n\014workspace_id\030\010 \001(\tR\013workspa" +
-      "ceId\022%\n\016environment_id\030\t \001(\tR\renvironmen" +
-      "tId\022\026\n\006scaler\030\n \001(\tR\006scaler\022\035\n\npod_statu" +
-      "s\030\013 \001(\tR\tpodStatus\022$\n\016pod_status_msg\030\014 \001" +
-      "(\tR\014podStatusMsg\022V\n\013integration\030\r \003(\01324." +
-      "pipelines.runtime.v1alpha1.Runtime.Integ" +
-      "rationEntryR\013integration\022r\n\025environment_" +
-      "variables\030\016 \003(\0132=.pipelines.runtime.v1al" +
-      "pha1.Runtime.EnvironmentVariablesEntryR\024" +
-      "environmentVariables\022M\n\010commands\030\017 \003(\01321" +
-      ".pipelines.runtime.v1alpha1.Runtime.Comm" +
-      "andsEntryR\010commands\022J\n\007secrets\030\020 \003(\01320.p" +
-      "ipelines.runtime.v1alpha1.Runtime.Secret" +
-      "sEntryR\007secrets\022Q\n\nextra_args\030\021 \003(\01322.pi" +
-      "pelines.runtime.v1alpha1.Runtime.ExtraAr" +
-      "gsEntryR\textraArgs\022J\n\014traffic_type\030\022 \001(\016" +
-      "2\'.pipelines.runtime.v1alpha1.TrafficTyp" +
-      "eR\013trafficType\022)\n\020response_message\030\023 \001(\t" +
-      "R\017responseMessage\022)\n\020environment_name\030\024 " +
-      "\001(\tR\017environmentName\022:\n\031environment_inte" +
-      "rnal_name\030\025 \001(\tR\027environmentInternalName" +
-      "\022)\n\020application_name\030\026 \001(\tR\017applicationN" +
-      "ame\022!\n\014storage_used\030\027 \001(\rR\013storageUsed\022#" +
-      "\n\rstorage_limit\030\030 \001(\rR\014storageLimit\022%\n\016i" +
-      "ntegration_id\030\031 \001(\tR\rintegrationId\022R\n\020ap" +
-      "plication_data\030\032 \001(\0132\'.pipelines.runtime" +
-      ".v1alpha1.ApplicationR\017applicationData\022\'" +
-      "\n\017custom_pipeline\030\033 \001(\010R\016customPipeline\022" +
-      "O\n\023before_deploy_tasks\030\034 \003(\0132\037.pipelines" +
-      ".tekton.v1alpha1.TaskR\021beforeDeployTasks" +
-      "\022M\n\022after_deploy_tasks\030\035 \003(\0132\037.pipelines" +
-      ".tekton.v1alpha1.TaskR\020afterDeployTasks\022" +
-      "(\n\020pod_ingress_cert\030\036 \001(\tR\016podIngressCer" +
-      "t\0225\n\027is_not_exist_dockerfile\030\037 \001(\010R\024isNo" +
-      "tExistDockerfile\0229\n\006params\030  \003(\0132!.pipel" +
-      "ines.tekton.v1alpha1.ParamsR\006params\022I\n\014p" +
-      "ipeline_run\030! \001(\0132&.pipelines.tekton.v1a" +
-      "lpha1.PipelineRunR\013pipelineRun\022\031\n\010host_u" +
-      "rl\030\" \001(\tR\007hostUrl\022\033\n\tapp_label\030# \001(\tR\010ap" +
-      "pLabel\022\035\n\ncreated_at\030$ \001(\tR\tcreatedAt\022\035\n" +
-      "\nupdated_at\030% \001(\tR\tupdatedAt\0224\n\026is_enabl" +
-      "ed_application\030& \001(\010R\024isEnabledApplicati" +
-      "on\022\035\n\nis_enabled\030\' \001(\010R\tisEnabled\022O\n\rcon" +
-      "figuration\030( \001(\0132).pipelines.runtime.v1a" +
-      "lpha1.ConfigurationR\rconfiguration\022=\n\007sc" +
-      "aling\030) \001(\0132#.pipelines.runtime.v1alpha1" +
-      ".ScalingR\007scaling\022\031\n\010tag_name\030* \001(\tR\007tag" +
-      "Name\022\027\n\007user_id\030+ \001(\tR\006userId\032>\n\020Integra" +
-      "tionEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
-      "(\tR\005value:\0028\001\032G\n\031EnvironmentVariablesEnt" +
+      "pe\"o\n\023ConfigurationUpdate\0223\n\004envs\030\001 \003(\0132" +
+      "\037.pipelines.runtime.v1alpha1.EnvR\004envs\022#" +
+      "\n\rinstance_type\030\002 \001(\tR\014instanceType\"\334\001\n\007" +
+      "Scaling\022\031\n\010cpu_rule\030\001 \001(\tR\007cpuRule\022(\n\020co" +
+      "ol_down_period\030\002 \001(\tR\016coolDownPeriod\022)\n\020" +
+      "polling_interval\030\003 \001(\tR\017pollingInterval\022" +
+      "\037\n\013min_replica\030\004 \001(\tR\nminReplica\022\037\n\013max_" +
+      "replica\030\005 \001(\tR\nmaxReplica\022\037\n\013memory_rule" +
+      "\030\006 \001(\tR\nmemoryRule\"\236\001\n\021ContainerRegistry" +
+      "\022!\n\014registry_url\030\001 \001(\tR\013registryUrl\022#\n\rr" +
+      "egistry_user\030\002 \001(\tR\014registryUser\022\"\n\rreg_" +
+      "cred_auth\030\003 \001(\tR\013regCredAuth\022\035\n\nimage_na" +
+      "me\030\004 \001(\tR\timageName\"\262\007\n\013Application\022\016\n\002i" +
+      "d\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013integ" +
+      "ration\030\003 \001(\tR\013integration\022F\n\nrepository\030" +
+      "\004 \001(\0132&.pipelines.runtime.v1alpha1.Repos" +
+      "itoryR\nrepository\022O\n\rconfiguration\030\005 \001(\013" +
+      "2).pipelines.runtime.v1alpha1.Configurat" +
+      "ionR\rconfiguration\022\035\n\nproject_id\030\006 \001(\tR\t" +
+      "projectId\022!\n\014name_project\030\007 \001(\tR\013namePro" +
+      "ject\022#\n\rproject_image\030\010 \001(\tR\014projectImag" +
+      "e\022/\n\023project_description\030\t \001(\tR\022projectD" +
+      "escription\022\'\n\017organization_id\030\n \001(\tR\016org" +
+      "anizationId\022=\n\007scaling\030\013 \001(\0132#.pipelines" +
+      ".runtime.v1alpha1.ScalingR\007scaling\022J\n\014tr" +
+      "affic_type\030\014 \001(\0162\'.pipelines.runtime.v1a" +
+      "lpha1.TrafficTypeR\013trafficType\022-\n\022integr" +
+      "ation_status\030\r \001(\010R\021integrationStatus\022f\n" +
+      "\026docker_image_buildpack\030\016 \001(\01620.pipeline" +
+      "s.runtime.v1alpha1.DockerImageBuildpackR" +
+      "\024dockerImageBuildpack\022(\n\020no_docker_exist" +
+      "s\030\017 \001(\010R\016noDockerExists\022\\\n\022container_reg" +
+      "istry\030\020 \001(\0132-.pipelines.runtime.v1alpha1" +
+      ".ContainerRegistryR\021containerRegistry\022*\n" +
+      "\021docker_image_name\030\021 \001(\tR\017dockerImageNam" +
+      "e\022-\n\022application_status\030\022 \001(\tR\021applicati" +
+      "onStatus\"\273\023\n\007Runtime\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004" +
+      "name\030\002 \001(\tR\004name\022N\n\016instance_types\030\003 \003(\013" +
+      "2\'.pipelines.runtime.v1alpha1.IntanceTyp" +
+      "eR\rinstanceTypes\022\'\n\017organization_id\030\004 \001(" +
+      "\tR\016organizationId\022\035\n\nproject_id\030\005 \001(\tR\tp" +
+      "rojectId\022!\n\014name_project\030\006 \001(\tR\013nameProj" +
+      "ect\022%\n\016application_id\030\007 \001(\tR\rapplication" +
+      "Id\022!\n\014workspace_id\030\010 \001(\tR\013workspaceId\022%\n" +
+      "\016environment_id\030\t \001(\tR\renvironmentId\022\026\n\006" +
+      "scaler\030\n \001(\tR\006scaler\022\035\n\npod_status\030\013 \001(\t" +
+      "R\tpodStatus\022$\n\016pod_status_msg\030\014 \001(\tR\014pod" +
+      "StatusMsg\022V\n\013integration\030\r \003(\01324.pipelin" +
+      "es.runtime.v1alpha1.Runtime.IntegrationE" +
+      "ntryR\013integration\022r\n\025environment_variabl" +
+      "es\030\016 \003(\0132=.pipelines.runtime.v1alpha1.Ru" +
+      "ntime.EnvironmentVariablesEntryR\024environ" +
+      "mentVariables\022M\n\010commands\030\017 \003(\01321.pipeli" +
+      "nes.runtime.v1alpha1.Runtime.CommandsEnt" +
+      "ryR\010commands\022J\n\007secrets\030\020 \003(\01320.pipeline" +
+      "s.runtime.v1alpha1.Runtime.SecretsEntryR" +
+      "\007secrets\022Q\n\nextra_args\030\021 \003(\01322.pipelines" +
+      ".runtime.v1alpha1.Runtime.ExtraArgsEntry" +
+      "R\textraArgs\022J\n\014traffic_type\030\022 \001(\0162\'.pipe" +
+      "lines.runtime.v1alpha1.TrafficTypeR\013traf" +
+      "ficType\022)\n\020response_message\030\023 \001(\tR\017respo" +
+      "nseMessage\022)\n\020environment_name\030\024 \001(\tR\017en" +
+      "vironmentName\022:\n\031environment_internal_na" +
+      "me\030\025 \001(\tR\027environmentInternalName\022)\n\020app" +
+      "lication_name\030\026 \001(\tR\017applicationName\022!\n\014" +
+      "storage_used\030\027 \001(\rR\013storageUsed\022#\n\rstora" +
+      "ge_limit\030\030 \001(\rR\014storageLimit\022%\n\016integrat" +
+      "ion_id\030\031 \001(\tR\rintegrationId\022R\n\020applicati" +
+      "on_data\030\032 \001(\0132\'.pipelines.runtime.v1alph" +
+      "a1.ApplicationR\017applicationData\022\'\n\017custo" +
+      "m_pipeline\030\033 \001(\010R\016customPipeline\022O\n\023befo" +
+      "re_deploy_tasks\030\034 \003(\0132\037.pipelines.tekton" +
+      ".v1alpha1.TaskR\021beforeDeployTasks\022M\n\022aft" +
+      "er_deploy_tasks\030\035 \003(\0132\037.pipelines.tekton" +
+      ".v1alpha1.TaskR\020afterDeployTasks\022(\n\020pod_" +
+      "ingress_cert\030\036 \001(\tR\016podIngressCert\0225\n\027is" +
+      "_not_exist_dockerfile\030\037 \001(\010R\024isNotExistD" +
+      "ockerfile\0229\n\006params\030  \003(\0132!.pipelines.te" +
+      "kton.v1alpha1.ParamsR\006params\022I\n\014pipeline" +
+      "_run\030! \001(\0132&.pipelines.tekton.v1alpha1.P" +
+      "ipelineRunR\013pipelineRun\022\031\n\010host_url\030\" \001(" +
+      "\tR\007hostUrl\022\033\n\tapp_label\030# \001(\tR\010appLabel\022" +
+      "\035\n\ncreated_at\030$ \001(\tR\tcreatedAt\022\035\n\nupdate" +
+      "d_at\030% \001(\tR\tupdatedAt\0224\n\026is_enabled_appl" +
+      "ication\030& \001(\010R\024isEnabledApplication\022\035\n\ni" +
+      "s_enabled\030\' \001(\010R\tisEnabled\022O\n\rconfigurat" +
+      "ion\030( \001(\0132).pipelines.runtime.v1alpha1.C" +
+      "onfigurationR\rconfiguration\022=\n\007scaling\030)" +
+      " \001(\0132#.pipelines.runtime.v1alpha1.Scalin" +
+      "gR\007scaling\022\031\n\010tag_name\030* \001(\tR\007tagName\022\027\n" +
+      "\007user_id\030+ \001(\tR\006userId\032>\n\020IntegrationEnt" +
       "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val" +
-      "ue:\0028\001\032;\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
-      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEn" +
-      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
-      "lue:\0028\001\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003" +
-      "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"H\n\013Runtime" +
-      "List\0229\n\005items\030\001 \003(\0132#.pipelines.runtime." +
-      "v1alpha1.RuntimeR\005items\"\206\001\n\013IntanceType\022" +
-      "\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022S\n\017r" +
-      "esources_rules\030\003 \003(\0132*.pipelines.runtime" +
-      ".v1alpha1.ResourcesRulesR\016resourcesRules" +
-      "\"\210\001\n\016ResourcesRules\0227\n\005limit\030\001 \003(\0132!.pip" +
-      "elines.runtime.v1alpha1.LimitR\005limit\022=\n\007" +
-      "request\030\002 \003(\0132#.pipelines.runtime.v1alph" +
-      "a1.RequestR\007request\"+\n\005Limit\022\020\n\003cpu\030\001 \001(" +
-      "\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"-\n\007Request\022\020\n\003c" +
-      "pu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"\205\001\n\013Pipe" +
-      "lineRun\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005label\030\002 \001" +
-      "(\tR\005label\022\034\n\tnamespace\030\003 \001(\tR\tnamespace\022" +
-      ".\n\023pipeline_run_status\030\004 \001(\tR\021pipelineRu" +
-      "nStatus*\314\001\n\024DockerImageBuildpack\022&\n\"DOCK" +
-      "ER_IMAGE_BUILDPACK_UNSPECIFIED\020\000\022!\n\035DOCK" +
-      "ER_IMAGE_BUILDPACK_GOLANG\020\001\022\037\n\033DOCKER_IM" +
-      "AGE_BUILDPACK_JAVA\020\002\022%\n!DOCKER_IMAGE_BUI" +
-      "LDPACK_JAVASCRIPT\020\003\022!\n\035DOCKER_IMAGE_BUIL" +
-      "DPACK_PYTHON\020\004*a\n\013TrafficType\022\034\n\030TRAFFIC" +
-      "_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYPE_EXTE" +
-      "RNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B\255\001\n$io" +
-      ".cuemby.pipelines.runtime.v1alpha1B\014Runt" +
-      "imeProtoP\001Z5github.com/cuemby/ccp-runtim" +
-      "e-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipeli" +
-      "nes.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime" +
-      "\\V1Alpha1b\006proto3"
+      "ue:\0028\001\032G\n\031EnvironmentVariablesEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032" +
+      ";\n\rCommandsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va" +
+      "lue\030\002 \001(\tR\005value:\0028\001\032:\n\014SecretsEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001" +
+      "\032<\n\016ExtraArgsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005" +
+      "value\030\002 \001(\tR\005value:\0028\001\"\362\002\n\rUpdateRuntime" +
+      "\022\'\n\017organization_id\030\001 \001(\tR\016organizationI" +
+      "d\022%\n\016application_id\030\002 \001(\tR\rapplicationId" +
+      "\022J\n\014traffic_type\030\003 \001(\0162\'.pipelines.runti" +
+      "me.v1alpha1.TrafficTypeR\013trafficType\022U\n\r" +
+      "configuration\030\004 \001(\0132/.pipelines.runtime." +
+      "v1alpha1.ConfigurationUpdateR\rconfigurat" +
+      "ion\022=\n\007scaling\030\005 \001(\0132#.pipelines.runtime" +
+      ".v1alpha1.ScalingR\007scaling\022\026\n\006branch\030\006 \001" +
+      "(\tR\006branch\022\027\n\007user_id\030\007 \001(\tR\006userId\"H\n\013R" +
+      "untimeList\0229\n\005items\030\001 \003(\0132#.pipelines.ru" +
+      "ntime.v1alpha1.RuntimeR\005items\"\206\001\n\013Intanc" +
+      "eType\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam" +
+      "e\022S\n\017resources_rules\030\003 \003(\0132*.pipelines.r" +
+      "untime.v1alpha1.ResourcesRulesR\016resource" +
+      "sRules\"\210\001\n\016ResourcesRules\0227\n\005limit\030\001 \003(\013" +
+      "2!.pipelines.runtime.v1alpha1.LimitR\005lim" +
+      "it\022=\n\007request\030\002 \003(\0132#.pipelines.runtime." +
+      "v1alpha1.RequestR\007request\"+\n\005Limit\022\020\n\003cp" +
+      "u\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"-\n\007Reques" +
+      "t\022\020\n\003cpu\030\001 \001(\tR\003cpu\022\020\n\003ram\030\002 \001(\tR\003ram\"\205\001" +
+      "\n\013PipelineRun\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005lab" +
+      "el\030\002 \001(\tR\005label\022\034\n\tnamespace\030\003 \001(\tR\tname" +
+      "space\022.\n\023pipeline_run_status\030\004 \001(\tR\021pipe" +
+      "lineRunStatus*\314\001\n\024DockerImageBuildpack\022&" +
+      "\n\"DOCKER_IMAGE_BUILDPACK_UNSPECIFIED\020\000\022!" +
+      "\n\035DOCKER_IMAGE_BUILDPACK_GOLANG\020\001\022\037\n\033DOC" +
+      "KER_IMAGE_BUILDPACK_JAVA\020\002\022%\n!DOCKER_IMA" +
+      "GE_BUILDPACK_JAVASCRIPT\020\003\022!\n\035DOCKER_IMAG" +
+      "E_BUILDPACK_PYTHON\020\004*a\n\013TrafficType\022\034\n\030T" +
+      "RAFFIC_TYPE_UNSPECIFIED\020\000\022\031\n\025TRAFFIC_TYP" +
+      "E_EXTERNAL\020\001\022\031\n\025TRAFFIC_TYPE_INTERNAL\020\002B" +
+      "\255\001\n$io.cuemby.pipelines.runtime.v1alpha1" +
+      "B\014RuntimeProtoP\001Z5github.com/cuemby/ccp-" +
+      "runtime-service/runtimev1alpha1\242\002\003PPX\252\002\032" +
+      "Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\R" +
+      "untime\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -302,26 +324,32 @@ public final class RuntimeProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Configuration_descriptor,
         new java.lang.String[] { "Envs", "Commands", "Port", "RuntimeType", });
-    internal_static_pipelines_runtime_v1alpha1_Scaling_descriptor =
+    internal_static_pipelines_runtime_v1alpha1_ConfigurationUpdate_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_pipelines_runtime_v1alpha1_ConfigurationUpdate_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_runtime_v1alpha1_ConfigurationUpdate_descriptor,
+        new java.lang.String[] { "Envs", "InstanceType", });
+    internal_static_pipelines_runtime_v1alpha1_Scaling_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_pipelines_runtime_v1alpha1_Scaling_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Scaling_descriptor,
         new java.lang.String[] { "CpuRule", "CoolDownPeriod", "PollingInterval", "MinReplica", "MaxReplica", "MemoryRule", });
     internal_static_pipelines_runtime_v1alpha1_ContainerRegistry_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_pipelines_runtime_v1alpha1_ContainerRegistry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_ContainerRegistry_descriptor,
         new java.lang.String[] { "RegistryUrl", "RegistryUser", "RegCredAuth", "ImageName", });
     internal_static_pipelines_runtime_v1alpha1_Application_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_pipelines_runtime_v1alpha1_Application_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Application_descriptor,
         new java.lang.String[] { "Id", "Name", "Integration", "Repository", "Configuration", "ProjectId", "NameProject", "ProjectImage", "ProjectDescription", "OrganizationId", "Scaling", "TrafficType", "IntegrationStatus", "DockerImageBuildpack", "NoDockerExists", "ContainerRegistry", "DockerImageName", "ApplicationStatus", });
     internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_pipelines_runtime_v1alpha1_Runtime_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_descriptor,
@@ -356,38 +384,44 @@ public final class RuntimeProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Runtime_ExtraArgsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_pipelines_runtime_v1alpha1_UpdateRuntime_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_pipelines_runtime_v1alpha1_UpdateRuntime_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_runtime_v1alpha1_UpdateRuntime_descriptor,
+        new java.lang.String[] { "OrganizationId", "ApplicationId", "TrafficType", "Configuration", "Scaling", "Branch", "UserId", });
     internal_static_pipelines_runtime_v1alpha1_RuntimeList_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_pipelines_runtime_v1alpha1_RuntimeList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_RuntimeList_descriptor,
         new java.lang.String[] { "Items", });
     internal_static_pipelines_runtime_v1alpha1_IntanceType_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_pipelines_runtime_v1alpha1_IntanceType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_IntanceType_descriptor,
         new java.lang.String[] { "Id", "Name", "ResourcesRules", });
     internal_static_pipelines_runtime_v1alpha1_ResourcesRules_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_pipelines_runtime_v1alpha1_ResourcesRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_ResourcesRules_descriptor,
         new java.lang.String[] { "Limit", "Request", });
     internal_static_pipelines_runtime_v1alpha1_Limit_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_pipelines_runtime_v1alpha1_Limit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Limit_descriptor,
         new java.lang.String[] { "Cpu", "Ram", });
     internal_static_pipelines_runtime_v1alpha1_Request_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_pipelines_runtime_v1alpha1_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_Request_descriptor,
         new java.lang.String[] { "Cpu", "Ram", });
     internal_static_pipelines_runtime_v1alpha1_PipelineRun_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_pipelines_runtime_v1alpha1_PipelineRun_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_PipelineRun_descriptor,

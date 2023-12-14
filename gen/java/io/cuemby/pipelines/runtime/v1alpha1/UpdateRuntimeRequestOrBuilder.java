@@ -8,19 +8,19 @@ public interface UpdateRuntimeRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+   * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
    * @return Whether the runtime field is set.
    */
   boolean hasRuntime();
   /**
-   * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+   * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
    * @return The runtime.
    */
-  io.cuemby.pipelines.runtime.v1alpha1.Runtime getRuntime();
+  io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime getRuntime();
   /**
-   * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+   * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
    */
-  io.cuemby.pipelines.runtime.v1alpha1.RuntimeOrBuilder getRuntimeOrBuilder();
+  io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntimeOrBuilder getRuntimeOrBuilder();
 
   /**
    * <code>string status = 2 [json_name = "status"];</code>

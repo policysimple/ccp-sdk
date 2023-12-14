@@ -51,11 +51,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            io.cuemby.pipelines.runtime.v1alpha1.Runtime.Builder subBuilder = null;
+            io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.Builder subBuilder = null;
             if (runtime_ != null) {
               subBuilder = runtime_.toBuilder();
             }
-            runtime_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.Runtime.parser(), extensionRegistry);
+            runtime_ = input.readMessage(io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(runtime_);
               runtime_ = subBuilder.buildPartial();
@@ -108,9 +108,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RUNTIME_FIELD_NUMBER = 1;
-  private io.cuemby.pipelines.runtime.v1alpha1.Runtime runtime_;
+  private io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime runtime_;
   /**
-   * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+   * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
    * @return Whether the runtime field is set.
    */
   @java.lang.Override
@@ -118,18 +118,18 @@ private static final long serialVersionUID = 0L;
     return runtime_ != null;
   }
   /**
-   * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+   * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
    * @return The runtime.
    */
   @java.lang.Override
-  public io.cuemby.pipelines.runtime.v1alpha1.Runtime getRuntime() {
-    return runtime_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Runtime.getDefaultInstance() : runtime_;
+  public io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime getRuntime() {
+    return runtime_ == null ? io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.getDefaultInstance() : runtime_;
   }
   /**
-   * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+   * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
    */
   @java.lang.Override
-  public io.cuemby.pipelines.runtime.v1alpha1.RuntimeOrBuilder getRuntimeOrBuilder() {
+  public io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntimeOrBuilder getRuntimeOrBuilder() {
     return getRuntime();
   }
 
@@ -558,31 +558,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.cuemby.pipelines.runtime.v1alpha1.Runtime runtime_;
+    private io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime runtime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.runtime.v1alpha1.Runtime, io.cuemby.pipelines.runtime.v1alpha1.Runtime.Builder, io.cuemby.pipelines.runtime.v1alpha1.RuntimeOrBuilder> runtimeBuilder_;
+        io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime, io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.Builder, io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntimeOrBuilder> runtimeBuilder_;
     /**
-     * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      * @return Whether the runtime field is set.
      */
     public boolean hasRuntime() {
       return runtimeBuilder_ != null || runtime_ != null;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      * @return The runtime.
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.Runtime getRuntime() {
+    public io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime getRuntime() {
       if (runtimeBuilder_ == null) {
-        return runtime_ == null ? io.cuemby.pipelines.runtime.v1alpha1.Runtime.getDefaultInstance() : runtime_;
+        return runtime_ == null ? io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.getDefaultInstance() : runtime_;
       } else {
         return runtimeBuilder_.getMessage();
       }
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      */
-    public Builder setRuntime(io.cuemby.pipelines.runtime.v1alpha1.Runtime value) {
+    public Builder setRuntime(io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime value) {
       if (runtimeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -596,10 +596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      */
     public Builder setRuntime(
-        io.cuemby.pipelines.runtime.v1alpha1.Runtime.Builder builderForValue) {
+        io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.Builder builderForValue) {
       if (runtimeBuilder_ == null) {
         runtime_ = builderForValue.build();
         onChanged();
@@ -610,13 +610,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      */
-    public Builder mergeRuntime(io.cuemby.pipelines.runtime.v1alpha1.Runtime value) {
+    public Builder mergeRuntime(io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime value) {
       if (runtimeBuilder_ == null) {
         if (runtime_ != null) {
           runtime_ =
-            io.cuemby.pipelines.runtime.v1alpha1.Runtime.newBuilder(runtime_).mergeFrom(value).buildPartial();
+            io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.newBuilder(runtime_).mergeFrom(value).buildPartial();
         } else {
           runtime_ = value;
         }
@@ -628,7 +628,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      */
     public Builder clearRuntime() {
       if (runtimeBuilder_ == null) {
@@ -642,33 +642,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.Runtime.Builder getRuntimeBuilder() {
+    public io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.Builder getRuntimeBuilder() {
       
       onChanged();
       return getRuntimeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      */
-    public io.cuemby.pipelines.runtime.v1alpha1.RuntimeOrBuilder getRuntimeOrBuilder() {
+    public io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntimeOrBuilder getRuntimeOrBuilder() {
       if (runtimeBuilder_ != null) {
         return runtimeBuilder_.getMessageOrBuilder();
       } else {
         return runtime_ == null ?
-            io.cuemby.pipelines.runtime.v1alpha1.Runtime.getDefaultInstance() : runtime_;
+            io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.getDefaultInstance() : runtime_;
       }
     }
     /**
-     * <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.cuemby.pipelines.runtime.v1alpha1.Runtime, io.cuemby.pipelines.runtime.v1alpha1.Runtime.Builder, io.cuemby.pipelines.runtime.v1alpha1.RuntimeOrBuilder> 
+        io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime, io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.Builder, io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntimeOrBuilder> 
         getRuntimeFieldBuilder() {
       if (runtimeBuilder_ == null) {
         runtimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.cuemby.pipelines.runtime.v1alpha1.Runtime, io.cuemby.pipelines.runtime.v1alpha1.Runtime.Builder, io.cuemby.pipelines.runtime.v1alpha1.RuntimeOrBuilder>(
+            io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime, io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntime.Builder, io.cuemby.pipelines.runtime.v1alpha1.UpdateRuntimeOrBuilder>(
                 getRuntime(),
                 getParentForChildren(),
                 isClean());

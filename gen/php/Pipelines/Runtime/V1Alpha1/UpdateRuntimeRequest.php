@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateRuntimeRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
      */
     protected $runtime = null;
     /**
@@ -32,7 +32,7 @@ class UpdateRuntimeRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Pipelines\Runtime\V1Alpha1\Runtime $runtime
+     *     @type \Pipelines\Runtime\V1Alpha1\UpdateRuntime $runtime
      *     @type string $status
      *     @type string $user_id
      * }
@@ -43,8 +43,8 @@ class UpdateRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
-     * @return \Pipelines\Runtime\V1Alpha1\Runtime|null
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
+     * @return \Pipelines\Runtime\V1Alpha1\UpdateRuntime|null
      */
     public function getRuntime()
     {
@@ -62,13 +62,13 @@ class UpdateRuntimeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];</code>
-     * @param \Pipelines\Runtime\V1Alpha1\Runtime $var
+     * Generated from protobuf field <code>.pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];</code>
+     * @param \Pipelines\Runtime\V1Alpha1\UpdateRuntime $var
      * @return $this
      */
     public function setRuntime($var)
     {
-        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\Runtime::class);
+        GPBUtil::checkMessage($var, \Pipelines\Runtime\V1Alpha1\UpdateRuntime::class);
         $this->runtime = $var;
 
         return $this;
