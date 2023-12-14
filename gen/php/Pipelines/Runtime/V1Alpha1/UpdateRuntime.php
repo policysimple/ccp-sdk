@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateRuntime extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      */
-    protected $organization_id = '';
+    protected $id = '';
     /**
      * Generated from protobuf field <code>string application_id = 2 [json_name = "applicationId"];</code>
      */
@@ -40,9 +40,13 @@ class UpdateRuntime extends \Google\Protobuf\Internal\Message
      */
     protected $branch = '';
     /**
-     * Generated from protobuf field <code>string user_id = 7 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string organization_id = 7 [json_name = "organizationId"];</code>
      */
-    protected $user_id = '';
+    protected $organization_id = '';
+    /**
+     * Generated from protobuf field <code>string project_id = 8 [json_name = "projectId"];</code>
+     */
+    protected $project_id = '';
 
     /**
      * Constructor.
@@ -50,13 +54,14 @@ class UpdateRuntime extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $organization_id
+     *     @type string $id
      *     @type string $application_id
      *     @type int $traffic_type
      *     @type \Pipelines\Runtime\V1Alpha1\ConfigurationUpdate $configuration
      *     @type \Pipelines\Runtime\V1Alpha1\Scaling $scaling
      *     @type string $branch
-     *     @type string $user_id
+     *     @type string $organization_id
+     *     @type string $project_id
      * }
      */
     public function __construct($data = NULL) {
@@ -65,23 +70,23 @@ class UpdateRuntime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      * @return string
      */
-    public function getOrganizationId()
+    public function getId()
     {
-        return $this->organization_id;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string id = 1 [json_name = "id"];</code>
      * @param string $var
      * @return $this
      */
-    public function setOrganizationId($var)
+    public function setId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->organization_id = $var;
+        $this->id = $var;
 
         return $this;
     }
@@ -217,23 +222,45 @@ class UpdateRuntime extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 7 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string organization_id = 7 [json_name = "organizationId"];</code>
      * @return string
      */
-    public function getUserId()
+    public function getOrganizationId()
     {
-        return $this->user_id;
+        return $this->organization_id;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 7 [json_name = "userId"];</code>
+     * Generated from protobuf field <code>string organization_id = 7 [json_name = "organizationId"];</code>
      * @param string $var
      * @return $this
      */
-    public function setUserId($var)
+    public function setOrganizationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_id = $var;
+        $this->organization_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 8 [json_name = "projectId"];</code>
+     * @return string
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 8 [json_name = "projectId"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_id = $var;
 
         return $this;
     }

@@ -8,16 +8,16 @@ public interface UpdateRuntimeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-   * @return The organizationId.
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The id.
    */
-  java.lang.String getOrganizationId();
+  java.lang.String getId();
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
-   * @return The bytes for organizationId.
+   * <code>string id = 1 [json_name = "id"];</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
-      getOrganizationIdBytes();
+      getIdBytes();
 
   /**
    * <code>string application_id = 2 [json_name = "applicationId"];</code>
@@ -85,14 +85,26 @@ public interface UpdateRuntimeOrBuilder extends
       getBranchBytes();
 
   /**
-   * <code>string user_id = 7 [json_name = "userId"];</code>
-   * @return The userId.
+   * <code>string organization_id = 7 [json_name = "organizationId"];</code>
+   * @return The organizationId.
    */
-  java.lang.String getUserId();
+  java.lang.String getOrganizationId();
   /**
-   * <code>string user_id = 7 [json_name = "userId"];</code>
-   * @return The bytes for userId.
+   * <code>string organization_id = 7 [json_name = "organizationId"];</code>
+   * @return The bytes for organizationId.
    */
   com.google.protobuf.ByteString
-      getUserIdBytes();
+      getOrganizationIdBytes();
+
+  /**
+   * <code>string project_id = 8 [json_name = "projectId"];</code>
+   * @return The projectId.
+   */
+  java.lang.String getProjectId();
+  /**
+   * <code>string project_id = 8 [json_name = "projectId"];</code>
+   * @return The bytes for projectId.
+   */
+  com.google.protobuf.ByteString
+      getProjectIdBytes();
 }
