@@ -46,7 +46,7 @@ message CreateRuntimeResponse {
 }
 
 message UpdateRuntimeRequest {
-    pipelines.runtime.v1alpha1.Runtime runtime = 1;
+    pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1;
     string status = 2;
     string user_id = 3;
 }

@@ -694,23 +694,23 @@ class UpdateRuntimeRequest final :
   std::string* _internal_mutable_user_id();
   public:
 
-  // .pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];
+  // .pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];
   bool has_runtime() const;
   private:
   bool _internal_has_runtime() const;
   public:
   void clear_runtime();
-  const ::pipelines::runtime::v1alpha1::Runtime& runtime() const;
-  PROTOBUF_MUST_USE_RESULT ::pipelines::runtime::v1alpha1::Runtime* release_runtime();
-  ::pipelines::runtime::v1alpha1::Runtime* mutable_runtime();
-  void set_allocated_runtime(::pipelines::runtime::v1alpha1::Runtime* runtime);
+  const ::pipelines::runtime::v1alpha1::UpdateRuntime& runtime() const;
+  PROTOBUF_MUST_USE_RESULT ::pipelines::runtime::v1alpha1::UpdateRuntime* release_runtime();
+  ::pipelines::runtime::v1alpha1::UpdateRuntime* mutable_runtime();
+  void set_allocated_runtime(::pipelines::runtime::v1alpha1::UpdateRuntime* runtime);
   private:
-  const ::pipelines::runtime::v1alpha1::Runtime& _internal_runtime() const;
-  ::pipelines::runtime::v1alpha1::Runtime* _internal_mutable_runtime();
+  const ::pipelines::runtime::v1alpha1::UpdateRuntime& _internal_runtime() const;
+  ::pipelines::runtime::v1alpha1::UpdateRuntime* _internal_mutable_runtime();
   public:
   void unsafe_arena_set_allocated_runtime(
-      ::pipelines::runtime::v1alpha1::Runtime* runtime);
-  ::pipelines::runtime::v1alpha1::Runtime* unsafe_arena_release_runtime();
+      ::pipelines::runtime::v1alpha1::UpdateRuntime* runtime);
+  ::pipelines::runtime::v1alpha1::UpdateRuntime* unsafe_arena_release_runtime();
 
   // @@protoc_insertion_point(class_scope:pipelines.runtime.v1alpha1.UpdateRuntimeRequest)
  private:
@@ -721,7 +721,7 @@ class UpdateRuntimeRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
-  ::pipelines::runtime::v1alpha1::Runtime* runtime_;
+  ::pipelines::runtime::v1alpha1::UpdateRuntime* runtime_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fruntime_2fv1alpha1_2fruntime_5fapi_2eproto;
 };
@@ -6067,24 +6067,24 @@ inline void CreateRuntimeResponse::set_allocated_status(std::string* status) {
 
 // UpdateRuntimeRequest
 
-// .pipelines.runtime.v1alpha1.Runtime runtime = 1 [json_name = "runtime"];
+// .pipelines.runtime.v1alpha1.UpdateRuntime runtime = 1 [json_name = "runtime"];
 inline bool UpdateRuntimeRequest::_internal_has_runtime() const {
   return this != internal_default_instance() && runtime_ != nullptr;
 }
 inline bool UpdateRuntimeRequest::has_runtime() const {
   return _internal_has_runtime();
 }
-inline const ::pipelines::runtime::v1alpha1::Runtime& UpdateRuntimeRequest::_internal_runtime() const {
-  const ::pipelines::runtime::v1alpha1::Runtime* p = runtime_;
-  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::runtime::v1alpha1::Runtime&>(
-      ::pipelines::runtime::v1alpha1::_Runtime_default_instance_);
+inline const ::pipelines::runtime::v1alpha1::UpdateRuntime& UpdateRuntimeRequest::_internal_runtime() const {
+  const ::pipelines::runtime::v1alpha1::UpdateRuntime* p = runtime_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::runtime::v1alpha1::UpdateRuntime&>(
+      ::pipelines::runtime::v1alpha1::_UpdateRuntime_default_instance_);
 }
-inline const ::pipelines::runtime::v1alpha1::Runtime& UpdateRuntimeRequest::runtime() const {
+inline const ::pipelines::runtime::v1alpha1::UpdateRuntime& UpdateRuntimeRequest::runtime() const {
   // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.runtime)
   return _internal_runtime();
 }
 inline void UpdateRuntimeRequest::unsafe_arena_set_allocated_runtime(
-    ::pipelines::runtime::v1alpha1::Runtime* runtime) {
+    ::pipelines::runtime::v1alpha1::UpdateRuntime* runtime) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(runtime_);
   }
@@ -6096,9 +6096,9 @@ inline void UpdateRuntimeRequest::unsafe_arena_set_allocated_runtime(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.runtime)
 }
-inline ::pipelines::runtime::v1alpha1::Runtime* UpdateRuntimeRequest::release_runtime() {
+inline ::pipelines::runtime::v1alpha1::UpdateRuntime* UpdateRuntimeRequest::release_runtime() {
   
-  ::pipelines::runtime::v1alpha1::Runtime* temp = runtime_;
+  ::pipelines::runtime::v1alpha1::UpdateRuntime* temp = runtime_;
   runtime_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -6111,27 +6111,27 @@ inline ::pipelines::runtime::v1alpha1::Runtime* UpdateRuntimeRequest::release_ru
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::pipelines::runtime::v1alpha1::Runtime* UpdateRuntimeRequest::unsafe_arena_release_runtime() {
+inline ::pipelines::runtime::v1alpha1::UpdateRuntime* UpdateRuntimeRequest::unsafe_arena_release_runtime() {
   // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.runtime)
   
-  ::pipelines::runtime::v1alpha1::Runtime* temp = runtime_;
+  ::pipelines::runtime::v1alpha1::UpdateRuntime* temp = runtime_;
   runtime_ = nullptr;
   return temp;
 }
-inline ::pipelines::runtime::v1alpha1::Runtime* UpdateRuntimeRequest::_internal_mutable_runtime() {
+inline ::pipelines::runtime::v1alpha1::UpdateRuntime* UpdateRuntimeRequest::_internal_mutable_runtime() {
   
   if (runtime_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pipelines::runtime::v1alpha1::Runtime>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::pipelines::runtime::v1alpha1::UpdateRuntime>(GetArenaForAllocation());
     runtime_ = p;
   }
   return runtime_;
 }
-inline ::pipelines::runtime::v1alpha1::Runtime* UpdateRuntimeRequest::mutable_runtime() {
-  ::pipelines::runtime::v1alpha1::Runtime* _msg = _internal_mutable_runtime();
+inline ::pipelines::runtime::v1alpha1::UpdateRuntime* UpdateRuntimeRequest::mutable_runtime() {
+  ::pipelines::runtime::v1alpha1::UpdateRuntime* _msg = _internal_mutable_runtime();
   // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.UpdateRuntimeRequest.runtime)
   return _msg;
 }
-inline void UpdateRuntimeRequest::set_allocated_runtime(::pipelines::runtime::v1alpha1::Runtime* runtime) {
+inline void UpdateRuntimeRequest::set_allocated_runtime(::pipelines::runtime::v1alpha1::UpdateRuntime* runtime) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(runtime_);

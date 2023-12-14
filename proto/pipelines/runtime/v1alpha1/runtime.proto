@@ -52,6 +52,11 @@ message Configuration {
   string runtime_type = 4;
 }
 
+message ConfigurationUpdate {
+  repeated Env envs = 1;
+  string instance_type = 2;
+}
+
 message Scaling  {
 	string cpu_rule = 1;
 	string cool_down_period = 2;  
@@ -149,6 +154,17 @@ message Runtime {
   Scaling scaling = 41;
   string tag_name = 42;
   string user_id = 43;
+}
+
+// Runtime ...
+message UpdateRuntime {
+  string organization_id = 1;
+  string application_id = 2;
+  TrafficType traffic_type = 3;
+  ConfigurationUpdate configuration = 4;
+  Scaling scaling = 5;
+  string branch = 6;
+  string user_id = 7;
 }
 
 message RuntimeList {
