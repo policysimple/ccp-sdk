@@ -158,13 +158,14 @@ message Runtime {
 
 // Runtime ...
 message UpdateRuntime {
-  string organization_id = 1;
+  string id = 1;
   string application_id = 2;
   TrafficType traffic_type = 3;
   ConfigurationUpdate configuration = 4;
   Scaling scaling = 5;
   string branch = 6;
-  string user_id = 7;
+  string organization_id = 7;
+  string project_id = 8;
 }
 
 message RuntimeList {
