@@ -35,3 +35,9 @@ message ArtifactsRegistry {
     string user = 15;
     string user_email = 16;
 }
+
+message LabelArtifacts{
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+}

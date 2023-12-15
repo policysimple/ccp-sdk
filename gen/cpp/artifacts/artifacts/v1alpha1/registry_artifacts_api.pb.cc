@@ -46,10 +46,60 @@ struct ListArtifactsRegistryResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListArtifactsRegistryResponseDefaultTypeInternal _ListArtifactsRegistryResponse_default_instance_;
+constexpr CreateLabelArtifactsRegistryRequest::CreateLabelArtifactsRegistryRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct CreateLabelArtifactsRegistryRequestDefaultTypeInternal {
+  constexpr CreateLabelArtifactsRegistryRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateLabelArtifactsRegistryRequestDefaultTypeInternal() {}
+  union {
+    CreateLabelArtifactsRegistryRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateLabelArtifactsRegistryRequestDefaultTypeInternal _CreateLabelArtifactsRegistryRequest_default_instance_;
+constexpr CreateLabelArtifactsRegistryResponse::CreateLabelArtifactsRegistryResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , label_artifacts_(nullptr){}
+struct CreateLabelArtifactsRegistryResponseDefaultTypeInternal {
+  constexpr CreateLabelArtifactsRegistryResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateLabelArtifactsRegistryResponseDefaultTypeInternal() {}
+  union {
+    CreateLabelArtifactsRegistryResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateLabelArtifactsRegistryResponseDefaultTypeInternal _CreateLabelArtifactsRegistryResponse_default_instance_;
+constexpr AddLabelArtifactsRegistryRequest::AddLabelArtifactsRegistryRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : label_id_(0){}
+struct AddLabelArtifactsRegistryRequestDefaultTypeInternal {
+  constexpr AddLabelArtifactsRegistryRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AddLabelArtifactsRegistryRequestDefaultTypeInternal() {}
+  union {
+    AddLabelArtifactsRegistryRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddLabelArtifactsRegistryRequestDefaultTypeInternal _AddLabelArtifactsRegistryRequest_default_instance_;
+constexpr AddLabelArtifactsRegistryResponse::AddLabelArtifactsRegistryResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct AddLabelArtifactsRegistryResponseDefaultTypeInternal {
+  constexpr AddLabelArtifactsRegistryResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AddLabelArtifactsRegistryResponseDefaultTypeInternal() {}
+  union {
+    AddLabelArtifactsRegistryResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddLabelArtifactsRegistryResponseDefaultTypeInternal _AddLabelArtifactsRegistryResponse_default_instance_;
 }  // namespace v1alpha1
 }  // namespace artifacts
 }  // namespace artifacts
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto[2];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto[6];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto = nullptr;
 
@@ -69,15 +119,49 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_artifacts_2fartifacts_2fv1alph
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse, artifacts_registry_),
   PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse, status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest, username_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest, email_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse, label_artifacts_),
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse, status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest, label_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse, status_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest)},
   { 8, -1, sizeof(::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse)},
+  { 15, -1, sizeof(::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest)},
+  { 22, -1, sizeof(::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse)},
+  { 29, -1, sizeof(::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest)},
+  { 35, -1, sizeof(::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::artifacts::artifacts::v1alpha1::_ListArtifactsRegistryRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::artifacts::artifacts::v1alpha1::_ListArtifactsRegistryResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::artifacts::artifacts::v1alpha1::_CreateLabelArtifactsRegistryRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::artifacts::artifacts::v1alpha1::_CreateLabelArtifactsRegistryResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::artifacts::artifacts::v1alpha1::_AddLabelArtifactsRegistryRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::artifacts::artifacts::v1alpha1::_AddLabelArtifactsRegistryResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -91,25 +175,42 @@ const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry
   "\"\227\001\n\035ListArtifactsRegistryResponse\022^\n\022ar"
   "tifacts_registry\030\001 \003(\0132/.artifacts.artif"
   "acts.v1alpha1.ArtifactsRegistryR\021artifac"
-  "tsRegistry\022\026\n\006status\030\002 \001(\tR\006status2\260\001\n\033R"
-  "egistryArtifactsAPIService\022\220\001\n\025ListArtif"
-  "actsRegistry\022:.artifacts.artifacts.v1alp"
-  "ha1.ListArtifactsRegistryRequest\032;.artif"
-  "acts.artifacts.v1alpha1.ListArtifactsReg"
-  "istryResponseB\310\001\n&io.cuemby.artifacts.ar"
-  "tifacts.v1alpha1B\031RegistryArtifactsProto"
-  "APIP\001Z=github.com/cuemby/ccp-sdk/gen/go/"
-  "artifacts/artifacts/v1alpha1\242\002\003PPX\252\002\034Art"
-  "ifacts.Artifacts.V1Alpha1\312\002\034Artifacts\\Ar"
-  "tifacts\\V1Alpha1b\006proto3"
+  "tsRegistry\022\026\n\006status\030\002 \001(\tR\006status\"W\n#Cr"
+  "eateLabelArtifactsRegistryRequest\022\032\n\010use"
+  "rname\030\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005em"
+  "ail\"\225\001\n$CreateLabelArtifactsRegistryResp"
+  "onse\022U\n\017label_artifacts\030\001 \001(\0132,.artifact"
+  "s.artifacts.v1alpha1.LabelArtifactsR\016lab"
+  "elArtifacts\022\026\n\006status\030\002 \001(\tR\006status\"=\n A"
+  "ddLabelArtifactsRegistryRequest\022\031\n\010label"
+  "_id\030\001 \001(\005R\007labelId\";\n!AddLabelArtifactsR"
+  "egistryResponse\022\026\n\006status\030\001 \001(\tR\006status2"
+  "\367\003\n\033RegistryArtifactsAPIService\022\220\001\n\025List"
+  "ArtifactsRegistry\022:.artifacts.artifacts."
+  "v1alpha1.ListArtifactsRegistryRequest\032;."
+  "artifacts.artifacts.v1alpha1.ListArtifac"
+  "tsRegistryResponse\022\245\001\n\034CreateLabelArtifa"
+  "ctsRegistry\022A.artifacts.artifacts.v1alph"
+  "a1.CreateLabelArtifactsRegistryRequest\032B"
+  ".artifacts.artifacts.v1alpha1.CreateLabe"
+  "lArtifactsRegistryResponse\022\234\001\n\031AddLabelA"
+  "rtifactsRegistry\022>.artifacts.artifacts.v"
+  "1alpha1.AddLabelArtifactsRegistryRequest"
+  "\032\?.artifacts.artifacts.v1alpha1.AddLabel"
+  "ArtifactsRegistryResponseB\310\001\n&io.cuemby."
+  "artifacts.artifacts.v1alpha1B\031RegistryAr"
+  "tifactsProtoAPIP\001Z=github.com/cuemby/ccp"
+  "-sdk/gen/go/artifacts/artifacts/v1alpha1"
+  "\242\002\003PPX\252\002\034Artifacts.Artifacts.V1Alpha1\312\002\034"
+  "Artifacts\\Artifacts\\V1Alpha1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_deps[1] = {
   &::descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto = {
-  false, false, 824, descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto, "artifacts/artifacts/v1alpha1/registry_artifacts_api.proto", 
-  &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_once, descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_deps, 1, 2,
+  false, false, 1516, descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto, "artifacts/artifacts/v1alpha1/registry_artifacts_api.proto", 
+  &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_once, descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_deps, 1, 6,
   schemas, file_default_instances, TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto::offsets,
   file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto, file_level_enum_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto, file_level_service_descriptors_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto,
 };
@@ -642,6 +743,881 @@ void ListArtifactsRegistryResponse::InternalSwap(ListArtifactsRegistryResponse* 
       file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto[1]);
 }
 
+// ===================================================================
+
+class CreateLabelArtifactsRegistryRequest::_Internal {
+ public:
+};
+
+CreateLabelArtifactsRegistryRequest::CreateLabelArtifactsRegistryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+}
+CreateLabelArtifactsRegistryRequest::CreateLabelArtifactsRegistryRequest(const CreateLabelArtifactsRegistryRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_username().empty()) {
+    username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_username(), 
+      GetArenaForAllocation());
+  }
+  email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_email().empty()) {
+    email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+}
+
+inline void CreateLabelArtifactsRegistryRequest::SharedCtor() {
+username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+CreateLabelArtifactsRegistryRequest::~CreateLabelArtifactsRegistryRequest() {
+  // @@protoc_insertion_point(destructor:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void CreateLabelArtifactsRegistryRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  username_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void CreateLabelArtifactsRegistryRequest::ArenaDtor(void* object) {
+  CreateLabelArtifactsRegistryRequest* _this = reinterpret_cast< CreateLabelArtifactsRegistryRequest* >(object);
+  (void)_this;
+}
+void CreateLabelArtifactsRegistryRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void CreateLabelArtifactsRegistryRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void CreateLabelArtifactsRegistryRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  username_.ClearToEmpty();
+  email_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CreateLabelArtifactsRegistryRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string username = 1 [json_name = "username"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_username();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest.username"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string email = 2 [json_name = "email"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_email();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest.email"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* CreateLabelArtifactsRegistryRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string username = 1 [json_name = "username"];
+  if (!this->_internal_username().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_username().data(), static_cast<int>(this->_internal_username().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest.username");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_username(), target);
+  }
+
+  // string email = 2 [json_name = "email"];
+  if (!this->_internal_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest.email");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_email(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+  return target;
+}
+
+size_t CreateLabelArtifactsRegistryRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string username = 1 [json_name = "username"];
+  if (!this->_internal_username().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_username());
+  }
+
+  // string email = 2 [json_name = "email"];
+  if (!this->_internal_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_email());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateLabelArtifactsRegistryRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    CreateLabelArtifactsRegistryRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateLabelArtifactsRegistryRequest::GetClassData() const { return &_class_data_; }
+
+void CreateLabelArtifactsRegistryRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<CreateLabelArtifactsRegistryRequest *>(to)->MergeFrom(
+      static_cast<const CreateLabelArtifactsRegistryRequest &>(from));
+}
+
+
+void CreateLabelArtifactsRegistryRequest::MergeFrom(const CreateLabelArtifactsRegistryRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_username().empty()) {
+    _internal_set_username(from._internal_username());
+  }
+  if (!from._internal_email().empty()) {
+    _internal_set_email(from._internal_email());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CreateLabelArtifactsRegistryRequest::CopyFrom(const CreateLabelArtifactsRegistryRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CreateLabelArtifactsRegistryRequest::IsInitialized() const {
+  return true;
+}
+
+void CreateLabelArtifactsRegistryRequest::InternalSwap(CreateLabelArtifactsRegistryRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &username_, GetArenaForAllocation(),
+      &other->username_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &email_, GetArenaForAllocation(),
+      &other->email_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CreateLabelArtifactsRegistryRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_getter, &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_once,
+      file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto[2]);
+}
+
+// ===================================================================
+
+class CreateLabelArtifactsRegistryResponse::_Internal {
+ public:
+  static const ::artifacts::artifacts::v1alpha1::LabelArtifacts& label_artifacts(const CreateLabelArtifactsRegistryResponse* msg);
+};
+
+const ::artifacts::artifacts::v1alpha1::LabelArtifacts&
+CreateLabelArtifactsRegistryResponse::_Internal::label_artifacts(const CreateLabelArtifactsRegistryResponse* msg) {
+  return *msg->label_artifacts_;
+}
+void CreateLabelArtifactsRegistryResponse::clear_label_artifacts() {
+  if (GetArenaForAllocation() == nullptr && label_artifacts_ != nullptr) {
+    delete label_artifacts_;
+  }
+  label_artifacts_ = nullptr;
+}
+CreateLabelArtifactsRegistryResponse::CreateLabelArtifactsRegistryResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+}
+CreateLabelArtifactsRegistryResponse::CreateLabelArtifactsRegistryResponse(const CreateLabelArtifactsRegistryResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_label_artifacts()) {
+    label_artifacts_ = new ::artifacts::artifacts::v1alpha1::LabelArtifacts(*from.label_artifacts_);
+  } else {
+    label_artifacts_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+}
+
+inline void CreateLabelArtifactsRegistryResponse::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+label_artifacts_ = nullptr;
+}
+
+CreateLabelArtifactsRegistryResponse::~CreateLabelArtifactsRegistryResponse() {
+  // @@protoc_insertion_point(destructor:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void CreateLabelArtifactsRegistryResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete label_artifacts_;
+}
+
+void CreateLabelArtifactsRegistryResponse::ArenaDtor(void* object) {
+  CreateLabelArtifactsRegistryResponse* _this = reinterpret_cast< CreateLabelArtifactsRegistryResponse* >(object);
+  (void)_this;
+}
+void CreateLabelArtifactsRegistryResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void CreateLabelArtifactsRegistryResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void CreateLabelArtifactsRegistryResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  status_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && label_artifacts_ != nullptr) {
+    delete label_artifacts_;
+  }
+  label_artifacts_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CreateLabelArtifactsRegistryResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .artifacts.artifacts.v1alpha1.LabelArtifacts label_artifacts = 1 [json_name = "labelArtifacts"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_label_artifacts(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse.status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* CreateLabelArtifactsRegistryResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .artifacts.artifacts.v1alpha1.LabelArtifacts label_artifacts = 1 [json_name = "labelArtifacts"];
+  if (this->_internal_has_label_artifacts()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::label_artifacts(this), target, stream);
+  }
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+  return target;
+}
+
+size_t CreateLabelArtifactsRegistryResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string status = 2 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  // .artifacts.artifacts.v1alpha1.LabelArtifacts label_artifacts = 1 [json_name = "labelArtifacts"];
+  if (this->_internal_has_label_artifacts()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *label_artifacts_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CreateLabelArtifactsRegistryResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    CreateLabelArtifactsRegistryResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CreateLabelArtifactsRegistryResponse::GetClassData() const { return &_class_data_; }
+
+void CreateLabelArtifactsRegistryResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<CreateLabelArtifactsRegistryResponse *>(to)->MergeFrom(
+      static_cast<const CreateLabelArtifactsRegistryResponse &>(from));
+}
+
+
+void CreateLabelArtifactsRegistryResponse::MergeFrom(const CreateLabelArtifactsRegistryResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
+  if (from._internal_has_label_artifacts()) {
+    _internal_mutable_label_artifacts()->::artifacts::artifacts::v1alpha1::LabelArtifacts::MergeFrom(from._internal_label_artifacts());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CreateLabelArtifactsRegistryResponse::CopyFrom(const CreateLabelArtifactsRegistryResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CreateLabelArtifactsRegistryResponse::IsInitialized() const {
+  return true;
+}
+
+void CreateLabelArtifactsRegistryResponse::InternalSwap(CreateLabelArtifactsRegistryResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
+  swap(label_artifacts_, other->label_artifacts_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CreateLabelArtifactsRegistryResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_getter, &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_once,
+      file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto[3]);
+}
+
+// ===================================================================
+
+class AddLabelArtifactsRegistryRequest::_Internal {
+ public:
+};
+
+AddLabelArtifactsRegistryRequest::AddLabelArtifactsRegistryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+}
+AddLabelArtifactsRegistryRequest::AddLabelArtifactsRegistryRequest(const AddLabelArtifactsRegistryRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  label_id_ = from.label_id_;
+  // @@protoc_insertion_point(copy_constructor:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+}
+
+inline void AddLabelArtifactsRegistryRequest::SharedCtor() {
+label_id_ = 0;
+}
+
+AddLabelArtifactsRegistryRequest::~AddLabelArtifactsRegistryRequest() {
+  // @@protoc_insertion_point(destructor:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void AddLabelArtifactsRegistryRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void AddLabelArtifactsRegistryRequest::ArenaDtor(void* object) {
+  AddLabelArtifactsRegistryRequest* _this = reinterpret_cast< AddLabelArtifactsRegistryRequest* >(object);
+  (void)_this;
+}
+void AddLabelArtifactsRegistryRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AddLabelArtifactsRegistryRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void AddLabelArtifactsRegistryRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  label_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AddLabelArtifactsRegistryRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 label_id = 1 [json_name = "labelId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          label_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddLabelArtifactsRegistryRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 label_id = 1 [json_name = "labelId"];
+  if (this->_internal_label_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_label_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+  return target;
+}
+
+size_t AddLabelArtifactsRegistryRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 label_id = 1 [json_name = "labelId"];
+  if (this->_internal_label_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_label_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddLabelArtifactsRegistryRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AddLabelArtifactsRegistryRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddLabelArtifactsRegistryRequest::GetClassData() const { return &_class_data_; }
+
+void AddLabelArtifactsRegistryRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<AddLabelArtifactsRegistryRequest *>(to)->MergeFrom(
+      static_cast<const AddLabelArtifactsRegistryRequest &>(from));
+}
+
+
+void AddLabelArtifactsRegistryRequest::MergeFrom(const AddLabelArtifactsRegistryRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_label_id() != 0) {
+    _internal_set_label_id(from._internal_label_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AddLabelArtifactsRegistryRequest::CopyFrom(const AddLabelArtifactsRegistryRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddLabelArtifactsRegistryRequest::IsInitialized() const {
+  return true;
+}
+
+void AddLabelArtifactsRegistryRequest::InternalSwap(AddLabelArtifactsRegistryRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(label_id_, other->label_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddLabelArtifactsRegistryRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_getter, &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_once,
+      file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto[4]);
+}
+
+// ===================================================================
+
+class AddLabelArtifactsRegistryResponse::_Internal {
+ public:
+};
+
+AddLabelArtifactsRegistryResponse::AddLabelArtifactsRegistryResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+}
+AddLabelArtifactsRegistryResponse::AddLabelArtifactsRegistryResponse(const AddLabelArtifactsRegistryResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_status().empty()) {
+    status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+}
+
+inline void AddLabelArtifactsRegistryResponse::SharedCtor() {
+status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+AddLabelArtifactsRegistryResponse::~AddLabelArtifactsRegistryResponse() {
+  // @@protoc_insertion_point(destructor:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void AddLabelArtifactsRegistryResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AddLabelArtifactsRegistryResponse::ArenaDtor(void* object) {
+  AddLabelArtifactsRegistryResponse* _this = reinterpret_cast< AddLabelArtifactsRegistryResponse* >(object);
+  (void)_this;
+}
+void AddLabelArtifactsRegistryResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AddLabelArtifactsRegistryResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void AddLabelArtifactsRegistryResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  status_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AddLabelArtifactsRegistryResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string status = 1 [json_name = "status"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_status();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse.status"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddLabelArtifactsRegistryResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string status = 1 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse.status");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_status(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+  return target;
+}
+
+size_t AddLabelArtifactsRegistryResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string status = 1 [json_name = "status"];
+  if (!this->_internal_status().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_status());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddLabelArtifactsRegistryResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AddLabelArtifactsRegistryResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddLabelArtifactsRegistryResponse::GetClassData() const { return &_class_data_; }
+
+void AddLabelArtifactsRegistryResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<AddLabelArtifactsRegistryResponse *>(to)->MergeFrom(
+      static_cast<const AddLabelArtifactsRegistryResponse &>(from));
+}
+
+
+void AddLabelArtifactsRegistryResponse::MergeFrom(const AddLabelArtifactsRegistryResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_status().empty()) {
+    _internal_set_status(from._internal_status());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AddLabelArtifactsRegistryResponse::CopyFrom(const AddLabelArtifactsRegistryResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddLabelArtifactsRegistryResponse::IsInitialized() const {
+  return true;
+}
+
+void AddLabelArtifactsRegistryResponse::InternalSwap(AddLabelArtifactsRegistryResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &status_, GetArenaForAllocation(),
+      &other->status_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddLabelArtifactsRegistryResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_getter, &descriptor_table_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto_once,
+      file_level_metadata_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto[5]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1alpha1
 }  // namespace artifacts
@@ -652,6 +1628,18 @@ template<> PROTOBUF_NOINLINE ::artifacts::artifacts::v1alpha1::ListArtifactsRegi
 }
 template<> PROTOBUF_NOINLINE ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse* Arena::CreateMaybeMessage< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* Arena::CreateMaybeMessage< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* Arena::CreateMaybeMessage< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* Arena::CreateMaybeMessage< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* Arena::CreateMaybeMessage< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

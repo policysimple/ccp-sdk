@@ -19,6 +19,16 @@ class RegistryArtifactsAPIServiceStub(object):
         request_serializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.ListArtifactsRegistryRequest.SerializeToString,
         response_deserializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.ListArtifactsRegistryResponse.FromString,
         )
+    self.CreateLabelArtifactsRegistry = channel.unary_unary(
+        '/artifacts.artifacts.v1alpha1.RegistryArtifactsAPIService/CreateLabelArtifactsRegistry',
+        request_serializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.CreateLabelArtifactsRegistryRequest.SerializeToString,
+        response_deserializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.CreateLabelArtifactsRegistryResponse.FromString,
+        )
+    self.AddLabelArtifactsRegistry = channel.unary_unary(
+        '/artifacts.artifacts.v1alpha1.RegistryArtifactsAPIService/AddLabelArtifactsRegistry',
+        request_serializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.AddLabelArtifactsRegistryRequest.SerializeToString,
+        response_deserializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.AddLabelArtifactsRegistryResponse.FromString,
+        )
 
 
 class RegistryArtifactsAPIServiceServicer(object):
@@ -32,6 +42,20 @@ class RegistryArtifactsAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateLabelArtifactsRegistry(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def AddLabelArtifactsRegistry(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_RegistryArtifactsAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -39,6 +63,16 @@ def add_RegistryArtifactsAPIServiceServicer_to_server(servicer, server):
           servicer.ListArtifactsRegistry,
           request_deserializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.ListArtifactsRegistryRequest.FromString,
           response_serializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.ListArtifactsRegistryResponse.SerializeToString,
+      ),
+      'CreateLabelArtifactsRegistry': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateLabelArtifactsRegistry,
+          request_deserializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.CreateLabelArtifactsRegistryRequest.FromString,
+          response_serializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.CreateLabelArtifactsRegistryResponse.SerializeToString,
+      ),
+      'AddLabelArtifactsRegistry': grpc.unary_unary_rpc_method_handler(
+          servicer.AddLabelArtifactsRegistry,
+          request_deserializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.AddLabelArtifactsRegistryRequest.FromString,
+          response_serializer=artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__api__pb2.AddLabelArtifactsRegistryResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

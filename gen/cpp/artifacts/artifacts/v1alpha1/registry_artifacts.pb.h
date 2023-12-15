@@ -46,7 +46,7 @@ struct TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2epro
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,6 +59,9 @@ namespace v1alpha1 {
 class ArtifactsRegistry;
 struct ArtifactsRegistryDefaultTypeInternal;
 extern ArtifactsRegistryDefaultTypeInternal _ArtifactsRegistry_default_instance_;
+class LabelArtifacts;
+struct LabelArtifactsDefaultTypeInternal;
+extern LabelArtifactsDefaultTypeInternal _LabelArtifacts_default_instance_;
 class Tags;
 struct TagsDefaultTypeInternal;
 extern TagsDefaultTypeInternal _Tags_default_instance_;
@@ -67,6 +70,7 @@ extern TagsDefaultTypeInternal _Tags_default_instance_;
 }  // namespace artifacts
 PROTOBUF_NAMESPACE_OPEN
 template<> ::artifacts::artifacts::v1alpha1::ArtifactsRegistry* Arena::CreateMaybeMessage<::artifacts::artifacts::v1alpha1::ArtifactsRegistry>(Arena*);
+template<> ::artifacts::artifacts::v1alpha1::LabelArtifacts* Arena::CreateMaybeMessage<::artifacts::artifacts::v1alpha1::LabelArtifacts>(Arena*);
 template<> ::artifacts::artifacts::v1alpha1::Tags* Arena::CreateMaybeMessage<::artifacts::artifacts::v1alpha1::Tags>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace artifacts {
@@ -630,6 +634,177 @@ class ArtifactsRegistry final :
   ::PROTOBUF_NAMESPACE_ID::int64 size_;
   bool active_;
   bool current_tag_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LabelArtifacts final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:artifacts.artifacts.v1alpha1.LabelArtifacts) */ {
+ public:
+  inline LabelArtifacts() : LabelArtifacts(nullptr) {}
+  ~LabelArtifacts() override;
+  explicit constexpr LabelArtifacts(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  LabelArtifacts(const LabelArtifacts& from);
+  LabelArtifacts(LabelArtifacts&& from) noexcept
+    : LabelArtifacts() {
+    *this = ::std::move(from);
+  }
+
+  inline LabelArtifacts& operator=(const LabelArtifacts& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LabelArtifacts& operator=(LabelArtifacts&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const LabelArtifacts& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const LabelArtifacts* internal_default_instance() {
+    return reinterpret_cast<const LabelArtifacts*>(
+               &_LabelArtifacts_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(LabelArtifacts& a, LabelArtifacts& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LabelArtifacts* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LabelArtifacts* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LabelArtifacts* New() const final {
+    return new LabelArtifacts();
+  }
+
+  LabelArtifacts* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LabelArtifacts>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const LabelArtifacts& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const LabelArtifacts& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LabelArtifacts* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "artifacts.artifacts.v1alpha1.LabelArtifacts";
+  }
+  protected:
+  explicit LabelArtifacts(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 2,
+    kDescriptionFieldNumber = 3,
+    kIdFieldNumber = 1,
+  };
+  // string name = 2 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string description = 3 [json_name = "description"];
+  void clear_description();
+  const std::string& description() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_description(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_description();
+  PROTOBUF_MUST_USE_RESULT std::string* release_description();
+  void set_allocated_description(std::string* description);
+  private:
+  const std::string& _internal_description() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_description(const std::string& value);
+  std::string* _internal_mutable_description();
+  public:
+
+  // int32 id = 1 [json_name = "id"];
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:artifacts.artifacts.v1alpha1.LabelArtifacts)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::PROTOBUF_NAMESPACE_ID::int32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto;
 };
@@ -1458,9 +1633,127 @@ inline void ArtifactsRegistry::set_allocated_user_email(std::string* user_email)
   // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.ArtifactsRegistry.user_email)
 }
 
+// -------------------------------------------------------------------
+
+// LabelArtifacts
+
+// int32 id = 1 [json_name = "id"];
+inline void LabelArtifacts::clear_id() {
+  id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 LabelArtifacts::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 LabelArtifacts::id() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.LabelArtifacts.id)
+  return _internal_id();
+}
+inline void LabelArtifacts::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  id_ = value;
+}
+inline void LabelArtifacts::set_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.LabelArtifacts.id)
+}
+
+// string name = 2 [json_name = "name"];
+inline void LabelArtifacts::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& LabelArtifacts::name() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.LabelArtifacts.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LabelArtifacts::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.LabelArtifacts.name)
+}
+inline std::string* LabelArtifacts::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.LabelArtifacts.name)
+  return _s;
+}
+inline const std::string& LabelArtifacts::_internal_name() const {
+  return name_.Get();
+}
+inline void LabelArtifacts::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* LabelArtifacts::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* LabelArtifacts::release_name() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.LabelArtifacts.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void LabelArtifacts::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.LabelArtifacts.name)
+}
+
+// string description = 3 [json_name = "description"];
+inline void LabelArtifacts::clear_description() {
+  description_.ClearToEmpty();
+}
+inline const std::string& LabelArtifacts::description() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.LabelArtifacts.description)
+  return _internal_description();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LabelArtifacts::set_description(ArgT0&& arg0, ArgT... args) {
+ 
+ description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.LabelArtifacts.description)
+}
+inline std::string* LabelArtifacts::mutable_description() {
+  std::string* _s = _internal_mutable_description();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.LabelArtifacts.description)
+  return _s;
+}
+inline const std::string& LabelArtifacts::_internal_description() const {
+  return description_.Get();
+}
+inline void LabelArtifacts::_internal_set_description(const std::string& value) {
+  
+  description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* LabelArtifacts::_internal_mutable_description() {
+  
+  return description_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* LabelArtifacts::release_description() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.LabelArtifacts.description)
+  return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void LabelArtifacts::set_allocated_description(std::string* description) {
+  if (description != nullptr) {
+    
+  } else {
+    
+  }
+  description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.LabelArtifacts.description)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

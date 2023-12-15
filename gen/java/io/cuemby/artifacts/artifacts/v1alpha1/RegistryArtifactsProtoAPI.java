@@ -24,6 +24,26 @@ public final class RegistryArtifactsProtoAPI {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_artifacts_artifacts_v1alpha1_ListArtifactsRegistryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -43,17 +63,34 @@ public final class RegistryArtifactsProtoAPI {
       "\"\227\001\n\035ListArtifactsRegistryResponse\022^\n\022ar" +
       "tifacts_registry\030\001 \003(\0132/.artifacts.artif" +
       "acts.v1alpha1.ArtifactsRegistryR\021artifac" +
-      "tsRegistry\022\026\n\006status\030\002 \001(\tR\006status2\260\001\n\033R" +
-      "egistryArtifactsAPIService\022\220\001\n\025ListArtif" +
-      "actsRegistry\022:.artifacts.artifacts.v1alp" +
-      "ha1.ListArtifactsRegistryRequest\032;.artif" +
-      "acts.artifacts.v1alpha1.ListArtifactsReg" +
-      "istryResponseB\310\001\n&io.cuemby.artifacts.ar" +
-      "tifacts.v1alpha1B\031RegistryArtifactsProto" +
-      "APIP\001Z=github.com/cuemby/ccp-sdk/gen/go/" +
-      "artifacts/artifacts/v1alpha1\242\002\003PPX\252\002\034Art" +
-      "ifacts.Artifacts.V1Alpha1\312\002\034Artifacts\\Ar" +
-      "tifacts\\V1Alpha1b\006proto3"
+      "tsRegistry\022\026\n\006status\030\002 \001(\tR\006status\"W\n#Cr" +
+      "eateLabelArtifactsRegistryRequest\022\032\n\010use" +
+      "rname\030\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005em" +
+      "ail\"\225\001\n$CreateLabelArtifactsRegistryResp" +
+      "onse\022U\n\017label_artifacts\030\001 \001(\0132,.artifact" +
+      "s.artifacts.v1alpha1.LabelArtifactsR\016lab" +
+      "elArtifacts\022\026\n\006status\030\002 \001(\tR\006status\"=\n A" +
+      "ddLabelArtifactsRegistryRequest\022\031\n\010label" +
+      "_id\030\001 \001(\005R\007labelId\";\n!AddLabelArtifactsR" +
+      "egistryResponse\022\026\n\006status\030\001 \001(\tR\006status2" +
+      "\367\003\n\033RegistryArtifactsAPIService\022\220\001\n\025List" +
+      "ArtifactsRegistry\022:.artifacts.artifacts." +
+      "v1alpha1.ListArtifactsRegistryRequest\032;." +
+      "artifacts.artifacts.v1alpha1.ListArtifac" +
+      "tsRegistryResponse\022\245\001\n\034CreateLabelArtifa" +
+      "ctsRegistry\022A.artifacts.artifacts.v1alph" +
+      "a1.CreateLabelArtifactsRegistryRequest\032B" +
+      ".artifacts.artifacts.v1alpha1.CreateLabe" +
+      "lArtifactsRegistryResponse\022\234\001\n\031AddLabelA" +
+      "rtifactsRegistry\022>.artifacts.artifacts.v" +
+      "1alpha1.AddLabelArtifactsRegistryRequest" +
+      "\032?.artifacts.artifacts.v1alpha1.AddLabel" +
+      "ArtifactsRegistryResponseB\310\001\n&io.cuemby." +
+      "artifacts.artifacts.v1alpha1B\031RegistryAr" +
+      "tifactsProtoAPIP\001Z=github.com/cuemby/ccp" +
+      "-sdk/gen/go/artifacts/artifacts/v1alpha1" +
+      "\242\002\003PPX\252\002\034Artifacts.Artifacts.V1Alpha1\312\002\034" +
+      "Artifacts\\Artifacts\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -72,6 +109,30 @@ public final class RegistryArtifactsProtoAPI {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_artifacts_v1alpha1_ListArtifactsRegistryResponse_descriptor,
         new java.lang.String[] { "ArtifactsRegistry", "Status", });
+    internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryRequest_descriptor,
+        new java.lang.String[] { "Username", "Email", });
+    internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_artifacts_artifacts_v1alpha1_CreateLabelArtifactsRegistryResponse_descriptor,
+        new java.lang.String[] { "LabelArtifacts", "Status", });
+    internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryRequest_descriptor,
+        new java.lang.String[] { "LabelId", });
+    internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryResponse_descriptor,
+        new java.lang.String[] { "Status", });
     io.cuemby.artifacts.artifacts.v1alpha1.RegistryArtifactsProto.getDescriptor();
   }
 

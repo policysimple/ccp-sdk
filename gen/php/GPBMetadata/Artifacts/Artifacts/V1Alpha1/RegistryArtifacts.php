@@ -16,7 +16,7 @@ class RegistryArtifacts
         }
         $pool->internalAddGeneratedFile(
             '
-²
+Š
 5artifacts/artifacts/v1alpha1/registry_artifacts.protoartifacts.artifacts.v1alpha1"y
 Tags
 name (	Rname
@@ -43,7 +43,11 @@ branchRepo
 currentTag
 user (	Ruser
 
-user_email (	R	userEmailBÅ
+user_email (	R	userEmail"V
+LabelArtifacts
+id (Rid
+name (	Rname 
+description (	RdescriptionBÅ
 &io.cuemby.artifacts.artifacts.v1alpha1BRegistryArtifactsProtoPZ=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1¢PPXªArtifacts.Artifacts.V1Alpha1ÊArtifacts\\Artifacts\\V1Alpha1bproto3'
         , true);
 

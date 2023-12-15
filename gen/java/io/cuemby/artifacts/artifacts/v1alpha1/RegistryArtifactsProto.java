@@ -24,6 +24,11 @@ public final class RegistryArtifactsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_artifacts_artifacts_v1alpha1_ArtifactsRegistry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_artifacts_artifacts_v1alpha1_LabelArtifacts_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_artifacts_artifacts_v1alpha1_LabelArtifacts_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -51,12 +56,14 @@ public final class RegistryArtifactsProto {
       "l_repo\030\014 \001(\tR\007urlRepo\022\037\n\013branch_repo\030\r \001" +
       "(\tR\nbranchRepo\022\037\n\013current_tag\030\016 \001(\010R\ncur" +
       "rentTag\022\022\n\004user\030\017 \001(\tR\004user\022\035\n\nuser_emai" +
-      "l\030\020 \001(\tR\tuserEmailB\305\001\n&io.cuemby.artifac" +
-      "ts.artifacts.v1alpha1B\026RegistryArtifacts" +
-      "ProtoP\001Z=github.com/cuemby/ccp-sdk/gen/g" +
-      "o/artifacts/artifacts/v1alpha1\242\002\003PPX\252\002\034A" +
-      "rtifacts.Artifacts.V1Alpha1\312\002\034Artifacts\\" +
-      "Artifacts\\V1Alpha1b\006proto3"
+      "l\030\020 \001(\tR\tuserEmail\"V\n\016LabelArtifacts\022\016\n\002" +
+      "id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013desc" +
+      "ription\030\003 \001(\tR\013descriptionB\305\001\n&io.cuemby" +
+      ".artifacts.artifacts.v1alpha1B\026RegistryA" +
+      "rtifactsProtoP\001Z=github.com/cuemby/ccp-s" +
+      "dk/gen/go/artifacts/artifacts/v1alpha1\242\002" +
+      "\003PPX\252\002\034Artifacts.Artifacts.V1Alpha1\312\002\034Ar" +
+      "tifacts\\Artifacts\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -74,6 +81,12 @@ public final class RegistryArtifactsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_artifacts_v1alpha1_ArtifactsRegistry_descriptor,
         new java.lang.String[] { "Id", "Digest", "PullTime", "PushTime", "Size", "Active", "Tags", "OrganizationName", "ProjectName", "EnvironmentName", "ApplicationName", "UrlRepo", "BranchRepo", "CurrentTag", "User", "UserEmail", });
+    internal_static_artifacts_artifacts_v1alpha1_LabelArtifacts_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_artifacts_artifacts_v1alpha1_LabelArtifacts_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_artifacts_artifacts_v1alpha1_LabelArtifacts_descriptor,
+        new java.lang.String[] { "Id", "Name", "Description", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

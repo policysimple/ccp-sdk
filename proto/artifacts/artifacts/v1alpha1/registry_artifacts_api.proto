@@ -15,6 +15,8 @@ import "artifacts/artifacts/v1alpha1/registry_artifacts.proto";
 
 service RegistryArtifactsAPIService{
     rpc ListArtifactsRegistry(ListArtifactsRegistryRequest) returns (ListArtifactsRegistryResponse);
+    rpc CreateLabelArtifactsRegistry(CreateLabelArtifactsRegistryRequest) returns (CreateLabelArtifactsRegistryResponse);
+    rpc AddLabelArtifactsRegistry(AddLabelArtifactsRegistryRequest) returns (AddLabelArtifactsRegistryResponse);
 }
 
 message ListArtifactsRegistryRequest {
@@ -26,5 +28,23 @@ message ListArtifactsRegistryRequest {
 message ListArtifactsRegistryResponse {
     repeated artifacts.v1alpha1.ArtifactsRegistry artifacts_registry = 1;
     string status = 2;
+}
+
+message CreateLabelArtifactsRegistryRequest {
+    string username = 1;
+    string email = 2;
+}
+
+message CreateLabelArtifactsRegistryResponse {
+    artifacts.v1alpha1.LabelArtifacts label_artifacts = 1;
+    string status = 2;
+}
+
+message AddLabelArtifactsRegistryRequest {
+    int32 label_id = 1;
+}
+
+message AddLabelArtifactsRegistryResponse {
+    string status = 1;
 }
 

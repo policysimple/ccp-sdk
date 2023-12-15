@@ -21,6 +21,8 @@ namespace v1alpha1 {
 
 static const char* RegistryArtifactsAPIService_method_names[] = {
   "/artifacts.artifacts.v1alpha1.RegistryArtifactsAPIService/ListArtifactsRegistry",
+  "/artifacts.artifacts.v1alpha1.RegistryArtifactsAPIService/CreateLabelArtifactsRegistry",
+  "/artifacts.artifacts.v1alpha1.RegistryArtifactsAPIService/AddLabelArtifactsRegistry",
 };
 
 std::unique_ptr< RegistryArtifactsAPIService::Stub> RegistryArtifactsAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -31,6 +33,8 @@ std::unique_ptr< RegistryArtifactsAPIService::Stub> RegistryArtifactsAPIService:
 
 RegistryArtifactsAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_ListArtifactsRegistry_(RegistryArtifactsAPIService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateLabelArtifactsRegistry_(RegistryArtifactsAPIService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddLabelArtifactsRegistry_(RegistryArtifactsAPIService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RegistryArtifactsAPIService::Stub::ListArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest& request, ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse* response) {
@@ -49,18 +53,74 @@ void RegistryArtifactsAPIService::Stub::experimental_async::ListArtifactsRegistr
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>::Create(channel_.get(), cq, rpcmethod_ListArtifactsRegistry_, context, request, false);
 }
 
+::grpc::Status RegistryArtifactsAPIService::Stub::CreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateLabelArtifactsRegistry_, context, request, response);
+}
+
+void RegistryArtifactsAPIService::Stub::experimental_async::CreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateLabelArtifactsRegistry_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>* RegistryArtifactsAPIService::Stub::AsyncCreateLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>::Create(channel_.get(), cq, rpcmethod_CreateLabelArtifactsRegistry_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>* RegistryArtifactsAPIService::Stub::PrepareAsyncCreateLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>::Create(channel_.get(), cq, rpcmethod_CreateLabelArtifactsRegistry_, context, request, false);
+}
+
+::grpc::Status RegistryArtifactsAPIService::Stub::AddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AddLabelArtifactsRegistry_, context, request, response);
+}
+
+void RegistryArtifactsAPIService::Stub::experimental_async::AddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddLabelArtifactsRegistry_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>* RegistryArtifactsAPIService::Stub::AsyncAddLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>::Create(channel_.get(), cq, rpcmethod_AddLabelArtifactsRegistry_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>* RegistryArtifactsAPIService::Stub::PrepareAsyncAddLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>::Create(channel_.get(), cq, rpcmethod_AddLabelArtifactsRegistry_, context, request, false);
+}
+
 RegistryArtifactsAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RegistryArtifactsAPIService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RegistryArtifactsAPIService::Service, ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest, ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>(
           std::mem_fn(&RegistryArtifactsAPIService::Service::ListArtifactsRegistry), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RegistryArtifactsAPIService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RegistryArtifactsAPIService::Service, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>(
+          std::mem_fn(&RegistryArtifactsAPIService::Service::CreateLabelArtifactsRegistry), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RegistryArtifactsAPIService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RegistryArtifactsAPIService::Service, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>(
+          std::mem_fn(&RegistryArtifactsAPIService::Service::AddLabelArtifactsRegistry), this)));
 }
 
 RegistryArtifactsAPIService::Service::~Service() {
 }
 
 ::grpc::Status RegistryArtifactsAPIService::Service::ListArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RegistryArtifactsAPIService::Service::CreateLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RegistryArtifactsAPIService::Service::AddLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response) {
   (void) context;
   (void) request;
   (void) response;
