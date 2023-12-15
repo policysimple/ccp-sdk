@@ -8,10 +8,10 @@ public interface LabelArtifactsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 id = 1 [json_name = "id"];</code>
+   * <code>int64 id = 1 [json_name = "id"];</code>
    * @return The id.
    */
-  int getId();
+  long getId();
 
   /**
    * <code>string name = 2 [json_name = "name"];</code>

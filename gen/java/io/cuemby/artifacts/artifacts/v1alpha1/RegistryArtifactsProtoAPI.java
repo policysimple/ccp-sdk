@@ -71,7 +71,7 @@ public final class RegistryArtifactsProtoAPI {
       "s.artifacts.v1alpha1.LabelArtifactsR\016lab" +
       "elArtifacts\022\026\n\006status\030\002 \001(\tR\006status\"=\n A" +
       "ddLabelArtifactsRegistryRequest\022\031\n\010label" +
-      "_id\030\001 \001(\005R\007labelId\";\n!AddLabelArtifactsR" +
+      "_id\030\001 \001(\003R\007labelId\";\n!AddLabelArtifactsR" +
       "egistryResponse\022\026\n\006status\030\001 \001(\tR\006status2" +
       "\367\003\n\033RegistryArtifactsAPIService\022\220\001\n\025List" +
       "ArtifactsRegistry\022:.artifacts.artifacts." +

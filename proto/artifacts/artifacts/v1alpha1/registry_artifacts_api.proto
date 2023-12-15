@@ -41,7 +41,7 @@ message CreateLabelArtifactsRegistryResponse {
 }
 
 message AddLabelArtifactsRegistryRequest {
-    int32 label_id = 1;
+    int64 label_id = 1;
 }
 
 message AddLabelArtifactsRegistryResponse {

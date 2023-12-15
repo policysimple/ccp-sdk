@@ -940,7 +940,7 @@ proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.deserializeB
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setLabelId(value);
       break;
     default:
@@ -974,7 +974,7 @@ proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.serializeBin
   var f = undefined;
   f = message.getLabelId();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeInt64(
       1,
       f
     );
@@ -983,7 +983,7 @@ proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.serializeBin
 
 
 /**
- * optional int32 label_id = 1;
+ * optional int64 label_id = 1;
  * @return {number}
  */
 proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.getLabelId = function() {

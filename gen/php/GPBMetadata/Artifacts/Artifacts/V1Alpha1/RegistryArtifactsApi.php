@@ -35,7 +35,7 @@ $CreateLabelArtifactsRegistryResponseU
 label_artifacts (2,.artifacts.artifacts.v1alpha1.LabelArtifactsRlabelArtifacts
 status (	Rstatus"=
  AddLabelArtifactsRegistryRequest
-label_id (RlabelId";
+label_id (RlabelId";
 !AddLabelArtifactsRegistryResponse
 status (	Rstatus2˜
 RegistryArtifactsAPIServiceê

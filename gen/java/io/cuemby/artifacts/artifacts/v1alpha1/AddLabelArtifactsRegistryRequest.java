@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            labelId_ = input.readInt32();
+            labelId_ = input.readInt64();
             break;
           }
           default: {
@@ -86,13 +86,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABEL_ID_FIELD_NUMBER = 1;
-  private int labelId_;
+  private long labelId_;
   /**
-   * <code>int32 label_id = 1 [json_name = "labelId"];</code>
+   * <code>int64 label_id = 1 [json_name = "labelId"];</code>
    * @return The labelId.
    */
   @java.lang.Override
-  public int getLabelId() {
+  public long getLabelId() {
     return labelId_;
   }
 
@@ -110,8 +110,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (labelId_ != 0) {
-      output.writeInt32(1, labelId_);
+    if (labelId_ != 0L) {
+      output.writeInt64(1, labelId_);
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +122,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (labelId_ != 0) {
+    if (labelId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, labelId_);
+        .computeInt64Size(1, labelId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -155,7 +155,8 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + LABEL_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getLabelId();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getLabelId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -289,7 +290,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      labelId_ = 0;
+      labelId_ = 0L;
 
       return this;
     }
@@ -366,7 +367,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.cuemby.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest other) {
       if (other == io.cuemby.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.getDefaultInstance()) return this;
-      if (other.getLabelId() != 0) {
+      if (other.getLabelId() != 0L) {
         setLabelId(other.getLabelId());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -398,33 +399,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int labelId_ ;
+    private long labelId_ ;
     /**
-     * <code>int32 label_id = 1 [json_name = "labelId"];</code>
+     * <code>int64 label_id = 1 [json_name = "labelId"];</code>
      * @return The labelId.
      */
     @java.lang.Override
-    public int getLabelId() {
+    public long getLabelId() {
       return labelId_;
     }
     /**
-     * <code>int32 label_id = 1 [json_name = "labelId"];</code>
+     * <code>int64 label_id = 1 [json_name = "labelId"];</code>
      * @param value The labelId to set.
      * @return This builder for chaining.
      */
-    public Builder setLabelId(int value) {
+    public Builder setLabelId(long value) {
       
       labelId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 label_id = 1 [json_name = "labelId"];</code>
+     * <code>int64 label_id = 1 [json_name = "labelId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearLabelId() {
       
-      labelId_ = 0;
+      labelId_ = 0L;
       onChanged();
       return this;
     }

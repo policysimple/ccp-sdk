@@ -8,8 +8,8 @@ public interface AddLabelArtifactsRegistryRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 label_id = 1 [json_name = "labelId"];</code>
+   * <code>int64 label_id = 1 [json_name = "labelId"];</code>
    * @return The labelId.
    */
-  int getLabelId();
+  long getLabelId();
 }

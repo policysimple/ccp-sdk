@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class AddLabelArtifactsRegistryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 label_id = 1 [json_name = "labelId"];</code>
+     * Generated from protobuf field <code>int64 label_id = 1 [json_name = "labelId"];</code>
      */
     protected $label_id = 0;
 
@@ -24,7 +24,7 @@ class AddLabelArtifactsRegistryRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $label_id
+     *     @type int|string $label_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class AddLabelArtifactsRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 label_id = 1 [json_name = "labelId"];</code>
-     * @return int
+     * Generated from protobuf field <code>int64 label_id = 1 [json_name = "labelId"];</code>
+     * @return int|string
      */
     public function getLabelId()
     {
@@ -42,13 +42,13 @@ class AddLabelArtifactsRegistryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 label_id = 1 [json_name = "labelId"];</code>
-     * @param int $var
+     * Generated from protobuf field <code>int64 label_id = 1 [json_name = "labelId"];</code>
+     * @param int|string $var
      * @return $this
      */
     public function setLabelId($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkInt64($var);
         $this->label_id = $var;
 
         return $this;
