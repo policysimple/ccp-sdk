@@ -786,13 +786,13 @@ class LabelArtifacts final :
   std::string* _internal_mutable_description();
   public:
 
-  // int32 id = 1 [json_name = "id"];
+  // int64 id = 1 [json_name = "id"];
   void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::int32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:artifacts.artifacts.v1alpha1.LabelArtifacts)
@@ -804,7 +804,7 @@ class LabelArtifacts final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
-  ::PROTOBUF_NAMESPACE_ID::int32 id_;
+  ::PROTOBUF_NAMESPACE_ID::int64 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_2eproto;
 };
@@ -1637,22 +1637,22 @@ inline void ArtifactsRegistry::set_allocated_user_email(std::string* user_email)
 
 // LabelArtifacts
 
-// int32 id = 1 [json_name = "id"];
+// int64 id = 1 [json_name = "id"];
 inline void LabelArtifacts::clear_id() {
-  id_ = 0;
+  id_ = int64_t{0};
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 LabelArtifacts::_internal_id() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 LabelArtifacts::_internal_id() const {
   return id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 LabelArtifacts::id() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 LabelArtifacts::id() const {
   // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.LabelArtifacts.id)
   return _internal_id();
 }
-inline void LabelArtifacts::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void LabelArtifacts::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
   
   id_ = value;
 }
-inline void LabelArtifacts::set_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void LabelArtifacts::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.LabelArtifacts.id)
 }

@@ -873,13 +873,13 @@ class AddLabelArtifactsRegistryRequest final :
   enum : int {
     kLabelIdFieldNumber = 1,
   };
-  // int32 label_id = 1 [json_name = "labelId"];
+  // int64 label_id = 1 [json_name = "labelId"];
   void clear_label_id();
-  ::PROTOBUF_NAMESPACE_ID::int32 label_id() const;
-  void set_label_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 label_id() const;
+  void set_label_id(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_label_id() const;
-  void _internal_set_label_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_label_id() const;
+  void _internal_set_label_id(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
@@ -889,7 +889,7 @@ class AddLabelArtifactsRegistryRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::int32 label_id_;
+  ::PROTOBUF_NAMESPACE_ID::int64 label_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto;
 };
@@ -1509,22 +1509,22 @@ inline void CreateLabelArtifactsRegistryResponse::set_allocated_status(std::stri
 
 // AddLabelArtifactsRegistryRequest
 
-// int32 label_id = 1 [json_name = "labelId"];
+// int64 label_id = 1 [json_name = "labelId"];
 inline void AddLabelArtifactsRegistryRequest::clear_label_id() {
-  label_id_ = 0;
+  label_id_ = int64_t{0};
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 AddLabelArtifactsRegistryRequest::_internal_label_id() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 AddLabelArtifactsRegistryRequest::_internal_label_id() const {
   return label_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 AddLabelArtifactsRegistryRequest::label_id() const {
+inline ::PROTOBUF_NAMESPACE_ID::int64 AddLabelArtifactsRegistryRequest::label_id() const {
   // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.label_id)
   return _internal_label_id();
 }
-inline void AddLabelArtifactsRegistryRequest::_internal_set_label_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void AddLabelArtifactsRegistryRequest::_internal_set_label_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
   
   label_id_ = value;
 }
-inline void AddLabelArtifactsRegistryRequest::set_label_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void AddLabelArtifactsRegistryRequest::set_label_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_label_id(value);
   // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.label_id)
 }

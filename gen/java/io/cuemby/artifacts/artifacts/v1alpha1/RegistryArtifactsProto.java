@@ -57,7 +57,7 @@ public final class RegistryArtifactsProto {
       "(\tR\nbranchRepo\022\037\n\013current_tag\030\016 \001(\010R\ncur" +
       "rentTag\022\022\n\004user\030\017 \001(\tR\004user\022\035\n\nuser_emai" +
       "l\030\020 \001(\tR\tuserEmail\"V\n\016LabelArtifacts\022\016\n\002" +
-      "id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013desc" +
+      "id\030\001 \001(\003R\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013desc" +
       "ription\030\003 \001(\tR\013descriptionB\305\001\n&io.cuemby" +
       ".artifacts.artifacts.v1alpha1B\026RegistryA" +
       "rtifactsProtoP\001Z=github.com/cuemby/ccp-s" +

@@ -65,7 +65,7 @@ constexpr LabelArtifacts::LabelArtifacts(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , id_(0){}
+  , id_(int64_t{0}){}
 struct LabelArtifactsDefaultTypeInternal {
   constexpr LabelArtifactsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -154,7 +154,7 @@ const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry
   "(\tR\nbranchRepo\022\037\n\013current_tag\030\016 \001(\010R\ncur"
   "rentTag\022\022\n\004user\030\017 \001(\tR\004user\022\035\n\nuser_emai"
   "l\030\020 \001(\tR\tuserEmail\"V\n\016LabelArtifacts\022\016\n\002"
-  "id\030\001 \001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013desc"
+  "id\030\001 \001(\003R\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013desc"
   "ription\030\003 \001(\tR\013descriptionB\305\001\n&io.cuemby"
   ".artifacts.artifacts.v1alpha1B\026RegistryA"
   "rtifactsProtoP\001Z=github.com/cuemby/ccp-s"
@@ -1300,7 +1300,7 @@ LabelArtifacts::LabelArtifacts(const LabelArtifacts& from)
 inline void LabelArtifacts::SharedCtor() {
 name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-id_ = 0;
+id_ = int64_t{0};
 }
 
 LabelArtifacts::~LabelArtifacts() {
@@ -1334,7 +1334,7 @@ void LabelArtifacts::Clear() {
 
   name_.ClearToEmpty();
   description_.ClearToEmpty();
-  id_ = 0;
+  id_ = int64_t{0};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1344,7 +1344,7 @@ const char* LabelArtifacts::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 id = 1 [json_name = "id"];
+      // int64 id = 1 [json_name = "id"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1398,10 +1398,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 id = 1 [json_name = "id"];
+  // int64 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_id(), target);
   }
 
   // string name = 2 [json_name = "name"];
@@ -1454,10 +1454,10 @@ size_t LabelArtifacts::ByteSizeLong() const {
         this->_internal_description());
   }
 
-  // int32 id = 1 [json_name = "id"];
+  // int64 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_id());
   }
 

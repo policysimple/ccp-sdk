@@ -74,7 +74,7 @@ struct CreateLabelArtifactsRegistryResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateLabelArtifactsRegistryResponseDefaultTypeInternal _CreateLabelArtifactsRegistryResponse_default_instance_;
 constexpr AddLabelArtifactsRegistryRequest::AddLabelArtifactsRegistryRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : label_id_(0){}
+  : label_id_(int64_t{0}){}
 struct AddLabelArtifactsRegistryRequestDefaultTypeInternal {
   constexpr AddLabelArtifactsRegistryRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -183,7 +183,7 @@ const char descriptor_table_protodef_artifacts_2fartifacts_2fv1alpha1_2fregistry
   "s.artifacts.v1alpha1.LabelArtifactsR\016lab"
   "elArtifacts\022\026\n\006status\030\002 \001(\tR\006status\"=\n A"
   "ddLabelArtifactsRegistryRequest\022\031\n\010label"
-  "_id\030\001 \001(\005R\007labelId\";\n!AddLabelArtifactsR"
+  "_id\030\001 \001(\003R\007labelId\";\n!AddLabelArtifactsR"
   "egistryResponse\022\026\n\006status\030\001 \001(\tR\006status2"
   "\367\003\n\033RegistryArtifactsAPIService\022\220\001\n\025List"
   "ArtifactsRegistry\022:.artifacts.artifacts."
@@ -1256,7 +1256,7 @@ AddLabelArtifactsRegistryRequest::AddLabelArtifactsRegistryRequest(const AddLabe
 }
 
 inline void AddLabelArtifactsRegistryRequest::SharedCtor() {
-label_id_ = 0;
+label_id_ = int64_t{0};
 }
 
 AddLabelArtifactsRegistryRequest::~AddLabelArtifactsRegistryRequest() {
@@ -1286,7 +1286,7 @@ void AddLabelArtifactsRegistryRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  label_id_ = 0;
+  label_id_ = int64_t{0};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1296,7 +1296,7 @@ const char* AddLabelArtifactsRegistryRequest::_InternalParse(const char* ptr, ::
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 label_id = 1 [json_name = "labelId"];
+      // int64 label_id = 1 [json_name = "labelId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           label_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1332,10 +1332,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 label_id = 1 [json_name = "labelId"];
+  // int64 label_id = 1 [json_name = "labelId"];
   if (this->_internal_label_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_label_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_label_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1354,10 +1354,10 @@ size_t AddLabelArtifactsRegistryRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 label_id = 1 [json_name = "labelId"];
+  // int64 label_id = 1 [json_name = "labelId"];
   if (this->_internal_label_id() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_label_id());
   }
 
