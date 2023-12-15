@@ -51,3 +51,39 @@ func ListArtifactsRegistry(in *clientpkgv1.ListArtifactsRegistryRequest) (respon
 	}
 	return response, nil
 }
+
+func CreateLabelArtifactsRegistry(in *clientpkgv1.CreateLabelArtifactsRegistryRequest) (response *clientpkgv1.CreateLabelArtifactsRegistryResponse, err error) {
+	bylogs.LogInfo("Client: CreateLabelArtifactsRegistry")
+	d, err := time.ParseDuration(clientServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.CreateLabelArtifactsRegistry(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("Client: Error creating label artifacts registry", err)
+		return nil, fmt.Errorf("[CreateLabelArtifactsRegistry] %w", err)
+	}
+	return response, nil
+}
+
+func AddLabelArtifactsRegistry(in *clientpkgv1.AddLabelArtifactsRegistryRequest) (response *clientpkgv1.AddLabelArtifactsRegistryResponse, err error) {
+	bylogs.LogInfo("Client: AddLabelArtifactsRegistry")
+	d, err := time.ParseDuration(clientServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.AddLabelArtifactsRegistry(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("Client: Error adding label artifacts registry", err)
+		return nil, fmt.Errorf("[AddLabelArtifactsRegistry] %w", err)
+	}
+	return response, nil
+}
