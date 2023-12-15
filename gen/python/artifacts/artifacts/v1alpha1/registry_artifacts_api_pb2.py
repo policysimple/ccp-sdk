@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n&io.cuemby.artifacts.artifacts.v1alpha1B\031RegistryArtifactsProtoAPIP\001Z=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1\242\002\003PPX\252\002\034Artifacts.Artifacts.V1Alpha1\312\002\034Artifacts\\Artifacts\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n9artifacts/artifacts/v1alpha1/registry_artifacts_api.proto\x12\x1c\x61rtifacts.artifacts.v1alpha1\x1a\x35\x61rtifacts/artifacts/v1alpha1/registry_artifacts.proto\"\x85\x01\n\x1cListArtifactsRegistryRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\x1d\n\nruntime_id\x18\x03 \x01(\tR\truntimeId\"\x97\x01\n\x1dListArtifactsRegistryResponse\x12^\n\x12\x61rtifacts_registry\x18\x01 \x03(\x0b\x32/.artifacts.artifacts.v1alpha1.ArtifactsRegistryR\x11\x61rtifactsRegistry\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status2\xb0\x01\n\x1bRegistryArtifactsAPIService\x12\x90\x01\n\x15ListArtifactsRegistry\x12:.artifacts.artifacts.v1alpha1.ListArtifactsRegistryRequest\x1a;.artifacts.artifacts.v1alpha1.ListArtifactsRegistryResponseB\xc8\x01\n&io.cuemby.artifacts.artifacts.v1alpha1B\x19RegistryArtifactsProtoAPIP\x01Z=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1c\x41rtifacts.Artifacts.V1Alpha1\xca\x02\x1c\x41rtifacts\\Artifacts\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n9artifacts/artifacts/v1alpha1/registry_artifacts_api.proto\x12\x1c\x61rtifacts.artifacts.v1alpha1\x1a\x35\x61rtifacts/artifacts/v1alpha1/registry_artifacts.proto\"\x85\x01\n\x1cListArtifactsRegistryRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\x1d\n\nruntime_id\x18\x03 \x01(\tR\truntimeId\"\x97\x01\n\x1dListArtifactsRegistryResponse\x12^\n\x12\x61rtifacts_registry\x18\x01 \x03(\x0b\x32/.artifacts.artifacts.v1alpha1.ArtifactsRegistryR\x11\x61rtifactsRegistry\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"W\n#CreateLabelArtifactsRegistryRequest\x12\x1a\n\x08username\x18\x01 \x01(\tR\x08username\x12\x14\n\x05\x65mail\x18\x02 \x01(\tR\x05\x65mail\"\x95\x01\n$CreateLabelArtifactsRegistryResponse\x12U\n\x0flabel_artifacts\x18\x01 \x01(\x0b\x32,.artifacts.artifacts.v1alpha1.LabelArtifactsR\x0elabelArtifacts\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\"=\n AddLabelArtifactsRegistryRequest\x12\x19\n\x08label_id\x18\x01 \x01(\x05R\x07labelId\";\n!AddLabelArtifactsRegistryResponse\x12\x16\n\x06status\x18\x01 \x01(\tR\x06status2\xf7\x03\n\x1bRegistryArtifactsAPIService\x12\x90\x01\n\x15ListArtifactsRegistry\x12:.artifacts.artifacts.v1alpha1.ListArtifactsRegistryRequest\x1a;.artifacts.artifacts.v1alpha1.ListArtifactsRegistryResponse\x12\xa5\x01\n\x1c\x43reateLabelArtifactsRegistry\x12\x41.artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest\x1a\x42.artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse\x12\x9c\x01\n\x19\x41\x64\x64LabelArtifactsRegistry\x12>.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest\x1a?.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponseB\xc8\x01\n&io.cuemby.artifacts.artifacts.v1alpha1B\x19RegistryArtifactsProtoAPIP\x01Z=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1\xa2\x02\x03PPX\xaa\x02\x1c\x41rtifacts.Artifacts.V1Alpha1\xca\x02\x1c\x41rtifacts\\Artifacts\\V1Alpha1b\x06proto3'
   ,
   dependencies=[artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__pb2.DESCRIPTOR,])
 
@@ -111,9 +111,156 @@ _LISTARTIFACTSREGISTRYRESPONSE = _descriptor.Descriptor(
   serialized_end=434,
 )
 
+
+_CREATELABELARTIFACTSREGISTRYREQUEST = _descriptor.Descriptor(
+  name='CreateLabelArtifactsRegistryRequest',
+  full_name='artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='username', full_name='artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest.username', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='username', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='email', full_name='artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest.email', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='email', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=436,
+  serialized_end=523,
+)
+
+
+_CREATELABELARTIFACTSREGISTRYRESPONSE = _descriptor.Descriptor(
+  name='CreateLabelArtifactsRegistryResponse',
+  full_name='artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='label_artifacts', full_name='artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse.label_artifacts', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='labelArtifacts', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse.status', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=526,
+  serialized_end=675,
+)
+
+
+_ADDLABELARTIFACTSREGISTRYREQUEST = _descriptor.Descriptor(
+  name='AddLabelArtifactsRegistryRequest',
+  full_name='artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='label_id', full_name='artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.label_id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='labelId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=677,
+  serialized_end=738,
+)
+
+
+_ADDLABELARTIFACTSREGISTRYRESPONSE = _descriptor.Descriptor(
+  name='AddLabelArtifactsRegistryResponse',
+  full_name='artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse.status', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='status', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=740,
+  serialized_end=799,
+)
+
 _LISTARTIFACTSREGISTRYRESPONSE.fields_by_name['artifacts_registry'].message_type = artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__pb2._ARTIFACTSREGISTRY
+_CREATELABELARTIFACTSREGISTRYRESPONSE.fields_by_name['label_artifacts'].message_type = artifacts_dot_artifacts_dot_v1alpha1_dot_registry__artifacts__pb2._LABELARTIFACTS
 DESCRIPTOR.message_types_by_name['ListArtifactsRegistryRequest'] = _LISTARTIFACTSREGISTRYREQUEST
 DESCRIPTOR.message_types_by_name['ListArtifactsRegistryResponse'] = _LISTARTIFACTSREGISTRYRESPONSE
+DESCRIPTOR.message_types_by_name['CreateLabelArtifactsRegistryRequest'] = _CREATELABELARTIFACTSREGISTRYREQUEST
+DESCRIPTOR.message_types_by_name['CreateLabelArtifactsRegistryResponse'] = _CREATELABELARTIFACTSREGISTRYRESPONSE
+DESCRIPTOR.message_types_by_name['AddLabelArtifactsRegistryRequest'] = _ADDLABELARTIFACTSREGISTRYREQUEST
+DESCRIPTOR.message_types_by_name['AddLabelArtifactsRegistryResponse'] = _ADDLABELARTIFACTSREGISTRYRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListArtifactsRegistryRequest = _reflection.GeneratedProtocolMessageType('ListArtifactsRegistryRequest', (_message.Message,), {
@@ -130,6 +277,34 @@ ListArtifactsRegistryResponse = _reflection.GeneratedProtocolMessageType('ListAr
   })
 _sym_db.RegisterMessage(ListArtifactsRegistryResponse)
 
+CreateLabelArtifactsRegistryRequest = _reflection.GeneratedProtocolMessageType('CreateLabelArtifactsRegistryRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATELABELARTIFACTSREGISTRYREQUEST,
+  '__module__' : 'artifacts.artifacts.v1alpha1.registry_artifacts_api_pb2'
+  # @@protoc_insertion_point(class_scope:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequest)
+  })
+_sym_db.RegisterMessage(CreateLabelArtifactsRegistryRequest)
+
+CreateLabelArtifactsRegistryResponse = _reflection.GeneratedProtocolMessageType('CreateLabelArtifactsRegistryResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CREATELABELARTIFACTSREGISTRYRESPONSE,
+  '__module__' : 'artifacts.artifacts.v1alpha1.registry_artifacts_api_pb2'
+  # @@protoc_insertion_point(class_scope:artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponse)
+  })
+_sym_db.RegisterMessage(CreateLabelArtifactsRegistryResponse)
+
+AddLabelArtifactsRegistryRequest = _reflection.GeneratedProtocolMessageType('AddLabelArtifactsRegistryRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ADDLABELARTIFACTSREGISTRYREQUEST,
+  '__module__' : 'artifacts.artifacts.v1alpha1.registry_artifacts_api_pb2'
+  # @@protoc_insertion_point(class_scope:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest)
+  })
+_sym_db.RegisterMessage(AddLabelArtifactsRegistryRequest)
+
+AddLabelArtifactsRegistryResponse = _reflection.GeneratedProtocolMessageType('AddLabelArtifactsRegistryResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ADDLABELARTIFACTSREGISTRYRESPONSE,
+  '__module__' : 'artifacts.artifacts.v1alpha1.registry_artifacts_api_pb2'
+  # @@protoc_insertion_point(class_scope:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponse)
+  })
+_sym_db.RegisterMessage(AddLabelArtifactsRegistryResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -140,8 +315,8 @@ _REGISTRYARTIFACTSAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=437,
-  serialized_end=613,
+  serialized_start=802,
+  serialized_end=1305,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListArtifactsRegistry',
@@ -150,6 +325,26 @@ _REGISTRYARTIFACTSAPISERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTARTIFACTSREGISTRYREQUEST,
     output_type=_LISTARTIFACTSREGISTRYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateLabelArtifactsRegistry',
+    full_name='artifacts.artifacts.v1alpha1.RegistryArtifactsAPIService.CreateLabelArtifactsRegistry',
+    index=1,
+    containing_service=None,
+    input_type=_CREATELABELARTIFACTSREGISTRYREQUEST,
+    output_type=_CREATELABELARTIFACTSREGISTRYRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='AddLabelArtifactsRegistry',
+    full_name='artifacts.artifacts.v1alpha1.RegistryArtifactsAPIService.AddLabelArtifactsRegistry',
+    index=2,
+    containing_service=None,
+    input_type=_ADDLABELARTIFACTSREGISTRYREQUEST,
+    output_type=_ADDLABELARTIFACTSREGISTRYRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

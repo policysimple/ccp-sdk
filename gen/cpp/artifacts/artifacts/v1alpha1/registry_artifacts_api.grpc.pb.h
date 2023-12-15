@@ -44,15 +44,35 @@ class RegistryArtifactsAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>> PrepareAsyncListArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>>(PrepareAsyncListArtifactsRegistryRaw(context, request, cq));
     }
+    virtual ::grpc::Status CreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>> AsyncCreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>>(AsyncCreateLabelArtifactsRegistryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>> PrepareAsyncCreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>>(PrepareAsyncCreateLabelArtifactsRegistryRaw(context, request, cq));
+    }
+    virtual ::grpc::Status AddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>> AsyncAddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>>(AsyncAddLabelArtifactsRegistryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>> PrepareAsyncAddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>>(PrepareAsyncAddLabelArtifactsRegistryRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       virtual void ListArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>* AsyncListArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>* PrepareAsyncListArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>* AsyncCreateLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>* PrepareAsyncCreateLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>* AsyncAddLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>* PrepareAsyncAddLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -64,10 +84,26 @@ class RegistryArtifactsAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>> PrepareAsyncListArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>>(PrepareAsyncListArtifactsRegistryRaw(context, request, cq));
     }
+    ::grpc::Status CreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>> AsyncCreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>>(AsyncCreateLabelArtifactsRegistryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>> PrepareAsyncCreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>>(PrepareAsyncCreateLabelArtifactsRegistryRaw(context, request, cq));
+    }
+    ::grpc::Status AddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>> AsyncAddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>>(AsyncAddLabelArtifactsRegistryRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>> PrepareAsyncAddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>>(PrepareAsyncAddLabelArtifactsRegistryRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
       void ListArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddLabelArtifactsRegistry(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -81,7 +117,13 @@ class RegistryArtifactsAPIService final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>* AsyncListArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>* PrepareAsyncListArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>* AsyncCreateLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>* PrepareAsyncCreateLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>* AsyncAddLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>* PrepareAsyncAddLabelArtifactsRegistryRaw(::grpc::ClientContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_ListArtifactsRegistry_;
+    const ::grpc::internal::RpcMethod rpcmethod_CreateLabelArtifactsRegistry_;
+    const ::grpc::internal::RpcMethod rpcmethod_AddLabelArtifactsRegistry_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -90,6 +132,8 @@ class RegistryArtifactsAPIService final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status ListArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse* response);
+    virtual ::grpc::Status CreateLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response);
+    virtual ::grpc::Status AddLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_ListArtifactsRegistry : public BaseClass {
@@ -111,7 +155,47 @@ class RegistryArtifactsAPIService final {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ListArtifactsRegistry<Service > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_CreateLabelArtifactsRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_CreateLabelArtifactsRegistry() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_CreateLabelArtifactsRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateLabelArtifactsRegistry(::grpc::ServerContext* context, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::grpc::ServerAsyncResponseWriter< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_AddLabelArtifactsRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_AddLabelArtifactsRegistry() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_AddLabelArtifactsRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddLabelArtifactsRegistry(::grpc::ServerContext* context, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::grpc::ServerAsyncResponseWriter< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ListArtifactsRegistry<WithAsyncMethod_CreateLabelArtifactsRegistry<WithAsyncMethod_AddLabelArtifactsRegistry<Service > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_ListArtifactsRegistry : public BaseClass {
    private:
@@ -125,6 +209,40 @@ class RegistryArtifactsAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status ListArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_CreateLabelArtifactsRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_CreateLabelArtifactsRegistry() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_CreateLabelArtifactsRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AddLabelArtifactsRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_AddLabelArtifactsRegistry() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_AddLabelArtifactsRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -150,6 +268,46 @@ class RegistryArtifactsAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_CreateLabelArtifactsRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_CreateLabelArtifactsRegistry() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_CreateLabelArtifactsRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CreateLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCreateLabelArtifactsRegistry(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_AddLabelArtifactsRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_AddLabelArtifactsRegistry() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_AddLabelArtifactsRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddLabelArtifactsRegistry(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_ListArtifactsRegistry : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -169,9 +327,49 @@ class RegistryArtifactsAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedListArtifactsRegistry(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::artifacts::artifacts::v1alpha1::ListArtifactsRegistryRequest,::artifacts::artifacts::v1alpha1::ListArtifactsRegistryResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_ListArtifactsRegistry<Service > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_CreateLabelArtifactsRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_CreateLabelArtifactsRegistry() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>(std::bind(&WithStreamedUnaryMethod_CreateLabelArtifactsRegistry<BaseClass>::StreamedCreateLabelArtifactsRegistry, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_CreateLabelArtifactsRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status CreateLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedCreateLabelArtifactsRegistry(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryRequest,::artifacts::artifacts::v1alpha1::CreateLabelArtifactsRegistryResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AddLabelArtifactsRegistry : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AddLabelArtifactsRegistry() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>(std::bind(&WithStreamedUnaryMethod_AddLabelArtifactsRegistry<BaseClass>::StreamedAddLabelArtifactsRegistry, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AddLabelArtifactsRegistry() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AddLabelArtifactsRegistry(::grpc::ServerContext* context, const ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest* request, ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAddLabelArtifactsRegistry(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryRequest,::artifacts::artifacts::v1alpha1::AddLabelArtifactsRegistryResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_ListArtifactsRegistry<WithStreamedUnaryMethod_CreateLabelArtifactsRegistry<WithStreamedUnaryMethod_AddLabelArtifactsRegistry<Service > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ListArtifactsRegistry<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_ListArtifactsRegistry<WithStreamedUnaryMethod_CreateLabelArtifactsRegistry<WithStreamedUnaryMethod_AddLabelArtifactsRegistry<Service > > > StreamedService;
 };
 
 }  // namespace v1alpha1

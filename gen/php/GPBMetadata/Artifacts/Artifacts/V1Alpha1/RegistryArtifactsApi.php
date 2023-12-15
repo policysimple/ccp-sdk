@@ -17,7 +17,7 @@ class RegistryArtifactsApi
         \GPBMetadata\Artifacts\Artifacts\V1Alpha1\RegistryArtifacts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-
+µ
 9artifacts/artifacts/v1alpha1/registry_artifacts_api.protoartifacts.artifacts.v1alpha1"…
 ListArtifactsRegistryRequest\'
 organization_id (	RorganizationId
@@ -27,9 +27,21 @@ project_id (	R	projectId
 runtime_id (	R	runtimeId"—
 ListArtifactsRegistryResponse^
 artifacts_registry (2/.artifacts.artifacts.v1alpha1.ArtifactsRegistryRartifactsRegistry
-status (	Rstatus2°
+status (	Rstatus"W
+#CreateLabelArtifactsRegistryRequest
+username (	Rusername
+email (	Remail"•
+$CreateLabelArtifactsRegistryResponseU
+label_artifacts (2,.artifacts.artifacts.v1alpha1.LabelArtifactsRlabelArtifacts
+status (	Rstatus"=
+ AddLabelArtifactsRegistryRequest
+label_id (RlabelId";
+!AddLabelArtifactsRegistryResponse
+status (	Rstatus2÷
 RegistryArtifactsAPIService
-ListArtifactsRegistry:.artifacts.artifacts.v1alpha1.ListArtifactsRegistryRequest;.artifacts.artifacts.v1alpha1.ListArtifactsRegistryResponseBÈ
+ListArtifactsRegistry:.artifacts.artifacts.v1alpha1.ListArtifactsRegistryRequest;.artifacts.artifacts.v1alpha1.ListArtifactsRegistryResponse¥
+CreateLabelArtifactsRegistryA.artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryRequestB.artifacts.artifacts.v1alpha1.CreateLabelArtifactsRegistryResponseœ
+AddLabelArtifactsRegistry>.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest?.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryResponseBÈ
 &io.cuemby.artifacts.artifacts.v1alpha1BRegistryArtifactsProtoAPIPZ=github.com/cuemby/ccp-sdk/gen/go/artifacts/artifacts/v1alpha1¢PPXªArtifacts.Artifacts.V1Alpha1ÊArtifacts\\Artifacts\\V1Alpha1bproto3'
         , true);
 
