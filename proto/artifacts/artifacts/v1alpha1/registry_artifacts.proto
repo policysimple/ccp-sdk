@@ -32,8 +32,7 @@ message ArtifactsRegistry {
     string url_repo = 12;
     string branch_repo = 13;
     bool current_tag = 14;
-    string user = 15;
-    string user_email = 16;
+    string author = 15;
 }
 
 message LabelArtifacts{

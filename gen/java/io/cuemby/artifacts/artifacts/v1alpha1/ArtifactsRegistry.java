@@ -27,8 +27,7 @@ private static final long serialVersionUID = 0L;
     applicationName_ = "";
     urlRepo_ = "";
     branchRepo_ = "";
-    user_ = "";
-    userEmail_ = "";
+    author_ = "";
   }
 
   @java.lang.Override
@@ -149,13 +148,7 @@ private static final long serialVersionUID = 0L;
           case 122: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            user_ = s;
-            break;
-          }
-          case 130: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            userEmail_ = s;
+            author_ = s;
             break;
           }
           default: {
@@ -646,76 +639,38 @@ private static final long serialVersionUID = 0L;
     return currentTag_;
   }
 
-  public static final int USER_FIELD_NUMBER = 15;
-  private volatile java.lang.Object user_;
+  public static final int AUTHOR_FIELD_NUMBER = 15;
+  private volatile java.lang.Object author_;
   /**
-   * <code>string user = 15 [json_name = "user"];</code>
-   * @return The user.
+   * <code>string author = 15 [json_name = "author"];</code>
+   * @return The author.
    */
   @java.lang.Override
-  public java.lang.String getUser() {
-    java.lang.Object ref = user_;
+  public java.lang.String getAuthor() {
+    java.lang.Object ref = author_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      user_ = s;
+      author_ = s;
       return s;
     }
   }
   /**
-   * <code>string user = 15 [json_name = "user"];</code>
-   * @return The bytes for user.
+   * <code>string author = 15 [json_name = "author"];</code>
+   * @return The bytes for author.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getUserBytes() {
-    java.lang.Object ref = user_;
+      getAuthorBytes() {
+    java.lang.Object ref = author_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      user_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int USER_EMAIL_FIELD_NUMBER = 16;
-  private volatile java.lang.Object userEmail_;
-  /**
-   * <code>string user_email = 16 [json_name = "userEmail"];</code>
-   * @return The userEmail.
-   */
-  @java.lang.Override
-  public java.lang.String getUserEmail() {
-    java.lang.Object ref = userEmail_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      userEmail_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string user_email = 16 [json_name = "userEmail"];</code>
-   * @return The bytes for userEmail.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUserEmailBytes() {
-    java.lang.Object ref = userEmail_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      userEmail_ = b;
+      author_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -778,11 +733,8 @@ private static final long serialVersionUID = 0L;
     if (currentTag_ != false) {
       output.writeBool(14, currentTag_);
     }
-    if (!getUserBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, user_);
-    }
-    if (!getUserEmailBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, userEmail_);
+    if (!getAuthorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, author_);
     }
     unknownFields.writeTo(output);
   }
@@ -839,11 +791,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(14, currentTag_);
     }
-    if (!getUserBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, user_);
-    }
-    if (!getUserEmailBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, userEmail_);
+    if (!getAuthorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, author_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -888,10 +837,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBranchRepo())) return false;
     if (getCurrentTag()
         != other.getCurrentTag()) return false;
-    if (!getUser()
-        .equals(other.getUser())) return false;
-    if (!getUserEmail()
-        .equals(other.getUserEmail())) return false;
+    if (!getAuthor()
+        .equals(other.getAuthor())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -936,10 +883,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CURRENT_TAG_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getCurrentTag());
-    hash = (37 * hash) + USER_FIELD_NUMBER;
-    hash = (53 * hash) + getUser().hashCode();
-    hash = (37 * hash) + USER_EMAIL_FIELD_NUMBER;
-    hash = (53 * hash) + getUserEmail().hashCode();
+    hash = (37 * hash) + AUTHOR_FIELD_NUMBER;
+    hash = (53 * hash) + getAuthor().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1106,9 +1051,7 @@ private static final long serialVersionUID = 0L;
 
       currentTag_ = false;
 
-      user_ = "";
-
-      userEmail_ = "";
+      author_ = "";
 
       return this;
     }
@@ -1159,8 +1102,7 @@ private static final long serialVersionUID = 0L;
       result.urlRepo_ = urlRepo_;
       result.branchRepo_ = branchRepo_;
       result.currentTag_ = currentTag_;
-      result.user_ = user_;
-      result.userEmail_ = userEmail_;
+      result.author_ = author_;
       onBuilt();
       return result;
     }
@@ -1284,12 +1226,8 @@ private static final long serialVersionUID = 0L;
       if (other.getCurrentTag() != false) {
         setCurrentTag(other.getCurrentTag());
       }
-      if (!other.getUser().isEmpty()) {
-        user_ = other.user_;
-        onChanged();
-      }
-      if (!other.getUserEmail().isEmpty()) {
-        userEmail_ = other.userEmail_;
+      if (!other.getAuthor().isEmpty()) {
+        author_ = other.author_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2415,154 +2353,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object user_ = "";
+    private java.lang.Object author_ = "";
     /**
-     * <code>string user = 15 [json_name = "user"];</code>
-     * @return The user.
+     * <code>string author = 15 [json_name = "author"];</code>
+     * @return The author.
      */
-    public java.lang.String getUser() {
-      java.lang.Object ref = user_;
+    public java.lang.String getAuthor() {
+      java.lang.Object ref = author_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        user_ = s;
+        author_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string user = 15 [json_name = "user"];</code>
-     * @return The bytes for user.
+     * <code>string author = 15 [json_name = "author"];</code>
+     * @return The bytes for author.
      */
     public com.google.protobuf.ByteString
-        getUserBytes() {
-      java.lang.Object ref = user_;
+        getAuthorBytes() {
+      java.lang.Object ref = author_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        user_ = b;
+        author_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string user = 15 [json_name = "user"];</code>
-     * @param value The user to set.
+     * <code>string author = 15 [json_name = "author"];</code>
+     * @param value The author to set.
      * @return This builder for chaining.
      */
-    public Builder setUser(
+    public Builder setAuthor(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      user_ = value;
+      author_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string user = 15 [json_name = "user"];</code>
+     * <code>string author = 15 [json_name = "author"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearUser() {
+    public Builder clearAuthor() {
       
-      user_ = getDefaultInstance().getUser();
+      author_ = getDefaultInstance().getAuthor();
       onChanged();
       return this;
     }
     /**
-     * <code>string user = 15 [json_name = "user"];</code>
-     * @param value The bytes for user to set.
+     * <code>string author = 15 [json_name = "author"];</code>
+     * @param value The bytes for author to set.
      * @return This builder for chaining.
      */
-    public Builder setUserBytes(
+    public Builder setAuthorBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      user_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object userEmail_ = "";
-    /**
-     * <code>string user_email = 16 [json_name = "userEmail"];</code>
-     * @return The userEmail.
-     */
-    public java.lang.String getUserEmail() {
-      java.lang.Object ref = userEmail_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userEmail_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string user_email = 16 [json_name = "userEmail"];</code>
-     * @return The bytes for userEmail.
-     */
-    public com.google.protobuf.ByteString
-        getUserEmailBytes() {
-      java.lang.Object ref = userEmail_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userEmail_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string user_email = 16 [json_name = "userEmail"];</code>
-     * @param value The userEmail to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserEmail(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      userEmail_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string user_email = 16 [json_name = "userEmail"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUserEmail() {
-      
-      userEmail_ = getDefaultInstance().getUserEmail();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string user_email = 16 [json_name = "userEmail"];</code>
-     * @param value The bytes for userEmail to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserEmailBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      userEmail_ = value;
+      author_ = value;
       onChanged();
       return this;
     }

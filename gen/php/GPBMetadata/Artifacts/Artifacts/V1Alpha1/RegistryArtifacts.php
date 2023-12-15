@@ -16,13 +16,13 @@ class RegistryArtifacts
         }
         $pool->internalAddGeneratedFile(
             '
-ä
+Ô
 5artifacts/artifacts/v1alpha1/registry_artifacts.protoartifacts.artifacts.v1alpha1"y
 Tags
 name (	Rname
 	pull_time (	RpullTime
 	push_time (	RpushTime#
-storage_limit (RstorageLimit"è
+storage_limit (RstorageLimit"Ù
 ArtifactsRegistry
 id (	Rid
 digest (	Rdigest
@@ -40,10 +40,8 @@ class RegistryArtifacts
 branch_repo (	R
 branchRepo
 current_tag (R
-currentTag
-user (	Ruser
-
-user_email (	R	userEmail"V
+currentTag
+author (	Rauthor"V
 LabelArtifacts
 id (Rid
 name (	Rname 

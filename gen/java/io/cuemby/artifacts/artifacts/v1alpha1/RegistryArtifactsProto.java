@@ -43,7 +43,7 @@ public final class RegistryArtifactsProto {
       "lpha1\"y\n\004Tags\022\022\n\004name\030\001 \001(\tR\004name\022\033\n\tpul" +
       "l_time\030\002 \001(\tR\010pullTime\022\033\n\tpush_time\030\003 \001(" +
       "\tR\010pushTime\022#\n\rstorage_limit\030\004 \001(\rR\014stor" +
-      "ageLimit\"\217\004\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001" +
+      "ageLimit\"\364\003\n\021ArtifactsRegistry\022\016\n\002id\030\001 \001" +
       "(\tR\002id\022\026\n\006digest\030\002 \001(\tR\006digest\022\033\n\tpull_t" +
       "ime\030\003 \001(\tR\010pullTime\022\033\n\tpush_time\030\004 \001(\tR\010" +
       "pushTime\022\022\n\004size\030\005 \001(\003R\004size\022\026\n\006active\030\006" +
@@ -55,15 +55,15 @@ public final class RegistryArtifactsProto {
       "cation_name\030\013 \001(\tR\017applicationName\022\031\n\010ur" +
       "l_repo\030\014 \001(\tR\007urlRepo\022\037\n\013branch_repo\030\r \001" +
       "(\tR\nbranchRepo\022\037\n\013current_tag\030\016 \001(\010R\ncur" +
-      "rentTag\022\022\n\004user\030\017 \001(\tR\004user\022\035\n\nuser_emai" +
-      "l\030\020 \001(\tR\tuserEmail\"V\n\016LabelArtifacts\022\016\n\002" +
-      "id\030\001 \001(\003R\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013desc" +
-      "ription\030\003 \001(\tR\013descriptionB\305\001\n&io.cuemby" +
-      ".artifacts.artifacts.v1alpha1B\026RegistryA" +
-      "rtifactsProtoP\001Z=github.com/cuemby/ccp-s" +
-      "dk/gen/go/artifacts/artifacts/v1alpha1\242\002" +
-      "\003PPX\252\002\034Artifacts.Artifacts.V1Alpha1\312\002\034Ar" +
-      "tifacts\\Artifacts\\V1Alpha1b\006proto3"
+      "rentTag\022\026\n\006author\030\017 \001(\tR\006author\"V\n\016Label" +
+      "Artifacts\022\016\n\002id\030\001 \001(\003R\002id\022\022\n\004name\030\002 \001(\tR" +
+      "\004name\022 \n\013description\030\003 \001(\tR\013descriptionB" +
+      "\305\001\n&io.cuemby.artifacts.artifacts.v1alph" +
+      "a1B\026RegistryArtifactsProtoP\001Z=github.com" +
+      "/cuemby/ccp-sdk/gen/go/artifacts/artifac" +
+      "ts/v1alpha1\242\002\003PPX\252\002\034Artifacts.Artifacts." +
+      "V1Alpha1\312\002\034Artifacts\\Artifacts\\V1Alpha1b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -80,7 +80,7 @@ public final class RegistryArtifactsProto {
     internal_static_artifacts_artifacts_v1alpha1_ArtifactsRegistry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_artifacts_v1alpha1_ArtifactsRegistry_descriptor,
-        new java.lang.String[] { "Id", "Digest", "PullTime", "PushTime", "Size", "Active", "Tags", "OrganizationName", "ProjectName", "EnvironmentName", "ApplicationName", "UrlRepo", "BranchRepo", "CurrentTag", "User", "UserEmail", });
+        new java.lang.String[] { "Id", "Digest", "PullTime", "PushTime", "Size", "Active", "Tags", "OrganizationName", "ProjectName", "EnvironmentName", "ApplicationName", "UrlRepo", "BranchRepo", "CurrentTag", "Author", });
     internal_static_artifacts_artifacts_v1alpha1_LabelArtifacts_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_artifacts_artifacts_v1alpha1_LabelArtifacts_fieldAccessorTable = new
