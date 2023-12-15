@@ -70,13 +70,9 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      */
     protected $current_tag = false;
     /**
-     * Generated from protobuf field <code>string user = 15 [json_name = "user"];</code>
+     * Generated from protobuf field <code>string author = 15 [json_name = "author"];</code>
      */
-    protected $user = '';
-    /**
-     * Generated from protobuf field <code>string user_email = 16 [json_name = "userEmail"];</code>
-     */
-    protected $user_email = '';
+    protected $author = '';
 
     /**
      * Constructor.
@@ -98,8 +94,7 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
      *     @type string $url_repo
      *     @type string $branch_repo
      *     @type bool $current_tag
-     *     @type string $user
-     *     @type string $user_email
+     *     @type string $author
      * }
      */
     public function __construct($data = NULL) {
@@ -416,45 +411,23 @@ class ArtifactsRegistry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user = 15 [json_name = "user"];</code>
+     * Generated from protobuf field <code>string author = 15 [json_name = "author"];</code>
      * @return string
      */
-    public function getUser()
+    public function getAuthor()
     {
-        return $this->user;
+        return $this->author;
     }
 
     /**
-     * Generated from protobuf field <code>string user = 15 [json_name = "user"];</code>
+     * Generated from protobuf field <code>string author = 15 [json_name = "author"];</code>
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setAuthor($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string user_email = 16 [json_name = "userEmail"];</code>
-     * @return string
-     */
-    public function getUserEmail()
-    {
-        return $this->user_email;
-    }
-
-    /**
-     * Generated from protobuf field <code>string user_email = 16 [json_name = "userEmail"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserEmail($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_email = $var;
+        $this->author = $var;
 
         return $this;
     }
