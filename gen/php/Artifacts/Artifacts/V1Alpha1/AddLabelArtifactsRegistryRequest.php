@@ -17,6 +17,18 @@ class AddLabelArtifactsRegistryRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 label_id = 1 [json_name = "labelId"];</code>
      */
     protected $label_id = 0;
+    /**
+     * Generated from protobuf field <code>string project_name = 2 [json_name = "projectName"];</code>
+     */
+    protected $project_name = '';
+    /**
+     * Generated from protobuf field <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     */
+    protected $repository_name = '';
+    /**
+     * Generated from protobuf field <code>string reference = 4 [json_name = "reference"];</code>
+     */
+    protected $reference = '';
 
     /**
      * Constructor.
@@ -25,6 +37,9 @@ class AddLabelArtifactsRegistryRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $label_id
+     *     @type string $project_name
+     *     @type string $repository_name
+     *     @type string $reference
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +65,72 @@ class AddLabelArtifactsRegistryRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->label_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_name = 2 [json_name = "projectName"];</code>
+     * @return string
+     */
+    public function getProjectName()
+    {
+        return $this->project_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_name = 2 [json_name = "projectName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * @return string
+     */
+    public function getRepositoryName()
+    {
+        return $this->repository_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRepositoryName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->repository_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reference = 4 [json_name = "reference"];</code>
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reference = 4 [json_name = "reference"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReference($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->reference = $var;
 
         return $this;
     }

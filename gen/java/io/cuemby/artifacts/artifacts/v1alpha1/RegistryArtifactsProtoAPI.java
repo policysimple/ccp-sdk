@@ -69,28 +69,31 @@ public final class RegistryArtifactsProtoAPI {
       "ail\"\225\001\n$CreateLabelArtifactsRegistryResp" +
       "onse\022U\n\017label_artifacts\030\001 \001(\0132,.artifact" +
       "s.artifacts.v1alpha1.LabelArtifactsR\016lab" +
-      "elArtifacts\022\026\n\006status\030\002 \001(\tR\006status\"=\n A" +
-      "ddLabelArtifactsRegistryRequest\022\031\n\010label" +
-      "_id\030\001 \001(\003R\007labelId\";\n!AddLabelArtifactsR" +
-      "egistryResponse\022\026\n\006status\030\001 \001(\tR\006status2" +
-      "\367\003\n\033RegistryArtifactsAPIService\022\220\001\n\025List" +
-      "ArtifactsRegistry\022:.artifacts.artifacts." +
-      "v1alpha1.ListArtifactsRegistryRequest\032;." +
-      "artifacts.artifacts.v1alpha1.ListArtifac" +
-      "tsRegistryResponse\022\245\001\n\034CreateLabelArtifa" +
-      "ctsRegistry\022A.artifacts.artifacts.v1alph" +
-      "a1.CreateLabelArtifactsRegistryRequest\032B" +
+      "elArtifacts\022\026\n\006status\030\002 \001(\tR\006status\"\247\001\n " +
+      "AddLabelArtifactsRegistryRequest\022\031\n\010labe" +
+      "l_id\030\001 \001(\003R\007labelId\022!\n\014project_name\030\002 \001(" +
+      "\tR\013projectName\022\'\n\017repository_name\030\003 \001(\tR" +
+      "\016repositoryName\022\034\n\treference\030\004 \001(\tR\trefe" +
+      "rence\";\n!AddLabelArtifactsRegistryRespon" +
+      "se\022\026\n\006status\030\001 \001(\tR\006status2\367\003\n\033RegistryA" +
+      "rtifactsAPIService\022\220\001\n\025ListArtifactsRegi" +
+      "stry\022:.artifacts.artifacts.v1alpha1.List" +
+      "ArtifactsRegistryRequest\032;.artifacts.art" +
+      "ifacts.v1alpha1.ListArtifactsRegistryRes" +
+      "ponse\022\245\001\n\034CreateLabelArtifactsRegistry\022A" +
       ".artifacts.artifacts.v1alpha1.CreateLabe" +
-      "lArtifactsRegistryResponse\022\234\001\n\031AddLabelA" +
-      "rtifactsRegistry\022>.artifacts.artifacts.v" +
-      "1alpha1.AddLabelArtifactsRegistryRequest" +
-      "\032?.artifacts.artifacts.v1alpha1.AddLabel" +
-      "ArtifactsRegistryResponseB\310\001\n&io.cuemby." +
-      "artifacts.artifacts.v1alpha1B\031RegistryAr" +
-      "tifactsProtoAPIP\001Z=github.com/cuemby/ccp" +
-      "-sdk/gen/go/artifacts/artifacts/v1alpha1" +
-      "\242\002\003PPX\252\002\034Artifacts.Artifacts.V1Alpha1\312\002\034" +
-      "Artifacts\\Artifacts\\V1Alpha1b\006proto3"
+      "lArtifactsRegistryRequest\032B.artifacts.ar" +
+      "tifacts.v1alpha1.CreateLabelArtifactsReg" +
+      "istryResponse\022\234\001\n\031AddLabelArtifactsRegis" +
+      "try\022>.artifacts.artifacts.v1alpha1.AddLa" +
+      "belArtifactsRegistryRequest\032?.artifacts." +
+      "artifacts.v1alpha1.AddLabelArtifactsRegi" +
+      "stryResponseB\310\001\n&io.cuemby.artifacts.art" +
+      "ifacts.v1alpha1B\031RegistryArtifactsProtoA" +
+      "PIP\001Z=github.com/cuemby/ccp-sdk/gen/go/a" +
+      "rtifacts/artifacts/v1alpha1\242\002\003PPX\252\002\034Arti" +
+      "facts.Artifacts.V1Alpha1\312\002\034Artifacts\\Art" +
+      "ifacts\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -126,7 +129,7 @@ public final class RegistryArtifactsProtoAPI {
     internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryRequest_descriptor,
-        new java.lang.String[] { "LabelId", });
+        new java.lang.String[] { "LabelId", "ProjectName", "RepositoryName", "Reference", });
     internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_artifacts_artifacts_v1alpha1_AddLabelArtifactsRegistryResponse_fieldAccessorTable = new

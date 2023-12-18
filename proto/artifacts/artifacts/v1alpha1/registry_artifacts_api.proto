@@ -42,6 +42,9 @@ message CreateLabelArtifactsRegistryResponse {
 
 message AddLabelArtifactsRegistryRequest {
     int64 label_id = 1;
+    string project_name = 2;
+    string repository_name = 3;
+    string reference = 4;
 }
 
 message AddLabelArtifactsRegistryResponse {
