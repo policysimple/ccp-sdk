@@ -16,6 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AddLabelArtifactsRegistryRequest() {
+    projectName_ = "";
+    repositoryName_ = "";
+    reference_ = "";
   }
 
   @java.lang.Override
@@ -51,6 +54,24 @@ private static final long serialVersionUID = 0L;
           case 8: {
 
             labelId_ = input.readInt64();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            projectName_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            repositoryName_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            reference_ = s;
             break;
           }
           default: {
@@ -96,6 +117,120 @@ private static final long serialVersionUID = 0L;
     return labelId_;
   }
 
+  public static final int PROJECT_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object projectName_;
+  /**
+   * <code>string project_name = 2 [json_name = "projectName"];</code>
+   * @return The projectName.
+   */
+  @java.lang.Override
+  public java.lang.String getProjectName() {
+    java.lang.Object ref = projectName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      projectName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string project_name = 2 [json_name = "projectName"];</code>
+   * @return The bytes for projectName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProjectNameBytes() {
+    java.lang.Object ref = projectName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      projectName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REPOSITORY_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object repositoryName_;
+  /**
+   * <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+   * @return The repositoryName.
+   */
+  @java.lang.Override
+  public java.lang.String getRepositoryName() {
+    java.lang.Object ref = repositoryName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      repositoryName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+   * @return The bytes for repositoryName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRepositoryNameBytes() {
+    java.lang.Object ref = repositoryName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      repositoryName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REFERENCE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object reference_;
+  /**
+   * <code>string reference = 4 [json_name = "reference"];</code>
+   * @return The reference.
+   */
+  @java.lang.Override
+  public java.lang.String getReference() {
+    java.lang.Object ref = reference_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      reference_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string reference = 4 [json_name = "reference"];</code>
+   * @return The bytes for reference.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getReferenceBytes() {
+    java.lang.Object ref = reference_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      reference_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -113,6 +248,15 @@ private static final long serialVersionUID = 0L;
     if (labelId_ != 0L) {
       output.writeInt64(1, labelId_);
     }
+    if (!getProjectNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectName_);
+    }
+    if (!getRepositoryNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, repositoryName_);
+    }
+    if (!getReferenceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reference_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -125,6 +269,15 @@ private static final long serialVersionUID = 0L;
     if (labelId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, labelId_);
+    }
+    if (!getProjectNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectName_);
+    }
+    if (!getRepositoryNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, repositoryName_);
+    }
+    if (!getReferenceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reference_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -143,6 +296,12 @@ private static final long serialVersionUID = 0L;
 
     if (getLabelId()
         != other.getLabelId()) return false;
+    if (!getProjectName()
+        .equals(other.getProjectName())) return false;
+    if (!getRepositoryName()
+        .equals(other.getRepositoryName())) return false;
+    if (!getReference()
+        .equals(other.getReference())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -157,6 +316,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + LABEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getLabelId());
+    hash = (37 * hash) + PROJECT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getProjectName().hashCode();
+    hash = (37 * hash) + REPOSITORY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getRepositoryName().hashCode();
+    hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getReference().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -292,6 +457,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       labelId_ = 0L;
 
+      projectName_ = "";
+
+      repositoryName_ = "";
+
+      reference_ = "";
+
       return this;
     }
 
@@ -319,6 +490,9 @@ private static final long serialVersionUID = 0L;
     public io.cuemby.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest buildPartial() {
       io.cuemby.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest result = new io.cuemby.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest(this);
       result.labelId_ = labelId_;
+      result.projectName_ = projectName_;
+      result.repositoryName_ = repositoryName_;
+      result.reference_ = reference_;
       onBuilt();
       return result;
     }
@@ -369,6 +543,18 @@ private static final long serialVersionUID = 0L;
       if (other == io.cuemby.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.getDefaultInstance()) return this;
       if (other.getLabelId() != 0L) {
         setLabelId(other.getLabelId());
+      }
+      if (!other.getProjectName().isEmpty()) {
+        projectName_ = other.projectName_;
+        onChanged();
+      }
+      if (!other.getRepositoryName().isEmpty()) {
+        repositoryName_ = other.repositoryName_;
+        onChanged();
+      }
+      if (!other.getReference().isEmpty()) {
+        reference_ = other.reference_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -426,6 +612,234 @@ private static final long serialVersionUID = 0L;
     public Builder clearLabelId() {
       
       labelId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object projectName_ = "";
+    /**
+     * <code>string project_name = 2 [json_name = "projectName"];</code>
+     * @return The projectName.
+     */
+    public java.lang.String getProjectName() {
+      java.lang.Object ref = projectName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string project_name = 2 [json_name = "projectName"];</code>
+     * @return The bytes for projectName.
+     */
+    public com.google.protobuf.ByteString
+        getProjectNameBytes() {
+      java.lang.Object ref = projectName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string project_name = 2 [json_name = "projectName"];</code>
+     * @param value The projectName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProjectName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      projectName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string project_name = 2 [json_name = "projectName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProjectName() {
+      
+      projectName_ = getDefaultInstance().getProjectName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string project_name = 2 [json_name = "projectName"];</code>
+     * @param value The bytes for projectName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProjectNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      projectName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object repositoryName_ = "";
+    /**
+     * <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * @return The repositoryName.
+     */
+    public java.lang.String getRepositoryName() {
+      java.lang.Object ref = repositoryName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        repositoryName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * @return The bytes for repositoryName.
+     */
+    public com.google.protobuf.ByteString
+        getRepositoryNameBytes() {
+      java.lang.Object ref = repositoryName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        repositoryName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * @param value The repositoryName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRepositoryName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      repositoryName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRepositoryName() {
+      
+      repositoryName_ = getDefaultInstance().getRepositoryName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+     * @param value The bytes for repositoryName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRepositoryNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      repositoryName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object reference_ = "";
+    /**
+     * <code>string reference = 4 [json_name = "reference"];</code>
+     * @return The reference.
+     */
+    public java.lang.String getReference() {
+      java.lang.Object ref = reference_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reference_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string reference = 4 [json_name = "reference"];</code>
+     * @return The bytes for reference.
+     */
+    public com.google.protobuf.ByteString
+        getReferenceBytes() {
+      java.lang.Object ref = reference_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reference_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string reference = 4 [json_name = "reference"];</code>
+     * @param value The reference to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReference(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      reference_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string reference = 4 [json_name = "reference"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReference() {
+      
+      reference_ = getDefaultInstance().getReference();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string reference = 4 [json_name = "reference"];</code>
+     * @param value The bytes for reference to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReferenceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      reference_ = value;
       onChanged();
       return this;
     }

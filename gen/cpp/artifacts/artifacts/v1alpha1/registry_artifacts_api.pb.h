@@ -871,8 +871,53 @@ class AddLabelArtifactsRegistryRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kProjectNameFieldNumber = 2,
+    kRepositoryNameFieldNumber = 3,
+    kReferenceFieldNumber = 4,
     kLabelIdFieldNumber = 1,
   };
+  // string project_name = 2 [json_name = "projectName"];
+  void clear_project_name();
+  const std::string& project_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_project_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_project_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_project_name();
+  void set_allocated_project_name(std::string* project_name);
+  private:
+  const std::string& _internal_project_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_project_name(const std::string& value);
+  std::string* _internal_mutable_project_name();
+  public:
+
+  // string repository_name = 3 [json_name = "repositoryName"];
+  void clear_repository_name();
+  const std::string& repository_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_repository_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_repository_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_repository_name();
+  void set_allocated_repository_name(std::string* repository_name);
+  private:
+  const std::string& _internal_repository_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_repository_name(const std::string& value);
+  std::string* _internal_mutable_repository_name();
+  public:
+
+  // string reference = 4 [json_name = "reference"];
+  void clear_reference();
+  const std::string& reference() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_reference(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_reference();
+  PROTOBUF_MUST_USE_RESULT std::string* release_reference();
+  void set_allocated_reference(std::string* reference);
+  private:
+  const std::string& _internal_reference() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_reference(const std::string& value);
+  std::string* _internal_mutable_reference();
+  public:
+
   // int64 label_id = 1 [json_name = "labelId"];
   void clear_label_id();
   ::PROTOBUF_NAMESPACE_ID::int64 label_id() const;
@@ -889,6 +934,9 @@ class AddLabelArtifactsRegistryRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr project_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr repository_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::PROTOBUF_NAMESPACE_ID::int64 label_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_artifacts_2fartifacts_2fv1alpha1_2fregistry_5fartifacts_5fapi_2eproto;
@@ -1527,6 +1575,144 @@ inline void AddLabelArtifactsRegistryRequest::_internal_set_label_id(::PROTOBUF_
 inline void AddLabelArtifactsRegistryRequest::set_label_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_label_id(value);
   // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.label_id)
+}
+
+// string project_name = 2 [json_name = "projectName"];
+inline void AddLabelArtifactsRegistryRequest::clear_project_name() {
+  project_name_.ClearToEmpty();
+}
+inline const std::string& AddLabelArtifactsRegistryRequest::project_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.project_name)
+  return _internal_project_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddLabelArtifactsRegistryRequest::set_project_name(ArgT0&& arg0, ArgT... args) {
+ 
+ project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.project_name)
+}
+inline std::string* AddLabelArtifactsRegistryRequest::mutable_project_name() {
+  std::string* _s = _internal_mutable_project_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.project_name)
+  return _s;
+}
+inline const std::string& AddLabelArtifactsRegistryRequest::_internal_project_name() const {
+  return project_name_.Get();
+}
+inline void AddLabelArtifactsRegistryRequest::_internal_set_project_name(const std::string& value) {
+  
+  project_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddLabelArtifactsRegistryRequest::_internal_mutable_project_name() {
+  
+  return project_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddLabelArtifactsRegistryRequest::release_project_name() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.project_name)
+  return project_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddLabelArtifactsRegistryRequest::set_allocated_project_name(std::string* project_name) {
+  if (project_name != nullptr) {
+    
+  } else {
+    
+  }
+  project_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.project_name)
+}
+
+// string repository_name = 3 [json_name = "repositoryName"];
+inline void AddLabelArtifactsRegistryRequest::clear_repository_name() {
+  repository_name_.ClearToEmpty();
+}
+inline const std::string& AddLabelArtifactsRegistryRequest::repository_name() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.repository_name)
+  return _internal_repository_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddLabelArtifactsRegistryRequest::set_repository_name(ArgT0&& arg0, ArgT... args) {
+ 
+ repository_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.repository_name)
+}
+inline std::string* AddLabelArtifactsRegistryRequest::mutable_repository_name() {
+  std::string* _s = _internal_mutable_repository_name();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.repository_name)
+  return _s;
+}
+inline const std::string& AddLabelArtifactsRegistryRequest::_internal_repository_name() const {
+  return repository_name_.Get();
+}
+inline void AddLabelArtifactsRegistryRequest::_internal_set_repository_name(const std::string& value) {
+  
+  repository_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddLabelArtifactsRegistryRequest::_internal_mutable_repository_name() {
+  
+  return repository_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddLabelArtifactsRegistryRequest::release_repository_name() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.repository_name)
+  return repository_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddLabelArtifactsRegistryRequest::set_allocated_repository_name(std::string* repository_name) {
+  if (repository_name != nullptr) {
+    
+  } else {
+    
+  }
+  repository_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), repository_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.repository_name)
+}
+
+// string reference = 4 [json_name = "reference"];
+inline void AddLabelArtifactsRegistryRequest::clear_reference() {
+  reference_.ClearToEmpty();
+}
+inline const std::string& AddLabelArtifactsRegistryRequest::reference() const {
+  // @@protoc_insertion_point(field_get:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.reference)
+  return _internal_reference();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddLabelArtifactsRegistryRequest::set_reference(ArgT0&& arg0, ArgT... args) {
+ 
+ reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.reference)
+}
+inline std::string* AddLabelArtifactsRegistryRequest::mutable_reference() {
+  std::string* _s = _internal_mutable_reference();
+  // @@protoc_insertion_point(field_mutable:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.reference)
+  return _s;
+}
+inline const std::string& AddLabelArtifactsRegistryRequest::_internal_reference() const {
+  return reference_.Get();
+}
+inline void AddLabelArtifactsRegistryRequest::_internal_set_reference(const std::string& value) {
+  
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddLabelArtifactsRegistryRequest::_internal_mutable_reference() {
+  
+  return reference_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddLabelArtifactsRegistryRequest::release_reference() {
+  // @@protoc_insertion_point(field_release:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.reference)
+  return reference_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddLabelArtifactsRegistryRequest::set_allocated_reference(std::string* reference) {
+  if (reference != nullptr) {
+    
+  } else {
+    
+  }
+  reference_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.reference)
 }
 
 // -------------------------------------------------------------------

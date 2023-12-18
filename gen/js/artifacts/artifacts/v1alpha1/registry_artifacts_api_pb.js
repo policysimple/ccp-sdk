@@ -902,7 +902,10 @@ proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.to
  */
 proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labelId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    labelId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    projectName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    repositoryName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    reference: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -943,6 +946,18 @@ proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.deserializeB
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLabelId(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProjectName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRepositoryName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReference(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -979,6 +994,27 @@ proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.serializeBin
       f
     );
   }
+  f = message.getProjectName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getRepositoryName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getReference();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
 };
 
 
@@ -997,6 +1033,60 @@ proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.ge
  */
 proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.setLabelId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string project_name = 2;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.getProjectName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.setProjectName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string repository_name = 3;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.getRepositoryName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.setRepositoryName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string reference = 4;
+ * @return {string}
+ */
+proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.getReference = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest} returns this
+ */
+proto.artifacts.artifacts.v1alpha1.AddLabelArtifactsRegistryRequest.prototype.setReference = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

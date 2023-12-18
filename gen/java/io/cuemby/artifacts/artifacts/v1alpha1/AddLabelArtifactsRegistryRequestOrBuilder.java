@@ -12,4 +12,40 @@ public interface AddLabelArtifactsRegistryRequestOrBuilder extends
    * @return The labelId.
    */
   long getLabelId();
+
+  /**
+   * <code>string project_name = 2 [json_name = "projectName"];</code>
+   * @return The projectName.
+   */
+  java.lang.String getProjectName();
+  /**
+   * <code>string project_name = 2 [json_name = "projectName"];</code>
+   * @return The bytes for projectName.
+   */
+  com.google.protobuf.ByteString
+      getProjectNameBytes();
+
+  /**
+   * <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+   * @return The repositoryName.
+   */
+  java.lang.String getRepositoryName();
+  /**
+   * <code>string repository_name = 3 [json_name = "repositoryName"];</code>
+   * @return The bytes for repositoryName.
+   */
+  com.google.protobuf.ByteString
+      getRepositoryNameBytes();
+
+  /**
+   * <code>string reference = 4 [json_name = "reference"];</code>
+   * @return The reference.
+   */
+  java.lang.String getReference();
+  /**
+   * <code>string reference = 4 [json_name = "reference"];</code>
+   * @return The bytes for reference.
+   */
+  com.google.protobuf.ByteString
+      getReferenceBytes();
 }

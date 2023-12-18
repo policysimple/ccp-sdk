@@ -17,7 +17,7 @@ class RegistryArtifactsApi
         \GPBMetadata\Artifacts\Artifacts\V1Alpha1\RegistryArtifacts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-µ
+†
 9artifacts/artifacts/v1alpha1/registry_artifacts_api.protoartifacts.artifacts.v1alpha1"Ö
 ListArtifactsRegistryRequest\'
 organization_id (	RorganizationId
@@ -33,9 +33,12 @@ runtime_id (	R	runtimeId"ó
 email (	Remail"ï
 $CreateLabelArtifactsRegistryResponseU
 label_artifacts (2,.artifacts.artifacts.v1alpha1.LabelArtifactsRlabelArtifacts
-status (	Rstatus"=
+status (	Rstatus"ß
  AddLabelArtifactsRegistryRequest
-label_id (RlabelId";
+label_id (RlabelId!
+project_name (	RprojectName\'
+repository_name (	RrepositoryName
+	reference (	R	reference";
 !AddLabelArtifactsRegistryResponse
 status (	Rstatus2˜
 RegistryArtifactsAPIServiceê
