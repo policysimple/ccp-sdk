@@ -220,4 +220,16 @@ public interface ApplicationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getApplicationStatusBytes();
+
+  /**
+   * <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+   * @return The dockerfilePath.
+   */
+  java.lang.String getDockerfilePath();
+  /**
+   * <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+   * @return The bytes for dockerfilePath.
+   */
+  com.google.protobuf.ByteString
+      getDockerfilePathBytes();
 }

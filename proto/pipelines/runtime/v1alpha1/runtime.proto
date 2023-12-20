@@ -100,6 +100,7 @@ message Application {
   ContainerRegistry container_registry = 16;
   string docker_image_name = 17;
   string application_status = 18;
+  string dockerfile_path = 19;
 }
 
 

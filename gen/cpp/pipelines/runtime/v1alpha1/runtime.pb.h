@@ -1882,6 +1882,7 @@ class Application final :
     kOrganizationIdFieldNumber = 10,
     kDockerImageNameFieldNumber = 17,
     kApplicationStatusFieldNumber = 18,
+    kDockerfilePathFieldNumber = 19,
     kRepositoryFieldNumber = 4,
     kConfigurationFieldNumber = 5,
     kScalingFieldNumber = 11,
@@ -2031,6 +2032,20 @@ class Application final :
   std::string* _internal_mutable_application_status();
   public:
 
+  // string dockerfile_path = 19 [json_name = "dockerfilePath"];
+  void clear_dockerfile_path();
+  const std::string& dockerfile_path() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_dockerfile_path(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_dockerfile_path();
+  PROTOBUF_MUST_USE_RESULT std::string* release_dockerfile_path();
+  void set_allocated_dockerfile_path(std::string* dockerfile_path);
+  private:
+  const std::string& _internal_dockerfile_path() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_dockerfile_path(const std::string& value);
+  std::string* _internal_mutable_dockerfile_path();
+  public:
+
   // .pipelines.runtime.v1alpha1.Repository repository = 4 [json_name = "repository"];
   bool has_repository() const;
   private:
@@ -2156,6 +2171,7 @@ class Application final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr docker_image_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr application_status_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr dockerfile_path_;
   ::pipelines::runtime::v1alpha1::Repository* repository_;
   ::pipelines::runtime::v1alpha1::Configuration* configuration_;
   ::pipelines::runtime::v1alpha1::Scaling* scaling_;
@@ -6773,6 +6789,52 @@ inline void Application::set_allocated_application_status(std::string* applicati
   application_status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), application_status,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Application.application_status)
+}
+
+// string dockerfile_path = 19 [json_name = "dockerfilePath"];
+inline void Application::clear_dockerfile_path() {
+  dockerfile_path_.ClearToEmpty();
+}
+inline const std::string& Application::dockerfile_path() const {
+  // @@protoc_insertion_point(field_get:pipelines.runtime.v1alpha1.Application.dockerfile_path)
+  return _internal_dockerfile_path();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Application::set_dockerfile_path(ArgT0&& arg0, ArgT... args) {
+ 
+ dockerfile_path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.runtime.v1alpha1.Application.dockerfile_path)
+}
+inline std::string* Application::mutable_dockerfile_path() {
+  std::string* _s = _internal_mutable_dockerfile_path();
+  // @@protoc_insertion_point(field_mutable:pipelines.runtime.v1alpha1.Application.dockerfile_path)
+  return _s;
+}
+inline const std::string& Application::_internal_dockerfile_path() const {
+  return dockerfile_path_.Get();
+}
+inline void Application::_internal_set_dockerfile_path(const std::string& value) {
+  
+  dockerfile_path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Application::_internal_mutable_dockerfile_path() {
+  
+  return dockerfile_path_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Application::release_dockerfile_path() {
+  // @@protoc_insertion_point(field_release:pipelines.runtime.v1alpha1.Application.dockerfile_path)
+  return dockerfile_path_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Application::set_allocated_dockerfile_path(std::string* dockerfile_path) {
+  if (dockerfile_path != nullptr) {
+    
+  } else {
+    
+  }
+  dockerfile_path_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), dockerfile_path,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.runtime.v1alpha1.Application.dockerfile_path)
 }
 
 // -------------------------------------------------------------------
