@@ -85,6 +85,10 @@ class Application extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string application_status = 18 [json_name = "applicationStatus"];</code>
      */
     protected $application_status = '';
+    /**
+     * Generated from protobuf field <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+     */
+    protected $dockerfile_path = '';
 
     /**
      * Constructor.
@@ -110,6 +114,7 @@ class Application extends \Google\Protobuf\Internal\Message
      *     @type \Pipelines\Runtime\V1Alpha1\ContainerRegistry $container_registry
      *     @type string $docker_image_name
      *     @type string $application_status
+     *     @type string $dockerfile_path
      * }
      */
     public function __construct($data = NULL) {
@@ -549,6 +554,28 @@ class Application extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->application_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+     * @return string
+     */
+    public function getDockerfilePath()
+    {
+        return $this->dockerfile_path;
+    }
+
+    /**
+     * Generated from protobuf field <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDockerfilePath($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->dockerfile_path = $var;
 
         return $this;
     }

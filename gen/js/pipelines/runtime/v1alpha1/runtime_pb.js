@@ -2336,7 +2336,8 @@ proto.pipelines.runtime.v1alpha1.Application.toObject = function(includeInstance
     noDockerExists: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
     containerRegistry: (f = msg.getContainerRegistry()) && proto.pipelines.runtime.v1alpha1.ContainerRegistry.toObject(includeInstance, f),
     dockerImageName: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    applicationStatus: jspb.Message.getFieldWithDefault(msg, 18, "")
+    applicationStatus: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    dockerfilePath: jspb.Message.getFieldWithDefault(msg, 19, "")
   };
 
   if (includeInstance) {
@@ -2448,6 +2449,10 @@ proto.pipelines.runtime.v1alpha1.Application.deserializeBinaryFromReader = funct
     case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setApplicationStatus(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDockerfilePath(value);
       break;
     default:
       reader.skipField();
@@ -2605,6 +2610,13 @@ proto.pipelines.runtime.v1alpha1.Application.serializeBinaryToWriter = function(
   if (f.length > 0) {
     writer.writeString(
       18,
+      f
+    );
+  }
+  f = message.getDockerfilePath();
+  if (f.length > 0) {
+    writer.writeString(
+      19,
       f
     );
   }
@@ -3008,6 +3020,24 @@ proto.pipelines.runtime.v1alpha1.Application.prototype.getApplicationStatus = fu
  */
 proto.pipelines.runtime.v1alpha1.Application.prototype.setApplicationStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional string dockerfile_path = 19;
+ * @return {string}
+ */
+proto.pipelines.runtime.v1alpha1.Application.prototype.getDockerfilePath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pipelines.runtime.v1alpha1.Application} returns this
+ */
+proto.pipelines.runtime.v1alpha1.Application.prototype.setDockerfilePath = function(value) {
+  return jspb.Message.setProto3StringField(this, 19, value);
 };
 
 

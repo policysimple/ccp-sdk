@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     dockerImageBuildpack_ = 0;
     dockerImageName_ = "";
     applicationStatus_ = "";
+    dockerfilePath_ = "";
   }
 
   @java.lang.Override
@@ -192,6 +193,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             applicationStatus_ = s;
+            break;
+          }
+          case 154: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            dockerfilePath_ = s;
             break;
           }
           default: {
@@ -770,6 +777,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DOCKERFILE_PATH_FIELD_NUMBER = 19;
+  private volatile java.lang.Object dockerfilePath_;
+  /**
+   * <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+   * @return The dockerfilePath.
+   */
+  @java.lang.Override
+  public java.lang.String getDockerfilePath() {
+    java.lang.Object ref = dockerfilePath_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dockerfilePath_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+   * @return The bytes for dockerfilePath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDockerfilePathBytes() {
+    java.lang.Object ref = dockerfilePath_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      dockerfilePath_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -837,6 +882,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getApplicationStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, applicationStatus_);
+    }
+    if (!getDockerfilePathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, dockerfilePath_);
     }
     unknownFields.writeTo(output);
   }
@@ -909,6 +957,9 @@ private static final long serialVersionUID = 0L;
     if (!getApplicationStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, applicationStatus_);
     }
+    if (!getDockerfilePathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, dockerfilePath_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -970,6 +1021,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDockerImageName())) return false;
     if (!getApplicationStatus()
         .equals(other.getApplicationStatus())) return false;
+    if (!getDockerfilePath()
+        .equals(other.getDockerfilePath())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1027,6 +1080,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDockerImageName().hashCode();
     hash = (37 * hash) + APPLICATION_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getApplicationStatus().hashCode();
+    hash = (37 * hash) + DOCKERFILE_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getDockerfilePath().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1212,6 +1267,8 @@ private static final long serialVersionUID = 0L;
 
       applicationStatus_ = "";
 
+      dockerfilePath_ = "";
+
       return this;
     }
 
@@ -1272,6 +1329,7 @@ private static final long serialVersionUID = 0L;
       }
       result.dockerImageName_ = dockerImageName_;
       result.applicationStatus_ = applicationStatus_;
+      result.dockerfilePath_ = dockerfilePath_;
       onBuilt();
       return result;
     }
@@ -1382,6 +1440,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getApplicationStatus().isEmpty()) {
         applicationStatus_ = other.applicationStatus_;
+        onChanged();
+      }
+      if (!other.getDockerfilePath().isEmpty()) {
+        dockerfilePath_ = other.dockerfilePath_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2815,6 +2877,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       applicationStatus_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dockerfilePath_ = "";
+    /**
+     * <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+     * @return The dockerfilePath.
+     */
+    public java.lang.String getDockerfilePath() {
+      java.lang.Object ref = dockerfilePath_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dockerfilePath_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+     * @return The bytes for dockerfilePath.
+     */
+    public com.google.protobuf.ByteString
+        getDockerfilePathBytes() {
+      java.lang.Object ref = dockerfilePath_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dockerfilePath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+     * @param value The dockerfilePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDockerfilePath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      dockerfilePath_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDockerfilePath() {
+      
+      dockerfilePath_ = getDefaultInstance().getDockerfilePath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dockerfile_path = 19 [json_name = "dockerfilePath"];</code>
+     * @param value The bytes for dockerfilePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDockerfilePathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      dockerfilePath_ = value;
       onChanged();
       return this;
     }

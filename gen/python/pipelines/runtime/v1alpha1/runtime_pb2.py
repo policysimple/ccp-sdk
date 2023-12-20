@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$io.cuemby.pipelines.runtime.v1alpha1B\014RuntimeProtoP\001Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\x1a&pipelines/tekton/v1alpha1/tekton.proto\"@\n\x06\x42ranch\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n\x03sha\x18\x02 \x01(\tR\x03sha\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\xb0\x02\n\nRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x04 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x05 \x01(\tR\x08\x63loneUrl\x12\x18\n\x07private\x18\x06 \x01(\x08R\x07private\x12:\n\x06\x62ranch\x18\x07 \x01(\x0b\x32\".pipelines.runtime.v1alpha1.BranchR\x06\x62ranch\x12#\n\rrepository_id\x18\x08 \x01(\x05R\x0crepositoryId\x12#\n\rprovider_name\x18\t \x01(\tR\x0cproviderName\"1\n\x07\x43ommand\x12\x14\n\x05\x62uild\x18\x01 \x01(\tR\x05\x62uild\x12\x10\n\x03run\x18\x02 \x01(\tR\x03run\"K\n\x03\x45nv\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n\x03key\x18\x02 \x01(\tR\x03key\x12\x1c\n\tencrypted\x18\x03 \x01(\x08R\tencrypted\"\xbc\x01\n\rConfiguration\x12\x33\n\x04\x65nvs\x18\x01 \x03(\x0b\x32\x1f.pipelines.runtime.v1alpha1.EnvR\x04\x65nvs\x12?\n\x08\x63ommands\x18\x02 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.CommandR\x08\x63ommands\x12\x12\n\x04port\x18\x03 \x01(\x05R\x04port\x12!\n\x0cruntime_type\x18\x04 \x01(\tR\x0bruntimeType\"o\n\x13\x43onfigurationUpdate\x12\x33\n\x04\x65nvs\x18\x01 \x03(\x0b\x32\x1f.pipelines.runtime.v1alpha1.EnvR\x04\x65nvs\x12#\n\rinstance_type\x18\x02 \x01(\tR\x0cinstanceType\"\xdc\x01\n\x07Scaling\x12\x19\n\x08\x63pu_rule\x18\x01 \x01(\tR\x07\x63puRule\x12(\n\x10\x63ool_down_period\x18\x02 \x01(\tR\x0e\x63oolDownPeriod\x12)\n\x10polling_interval\x18\x03 \x01(\tR\x0fpollingInterval\x12\x1f\n\x0bmin_replica\x18\x04 \x01(\tR\nminReplica\x12\x1f\n\x0bmax_replica\x18\x05 \x01(\tR\nmaxReplica\x12\x1f\n\x0bmemory_rule\x18\x06 \x01(\tR\nmemoryRule\"\x9e\x01\n\x11\x43ontainerRegistry\x12!\n\x0cregistry_url\x18\x01 \x01(\tR\x0bregistryUrl\x12#\n\rregistry_user\x18\x02 \x01(\tR\x0cregistryUser\x12\"\n\rreg_cred_auth\x18\x03 \x01(\tR\x0bregCredAuth\x12\x1d\n\nimage_name\x18\x04 \x01(\tR\timageName\"\xb2\x07\n\x0b\x41pplication\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12\x46\n\nrepository\x18\x04 \x01(\x0b\x32&.pipelines.runtime.v1alpha1.RepositoryR\nrepository\x12O\n\rconfiguration\x18\x05 \x01(\x0b\x32).pipelines.runtime.v1alpha1.ConfigurationR\rconfiguration\x12\x1d\n\nproject_id\x18\x06 \x01(\tR\tprojectId\x12!\n\x0cname_project\x18\x07 \x01(\tR\x0bnameProject\x12#\n\rproject_image\x18\x08 \x01(\tR\x0cprojectImage\x12/\n\x13project_description\x18\t \x01(\tR\x12projectDescription\x12\'\n\x0forganization_id\x18\n \x01(\tR\x0eorganizationId\x12=\n\x07scaling\x18\x0b \x01(\x0b\x32#.pipelines.runtime.v1alpha1.ScalingR\x07scaling\x12J\n\x0ctraffic_type\x18\x0c \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12-\n\x12integration_status\x18\r \x01(\x08R\x11integrationStatus\x12\x66\n\x16\x64ocker_image_buildpack\x18\x0e \x01(\x0e\x32\x30.pipelines.runtime.v1alpha1.DockerImageBuildpackR\x14\x64ockerImageBuildpack\x12(\n\x10no_docker_exists\x18\x0f \x01(\x08R\x0enoDockerExists\x12\\\n\x12\x63ontainer_registry\x18\x10 \x01(\x0b\x32-.pipelines.runtime.v1alpha1.ContainerRegistryR\x11\x63ontainerRegistry\x12*\n\x11\x64ocker_image_name\x18\x11 \x01(\tR\x0f\x64ockerImageName\x12-\n\x12\x61pplication_status\x18\x12 \x01(\tR\x11\x61pplicationStatus\"\xbb\x13\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12N\n\x0einstance_types\x18\x03 \x03(\x0b\x32\'.pipelines.runtime.v1alpha1.IntanceTypeR\rinstanceTypes\x12\'\n\x0forganization_id\x18\x04 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x05 \x01(\tR\tprojectId\x12!\n\x0cname_project\x18\x06 \x01(\tR\x0bnameProject\x12%\n\x0e\x61pplication_id\x18\x07 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x08 \x01(\tR\x0bworkspaceId\x12%\n\x0e\x65nvironment_id\x18\t \x01(\tR\renvironmentId\x12\x16\n\x06scaler\x18\n \x01(\tR\x06scaler\x12\x1d\n\npod_status\x18\x0b \x01(\tR\tpodStatus\x12$\n\x0epod_status_msg\x18\x0c \x01(\tR\x0cpodStatusMsg\x12V\n\x0bintegration\x18\r \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0e \x03(\x0b\x32=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0f \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x10 \x03(\x0b\x32\x30.pipelines.runtime.v1alpha1.Runtime.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x11 \x03(\x0b\x32\x32.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR\textraArgs\x12J\n\x0ctraffic_type\x18\x12 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12)\n\x10response_message\x18\x13 \x01(\tR\x0fresponseMessage\x12)\n\x10\x65nvironment_name\x18\x14 \x01(\tR\x0f\x65nvironmentName\x12:\n\x19\x65nvironment_internal_name\x18\x15 \x01(\tR\x17\x65nvironmentInternalName\x12)\n\x10\x61pplication_name\x18\x16 \x01(\tR\x0f\x61pplicationName\x12!\n\x0cstorage_used\x18\x17 \x01(\rR\x0bstorageUsed\x12#\n\rstorage_limit\x18\x18 \x01(\rR\x0cstorageLimit\x12%\n\x0eintegration_id\x18\x19 \x01(\tR\rintegrationId\x12R\n\x10\x61pplication_data\x18\x1a \x01(\x0b\x32\'.pipelines.runtime.v1alpha1.ApplicationR\x0f\x61pplicationData\x12\'\n\x0f\x63ustom_pipeline\x18\x1b \x01(\x08R\x0e\x63ustomPipeline\x12O\n\x13\x62\x65\x66ore_deploy_tasks\x18\x1c \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x11\x62\x65\x66oreDeployTasks\x12M\n\x12\x61\x66ter_deploy_tasks\x18\x1d \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x10\x61\x66terDeployTasks\x12(\n\x10pod_ingress_cert\x18\x1e \x01(\tR\x0epodIngressCert\x12\x35\n\x17is_not_exist_dockerfile\x18\x1f \x01(\x08R\x14isNotExistDockerfile\x12\x39\n\x06params\x18  \x03(\x0b\x32!.pipelines.tekton.v1alpha1.ParamsR\x06params\x12I\n\x0cpipeline_run\x18! \x01(\x0b\x32&.pipelines.tekton.v1alpha1.PipelineRunR\x0bpipelineRun\x12\x19\n\x08host_url\x18\" \x01(\tR\x07hostUrl\x12\x1b\n\tapp_label\x18# \x01(\tR\x08\x61ppLabel\x12\x1d\n\ncreated_at\x18$ \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18% \x01(\tR\tupdatedAt\x12\x34\n\x16is_enabled_application\x18& \x01(\x08R\x14isEnabledApplication\x12\x1d\n\nis_enabled\x18\' \x01(\x08R\tisEnabled\x12O\n\rconfiguration\x18( \x01(\x0b\x32).pipelines.runtime.v1alpha1.ConfigurationR\rconfiguration\x12=\n\x07scaling\x18) \x01(\x0b\x32#.pipelines.runtime.v1alpha1.ScalingR\x07scaling\x12\x19\n\x08tag_name\x18* \x01(\tR\x07tagName\x12\x17\n\x07user_id\x18+ \x01(\tR\x06userId\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x88\x03\n\rUpdateRuntime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12%\n\x0e\x61pplication_id\x18\x02 \x01(\tR\rapplicationId\x12J\n\x0ctraffic_type\x18\x03 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12U\n\rconfiguration\x18\x04 \x01(\x0b\x32/.pipelines.runtime.v1alpha1.ConfigurationUpdateR\rconfiguration\x12=\n\x07scaling\x18\x05 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.ScalingR\x07scaling\x12\x16\n\x06\x62ranch\x18\x06 \x01(\tR\x06\x62ranch\x12\'\n\x0forganization_id\x18\x07 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x08 \x01(\tR\tprojectId\"H\n\x0bRuntimeList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x05items\"\x86\x01\n\x0bIntanceType\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12S\n\x0fresources_rules\x18\x03 \x03(\x0b\x32*.pipelines.runtime.v1alpha1.ResourcesRulesR\x0eresourcesRules\"\x88\x01\n\x0eResourcesRules\x12\x37\n\x05limit\x18\x01 \x03(\x0b\x32!.pipelines.runtime.v1alpha1.LimitR\x05limit\x12=\n\x07request\x18\x02 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RequestR\x07request\"+\n\x05Limit\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"-\n\x07Request\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"\x85\x01\n\x0bPipelineRun\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05label\x18\x02 \x01(\tR\x05label\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12.\n\x13pipeline_run_status\x18\x04 \x01(\tR\x11pipelineRunStatus*\xcc\x01\n\x14\x44ockerImageBuildpack\x12&\n\"DOCKER_IMAGE_BUILDPACK_UNSPECIFIED\x10\x00\x12!\n\x1d\x44OCKER_IMAGE_BUILDPACK_GOLANG\x10\x01\x12\x1f\n\x1b\x44OCKER_IMAGE_BUILDPACK_JAVA\x10\x02\x12%\n!DOCKER_IMAGE_BUILDPACK_JAVASCRIPT\x10\x03\x12!\n\x1d\x44OCKER_IMAGE_BUILDPACK_PYTHON\x10\x04*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
+  serialized_pb=b'\n(pipelines/runtime/v1alpha1/runtime.proto\x12\x1apipelines.runtime.v1alpha1\x1a&pipelines/tekton/v1alpha1/tekton.proto\"@\n\x06\x42ranch\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n\x03sha\x18\x02 \x01(\tR\x03sha\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\xb0\x02\n\nRepository\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x12\n\x04\x66ork\x18\x04 \x01(\x08R\x04\x66ork\x12\x1b\n\tclone_url\x18\x05 \x01(\tR\x08\x63loneUrl\x12\x18\n\x07private\x18\x06 \x01(\x08R\x07private\x12:\n\x06\x62ranch\x18\x07 \x01(\x0b\x32\".pipelines.runtime.v1alpha1.BranchR\x06\x62ranch\x12#\n\rrepository_id\x18\x08 \x01(\x05R\x0crepositoryId\x12#\n\rprovider_name\x18\t \x01(\tR\x0cproviderName\"1\n\x07\x43ommand\x12\x14\n\x05\x62uild\x18\x01 \x01(\tR\x05\x62uild\x12\x10\n\x03run\x18\x02 \x01(\tR\x03run\"K\n\x03\x45nv\x12\x14\n\x05value\x18\x01 \x01(\tR\x05value\x12\x10\n\x03key\x18\x02 \x01(\tR\x03key\x12\x1c\n\tencrypted\x18\x03 \x01(\x08R\tencrypted\"\xbc\x01\n\rConfiguration\x12\x33\n\x04\x65nvs\x18\x01 \x03(\x0b\x32\x1f.pipelines.runtime.v1alpha1.EnvR\x04\x65nvs\x12?\n\x08\x63ommands\x18\x02 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.CommandR\x08\x63ommands\x12\x12\n\x04port\x18\x03 \x01(\x05R\x04port\x12!\n\x0cruntime_type\x18\x04 \x01(\tR\x0bruntimeType\"o\n\x13\x43onfigurationUpdate\x12\x33\n\x04\x65nvs\x18\x01 \x03(\x0b\x32\x1f.pipelines.runtime.v1alpha1.EnvR\x04\x65nvs\x12#\n\rinstance_type\x18\x02 \x01(\tR\x0cinstanceType\"\xdc\x01\n\x07Scaling\x12\x19\n\x08\x63pu_rule\x18\x01 \x01(\tR\x07\x63puRule\x12(\n\x10\x63ool_down_period\x18\x02 \x01(\tR\x0e\x63oolDownPeriod\x12)\n\x10polling_interval\x18\x03 \x01(\tR\x0fpollingInterval\x12\x1f\n\x0bmin_replica\x18\x04 \x01(\tR\nminReplica\x12\x1f\n\x0bmax_replica\x18\x05 \x01(\tR\nmaxReplica\x12\x1f\n\x0bmemory_rule\x18\x06 \x01(\tR\nmemoryRule\"\x9e\x01\n\x11\x43ontainerRegistry\x12!\n\x0cregistry_url\x18\x01 \x01(\tR\x0bregistryUrl\x12#\n\rregistry_user\x18\x02 \x01(\tR\x0cregistryUser\x12\"\n\rreg_cred_auth\x18\x03 \x01(\tR\x0bregCredAuth\x12\x1d\n\nimage_name\x18\x04 \x01(\tR\timageName\"\xdb\x07\n\x0b\x41pplication\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0bintegration\x18\x03 \x01(\tR\x0bintegration\x12\x46\n\nrepository\x18\x04 \x01(\x0b\x32&.pipelines.runtime.v1alpha1.RepositoryR\nrepository\x12O\n\rconfiguration\x18\x05 \x01(\x0b\x32).pipelines.runtime.v1alpha1.ConfigurationR\rconfiguration\x12\x1d\n\nproject_id\x18\x06 \x01(\tR\tprojectId\x12!\n\x0cname_project\x18\x07 \x01(\tR\x0bnameProject\x12#\n\rproject_image\x18\x08 \x01(\tR\x0cprojectImage\x12/\n\x13project_description\x18\t \x01(\tR\x12projectDescription\x12\'\n\x0forganization_id\x18\n \x01(\tR\x0eorganizationId\x12=\n\x07scaling\x18\x0b \x01(\x0b\x32#.pipelines.runtime.v1alpha1.ScalingR\x07scaling\x12J\n\x0ctraffic_type\x18\x0c \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12-\n\x12integration_status\x18\r \x01(\x08R\x11integrationStatus\x12\x66\n\x16\x64ocker_image_buildpack\x18\x0e \x01(\x0e\x32\x30.pipelines.runtime.v1alpha1.DockerImageBuildpackR\x14\x64ockerImageBuildpack\x12(\n\x10no_docker_exists\x18\x0f \x01(\x08R\x0enoDockerExists\x12\\\n\x12\x63ontainer_registry\x18\x10 \x01(\x0b\x32-.pipelines.runtime.v1alpha1.ContainerRegistryR\x11\x63ontainerRegistry\x12*\n\x11\x64ocker_image_name\x18\x11 \x01(\tR\x0f\x64ockerImageName\x12-\n\x12\x61pplication_status\x18\x12 \x01(\tR\x11\x61pplicationStatus\x12\'\n\x0f\x64ockerfile_path\x18\x13 \x01(\tR\x0e\x64ockerfilePath\"\xbb\x13\n\x07Runtime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12N\n\x0einstance_types\x18\x03 \x03(\x0b\x32\'.pipelines.runtime.v1alpha1.IntanceTypeR\rinstanceTypes\x12\'\n\x0forganization_id\x18\x04 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x05 \x01(\tR\tprojectId\x12!\n\x0cname_project\x18\x06 \x01(\tR\x0bnameProject\x12%\n\x0e\x61pplication_id\x18\x07 \x01(\tR\rapplicationId\x12!\n\x0cworkspace_id\x18\x08 \x01(\tR\x0bworkspaceId\x12%\n\x0e\x65nvironment_id\x18\t \x01(\tR\renvironmentId\x12\x16\n\x06scaler\x18\n \x01(\tR\x06scaler\x12\x1d\n\npod_status\x18\x0b \x01(\tR\tpodStatus\x12$\n\x0epod_status_msg\x18\x0c \x01(\tR\x0cpodStatusMsg\x12V\n\x0bintegration\x18\r \x03(\x0b\x32\x34.pipelines.runtime.v1alpha1.Runtime.IntegrationEntryR\x0bintegration\x12r\n\x15\x65nvironment_variables\x18\x0e \x03(\x0b\x32=.pipelines.runtime.v1alpha1.Runtime.EnvironmentVariablesEntryR\x14\x65nvironmentVariables\x12M\n\x08\x63ommands\x18\x0f \x03(\x0b\x32\x31.pipelines.runtime.v1alpha1.Runtime.CommandsEntryR\x08\x63ommands\x12J\n\x07secrets\x18\x10 \x03(\x0b\x32\x30.pipelines.runtime.v1alpha1.Runtime.SecretsEntryR\x07secrets\x12Q\n\nextra_args\x18\x11 \x03(\x0b\x32\x32.pipelines.runtime.v1alpha1.Runtime.ExtraArgsEntryR\textraArgs\x12J\n\x0ctraffic_type\x18\x12 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12)\n\x10response_message\x18\x13 \x01(\tR\x0fresponseMessage\x12)\n\x10\x65nvironment_name\x18\x14 \x01(\tR\x0f\x65nvironmentName\x12:\n\x19\x65nvironment_internal_name\x18\x15 \x01(\tR\x17\x65nvironmentInternalName\x12)\n\x10\x61pplication_name\x18\x16 \x01(\tR\x0f\x61pplicationName\x12!\n\x0cstorage_used\x18\x17 \x01(\rR\x0bstorageUsed\x12#\n\rstorage_limit\x18\x18 \x01(\rR\x0cstorageLimit\x12%\n\x0eintegration_id\x18\x19 \x01(\tR\rintegrationId\x12R\n\x10\x61pplication_data\x18\x1a \x01(\x0b\x32\'.pipelines.runtime.v1alpha1.ApplicationR\x0f\x61pplicationData\x12\'\n\x0f\x63ustom_pipeline\x18\x1b \x01(\x08R\x0e\x63ustomPipeline\x12O\n\x13\x62\x65\x66ore_deploy_tasks\x18\x1c \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x11\x62\x65\x66oreDeployTasks\x12M\n\x12\x61\x66ter_deploy_tasks\x18\x1d \x03(\x0b\x32\x1f.pipelines.tekton.v1alpha1.TaskR\x10\x61\x66terDeployTasks\x12(\n\x10pod_ingress_cert\x18\x1e \x01(\tR\x0epodIngressCert\x12\x35\n\x17is_not_exist_dockerfile\x18\x1f \x01(\x08R\x14isNotExistDockerfile\x12\x39\n\x06params\x18  \x03(\x0b\x32!.pipelines.tekton.v1alpha1.ParamsR\x06params\x12I\n\x0cpipeline_run\x18! \x01(\x0b\x32&.pipelines.tekton.v1alpha1.PipelineRunR\x0bpipelineRun\x12\x19\n\x08host_url\x18\" \x01(\tR\x07hostUrl\x12\x1b\n\tapp_label\x18# \x01(\tR\x08\x61ppLabel\x12\x1d\n\ncreated_at\x18$ \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18% \x01(\tR\tupdatedAt\x12\x34\n\x16is_enabled_application\x18& \x01(\x08R\x14isEnabledApplication\x12\x1d\n\nis_enabled\x18\' \x01(\x08R\tisEnabled\x12O\n\rconfiguration\x18( \x01(\x0b\x32).pipelines.runtime.v1alpha1.ConfigurationR\rconfiguration\x12=\n\x07scaling\x18) \x01(\x0b\x32#.pipelines.runtime.v1alpha1.ScalingR\x07scaling\x12\x19\n\x08tag_name\x18* \x01(\tR\x07tagName\x12\x17\n\x07user_id\x18+ \x01(\tR\x06userId\x1a>\n\x10IntegrationEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1aG\n\x19\x45nvironmentVariablesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a;\n\rCommandsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cSecretsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a<\n\x0e\x45xtraArgsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x88\x03\n\rUpdateRuntime\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12%\n\x0e\x61pplication_id\x18\x02 \x01(\tR\rapplicationId\x12J\n\x0ctraffic_type\x18\x03 \x01(\x0e\x32\'.pipelines.runtime.v1alpha1.TrafficTypeR\x0btrafficType\x12U\n\rconfiguration\x18\x04 \x01(\x0b\x32/.pipelines.runtime.v1alpha1.ConfigurationUpdateR\rconfiguration\x12=\n\x07scaling\x18\x05 \x01(\x0b\x32#.pipelines.runtime.v1alpha1.ScalingR\x07scaling\x12\x16\n\x06\x62ranch\x18\x06 \x01(\tR\x06\x62ranch\x12\'\n\x0forganization_id\x18\x07 \x01(\tR\x0eorganizationId\x12\x1d\n\nproject_id\x18\x08 \x01(\tR\tprojectId\"H\n\x0bRuntimeList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RuntimeR\x05items\"\x86\x01\n\x0bIntanceType\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12S\n\x0fresources_rules\x18\x03 \x03(\x0b\x32*.pipelines.runtime.v1alpha1.ResourcesRulesR\x0eresourcesRules\"\x88\x01\n\x0eResourcesRules\x12\x37\n\x05limit\x18\x01 \x03(\x0b\x32!.pipelines.runtime.v1alpha1.LimitR\x05limit\x12=\n\x07request\x18\x02 \x03(\x0b\x32#.pipelines.runtime.v1alpha1.RequestR\x07request\"+\n\x05Limit\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"-\n\x07Request\x12\x10\n\x03\x63pu\x18\x01 \x01(\tR\x03\x63pu\x12\x10\n\x03ram\x18\x02 \x01(\tR\x03ram\"\x85\x01\n\x0bPipelineRun\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05label\x18\x02 \x01(\tR\x05label\x12\x1c\n\tnamespace\x18\x03 \x01(\tR\tnamespace\x12.\n\x13pipeline_run_status\x18\x04 \x01(\tR\x11pipelineRunStatus*\xcc\x01\n\x14\x44ockerImageBuildpack\x12&\n\"DOCKER_IMAGE_BUILDPACK_UNSPECIFIED\x10\x00\x12!\n\x1d\x44OCKER_IMAGE_BUILDPACK_GOLANG\x10\x01\x12\x1f\n\x1b\x44OCKER_IMAGE_BUILDPACK_JAVA\x10\x02\x12%\n!DOCKER_IMAGE_BUILDPACK_JAVASCRIPT\x10\x03\x12!\n\x1d\x44OCKER_IMAGE_BUILDPACK_PYTHON\x10\x04*a\n\x0bTrafficType\x12\x1c\n\x18TRAFFIC_TYPE_UNSPECIFIED\x10\x00\x12\x19\n\x15TRAFFIC_TYPE_EXTERNAL\x10\x01\x12\x19\n\x15TRAFFIC_TYPE_INTERNAL\x10\x02\x42\xad\x01\n$io.cuemby.pipelines.runtime.v1alpha1B\x0cRuntimeProtoP\x01Z5github.com/cuemby/ccp-runtime-service/runtimev1alpha1\xa2\x02\x03PPX\xaa\x02\x1aPipelines.Runtime.V1Alpha1\xca\x02\x1aPipelines\\Runtime\\V1Alpha1b\x06proto3'
   ,
   dependencies=[pipelines_dot_tekton_dot_v1alpha1_dot_tekton__pb2.DESCRIPTOR,])
 
@@ -60,8 +60,8 @@ _DOCKERIMAGEBUILDPACK = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5718,
-  serialized_end=5922,
+  serialized_start=5759,
+  serialized_end=5963,
 )
 _sym_db.RegisterEnumDescriptor(_DOCKERIMAGEBUILDPACK)
 
@@ -91,8 +91,8 @@ _TRAFFICTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5924,
-  serialized_end=6021,
+  serialized_start=5965,
+  serialized_end=6062,
 )
 _sym_db.RegisterEnumDescriptor(_TRAFFICTYPE)
 
@@ -673,6 +673,13 @@ _APPLICATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='applicationStatus', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dockerfile_path', full_name='pipelines.runtime.v1alpha1.Application.dockerfile_path', index=18,
+      number=19, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='dockerfilePath', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -686,7 +693,7 @@ _APPLICATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1302,
-  serialized_end=2248,
+  serialized_end=2289,
 )
 
 
@@ -724,8 +731,8 @@ _RUNTIME_INTEGRATIONENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4424,
-  serialized_end=4486,
+  serialized_start=4465,
+  serialized_end=4527,
 )
 
 _RUNTIME_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
@@ -762,8 +769,8 @@ _RUNTIME_ENVIRONMENTVARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4488,
-  serialized_end=4559,
+  serialized_start=4529,
+  serialized_end=4600,
 )
 
 _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
@@ -800,8 +807,8 @@ _RUNTIME_COMMANDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4561,
-  serialized_end=4620,
+  serialized_start=4602,
+  serialized_end=4661,
 )
 
 _RUNTIME_SECRETSENTRY = _descriptor.Descriptor(
@@ -838,8 +845,8 @@ _RUNTIME_SECRETSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4622,
-  serialized_end=4680,
+  serialized_start=4663,
+  serialized_end=4721,
 )
 
 _RUNTIME_EXTRAARGSENTRY = _descriptor.Descriptor(
@@ -876,8 +883,8 @@ _RUNTIME_EXTRAARGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4682,
-  serialized_end=4742,
+  serialized_start=4723,
+  serialized_end=4783,
 )
 
 _RUNTIME = _descriptor.Descriptor(
@@ -1201,8 +1208,8 @@ _RUNTIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2251,
-  serialized_end=4742,
+  serialized_start=2292,
+  serialized_end=4783,
 )
 
 
@@ -1282,8 +1289,8 @@ _UPDATERUNTIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4745,
-  serialized_end=5137,
+  serialized_start=4786,
+  serialized_end=5178,
 )
 
 
@@ -1314,8 +1321,8 @@ _RUNTIMELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5139,
-  serialized_end=5211,
+  serialized_start=5180,
+  serialized_end=5252,
 )
 
 
@@ -1360,8 +1367,8 @@ _INTANCETYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5214,
-  serialized_end=5348,
+  serialized_start=5255,
+  serialized_end=5389,
 )
 
 
@@ -1399,8 +1406,8 @@ _RESOURCESRULES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5351,
-  serialized_end=5487,
+  serialized_start=5392,
+  serialized_end=5528,
 )
 
 
@@ -1438,8 +1445,8 @@ _LIMIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5489,
-  serialized_end=5532,
+  serialized_start=5530,
+  serialized_end=5573,
 )
 
 
@@ -1477,8 +1484,8 @@ _REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5534,
-  serialized_end=5579,
+  serialized_start=5575,
+  serialized_end=5620,
 )
 
 
@@ -1530,8 +1537,8 @@ _PIPELINERUN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5582,
-  serialized_end=5715,
+  serialized_start=5623,
+  serialized_end=5756,
 )
 
 _REPOSITORY.fields_by_name['branch'].message_type = _BRANCH
