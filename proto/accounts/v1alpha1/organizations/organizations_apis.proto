@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizations";
+
+import "accounts/v1alpha1/organizations/organizations.proto";
+package accounts.v1alpha1.organizations.v1;
+
+
+service OrganizationService {
+    ///Organization
+    rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);
+    rpc ListOrganization(ListOrganizationRequest) returns (ListOrganizationResponse);
+    rpc GetOneOrganization(GetOneOrganizationRequest) returns (GetOneOrganizationResponse);
+    rpc UpdateOrganization(UpdateOrganizationRequest) returns (UpdateOrganizationResponse);
+    rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse);
+
+}

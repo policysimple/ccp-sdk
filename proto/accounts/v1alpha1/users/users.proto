@@ -1,0 +1,222 @@
+syntax = "proto3";
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/users";
+import "accounts/v1alpha1/accounts.proto";
+package accounts.v1alpha1.users.v1;
+
+
+/*
+
+USERS
+
+*/
+
+
+message CreateUserResponse {
+    string msg = 1;
+}
+
+message UpdateUserResponse {
+    string msg = 1;
+}
+
+message DeleteUserResponse {
+    string msg = 1;
+}
+
+//ListUser
+message ListUserRequest {
+    string organization_id = 1;
+    string project_id = 2;
+}
+
+//Create
+message CreateUserRequest {
+    string user_id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string email = 4;
+    bool is_active = 5;
+    repeated string roles_ids = 6;
+    repeated uint32 permissions_ids = 7;
+    repeated string organizations_ids = 8;
+    // details
+    string phone_number = 9;
+    string country = 10;
+    string city = 11;
+    string zip_code = 12;
+    string address = 13;
+
+    string state = 14;
+    string emoji_country = 15;
+    string invitation_code  = 16;
+
+    bool is_mfa_enabled = 17;
+
+    //preferences
+    string language = 18;
+    bool push_notification  = 19;
+    bool email_notification = 20;
+    bool new_login_notification = 21;
+    bool create_notification = 22;
+    bool update_notification = 23;
+    bool delete_notification = 24;
+    bool application_notification = 25;
+    bool read_notification = 26;
+
+
+    string phone_code = 27;
+    string optional_address = 28;
+
+    //image
+    string image = 29;
+}
+
+//Update
+message UpdateUserRequest {
+    uint32 auth_id = 1;
+    CreateUserRequest auth = 2;
+}
+
+//Update
+message DeleteUserRequest {
+    uint32 user_id = 1;
+    string organization_id = 2;
+}
+
+
+//GetOneUserRequest
+message GetOneUserRequest {
+    uint32 id = 1;
+    string organization_id = 2;
+}
+
+message GetOneUserResponse {
+    UserDetail user = 1;
+    string msg = 2;
+    string error = 3;
+}
+
+
+//ListResponse
+message ListUserResponse {
+    repeated UserList users = 1;
+}
+
+
+
+/*
+    INVITATIONS
+*/
+
+
+//pagination
+message ListUserPaginationRequest{
+    int32 offset = 1;
+    int32 limit = 2;
+} 
+
+message ListUserPaginationResponse {
+    int64 count = 1;
+    repeated UserList users = 2;
+}
+
+
+/*
+    DEX
+*/
+
+message GetListUserDexRequest {}
+
+message GetListUserDexResponse {
+    repeated UsersDex users_dex = 1;
+}
+
+
+message GetOneUserDexRequest {
+    string user_id=1;
+    CreateUserRequest user = 2;
+
+}
+
+message GetOneUserDexResponse {
+    UserDetail user = 1;
+    string msg = 2;
+    string error = 3;
+
+}
+
+
+
+/*
+    VERIFICATION EMAIL
+*/
+message SendVerificationEmailRequest {
+    string email = 1;
+    string name = 2;
+    string url = 3;
+}
+
+message SendVerificationEmailResponse {
+    string html_result=1;
+    string error = 2;
+}
+
+message VerifyEmailRequest {
+    string token = 1;
+}
+
+message VerifyEmailResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+
+message CheckUserRequest {
+    string organization_id = 1;
+    string project_id = 2;
+    string get_organization_from_project = 3;
+    string permission = 4;
+    // users
+    string user_id_dex = 5;
+    string user_id_admin = 6;
+    uint32 user_id = 7;
+    string type_permission = 9;
+    repeated string roles_ids = 10;
+
+    string api_key_value = 11;
+
+    /*
+        replace dex by ccp
+    */
+    string token_ccp_admin = 12;
+    string token_ccp_user_id = 13;
+
+
+}
+
+message CheckUserResponse {
+    bool is_exists = 1;
+    bool is_admin = 3;
+    string msg = 4;
+    string error = 5;
+}
+
+message UsersDex {
+    string user_id=1;
+    string provider=2;
+}
+
+
+/*
+
+    FILTER BY EMAIL
+*/
+
+message GetUsersEmailFilterRequest {
+    string value = 1;
+}
+message GetUsersEmailFilterResponse {
+    repeated UserList users = 1;
+}
+

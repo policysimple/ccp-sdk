@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/roles";
+
+import "accounts/v1alpha1/roles/roles.proto";
+package accounts.v1alpha1.roles.v1;
+
+service RoleService {
+    rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse);
+    rpc ListRoles(ListRolesRequest) returns (ListRolesResponse);
+    rpc UpdateRole(UpdateRoleRequest) returns (UpdateRoleResponse);
+    rpc GetOneRole(GetOneRoleRequest) returns (GetOneRoleResponse);
+    rpc DeleteRole(DeleteRoleRequest) returns (DeleteRoleResponse);
+
+    //Users
+    rpc GetRolesByUser(GetRolesByUserRequest) returns (GetRolesByUserResponse);
+    rpc GetRolesByOrgUser(GetRolesByOrgUserRequest) returns (GetRolesByOrgUserResponse);
+}
