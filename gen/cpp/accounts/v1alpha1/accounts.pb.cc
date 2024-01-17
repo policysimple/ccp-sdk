@@ -146,6 +146,90 @@ struct OrganizationDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OrganizationDefaultTypeInternal _Organization_default_instance_;
+constexpr ProjectUserDetail::ProjectUserDetail(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : users_()
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organization_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , roles_(nullptr){}
+struct ProjectUserDetailDefaultTypeInternal {
+  constexpr ProjectUserDetailDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProjectUserDetailDefaultTypeInternal() {}
+  union {
+    ProjectUserDetail _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProjectUserDetailDefaultTypeInternal _ProjectUserDetail_default_instance_;
+constexpr OrganizationUserDetail::OrganizationUserDetail(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : projects_()
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , slug_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , owner_(nullptr)
+  , roles_(nullptr){}
+struct OrganizationUserDetailDefaultTypeInternal {
+  constexpr OrganizationUserDetailDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~OrganizationUserDetailDefaultTypeInternal() {}
+  union {
+    OrganizationUserDetail _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OrganizationUserDetailDefaultTypeInternal _OrganizationUserDetail_default_instance_;
+constexpr UserDetailOne::UserDetailOne(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : roles_()
+  , permissions_()
+  , user_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , first_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , last_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , phone_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , country_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , city_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , zip_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , state_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , emoji_country_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , token_ccp_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , language_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , phone_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , optional_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , organizations_(nullptr)
+  , id_(0u)
+  , is_active_(false)
+  , is_super_user_(false)
+  , is_mfa_enabled_(false)
+  , email_verified_(false)
+  , push_notification_(false)
+  , email_notification_(false)
+  , new_login_notification_(false)
+  , create_notification_(false)
+  , update_notification_(false)
+  , delete_notification_(false)
+  , application_notification_(false)
+  , read_notification_(false){}
+struct UserDetailOneDefaultTypeInternal {
+  constexpr UserDetailOneDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UserDetailOneDefaultTypeInternal() {}
+  union {
+    UserDetailOne _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UserDetailOneDefaultTypeInternal _UserDetailOne_default_instance_;
 constexpr UserDetail::UserDetail(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : roles_()
@@ -193,7 +277,7 @@ struct UserDetailDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UserDetailDefaultTypeInternal _UserDetail_default_instance_;
 }  // namespace v1alpha1
 }  // namespace accounts
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto[11];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_accounts_2fv1alpha1_2faccounts_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_accounts_2fv1alpha1_2faccounts_2eproto = nullptr;
 
@@ -285,6 +369,72 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::Organization, projects_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::Organization, id_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, name_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, image_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, organization_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, description_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, created_at_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, updated_at_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, roles_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, users_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, name_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, image_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, description_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, owner_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, roles_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, slug_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, projects_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, user_id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, first_name_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, last_name_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, email_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, is_active_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, created_at_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, updated_at_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, roles_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, permissions_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, is_super_user_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, organizations_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, phone_number_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, country_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, city_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, zip_code_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, address_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, state_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, emoji_country_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, is_mfa_enabled_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, token_ccp_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, email_verified_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, language_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, push_notification_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, email_notification_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, new_login_notification_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, create_notification_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, update_notification_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, delete_notification_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, application_notification_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, read_notification_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, phone_code_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, optional_address_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, image_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetail, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -332,7 +482,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 49, -1, sizeof(::accounts::v1alpha1::Permission)},
   { 59, -1, sizeof(::accounts::v1alpha1::Project)},
   { 73, -1, sizeof(::accounts::v1alpha1::Organization)},
-  { 86, -1, sizeof(::accounts::v1alpha1::UserDetail)},
+  { 86, -1, sizeof(::accounts::v1alpha1::ProjectUserDetail)},
+  { 100, -1, sizeof(::accounts::v1alpha1::OrganizationUserDetail)},
+  { 113, -1, sizeof(::accounts::v1alpha1::UserDetailOne)},
+  { 152, -1, sizeof(::accounts::v1alpha1::UserDetail)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -343,6 +496,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::_Permission_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::_Project_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::_Organization_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::_ProjectUserDetail_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::_OrganizationUserDetail_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::_UserDetailOne_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::accounts::v1alpha1::_UserDetail_default_instance_),
 };
 
@@ -388,45 +544,93 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto[] PR
   "owner\022-\n\005roles\030\010 \003(\0132\027.accounts.v1alpha1"
   ".RoleR\005roles\022\022\n\004slug\030\t \001(\tR\004slug\0226\n\010proj"
   "ects\030\n \003(\0132\032.accounts.v1alpha1.ProjectR\010"
-  "projects\022\016\n\002id\030\013 \001(\tR\002id\"\361\t\n\nUserDetail\022"
-  "\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006userId"
-  "\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_"
-  "name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 \001(\tR\005ema"
-  "il\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\ncreat"
-  "ed_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030\010 \001"
-  "(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027.accounts."
-  "v1alpha1.RoleR\005roles\022\?\n\013permissions\030\n \003("
-  "\0132\035.accounts.v1alpha1.PermissionR\013permis"
-  "sions\022\"\n\ris_super_user\030\013 \001(\010R\013isSuperUse"
-  "r\022E\n\rorganizations\030\014 \003(\0132\037.accounts.v1al"
-  "pha1.OrganizationR\rorganizations\022!\n\014phon"
-  "e_number\030\017 \001(\tR\013phoneNumber\022\030\n\007country\030\020"
-  " \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip"
-  "_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030\023 \001(\tR\007a"
-  "ddress\022\024\n\005state\030\024 \001(\tR\005state\022#\n\remoji_co"
-  "untry\030\025 \001(\tR\014emojiCountry\022$\n\016is_mfa_enab"
-  "led\030\026 \001(\010R\014isMfaEnabled\022\033\n\ttoken_ccp\030\027 \001"
-  "(\tR\010tokenCcp\022%\n\016email_verified\030\030 \001(\010R\rem"
-  "ailVerified\022\032\n\010language\030\032 \001(\tR\010language\022"
-  "+\n\021push_notification\030\033 \001(\010R\020pushNotifica"
-  "tion\022-\n\022email_notification\030\034 \001(\010R\021emailN"
-  "otification\0224\n\026new_login_notification\030\035 "
-  "\001(\010R\024newLoginNotification\022/\n\023create_noti"
-  "fication\030\036 \001(\010R\022createNotification\022/\n\023up"
-  "date_notification\030\037 \001(\010R\022updateNotificat"
-  "ion\022/\n\023delete_notification\030  \001(\010R\022delete"
-  "Notification\0229\n\030application_notification"
-  "\030! \001(\010R\027applicationNotification\022+\n\021read_"
-  "notification\030\" \001(\010R\020readNotification\022\035\n\n"
-  "phone_code\030# \001(\tR\tphoneCode\022)\n\020optional_"
-  "address\030$ \001(\tR\017optionalAddress\022\024\n\005image\030"
-  "% \001(\tR\005imageB4Z2github.com/cuemby/ccp-sd"
-  "k/gen/go/accounts/v1alpha1b\006proto3"
+  "projects\022\016\n\002id\030\013 \001(\tR\002id\"\275\002\n\021ProjectUser"
+  "Detail\022\016\n\002id\030\n \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na"
+  "me\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organization"
+  "_id\030\004 \001(\tR\016organizationId\022 \n\013description"
+  "\030\005 \001(\tR\013description\022\035\n\ncreated_at\030\006 \001(\tR"
+  "\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedA"
+  "t\022-\n\005roles\030\010 \001(\0132\027.accounts.v1alpha1.Rol"
+  "eR\005roles\0226\n\005users\030\t \003(\0132 .accounts.v1alp"
+  "ha1.MemberProjectR\005users\"\254\002\n\026Organizatio"
+  "nUserDetail\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image"
+  "\030\003 \001(\tR\005image\022 \n\013description\030\004 \001(\tR\013desc"
+  "ription\0221\n\005owner\030\007 \001(\0132\033.accounts.v1alph"
+  "a1.UserListR\005owner\022-\n\005roles\030\010 \001(\0132\027.acco"
+  "unts.v1alpha1.RoleR\005roles\022\022\n\004slug\030\t \001(\tR"
+  "\004slug\022@\n\010projects\030\n \003(\0132$.accounts.v1alp"
+  "ha1.ProjectUserDetailR\010projects\022\016\n\002id\030\013 "
+  "\001(\tR\002id\"\376\t\n\rUserDetailOne\022\016\n\002id\030\001 \001(\rR\002i"
+  "d\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name"
+  "\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010la"
+  "stName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_activ"
+  "e\030\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001(\tR\tc"
+  "reatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022"
+  "-\n\005roles\030\t \003(\0132\027.accounts.v1alpha1.RoleR"
+  "\005roles\022\?\n\013permissions\030\n \003(\0132\035.accounts.v"
+  "1alpha1.PermissionR\013permissions\022\"\n\ris_su"
+  "per_user\030\013 \001(\010R\013isSuperUser\022O\n\rorganizat"
+  "ions\030\014 \001(\0132).accounts.v1alpha1.Organizat"
+  "ionUserDetailR\rorganizations\022!\n\014phone_nu"
+  "mber\030\017 \001(\tR\013phoneNumber\022\030\n\007country\030\020 \001(\t"
+  "R\007country\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip_cod"
+  "e\030\022 \001(\tR\007zipCode\022\030\n\007address\030\023 \001(\tR\007addre"
+  "ss\022\024\n\005state\030\024 \001(\tR\005state\022#\n\remoji_countr"
+  "y\030\025 \001(\tR\014emojiCountry\022$\n\016is_mfa_enabled\030"
+  "\026 \001(\010R\014isMfaEnabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010"
+  "tokenCcp\022%\n\016email_verified\030\030 \001(\010R\remailV"
+  "erified\022\032\n\010language\030\032 \001(\tR\010language\022+\n\021p"
+  "ush_notification\030\033 \001(\010R\020pushNotification"
+  "\022-\n\022email_notification\030\034 \001(\010R\021emailNotif"
+  "ication\0224\n\026new_login_notification\030\035 \001(\010R"
+  "\024newLoginNotification\022/\n\023create_notifica"
+  "tion\030\036 \001(\010R\022createNotification\022/\n\023update"
+  "_notification\030\037 \001(\010R\022updateNotification\022"
+  "/\n\023delete_notification\030  \001(\010R\022deleteNoti"
+  "fication\0229\n\030application_notification\030! \001"
+  "(\010R\027applicationNotification\022+\n\021read_noti"
+  "fication\030\" \001(\010R\020readNotification\022\035\n\nphon"
+  "e_code\030# \001(\tR\tphoneCode\022)\n\020optional_addr"
+  "ess\030$ \001(\tR\017optionalAddress\022\024\n\005image\030% \001("
+  "\tR\005image\"\361\t\n\nUserDetail\022\016\n\002id\030\001 \001(\rR\002id\022"
+  "\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003"
+  " \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010last"
+  "Name\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_active\030"
+  "\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001(\tR\tcre"
+  "atedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022-\n"
+  "\005roles\030\t \003(\0132\027.accounts.v1alpha1.RoleR\005r"
+  "oles\022\?\n\013permissions\030\n \003(\0132\035.accounts.v1a"
+  "lpha1.PermissionR\013permissions\022\"\n\ris_supe"
+  "r_user\030\013 \001(\010R\013isSuperUser\022E\n\rorganizatio"
+  "ns\030\014 \003(\0132\037.accounts.v1alpha1.Organizatio"
+  "nR\rorganizations\022!\n\014phone_number\030\017 \001(\tR\013"
+  "phoneNumber\022\030\n\007country\030\020 \001(\tR\007country\022\022\n"
+  "\004city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022 \001(\tR\007zip"
+  "Code\022\030\n\007address\030\023 \001(\tR\007address\022\024\n\005state\030"
+  "\024 \001(\tR\005state\022#\n\remoji_country\030\025 \001(\tR\014emo"
+  "jiCountry\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isMfa"
+  "Enabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016"
+  "email_verified\030\030 \001(\010R\remailVerified\022\032\n\010l"
+  "anguage\030\032 \001(\tR\010language\022+\n\021push_notifica"
+  "tion\030\033 \001(\010R\020pushNotification\022-\n\022email_no"
+  "tification\030\034 \001(\010R\021emailNotification\0224\n\026n"
+  "ew_login_notification\030\035 \001(\010R\024newLoginNot"
+  "ification\022/\n\023create_notification\030\036 \001(\010R\022"
+  "createNotification\022/\n\023update_notificatio"
+  "n\030\037 \001(\010R\022updateNotification\022/\n\023delete_no"
+  "tification\030  \001(\010R\022deleteNotification\0229\n\030"
+  "application_notification\030! \001(\010R\027applicat"
+  "ionNotification\022+\n\021read_notification\030\" \001"
+  "(\010R\020readNotification\022\035\n\nphone_code\030# \001(\t"
+  "R\tphoneCode\022)\n\020optional_address\030$ \001(\tR\017o"
+  "ptionalAddress\022\024\n\005image\030% \001(\tR\005imageB4Z2"
+  "github.com/cuemby/ccp-sdk/gen/go/account"
+  "s/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto = {
-  false, false, 2994, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
-  &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once, nullptr, 0, 8,
+  false, false, 4898, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
+  &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once, nullptr, 0, 11,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2faccounts_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2faccounts_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2faccounts_2eproto,
 };
@@ -3519,6 +3723,2331 @@ void Organization::InternalSwap(Organization* other) {
 
 // ===================================================================
 
+class ProjectUserDetail::_Internal {
+ public:
+  static const ::accounts::v1alpha1::Role& roles(const ProjectUserDetail* msg);
+};
+
+const ::accounts::v1alpha1::Role&
+ProjectUserDetail::_Internal::roles(const ProjectUserDetail* msg) {
+  return *msg->roles_;
+}
+ProjectUserDetail::ProjectUserDetail(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  users_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:accounts.v1alpha1.ProjectUserDetail)
+}
+ProjectUserDetail::ProjectUserDetail(const ProjectUserDetail& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      users_(from.users_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_image().empty()) {
+    image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_image(), 
+      GetArenaForAllocation());
+  }
+  organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_organization_id().empty()) {
+    organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_organization_id(), 
+      GetArenaForAllocation());
+  }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
+      GetArenaForAllocation());
+  }
+  created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_created_at().empty()) {
+    created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_created_at(), 
+      GetArenaForAllocation());
+  }
+  updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_updated_at().empty()) {
+    updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
+      GetArenaForAllocation());
+  }
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_roles()) {
+    roles_ = new ::accounts::v1alpha1::Role(*from.roles_);
+  } else {
+    roles_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.ProjectUserDetail)
+}
+
+inline void ProjectUserDetail::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+organization_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+roles_ = nullptr;
+}
+
+ProjectUserDetail::~ProjectUserDetail() {
+  // @@protoc_insertion_point(destructor:accounts.v1alpha1.ProjectUserDetail)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ProjectUserDetail::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  organization_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete roles_;
+}
+
+void ProjectUserDetail::ArenaDtor(void* object) {
+  ProjectUserDetail* _this = reinterpret_cast< ProjectUserDetail* >(object);
+  (void)_this;
+}
+void ProjectUserDetail::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ProjectUserDetail::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ProjectUserDetail::Clear() {
+// @@protoc_insertion_point(message_clear_start:accounts.v1alpha1.ProjectUserDetail)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  users_.Clear();
+  name_.ClearToEmpty();
+  image_.ClearToEmpty();
+  organization_id_.ClearToEmpty();
+  description_.ClearToEmpty();
+  created_at_.ClearToEmpty();
+  updated_at_.ClearToEmpty();
+  id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && roles_ != nullptr) {
+    delete roles_;
+  }
+  roles_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ProjectUserDetail::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 2 [json_name = "name"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.ProjectUserDetail.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string image = 3 [json_name = "image"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_image();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.ProjectUserDetail.image"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string organization_id = 4 [json_name = "organizationId"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_organization_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.ProjectUserDetail.organization_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 5 [json_name = "description"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.ProjectUserDetail.description"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string created_at = 6 [json_name = "createdAt"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_created_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.ProjectUserDetail.created_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string updated_at = 7 [json_name = "updatedAt"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_updated_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.ProjectUserDetail.updated_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_roles(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_users(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string id = 10 [json_name = "id"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.ProjectUserDetail.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ProjectUserDetail::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:accounts.v1alpha1.ProjectUserDetail)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 2 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.ProjectUserDetail.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
+  // string image = 3 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_image().data(), static_cast<int>(this->_internal_image().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.ProjectUserDetail.image");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_image(), target);
+  }
+
+  // string organization_id = 4 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_organization_id().data(), static_cast<int>(this->_internal_organization_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.ProjectUserDetail.organization_id");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_organization_id(), target);
+  }
+
+  // string description = 5 [json_name = "description"];
+  if (!this->_internal_description().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.ProjectUserDetail.description");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_description(), target);
+  }
+
+  // string created_at = 6 [json_name = "createdAt"];
+  if (!this->_internal_created_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_created_at().data(), static_cast<int>(this->_internal_created_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.ProjectUserDetail.created_at");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_created_at(), target);
+  }
+
+  // string updated_at = 7 [json_name = "updatedAt"];
+  if (!this->_internal_updated_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_updated_at().data(), static_cast<int>(this->_internal_updated_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.ProjectUserDetail.updated_at");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_updated_at(), target);
+  }
+
+  // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
+  if (this->_internal_has_roles()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        8, _Internal::roles(this), target, stream);
+  }
+
+  // repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_users_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(9, this->_internal_users(i), target, stream);
+  }
+
+  // string id = 10 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.ProjectUserDetail.id");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:accounts.v1alpha1.ProjectUserDetail)
+  return target;
+}
+
+size_t ProjectUserDetail::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:accounts.v1alpha1.ProjectUserDetail)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];
+  total_size += 1UL * this->_internal_users_size();
+  for (const auto& msg : this->users_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string name = 2 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string image = 3 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_image());
+  }
+
+  // string organization_id = 4 [json_name = "organizationId"];
+  if (!this->_internal_organization_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_organization_id());
+  }
+
+  // string description = 5 [json_name = "description"];
+  if (!this->_internal_description().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
+  }
+
+  // string created_at = 6 [json_name = "createdAt"];
+  if (!this->_internal_created_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_created_at());
+  }
+
+  // string updated_at = 7 [json_name = "updatedAt"];
+  if (!this->_internal_updated_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_updated_at());
+  }
+
+  // string id = 10 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
+  }
+
+  // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
+  if (this->_internal_has_roles()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *roles_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ProjectUserDetail::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ProjectUserDetail::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ProjectUserDetail::GetClassData() const { return &_class_data_; }
+
+void ProjectUserDetail::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<ProjectUserDetail *>(to)->MergeFrom(
+      static_cast<const ProjectUserDetail &>(from));
+}
+
+
+void ProjectUserDetail::MergeFrom(const ProjectUserDetail& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:accounts.v1alpha1.ProjectUserDetail)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  users_.MergeFrom(from.users_);
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (!from._internal_image().empty()) {
+    _internal_set_image(from._internal_image());
+  }
+  if (!from._internal_organization_id().empty()) {
+    _internal_set_organization_id(from._internal_organization_id());
+  }
+  if (!from._internal_description().empty()) {
+    _internal_set_description(from._internal_description());
+  }
+  if (!from._internal_created_at().empty()) {
+    _internal_set_created_at(from._internal_created_at());
+  }
+  if (!from._internal_updated_at().empty()) {
+    _internal_set_updated_at(from._internal_updated_at());
+  }
+  if (!from._internal_id().empty()) {
+    _internal_set_id(from._internal_id());
+  }
+  if (from._internal_has_roles()) {
+    _internal_mutable_roles()->::accounts::v1alpha1::Role::MergeFrom(from._internal_roles());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProjectUserDetail::CopyFrom(const ProjectUserDetail& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:accounts.v1alpha1.ProjectUserDetail)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ProjectUserDetail::IsInitialized() const {
+  return true;
+}
+
+void ProjectUserDetail::InternalSwap(ProjectUserDetail* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  users_.InternalSwap(&other->users_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, GetArenaForAllocation(),
+      &other->name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &image_, GetArenaForAllocation(),
+      &other->image_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &organization_id_, GetArenaForAllocation(),
+      &other->organization_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &description_, GetArenaForAllocation(),
+      &other->description_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &created_at_, GetArenaForAllocation(),
+      &other->created_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &updated_at_, GetArenaForAllocation(),
+      &other->updated_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
+  );
+  swap(roles_, other->roles_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ProjectUserDetail::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_getter, &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once,
+      file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto[7]);
+}
+
+// ===================================================================
+
+class OrganizationUserDetail::_Internal {
+ public:
+  static const ::accounts::v1alpha1::UserList& owner(const OrganizationUserDetail* msg);
+  static const ::accounts::v1alpha1::Role& roles(const OrganizationUserDetail* msg);
+};
+
+const ::accounts::v1alpha1::UserList&
+OrganizationUserDetail::_Internal::owner(const OrganizationUserDetail* msg) {
+  return *msg->owner_;
+}
+const ::accounts::v1alpha1::Role&
+OrganizationUserDetail::_Internal::roles(const OrganizationUserDetail* msg) {
+  return *msg->roles_;
+}
+OrganizationUserDetail::OrganizationUserDetail(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  projects_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:accounts.v1alpha1.OrganizationUserDetail)
+}
+OrganizationUserDetail::OrganizationUserDetail(const OrganizationUserDetail& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      projects_(from.projects_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_image().empty()) {
+    image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_image(), 
+      GetArenaForAllocation());
+  }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
+      GetArenaForAllocation());
+  }
+  slug_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_slug().empty()) {
+    slug_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_slug(), 
+      GetArenaForAllocation());
+  }
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_owner()) {
+    owner_ = new ::accounts::v1alpha1::UserList(*from.owner_);
+  } else {
+    owner_ = nullptr;
+  }
+  if (from._internal_has_roles()) {
+    roles_ = new ::accounts::v1alpha1::Role(*from.roles_);
+  } else {
+    roles_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.OrganizationUserDetail)
+}
+
+inline void OrganizationUserDetail::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+slug_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&owner_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&roles_) -
+    reinterpret_cast<char*>(&owner_)) + sizeof(roles_));
+}
+
+OrganizationUserDetail::~OrganizationUserDetail() {
+  // @@protoc_insertion_point(destructor:accounts.v1alpha1.OrganizationUserDetail)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void OrganizationUserDetail::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  slug_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete owner_;
+  if (this != internal_default_instance()) delete roles_;
+}
+
+void OrganizationUserDetail::ArenaDtor(void* object) {
+  OrganizationUserDetail* _this = reinterpret_cast< OrganizationUserDetail* >(object);
+  (void)_this;
+}
+void OrganizationUserDetail::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void OrganizationUserDetail::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void OrganizationUserDetail::Clear() {
+// @@protoc_insertion_point(message_clear_start:accounts.v1alpha1.OrganizationUserDetail)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  projects_.Clear();
+  name_.ClearToEmpty();
+  image_.ClearToEmpty();
+  description_.ClearToEmpty();
+  slug_.ClearToEmpty();
+  id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && owner_ != nullptr) {
+    delete owner_;
+  }
+  owner_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && roles_ != nullptr) {
+    delete roles_;
+  }
+  roles_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* OrganizationUserDetail::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 2 [json_name = "name"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.OrganizationUserDetail.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string image = 3 [json_name = "image"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_image();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.OrganizationUserDetail.image"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 4 [json_name = "description"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.OrganizationUserDetail.description"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .accounts.v1alpha1.UserList owner = 7 [json_name = "owner"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_owner(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_roles(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string slug = 9 [json_name = "slug"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_slug();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.OrganizationUserDetail.slug"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .accounts.v1alpha1.ProjectUserDetail projects = 10 [json_name = "projects"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_projects(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string id = 11 [json_name = "id"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.OrganizationUserDetail.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OrganizationUserDetail::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:accounts.v1alpha1.OrganizationUserDetail)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 2 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.OrganizationUserDetail.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
+  // string image = 3 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_image().data(), static_cast<int>(this->_internal_image().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.OrganizationUserDetail.image");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_image(), target);
+  }
+
+  // string description = 4 [json_name = "description"];
+  if (!this->_internal_description().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.OrganizationUserDetail.description");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_description(), target);
+  }
+
+  // .accounts.v1alpha1.UserList owner = 7 [json_name = "owner"];
+  if (this->_internal_has_owner()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        7, _Internal::owner(this), target, stream);
+  }
+
+  // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
+  if (this->_internal_has_roles()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        8, _Internal::roles(this), target, stream);
+  }
+
+  // string slug = 9 [json_name = "slug"];
+  if (!this->_internal_slug().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_slug().data(), static_cast<int>(this->_internal_slug().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.OrganizationUserDetail.slug");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_slug(), target);
+  }
+
+  // repeated .accounts.v1alpha1.ProjectUserDetail projects = 10 [json_name = "projects"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_projects_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(10, this->_internal_projects(i), target, stream);
+  }
+
+  // string id = 11 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.OrganizationUserDetail.id");
+    target = stream->WriteStringMaybeAliased(
+        11, this->_internal_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:accounts.v1alpha1.OrganizationUserDetail)
+  return target;
+}
+
+size_t OrganizationUserDetail::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:accounts.v1alpha1.OrganizationUserDetail)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .accounts.v1alpha1.ProjectUserDetail projects = 10 [json_name = "projects"];
+  total_size += 1UL * this->_internal_projects_size();
+  for (const auto& msg : this->projects_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string name = 2 [json_name = "name"];
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string image = 3 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_image());
+  }
+
+  // string description = 4 [json_name = "description"];
+  if (!this->_internal_description().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
+  }
+
+  // string slug = 9 [json_name = "slug"];
+  if (!this->_internal_slug().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_slug());
+  }
+
+  // string id = 11 [json_name = "id"];
+  if (!this->_internal_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
+  }
+
+  // .accounts.v1alpha1.UserList owner = 7 [json_name = "owner"];
+  if (this->_internal_has_owner()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *owner_);
+  }
+
+  // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
+  if (this->_internal_has_roles()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *roles_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData OrganizationUserDetail::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    OrganizationUserDetail::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*OrganizationUserDetail::GetClassData() const { return &_class_data_; }
+
+void OrganizationUserDetail::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<OrganizationUserDetail *>(to)->MergeFrom(
+      static_cast<const OrganizationUserDetail &>(from));
+}
+
+
+void OrganizationUserDetail::MergeFrom(const OrganizationUserDetail& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:accounts.v1alpha1.OrganizationUserDetail)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  projects_.MergeFrom(from.projects_);
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (!from._internal_image().empty()) {
+    _internal_set_image(from._internal_image());
+  }
+  if (!from._internal_description().empty()) {
+    _internal_set_description(from._internal_description());
+  }
+  if (!from._internal_slug().empty()) {
+    _internal_set_slug(from._internal_slug());
+  }
+  if (!from._internal_id().empty()) {
+    _internal_set_id(from._internal_id());
+  }
+  if (from._internal_has_owner()) {
+    _internal_mutable_owner()->::accounts::v1alpha1::UserList::MergeFrom(from._internal_owner());
+  }
+  if (from._internal_has_roles()) {
+    _internal_mutable_roles()->::accounts::v1alpha1::Role::MergeFrom(from._internal_roles());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void OrganizationUserDetail::CopyFrom(const OrganizationUserDetail& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:accounts.v1alpha1.OrganizationUserDetail)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OrganizationUserDetail::IsInitialized() const {
+  return true;
+}
+
+void OrganizationUserDetail::InternalSwap(OrganizationUserDetail* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  projects_.InternalSwap(&other->projects_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, GetArenaForAllocation(),
+      &other->name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &image_, GetArenaForAllocation(),
+      &other->image_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &description_, GetArenaForAllocation(),
+      &other->description_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &slug_, GetArenaForAllocation(),
+      &other->slug_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(OrganizationUserDetail, roles_)
+      + sizeof(OrganizationUserDetail::roles_)
+      - PROTOBUF_FIELD_OFFSET(OrganizationUserDetail, owner_)>(
+          reinterpret_cast<char*>(&owner_),
+          reinterpret_cast<char*>(&other->owner_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OrganizationUserDetail::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_getter, &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once,
+      file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto[8]);
+}
+
+// ===================================================================
+
+class UserDetailOne::_Internal {
+ public:
+  static const ::accounts::v1alpha1::OrganizationUserDetail& organizations(const UserDetailOne* msg);
+};
+
+const ::accounts::v1alpha1::OrganizationUserDetail&
+UserDetailOne::_Internal::organizations(const UserDetailOne* msg) {
+  return *msg->organizations_;
+}
+UserDetailOne::UserDetailOne(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  roles_(arena),
+  permissions_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:accounts.v1alpha1.UserDetailOne)
+}
+UserDetailOne::UserDetailOne(const UserDetailOne& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      roles_(from.roles_),
+      permissions_(from.permissions_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
+  first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_first_name().empty()) {
+    first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_first_name(), 
+      GetArenaForAllocation());
+  }
+  last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_last_name().empty()) {
+    last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_last_name(), 
+      GetArenaForAllocation());
+  }
+  email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_email().empty()) {
+    email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
+      GetArenaForAllocation());
+  }
+  created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_created_at().empty()) {
+    created_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_created_at(), 
+      GetArenaForAllocation());
+  }
+  updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_updated_at().empty()) {
+    updated_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_updated_at(), 
+      GetArenaForAllocation());
+  }
+  phone_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_phone_number().empty()) {
+    phone_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_phone_number(), 
+      GetArenaForAllocation());
+  }
+  country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_country().empty()) {
+    country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_country(), 
+      GetArenaForAllocation());
+  }
+  city_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_city().empty()) {
+    city_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_city(), 
+      GetArenaForAllocation());
+  }
+  zip_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_zip_code().empty()) {
+    zip_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_zip_code(), 
+      GetArenaForAllocation());
+  }
+  address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_address().empty()) {
+    address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_address(), 
+      GetArenaForAllocation());
+  }
+  state_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_state().empty()) {
+    state_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_state(), 
+      GetArenaForAllocation());
+  }
+  emoji_country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_emoji_country().empty()) {
+    emoji_country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_emoji_country(), 
+      GetArenaForAllocation());
+  }
+  token_ccp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_token_ccp().empty()) {
+    token_ccp_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token_ccp(), 
+      GetArenaForAllocation());
+  }
+  language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_language().empty()) {
+    language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_language(), 
+      GetArenaForAllocation());
+  }
+  phone_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_phone_code().empty()) {
+    phone_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_phone_code(), 
+      GetArenaForAllocation());
+  }
+  optional_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_optional_address().empty()) {
+    optional_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_optional_address(), 
+      GetArenaForAllocation());
+  }
+  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_image().empty()) {
+    image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_image(), 
+      GetArenaForAllocation());
+  }
+  if (from._internal_has_organizations()) {
+    organizations_ = new ::accounts::v1alpha1::OrganizationUserDetail(*from.organizations_);
+  } else {
+    organizations_ = nullptr;
+  }
+  ::memcpy(&id_, &from.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
+  // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.UserDetailOne)
+}
+
+inline void UserDetailOne::SharedCtor() {
+user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+phone_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+city_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+zip_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+state_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+emoji_country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+token_ccp_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+phone_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+optional_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&organizations_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
+    reinterpret_cast<char*>(&organizations_)) + sizeof(read_notification_));
+}
+
+UserDetailOne::~UserDetailOne() {
+  // @@protoc_insertion_point(destructor:accounts.v1alpha1.UserDetailOne)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void UserDetailOne::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  first_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  last_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  phone_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  city_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  zip_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  state_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  emoji_country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  token_ccp_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  language_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  phone_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  optional_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete organizations_;
+}
+
+void UserDetailOne::ArenaDtor(void* object) {
+  UserDetailOne* _this = reinterpret_cast< UserDetailOne* >(object);
+  (void)_this;
+}
+void UserDetailOne::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void UserDetailOne::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void UserDetailOne::Clear() {
+// @@protoc_insertion_point(message_clear_start:accounts.v1alpha1.UserDetailOne)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  roles_.Clear();
+  permissions_.Clear();
+  user_id_.ClearToEmpty();
+  first_name_.ClearToEmpty();
+  last_name_.ClearToEmpty();
+  email_.ClearToEmpty();
+  created_at_.ClearToEmpty();
+  updated_at_.ClearToEmpty();
+  phone_number_.ClearToEmpty();
+  country_.ClearToEmpty();
+  city_.ClearToEmpty();
+  zip_code_.ClearToEmpty();
+  address_.ClearToEmpty();
+  state_.ClearToEmpty();
+  emoji_country_.ClearToEmpty();
+  token_ccp_.ClearToEmpty();
+  language_.ClearToEmpty();
+  phone_code_.ClearToEmpty();
+  optional_address_.ClearToEmpty();
+  image_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && organizations_ != nullptr) {
+    delete organizations_;
+  }
+  organizations_ = nullptr;
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&read_notification_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UserDetailOne::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string user_id = 2 [json_name = "userId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string first_name = 3 [json_name = "firstName"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_first_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.first_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string last_name = 4 [json_name = "lastName"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_last_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.last_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string email = 5 [json_name = "email"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_email();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.email"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool is_active = 6 [json_name = "isActive"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          is_active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string created_at = 7 [json_name = "createdAt"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_created_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.created_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string updated_at = 8 [json_name = "updatedAt"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_updated_at();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.updated_at"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_roles(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_permissions(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // bool is_super_user = 11 [json_name = "isSuperUser"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
+          is_super_user_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          ptr = ctx->ParseMessage(_internal_mutable_organizations(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string phone_number = 15 [json_name = "phoneNumber"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+          auto str = _internal_mutable_phone_number();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.phone_number"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string country = 16 [json_name = "country"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          auto str = _internal_mutable_country();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.country"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string city = 17 [json_name = "city"];
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
+          auto str = _internal_mutable_city();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.city"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string zip_code = 18 [json_name = "zipCode"];
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
+          auto str = _internal_mutable_zip_code();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.zip_code"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string address = 19 [json_name = "address"];
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
+          auto str = _internal_mutable_address();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.address"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string state = 20 [json_name = "state"];
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 162)) {
+          auto str = _internal_mutable_state();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.state"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string emoji_country = 21 [json_name = "emojiCountry"];
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 170)) {
+          auto str = _internal_mutable_emoji_country();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.emoji_country"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 176)) {
+          is_mfa_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string token_ccp = 23 [json_name = "tokenCcp"];
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 186)) {
+          auto str = _internal_mutable_token_ccp();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.token_ccp"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool email_verified = 24 [json_name = "emailVerified"];
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 192)) {
+          email_verified_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string language = 26 [json_name = "language"];
+      case 26:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 210)) {
+          auto str = _internal_mutable_language();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.language"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool push_notification = 27 [json_name = "pushNotification"];
+      case 27:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 216)) {
+          push_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool email_notification = 28 [json_name = "emailNotification"];
+      case 28:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 224)) {
+          email_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool new_login_notification = 29 [json_name = "newLoginNotification"];
+      case 29:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 232)) {
+          new_login_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool create_notification = 30 [json_name = "createNotification"];
+      case 30:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 240)) {
+          create_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool update_notification = 31 [json_name = "updateNotification"];
+      case 31:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          update_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool delete_notification = 32 [json_name = "deleteNotification"];
+      case 32:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 0)) {
+          delete_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool application_notification = 33 [json_name = "applicationNotification"];
+      case 33:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          application_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool read_notification = 34 [json_name = "readNotification"];
+      case 34:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          read_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string phone_code = 35 [json_name = "phoneCode"];
+      case 35:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_phone_code();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.phone_code"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string optional_address = 36 [json_name = "optionalAddress"];
+      case 36:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_optional_address();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.optional_address"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string image = 37 [json_name = "image"];
+      case 37:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_image();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.UserDetailOne.image"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* UserDetailOne::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:accounts.v1alpha1.UserDetailOne)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.user_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_user_id(), target);
+  }
+
+  // string first_name = 3 [json_name = "firstName"];
+  if (!this->_internal_first_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_first_name().data(), static_cast<int>(this->_internal_first_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.first_name");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_first_name(), target);
+  }
+
+  // string last_name = 4 [json_name = "lastName"];
+  if (!this->_internal_last_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_last_name().data(), static_cast<int>(this->_internal_last_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.last_name");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_last_name(), target);
+  }
+
+  // string email = 5 [json_name = "email"];
+  if (!this->_internal_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.email");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_email(), target);
+  }
+
+  // bool is_active = 6 [json_name = "isActive"];
+  if (this->_internal_is_active() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_is_active(), target);
+  }
+
+  // string created_at = 7 [json_name = "createdAt"];
+  if (!this->_internal_created_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_created_at().data(), static_cast<int>(this->_internal_created_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.created_at");
+    target = stream->WriteStringMaybeAliased(
+        7, this->_internal_created_at(), target);
+  }
+
+  // string updated_at = 8 [json_name = "updatedAt"];
+  if (!this->_internal_updated_at().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_updated_at().data(), static_cast<int>(this->_internal_updated_at().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.updated_at");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_updated_at(), target);
+  }
+
+  // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_roles_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(9, this->_internal_roles(i), target, stream);
+  }
+
+  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_permissions_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(10, this->_internal_permissions(i), target, stream);
+  }
+
+  // bool is_super_user = 11 [json_name = "isSuperUser"];
+  if (this->_internal_is_super_user() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_is_super_user(), target);
+  }
+
+  // .accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];
+  if (this->_internal_has_organizations()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        12, _Internal::organizations(this), target, stream);
+  }
+
+  // string phone_number = 15 [json_name = "phoneNumber"];
+  if (!this->_internal_phone_number().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_phone_number().data(), static_cast<int>(this->_internal_phone_number().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.phone_number");
+    target = stream->WriteStringMaybeAliased(
+        15, this->_internal_phone_number(), target);
+  }
+
+  // string country = 16 [json_name = "country"];
+  if (!this->_internal_country().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_country().data(), static_cast<int>(this->_internal_country().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.country");
+    target = stream->WriteStringMaybeAliased(
+        16, this->_internal_country(), target);
+  }
+
+  // string city = 17 [json_name = "city"];
+  if (!this->_internal_city().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_city().data(), static_cast<int>(this->_internal_city().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.city");
+    target = stream->WriteStringMaybeAliased(
+        17, this->_internal_city(), target);
+  }
+
+  // string zip_code = 18 [json_name = "zipCode"];
+  if (!this->_internal_zip_code().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_zip_code().data(), static_cast<int>(this->_internal_zip_code().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.zip_code");
+    target = stream->WriteStringMaybeAliased(
+        18, this->_internal_zip_code(), target);
+  }
+
+  // string address = 19 [json_name = "address"];
+  if (!this->_internal_address().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_address().data(), static_cast<int>(this->_internal_address().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.address");
+    target = stream->WriteStringMaybeAliased(
+        19, this->_internal_address(), target);
+  }
+
+  // string state = 20 [json_name = "state"];
+  if (!this->_internal_state().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_state().data(), static_cast<int>(this->_internal_state().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.state");
+    target = stream->WriteStringMaybeAliased(
+        20, this->_internal_state(), target);
+  }
+
+  // string emoji_country = 21 [json_name = "emojiCountry"];
+  if (!this->_internal_emoji_country().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_emoji_country().data(), static_cast<int>(this->_internal_emoji_country().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.emoji_country");
+    target = stream->WriteStringMaybeAliased(
+        21, this->_internal_emoji_country(), target);
+  }
+
+  // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
+  if (this->_internal_is_mfa_enabled() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(22, this->_internal_is_mfa_enabled(), target);
+  }
+
+  // string token_ccp = 23 [json_name = "tokenCcp"];
+  if (!this->_internal_token_ccp().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token_ccp().data(), static_cast<int>(this->_internal_token_ccp().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.token_ccp");
+    target = stream->WriteStringMaybeAliased(
+        23, this->_internal_token_ccp(), target);
+  }
+
+  // bool email_verified = 24 [json_name = "emailVerified"];
+  if (this->_internal_email_verified() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(24, this->_internal_email_verified(), target);
+  }
+
+  // string language = 26 [json_name = "language"];
+  if (!this->_internal_language().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.language");
+    target = stream->WriteStringMaybeAliased(
+        26, this->_internal_language(), target);
+  }
+
+  // bool push_notification = 27 [json_name = "pushNotification"];
+  if (this->_internal_push_notification() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(27, this->_internal_push_notification(), target);
+  }
+
+  // bool email_notification = 28 [json_name = "emailNotification"];
+  if (this->_internal_email_notification() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(28, this->_internal_email_notification(), target);
+  }
+
+  // bool new_login_notification = 29 [json_name = "newLoginNotification"];
+  if (this->_internal_new_login_notification() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(29, this->_internal_new_login_notification(), target);
+  }
+
+  // bool create_notification = 30 [json_name = "createNotification"];
+  if (this->_internal_create_notification() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(30, this->_internal_create_notification(), target);
+  }
+
+  // bool update_notification = 31 [json_name = "updateNotification"];
+  if (this->_internal_update_notification() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(31, this->_internal_update_notification(), target);
+  }
+
+  // bool delete_notification = 32 [json_name = "deleteNotification"];
+  if (this->_internal_delete_notification() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(32, this->_internal_delete_notification(), target);
+  }
+
+  // bool application_notification = 33 [json_name = "applicationNotification"];
+  if (this->_internal_application_notification() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(33, this->_internal_application_notification(), target);
+  }
+
+  // bool read_notification = 34 [json_name = "readNotification"];
+  if (this->_internal_read_notification() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(34, this->_internal_read_notification(), target);
+  }
+
+  // string phone_code = 35 [json_name = "phoneCode"];
+  if (!this->_internal_phone_code().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_phone_code().data(), static_cast<int>(this->_internal_phone_code().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.phone_code");
+    target = stream->WriteStringMaybeAliased(
+        35, this->_internal_phone_code(), target);
+  }
+
+  // string optional_address = 36 [json_name = "optionalAddress"];
+  if (!this->_internal_optional_address().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_optional_address().data(), static_cast<int>(this->_internal_optional_address().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.optional_address");
+    target = stream->WriteStringMaybeAliased(
+        36, this->_internal_optional_address(), target);
+  }
+
+  // string image = 37 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_image().data(), static_cast<int>(this->_internal_image().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "accounts.v1alpha1.UserDetailOne.image");
+    target = stream->WriteStringMaybeAliased(
+        37, this->_internal_image(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:accounts.v1alpha1.UserDetailOne)
+  return target;
+}
+
+size_t UserDetailOne::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:accounts.v1alpha1.UserDetailOne)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .accounts.v1alpha1.Role roles = 9 [json_name = "roles"];
+  total_size += 1UL * this->_internal_roles_size();
+  for (const auto& msg : this->roles_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .accounts.v1alpha1.Permission permissions = 10 [json_name = "permissions"];
+  total_size += 1UL * this->_internal_permissions_size();
+  for (const auto& msg : this->permissions_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string user_id = 2 [json_name = "userId"];
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // string first_name = 3 [json_name = "firstName"];
+  if (!this->_internal_first_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_first_name());
+  }
+
+  // string last_name = 4 [json_name = "lastName"];
+  if (!this->_internal_last_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_last_name());
+  }
+
+  // string email = 5 [json_name = "email"];
+  if (!this->_internal_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_email());
+  }
+
+  // string created_at = 7 [json_name = "createdAt"];
+  if (!this->_internal_created_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_created_at());
+  }
+
+  // string updated_at = 8 [json_name = "updatedAt"];
+  if (!this->_internal_updated_at().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_updated_at());
+  }
+
+  // string phone_number = 15 [json_name = "phoneNumber"];
+  if (!this->_internal_phone_number().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_phone_number());
+  }
+
+  // string country = 16 [json_name = "country"];
+  if (!this->_internal_country().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_country());
+  }
+
+  // string city = 17 [json_name = "city"];
+  if (!this->_internal_city().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_city());
+  }
+
+  // string zip_code = 18 [json_name = "zipCode"];
+  if (!this->_internal_zip_code().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_zip_code());
+  }
+
+  // string address = 19 [json_name = "address"];
+  if (!this->_internal_address().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_address());
+  }
+
+  // string state = 20 [json_name = "state"];
+  if (!this->_internal_state().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_state());
+  }
+
+  // string emoji_country = 21 [json_name = "emojiCountry"];
+  if (!this->_internal_emoji_country().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_emoji_country());
+  }
+
+  // string token_ccp = 23 [json_name = "tokenCcp"];
+  if (!this->_internal_token_ccp().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token_ccp());
+  }
+
+  // string language = 26 [json_name = "language"];
+  if (!this->_internal_language().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_language());
+  }
+
+  // string phone_code = 35 [json_name = "phoneCode"];
+  if (!this->_internal_phone_code().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_phone_code());
+  }
+
+  // string optional_address = 36 [json_name = "optionalAddress"];
+  if (!this->_internal_optional_address().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_optional_address());
+  }
+
+  // string image = 37 [json_name = "image"];
+  if (!this->_internal_image().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_image());
+  }
+
+  // .accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];
+  if (this->_internal_has_organizations()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *organizations_);
+  }
+
+  // uint32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
+  }
+
+  // bool is_active = 6 [json_name = "isActive"];
+  if (this->_internal_is_active() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool is_super_user = 11 [json_name = "isSuperUser"];
+  if (this->_internal_is_super_user() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool is_mfa_enabled = 22 [json_name = "isMfaEnabled"];
+  if (this->_internal_is_mfa_enabled() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool email_verified = 24 [json_name = "emailVerified"];
+  if (this->_internal_email_verified() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool push_notification = 27 [json_name = "pushNotification"];
+  if (this->_internal_push_notification() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool email_notification = 28 [json_name = "emailNotification"];
+  if (this->_internal_email_notification() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool new_login_notification = 29 [json_name = "newLoginNotification"];
+  if (this->_internal_new_login_notification() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool create_notification = 30 [json_name = "createNotification"];
+  if (this->_internal_create_notification() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool update_notification = 31 [json_name = "updateNotification"];
+  if (this->_internal_update_notification() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool delete_notification = 32 [json_name = "deleteNotification"];
+  if (this->_internal_delete_notification() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool application_notification = 33 [json_name = "applicationNotification"];
+  if (this->_internal_application_notification() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool read_notification = 34 [json_name = "readNotification"];
+  if (this->_internal_read_notification() != 0) {
+    total_size += 2 + 1;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UserDetailOne::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    UserDetailOne::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UserDetailOne::GetClassData() const { return &_class_data_; }
+
+void UserDetailOne::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<UserDetailOne *>(to)->MergeFrom(
+      static_cast<const UserDetailOne &>(from));
+}
+
+
+void UserDetailOne::MergeFrom(const UserDetailOne& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:accounts.v1alpha1.UserDetailOne)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  roles_.MergeFrom(from.roles_);
+  permissions_.MergeFrom(from.permissions_);
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+  if (!from._internal_first_name().empty()) {
+    _internal_set_first_name(from._internal_first_name());
+  }
+  if (!from._internal_last_name().empty()) {
+    _internal_set_last_name(from._internal_last_name());
+  }
+  if (!from._internal_email().empty()) {
+    _internal_set_email(from._internal_email());
+  }
+  if (!from._internal_created_at().empty()) {
+    _internal_set_created_at(from._internal_created_at());
+  }
+  if (!from._internal_updated_at().empty()) {
+    _internal_set_updated_at(from._internal_updated_at());
+  }
+  if (!from._internal_phone_number().empty()) {
+    _internal_set_phone_number(from._internal_phone_number());
+  }
+  if (!from._internal_country().empty()) {
+    _internal_set_country(from._internal_country());
+  }
+  if (!from._internal_city().empty()) {
+    _internal_set_city(from._internal_city());
+  }
+  if (!from._internal_zip_code().empty()) {
+    _internal_set_zip_code(from._internal_zip_code());
+  }
+  if (!from._internal_address().empty()) {
+    _internal_set_address(from._internal_address());
+  }
+  if (!from._internal_state().empty()) {
+    _internal_set_state(from._internal_state());
+  }
+  if (!from._internal_emoji_country().empty()) {
+    _internal_set_emoji_country(from._internal_emoji_country());
+  }
+  if (!from._internal_token_ccp().empty()) {
+    _internal_set_token_ccp(from._internal_token_ccp());
+  }
+  if (!from._internal_language().empty()) {
+    _internal_set_language(from._internal_language());
+  }
+  if (!from._internal_phone_code().empty()) {
+    _internal_set_phone_code(from._internal_phone_code());
+  }
+  if (!from._internal_optional_address().empty()) {
+    _internal_set_optional_address(from._internal_optional_address());
+  }
+  if (!from._internal_image().empty()) {
+    _internal_set_image(from._internal_image());
+  }
+  if (from._internal_has_organizations()) {
+    _internal_mutable_organizations()->::accounts::v1alpha1::OrganizationUserDetail::MergeFrom(from._internal_organizations());
+  }
+  if (from._internal_id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
+  if (from._internal_is_active() != 0) {
+    _internal_set_is_active(from._internal_is_active());
+  }
+  if (from._internal_is_super_user() != 0) {
+    _internal_set_is_super_user(from._internal_is_super_user());
+  }
+  if (from._internal_is_mfa_enabled() != 0) {
+    _internal_set_is_mfa_enabled(from._internal_is_mfa_enabled());
+  }
+  if (from._internal_email_verified() != 0) {
+    _internal_set_email_verified(from._internal_email_verified());
+  }
+  if (from._internal_push_notification() != 0) {
+    _internal_set_push_notification(from._internal_push_notification());
+  }
+  if (from._internal_email_notification() != 0) {
+    _internal_set_email_notification(from._internal_email_notification());
+  }
+  if (from._internal_new_login_notification() != 0) {
+    _internal_set_new_login_notification(from._internal_new_login_notification());
+  }
+  if (from._internal_create_notification() != 0) {
+    _internal_set_create_notification(from._internal_create_notification());
+  }
+  if (from._internal_update_notification() != 0) {
+    _internal_set_update_notification(from._internal_update_notification());
+  }
+  if (from._internal_delete_notification() != 0) {
+    _internal_set_delete_notification(from._internal_delete_notification());
+  }
+  if (from._internal_application_notification() != 0) {
+    _internal_set_application_notification(from._internal_application_notification());
+  }
+  if (from._internal_read_notification() != 0) {
+    _internal_set_read_notification(from._internal_read_notification());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UserDetailOne::CopyFrom(const UserDetailOne& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:accounts.v1alpha1.UserDetailOne)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UserDetailOne::IsInitialized() const {
+  return true;
+}
+
+void UserDetailOne::InternalSwap(UserDetailOne* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  roles_.InternalSwap(&other->roles_);
+  permissions_.InternalSwap(&other->permissions_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_id_, GetArenaForAllocation(),
+      &other->user_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &first_name_, GetArenaForAllocation(),
+      &other->first_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &last_name_, GetArenaForAllocation(),
+      &other->last_name_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &email_, GetArenaForAllocation(),
+      &other->email_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &created_at_, GetArenaForAllocation(),
+      &other->created_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &updated_at_, GetArenaForAllocation(),
+      &other->updated_at_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &phone_number_, GetArenaForAllocation(),
+      &other->phone_number_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &country_, GetArenaForAllocation(),
+      &other->country_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &city_, GetArenaForAllocation(),
+      &other->city_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &zip_code_, GetArenaForAllocation(),
+      &other->zip_code_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &address_, GetArenaForAllocation(),
+      &other->address_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &state_, GetArenaForAllocation(),
+      &other->state_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &emoji_country_, GetArenaForAllocation(),
+      &other->emoji_country_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &token_ccp_, GetArenaForAllocation(),
+      &other->token_ccp_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &language_, GetArenaForAllocation(),
+      &other->language_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &phone_code_, GetArenaForAllocation(),
+      &other->phone_code_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &optional_address_, GetArenaForAllocation(),
+      &other->optional_address_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &image_, GetArenaForAllocation(),
+      &other->image_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(UserDetailOne, read_notification_)
+      + sizeof(UserDetailOne::read_notification_)
+      - PROTOBUF_FIELD_OFFSET(UserDetailOne, organizations_)>(
+          reinterpret_cast<char*>(&organizations_),
+          reinterpret_cast<char*>(&other->organizations_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UserDetailOne::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_getter, &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once,
+      file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto[9]);
+}
+
+// ===================================================================
+
 class UserDetail::_Internal {
  public:
 };
@@ -4815,7 +7344,7 @@ void UserDetail::InternalSwap(UserDetail* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UserDetail::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_getter, &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once,
-      file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto[7]);
+      file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto[10]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -4842,6 +7371,15 @@ template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::Project* Arena::CreateMaybeMe
 }
 template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::Organization* Arena::CreateMaybeMessage< ::accounts::v1alpha1::Organization >(Arena* arena) {
   return Arena::CreateMessageInternal< ::accounts::v1alpha1::Organization >(arena);
+}
+template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::ProjectUserDetail* Arena::CreateMaybeMessage< ::accounts::v1alpha1::ProjectUserDetail >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::accounts::v1alpha1::ProjectUserDetail >(arena);
+}
+template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::OrganizationUserDetail* Arena::CreateMaybeMessage< ::accounts::v1alpha1::OrganizationUserDetail >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::accounts::v1alpha1::OrganizationUserDetail >(arena);
+}
+template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::UserDetailOne* Arena::CreateMaybeMessage< ::accounts::v1alpha1::UserDetailOne >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::accounts::v1alpha1::UserDetailOne >(arena);
 }
 template<> PROTOBUF_NOINLINE ::accounts::v1alpha1::UserDetail* Arena::CreateMaybeMessage< ::accounts::v1alpha1::UserDetail >(Arena* arena) {
   return Arena::CreateMessageInternal< ::accounts::v1alpha1::UserDetail >(arena);

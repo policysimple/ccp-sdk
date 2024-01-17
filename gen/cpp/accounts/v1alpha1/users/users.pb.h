@@ -1950,23 +1950,23 @@ class GetOneUserResponse final :
   std::string* _internal_mutable_error();
   public:
 
-  // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
+  // .accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];
   bool has_user() const;
   private:
   bool _internal_has_user() const;
   public:
   void clear_user();
-  const ::accounts::v1alpha1::UserDetail& user() const;
-  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::UserDetail* release_user();
-  ::accounts::v1alpha1::UserDetail* mutable_user();
-  void set_allocated_user(::accounts::v1alpha1::UserDetail* user);
+  const ::accounts::v1alpha1::UserDetailOne& user() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::UserDetailOne* release_user();
+  ::accounts::v1alpha1::UserDetailOne* mutable_user();
+  void set_allocated_user(::accounts::v1alpha1::UserDetailOne* user);
   private:
-  const ::accounts::v1alpha1::UserDetail& _internal_user() const;
-  ::accounts::v1alpha1::UserDetail* _internal_mutable_user();
+  const ::accounts::v1alpha1::UserDetailOne& _internal_user() const;
+  ::accounts::v1alpha1::UserDetailOne* _internal_mutable_user();
   public:
   void unsafe_arena_set_allocated_user(
-      ::accounts::v1alpha1::UserDetail* user);
-  ::accounts::v1alpha1::UserDetail* unsafe_arena_release_user();
+      ::accounts::v1alpha1::UserDetailOne* user);
+  ::accounts::v1alpha1::UserDetailOne* unsafe_arena_release_user();
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.users.v1.GetOneUserResponse)
  private:
@@ -1977,7 +1977,7 @@ class GetOneUserResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
-  ::accounts::v1alpha1::UserDetail* user_;
+  ::accounts::v1alpha1::UserDetailOne* user_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2fusers_2fusers_2eproto;
 };
@@ -6303,24 +6303,24 @@ inline void GetOneUserRequest::set_allocated_organization_id(std::string* organi
 
 // GetOneUserResponse
 
-// .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
+// .accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];
 inline bool GetOneUserResponse::_internal_has_user() const {
   return this != internal_default_instance() && user_ != nullptr;
 }
 inline bool GetOneUserResponse::has_user() const {
   return _internal_has_user();
 }
-inline const ::accounts::v1alpha1::UserDetail& GetOneUserResponse::_internal_user() const {
-  const ::accounts::v1alpha1::UserDetail* p = user_;
-  return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::UserDetail&>(
-      ::accounts::v1alpha1::_UserDetail_default_instance_);
+inline const ::accounts::v1alpha1::UserDetailOne& GetOneUserResponse::_internal_user() const {
+  const ::accounts::v1alpha1::UserDetailOne* p = user_;
+  return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::UserDetailOne&>(
+      ::accounts::v1alpha1::_UserDetailOne_default_instance_);
 }
-inline const ::accounts::v1alpha1::UserDetail& GetOneUserResponse::user() const {
+inline const ::accounts::v1alpha1::UserDetailOne& GetOneUserResponse::user() const {
   // @@protoc_insertion_point(field_get:accounts.v1alpha1.users.v1.GetOneUserResponse.user)
   return _internal_user();
 }
 inline void GetOneUserResponse::unsafe_arena_set_allocated_user(
-    ::accounts::v1alpha1::UserDetail* user) {
+    ::accounts::v1alpha1::UserDetailOne* user) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(user_);
   }
@@ -6332,9 +6332,9 @@ inline void GetOneUserResponse::unsafe_arena_set_allocated_user(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.users.v1.GetOneUserResponse.user)
 }
-inline ::accounts::v1alpha1::UserDetail* GetOneUserResponse::release_user() {
+inline ::accounts::v1alpha1::UserDetailOne* GetOneUserResponse::release_user() {
   
-  ::accounts::v1alpha1::UserDetail* temp = user_;
+  ::accounts::v1alpha1::UserDetailOne* temp = user_;
   user_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -6347,27 +6347,27 @@ inline ::accounts::v1alpha1::UserDetail* GetOneUserResponse::release_user() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::accounts::v1alpha1::UserDetail* GetOneUserResponse::unsafe_arena_release_user() {
+inline ::accounts::v1alpha1::UserDetailOne* GetOneUserResponse::unsafe_arena_release_user() {
   // @@protoc_insertion_point(field_release:accounts.v1alpha1.users.v1.GetOneUserResponse.user)
   
-  ::accounts::v1alpha1::UserDetail* temp = user_;
+  ::accounts::v1alpha1::UserDetailOne* temp = user_;
   user_ = nullptr;
   return temp;
 }
-inline ::accounts::v1alpha1::UserDetail* GetOneUserResponse::_internal_mutable_user() {
+inline ::accounts::v1alpha1::UserDetailOne* GetOneUserResponse::_internal_mutable_user() {
   
   if (user_ == nullptr) {
-    auto* p = CreateMaybeMessage<::accounts::v1alpha1::UserDetail>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::accounts::v1alpha1::UserDetailOne>(GetArenaForAllocation());
     user_ = p;
   }
   return user_;
 }
-inline ::accounts::v1alpha1::UserDetail* GetOneUserResponse::mutable_user() {
-  ::accounts::v1alpha1::UserDetail* _msg = _internal_mutable_user();
+inline ::accounts::v1alpha1::UserDetailOne* GetOneUserResponse::mutable_user() {
+  ::accounts::v1alpha1::UserDetailOne* _msg = _internal_mutable_user();
   // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.users.v1.GetOneUserResponse.user)
   return _msg;
 }
-inline void GetOneUserResponse::set_allocated_user(::accounts::v1alpha1::UserDetail* user) {
+inline void GetOneUserResponse::set_allocated_user(::accounts::v1alpha1::UserDetailOne* user) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(user_);

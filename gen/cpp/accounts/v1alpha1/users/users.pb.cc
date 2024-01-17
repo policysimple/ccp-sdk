@@ -693,60 +693,60 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto
   "d\030\001 \001(\rR\006userId\022\'\n\017organization_id\030\002 \001(\t"
   "R\016organizationId\"L\n\021GetOneUserRequest\022\016\n"
   "\002id\030\001 \001(\rR\002id\022\'\n\017organization_id\030\002 \001(\tR\016"
-  "organizationId\"o\n\022GetOneUserResponse\0221\n\004"
-  "user\030\001 \001(\0132\035.accounts.v1alpha1.UserDetai"
-  "lR\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\t"
-  "R\005error\"E\n\020ListUserResponse\0221\n\005users\030\001 \003"
-  "(\0132\033.accounts.v1alpha1.UserListR\005users\"I"
-  "\n\031ListUserPaginationRequest\022\026\n\006offset\030\001 "
-  "\001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"e\n\032Lis"
-  "tUserPaginationResponse\022\024\n\005count\030\001 \001(\003R\005"
-  "count\0221\n\005users\030\002 \003(\0132\033.accounts.v1alpha1"
-  ".UserListR\005users\"\027\n\025GetListUserDexReques"
-  "t\"[\n\026GetListUserDexResponse\022A\n\tusers_dex"
-  "\030\001 \003(\0132$.accounts.v1alpha1.users.v1.User"
-  "sDexR\010usersDex\"r\n\024GetOneUserDexRequest\022\027"
-  "\n\007user_id\030\001 \001(\tR\006userId\022A\n\004user\030\002 \001(\0132-."
-  "accounts.v1alpha1.users.v1.CreateUserReq"
-  "uestR\004user\"r\n\025GetOneUserDexResponse\0221\n\004u"
-  "ser\030\001 \001(\0132\035.accounts.v1alpha1.UserDetail"
-  "R\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR"
-  "\005error\"Z\n\034SendVerificationEmailRequest\022\024"
-  "\n\005email\030\001 \001(\tR\005email\022\022\n\004name\030\002 \001(\tR\004name"
-  "\022\020\n\003url\030\003 \001(\tR\003url\"V\n\035SendVerificationEm"
-  "ailResponse\022\037\n\013html_result\030\001 \001(\tR\nhtmlRe"
-  "sult\022\024\n\005error\030\002 \001(\tR\005error\"*\n\022VerifyEmai"
-  "lRequest\022\024\n\005token\030\001 \001(\tR\005token\"=\n\023Verify"
-  "EmailResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error"
-  "\030\002 \001(\tR\005error\"\327\003\n\020CheckUserRequest\022\'\n\017or"
-  "ganization_id\030\001 \001(\tR\016organizationId\022\035\n\np"
-  "roject_id\030\002 \001(\tR\tprojectId\022A\n\035get_organi"
-  "zation_from_project\030\003 \001(\tR\032getOrganizati"
-  "onFromProject\022\036\n\npermission\030\004 \001(\tR\npermi"
-  "ssion\022\036\n\013user_id_dex\030\005 \001(\tR\tuserIdDex\022\"\n"
-  "\ruser_id_admin\030\006 \001(\tR\013userIdAdmin\022\027\n\007use"
-  "r_id\030\007 \001(\rR\006userId\022\'\n\017type_permission\030\t "
-  "\001(\tR\016typePermission\022\033\n\troles_ids\030\n \003(\tR\010"
-  "rolesIds\022\"\n\rapi_key_value\030\013 \001(\tR\013apiKeyV"
-  "alue\022&\n\017token_ccp_admin\030\014 \001(\tR\rtokenCcpA"
-  "dmin\022)\n\021token_ccp_user_id\030\r \001(\tR\016tokenCc"
-  "pUserId\"s\n\021CheckUserResponse\022\033\n\tis_exist"
-  "s\030\001 \001(\010R\010isExists\022\031\n\010is_admin\030\003 \001(\010R\007isA"
-  "dmin\022\020\n\003msg\030\004 \001(\tR\003msg\022\024\n\005error\030\005 \001(\tR\005e"
-  "rror\"\?\n\010UsersDex\022\027\n\007user_id\030\001 \001(\tR\006userI"
-  "d\022\032\n\010provider\030\002 \001(\tR\010provider\"2\n\032GetUser"
-  "sEmailFilterRequest\022\024\n\005value\030\001 \001(\tR\005valu"
-  "e\"P\n\033GetUsersEmailFilterResponse\0221\n\005user"
-  "s\030\001 \003(\0132\033.accounts.v1alpha1.UserListR\005us"
-  "ersB:Z8github.com/cuemby/ccp-sdk/gen/go/"
-  "accounts/v1alpha1/usersb\006proto3"
+  "organizationId\"r\n\022GetOneUserResponse\0224\n\004"
+  "user\030\001 \001(\0132 .accounts.v1alpha1.UserDetai"
+  "lOneR\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 "
+  "\001(\tR\005error\"E\n\020ListUserResponse\0221\n\005users\030"
+  "\001 \003(\0132\033.accounts.v1alpha1.UserListR\005user"
+  "s\"I\n\031ListUserPaginationRequest\022\026\n\006offset"
+  "\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"e\n\032"
+  "ListUserPaginationResponse\022\024\n\005count\030\001 \001("
+  "\003R\005count\0221\n\005users\030\002 \003(\0132\033.accounts.v1alp"
+  "ha1.UserListR\005users\"\027\n\025GetListUserDexReq"
+  "uest\"[\n\026GetListUserDexResponse\022A\n\tusers_"
+  "dex\030\001 \003(\0132$.accounts.v1alpha1.users.v1.U"
+  "sersDexR\010usersDex\"r\n\024GetOneUserDexReques"
+  "t\022\027\n\007user_id\030\001 \001(\tR\006userId\022A\n\004user\030\002 \001(\013"
+  "2-.accounts.v1alpha1.users.v1.CreateUser"
+  "RequestR\004user\"r\n\025GetOneUserDexResponse\0221"
+  "\n\004user\030\001 \001(\0132\035.accounts.v1alpha1.UserDet"
+  "ailR\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001"
+  "(\tR\005error\"Z\n\034SendVerificationEmailReques"
+  "t\022\024\n\005email\030\001 \001(\tR\005email\022\022\n\004name\030\002 \001(\tR\004n"
+  "ame\022\020\n\003url\030\003 \001(\tR\003url\"V\n\035SendVerificatio"
+  "nEmailResponse\022\037\n\013html_result\030\001 \001(\tR\nhtm"
+  "lResult\022\024\n\005error\030\002 \001(\tR\005error\"*\n\022VerifyE"
+  "mailRequest\022\024\n\005token\030\001 \001(\tR\005token\"=\n\023Ver"
+  "ifyEmailResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005er"
+  "ror\030\002 \001(\tR\005error\"\327\003\n\020CheckUserRequest\022\'\n"
+  "\017organization_id\030\001 \001(\tR\016organizationId\022\035"
+  "\n\nproject_id\030\002 \001(\tR\tprojectId\022A\n\035get_org"
+  "anization_from_project\030\003 \001(\tR\032getOrganiz"
+  "ationFromProject\022\036\n\npermission\030\004 \001(\tR\npe"
+  "rmission\022\036\n\013user_id_dex\030\005 \001(\tR\tuserIdDex"
+  "\022\"\n\ruser_id_admin\030\006 \001(\tR\013userIdAdmin\022\027\n\007"
+  "user_id\030\007 \001(\rR\006userId\022\'\n\017type_permission"
+  "\030\t \001(\tR\016typePermission\022\033\n\troles_ids\030\n \003("
+  "\tR\010rolesIds\022\"\n\rapi_key_value\030\013 \001(\tR\013apiK"
+  "eyValue\022&\n\017token_ccp_admin\030\014 \001(\tR\rtokenC"
+  "cpAdmin\022)\n\021token_ccp_user_id\030\r \001(\tR\016toke"
+  "nCcpUserId\"s\n\021CheckUserResponse\022\033\n\tis_ex"
+  "ists\030\001 \001(\010R\010isExists\022\031\n\010is_admin\030\003 \001(\010R\007"
+  "isAdmin\022\020\n\003msg\030\004 \001(\tR\003msg\022\024\n\005error\030\005 \001(\t"
+  "R\005error\"\?\n\010UsersDex\022\027\n\007user_id\030\001 \001(\tR\006us"
+  "erId\022\032\n\010provider\030\002 \001(\tR\010provider\"2\n\032GetU"
+  "sersEmailFilterRequest\022\024\n\005value\030\001 \001(\tR\005v"
+  "alue\"P\n\033GetUsersEmailFilterResponse\0221\n\005u"
+  "sers\030\001 \003(\0132\033.accounts.v1alpha1.UserListR"
+  "\005usersB:Z8github.com/cuemby/ccp-sdk/gen/"
+  "go/accounts/v1alpha1/usersb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto = {
-  false, false, 3511, descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto, "accounts/v1alpha1/users/users.proto", 
+  false, false, 3514, descriptor_table_protodef_accounts_2fv1alpha1_2fusers_2fusers_2eproto, "accounts/v1alpha1/users/users.proto", 
   &descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_once, descriptor_table_accounts_2fv1alpha1_2fusers_2fusers_2eproto_deps, 1, 25,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2fusers_2fusers_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2fusers_2fusers_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2fusers_2fusers_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2fusers_2fusers_2eproto,
@@ -3464,10 +3464,10 @@ void GetOneUserRequest::InternalSwap(GetOneUserRequest* other) {
 
 class GetOneUserResponse::_Internal {
  public:
-  static const ::accounts::v1alpha1::UserDetail& user(const GetOneUserResponse* msg);
+  static const ::accounts::v1alpha1::UserDetailOne& user(const GetOneUserResponse* msg);
 };
 
-const ::accounts::v1alpha1::UserDetail&
+const ::accounts::v1alpha1::UserDetailOne&
 GetOneUserResponse::_Internal::user(const GetOneUserResponse* msg) {
   return *msg->user_;
 }
@@ -3500,7 +3500,7 @@ GetOneUserResponse::GetOneUserResponse(const GetOneUserResponse& from)
       GetArenaForAllocation());
   }
   if (from._internal_has_user()) {
-    user_ = new ::accounts::v1alpha1::UserDetail(*from.user_);
+    user_ = new ::accounts::v1alpha1::UserDetailOne(*from.user_);
   } else {
     user_ = nullptr;
   }
@@ -3558,7 +3558,7 @@ const char* GetOneUserResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
+      // .accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_user(), ptr);
@@ -3612,7 +3612,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
+  // .accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];
   if (this->_internal_has_user()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3670,7 +3670,7 @@ size_t GetOneUserResponse::ByteSizeLong() const {
         this->_internal_error());
   }
 
-  // .accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];
+  // .accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];
   if (this->_internal_has_user()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3712,7 +3712,7 @@ void GetOneUserResponse::MergeFrom(const GetOneUserResponse& from) {
     _internal_set_error(from._internal_error());
   }
   if (from._internal_has_user()) {
-    _internal_mutable_user()->::accounts::v1alpha1::UserDetail::MergeFrom(from._internal_user());
+    _internal_mutable_user()->::accounts::v1alpha1::UserDetailOne::MergeFrom(from._internal_user());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }

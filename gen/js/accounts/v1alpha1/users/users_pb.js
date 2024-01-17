@@ -2686,7 +2686,7 @@ proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.toObject = functio
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && accounts_v1alpha1_accounts_pb.UserDetail.toObject(includeInstance, f),
+    user: (f = msg.getUser()) && accounts_v1alpha1_accounts_pb.UserDetailOne.toObject(includeInstance, f),
     msg: jspb.Message.getFieldWithDefault(msg, 2, ""),
     error: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -2726,8 +2726,8 @@ proto.accounts.v1alpha1.users.v1.GetOneUserResponse.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new accounts_v1alpha1_accounts_pb.UserDetail;
-      reader.readMessage(value,accounts_v1alpha1_accounts_pb.UserDetail.deserializeBinaryFromReader);
+      var value = new accounts_v1alpha1_accounts_pb.UserDetailOne;
+      reader.readMessage(value,accounts_v1alpha1_accounts_pb.UserDetailOne.deserializeBinaryFromReader);
       msg.setUser(value);
       break;
     case 2:
@@ -2772,7 +2772,7 @@ proto.accounts.v1alpha1.users.v1.GetOneUserResponse.serializeBinaryToWriter = fu
     writer.writeMessage(
       1,
       f,
-      accounts_v1alpha1_accounts_pb.UserDetail.serializeBinaryToWriter
+      accounts_v1alpha1_accounts_pb.UserDetailOne.serializeBinaryToWriter
     );
   }
   f = message.getMsg();
@@ -2793,17 +2793,17 @@ proto.accounts.v1alpha1.users.v1.GetOneUserResponse.serializeBinaryToWriter = fu
 
 
 /**
- * optional accounts.v1alpha1.UserDetail user = 1;
- * @return {?proto.accounts.v1alpha1.UserDetail}
+ * optional accounts.v1alpha1.UserDetailOne user = 1;
+ * @return {?proto.accounts.v1alpha1.UserDetailOne}
  */
 proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.getUser = function() {
-  return /** @type{?proto.accounts.v1alpha1.UserDetail} */ (
-    jspb.Message.getWrapperField(this, accounts_v1alpha1_accounts_pb.UserDetail, 1));
+  return /** @type{?proto.accounts.v1alpha1.UserDetailOne} */ (
+    jspb.Message.getWrapperField(this, accounts_v1alpha1_accounts_pb.UserDetailOne, 1));
 };
 
 
 /**
- * @param {?proto.accounts.v1alpha1.UserDetail|undefined} value
+ * @param {?proto.accounts.v1alpha1.UserDetailOne|undefined} value
  * @return {!proto.accounts.v1alpha1.users.v1.GetOneUserResponse} returns this
 */
 proto.accounts.v1alpha1.users.v1.GetOneUserResponse.prototype.setUser = function(value) {

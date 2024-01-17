@@ -92,7 +92,7 @@ message GetOneUserRequest {
 }
 
 message GetOneUserResponse {
-    UserDetail user = 1;
+    UserDetailOne user = 1;
     string msg = 2;
     string error = 3;
 }

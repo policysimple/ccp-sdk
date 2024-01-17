@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetOneUserResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
      */
     protected $user = null;
     /**
@@ -32,7 +32,7 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Accounts\V1alpha1\UserDetail $user
+     *     @type \Accounts\V1alpha1\UserDetailOne $user
      *     @type string $msg
      *     @type string $error
      * }
@@ -43,8 +43,8 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
-     * @return \Accounts\V1alpha1\UserDetail|null
+     * Generated from protobuf field <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
+     * @return \Accounts\V1alpha1\UserDetailOne|null
      */
     public function getUser()
     {
@@ -62,13 +62,13 @@ class GetOneUserResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
-     * @param \Accounts\V1alpha1\UserDetail $var
+     * Generated from protobuf field <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
+     * @param \Accounts\V1alpha1\UserDetailOne $var
      * @return $this
      */
     public function setUser($var)
     {
-        GPBUtil::checkMessage($var, \Accounts\V1alpha1\UserDetail::class);
+        GPBUtil::checkMessage($var, \Accounts\V1alpha1\UserDetailOne::class);
         $this->user = $var;
 
         return $this;

@@ -8715,19 +8715,19 @@ public final class Users {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
      * @return Whether the user field is set.
      */
     boolean hasUser();
     /**
-     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
      * @return The user.
      */
-    accounts.v1alpha1.Accounts.UserDetail getUser();
+    accounts.v1alpha1.Accounts.UserDetailOne getUser();
     /**
-     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
      */
-    accounts.v1alpha1.Accounts.UserDetailOrBuilder getUserOrBuilder();
+    accounts.v1alpha1.Accounts.UserDetailOneOrBuilder getUserOrBuilder();
 
     /**
      * <code>string msg = 2 [json_name = "msg"];</code>
@@ -8801,11 +8801,11 @@ public final class Users {
               done = true;
               break;
             case 10: {
-              accounts.v1alpha1.Accounts.UserDetail.Builder subBuilder = null;
+              accounts.v1alpha1.Accounts.UserDetailOne.Builder subBuilder = null;
               if (user_ != null) {
                 subBuilder = user_.toBuilder();
               }
-              user_ = input.readMessage(accounts.v1alpha1.Accounts.UserDetail.parser(), extensionRegistry);
+              user_ = input.readMessage(accounts.v1alpha1.Accounts.UserDetailOne.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(user_);
                 user_ = subBuilder.buildPartial();
@@ -8858,9 +8858,9 @@ public final class Users {
     }
 
     public static final int USER_FIELD_NUMBER = 1;
-    private accounts.v1alpha1.Accounts.UserDetail user_;
+    private accounts.v1alpha1.Accounts.UserDetailOne user_;
     /**
-     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
      * @return Whether the user field is set.
      */
     @java.lang.Override
@@ -8868,18 +8868,18 @@ public final class Users {
       return user_ != null;
     }
     /**
-     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
      * @return The user.
      */
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.UserDetail getUser() {
-      return user_ == null ? accounts.v1alpha1.Accounts.UserDetail.getDefaultInstance() : user_;
+    public accounts.v1alpha1.Accounts.UserDetailOne getUser() {
+      return user_ == null ? accounts.v1alpha1.Accounts.UserDetailOne.getDefaultInstance() : user_;
     }
     /**
-     * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+     * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
      */
     @java.lang.Override
-    public accounts.v1alpha1.Accounts.UserDetailOrBuilder getUserOrBuilder() {
+    public accounts.v1alpha1.Accounts.UserDetailOneOrBuilder getUserOrBuilder() {
       return getUser();
     }
 
@@ -9308,31 +9308,31 @@ public final class Users {
         return this;
       }
 
-      private accounts.v1alpha1.Accounts.UserDetail user_;
+      private accounts.v1alpha1.Accounts.UserDetailOne user_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          accounts.v1alpha1.Accounts.UserDetail, accounts.v1alpha1.Accounts.UserDetail.Builder, accounts.v1alpha1.Accounts.UserDetailOrBuilder> userBuilder_;
+          accounts.v1alpha1.Accounts.UserDetailOne, accounts.v1alpha1.Accounts.UserDetailOne.Builder, accounts.v1alpha1.Accounts.UserDetailOneOrBuilder> userBuilder_;
       /**
-       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
        * @return Whether the user field is set.
        */
       public boolean hasUser() {
         return userBuilder_ != null || user_ != null;
       }
       /**
-       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
        * @return The user.
        */
-      public accounts.v1alpha1.Accounts.UserDetail getUser() {
+      public accounts.v1alpha1.Accounts.UserDetailOne getUser() {
         if (userBuilder_ == null) {
-          return user_ == null ? accounts.v1alpha1.Accounts.UserDetail.getDefaultInstance() : user_;
+          return user_ == null ? accounts.v1alpha1.Accounts.UserDetailOne.getDefaultInstance() : user_;
         } else {
           return userBuilder_.getMessage();
         }
       }
       /**
-       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
        */
-      public Builder setUser(accounts.v1alpha1.Accounts.UserDetail value) {
+      public Builder setUser(accounts.v1alpha1.Accounts.UserDetailOne value) {
         if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9346,10 +9346,10 @@ public final class Users {
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
        */
       public Builder setUser(
-          accounts.v1alpha1.Accounts.UserDetail.Builder builderForValue) {
+          accounts.v1alpha1.Accounts.UserDetailOne.Builder builderForValue) {
         if (userBuilder_ == null) {
           user_ = builderForValue.build();
           onChanged();
@@ -9360,13 +9360,13 @@ public final class Users {
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
        */
-      public Builder mergeUser(accounts.v1alpha1.Accounts.UserDetail value) {
+      public Builder mergeUser(accounts.v1alpha1.Accounts.UserDetailOne value) {
         if (userBuilder_ == null) {
           if (user_ != null) {
             user_ =
-              accounts.v1alpha1.Accounts.UserDetail.newBuilder(user_).mergeFrom(value).buildPartial();
+              accounts.v1alpha1.Accounts.UserDetailOne.newBuilder(user_).mergeFrom(value).buildPartial();
           } else {
             user_ = value;
           }
@@ -9378,7 +9378,7 @@ public final class Users {
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
        */
       public Builder clearUser() {
         if (userBuilder_ == null) {
@@ -9392,33 +9392,33 @@ public final class Users {
         return this;
       }
       /**
-       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
        */
-      public accounts.v1alpha1.Accounts.UserDetail.Builder getUserBuilder() {
+      public accounts.v1alpha1.Accounts.UserDetailOne.Builder getUserBuilder() {
         
         onChanged();
         return getUserFieldBuilder().getBuilder();
       }
       /**
-       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
        */
-      public accounts.v1alpha1.Accounts.UserDetailOrBuilder getUserOrBuilder() {
+      public accounts.v1alpha1.Accounts.UserDetailOneOrBuilder getUserOrBuilder() {
         if (userBuilder_ != null) {
           return userBuilder_.getMessageOrBuilder();
         } else {
           return user_ == null ?
-              accounts.v1alpha1.Accounts.UserDetail.getDefaultInstance() : user_;
+              accounts.v1alpha1.Accounts.UserDetailOne.getDefaultInstance() : user_;
         }
       }
       /**
-       * <code>.accounts.v1alpha1.UserDetail user = 1 [json_name = "user"];</code>
+       * <code>.accounts.v1alpha1.UserDetailOne user = 1 [json_name = "user"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          accounts.v1alpha1.Accounts.UserDetail, accounts.v1alpha1.Accounts.UserDetail.Builder, accounts.v1alpha1.Accounts.UserDetailOrBuilder> 
+          accounts.v1alpha1.Accounts.UserDetailOne, accounts.v1alpha1.Accounts.UserDetailOne.Builder, accounts.v1alpha1.Accounts.UserDetailOneOrBuilder> 
           getUserFieldBuilder() {
         if (userBuilder_ == null) {
           userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              accounts.v1alpha1.Accounts.UserDetail, accounts.v1alpha1.Accounts.UserDetail.Builder, accounts.v1alpha1.Accounts.UserDetailOrBuilder>(
+              accounts.v1alpha1.Accounts.UserDetailOne, accounts.v1alpha1.Accounts.UserDetailOne.Builder, accounts.v1alpha1.Accounts.UserDetailOneOrBuilder>(
                   getUser(),
                   getParentForChildren(),
                   isClean());
@@ -23039,53 +23039,53 @@ public final class Users {
       "d\030\001 \001(\rR\006userId\022\'\n\017organization_id\030\002 \001(\t" +
       "R\016organizationId\"L\n\021GetOneUserRequest\022\016\n" +
       "\002id\030\001 \001(\rR\002id\022\'\n\017organization_id\030\002 \001(\tR\016" +
-      "organizationId\"o\n\022GetOneUserResponse\0221\n\004" +
-      "user\030\001 \001(\0132\035.accounts.v1alpha1.UserDetai" +
-      "lR\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\t" +
-      "R\005error\"E\n\020ListUserResponse\0221\n\005users\030\001 \003" +
-      "(\0132\033.accounts.v1alpha1.UserListR\005users\"I" +
-      "\n\031ListUserPaginationRequest\022\026\n\006offset\030\001 " +
-      "\001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"e\n\032Lis" +
-      "tUserPaginationResponse\022\024\n\005count\030\001 \001(\003R\005" +
-      "count\0221\n\005users\030\002 \003(\0132\033.accounts.v1alpha1" +
-      ".UserListR\005users\"\027\n\025GetListUserDexReques" +
-      "t\"[\n\026GetListUserDexResponse\022A\n\tusers_dex" +
-      "\030\001 \003(\0132$.accounts.v1alpha1.users.v1.User" +
-      "sDexR\010usersDex\"r\n\024GetOneUserDexRequest\022\027" +
-      "\n\007user_id\030\001 \001(\tR\006userId\022A\n\004user\030\002 \001(\0132-." +
-      "accounts.v1alpha1.users.v1.CreateUserReq" +
-      "uestR\004user\"r\n\025GetOneUserDexResponse\0221\n\004u" +
-      "ser\030\001 \001(\0132\035.accounts.v1alpha1.UserDetail" +
-      "R\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001(\tR" +
-      "\005error\"Z\n\034SendVerificationEmailRequest\022\024" +
-      "\n\005email\030\001 \001(\tR\005email\022\022\n\004name\030\002 \001(\tR\004name" +
-      "\022\020\n\003url\030\003 \001(\tR\003url\"V\n\035SendVerificationEm" +
-      "ailResponse\022\037\n\013html_result\030\001 \001(\tR\nhtmlRe" +
-      "sult\022\024\n\005error\030\002 \001(\tR\005error\"*\n\022VerifyEmai" +
-      "lRequest\022\024\n\005token\030\001 \001(\tR\005token\"=\n\023Verify" +
-      "EmailResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error" +
-      "\030\002 \001(\tR\005error\"\327\003\n\020CheckUserRequest\022\'\n\017or" +
-      "ganization_id\030\001 \001(\tR\016organizationId\022\035\n\np" +
-      "roject_id\030\002 \001(\tR\tprojectId\022A\n\035get_organi" +
-      "zation_from_project\030\003 \001(\tR\032getOrganizati" +
-      "onFromProject\022\036\n\npermission\030\004 \001(\tR\npermi" +
-      "ssion\022\036\n\013user_id_dex\030\005 \001(\tR\tuserIdDex\022\"\n" +
-      "\ruser_id_admin\030\006 \001(\tR\013userIdAdmin\022\027\n\007use" +
-      "r_id\030\007 \001(\rR\006userId\022\'\n\017type_permission\030\t " +
-      "\001(\tR\016typePermission\022\033\n\troles_ids\030\n \003(\tR\010" +
-      "rolesIds\022\"\n\rapi_key_value\030\013 \001(\tR\013apiKeyV" +
-      "alue\022&\n\017token_ccp_admin\030\014 \001(\tR\rtokenCcpA" +
-      "dmin\022)\n\021token_ccp_user_id\030\r \001(\tR\016tokenCc" +
-      "pUserId\"s\n\021CheckUserResponse\022\033\n\tis_exist" +
-      "s\030\001 \001(\010R\010isExists\022\031\n\010is_admin\030\003 \001(\010R\007isA" +
-      "dmin\022\020\n\003msg\030\004 \001(\tR\003msg\022\024\n\005error\030\005 \001(\tR\005e" +
-      "rror\"?\n\010UsersDex\022\027\n\007user_id\030\001 \001(\tR\006userI" +
-      "d\022\032\n\010provider\030\002 \001(\tR\010provider\"2\n\032GetUser" +
-      "sEmailFilterRequest\022\024\n\005value\030\001 \001(\tR\005valu" +
-      "e\"P\n\033GetUsersEmailFilterResponse\0221\n\005user" +
-      "s\030\001 \003(\0132\033.accounts.v1alpha1.UserListR\005us" +
-      "ersB:Z8github.com/cuemby/ccp-sdk/gen/go/" +
-      "accounts/v1alpha1/usersb\006proto3"
+      "organizationId\"r\n\022GetOneUserResponse\0224\n\004" +
+      "user\030\001 \001(\0132 .accounts.v1alpha1.UserDetai" +
+      "lOneR\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 " +
+      "\001(\tR\005error\"E\n\020ListUserResponse\0221\n\005users\030" +
+      "\001 \003(\0132\033.accounts.v1alpha1.UserListR\005user" +
+      "s\"I\n\031ListUserPaginationRequest\022\026\n\006offset" +
+      "\030\001 \001(\005R\006offset\022\024\n\005limit\030\002 \001(\005R\005limit\"e\n\032" +
+      "ListUserPaginationResponse\022\024\n\005count\030\001 \001(" +
+      "\003R\005count\0221\n\005users\030\002 \003(\0132\033.accounts.v1alp" +
+      "ha1.UserListR\005users\"\027\n\025GetListUserDexReq" +
+      "uest\"[\n\026GetListUserDexResponse\022A\n\tusers_" +
+      "dex\030\001 \003(\0132$.accounts.v1alpha1.users.v1.U" +
+      "sersDexR\010usersDex\"r\n\024GetOneUserDexReques" +
+      "t\022\027\n\007user_id\030\001 \001(\tR\006userId\022A\n\004user\030\002 \001(\013" +
+      "2-.accounts.v1alpha1.users.v1.CreateUser" +
+      "RequestR\004user\"r\n\025GetOneUserDexResponse\0221" +
+      "\n\004user\030\001 \001(\0132\035.accounts.v1alpha1.UserDet" +
+      "ailR\004user\022\020\n\003msg\030\002 \001(\tR\003msg\022\024\n\005error\030\003 \001" +
+      "(\tR\005error\"Z\n\034SendVerificationEmailReques" +
+      "t\022\024\n\005email\030\001 \001(\tR\005email\022\022\n\004name\030\002 \001(\tR\004n" +
+      "ame\022\020\n\003url\030\003 \001(\tR\003url\"V\n\035SendVerificatio" +
+      "nEmailResponse\022\037\n\013html_result\030\001 \001(\tR\nhtm" +
+      "lResult\022\024\n\005error\030\002 \001(\tR\005error\"*\n\022VerifyE" +
+      "mailRequest\022\024\n\005token\030\001 \001(\tR\005token\"=\n\023Ver" +
+      "ifyEmailResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005er" +
+      "ror\030\002 \001(\tR\005error\"\327\003\n\020CheckUserRequest\022\'\n" +
+      "\017organization_id\030\001 \001(\tR\016organizationId\022\035" +
+      "\n\nproject_id\030\002 \001(\tR\tprojectId\022A\n\035get_org" +
+      "anization_from_project\030\003 \001(\tR\032getOrganiz" +
+      "ationFromProject\022\036\n\npermission\030\004 \001(\tR\npe" +
+      "rmission\022\036\n\013user_id_dex\030\005 \001(\tR\tuserIdDex" +
+      "\022\"\n\ruser_id_admin\030\006 \001(\tR\013userIdAdmin\022\027\n\007" +
+      "user_id\030\007 \001(\rR\006userId\022\'\n\017type_permission" +
+      "\030\t \001(\tR\016typePermission\022\033\n\troles_ids\030\n \003(" +
+      "\tR\010rolesIds\022\"\n\rapi_key_value\030\013 \001(\tR\013apiK" +
+      "eyValue\022&\n\017token_ccp_admin\030\014 \001(\tR\rtokenC" +
+      "cpAdmin\022)\n\021token_ccp_user_id\030\r \001(\tR\016toke" +
+      "nCcpUserId\"s\n\021CheckUserResponse\022\033\n\tis_ex" +
+      "ists\030\001 \001(\010R\010isExists\022\031\n\010is_admin\030\003 \001(\010R\007" +
+      "isAdmin\022\020\n\003msg\030\004 \001(\tR\003msg\022\024\n\005error\030\005 \001(\t" +
+      "R\005error\"?\n\010UsersDex\022\027\n\007user_id\030\001 \001(\tR\006us" +
+      "erId\022\032\n\010provider\030\002 \001(\tR\010provider\"2\n\032GetU" +
+      "sersEmailFilterRequest\022\024\n\005value\030\001 \001(\tR\005v" +
+      "alue\"P\n\033GetUsersEmailFilterResponse\0221\n\005u" +
+      "sers\030\001 \003(\0132\033.accounts.v1alpha1.UserListR" +
+      "\005usersB:Z8github.com/cuemby/ccp-sdk/gen/" +
+      "go/accounts/v1alpha1/usersb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
