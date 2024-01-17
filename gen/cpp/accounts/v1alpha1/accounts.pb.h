@@ -1931,7 +1931,7 @@ class ProjectUserDetail final :
     kCreatedAtFieldNumber = 6,
     kUpdatedAtFieldNumber = 7,
     kIdFieldNumber = 10,
-    kRolesFieldNumber = 8,
+    kRoleFieldNumber = 8,
   };
   // repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];
   int users_size() const;
@@ -2049,23 +2049,23 @@ class ProjectUserDetail final :
   std::string* _internal_mutable_id();
   public:
 
-  // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
-  bool has_roles() const;
+  // .accounts.v1alpha1.Role role = 8 [json_name = "role"];
+  bool has_role() const;
   private:
-  bool _internal_has_roles() const;
+  bool _internal_has_role() const;
   public:
-  void clear_roles();
-  const ::accounts::v1alpha1::Role& roles() const;
-  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::Role* release_roles();
-  ::accounts::v1alpha1::Role* mutable_roles();
-  void set_allocated_roles(::accounts::v1alpha1::Role* roles);
+  void clear_role();
+  const ::accounts::v1alpha1::Role& role() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::Role* release_role();
+  ::accounts::v1alpha1::Role* mutable_role();
+  void set_allocated_role(::accounts::v1alpha1::Role* role);
   private:
-  const ::accounts::v1alpha1::Role& _internal_roles() const;
-  ::accounts::v1alpha1::Role* _internal_mutable_roles();
+  const ::accounts::v1alpha1::Role& _internal_role() const;
+  ::accounts::v1alpha1::Role* _internal_mutable_role();
   public:
-  void unsafe_arena_set_allocated_roles(
-      ::accounts::v1alpha1::Role* roles);
-  ::accounts::v1alpha1::Role* unsafe_arena_release_roles();
+  void unsafe_arena_set_allocated_role(
+      ::accounts::v1alpha1::Role* role);
+  ::accounts::v1alpha1::Role* unsafe_arena_release_role();
 
   // @@protoc_insertion_point(class_scope:accounts.v1alpha1.ProjectUserDetail)
  private:
@@ -2082,7 +2082,7 @@ class ProjectUserDetail final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr created_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updated_at_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::accounts::v1alpha1::Role* roles_;
+  ::accounts::v1alpha1::Role* role_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2faccounts_2eproto;
 };
@@ -2204,6 +2204,7 @@ class OrganizationUserDetail final :
 
   enum : int {
     kProjectsFieldNumber = 10,
+    kPermissionsFieldNumber = 12,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
     kDescriptionFieldNumber = 4,
@@ -2229,6 +2230,24 @@ class OrganizationUserDetail final :
   ::accounts::v1alpha1::ProjectUserDetail* add_projects();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::ProjectUserDetail >&
       projects() const;
+
+  // repeated .accounts.v1alpha1.Permission permissions = 12 [json_name = "permissions"];
+  int permissions_size() const;
+  private:
+  int _internal_permissions_size() const;
+  public:
+  void clear_permissions();
+  ::accounts::v1alpha1::Permission* mutable_permissions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >*
+      mutable_permissions();
+  private:
+  const ::accounts::v1alpha1::Permission& _internal_permissions(int index) const;
+  ::accounts::v1alpha1::Permission* _internal_add_permissions();
+  public:
+  const ::accounts::v1alpha1::Permission& permissions(int index) const;
+  ::accounts::v1alpha1::Permission* add_permissions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >&
+      permissions() const;
 
   // string name = 2 [json_name = "name"];
   void clear_name();
@@ -2344,6 +2363,7 @@ class OrganizationUserDetail final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::ProjectUserDetail > projects_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission > permissions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
@@ -2491,7 +2511,7 @@ class UserDetailOne final :
     kPhoneCodeFieldNumber = 35,
     kOptionalAddressFieldNumber = 36,
     kImageFieldNumber = 37,
-    kOrganizationsFieldNumber = 12,
+    kOrganizationFieldNumber = 12,
     kIdFieldNumber = 1,
     kIsActiveFieldNumber = 6,
     kIsSuperUserFieldNumber = 11,
@@ -2794,23 +2814,23 @@ class UserDetailOne final :
   std::string* _internal_mutable_image();
   public:
 
-  // .accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];
-  bool has_organizations() const;
+  // .accounts.v1alpha1.OrganizationUserDetail organization = 12 [json_name = "organization"];
+  bool has_organization() const;
   private:
-  bool _internal_has_organizations() const;
+  bool _internal_has_organization() const;
   public:
-  void clear_organizations();
-  const ::accounts::v1alpha1::OrganizationUserDetail& organizations() const;
-  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::OrganizationUserDetail* release_organizations();
-  ::accounts::v1alpha1::OrganizationUserDetail* mutable_organizations();
-  void set_allocated_organizations(::accounts::v1alpha1::OrganizationUserDetail* organizations);
+  void clear_organization();
+  const ::accounts::v1alpha1::OrganizationUserDetail& organization() const;
+  PROTOBUF_MUST_USE_RESULT ::accounts::v1alpha1::OrganizationUserDetail* release_organization();
+  ::accounts::v1alpha1::OrganizationUserDetail* mutable_organization();
+  void set_allocated_organization(::accounts::v1alpha1::OrganizationUserDetail* organization);
   private:
-  const ::accounts::v1alpha1::OrganizationUserDetail& _internal_organizations() const;
-  ::accounts::v1alpha1::OrganizationUserDetail* _internal_mutable_organizations();
+  const ::accounts::v1alpha1::OrganizationUserDetail& _internal_organization() const;
+  ::accounts::v1alpha1::OrganizationUserDetail* _internal_mutable_organization();
   public:
-  void unsafe_arena_set_allocated_organizations(
-      ::accounts::v1alpha1::OrganizationUserDetail* organizations);
-  ::accounts::v1alpha1::OrganizationUserDetail* unsafe_arena_release_organizations();
+  void unsafe_arena_set_allocated_organization(
+      ::accounts::v1alpha1::OrganizationUserDetail* organization);
+  ::accounts::v1alpha1::OrganizationUserDetail* unsafe_arena_release_organization();
 
   // uint32 id = 1 [json_name = "id"];
   void clear_id();
@@ -2956,7 +2976,7 @@ class UserDetailOne final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr phone_code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr optional_address_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
-  ::accounts::v1alpha1::OrganizationUserDetail* organizations_;
+  ::accounts::v1alpha1::OrganizationUserDetail* organization_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   bool is_active_;
   bool is_super_user_;
@@ -6149,45 +6169,45 @@ inline void ProjectUserDetail::set_allocated_updated_at(std::string* updated_at)
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.ProjectUserDetail.updated_at)
 }
 
-// .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
-inline bool ProjectUserDetail::_internal_has_roles() const {
-  return this != internal_default_instance() && roles_ != nullptr;
+// .accounts.v1alpha1.Role role = 8 [json_name = "role"];
+inline bool ProjectUserDetail::_internal_has_role() const {
+  return this != internal_default_instance() && role_ != nullptr;
 }
-inline bool ProjectUserDetail::has_roles() const {
-  return _internal_has_roles();
+inline bool ProjectUserDetail::has_role() const {
+  return _internal_has_role();
 }
-inline void ProjectUserDetail::clear_roles() {
-  if (GetArenaForAllocation() == nullptr && roles_ != nullptr) {
-    delete roles_;
+inline void ProjectUserDetail::clear_role() {
+  if (GetArenaForAllocation() == nullptr && role_ != nullptr) {
+    delete role_;
   }
-  roles_ = nullptr;
+  role_ = nullptr;
 }
-inline const ::accounts::v1alpha1::Role& ProjectUserDetail::_internal_roles() const {
-  const ::accounts::v1alpha1::Role* p = roles_;
+inline const ::accounts::v1alpha1::Role& ProjectUserDetail::_internal_role() const {
+  const ::accounts::v1alpha1::Role* p = role_;
   return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::Role&>(
       ::accounts::v1alpha1::_Role_default_instance_);
 }
-inline const ::accounts::v1alpha1::Role& ProjectUserDetail::roles() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.ProjectUserDetail.roles)
-  return _internal_roles();
+inline const ::accounts::v1alpha1::Role& ProjectUserDetail::role() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.ProjectUserDetail.role)
+  return _internal_role();
 }
-inline void ProjectUserDetail::unsafe_arena_set_allocated_roles(
-    ::accounts::v1alpha1::Role* roles) {
+inline void ProjectUserDetail::unsafe_arena_set_allocated_role(
+    ::accounts::v1alpha1::Role* role) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(roles_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(role_);
   }
-  roles_ = roles;
-  if (roles) {
+  role_ = role;
+  if (role) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.ProjectUserDetail.roles)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.ProjectUserDetail.role)
 }
-inline ::accounts::v1alpha1::Role* ProjectUserDetail::release_roles() {
+inline ::accounts::v1alpha1::Role* ProjectUserDetail::release_role() {
   
-  ::accounts::v1alpha1::Role* temp = roles_;
-  roles_ = nullptr;
+  ::accounts::v1alpha1::Role* temp = role_;
+  role_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -6199,44 +6219,44 @@ inline ::accounts::v1alpha1::Role* ProjectUserDetail::release_roles() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::accounts::v1alpha1::Role* ProjectUserDetail::unsafe_arena_release_roles() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.ProjectUserDetail.roles)
+inline ::accounts::v1alpha1::Role* ProjectUserDetail::unsafe_arena_release_role() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.ProjectUserDetail.role)
   
-  ::accounts::v1alpha1::Role* temp = roles_;
-  roles_ = nullptr;
+  ::accounts::v1alpha1::Role* temp = role_;
+  role_ = nullptr;
   return temp;
 }
-inline ::accounts::v1alpha1::Role* ProjectUserDetail::_internal_mutable_roles() {
+inline ::accounts::v1alpha1::Role* ProjectUserDetail::_internal_mutable_role() {
   
-  if (roles_ == nullptr) {
+  if (role_ == nullptr) {
     auto* p = CreateMaybeMessage<::accounts::v1alpha1::Role>(GetArenaForAllocation());
-    roles_ = p;
+    role_ = p;
   }
-  return roles_;
+  return role_;
 }
-inline ::accounts::v1alpha1::Role* ProjectUserDetail::mutable_roles() {
-  ::accounts::v1alpha1::Role* _msg = _internal_mutable_roles();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.ProjectUserDetail.roles)
+inline ::accounts::v1alpha1::Role* ProjectUserDetail::mutable_role() {
+  ::accounts::v1alpha1::Role* _msg = _internal_mutable_role();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.ProjectUserDetail.role)
   return _msg;
 }
-inline void ProjectUserDetail::set_allocated_roles(::accounts::v1alpha1::Role* roles) {
+inline void ProjectUserDetail::set_allocated_role(::accounts::v1alpha1::Role* role) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete roles_;
+    delete role_;
   }
-  if (roles) {
+  if (role) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::accounts::v1alpha1::Role>::GetOwningArena(roles);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::accounts::v1alpha1::Role>::GetOwningArena(role);
     if (message_arena != submessage_arena) {
-      roles = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, roles, submessage_arena);
+      role = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, role, submessage_arena);
     }
     
   } else {
     
   }
-  roles_ = roles;
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.ProjectUserDetail.roles)
+  role_ = role;
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.ProjectUserDetail.role)
 }
 
 // repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];
@@ -6733,6 +6753,46 @@ inline void OrganizationUserDetail::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.OrganizationUserDetail.id)
 }
 
+// repeated .accounts.v1alpha1.Permission permissions = 12 [json_name = "permissions"];
+inline int OrganizationUserDetail::_internal_permissions_size() const {
+  return permissions_.size();
+}
+inline int OrganizationUserDetail::permissions_size() const {
+  return _internal_permissions_size();
+}
+inline void OrganizationUserDetail::clear_permissions() {
+  permissions_.Clear();
+}
+inline ::accounts::v1alpha1::Permission* OrganizationUserDetail::mutable_permissions(int index) {
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.OrganizationUserDetail.permissions)
+  return permissions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >*
+OrganizationUserDetail::mutable_permissions() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.OrganizationUserDetail.permissions)
+  return &permissions_;
+}
+inline const ::accounts::v1alpha1::Permission& OrganizationUserDetail::_internal_permissions(int index) const {
+  return permissions_.Get(index);
+}
+inline const ::accounts::v1alpha1::Permission& OrganizationUserDetail::permissions(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.OrganizationUserDetail.permissions)
+  return _internal_permissions(index);
+}
+inline ::accounts::v1alpha1::Permission* OrganizationUserDetail::_internal_add_permissions() {
+  return permissions_.Add();
+}
+inline ::accounts::v1alpha1::Permission* OrganizationUserDetail::add_permissions() {
+  ::accounts::v1alpha1::Permission* _add = _internal_add_permissions();
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.OrganizationUserDetail.permissions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::accounts::v1alpha1::Permission >&
+OrganizationUserDetail::permissions() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.OrganizationUserDetail.permissions)
+  return permissions_;
+}
+
 // -------------------------------------------------------------------
 
 // UserDetailOne
@@ -7153,45 +7213,45 @@ inline void UserDetailOne::set_is_super_user(bool value) {
   // @@protoc_insertion_point(field_set:accounts.v1alpha1.UserDetailOne.is_super_user)
 }
 
-// .accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];
-inline bool UserDetailOne::_internal_has_organizations() const {
-  return this != internal_default_instance() && organizations_ != nullptr;
+// .accounts.v1alpha1.OrganizationUserDetail organization = 12 [json_name = "organization"];
+inline bool UserDetailOne::_internal_has_organization() const {
+  return this != internal_default_instance() && organization_ != nullptr;
 }
-inline bool UserDetailOne::has_organizations() const {
-  return _internal_has_organizations();
+inline bool UserDetailOne::has_organization() const {
+  return _internal_has_organization();
 }
-inline void UserDetailOne::clear_organizations() {
-  if (GetArenaForAllocation() == nullptr && organizations_ != nullptr) {
-    delete organizations_;
+inline void UserDetailOne::clear_organization() {
+  if (GetArenaForAllocation() == nullptr && organization_ != nullptr) {
+    delete organization_;
   }
-  organizations_ = nullptr;
+  organization_ = nullptr;
 }
-inline const ::accounts::v1alpha1::OrganizationUserDetail& UserDetailOne::_internal_organizations() const {
-  const ::accounts::v1alpha1::OrganizationUserDetail* p = organizations_;
+inline const ::accounts::v1alpha1::OrganizationUserDetail& UserDetailOne::_internal_organization() const {
+  const ::accounts::v1alpha1::OrganizationUserDetail* p = organization_;
   return p != nullptr ? *p : reinterpret_cast<const ::accounts::v1alpha1::OrganizationUserDetail&>(
       ::accounts::v1alpha1::_OrganizationUserDetail_default_instance_);
 }
-inline const ::accounts::v1alpha1::OrganizationUserDetail& UserDetailOne::organizations() const {
-  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetailOne.organizations)
-  return _internal_organizations();
+inline const ::accounts::v1alpha1::OrganizationUserDetail& UserDetailOne::organization() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.UserDetailOne.organization)
+  return _internal_organization();
 }
-inline void UserDetailOne::unsafe_arena_set_allocated_organizations(
-    ::accounts::v1alpha1::OrganizationUserDetail* organizations) {
+inline void UserDetailOne::unsafe_arena_set_allocated_organization(
+    ::accounts::v1alpha1::OrganizationUserDetail* organization) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organizations_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(organization_);
   }
-  organizations_ = organizations;
-  if (organizations) {
+  organization_ = organization;
+  if (organization) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.UserDetailOne.organizations)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.v1alpha1.UserDetailOne.organization)
 }
-inline ::accounts::v1alpha1::OrganizationUserDetail* UserDetailOne::release_organizations() {
+inline ::accounts::v1alpha1::OrganizationUserDetail* UserDetailOne::release_organization() {
   
-  ::accounts::v1alpha1::OrganizationUserDetail* temp = organizations_;
-  organizations_ = nullptr;
+  ::accounts::v1alpha1::OrganizationUserDetail* temp = organization_;
+  organization_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -7203,44 +7263,44 @@ inline ::accounts::v1alpha1::OrganizationUserDetail* UserDetailOne::release_orga
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::accounts::v1alpha1::OrganizationUserDetail* UserDetailOne::unsafe_arena_release_organizations() {
-  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetailOne.organizations)
+inline ::accounts::v1alpha1::OrganizationUserDetail* UserDetailOne::unsafe_arena_release_organization() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.UserDetailOne.organization)
   
-  ::accounts::v1alpha1::OrganizationUserDetail* temp = organizations_;
-  organizations_ = nullptr;
+  ::accounts::v1alpha1::OrganizationUserDetail* temp = organization_;
+  organization_ = nullptr;
   return temp;
 }
-inline ::accounts::v1alpha1::OrganizationUserDetail* UserDetailOne::_internal_mutable_organizations() {
+inline ::accounts::v1alpha1::OrganizationUserDetail* UserDetailOne::_internal_mutable_organization() {
   
-  if (organizations_ == nullptr) {
+  if (organization_ == nullptr) {
     auto* p = CreateMaybeMessage<::accounts::v1alpha1::OrganizationUserDetail>(GetArenaForAllocation());
-    organizations_ = p;
+    organization_ = p;
   }
-  return organizations_;
+  return organization_;
 }
-inline ::accounts::v1alpha1::OrganizationUserDetail* UserDetailOne::mutable_organizations() {
-  ::accounts::v1alpha1::OrganizationUserDetail* _msg = _internal_mutable_organizations();
-  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetailOne.organizations)
+inline ::accounts::v1alpha1::OrganizationUserDetail* UserDetailOne::mutable_organization() {
+  ::accounts::v1alpha1::OrganizationUserDetail* _msg = _internal_mutable_organization();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.UserDetailOne.organization)
   return _msg;
 }
-inline void UserDetailOne::set_allocated_organizations(::accounts::v1alpha1::OrganizationUserDetail* organizations) {
+inline void UserDetailOne::set_allocated_organization(::accounts::v1alpha1::OrganizationUserDetail* organization) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete organizations_;
+    delete organization_;
   }
-  if (organizations) {
+  if (organization) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::accounts::v1alpha1::OrganizationUserDetail>::GetOwningArena(organizations);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::accounts::v1alpha1::OrganizationUserDetail>::GetOwningArena(organization);
     if (message_arena != submessage_arena) {
-      organizations = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, organizations, submessage_arena);
+      organization = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, organization, submessage_arena);
     }
     
   } else {
     
   }
-  organizations_ = organizations;
-  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetailOne.organizations)
+  organization_ = organization;
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.UserDetailOne.organization)
 }
 
 // string phone_number = 15 [json_name = "phoneNumber"];

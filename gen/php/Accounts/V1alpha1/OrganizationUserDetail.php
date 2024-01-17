@@ -45,6 +45,10 @@ class OrganizationUserDetail extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 11 [json_name = "id"];</code>
      */
     protected $id = '';
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 12 [json_name = "permissions"];</code>
+     */
+    private $permissions;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class OrganizationUserDetail extends \Google\Protobuf\Internal\Message
      *     @type string $slug
      *     @type \Accounts\V1alpha1\ProjectUserDetail[]|\Google\Protobuf\Internal\RepeatedField $projects
      *     @type string $id
+     *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      * }
      */
     public function __construct($data = NULL) {
@@ -259,6 +264,28 @@ class OrganizationUserDetail extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 12 [json_name = "permissions"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPermissions()
+    {
+        return $this->permissions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .accounts.v1alpha1.Permission permissions = 12 [json_name = "permissions"];</code>
+     * @param \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPermissions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Accounts\V1alpha1\Permission::class);
+        $this->permissions = $arr;
 
         return $this;
     }
