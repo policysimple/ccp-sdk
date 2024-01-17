@@ -91,7 +91,7 @@ message ProjectUserDetail {
     string description = 5;
     string created_at = 6;
     string updated_at = 7;
-    Role roles = 8;
+    Role role = 8;
     repeated MemberProject users = 9;
   
   }
@@ -105,6 +105,7 @@ message ProjectUserDetail {
     string slug = 9;
     repeated ProjectUserDetail projects = 10;
     string id= 11;
+    repeated Permission permissions = 12;
   
   }
   
@@ -120,7 +121,7 @@ message ProjectUserDetail {
     repeated Role roles = 9;
     repeated Permission permissions = 10;
     bool is_super_user = 11;
-    OrganizationUserDetail organizations = 12;
+    OrganizationUserDetail organization = 12;
   
   
     // details

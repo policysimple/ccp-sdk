@@ -42,9 +42,9 @@ class ProjectUserDetail extends \Google\Protobuf\Internal\Message
      */
     protected $updated_at = '';
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.Role roles = 8 [json_name = "roles"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.Role role = 8 [json_name = "role"];</code>
      */
-    protected $roles = null;
+    protected $role = null;
     /**
      * Generated from protobuf field <code>repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];</code>
      */
@@ -63,7 +63,7 @@ class ProjectUserDetail extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *     @type string $created_at
      *     @type string $updated_at
-     *     @type \Accounts\V1alpha1\Role $roles
+     *     @type \Accounts\V1alpha1\Role $role
      *     @type \Accounts\V1alpha1\MemberProject[]|\Google\Protobuf\Internal\RepeatedField $users
      * }
      */
@@ -227,33 +227,33 @@ class ProjectUserDetail extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.Role roles = 8 [json_name = "roles"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.Role role = 8 [json_name = "role"];</code>
      * @return \Accounts\V1alpha1\Role|null
      */
-    public function getRoles()
+    public function getRole()
     {
-        return $this->roles;
+        return $this->role;
     }
 
-    public function hasRoles()
+    public function hasRole()
     {
-        return isset($this->roles);
+        return isset($this->role);
     }
 
-    public function clearRoles()
+    public function clearRole()
     {
-        unset($this->roles);
+        unset($this->role);
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.Role roles = 8 [json_name = "roles"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.Role role = 8 [json_name = "role"];</code>
      * @param \Accounts\V1alpha1\Role $var
      * @return $this
      */
-    public function setRoles($var)
+    public function setRole($var)
     {
         GPBUtil::checkMessage($var, \Accounts\V1alpha1\Role::class);
-        $this->roles = $var;
+        $this->role = $var;
 
         return $this;
     }

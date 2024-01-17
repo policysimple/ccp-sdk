@@ -156,7 +156,7 @@ constexpr ProjectUserDetail::ProjectUserDetail(
   , created_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , updated_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , roles_(nullptr){}
+  , role_(nullptr){}
 struct ProjectUserDetailDefaultTypeInternal {
   constexpr ProjectUserDetailDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -169,6 +169,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProjectUserDetailDefaultTypeInt
 constexpr OrganizationUserDetail::OrganizationUserDetail(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : projects_()
+  , permissions_()
   , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -207,7 +208,7 @@ constexpr UserDetailOne::UserDetailOne(
   , phone_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , optional_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , organizations_(nullptr)
+  , organization_(nullptr)
   , id_(0u)
   , is_active_(false)
   , is_super_user_(false)
@@ -380,7 +381,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, description_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, created_at_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, updated_at_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, roles_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, role_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::ProjectUserDetail, users_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, _internal_metadata_),
@@ -395,6 +396,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, slug_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, projects_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, id_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::OrganizationUserDetail, permissions_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -411,7 +413,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2fv1alpha1_2faccounts
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, roles_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, permissions_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, is_super_user_),
-  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, organizations_),
+  PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, organization_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, phone_number_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, country_),
   PROTOBUF_FIELD_OFFSET(::accounts::v1alpha1::UserDetailOne, city_),
@@ -484,8 +486,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 73, -1, sizeof(::accounts::v1alpha1::Organization)},
   { 86, -1, sizeof(::accounts::v1alpha1::ProjectUserDetail)},
   { 100, -1, sizeof(::accounts::v1alpha1::OrganizationUserDetail)},
-  { 113, -1, sizeof(::accounts::v1alpha1::UserDetailOne)},
-  { 152, -1, sizeof(::accounts::v1alpha1::UserDetail)},
+  { 114, -1, sizeof(::accounts::v1alpha1::UserDetailOne)},
+  { 153, -1, sizeof(::accounts::v1alpha1::UserDetail)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -544,92 +546,93 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto[] PR
   "owner\022-\n\005roles\030\010 \003(\0132\027.accounts.v1alpha1"
   ".RoleR\005roles\022\022\n\004slug\030\t \001(\tR\004slug\0226\n\010proj"
   "ects\030\n \003(\0132\032.accounts.v1alpha1.ProjectR\010"
-  "projects\022\016\n\002id\030\013 \001(\tR\002id\"\275\002\n\021ProjectUser"
+  "projects\022\016\n\002id\030\013 \001(\tR\002id\"\273\002\n\021ProjectUser"
   "Detail\022\016\n\002id\030\n \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na"
   "me\022\024\n\005image\030\003 \001(\tR\005image\022\'\n\017organization"
   "_id\030\004 \001(\tR\016organizationId\022 \n\013description"
   "\030\005 \001(\tR\013description\022\035\n\ncreated_at\030\006 \001(\tR"
   "\tcreatedAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedA"
-  "t\022-\n\005roles\030\010 \001(\0132\027.accounts.v1alpha1.Rol"
-  "eR\005roles\0226\n\005users\030\t \003(\0132 .accounts.v1alp"
-  "ha1.MemberProjectR\005users\"\254\002\n\026Organizatio"
-  "nUserDetail\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image"
-  "\030\003 \001(\tR\005image\022 \n\013description\030\004 \001(\tR\013desc"
-  "ription\0221\n\005owner\030\007 \001(\0132\033.accounts.v1alph"
-  "a1.UserListR\005owner\022-\n\005roles\030\010 \001(\0132\027.acco"
-  "unts.v1alpha1.RoleR\005roles\022\022\n\004slug\030\t \001(\tR"
-  "\004slug\022@\n\010projects\030\n \003(\0132$.accounts.v1alp"
-  "ha1.ProjectUserDetailR\010projects\022\016\n\002id\030\013 "
-  "\001(\tR\002id\"\376\t\n\rUserDetailOne\022\016\n\002id\030\001 \001(\rR\002i"
-  "d\022\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name"
-  "\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010la"
-  "stName\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_activ"
-  "e\030\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001(\tR\tc"
-  "reatedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022"
-  "-\n\005roles\030\t \003(\0132\027.accounts.v1alpha1.RoleR"
-  "\005roles\022\?\n\013permissions\030\n \003(\0132\035.accounts.v"
-  "1alpha1.PermissionR\013permissions\022\"\n\ris_su"
-  "per_user\030\013 \001(\010R\013isSuperUser\022O\n\rorganizat"
-  "ions\030\014 \001(\0132).accounts.v1alpha1.Organizat"
-  "ionUserDetailR\rorganizations\022!\n\014phone_nu"
-  "mber\030\017 \001(\tR\013phoneNumber\022\030\n\007country\030\020 \001(\t"
-  "R\007country\022\022\n\004city\030\021 \001(\tR\004city\022\031\n\010zip_cod"
-  "e\030\022 \001(\tR\007zipCode\022\030\n\007address\030\023 \001(\tR\007addre"
-  "ss\022\024\n\005state\030\024 \001(\tR\005state\022#\n\remoji_countr"
-  "y\030\025 \001(\tR\014emojiCountry\022$\n\016is_mfa_enabled\030"
-  "\026 \001(\010R\014isMfaEnabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010"
-  "tokenCcp\022%\n\016email_verified\030\030 \001(\010R\remailV"
-  "erified\022\032\n\010language\030\032 \001(\tR\010language\022+\n\021p"
-  "ush_notification\030\033 \001(\010R\020pushNotification"
-  "\022-\n\022email_notification\030\034 \001(\010R\021emailNotif"
-  "ication\0224\n\026new_login_notification\030\035 \001(\010R"
-  "\024newLoginNotification\022/\n\023create_notifica"
-  "tion\030\036 \001(\010R\022createNotification\022/\n\023update"
-  "_notification\030\037 \001(\010R\022updateNotification\022"
-  "/\n\023delete_notification\030  \001(\010R\022deleteNoti"
-  "fication\0229\n\030application_notification\030! \001"
-  "(\010R\027applicationNotification\022+\n\021read_noti"
-  "fication\030\" \001(\010R\020readNotification\022\035\n\nphon"
-  "e_code\030# \001(\tR\tphoneCode\022)\n\020optional_addr"
-  "ess\030$ \001(\tR\017optionalAddress\022\024\n\005image\030% \001("
-  "\tR\005image\"\361\t\n\nUserDetail\022\016\n\002id\030\001 \001(\rR\002id\022"
-  "\027\n\007user_id\030\002 \001(\tR\006userId\022\035\n\nfirst_name\030\003"
-  " \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010last"
-  "Name\022\024\n\005email\030\005 \001(\tR\005email\022\033\n\tis_active\030"
-  "\006 \001(\010R\010isActive\022\035\n\ncreated_at\030\007 \001(\tR\tcre"
-  "atedAt\022\035\n\nupdated_at\030\010 \001(\tR\tupdatedAt\022-\n"
-  "\005roles\030\t \003(\0132\027.accounts.v1alpha1.RoleR\005r"
-  "oles\022\?\n\013permissions\030\n \003(\0132\035.accounts.v1a"
-  "lpha1.PermissionR\013permissions\022\"\n\ris_supe"
-  "r_user\030\013 \001(\010R\013isSuperUser\022E\n\rorganizatio"
-  "ns\030\014 \003(\0132\037.accounts.v1alpha1.Organizatio"
-  "nR\rorganizations\022!\n\014phone_number\030\017 \001(\tR\013"
-  "phoneNumber\022\030\n\007country\030\020 \001(\tR\007country\022\022\n"
-  "\004city\030\021 \001(\tR\004city\022\031\n\010zip_code\030\022 \001(\tR\007zip"
-  "Code\022\030\n\007address\030\023 \001(\tR\007address\022\024\n\005state\030"
-  "\024 \001(\tR\005state\022#\n\remoji_country\030\025 \001(\tR\014emo"
-  "jiCountry\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isMfa"
-  "Enabled\022\033\n\ttoken_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016"
-  "email_verified\030\030 \001(\010R\remailVerified\022\032\n\010l"
-  "anguage\030\032 \001(\tR\010language\022+\n\021push_notifica"
-  "tion\030\033 \001(\010R\020pushNotification\022-\n\022email_no"
-  "tification\030\034 \001(\010R\021emailNotification\0224\n\026n"
-  "ew_login_notification\030\035 \001(\010R\024newLoginNot"
-  "ification\022/\n\023create_notification\030\036 \001(\010R\022"
-  "createNotification\022/\n\023update_notificatio"
-  "n\030\037 \001(\010R\022updateNotification\022/\n\023delete_no"
-  "tification\030  \001(\010R\022deleteNotification\0229\n\030"
-  "application_notification\030! \001(\010R\027applicat"
-  "ionNotification\022+\n\021read_notification\030\" \001"
-  "(\010R\020readNotification\022\035\n\nphone_code\030# \001(\t"
-  "R\tphoneCode\022)\n\020optional_address\030$ \001(\tR\017o"
-  "ptionalAddress\022\024\n\005image\030% \001(\tR\005imageB4Z2"
-  "github.com/cuemby/ccp-sdk/gen/go/account"
-  "s/v1alpha1b\006proto3"
+  "t\022+\n\004role\030\010 \001(\0132\027.accounts.v1alpha1.Role"
+  "R\004role\0226\n\005users\030\t \003(\0132 .accounts.v1alpha"
+  "1.MemberProjectR\005users\"\355\002\n\026OrganizationU"
+  "serDetail\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image\030\003"
+  " \001(\tR\005image\022 \n\013description\030\004 \001(\tR\013descri"
+  "ption\0221\n\005owner\030\007 \001(\0132\033.accounts.v1alpha1"
+  ".UserListR\005owner\022-\n\005roles\030\010 \001(\0132\027.accoun"
+  "ts.v1alpha1.RoleR\005roles\022\022\n\004slug\030\t \001(\tR\004s"
+  "lug\022@\n\010projects\030\n \003(\0132$.accounts.v1alpha"
+  "1.ProjectUserDetailR\010projects\022\016\n\002id\030\013 \001("
+  "\tR\002id\022\?\n\013permissions\030\014 \003(\0132\035.accounts.v1"
+  "alpha1.PermissionR\013permissions\"\374\t\n\rUserD"
+  "etailOne\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001("
+  "\tR\006userId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName"
+  "\022\033\n\tlast_name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005"
+  " \001(\tR\005email\022\033\n\tis_active\030\006 \001(\010R\010isActive"
+  "\022\035\n\ncreated_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdat"
+  "ed_at\030\010 \001(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027."
+  "accounts.v1alpha1.RoleR\005roles\022\?\n\013permiss"
+  "ions\030\n \003(\0132\035.accounts.v1alpha1.Permissio"
+  "nR\013permissions\022\"\n\ris_super_user\030\013 \001(\010R\013i"
+  "sSuperUser\022M\n\014organization\030\014 \001(\0132).accou"
+  "nts.v1alpha1.OrganizationUserDetailR\014org"
+  "anization\022!\n\014phone_number\030\017 \001(\tR\013phoneNu"
+  "mber\022\030\n\007country\030\020 \001(\tR\007country\022\022\n\004city\030\021"
+  " \001(\tR\004city\022\031\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n"
+  "\007address\030\023 \001(\tR\007address\022\024\n\005state\030\024 \001(\tR\005"
+  "state\022#\n\remoji_country\030\025 \001(\tR\014emojiCount"
+  "ry\022$\n\016is_mfa_enabled\030\026 \001(\010R\014isMfaEnabled"
+  "\022\033\n\ttoken_ccp\030\027 \001(\tR\010tokenCcp\022%\n\016email_v"
+  "erified\030\030 \001(\010R\remailVerified\022\032\n\010language"
+  "\030\032 \001(\tR\010language\022+\n\021push_notification\030\033 "
+  "\001(\010R\020pushNotification\022-\n\022email_notificat"
+  "ion\030\034 \001(\010R\021emailNotification\0224\n\026new_logi"
+  "n_notification\030\035 \001(\010R\024newLoginNotificati"
+  "on\022/\n\023create_notification\030\036 \001(\010R\022createN"
+  "otification\022/\n\023update_notification\030\037 \001(\010"
+  "R\022updateNotification\022/\n\023delete_notificat"
+  "ion\030  \001(\010R\022deleteNotification\0229\n\030applica"
+  "tion_notification\030! \001(\010R\027applicationNoti"
+  "fication\022+\n\021read_notification\030\" \001(\010R\020rea"
+  "dNotification\022\035\n\nphone_code\030# \001(\tR\tphone"
+  "Code\022)\n\020optional_address\030$ \001(\tR\017optional"
+  "Address\022\024\n\005image\030% \001(\tR\005image\"\361\t\n\nUserDe"
+  "tail\022\016\n\002id\030\001 \001(\rR\002id\022\027\n\007user_id\030\002 \001(\tR\006u"
+  "serId\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\t"
+  "last_name\030\004 \001(\tR\010lastName\022\024\n\005email\030\005 \001(\t"
+  "R\005email\022\033\n\tis_active\030\006 \001(\010R\010isActive\022\035\n\n"
+  "created_at\030\007 \001(\tR\tcreatedAt\022\035\n\nupdated_a"
+  "t\030\010 \001(\tR\tupdatedAt\022-\n\005roles\030\t \003(\0132\027.acco"
+  "unts.v1alpha1.RoleR\005roles\022\?\n\013permissions"
+  "\030\n \003(\0132\035.accounts.v1alpha1.PermissionR\013p"
+  "ermissions\022\"\n\ris_super_user\030\013 \001(\010R\013isSup"
+  "erUser\022E\n\rorganizations\030\014 \003(\0132\037.accounts"
+  ".v1alpha1.OrganizationR\rorganizations\022!\n"
+  "\014phone_number\030\017 \001(\tR\013phoneNumber\022\030\n\007coun"
+  "try\030\020 \001(\tR\007country\022\022\n\004city\030\021 \001(\tR\004city\022\031"
+  "\n\010zip_code\030\022 \001(\tR\007zipCode\022\030\n\007address\030\023 \001"
+  "(\tR\007address\022\024\n\005state\030\024 \001(\tR\005state\022#\n\remo"
+  "ji_country\030\025 \001(\tR\014emojiCountry\022$\n\016is_mfa"
+  "_enabled\030\026 \001(\010R\014isMfaEnabled\022\033\n\ttoken_cc"
+  "p\030\027 \001(\tR\010tokenCcp\022%\n\016email_verified\030\030 \001("
+  "\010R\remailVerified\022\032\n\010language\030\032 \001(\tR\010lang"
+  "uage\022+\n\021push_notification\030\033 \001(\010R\020pushNot"
+  "ification\022-\n\022email_notification\030\034 \001(\010R\021e"
+  "mailNotification\0224\n\026new_login_notificati"
+  "on\030\035 \001(\010R\024newLoginNotification\022/\n\023create"
+  "_notification\030\036 \001(\010R\022createNotification\022"
+  "/\n\023update_notification\030\037 \001(\010R\022updateNoti"
+  "fication\022/\n\023delete_notification\030  \001(\010R\022d"
+  "eleteNotification\0229\n\030application_notific"
+  "ation\030! \001(\010R\027applicationNotification\022+\n\021"
+  "read_notification\030\" \001(\010R\020readNotificatio"
+  "n\022\035\n\nphone_code\030# \001(\tR\tphoneCode\022)\n\020opti"
+  "onal_address\030$ \001(\tR\017optionalAddress\022\024\n\005i"
+  "mage\030% \001(\tR\005imageB4Z2github.com/cuemby/c"
+  "cp-sdk/gen/go/accounts/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto = {
-  false, false, 4898, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
+  false, false, 4959, descriptor_table_protodef_accounts_2fv1alpha1_2faccounts_2eproto, "accounts/v1alpha1/accounts.proto", 
   &descriptor_table_accounts_2fv1alpha1_2faccounts_2eproto_once, nullptr, 0, 11,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2faccounts_2eproto::offsets,
   file_level_metadata_accounts_2fv1alpha1_2faccounts_2eproto, file_level_enum_descriptors_accounts_2fv1alpha1_2faccounts_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2faccounts_2eproto,
@@ -3725,12 +3728,12 @@ void Organization::InternalSwap(Organization* other) {
 
 class ProjectUserDetail::_Internal {
  public:
-  static const ::accounts::v1alpha1::Role& roles(const ProjectUserDetail* msg);
+  static const ::accounts::v1alpha1::Role& role(const ProjectUserDetail* msg);
 };
 
 const ::accounts::v1alpha1::Role&
-ProjectUserDetail::_Internal::roles(const ProjectUserDetail* msg) {
-  return *msg->roles_;
+ProjectUserDetail::_Internal::role(const ProjectUserDetail* msg) {
+  return *msg->role_;
 }
 ProjectUserDetail::ProjectUserDetail(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -3781,10 +3784,10 @@ ProjectUserDetail::ProjectUserDetail(const ProjectUserDetail& from)
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_roles()) {
-    roles_ = new ::accounts::v1alpha1::Role(*from.roles_);
+  if (from._internal_has_role()) {
+    role_ = new ::accounts::v1alpha1::Role(*from.role_);
   } else {
-    roles_ = nullptr;
+    role_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:accounts.v1alpha1.ProjectUserDetail)
 }
@@ -3797,7 +3800,7 @@ description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString
 created_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updated_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-roles_ = nullptr;
+role_ = nullptr;
 }
 
 ProjectUserDetail::~ProjectUserDetail() {
@@ -3816,7 +3819,7 @@ inline void ProjectUserDetail::SharedDtor() {
   created_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   updated_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete roles_;
+  if (this != internal_default_instance()) delete role_;
 }
 
 void ProjectUserDetail::ArenaDtor(void* object) {
@@ -3843,10 +3846,10 @@ void ProjectUserDetail::Clear() {
   created_at_.ClearToEmpty();
   updated_at_.ClearToEmpty();
   id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && roles_ != nullptr) {
-    delete roles_;
+  if (GetArenaForAllocation() == nullptr && role_ != nullptr) {
+    delete role_;
   }
-  roles_ = nullptr;
+  role_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3910,10 +3913,10 @@ const char* ProjectUserDetail::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
+      // .accounts.v1alpha1.Role role = 8 [json_name = "role"];
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
-          ptr = ctx->ParseMessage(_internal_mutable_roles(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_role(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4027,12 +4030,12 @@ failure:
         7, this->_internal_updated_at(), target);
   }
 
-  // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
-  if (this->_internal_has_roles()) {
+  // .accounts.v1alpha1.Role role = 8 [json_name = "role"];
+  if (this->_internal_has_role()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        8, _Internal::roles(this), target, stream);
+        8, _Internal::role(this), target, stream);
   }
 
   // repeated .accounts.v1alpha1.MemberProject users = 9 [json_name = "users"];
@@ -4125,11 +4128,11 @@ size_t ProjectUserDetail::ByteSizeLong() const {
         this->_internal_id());
   }
 
-  // .accounts.v1alpha1.Role roles = 8 [json_name = "roles"];
-  if (this->_internal_has_roles()) {
+  // .accounts.v1alpha1.Role role = 8 [json_name = "role"];
+  if (this->_internal_has_role()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *roles_);
+        *role_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4182,8 +4185,8 @@ void ProjectUserDetail::MergeFrom(const ProjectUserDetail& from) {
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
-  if (from._internal_has_roles()) {
-    _internal_mutable_roles()->::accounts::v1alpha1::Role::MergeFrom(from._internal_roles());
+  if (from._internal_has_role()) {
+    _internal_mutable_role()->::accounts::v1alpha1::Role::MergeFrom(from._internal_role());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4238,7 +4241,7 @@ void ProjectUserDetail::InternalSwap(ProjectUserDetail* other) {
       &id_, GetArenaForAllocation(),
       &other->id_, other->GetArenaForAllocation()
   );
-  swap(roles_, other->roles_);
+  swap(role_, other->role_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ProjectUserDetail::GetMetadata() const {
@@ -4266,7 +4269,8 @@ OrganizationUserDetail::_Internal::roles(const OrganizationUserDetail* msg) {
 OrganizationUserDetail::OrganizationUserDetail(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  projects_(arena) {
+  projects_(arena),
+  permissions_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -4275,7 +4279,8 @@ OrganizationUserDetail::OrganizationUserDetail(::PROTOBUF_NAMESPACE_ID::Arena* a
 }
 OrganizationUserDetail::OrganizationUserDetail(const OrganizationUserDetail& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      projects_(from.projects_) {
+      projects_(from.projects_),
+      permissions_(from.permissions_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
@@ -4362,6 +4367,7 @@ void OrganizationUserDetail::Clear() {
   (void) cached_has_bits;
 
   projects_.Clear();
+  permissions_.Clear();
   name_.ClearToEmpty();
   image_.ClearToEmpty();
   description_.ClearToEmpty();
@@ -4453,6 +4459,18 @@ const char* OrganizationUserDetail::_InternalParse(const char* ptr, ::PROTOBUF_N
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "accounts.v1alpha1.OrganizationUserDetail.id"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .accounts.v1alpha1.Permission permissions = 12 [json_name = "permissions"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_permissions(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -4558,6 +4576,14 @@ failure:
         11, this->_internal_id(), target);
   }
 
+  // repeated .accounts.v1alpha1.Permission permissions = 12 [json_name = "permissions"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_permissions_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(12, this->_internal_permissions(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4577,6 +4603,13 @@ size_t OrganizationUserDetail::ByteSizeLong() const {
   // repeated .accounts.v1alpha1.ProjectUserDetail projects = 10 [json_name = "projects"];
   total_size += 1UL * this->_internal_projects_size();
   for (const auto& msg : this->projects_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .accounts.v1alpha1.Permission permissions = 12 [json_name = "permissions"];
+  total_size += 1UL * this->_internal_permissions_size();
+  for (const auto& msg : this->permissions_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -4659,6 +4692,7 @@ void OrganizationUserDetail::MergeFrom(const OrganizationUserDetail& from) {
   (void) cached_has_bits;
 
   projects_.MergeFrom(from.projects_);
+  permissions_.MergeFrom(from.permissions_);
   if (!from._internal_name().empty()) {
     _internal_set_name(from._internal_name());
   }
@@ -4698,6 +4732,7 @@ void OrganizationUserDetail::InternalSwap(OrganizationUserDetail* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   projects_.InternalSwap(&other->projects_);
+  permissions_.InternalSwap(&other->permissions_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &name_, GetArenaForAllocation(),
@@ -4741,12 +4776,12 @@ void OrganizationUserDetail::InternalSwap(OrganizationUserDetail* other) {
 
 class UserDetailOne::_Internal {
  public:
-  static const ::accounts::v1alpha1::OrganizationUserDetail& organizations(const UserDetailOne* msg);
+  static const ::accounts::v1alpha1::OrganizationUserDetail& organization(const UserDetailOne* msg);
 };
 
 const ::accounts::v1alpha1::OrganizationUserDetail&
-UserDetailOne::_Internal::organizations(const UserDetailOne* msg) {
-  return *msg->organizations_;
+UserDetailOne::_Internal::organization(const UserDetailOne* msg) {
+  return *msg->organization_;
 }
 UserDetailOne::UserDetailOne(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -4854,10 +4889,10 @@ UserDetailOne::UserDetailOne(const UserDetailOne& from)
     image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_image(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_organizations()) {
-    organizations_ = new ::accounts::v1alpha1::OrganizationUserDetail(*from.organizations_);
+  if (from._internal_has_organization()) {
+    organization_ = new ::accounts::v1alpha1::OrganizationUserDetail(*from.organization_);
   } else {
-    organizations_ = nullptr;
+    organization_ = nullptr;
   }
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
@@ -4885,9 +4920,9 @@ phone_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 optional_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&organizations_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&organization_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&read_notification_) -
-    reinterpret_cast<char*>(&organizations_)) + sizeof(read_notification_));
+    reinterpret_cast<char*>(&organization_)) + sizeof(read_notification_));
 }
 
 UserDetailOne::~UserDetailOne() {
@@ -4917,7 +4952,7 @@ inline void UserDetailOne::SharedDtor() {
   phone_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   optional_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete organizations_;
+  if (this != internal_default_instance()) delete organization_;
 }
 
 void UserDetailOne::ArenaDtor(void* object) {
@@ -4956,10 +4991,10 @@ void UserDetailOne::Clear() {
   phone_code_.ClearToEmpty();
   optional_address_.ClearToEmpty();
   image_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && organizations_ != nullptr) {
-    delete organizations_;
+  if (GetArenaForAllocation() == nullptr && organization_ != nullptr) {
+    delete organization_;
   }
-  organizations_ = nullptr;
+  organization_ = nullptr;
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&read_notification_) -
       reinterpret_cast<char*>(&id_)) + sizeof(read_notification_));
@@ -5071,10 +5106,10 @@ const char* UserDetailOne::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];
+      // .accounts.v1alpha1.OrganizationUserDetail organization = 12 [json_name = "organization"];
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
-          ptr = ctx->ParseMessage(_internal_mutable_organizations(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_organization(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5379,12 +5414,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(11, this->_internal_is_super_user(), target);
   }
 
-  // .accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];
-  if (this->_internal_has_organizations()) {
+  // .accounts.v1alpha1.OrganizationUserDetail organization = 12 [json_name = "organization"];
+  if (this->_internal_has_organization()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        12, _Internal::organizations(this), target, stream);
+        12, _Internal::organization(this), target, stream);
   }
 
   // string phone_number = 15 [json_name = "phoneNumber"];
@@ -5723,11 +5758,11 @@ size_t UserDetailOne::ByteSizeLong() const {
         this->_internal_image());
   }
 
-  // .accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];
-  if (this->_internal_has_organizations()) {
+  // .accounts.v1alpha1.OrganizationUserDetail organization = 12 [json_name = "organization"];
+  if (this->_internal_has_organization()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *organizations_);
+        *organization_);
   }
 
   // uint32 id = 1 [json_name = "id"];
@@ -5881,8 +5916,8 @@ void UserDetailOne::MergeFrom(const UserDetailOne& from) {
   if (!from._internal_image().empty()) {
     _internal_set_image(from._internal_image());
   }
-  if (from._internal_has_organizations()) {
-    _internal_mutable_organizations()->::accounts::v1alpha1::OrganizationUserDetail::MergeFrom(from._internal_organizations());
+  if (from._internal_has_organization()) {
+    _internal_mutable_organization()->::accounts::v1alpha1::OrganizationUserDetail::MergeFrom(from._internal_organization());
   }
   if (from._internal_id() != 0) {
     _internal_set_id(from._internal_id());
@@ -6035,9 +6070,9 @@ void UserDetailOne::InternalSwap(UserDetailOne* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(UserDetailOne, read_notification_)
       + sizeof(UserDetailOne::read_notification_)
-      - PROTOBUF_FIELD_OFFSET(UserDetailOne, organizations_)>(
-          reinterpret_cast<char*>(&organizations_),
-          reinterpret_cast<char*>(&other->organizations_));
+      - PROTOBUF_FIELD_OFFSET(UserDetailOne, organization_)>(
+          reinterpret_cast<char*>(&organization_),
+          reinterpret_cast<char*>(&other->organization_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UserDetailOne::GetMetadata() const {

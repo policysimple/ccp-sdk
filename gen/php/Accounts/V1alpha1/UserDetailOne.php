@@ -58,9 +58,9 @@ class UserDetailOne extends \Google\Protobuf\Internal\Message
      */
     protected $is_super_user = false;
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.OrganizationUserDetail organization = 12 [json_name = "organization"];</code>
      */
-    protected $organizations = null;
+    protected $organization = null;
     /**
      * details
      *
@@ -173,7 +173,7 @@ class UserDetailOne extends \Google\Protobuf\Internal\Message
      *     @type \Accounts\V1alpha1\Role[]|\Google\Protobuf\Internal\RepeatedField $roles
      *     @type \Accounts\V1alpha1\Permission[]|\Google\Protobuf\Internal\RepeatedField $permissions
      *     @type bool $is_super_user
-     *     @type \Accounts\V1alpha1\OrganizationUserDetail $organizations
+     *     @type \Accounts\V1alpha1\OrganizationUserDetail $organization
      *     @type string $phone_number
      *           details
      *     @type string $country
@@ -449,33 +449,33 @@ class UserDetailOne extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.OrganizationUserDetail organization = 12 [json_name = "organization"];</code>
      * @return \Accounts\V1alpha1\OrganizationUserDetail|null
      */
-    public function getOrganizations()
+    public function getOrganization()
     {
-        return $this->organizations;
+        return $this->organization;
     }
 
-    public function hasOrganizations()
+    public function hasOrganization()
     {
-        return isset($this->organizations);
+        return isset($this->organization);
     }
 
-    public function clearOrganizations()
+    public function clearOrganization()
     {
-        unset($this->organizations);
+        unset($this->organization);
     }
 
     /**
-     * Generated from protobuf field <code>.accounts.v1alpha1.OrganizationUserDetail organizations = 12 [json_name = "organizations"];</code>
+     * Generated from protobuf field <code>.accounts.v1alpha1.OrganizationUserDetail organization = 12 [json_name = "organization"];</code>
      * @param \Accounts\V1alpha1\OrganizationUserDetail $var
      * @return $this
      */
-    public function setOrganizations($var)
+    public function setOrganization($var)
     {
         GPBUtil::checkMessage($var, \Accounts\V1alpha1\OrganizationUserDetail::class);
-        $this->organizations = $var;
+        $this->organization = $var;
 
         return $this;
     }

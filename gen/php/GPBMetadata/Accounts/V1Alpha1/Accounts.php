@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-¢&
+ß&
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"Î
 Role
 name (	Rname
@@ -85,7 +85,7 @@ updated_at (	R	updatedAt-
 slug	 (	Rslug6
 projects
  (2.accounts.v1alpha1.ProjectRprojects
-id (	Rid"½
+id (	Rid"»
 ProjectUserDetail
 id
  (	Rid
@@ -96,9 +96,9 @@ updated_at (	R	updatedAt-
 
 created_at (	R	createdAt
 
-updated_at (	R	updatedAt-
-roles (2.accounts.v1alpha1.RoleRroles6
-users	 (2 .accounts.v1alpha1.MemberProjectRusers"¬
+updated_at (	R	updatedAt+
+role (2.accounts.v1alpha1.RoleRrole6
+users	 (2 .accounts.v1alpha1.MemberProjectRusers"í
 OrganizationUserDetail
 name (	Rname
 image (	Rimage 
@@ -108,7 +108,8 @@ updated_at (	R	updatedAt-
 slug	 (	Rslug@
 projects
  (2$.accounts.v1alpha1.ProjectUserDetailRprojects
-id (	Rid"þ	
+id (	Rid?
+permissions (2.accounts.v1alpha1.PermissionRpermissions"ü	
 UserDetailOne
 id (Rid
 user_id (	RuserId
@@ -124,8 +125,8 @@ updated_at (	R	updatedAt-
 roles	 (2.accounts.v1alpha1.RoleRroles?
 permissions
  (2.accounts.v1alpha1.PermissionRpermissions"
-is_super_user (RisSuperUserO
-organizations (2).accounts.v1alpha1.OrganizationUserDetailRorganizations!
+is_super_user (RisSuperUserM
+organization (2).accounts.v1alpha1.OrganizationUserDetailRorganization!
 phone_number (	RphoneNumber
 country (	Rcountry
 city (	Rcity
