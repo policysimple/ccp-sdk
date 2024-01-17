@@ -16,7 +16,7 @@ class Accounts
         }
         $pool->internalAddGeneratedFile(
             '
-²
+¢&
  accounts/v1alpha1/accounts.protoaccounts.v1alpha1"Î
 Role
 name (	Rname
@@ -85,7 +85,70 @@ updated_at (	R	updatedAt-
 slug	 (	Rslug6
 projects
  (2.accounts.v1alpha1.ProjectRprojects
-id (	Rid"ñ	
+id (	Rid"½
+ProjectUserDetail
+id
+ (	Rid
+name (	Rname
+image (	Rimage\'
+organization_id (	RorganizationId 
+description (	Rdescription
+
+created_at (	R	createdAt
+
+updated_at (	R	updatedAt-
+roles (2.accounts.v1alpha1.RoleRroles6
+users	 (2 .accounts.v1alpha1.MemberProjectRusers"¬
+OrganizationUserDetail
+name (	Rname
+image (	Rimage 
+description (	Rdescription1
+owner (2.accounts.v1alpha1.UserListRowner-
+roles (2.accounts.v1alpha1.RoleRroles
+slug	 (	Rslug@
+projects
+ (2$.accounts.v1alpha1.ProjectUserDetailRprojects
+id (	Rid"þ	
+UserDetailOne
+id (Rid
+user_id (	RuserId
+
+first_name (	R	firstName
+	last_name (	RlastName
+email (	Remail
+	is_active (RisActive
+
+created_at (	R	createdAt
+
+updated_at (	R	updatedAt-
+roles	 (2.accounts.v1alpha1.RoleRroles?
+permissions
+ (2.accounts.v1alpha1.PermissionRpermissions"
+is_super_user (RisSuperUserO
+organizations (2).accounts.v1alpha1.OrganizationUserDetailRorganizations!
+phone_number (	RphoneNumber
+country (	Rcountry
+city (	Rcity
+zip_code (	RzipCode
+address (	Raddress
+state (	Rstate#
+emoji_country (	RemojiCountry$
+is_mfa_enabled (RisMfaEnabled
+	token_ccp (	RtokenCcp%
+email_verified (RemailVerified
+language (	Rlanguage+
+push_notification (RpushNotification-
+email_notification (RemailNotification4
+new_login_notification (RnewLoginNotification/
+create_notification (RcreateNotification/
+update_notification (RupdateNotification/
+delete_notification  (RdeleteNotification9
+application_notification! (RapplicationNotification+
+read_notification" (RreadNotification
+
+phone_code# (	R	phoneCode)
+optional_address$ (	RoptionalAddress
+image% (	Rimage"ñ	
 
 UserDetail
 id (Rid

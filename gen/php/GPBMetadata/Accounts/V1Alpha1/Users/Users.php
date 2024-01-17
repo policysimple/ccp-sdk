@@ -17,7 +17,7 @@ class Users
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-•
+˜
 #accounts/v1alpha1/users/users.protoaccounts.v1alpha1.users.v1"&
 CreateUserResponse
 msg (	Rmsg"&
@@ -70,9 +70,9 @@ phone_code (	R	phoneCode)
 organization_id (	RorganizationId"L
 GetOneUserRequest
 id (Rid\'
-organization_id (	RorganizationId"o
-GetOneUserResponse1
-user (2.accounts.v1alpha1.UserDetailRuser
+organization_id (	RorganizationId"r
+GetOneUserResponse4
+user (2 .accounts.v1alpha1.UserDetailOneRuser
 msg (	Rmsg
 error (	Rerror"E
 ListUserResponse1
