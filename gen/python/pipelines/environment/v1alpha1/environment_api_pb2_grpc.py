@@ -49,6 +49,11 @@ class EnvironmentAPIServiceStub(object):
         request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateVclusterOrganizationRequest.SerializeToString,
         response_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateVclusterOrganizationResponse.FromString,
         )
+    self.ListAllEnvironment = channel.unary_unary(
+        '/pipelines.environment.v1alpha1.EnvironmentAPIService/ListAllEnvironment',
+        request_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.ListAllEnvironmentRequest.SerializeToString,
+        response_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.ListAllEnvironmentResponse.FromString,
+        )
 
 
 class EnvironmentAPIServiceServicer(object):
@@ -104,6 +109,13 @@ class EnvironmentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListAllEnvironment(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_EnvironmentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -141,6 +153,11 @@ def add_EnvironmentAPIServiceServicer_to_server(servicer, server):
           servicer.CreateVclusterOrganization,
           request_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateVclusterOrganizationRequest.FromString,
           response_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.CreateVclusterOrganizationResponse.SerializeToString,
+      ),
+      'ListAllEnvironment': grpc.unary_unary_rpc_method_handler(
+          servicer.ListAllEnvironment,
+          request_deserializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.ListAllEnvironmentRequest.FromString,
+          response_serializer=pipelines_dot_environment_dot_v1alpha1_dot_environment__api__pb2.ListAllEnvironmentResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -165,3 +165,21 @@ func CreateVclusterOrganization(in *environmentpkgv1.CreateVclusterOrganizationR
 	}
 	return response, nil
 }
+
+func ListAllEnvironment(in *environmentpkgv1.ListAllEnvironmentRequest) (response *environmentpkgv1.ListAllEnvironmentResponse, err error) {
+	bylogs.LogInfo("client: list all environment")
+	d, err := time.ParseDuration(environmentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.ListAllEnvironment(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: error list environment", err)
+		return nil, fmt.Errorf("[ListAllEnvironment] %w", err)
+	}
+	return response, nil
+}
