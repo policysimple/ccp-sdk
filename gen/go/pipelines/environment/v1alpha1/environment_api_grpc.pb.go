@@ -25,6 +25,7 @@ type EnvironmentAPIServiceClient interface {
 	DeleteEnvironment(ctx context.Context, in *DeleteEnvironmentRequest, opts ...grpc.CallOption) (*DeleteEnvironmentResponse, error)
 	GetByNameEnvironment(ctx context.Context, in *GetByNameEnvironmentRequest, opts ...grpc.CallOption) (*GetByNameEnvironmentResponse, error)
 	CreateVclusterOrganization(ctx context.Context, in *CreateVclusterOrganizationRequest, opts ...grpc.CallOption) (*CreateVclusterOrganizationResponse, error)
+	ListAllEnvironment(ctx context.Context, in *ListAllEnvironmentRequest, opts ...grpc.CallOption) (*ListAllEnvironmentResponse, error)
 }
 
 type environmentAPIServiceClient struct {
@@ -98,6 +99,15 @@ func (c *environmentAPIServiceClient) CreateVclusterOrganization(ctx context.Con
 	return out, nil
 }
 
+func (c *environmentAPIServiceClient) ListAllEnvironment(ctx context.Context, in *ListAllEnvironmentRequest, opts ...grpc.CallOption) (*ListAllEnvironmentResponse, error) {
+	out := new(ListAllEnvironmentResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.environment.v1alpha1.EnvironmentAPIService/ListAllEnvironment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EnvironmentAPIServiceServer is the server API for EnvironmentAPIService service.
 // All implementations should embed UnimplementedEnvironmentAPIServiceServer
 // for forward compatibility
@@ -109,6 +119,7 @@ type EnvironmentAPIServiceServer interface {
 	DeleteEnvironment(context.Context, *DeleteEnvironmentRequest) (*DeleteEnvironmentResponse, error)
 	GetByNameEnvironment(context.Context, *GetByNameEnvironmentRequest) (*GetByNameEnvironmentResponse, error)
 	CreateVclusterOrganization(context.Context, *CreateVclusterOrganizationRequest) (*CreateVclusterOrganizationResponse, error)
+	ListAllEnvironment(context.Context, *ListAllEnvironmentRequest) (*ListAllEnvironmentResponse, error)
 }
 
 // UnimplementedEnvironmentAPIServiceServer should be embedded to have forward compatible implementations.
@@ -135,6 +146,9 @@ func (UnimplementedEnvironmentAPIServiceServer) GetByNameEnvironment(context.Con
 }
 func (UnimplementedEnvironmentAPIServiceServer) CreateVclusterOrganization(context.Context, *CreateVclusterOrganizationRequest) (*CreateVclusterOrganizationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateVclusterOrganization not implemented")
+}
+func (UnimplementedEnvironmentAPIServiceServer) ListAllEnvironment(context.Context, *ListAllEnvironmentRequest) (*ListAllEnvironmentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAllEnvironment not implemented")
 }
 
 // UnsafeEnvironmentAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -274,6 +288,24 @@ func _EnvironmentAPIService_CreateVclusterOrganization_Handler(srv interface{}, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EnvironmentAPIService_ListAllEnvironment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAllEnvironmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EnvironmentAPIServiceServer).ListAllEnvironment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.environment.v1alpha1.EnvironmentAPIService/ListAllEnvironment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EnvironmentAPIServiceServer).ListAllEnvironment(ctx, req.(*ListAllEnvironmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EnvironmentAPIService_ServiceDesc is the grpc.ServiceDesc for EnvironmentAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -308,6 +340,10 @@ var EnvironmentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateVclusterOrganization",
 			Handler:    _EnvironmentAPIService_CreateVclusterOrganization_Handler,
+		},
+		{
+			MethodName: "ListAllEnvironment",
+			Handler:    _EnvironmentAPIService_ListAllEnvironment_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

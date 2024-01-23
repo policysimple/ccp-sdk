@@ -84,6 +84,16 @@ public final class EnvironmentAPIProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_environment_v1alpha1_CreateVclusterOrganizationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -132,33 +142,40 @@ public final class EnvironmentAPIProto {
       "OrganizationRequest\022\'\n\017organization_id\030\002" +
       " \001(\tR\016organizationId\"V\n\"CreateVclusterOr" +
       "ganizationResponse\022\026\n\006status\030\001 \001(\tR\006stat" +
-      "us\022\030\n\007message\030\002 \001(\tR\007message2\202\010\n\025Environ" +
-      "mentAPIService\022\210\001\n\021CreateEnvironment\0228.p" +
-      "ipelines.environment.v1alpha1.CreateEnvi" +
-      "ronmentRequest\0329.pipelines.environment.v" +
-      "1alpha1.CreateEnvironmentResponse\022\210\001\n\021Ge" +
-      "tOneEnvironment\0228.pipelines.environment." +
-      "v1alpha1.GetOneEnvironmentRequest\0329.pipe" +
+      "us\022\030\n\007message\030\002 \001(\tR\007message\"\033\n\031ListAllE" +
+      "nvironmentRequest\"k\n\032ListAllEnvironmentR" +
+      "esponse\022M\n\013environment\030\001 \003(\0132+.pipelines" +
+      ".environment.v1alpha1.EnvironmentR\013envir" +
+      "onment2\220\t\n\025EnvironmentAPIService\022\210\001\n\021Cre" +
+      "ateEnvironment\0228.pipelines.environment.v" +
+      "1alpha1.CreateEnvironmentRequest\0329.pipel" +
+      "ines.environment.v1alpha1.CreateEnvironm" +
+      "entResponse\022\210\001\n\021GetOneEnvironment\0228.pipe" +
       "lines.environment.v1alpha1.GetOneEnviron" +
-      "mentResponse\022\210\001\n\021UpdateEnvironment\0228.pip" +
-      "elines.environment.v1alpha1.UpdateEnviro" +
-      "nmentRequest\0329.pipelines.environment.v1a" +
-      "lpha1.UpdateEnvironmentResponse\022\202\001\n\017List" +
-      "Environment\0226.pipelines.environment.v1al" +
-      "pha1.ListEnvironmentRequest\0327.pipelines." +
-      "environment.v1alpha1.ListEnvironmentResp" +
-      "onse\022\210\001\n\021DeleteEnvironment\0228.pipelines.e" +
-      "nvironment.v1alpha1.DeleteEnvironmentReq" +
-      "uest\0329.pipelines.environment.v1alpha1.De" +
-      "leteEnvironmentResponse\022\221\001\n\024GetByNameEnv" +
-      "ironment\022;.pipelines.environment.v1alpha" +
-      "1.GetByNameEnvironmentRequest\032<.pipeline" +
-      "s.environment.v1alpha1.GetByNameEnvironm" +
-      "entResponse\022\243\001\n\032CreateVclusterOrganizati" +
-      "on\022A.pipelines.environment.v1alpha1.Crea" +
-      "teVclusterOrganizationRequest\032B.pipeline" +
-      "s.environment.v1alpha1.CreateVclusterOrg" +
-      "anizationResponseB\312\001\n(io.cuemby.pipeline" +
+      "mentRequest\0329.pipelines.environment.v1al" +
+      "pha1.GetOneEnvironmentResponse\022\210\001\n\021Updat" +
+      "eEnvironment\0228.pipelines.environment.v1a" +
+      "lpha1.UpdateEnvironmentRequest\0329.pipelin" +
+      "es.environment.v1alpha1.UpdateEnvironmen" +
+      "tResponse\022\202\001\n\017ListEnvironment\0226.pipeline" +
+      "s.environment.v1alpha1.ListEnvironmentRe" +
+      "quest\0327.pipelines.environment.v1alpha1.L" +
+      "istEnvironmentResponse\022\210\001\n\021DeleteEnviron" +
+      "ment\0228.pipelines.environment.v1alpha1.De" +
+      "leteEnvironmentRequest\0329.pipelines.envir" +
+      "onment.v1alpha1.DeleteEnvironmentRespons" +
+      "e\022\221\001\n\024GetByNameEnvironment\022;.pipelines.e" +
+      "nvironment.v1alpha1.GetByNameEnvironment" +
+      "Request\032<.pipelines.environment.v1alpha1" +
+      ".GetByNameEnvironmentResponse\022\243\001\n\032Create" +
+      "VclusterOrganization\022A.pipelines.environ" +
+      "ment.v1alpha1.CreateVclusterOrganization" +
+      "Request\032B.pipelines.environment.v1alpha1" +
+      ".CreateVclusterOrganizationResponse\022\213\001\n\022" +
+      "ListAllEnvironment\0229.pipelines.environme" +
+      "nt.v1alpha1.ListAllEnvironmentRequest\032:." +
+      "pipelines.environment.v1alpha1.ListAllEn" +
+      "vironmentResponseB\312\001\n(io.cuemby.pipeline" +
       "s.environment.v1alpha1B\023EnvironmentAPIPr" +
       "otoP\001Z?github.com/cuemby/ccp-sdk/gen/go/" +
       "pipelines/environment/v1alpha1\242\002\003PPX\252\002\036P" +
@@ -254,6 +271,18 @@ public final class EnvironmentAPIProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_environment_v1alpha1_CreateVclusterOrganizationResponse_descriptor,
         new java.lang.String[] { "Status", "Message", });
+    internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentResponse_descriptor,
+        new java.lang.String[] { "Environment", });
     io.cuemby.pipelines.environment.v1alpha1.EnvironmentProto.getDescriptor();
   }
 
