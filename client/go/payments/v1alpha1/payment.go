@@ -533,3 +533,24 @@ func Webhook(in *paymentpkgv1.WebHookRequest) (response *paymentpkgv1.WebHookRes
 	}
 	return response, nil
 }
+
+func ListProjectById(in *paymentpkgv1.ListProjectByIdRequest) (response *paymentpkgv1.ListProjectByIdResponse, err error) {
+	fmt.Println("ListProjectById")
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+
+	defer cancel()
+	response, err = client.ListProjectById(ctx, &paymentpkgv1.ListProjectByIdRequest{
+		OrganizationId: in.OrganizationId,
+		ProjectId:      in.ProjectId,
+	})
+
+	if err != nil {
+		log.Printf("%s: %v", "Error ListProjectById", err)
+		return nil, fmt.Errorf("%s: %w", "Error ListProjectById", err)
+	}
+	return response, nil
+}

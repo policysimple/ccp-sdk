@@ -36,6 +36,7 @@ type PaymentAPIServiceClient interface {
 	ListPayment(ctx context.Context, in *ListPaymentRequest, opts ...grpc.CallOption) (*ListPaymentResponse, error)
 	ListSubscriptionItems(ctx context.Context, in *ListSubscriptionItemsRequest, opts ...grpc.CallOption) (*ListSubscriptionItemsResponse, error)
 	ListCustomers(ctx context.Context, in *ListCustomersRequest, opts ...grpc.CallOption) (*ListCustomersResponse, error)
+	ListProjectById(ctx context.Context, in *ListProjectByIdRequest, opts ...grpc.CallOption) (*ListProjectByIdResponse, error)
 	//Update service
 	UpdateSubscription(ctx context.Context, in *UpdateSubscriptionRequest, opts ...grpc.CallOption) (*UpdateSubscriptionResponse, error)
 	SetDefaultPaymentMethod(ctx context.Context, in *SetDefaultPaymentMethodRequest, opts ...grpc.CallOption) (*SetDefaultPaymentMethodResponse, error)
@@ -200,6 +201,15 @@ func (c *paymentAPIServiceClient) ListCustomers(ctx context.Context, in *ListCus
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) ListProjectById(ctx context.Context, in *ListProjectByIdRequest, opts ...grpc.CallOption) (*ListProjectByIdResponse, error) {
+	out := new(ListProjectByIdResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/ListProjectById", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *paymentAPIServiceClient) UpdateSubscription(ctx context.Context, in *UpdateSubscriptionRequest, opts ...grpc.CallOption) (*UpdateSubscriptionResponse, error) {
 	out := new(UpdateSubscriptionResponse)
 	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/UpdateSubscription", in, out, opts...)
@@ -339,6 +349,7 @@ type PaymentAPIServiceServer interface {
 	ListPayment(context.Context, *ListPaymentRequest) (*ListPaymentResponse, error)
 	ListSubscriptionItems(context.Context, *ListSubscriptionItemsRequest) (*ListSubscriptionItemsResponse, error)
 	ListCustomers(context.Context, *ListCustomersRequest) (*ListCustomersResponse, error)
+	ListProjectById(context.Context, *ListProjectByIdRequest) (*ListProjectByIdResponse, error)
 	//Update service
 	UpdateSubscription(context.Context, *UpdateSubscriptionRequest) (*UpdateSubscriptionResponse, error)
 	SetDefaultPaymentMethod(context.Context, *SetDefaultPaymentMethodRequest) (*SetDefaultPaymentMethodResponse, error)
@@ -408,6 +419,9 @@ func (UnimplementedPaymentAPIServiceServer) ListSubscriptionItems(context.Contex
 }
 func (UnimplementedPaymentAPIServiceServer) ListCustomers(context.Context, *ListCustomersRequest) (*ListCustomersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListCustomers not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) ListProjectById(context.Context, *ListProjectByIdRequest) (*ListProjectByIdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListProjectById not implemented")
 }
 func (UnimplementedPaymentAPIServiceServer) UpdateSubscription(context.Context, *UpdateSubscriptionRequest) (*UpdateSubscriptionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateSubscription not implemented")
@@ -730,6 +744,24 @@ func _PaymentAPIService_ListCustomers_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_ListProjectById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListProjectByIdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).ListProjectById(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/ListProjectById",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).ListProjectById(ctx, req.(*ListProjectByIdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _PaymentAPIService_UpdateSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateSubscriptionRequest)
 	if err := dec(in); err != nil {
@@ -1030,6 +1062,10 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListCustomers",
 			Handler:    _PaymentAPIService_ListCustomers_Handler,
+		},
+		{
+			MethodName: "ListProjectById",
+			Handler:    _PaymentAPIService_ListProjectById_Handler,
 		},
 		{
 			MethodName: "UpdateSubscription",
