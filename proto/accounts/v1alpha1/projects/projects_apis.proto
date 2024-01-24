@@ -5,6 +5,9 @@ option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projects
 import "accounts/v1alpha1/projects/projects.proto";
 package accounts.v1alpha1.projects.v1;
 
+// import "projects.proto";
+// import "../accounts.proto";
+
 service ProjectService {
     //CRUD Project
     rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse);
@@ -17,4 +20,5 @@ service ProjectService {
     rpc DeleteUserByProject(DeleteUserByProjectRequest) returns (DeleteUserByProjectResponse);
     rpc EditRoleUserByProject(EditRoleUserByProjectRequest) returns (EditRoleUserByProjectResponse);
     rpc ListProjectByOrganization(ListProjectByOrganizationRequest) returns (ListProjectByOrganizationResponse);
+    rpc UpdadeProjectRole(UpdadeProjectRoleRequest) returns (UpdadeProjectRoleResponse);
 }
