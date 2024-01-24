@@ -3,6 +3,9 @@ syntax = "proto3";
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/users";
 import "accounts/v1alpha1/users/users.proto";
 
+//import "users.proto";
+//import "../accounts.proto";
+
 package accounts.v1alpha1.users.v1;
 
 
