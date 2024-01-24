@@ -468,6 +468,28 @@ function deserialize_payment_v1alpha1_ListPaymentResponse(buffer_arg) {
   return payment_v1alpha1_payment_api_pb.ListPaymentResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_payment_v1alpha1_ListProjectByIdRequest(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.ListProjectByIdRequest)) {
+    throw new Error('Expected argument of type payment.v1alpha1.ListProjectByIdRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_ListProjectByIdRequest(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.ListProjectByIdRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_payment_v1alpha1_ListProjectByIdResponse(arg) {
+  if (!(arg instanceof payment_v1alpha1_payment_api_pb.ListProjectByIdResponse)) {
+    throw new Error('Expected argument of type payment.v1alpha1.ListProjectByIdResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_payment_v1alpha1_ListProjectByIdResponse(buffer_arg) {
+  return payment_v1alpha1_payment_api_pb.ListProjectByIdResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_payment_v1alpha1_ListProjectsRequest(arg) {
   if (!(arg instanceof payment_v1alpha1_payment_api_pb.ListProjectsRequest)) {
     throw new Error('Expected argument of type payment.v1alpha1.ListProjectsRequest');
@@ -791,6 +813,17 @@ var PaymentAPIServiceService = exports.PaymentAPIServiceService = {
     requestDeserialize: deserialize_payment_v1alpha1_ListCustomersRequest,
     responseSerialize: serialize_payment_v1alpha1_ListCustomersResponse,
     responseDeserialize: deserialize_payment_v1alpha1_ListCustomersResponse,
+  },
+  listProjectById: {
+    path: '/payment.v1alpha1.PaymentAPIService/ListProjectById',
+    requestStream: false,
+    responseStream: false,
+    requestType: payment_v1alpha1_payment_api_pb.ListProjectByIdRequest,
+    responseType: payment_v1alpha1_payment_api_pb.ListProjectByIdResponse,
+    requestSerialize: serialize_payment_v1alpha1_ListProjectByIdRequest,
+    requestDeserialize: deserialize_payment_v1alpha1_ListProjectByIdRequest,
+    responseSerialize: serialize_payment_v1alpha1_ListProjectByIdResponse,
+    responseDeserialize: deserialize_payment_v1alpha1_ListProjectByIdResponse,
   },
   // Update service
   updateSubscription: {

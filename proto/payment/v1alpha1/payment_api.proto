@@ -28,6 +28,7 @@ service PaymentAPIService{
     rpc ListPayment(ListPaymentRequest) returns (ListPaymentResponse) {};  
     rpc ListSubscriptionItems(ListSubscriptionItemsRequest) returns (ListSubscriptionItemsResponse) {}; 
     rpc ListCustomers(ListCustomersRequest) returns (ListCustomersResponse) {}; 
+    rpc ListProjectById(ListProjectByIdRequest) returns (ListProjectByIdResponse) {};
    
     //Update service
     rpc UpdateSubscription(UpdateSubscriptionRequest) returns (UpdateSubscriptionResponse) {};
@@ -362,5 +363,15 @@ message WebHookRequest {
 
 message WebHookResponse{
     string status = 1;
+    string error = 2;
+}
+
+message ListProjectByIdRequest {
+    string organization_id = 1;
+    string project_id = 2;
+}
+
+message ListProjectByIdResponse {
+    payment.v1alpha1.Project project = 1;
     string error = 2;
 }

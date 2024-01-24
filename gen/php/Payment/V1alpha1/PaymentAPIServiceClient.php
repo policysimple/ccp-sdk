@@ -215,6 +215,19 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Payment\V1alpha1\ListProjectByIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListProjectById(\Payment\V1alpha1\ListProjectByIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/ListProjectById',
+        $argument,
+        ['\Payment\V1alpha1\ListProjectByIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Update service
      * @param \Payment\V1alpha1\UpdateSubscriptionRequest $argument input argument
      * @param array $metadata metadata
