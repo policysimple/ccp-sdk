@@ -44,6 +44,17 @@ message UpdateProjectRequest {
 message ListProjectByOrganizationRequest {
     string organization_id = 1;
 }
+
+message UpdateProjectRoleRequest {
+    string project_id = 1;
+    uint32 user_id = 2;
+    string role_uuid =3;
+}
+
+message UpdateProjectRoleResponse {
+    string msg = 1;
+}
+
 /*
     Responses
 */

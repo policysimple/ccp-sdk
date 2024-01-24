@@ -103,6 +103,13 @@ class ProjectService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>> PrepareAsyncListProjectByOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>>(PrepareAsyncListProjectByOrganizationRaw(context, request, cq));
     }
+    virtual ::grpc::Status UpdateProjectRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>> AsyncUpdateProjectRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>>(AsyncUpdateProjectRoleRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>> PrepareAsyncUpdateProjectRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>>(PrepareAsyncUpdateProjectRoleRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -117,6 +124,7 @@ class ProjectService final {
       virtual void DeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void EditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListProjectByOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest* request, ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateProjectRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest* request, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -138,6 +146,8 @@ class ProjectService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse>* PrepareAsyncEditRoleUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>* AsyncListProjectByOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>* PrepareAsyncListProjectByOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>* AsyncUpdateProjectRoleRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>* PrepareAsyncUpdateProjectRoleRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -205,6 +215,13 @@ class ProjectService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>> PrepareAsyncListProjectByOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>>(PrepareAsyncListProjectByOrganizationRaw(context, request, cq));
     }
+    ::grpc::Status UpdateProjectRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>> AsyncUpdateProjectRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>>(AsyncUpdateProjectRoleRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>> PrepareAsyncUpdateProjectRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>>(PrepareAsyncUpdateProjectRoleRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -217,6 +234,7 @@ class ProjectService final {
       void DeleteUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void EditRoleUserByProject(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void ListProjectByOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest* request, ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateProjectRole(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest* request, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -246,6 +264,8 @@ class ProjectService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse>* PrepareAsyncEditRoleUserByProjectRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>* AsyncListProjectByOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>* PrepareAsyncListProjectByOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>* AsyncUpdateProjectRoleRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>* PrepareAsyncUpdateProjectRoleRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateProject_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOneProject_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateProject_;
@@ -255,6 +275,7 @@ class ProjectService final {
     const ::grpc::internal::RpcMethod rpcmethod_DeleteUserByProject_;
     const ::grpc::internal::RpcMethod rpcmethod_EditRoleUserByProject_;
     const ::grpc::internal::RpcMethod rpcmethod_ListProjectByOrganization_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateProjectRole_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -273,6 +294,7 @@ class ProjectService final {
     virtual ::grpc::Status DeleteUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::DeleteUserByProjectRequest* request, ::accounts::v1alpha1::projects::v1::DeleteUserByProjectResponse* response);
     virtual ::grpc::Status EditRoleUserByProject(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectRequest* request, ::accounts::v1alpha1::projects::v1::EditRoleUserByProjectResponse* response);
     virtual ::grpc::Status ListProjectByOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest* request, ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse* response);
+    virtual ::grpc::Status UpdateProjectRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest* request, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateProject : public BaseClass {
@@ -454,7 +476,27 @@ class ProjectService final {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_ListProjectPagination<WithAsyncMethod_DeleteUserByProject<WithAsyncMethod_EditRoleUserByProject<WithAsyncMethod_ListProjectByOrganization<Service > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateProjectRole : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_UpdateProjectRole() {
+      ::grpc::Service::MarkMethodAsync(9);
+    }
+    ~WithAsyncMethod_UpdateProjectRole() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateProjectRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest* request, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateProjectRole(::grpc::ServerContext* context, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateProject<WithAsyncMethod_GetOneProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_DeleteProject<WithAsyncMethod_ListProject<WithAsyncMethod_ListProjectPagination<WithAsyncMethod_DeleteUserByProject<WithAsyncMethod_EditRoleUserByProject<WithAsyncMethod_ListProjectByOrganization<WithAsyncMethod_UpdateProjectRole<Service > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateProject : public BaseClass {
    private:
@@ -604,6 +646,23 @@ class ProjectService final {
     }
     // disable synchronous version of this method
     ::grpc::Status ListProjectByOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest* request, ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateProjectRole : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_UpdateProjectRole() {
+      ::grpc::Service::MarkMethodGeneric(9);
+    }
+    ~WithGenericMethod_UpdateProjectRole() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateProjectRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest* request, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -789,6 +848,26 @@ class ProjectService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_UpdateProjectRole : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_UpdateProjectRole() {
+      ::grpc::Service::MarkMethodRaw(9);
+    }
+    ~WithRawMethod_UpdateProjectRole() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateProjectRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest* request, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateProjectRole(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateProject : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -968,9 +1047,29 @@ class ProjectService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedListProjectByOrganization(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::projects::v1::ListProjectByOrganizationRequest,::accounts::v1alpha1::projects::v1::ListProjectByOrganizationResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_ListProjectPagination<WithStreamedUnaryMethod_DeleteUserByProject<WithStreamedUnaryMethod_EditRoleUserByProject<WithStreamedUnaryMethod_ListProjectByOrganization<Service > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateProjectRole : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_UpdateProjectRole() {
+      ::grpc::Service::MarkMethodStreamed(9,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>(std::bind(&WithStreamedUnaryMethod_UpdateProjectRole<BaseClass>::StreamedUpdateProjectRole, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_UpdateProjectRole() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateProjectRole(::grpc::ServerContext* context, const ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest* request, ::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateProjectRole(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::projects::v1::UpdateProjectRoleRequest,::accounts::v1alpha1::projects::v1::UpdateProjectRoleResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_ListProjectPagination<WithStreamedUnaryMethod_DeleteUserByProject<WithStreamedUnaryMethod_EditRoleUserByProject<WithStreamedUnaryMethod_ListProjectByOrganization<WithStreamedUnaryMethod_UpdateProjectRole<Service > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_ListProjectPagination<WithStreamedUnaryMethod_DeleteUserByProject<WithStreamedUnaryMethod_EditRoleUserByProject<WithStreamedUnaryMethod_ListProjectByOrganization<Service > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_GetOneProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_ListProject<WithStreamedUnaryMethod_ListProjectPagination<WithStreamedUnaryMethod_DeleteUserByProject<WithStreamedUnaryMethod_EditRoleUserByProject<WithStreamedUnaryMethod_ListProjectByOrganization<WithStreamedUnaryMethod_UpdateProjectRole<Service > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1

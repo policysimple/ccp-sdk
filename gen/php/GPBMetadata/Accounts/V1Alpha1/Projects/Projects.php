@@ -17,7 +17,7 @@ class Projects
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-º
+Ú
 )accounts/v1alpha1/projects/projects.protoaccounts.v1alpha1.projects.v1"—
 CreateProjectRequest
 name (	Rname 
@@ -42,7 +42,14 @@ budgetTime#
 project (23.accounts.v1alpha1.projects.v1.CreateProjectRequestRproject
 id (	Rid"K
  ListProjectByOrganizationRequest\'
-organization_id (	RorganizationId"\\
+organization_id (	RorganizationId"o
+UpdateProjectRoleRequest
+
+project_id (	R	projectId
+user_id (RuserId
+	role_uuid (	RroleUuid"-
+UpdateProjectRoleResponse
+msg (	Rmsg"\\
 	MemberRol
 id (Rid
 name (	Rname

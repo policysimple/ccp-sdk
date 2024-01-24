@@ -4,7 +4,7 @@
 // 	protoc        v3.17.3
 // source: accounts/v1alpha1/invitations/invitations_api.proto
 
-//import "invitations.proto";
+// import "invitations.proto";
 
 package invitations
 

@@ -135,4 +135,17 @@ class ProjectServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Accounts\V1alpha1\Projects\V1\UpdateProjectRoleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateProjectRole(\Accounts\V1alpha1\Projects\V1\UpdateProjectRoleRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.projects.v1.ProjectService/UpdateProjectRole',
+        $argument,
+        ['\Accounts\V1alpha1\Projects\V1\UpdateProjectRoleResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

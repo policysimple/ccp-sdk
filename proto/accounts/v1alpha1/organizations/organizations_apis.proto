@@ -5,7 +5,6 @@ option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organiza
 import "accounts/v1alpha1/organizations/organizations.proto";
 package accounts.v1alpha1.organizations.v1;
 
-
 service OrganizationService {
     ///Organization
     rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse);

@@ -59,6 +59,11 @@ class ProjectServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationResponse.FromString,
         )
+    self.UpdateProjectRole = channel.unary_unary(
+        '/accounts.v1alpha1.projects.v1.ProjectService/UpdateProjectRole',
+        request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdateProjectRoleRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdateProjectRoleResponse.FromString,
+        )
 
 
 class ProjectServiceServicer(object):
@@ -128,6 +133,13 @@ class ProjectServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def UpdateProjectRole(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ProjectServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -175,6 +187,11 @@ def add_ProjectServiceServicer_to_server(servicer, server):
           servicer.ListProjectByOrganization,
           request_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationResponse.SerializeToString,
+      ),
+      'UpdateProjectRole': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateProjectRole,
+          request_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdateProjectRoleRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdateProjectRoleResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

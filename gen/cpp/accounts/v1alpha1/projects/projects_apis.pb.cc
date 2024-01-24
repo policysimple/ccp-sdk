@@ -34,7 +34,7 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_5
   "\n.accounts/v1alpha1/projects/projects_ap"
   "is.proto\022\035accounts.v1alpha1.projects.v1\032"
   ")accounts/v1alpha1/projects/projects.pro"
-  "to2\320\t\n\016ProjectService\022z\n\rCreateProject\0223"
+  "to2\331\n\n\016ProjectService\022z\n\rCreateProject\0223"
   ".accounts.v1alpha1.projects.v1.CreatePro"
   "jectRequest\0324.accounts.v1alpha1.projects"
   ".v1.CreateProjectResponse\022z\n\rGetOneProje"
@@ -64,16 +64,20 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_5
   "\031ListProjectByOrganization\022\?.accounts.v1"
   "alpha1.projects.v1.ListProjectByOrganiza"
   "tionRequest\032@.accounts.v1alpha1.projects"
-  ".v1.ListProjectByOrganizationResponseB=Z"
-  ";github.com/cuemby/ccp-sdk/gen/go/accoun"
-  "ts/v1alpha1/projectsb\006proto3"
+  ".v1.ListProjectByOrganizationResponse\022\206\001"
+  "\n\021UpdateProjectRole\0227.accounts.v1alpha1."
+  "projects.v1.UpdateProjectRoleRequest\0328.a"
+  "ccounts.v1alpha1.projects.v1.UpdateProje"
+  "ctRoleResponseB=Z;github.com/cuemby/ccp-"
+  "sdk/gen/go/accounts/v1alpha1/projectsb\006p"
+  "roto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto = {
-  false, false, 1428, descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto, "accounts/v1alpha1/projects/projects_apis.proto", 
+  false, false, 1565, descriptor_table_protodef_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto, "accounts/v1alpha1/projects/projects_apis.proto", 
   &descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto_once, descriptor_table_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto::offsets,
   nullptr, file_level_enum_descriptors_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2fprojects_2fprojects_5fapis_2eproto,

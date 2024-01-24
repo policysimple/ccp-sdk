@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>accounts.v1alpha1.projects.v1.ListProjectByOrganizationRequest</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse</code>
  */
-class ListProjectByOrganizationRequest extends \Google\Protobuf\Internal\Message
+class UpdadeProjectRoleResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
      */
-    protected $organization_id = '';
+    protected $msg = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class ListProjectByOrganizationRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $organization_id
+     *     @type string $msg
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class ListProjectByOrganizationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
      * @return string
      */
-    public function getOrganizationId()
+    public function getMsg()
     {
-        return $this->organization_id;
+        return $this->msg;
     }
 
     /**
-     * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * Generated from protobuf field <code>string msg = 1 [json_name = "msg"];</code>
      * @param string $var
      * @return $this
      */
-    public function setOrganizationId($var)
+    public function setMsg($var)
     {
         GPBUtil::checkString($var, True);
-        $this->organization_id = $var;
+        $this->msg = $var;
 
         return $this;
     }

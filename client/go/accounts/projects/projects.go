@@ -214,3 +214,22 @@ func ListProjectByOrganization(req *accountpkgv1.ListProjectByOrganizationReques
 	bylogs.LogInfo("ListProjectByOrganization Client Sdk", "Success")
 	return response, nil
 }
+
+func UpdateProjectUserRole(req *accountpkgv1.UpdateProjectRoleRequest) (*accountpkgv1.UpdateProjectRoleResponse, error) {
+	bylogs.LogInfo("UpdateProjectRole Client Sdk")
+	d, err := time.ParseDuration(accountServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.UpdateProjectRole(ctx, req)
+	if err != nil {
+		bylogs.LogErr("UpdateProjectRole Client Sdk", err)
+		return nil, fmt.Errorf("[UpdateProjectRole] %w", err)
+	}
+	bylogs.LogInfo("UpdateProjectRole Client Sdk", "Success")
+	return response, nil
+}
