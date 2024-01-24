@@ -29,7 +29,7 @@ type ProjectServiceClient interface {
 	DeleteUserByProject(ctx context.Context, in *DeleteUserByProjectRequest, opts ...grpc.CallOption) (*DeleteUserByProjectResponse, error)
 	EditRoleUserByProject(ctx context.Context, in *EditRoleUserByProjectRequest, opts ...grpc.CallOption) (*EditRoleUserByProjectResponse, error)
 	ListProjectByOrganization(ctx context.Context, in *ListProjectByOrganizationRequest, opts ...grpc.CallOption) (*ListProjectByOrganizationResponse, error)
-	UpdadeProjectRole(ctx context.Context, in *UpdadeProjectRoleRequest, opts ...grpc.CallOption) (*UpdadeProjectRoleResponse, error)
+	UpdateProjectRole(ctx context.Context, in *UpdateProjectRoleRequest, opts ...grpc.CallOption) (*UpdateProjectRoleResponse, error)
 }
 
 type projectServiceClient struct {
@@ -121,9 +121,9 @@ func (c *projectServiceClient) ListProjectByOrganization(ctx context.Context, in
 	return out, nil
 }
 
-func (c *projectServiceClient) UpdadeProjectRole(ctx context.Context, in *UpdadeProjectRoleRequest, opts ...grpc.CallOption) (*UpdadeProjectRoleResponse, error) {
-	out := new(UpdadeProjectRoleResponse)
-	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.projects.v1.ProjectService/UpdadeProjectRole", in, out, opts...)
+func (c *projectServiceClient) UpdateProjectRole(ctx context.Context, in *UpdateProjectRoleRequest, opts ...grpc.CallOption) (*UpdateProjectRoleResponse, error) {
+	out := new(UpdateProjectRoleResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.projects.v1.ProjectService/UpdateProjectRole", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -145,7 +145,7 @@ type ProjectServiceServer interface {
 	DeleteUserByProject(context.Context, *DeleteUserByProjectRequest) (*DeleteUserByProjectResponse, error)
 	EditRoleUserByProject(context.Context, *EditRoleUserByProjectRequest) (*EditRoleUserByProjectResponse, error)
 	ListProjectByOrganization(context.Context, *ListProjectByOrganizationRequest) (*ListProjectByOrganizationResponse, error)
-	UpdadeProjectRole(context.Context, *UpdadeProjectRoleRequest) (*UpdadeProjectRoleResponse, error)
+	UpdateProjectRole(context.Context, *UpdateProjectRoleRequest) (*UpdateProjectRoleResponse, error)
 }
 
 // UnimplementedProjectServiceServer should be embedded to have forward compatible implementations.
@@ -179,8 +179,8 @@ func (UnimplementedProjectServiceServer) EditRoleUserByProject(context.Context, 
 func (UnimplementedProjectServiceServer) ListProjectByOrganization(context.Context, *ListProjectByOrganizationRequest) (*ListProjectByOrganizationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListProjectByOrganization not implemented")
 }
-func (UnimplementedProjectServiceServer) UpdadeProjectRole(context.Context, *UpdadeProjectRoleRequest) (*UpdadeProjectRoleResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdadeProjectRole not implemented")
+func (UnimplementedProjectServiceServer) UpdateProjectRole(context.Context, *UpdateProjectRoleRequest) (*UpdateProjectRoleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateProjectRole not implemented")
 }
 
 // UnsafeProjectServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -356,20 +356,20 @@ func _ProjectService_ListProjectByOrganization_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProjectService_UpdadeProjectRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdadeProjectRoleRequest)
+func _ProjectService_UpdateProjectRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateProjectRoleRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProjectServiceServer).UpdadeProjectRole(ctx, in)
+		return srv.(ProjectServiceServer).UpdateProjectRole(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/accounts.v1alpha1.projects.v1.ProjectService/UpdadeProjectRole",
+		FullMethod: "/accounts.v1alpha1.projects.v1.ProjectService/UpdateProjectRole",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProjectServiceServer).UpdadeProjectRole(ctx, req.(*UpdadeProjectRoleRequest))
+		return srv.(ProjectServiceServer).UpdateProjectRole(ctx, req.(*UpdateProjectRoleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -418,8 +418,8 @@ var ProjectService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ProjectService_ListProjectByOrganization_Handler,
 		},
 		{
-			MethodName: "UpdadeProjectRole",
-			Handler:    _ProjectService_UpdadeProjectRole_Handler,
+			MethodName: "UpdateProjectRole",
+			Handler:    _ProjectService_UpdateProjectRole_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

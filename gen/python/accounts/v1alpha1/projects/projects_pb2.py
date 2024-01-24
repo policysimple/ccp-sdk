@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projects',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)accounts/v1alpha1/projects/projects.proto\x12\x1d\x61\x63\x63ounts.v1alpha1.projects.v1\x1a accounts/v1alpha1/accounts.proto\"\x97\x02\n\x14\x43reateProjectRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\'\n\x0forganization_id\x18\x06 \x01(\tR\x0eorganizationId\x12\x12\n\x04plan\x18\x07 \x01(\tR\x04plan\x12\x1f\n\x0b\x62udget_time\x18\x08 \x01(\tR\nbudgetTime\x12#\n\rbudget_amount\x18\t \x01(\tR\x0c\x62udgetAmount\x12\x17\n\x07\x63\x61rd_id\x18\n \x01(\tR\x06\x63\x61rdId\"&\n\x14GetOneProjectRequest\x12\x0e\n\x02id\x18\x02 \x01(\tR\x02id\"&\n\x14\x44\x65leteProjectRequest\x12\x0e\n\x02id\x18\x02 \x01(\tR\x02id\"V\n\x12ListProjectRequest\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\'\n\x0forganization_id\x18\x03 \x01(\tR\x0eorganizationId\"u\n\x14UpdateProjectRequest\x12M\n\x07project\x18\x02 \x01(\x0b\x32\x33.accounts.v1alpha1.projects.v1.CreateProjectRequestR\x07project\x12\x0e\n\x02id\x18\x03 \x01(\tR\x02id\"K\n ListProjectByOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"o\n\x18UpdadeProjectRoleRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\tR\tprojectId\x12\x17\n\x07user_id\x18\x02 \x01(\rR\x06userId\x12\x1b\n\trole_uuid\x18\x03 \x01(\tR\x08roleUuid\"-\n\x19UpdadeProjectRoleResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"\\\n\tMemberRol\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x19\n\x08is_admin\x18\x03 \x01(\x08R\x07isAdmin\x12\x10\n\x03uid\x18\x04 \x01(\tR\x03uid\"7\n\x0bProjectList\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\"9\n\x15\x43reateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x0e\n\x02id\x18\x04 \x01(\tR\x02id\")\n\x15UpdateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\")\n\x15\x44\x65leteProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"\xd5\x02\n\x15GetOneProjectResponse\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12:\n\x07members\x18\x08 \x03(\x0b\x32 .accounts.v1alpha1.MemberProjectR\x07members\x12=\n\x05owner\x18\t \x01(\x0b\x32\'.accounts.v1alpha1.projects.v1.UserListR\x05owner\x12\x0e\n\x02id\x18\n \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x0b \x01(\tR\x0eorganizationId\"[\n!ListProjectByOrganizationResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"M\n\x13ListProjectResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"L\n\x1cListProjectPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"\x9c\x01\n\x1dListProjectPaginationResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\x12\x14\n\x05\x63ount\x18\x02 \x01(\x05R\x05\x63ount\x12\x12\n\x04page\x18\x03 \x01(\x05R\x04page\x12\x19\n\x08max_page\x18\x04 \x01(\x05R\x07maxPage\"\xdc\x01\n\x08UserList\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\"\n\ris_super_user\x18\x07 \x01(\x08R\x0bisSuperUser\x12\x14\n\x05image\x18\x08 \x01(\tR\x05image\"T\n\x1a\x44\x65leteUserByProjectRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x1d\n\nproject_id\x18\x03 \x01(\tR\tprojectId\"/\n\x1b\x44\x65leteUserByProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"o\n\x1c\x45\x64itRoleUserByProjectRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x1d\n\nproject_id\x18\x04 \x01(\tR\tprojectId\x12\x17\n\x07role_id\x18\x05 \x01(\tR\x06roleId\"1\n\x1d\x45\x64itRoleUserByProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msgB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsb\x06proto3'
+  serialized_pb=b'\n)accounts/v1alpha1/projects/projects.proto\x12\x1d\x61\x63\x63ounts.v1alpha1.projects.v1\x1a accounts/v1alpha1/accounts.proto\"\x97\x02\n\x14\x43reateProjectRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\'\n\x0forganization_id\x18\x06 \x01(\tR\x0eorganizationId\x12\x12\n\x04plan\x18\x07 \x01(\tR\x04plan\x12\x1f\n\x0b\x62udget_time\x18\x08 \x01(\tR\nbudgetTime\x12#\n\rbudget_amount\x18\t \x01(\tR\x0c\x62udgetAmount\x12\x17\n\x07\x63\x61rd_id\x18\n \x01(\tR\x06\x63\x61rdId\"&\n\x14GetOneProjectRequest\x12\x0e\n\x02id\x18\x02 \x01(\tR\x02id\"&\n\x14\x44\x65leteProjectRequest\x12\x0e\n\x02id\x18\x02 \x01(\tR\x02id\"V\n\x12ListProjectRequest\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\'\n\x0forganization_id\x18\x03 \x01(\tR\x0eorganizationId\"u\n\x14UpdateProjectRequest\x12M\n\x07project\x18\x02 \x01(\x0b\x32\x33.accounts.v1alpha1.projects.v1.CreateProjectRequestR\x07project\x12\x0e\n\x02id\x18\x03 \x01(\tR\x02id\"K\n ListProjectByOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\"o\n\x18UpdateProjectRoleRequest\x12\x1d\n\nproject_id\x18\x01 \x01(\tR\tprojectId\x12\x17\n\x07user_id\x18\x02 \x01(\rR\x06userId\x12\x1b\n\trole_uuid\x18\x03 \x01(\tR\x08roleUuid\"-\n\x19UpdateProjectRoleResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"\\\n\tMemberRol\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x19\n\x08is_admin\x18\x03 \x01(\x08R\x07isAdmin\x12\x10\n\x03uid\x18\x04 \x01(\tR\x03uid\"7\n\x0bProjectList\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\"9\n\x15\x43reateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x0e\n\x02id\x18\x04 \x01(\tR\x02id\")\n\x15UpdateProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\")\n\x15\x44\x65leteProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"\xd5\x02\n\x15GetOneProjectResponse\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x05 \x01(\tR\x0b\x64\x65scription\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\x12:\n\x07members\x18\x08 \x03(\x0b\x32 .accounts.v1alpha1.MemberProjectR\x07members\x12=\n\x05owner\x18\t \x01(\x0b\x32\'.accounts.v1alpha1.projects.v1.UserListR\x05owner\x12\x0e\n\x02id\x18\n \x01(\tR\x02id\x12\'\n\x0forganization_id\x18\x0b \x01(\tR\x0eorganizationId\"[\n!ListProjectByOrganizationResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"M\n\x13ListProjectResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\"L\n\x1cListProjectPaginationRequest\x12\x16\n\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n\x05limit\x18\x02 \x01(\x05R\x05limit\"\x9c\x01\n\x1dListProjectPaginationResponse\x12\x36\n\x08projects\x18\x01 \x03(\x0b\x32\x1a.accounts.v1alpha1.ProjectR\x08projects\x12\x14\n\x05\x63ount\x18\x02 \x01(\x05R\x05\x63ount\x12\x12\n\x04page\x18\x03 \x01(\x05R\x04page\x12\x19\n\x08max_page\x18\x04 \x01(\x05R\x07maxPage\"\xdc\x01\n\x08UserList\x12\x0e\n\x02id\x18\x01 \x01(\rR\x02id\x12\x1d\n\nfirst_name\x18\x02 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x03 \x01(\tR\x08lastName\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x17\n\x07user_id\x18\x05 \x01(\tR\x06userId\x12\x1b\n\tis_active\x18\x06 \x01(\x08R\x08isActive\x12\"\n\ris_super_user\x18\x07 \x01(\x08R\x0bisSuperUser\x12\x14\n\x05image\x18\x08 \x01(\tR\x05image\"T\n\x1a\x44\x65leteUserByProjectRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x1d\n\nproject_id\x18\x03 \x01(\tR\tprojectId\"/\n\x1b\x44\x65leteUserByProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"o\n\x1c\x45\x64itRoleUserByProjectRequest\x12\x17\n\x07user_id\x18\x01 \x01(\rR\x06userId\x12\x1d\n\nproject_id\x18\x04 \x01(\tR\tprojectId\x12\x17\n\x07role_id\x18\x05 \x01(\tR\x06roleId\"1\n\x1d\x45\x64itRoleUserByProjectResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msgB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_accounts__pb2.DESCRIPTOR,])
 
@@ -289,30 +289,30 @@ _LISTPROJECTBYORGANIZATIONREQUEST = _descriptor.Descriptor(
 )
 
 
-_UPDADEPROJECTROLEREQUEST = _descriptor.Descriptor(
-  name='UpdadeProjectRoleRequest',
-  full_name='accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest',
+_UPDATEPROJECTROLEREQUEST = _descriptor.Descriptor(
+  name='UpdateProjectRoleRequest',
+  full_name='accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='project_id', full_name='accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest.project_id', index=0,
+      name='project_id', full_name='accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest.project_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='projectId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest.user_id', index=1,
+      name='user_id', full_name='accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest.user_id', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='role_uuid', full_name='accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest.role_uuid', index=2,
+      name='role_uuid', full_name='accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest.role_uuid', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -335,16 +335,16 @@ _UPDADEPROJECTROLEREQUEST = _descriptor.Descriptor(
 )
 
 
-_UPDADEPROJECTROLERESPONSE = _descriptor.Descriptor(
-  name='UpdadeProjectRoleResponse',
-  full_name='accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse',
+_UPDATEPROJECTROLERESPONSE = _descriptor.Descriptor(
+  name='UpdateProjectRoleResponse',
+  full_name='accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msg', full_name='accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse.msg', index=0,
+      name='msg', full_name='accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse.msg', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1047,8 +1047,8 @@ DESCRIPTOR.message_types_by_name['DeleteProjectRequest'] = _DELETEPROJECTREQUEST
 DESCRIPTOR.message_types_by_name['ListProjectRequest'] = _LISTPROJECTREQUEST
 DESCRIPTOR.message_types_by_name['UpdateProjectRequest'] = _UPDATEPROJECTREQUEST
 DESCRIPTOR.message_types_by_name['ListProjectByOrganizationRequest'] = _LISTPROJECTBYORGANIZATIONREQUEST
-DESCRIPTOR.message_types_by_name['UpdadeProjectRoleRequest'] = _UPDADEPROJECTROLEREQUEST
-DESCRIPTOR.message_types_by_name['UpdadeProjectRoleResponse'] = _UPDADEPROJECTROLERESPONSE
+DESCRIPTOR.message_types_by_name['UpdateProjectRoleRequest'] = _UPDATEPROJECTROLEREQUEST
+DESCRIPTOR.message_types_by_name['UpdateProjectRoleResponse'] = _UPDATEPROJECTROLERESPONSE
 DESCRIPTOR.message_types_by_name['MemberRol'] = _MEMBERROL
 DESCRIPTOR.message_types_by_name['ProjectList'] = _PROJECTLIST
 DESCRIPTOR.message_types_by_name['CreateProjectResponse'] = _CREATEPROJECTRESPONSE
@@ -1108,19 +1108,19 @@ ListProjectByOrganizationRequest = _reflection.GeneratedProtocolMessageType('Lis
   })
 _sym_db.RegisterMessage(ListProjectByOrganizationRequest)
 
-UpdadeProjectRoleRequest = _reflection.GeneratedProtocolMessageType('UpdadeProjectRoleRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDADEPROJECTROLEREQUEST,
+UpdateProjectRoleRequest = _reflection.GeneratedProtocolMessageType('UpdateProjectRoleRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEPROJECTROLEREQUEST,
   '__module__' : 'accounts.v1alpha1.projects.projects_pb2'
-  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest)
+  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest)
   })
-_sym_db.RegisterMessage(UpdadeProjectRoleRequest)
+_sym_db.RegisterMessage(UpdateProjectRoleRequest)
 
-UpdadeProjectRoleResponse = _reflection.GeneratedProtocolMessageType('UpdadeProjectRoleResponse', (_message.Message,), {
-  'DESCRIPTOR' : _UPDADEPROJECTROLERESPONSE,
+UpdateProjectRoleResponse = _reflection.GeneratedProtocolMessageType('UpdateProjectRoleResponse', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEPROJECTROLERESPONSE,
   '__module__' : 'accounts.v1alpha1.projects.projects_pb2'
-  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse)
+  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse)
   })
-_sym_db.RegisterMessage(UpdadeProjectRoleResponse)
+_sym_db.RegisterMessage(UpdateProjectRoleResponse)
 
 MemberRol = _reflection.GeneratedProtocolMessageType('MemberRol', (_message.Message,), {
   'DESCRIPTOR' : _MEMBERROL,

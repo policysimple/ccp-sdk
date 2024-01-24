@@ -4983,8 +4983,8 @@ public final class Projects {
 
   }
 
-  public interface UpdadeProjectRoleRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest)
+  public interface UpdateProjectRoleRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5018,18 +5018,18 @@ public final class Projects {
         getRoleUuidBytes();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest}
+   * Protobuf type {@code accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest}
    */
-  public static final class UpdadeProjectRoleRequest extends
+  public static final class UpdateProjectRoleRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest)
-      UpdadeProjectRoleRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest)
+      UpdateProjectRoleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpdadeProjectRoleRequest.newBuilder() to construct.
-    private UpdadeProjectRoleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UpdateProjectRoleRequest.newBuilder() to construct.
+    private UpdateProjectRoleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpdadeProjectRoleRequest() {
+    private UpdateProjectRoleRequest() {
       projectId_ = "";
       roleUuid_ = "";
     }
@@ -5038,7 +5038,7 @@ public final class Projects {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UpdadeProjectRoleRequest();
+      return new UpdateProjectRoleRequest();
     }
 
     @java.lang.Override
@@ -5046,7 +5046,7 @@ public final class Projects {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdadeProjectRoleRequest(
+    private UpdateProjectRoleRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5102,15 +5102,15 @@ public final class Projects {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_descriptor;
+      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_fieldAccessorTable
+      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest.class, accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest.Builder.class);
+              accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest.class, accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest.Builder.class);
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 1;
@@ -5252,10 +5252,10 @@ public final class Projects {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest)) {
+      if (!(obj instanceof accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest other = (accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest) obj;
+      accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest other = (accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest) obj;
 
       if (!getProjectId()
           .equals(other.getProjectId())) return false;
@@ -5285,69 +5285,69 @@ public final class Projects {
       return hash;
     }
 
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(byte[] data)
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseDelimitedFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5360,7 +5360,7 @@ public final class Projects {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5376,26 +5376,26 @@ public final class Projects {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest}
+     * Protobuf type {@code accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest)
-        accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest)
+        accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_descriptor;
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_fieldAccessorTable
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest.class, accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest.Builder.class);
+                accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest.class, accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest.newBuilder()
+      // Construct using accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5425,17 +5425,17 @@ public final class Projects {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_descriptor;
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest getDefaultInstanceForType() {
-        return accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest.getDefaultInstance();
+      public accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest getDefaultInstanceForType() {
+        return accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest build() {
-        accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest result = buildPartial();
+      public accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest build() {
+        accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5443,8 +5443,8 @@ public final class Projects {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest buildPartial() {
-        accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest result = new accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest(this);
+      public accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest buildPartial() {
+        accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest result = new accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest(this);
         result.projectId_ = projectId_;
         result.userId_ = userId_;
         result.roleUuid_ = roleUuid_;
@@ -5486,16 +5486,16 @@ public final class Projects {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest) {
-          return mergeFrom((accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest)other);
+        if (other instanceof accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest) {
+          return mergeFrom((accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest other) {
-        if (other == accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest other) {
+        if (other == accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest.getDefaultInstance()) return this;
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
           onChanged();
@@ -5522,11 +5522,11 @@ public final class Projects {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest parsedMessage = null;
+        accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5731,48 +5731,48 @@ public final class Projects {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest)
-    private static final accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest)
+    private static final accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest();
     }
 
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest getDefaultInstance() {
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdadeProjectRoleRequest>
-        PARSER = new com.google.protobuf.AbstractParser<UpdadeProjectRoleRequest>() {
+    private static final com.google.protobuf.Parser<UpdateProjectRoleRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateProjectRoleRequest>() {
       @java.lang.Override
-      public UpdadeProjectRoleRequest parsePartialFrom(
+      public UpdateProjectRoleRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdadeProjectRoleRequest(input, extensionRegistry);
+        return new UpdateProjectRoleRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpdadeProjectRoleRequest> parser() {
+    public static com.google.protobuf.Parser<UpdateProjectRoleRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpdadeProjectRoleRequest> getParserForType() {
+    public com.google.protobuf.Parser<UpdateProjectRoleRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleRequest getDefaultInstanceForType() {
+    public accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UpdadeProjectRoleResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse)
+  public interface UpdateProjectRoleResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5788,18 +5788,18 @@ public final class Projects {
         getMsgBytes();
   }
   /**
-   * Protobuf type {@code accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse}
+   * Protobuf type {@code accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse}
    */
-  public static final class UpdadeProjectRoleResponse extends
+  public static final class UpdateProjectRoleResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse)
-      UpdadeProjectRoleResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse)
+      UpdateProjectRoleResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpdadeProjectRoleResponse.newBuilder() to construct.
-    private UpdadeProjectRoleResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UpdateProjectRoleResponse.newBuilder() to construct.
+    private UpdateProjectRoleResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpdadeProjectRoleResponse() {
+    private UpdateProjectRoleResponse() {
       msg_ = "";
     }
 
@@ -5807,7 +5807,7 @@ public final class Projects {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UpdadeProjectRoleResponse();
+      return new UpdateProjectRoleResponse();
     }
 
     @java.lang.Override
@@ -5815,7 +5815,7 @@ public final class Projects {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdadeProjectRoleResponse(
+    private UpdateProjectRoleResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5860,15 +5860,15 @@ public final class Projects {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_descriptor;
+      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_fieldAccessorTable
+      return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse.class, accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse.Builder.class);
+              accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse.class, accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse.Builder.class);
     }
 
     public static final int MSG_FIELD_NUMBER = 1;
@@ -5948,10 +5948,10 @@ public final class Projects {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse)) {
+      if (!(obj instanceof accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse)) {
         return super.equals(obj);
       }
-      accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse other = (accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse) obj;
+      accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse other = (accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse) obj;
 
       if (!getMsg()
           .equals(other.getMsg())) return false;
@@ -5973,69 +5973,69 @@ public final class Projects {
       return hash;
     }
 
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(byte[] data)
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseDelimitedFrom(java.io.InputStream input)
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseDelimitedFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parseFrom(
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6048,7 +6048,7 @@ public final class Projects {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse prototype) {
+    public static Builder newBuilder(accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6064,26 +6064,26 @@ public final class Projects {
       return builder;
     }
     /**
-     * Protobuf type {@code accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse}
+     * Protobuf type {@code accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse)
-        accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse)
+        accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_descriptor;
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_fieldAccessorTable
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse.class, accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse.Builder.class);
+                accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse.class, accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse.Builder.class);
       }
 
-      // Construct using accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse.newBuilder()
+      // Construct using accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6109,17 +6109,17 @@ public final class Projects {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_descriptor;
+        return accounts.v1alpha1.projects.v1.Projects.internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_descriptor;
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse getDefaultInstanceForType() {
-        return accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse.getDefaultInstance();
+      public accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse getDefaultInstanceForType() {
+        return accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse build() {
-        accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse result = buildPartial();
+      public accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse build() {
+        accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6127,8 +6127,8 @@ public final class Projects {
       }
 
       @java.lang.Override
-      public accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse buildPartial() {
-        accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse result = new accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse(this);
+      public accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse buildPartial() {
+        accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse result = new accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse(this);
         result.msg_ = msg_;
         onBuilt();
         return result;
@@ -6168,16 +6168,16 @@ public final class Projects {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse) {
-          return mergeFrom((accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse)other);
+        if (other instanceof accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse) {
+          return mergeFrom((accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse other) {
-        if (other == accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse other) {
+        if (other == accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
           onChanged();
@@ -6197,11 +6197,11 @@ public final class Projects {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse parsedMessage = null;
+        accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse) e.getUnfinishedMessage();
+          parsedMessage = (accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6299,41 +6299,41 @@ public final class Projects {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse)
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse)
-    private static final accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse)
+    private static final accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse();
+      DEFAULT_INSTANCE = new accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse();
     }
 
-    public static accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse getDefaultInstance() {
+    public static accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdadeProjectRoleResponse>
-        PARSER = new com.google.protobuf.AbstractParser<UpdadeProjectRoleResponse>() {
+    private static final com.google.protobuf.Parser<UpdateProjectRoleResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateProjectRoleResponse>() {
       @java.lang.Override
-      public UpdadeProjectRoleResponse parsePartialFrom(
+      public UpdateProjectRoleResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdadeProjectRoleResponse(input, extensionRegistry);
+        return new UpdateProjectRoleResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpdadeProjectRoleResponse> parser() {
+    public static com.google.protobuf.Parser<UpdateProjectRoleResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpdadeProjectRoleResponse> getParserForType() {
+    public com.google.protobuf.Parser<UpdateProjectRoleResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public accounts.v1alpha1.projects.v1.Projects.UpdadeProjectRoleResponse getDefaultInstanceForType() {
+    public accounts.v1alpha1.projects.v1.Projects.UpdateProjectRoleResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -18980,15 +18980,15 @@ public final class Projects {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_accounts_v1alpha1_projects_v1_ListProjectByOrganizationRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_descriptor;
+    internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_descriptor;
+    internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_fieldAccessorTable;
+      internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accounts_v1alpha1_projects_v1_MemberRol_descriptor;
   private static final 
@@ -19092,9 +19092,9 @@ public final class Projects {
       "ojectRequestR\007project\022\016\n\002id\030\003 \001(\tR\002id\"K\n" +
       " ListProjectByOrganizationRequest\022\'\n\017org" +
       "anization_id\030\001 \001(\tR\016organizationId\"o\n\030Up" +
-      "dadeProjectRoleRequest\022\035\n\nproject_id\030\001 \001" +
+      "dateProjectRoleRequest\022\035\n\nproject_id\030\001 \001" +
       "(\tR\tprojectId\022\027\n\007user_id\030\002 \001(\rR\006userId\022\033" +
-      "\n\trole_uuid\030\003 \001(\tR\010roleUuid\"-\n\031UpdadePro" +
+      "\n\trole_uuid\030\003 \001(\tR\010roleUuid\"-\n\031UpdatePro" +
       "jectRoleResponse\022\020\n\003msg\030\001 \001(\tR\003msg\"\\\n\tMe" +
       "mberRol\022\016\n\002id\030\001 \001(\rR\002id\022\022\n\004name\030\002 \001(\tR\004n" +
       "ame\022\031\n\010is_admin\030\003 \001(\010R\007isAdmin\022\020\n\003uid\030\004 " +
@@ -19179,17 +19179,17 @@ public final class Projects {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_projects_v1_ListProjectByOrganizationRequest_descriptor,
         new java.lang.String[] { "OrganizationId", });
-    internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_descriptor =
+    internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest_descriptor,
+        internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest_descriptor,
         new java.lang.String[] { "ProjectId", "UserId", "RoleUuid", });
-    internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_descriptor =
+    internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_fieldAccessorTable = new
+    internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse_descriptor,
+        internal_static_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_accounts_v1alpha1_projects_v1_MemberRol_descriptor =
       getDescriptor().getMessageTypes().get(8);

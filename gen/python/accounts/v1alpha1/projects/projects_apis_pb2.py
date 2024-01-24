@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projects',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.accounts/v1alpha1/projects/projects_apis.proto\x12\x1d\x61\x63\x63ounts.v1alpha1.projects.v1\x1a)accounts/v1alpha1/projects/projects.proto2\xd9\n\n\x0eProjectService\x12z\n\rCreateProject\x12\x33.accounts.v1alpha1.projects.v1.CreateProjectRequest\x1a\x34.accounts.v1alpha1.projects.v1.CreateProjectResponse\x12z\n\rGetOneProject\x12\x33.accounts.v1alpha1.projects.v1.GetOneProjectRequest\x1a\x34.accounts.v1alpha1.projects.v1.GetOneProjectResponse\x12z\n\rUpdateProject\x12\x33.accounts.v1alpha1.projects.v1.UpdateProjectRequest\x1a\x34.accounts.v1alpha1.projects.v1.UpdateProjectResponse\x12z\n\rDeleteProject\x12\x33.accounts.v1alpha1.projects.v1.DeleteProjectRequest\x1a\x34.accounts.v1alpha1.projects.v1.DeleteProjectResponse\x12t\n\x0bListProject\x12\x31.accounts.v1alpha1.projects.v1.ListProjectRequest\x1a\x32.accounts.v1alpha1.projects.v1.ListProjectResponse\x12\x92\x01\n\x15ListProjectPagination\x12;.accounts.v1alpha1.projects.v1.ListProjectPaginationRequest\x1a<.accounts.v1alpha1.projects.v1.ListProjectPaginationResponse\x12\x8c\x01\n\x13\x44\x65leteUserByProject\x12\x39.accounts.v1alpha1.projects.v1.DeleteUserByProjectRequest\x1a:.accounts.v1alpha1.projects.v1.DeleteUserByProjectResponse\x12\x92\x01\n\x15\x45\x64itRoleUserByProject\x12;.accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest\x1a<.accounts.v1alpha1.projects.v1.EditRoleUserByProjectResponse\x12\x9e\x01\n\x19ListProjectByOrganization\x12?.accounts.v1alpha1.projects.v1.ListProjectByOrganizationRequest\x1a@.accounts.v1alpha1.projects.v1.ListProjectByOrganizationResponse\x12\x86\x01\n\x11UpdadeProjectRole\x12\x37.accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest\x1a\x38.accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponseB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsb\x06proto3'
+  serialized_pb=b'\n.accounts/v1alpha1/projects/projects_apis.proto\x12\x1d\x61\x63\x63ounts.v1alpha1.projects.v1\x1a)accounts/v1alpha1/projects/projects.proto2\xd9\n\n\x0eProjectService\x12z\n\rCreateProject\x12\x33.accounts.v1alpha1.projects.v1.CreateProjectRequest\x1a\x34.accounts.v1alpha1.projects.v1.CreateProjectResponse\x12z\n\rGetOneProject\x12\x33.accounts.v1alpha1.projects.v1.GetOneProjectRequest\x1a\x34.accounts.v1alpha1.projects.v1.GetOneProjectResponse\x12z\n\rUpdateProject\x12\x33.accounts.v1alpha1.projects.v1.UpdateProjectRequest\x1a\x34.accounts.v1alpha1.projects.v1.UpdateProjectResponse\x12z\n\rDeleteProject\x12\x33.accounts.v1alpha1.projects.v1.DeleteProjectRequest\x1a\x34.accounts.v1alpha1.projects.v1.DeleteProjectResponse\x12t\n\x0bListProject\x12\x31.accounts.v1alpha1.projects.v1.ListProjectRequest\x1a\x32.accounts.v1alpha1.projects.v1.ListProjectResponse\x12\x92\x01\n\x15ListProjectPagination\x12;.accounts.v1alpha1.projects.v1.ListProjectPaginationRequest\x1a<.accounts.v1alpha1.projects.v1.ListProjectPaginationResponse\x12\x8c\x01\n\x13\x44\x65leteUserByProject\x12\x39.accounts.v1alpha1.projects.v1.DeleteUserByProjectRequest\x1a:.accounts.v1alpha1.projects.v1.DeleteUserByProjectResponse\x12\x92\x01\n\x15\x45\x64itRoleUserByProject\x12;.accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest\x1a<.accounts.v1alpha1.projects.v1.EditRoleUserByProjectResponse\x12\x9e\x01\n\x19ListProjectByOrganization\x12?.accounts.v1alpha1.projects.v1.ListProjectByOrganizationRequest\x1a@.accounts.v1alpha1.projects.v1.ListProjectByOrganizationResponse\x12\x86\x01\n\x11UpdateProjectRole\x12\x37.accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest\x1a\x38.accounts.v1alpha1.projects.v1.UpdateProjectRoleResponseB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.DESCRIPTOR,])
 
@@ -132,12 +132,12 @@ _PROJECTSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='UpdadeProjectRole',
-    full_name='accounts.v1alpha1.projects.v1.ProjectService.UpdadeProjectRole',
+    name='UpdateProjectRole',
+    full_name='accounts.v1alpha1.projects.v1.ProjectService.UpdateProjectRole',
     index=9,
     containing_service=None,
-    input_type=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2._UPDADEPROJECTROLEREQUEST,
-    output_type=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2._UPDADEPROJECTROLERESPONSE,
+    input_type=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2._UPDATEPROJECTROLEREQUEST,
+    output_type=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2._UPDATEPROJECTROLERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -107,14 +107,14 @@ var file_accounts_v1alpha1_projects_projects_apis_proto_rawDesc = []byte{
 	0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74,
 	0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x42, 0x79, 0x4f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x86, 0x01,
-	0x0a, 0x11, 0x55, 0x70, 0x64, 0x61, 0x64, 0x65, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52,
+	0x0a, 0x11, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52,
 	0x6f, 0x6c, 0x65, 0x12, 0x37, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x2e, 0x76,
 	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73,
-	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x64, 0x65, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63,
+	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63,
 	0x74, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e, 0x61,
 	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31,
 	0x2e, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64,
-	0x61, 0x64, 0x65, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65,
+	0x61, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x3d, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
 	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x75, 0x65, 0x6d, 0x62, 0x79, 0x2f, 0x63, 0x63, 0x70, 0x2d,
 	0x73, 0x64, 0x6b, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75,
@@ -132,7 +132,7 @@ var file_accounts_v1alpha1_projects_projects_apis_proto_goTypes = []interface{}{
 	(*DeleteUserByProjectRequest)(nil),        // 6: accounts.v1alpha1.projects.v1.DeleteUserByProjectRequest
 	(*EditRoleUserByProjectRequest)(nil),      // 7: accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest
 	(*ListProjectByOrganizationRequest)(nil),  // 8: accounts.v1alpha1.projects.v1.ListProjectByOrganizationRequest
-	(*UpdadeProjectRoleRequest)(nil),          // 9: accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest
+	(*UpdateProjectRoleRequest)(nil),          // 9: accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest
 	(*CreateProjectResponse)(nil),             // 10: accounts.v1alpha1.projects.v1.CreateProjectResponse
 	(*GetOneProjectResponse)(nil),             // 11: accounts.v1alpha1.projects.v1.GetOneProjectResponse
 	(*UpdateProjectResponse)(nil),             // 12: accounts.v1alpha1.projects.v1.UpdateProjectResponse
@@ -142,7 +142,7 @@ var file_accounts_v1alpha1_projects_projects_apis_proto_goTypes = []interface{}{
 	(*DeleteUserByProjectResponse)(nil),       // 16: accounts.v1alpha1.projects.v1.DeleteUserByProjectResponse
 	(*EditRoleUserByProjectResponse)(nil),     // 17: accounts.v1alpha1.projects.v1.EditRoleUserByProjectResponse
 	(*ListProjectByOrganizationResponse)(nil), // 18: accounts.v1alpha1.projects.v1.ListProjectByOrganizationResponse
-	(*UpdadeProjectRoleResponse)(nil),         // 19: accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse
+	(*UpdateProjectRoleResponse)(nil),         // 19: accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse
 }
 var file_accounts_v1alpha1_projects_projects_apis_proto_depIdxs = []int32{
 	0,  // 0: accounts.v1alpha1.projects.v1.ProjectService.CreateProject:input_type -> accounts.v1alpha1.projects.v1.CreateProjectRequest
@@ -154,7 +154,7 @@ var file_accounts_v1alpha1_projects_projects_apis_proto_depIdxs = []int32{
 	6,  // 6: accounts.v1alpha1.projects.v1.ProjectService.DeleteUserByProject:input_type -> accounts.v1alpha1.projects.v1.DeleteUserByProjectRequest
 	7,  // 7: accounts.v1alpha1.projects.v1.ProjectService.EditRoleUserByProject:input_type -> accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest
 	8,  // 8: accounts.v1alpha1.projects.v1.ProjectService.ListProjectByOrganization:input_type -> accounts.v1alpha1.projects.v1.ListProjectByOrganizationRequest
-	9,  // 9: accounts.v1alpha1.projects.v1.ProjectService.UpdadeProjectRole:input_type -> accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest
+	9,  // 9: accounts.v1alpha1.projects.v1.ProjectService.UpdateProjectRole:input_type -> accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest
 	10, // 10: accounts.v1alpha1.projects.v1.ProjectService.CreateProject:output_type -> accounts.v1alpha1.projects.v1.CreateProjectResponse
 	11, // 11: accounts.v1alpha1.projects.v1.ProjectService.GetOneProject:output_type -> accounts.v1alpha1.projects.v1.GetOneProjectResponse
 	12, // 12: accounts.v1alpha1.projects.v1.ProjectService.UpdateProject:output_type -> accounts.v1alpha1.projects.v1.UpdateProjectResponse
@@ -164,7 +164,7 @@ var file_accounts_v1alpha1_projects_projects_apis_proto_depIdxs = []int32{
 	16, // 16: accounts.v1alpha1.projects.v1.ProjectService.DeleteUserByProject:output_type -> accounts.v1alpha1.projects.v1.DeleteUserByProjectResponse
 	17, // 17: accounts.v1alpha1.projects.v1.ProjectService.EditRoleUserByProject:output_type -> accounts.v1alpha1.projects.v1.EditRoleUserByProjectResponse
 	18, // 18: accounts.v1alpha1.projects.v1.ProjectService.ListProjectByOrganization:output_type -> accounts.v1alpha1.projects.v1.ListProjectByOrganizationResponse
-	19, // 19: accounts.v1alpha1.projects.v1.ProjectService.UpdadeProjectRole:output_type -> accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse
+	19, // 19: accounts.v1alpha1.projects.v1.ProjectService.UpdateProjectRole:output_type -> accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse
 	10, // [10:20] is the sub-list for method output_type
 	0,  // [0:10] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name

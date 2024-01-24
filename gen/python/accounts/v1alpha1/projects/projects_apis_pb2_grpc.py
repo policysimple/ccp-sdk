@@ -59,10 +59,10 @@ class ProjectServiceStub(object):
         request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationRequest.SerializeToString,
         response_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationResponse.FromString,
         )
-    self.UpdadeProjectRole = channel.unary_unary(
-        '/accounts.v1alpha1.projects.v1.ProjectService/UpdadeProjectRole',
-        request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdadeProjectRoleRequest.SerializeToString,
-        response_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdadeProjectRoleResponse.FromString,
+    self.UpdateProjectRole = channel.unary_unary(
+        '/accounts.v1alpha1.projects.v1.ProjectService/UpdateProjectRole',
+        request_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdateProjectRoleRequest.SerializeToString,
+        response_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdateProjectRoleResponse.FromString,
         )
 
 
@@ -133,7 +133,7 @@ class ProjectServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdadeProjectRole(self, request, context):
+  def UpdateProjectRole(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -188,10 +188,10 @@ def add_ProjectServiceServicer_to_server(servicer, server):
           request_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationRequest.FromString,
           response_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.ListProjectByOrganizationResponse.SerializeToString,
       ),
-      'UpdadeProjectRole': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdadeProjectRole,
-          request_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdadeProjectRoleRequest.FromString,
-          response_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdadeProjectRoleResponse.SerializeToString,
+      'UpdateProjectRole': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateProjectRole,
+          request_deserializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdateProjectRoleRequest.FromString,
+          response_serializer=accounts_dot_v1alpha1_dot_projects_dot_projects__pb2.UpdateProjectRoleResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -57,9 +57,9 @@ public final class ProjectsApis {
       "alpha1.projects.v1.ListProjectByOrganiza" +
       "tionRequest\032@.accounts.v1alpha1.projects" +
       ".v1.ListProjectByOrganizationResponse\022\206\001" +
-      "\n\021UpdadeProjectRole\0227.accounts.v1alpha1." +
-      "projects.v1.UpdadeProjectRoleRequest\0328.a" +
-      "ccounts.v1alpha1.projects.v1.UpdadeProje" +
+      "\n\021UpdateProjectRole\0227.accounts.v1alpha1." +
+      "projects.v1.UpdateProjectRoleRequest\0328.a" +
+      "ccounts.v1alpha1.projects.v1.UpdateProje" +
       "ctRoleResponseB=Z;github.com/cuemby/ccp-" +
       "sdk/gen/go/accounts/v1alpha1/projectsb\006p" +
       "roto3"

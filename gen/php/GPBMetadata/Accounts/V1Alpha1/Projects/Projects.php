@@ -43,12 +43,12 @@ budgetTime#
 id (	Rid"K
  ListProjectByOrganizationRequest\'
 organization_id (	RorganizationId"o
-UpdadeProjectRoleRequest
+UpdateProjectRoleRequest
 
 project_id (	R	projectId
 user_id (RuserId
 	role_uuid (	RroleUuid"-
-UpdadeProjectRoleResponse
+UpdateProjectRoleResponse
 msg (	Rmsg"\\
 	MemberRol
 id (Rid

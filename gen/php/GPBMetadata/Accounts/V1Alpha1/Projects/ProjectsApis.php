@@ -30,7 +30,7 @@ class ProjectsApis
 DeleteUserByProject9.accounts.v1alpha1.projects.v1.DeleteUserByProjectRequest:.accounts.v1alpha1.projects.v1.DeleteUserByProjectResponse’
 EditRoleUserByProject;.accounts.v1alpha1.projects.v1.EditRoleUserByProjectRequest<.accounts.v1alpha1.projects.v1.EditRoleUserByProjectResponsež
 ListProjectByOrganization?.accounts.v1alpha1.projects.v1.ListProjectByOrganizationRequest@.accounts.v1alpha1.projects.v1.ListProjectByOrganizationResponse†
-UpdadeProjectRole7.accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest8.accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponseB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsbproto3'
+UpdateProjectRole7.accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest8.accounts.v1alpha1.projects.v1.UpdateProjectRoleResponseB=Z;github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/projectsbproto3'
         , true);
 
         static::$is_initialized = true;

@@ -385,7 +385,7 @@ func (x *ListProjectByOrganizationRequest) GetOrganizationId() string {
 	return ""
 }
 
-type UpdadeProjectRoleRequest struct {
+type UpdateProjectRoleRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -395,8 +395,8 @@ type UpdadeProjectRoleRequest struct {
 	RoleUuid  string `protobuf:"bytes,3,opt,name=role_uuid,json=roleUuid,proto3" json:"role_uuid,omitempty"`
 }
 
-func (x *UpdadeProjectRoleRequest) Reset() {
-	*x = UpdadeProjectRoleRequest{}
+func (x *UpdateProjectRoleRequest) Reset() {
+	*x = UpdateProjectRoleRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_accounts_v1alpha1_projects_projects_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -404,13 +404,13 @@ func (x *UpdadeProjectRoleRequest) Reset() {
 	}
 }
 
-func (x *UpdadeProjectRoleRequest) String() string {
+func (x *UpdateProjectRoleRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdadeProjectRoleRequest) ProtoMessage() {}
+func (*UpdateProjectRoleRequest) ProtoMessage() {}
 
-func (x *UpdadeProjectRoleRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateProjectRoleRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_accounts_v1alpha1_projects_projects_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -422,33 +422,33 @@ func (x *UpdadeProjectRoleRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdadeProjectRoleRequest.ProtoReflect.Descriptor instead.
-func (*UpdadeProjectRoleRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateProjectRoleRequest.ProtoReflect.Descriptor instead.
+func (*UpdateProjectRoleRequest) Descriptor() ([]byte, []int) {
 	return file_accounts_v1alpha1_projects_projects_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *UpdadeProjectRoleRequest) GetProjectId() string {
+func (x *UpdateProjectRoleRequest) GetProjectId() string {
 	if x != nil {
 		return x.ProjectId
 	}
 	return ""
 }
 
-func (x *UpdadeProjectRoleRequest) GetUserId() uint32 {
+func (x *UpdateProjectRoleRequest) GetUserId() uint32 {
 	if x != nil {
 		return x.UserId
 	}
 	return 0
 }
 
-func (x *UpdadeProjectRoleRequest) GetRoleUuid() string {
+func (x *UpdateProjectRoleRequest) GetRoleUuid() string {
 	if x != nil {
 		return x.RoleUuid
 	}
 	return ""
 }
 
-type UpdadeProjectRoleResponse struct {
+type UpdateProjectRoleResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -456,8 +456,8 @@ type UpdadeProjectRoleResponse struct {
 	Msg string `protobuf:"bytes,1,opt,name=msg,proto3" json:"msg,omitempty"`
 }
 
-func (x *UpdadeProjectRoleResponse) Reset() {
-	*x = UpdadeProjectRoleResponse{}
+func (x *UpdateProjectRoleResponse) Reset() {
+	*x = UpdateProjectRoleResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_accounts_v1alpha1_projects_projects_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -465,13 +465,13 @@ func (x *UpdadeProjectRoleResponse) Reset() {
 	}
 }
 
-func (x *UpdadeProjectRoleResponse) String() string {
+func (x *UpdateProjectRoleResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdadeProjectRoleResponse) ProtoMessage() {}
+func (*UpdateProjectRoleResponse) ProtoMessage() {}
 
-func (x *UpdadeProjectRoleResponse) ProtoReflect() protoreflect.Message {
+func (x *UpdateProjectRoleResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_accounts_v1alpha1_projects_projects_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -483,12 +483,12 @@ func (x *UpdadeProjectRoleResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdadeProjectRoleResponse.ProtoReflect.Descriptor instead.
-func (*UpdadeProjectRoleResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateProjectRoleResponse.ProtoReflect.Descriptor instead.
+func (*UpdateProjectRoleResponse) Descriptor() ([]byte, []int) {
 	return file_accounts_v1alpha1_projects_projects_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *UpdadeProjectRoleResponse) GetMsg() string {
+func (x *UpdateProjectRoleResponse) GetMsg() string {
 	if x != nil {
 		return x.Msg
 	}
@@ -1468,14 +1468,14 @@ var file_accounts_v1alpha1_projects_projects_proto_rawDesc = []byte{
 	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x0f, 0x6f, 0x72, 0x67,
 	0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x0e, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x49, 0x64, 0x22, 0x6f, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61, 0x64, 0x65, 0x50, 0x72, 0x6f, 0x6a,
+	0x49, 0x64, 0x22, 0x6f, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x6a,
 	0x65, 0x63, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1d,
 	0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64, 0x12, 0x17, 0x0a,
 	0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06,
 	0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x1b, 0x0a, 0x09, 0x72, 0x6f, 0x6c, 0x65, 0x5f, 0x75,
 	0x75, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x72, 0x6f, 0x6c, 0x65, 0x55,
-	0x75, 0x69, 0x64, 0x22, 0x2d, 0x0a, 0x19, 0x55, 0x70, 0x64, 0x61, 0x64, 0x65, 0x50, 0x72, 0x6f,
+	0x75, 0x69, 0x64, 0x22, 0x2d, 0x0a, 0x19, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x72, 0x6f,
 	0x6a, 0x65, 0x63, 0x74, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d,
 	0x73, 0x67, 0x22, 0x5c, 0x0a, 0x09, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x52, 0x6f, 0x6c, 0x12,
@@ -1603,8 +1603,8 @@ var file_accounts_v1alpha1_projects_projects_proto_goTypes = []interface{}{
 	(*ListProjectRequest)(nil),                // 3: accounts.v1alpha1.projects.v1.ListProjectRequest
 	(*UpdateProjectRequest)(nil),              // 4: accounts.v1alpha1.projects.v1.UpdateProjectRequest
 	(*ListProjectByOrganizationRequest)(nil),  // 5: accounts.v1alpha1.projects.v1.ListProjectByOrganizationRequest
-	(*UpdadeProjectRoleRequest)(nil),          // 6: accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest
-	(*UpdadeProjectRoleResponse)(nil),         // 7: accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse
+	(*UpdateProjectRoleRequest)(nil),          // 6: accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest
+	(*UpdateProjectRoleResponse)(nil),         // 7: accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse
 	(*MemberRol)(nil),                         // 8: accounts.v1alpha1.projects.v1.MemberRol
 	(*ProjectList)(nil),                       // 9: accounts.v1alpha1.projects.v1.ProjectList
 	(*CreateProjectResponse)(nil),             // 10: accounts.v1alpha1.projects.v1.CreateProjectResponse
@@ -1716,7 +1716,7 @@ func file_accounts_v1alpha1_projects_projects_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_projects_projects_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdadeProjectRoleRequest); i {
+			switch v := v.(*UpdateProjectRoleRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1728,7 +1728,7 @@ func file_accounts_v1alpha1_projects_projects_proto_init() {
 			}
 		}
 		file_accounts_v1alpha1_projects_projects_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdadeProjectRoleResponse); i {
+			switch v := v.(*UpdateProjectRoleResponse); i {
 			case 0:
 				return &v.state
 			case 1:

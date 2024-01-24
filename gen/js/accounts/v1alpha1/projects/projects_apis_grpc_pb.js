@@ -180,28 +180,6 @@ function deserialize_accounts_v1alpha1_projects_v1_ListProjectResponse(buffer_ar
   return accounts_v1alpha1_projects_projects_pb.ListProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest(arg) {
-  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleRequest)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest(buffer_arg) {
-  return accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse(arg) {
-  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleResponse)) {
-    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse');
-  }
-  return new Buffer(arg.serializeBinary());
-}
-
-function deserialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse(buffer_arg) {
-  return accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_accounts_v1alpha1_projects_v1_UpdateProjectRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.UpdateProjectRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.UpdateProjectRequest');
@@ -222,6 +200,28 @@ function serialize_accounts_v1alpha1_projects_v1_UpdateProjectResponse(arg) {
 
 function deserialize_accounts_v1alpha1_projects_v1_UpdateProjectResponse(buffer_arg) {
   return accounts_v1alpha1_projects_projects_pb.UpdateProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.UpdateProjectRoleRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.UpdateProjectRoleRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest(buffer_arg) {
+  return accounts_v1alpha1_projects_projects_pb.UpdateProjectRoleRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.UpdateProjectRoleResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.UpdateProjectRoleResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse(buffer_arg) {
+  return accounts_v1alpha1_projects_projects_pb.UpdateProjectRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -327,16 +327,16 @@ var ProjectServiceService = exports.ProjectServiceService = {
     responseSerialize: serialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationResponse,
   },
-  updadeProjectRole: {
-    path: '/accounts.v1alpha1.projects.v1.ProjectService/UpdadeProjectRole',
+  updateProjectRole: {
+    path: '/accounts.v1alpha1.projects.v1.ProjectService/UpdateProjectRole',
     requestStream: false,
     responseStream: false,
-    requestType: accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleRequest,
-    responseType: accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleResponse,
-    requestSerialize: serialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest,
-    requestDeserialize: deserialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest,
-    responseSerialize: serialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse,
-    responseDeserialize: deserialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse,
+    requestType: accounts_v1alpha1_projects_projects_pb.UpdateProjectRoleRequest,
+    responseType: accounts_v1alpha1_projects_projects_pb.UpdateProjectRoleResponse,
+    requestSerialize: serialize_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_projects_v1_UpdateProjectRoleRequest,
+    responseSerialize: serialize_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_projects_v1_UpdateProjectRoleResponse,
   },
 };
 
