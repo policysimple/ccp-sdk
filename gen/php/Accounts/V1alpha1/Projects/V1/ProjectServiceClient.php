@@ -4,6 +4,9 @@
 namespace Accounts\V1alpha1\Projects\V1;
 
 /**
+ * import "projects.proto";
+ * import "../accounts.proto";
+ *
  */
 class ProjectServiceClient extends \Grpc\BaseStub {
 
@@ -132,6 +135,19 @@ class ProjectServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/accounts.v1alpha1.projects.v1.ProjectService/ListProjectByOrganization',
         $argument,
         ['\Accounts\V1alpha1\Projects\V1\ListProjectByOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Accounts\V1alpha1\Projects\V1\UpdadeProjectRoleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdadeProjectRole(\Accounts\V1alpha1\Projects\V1\UpdadeProjectRoleRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.projects.v1.ProjectService/UpdadeProjectRole',
+        $argument,
+        ['\Accounts\V1alpha1\Projects\V1\UpdadeProjectRoleResponse', 'decode'],
         $metadata, $options);
     }
 

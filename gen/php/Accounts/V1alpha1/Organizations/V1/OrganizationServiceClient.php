@@ -4,6 +4,9 @@
 namespace Accounts\V1alpha1\Organizations\V1;
 
 /**
+ * import "organizations.proto";
+ * import "../accounts.proto";
+ *
  */
 class OrganizationServiceClient extends \Grpc\BaseStub {
 

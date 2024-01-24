@@ -30,6 +30,9 @@ namespace v1alpha1 {
 namespace organizations {
 namespace v1 {
 
+// import "organizations.proto";
+// import "../accounts.proto";
+//
 class OrganizationService final {
  public:
   static constexpr char const* service_full_name() {
@@ -74,6 +77,7 @@ class OrganizationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>> PrepareAsyncDeleteOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>>(PrepareAsyncDeleteOrganizationRaw(context, request, cq));
     }
+    // rpc UpdateOrganizationPermissions(UpdateOrganizationPermissionsRequest) returns (UpdateOrganizationResponse);
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -83,6 +87,7 @@ class OrganizationService final {
       virtual void GetOneOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::GetOneOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::GetOneOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // rpc UpdateOrganizationPermissions(UpdateOrganizationPermissionsRequest) returns (UpdateOrganizationResponse);
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -182,6 +187,7 @@ class OrganizationService final {
     virtual ::grpc::Status GetOneOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::GetOneOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::GetOneOrganizationResponse* response);
     virtual ::grpc::Status UpdateOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse* response);
     virtual ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse* response);
+    // rpc UpdateOrganizationPermissions(UpdateOrganizationPermissionsRequest) returns (UpdateOrganizationResponse);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateOrganization : public BaseClass {

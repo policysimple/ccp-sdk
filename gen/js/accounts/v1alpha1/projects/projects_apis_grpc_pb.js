@@ -180,6 +180,28 @@ function deserialize_accounts_v1alpha1_projects_v1_ListProjectResponse(buffer_ar
   return accounts_v1alpha1_projects_projects_pb.ListProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.UpdadeProjectRoleRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest(buffer_arg) {
+  return accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.UpdadeProjectRoleResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse(buffer_arg) {
+  return accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_accounts_v1alpha1_projects_v1_UpdateProjectRequest(arg) {
   if (!(arg instanceof accounts_v1alpha1_projects_projects_pb.UpdateProjectRequest)) {
     throw new Error('Expected argument of type accounts.v1alpha1.projects.v1.UpdateProjectRequest');
@@ -203,6 +225,9 @@ function deserialize_accounts_v1alpha1_projects_v1_UpdateProjectResponse(buffer_
 }
 
 
+// import "projects.proto";
+// import "../accounts.proto";
+//
 var ProjectServiceService = exports.ProjectServiceService = {
   // CRUD Project
   createProject: {
@@ -304,6 +329,17 @@ var ProjectServiceService = exports.ProjectServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationRequest,
     responseSerialize: serialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_projects_v1_ListProjectByOrganizationResponse,
+  },
+  updadeProjectRole: {
+    path: '/accounts.v1alpha1.projects.v1.ProjectService/UpdadeProjectRole',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleRequest,
+    responseType: accounts_v1alpha1_projects_projects_pb.UpdadeProjectRoleResponse,
+    requestSerialize: serialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleRequest,
+    responseSerialize: serialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_projects_v1_UpdadeProjectRoleResponse,
   },
 };
 

@@ -30,6 +30,9 @@ namespace v1alpha1 {
 namespace invitations {
 namespace v1 {
 
+// import "invitations.proto";
+// import "../accounts.proto";
+//
 class InvitationService final {
  public:
   static constexpr char const* service_full_name() {

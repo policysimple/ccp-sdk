@@ -4,6 +4,9 @@
 namespace Accounts\V1alpha1\Invitations\V1;
 
 /**
+ * import "invitations.proto";
+ * import "../accounts.proto";
+ *
  */
 class InvitationServiceClient extends \Grpc\BaseStub {
 
