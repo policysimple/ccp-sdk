@@ -5,10 +5,8 @@ from accounts.v1alpha1.projects import projects_pb2 as accounts_dot_v1alpha1_dot
 
 
 class ProjectServiceStub(object):
-  """import "projects.proto";
-  import "../accounts.proto";
-
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def __init__(self, channel):
     """Constructor.
@@ -69,10 +67,8 @@ class ProjectServiceStub(object):
 
 
 class ProjectServiceServicer(object):
-  """import "projects.proto";
-  import "../accounts.proto";
-
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def CreateProject(self, request, context):
     """CRUD Project

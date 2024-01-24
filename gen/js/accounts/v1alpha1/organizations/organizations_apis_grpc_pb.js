@@ -115,9 +115,6 @@ function deserialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationRespon
 }
 
 
-// import "organizations.proto";
-// import "../accounts.proto";
-//
 var OrganizationServiceService = exports.OrganizationServiceService = {
   // /Organization
   createOrganization: {
@@ -175,7 +172,6 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     responseSerialize: serialize_accounts_v1alpha1_organizations_v1_DeleteOrganizationResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_organizations_v1_DeleteOrganizationResponse,
   },
-  // rpc UpdateOrganizationPermissions(UpdateOrganizationPermissionsRequest) returns (UpdateOrganizationResponse);
 };
 
 exports.OrganizationServiceClient = grpc.makeGenericClientConstructor(OrganizationServiceService);

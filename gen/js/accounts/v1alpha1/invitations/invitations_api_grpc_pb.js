@@ -137,9 +137,6 @@ function deserialize_accounts_v1alpha1_invitations_v1_SendInvitationUserResponse
 }
 
 
-// import "invitations.proto";
-// import "../accounts.proto";
-//
 var InvitationServiceService = exports.InvitationServiceService = {
   // invitation
   sendInvitationUser: {

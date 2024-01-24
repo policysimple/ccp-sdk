@@ -225,9 +225,6 @@ function deserialize_accounts_v1alpha1_projects_v1_UpdateProjectResponse(buffer_
 }
 
 
-// import "projects.proto";
-// import "../accounts.proto";
-//
 var ProjectServiceService = exports.ProjectServiceService = {
   // CRUD Project
   createProject: {

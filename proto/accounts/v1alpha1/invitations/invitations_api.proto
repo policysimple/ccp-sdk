@@ -2,10 +2,8 @@ syntax = "proto3";
 
 option go_package = "github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/invitations";
 import "accounts/v1alpha1/invitations/invitations.proto";
-package accounts.v1alpha1.invitations.v1;
-
 // import "invitations.proto";
-// import "../accounts.proto";
+package accounts.v1alpha1.invitations.v1;
 
 service InvitationService {
 

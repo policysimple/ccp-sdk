@@ -4,9 +4,6 @@
 // 	protoc        v3.17.3
 // source: accounts/v1alpha1/users/users_api.proto
 
-//import "users.proto";
-//import "../accounts.proto";
-
 package users
 
 import (

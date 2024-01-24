@@ -5,10 +5,8 @@ from accounts.v1alpha1.organizations import organizations_pb2 as accounts_dot_v1
 
 
 class OrganizationServiceStub(object):
-  """import "organizations.proto";
-  import "../accounts.proto";
-
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def __init__(self, channel):
     """Constructor.
@@ -44,10 +42,8 @@ class OrganizationServiceStub(object):
 
 
 class OrganizationServiceServicer(object):
-  """import "organizations.proto";
-  import "../accounts.proto";
-
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def CreateOrganization(self, request, context):
     """/Organization
@@ -78,8 +74,8 @@ class OrganizationServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def DeleteOrganization(self, request, context):
-    """rpc UpdateOrganizationPermissions(UpdateOrganizationPermissionsRequest) returns (UpdateOrganizationResponse);
-    """
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

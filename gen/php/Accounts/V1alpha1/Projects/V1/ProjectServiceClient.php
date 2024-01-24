@@ -4,9 +4,6 @@
 namespace Accounts\V1alpha1\Projects\V1;
 
 /**
- * import "projects.proto";
- * import "../accounts.proto";
- *
  */
 class ProjectServiceClient extends \Grpc\BaseStub {
 

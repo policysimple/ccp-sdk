@@ -5,10 +5,8 @@ from accounts.v1alpha1.invitations import invitations_pb2 as accounts_dot_v1alph
 
 
 class InvitationServiceStub(object):
-  """import "invitations.proto";
-  import "../accounts.proto";
-
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def __init__(self, channel):
     """Constructor.
@@ -49,10 +47,8 @@ class InvitationServiceStub(object):
 
 
 class InvitationServiceServicer(object):
-  """import "invitations.proto";
-  import "../accounts.proto";
-
-  """
+  # missing associated documentation comment in .proto file
+  pass
 
   def SendInvitationUser(self, request, context):
     """invitation

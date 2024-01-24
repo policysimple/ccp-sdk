@@ -30,9 +30,6 @@ namespace v1alpha1 {
 namespace projects {
 namespace v1 {
 
-// import "projects.proto";
-// import "../accounts.proto";
-//
 class ProjectService final {
  public:
   static constexpr char const* service_full_name() {
