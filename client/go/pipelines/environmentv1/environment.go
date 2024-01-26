@@ -183,3 +183,21 @@ func ListAllEnvironment(in *environmentpkgv1.ListAllEnvironmentRequest) (respons
 	}
 	return response, nil
 }
+
+func GetEnvironmentByName(in *environmentpkgv1.GetEnvironmentByNameRequest) (response *environmentpkgv1.GetEnvironmentByNameResponse, err error) {
+	bylogs.LogInfo("client: list all environment")
+	d, err := time.ParseDuration(environmentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.GetEnvironmentByName(ctx, in)
+
+	if err != nil {
+		bylogs.LogErr("client: error list environment", err)
+		return nil, fmt.Errorf("[GetEnvironmentByName] %w", err)
+	}
+	return response, nil
+}
