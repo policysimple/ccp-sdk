@@ -47,7 +47,7 @@ struct TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eprot
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -81,6 +81,12 @@ extern GetByNameEnvironmentRequestDefaultTypeInternal _GetByNameEnvironmentReque
 class GetByNameEnvironmentResponse;
 struct GetByNameEnvironmentResponseDefaultTypeInternal;
 extern GetByNameEnvironmentResponseDefaultTypeInternal _GetByNameEnvironmentResponse_default_instance_;
+class GetEnvironmentByNameRequest;
+struct GetEnvironmentByNameRequestDefaultTypeInternal;
+extern GetEnvironmentByNameRequestDefaultTypeInternal _GetEnvironmentByNameRequest_default_instance_;
+class GetEnvironmentByNameResponse;
+struct GetEnvironmentByNameResponseDefaultTypeInternal;
+extern GetEnvironmentByNameResponseDefaultTypeInternal _GetEnvironmentByNameResponse_default_instance_;
 class GetOneEnvironmentRequest;
 struct GetOneEnvironmentRequestDefaultTypeInternal;
 extern GetOneEnvironmentRequestDefaultTypeInternal _GetOneEnvironmentRequest_default_instance_;
@@ -117,6 +123,8 @@ template<> ::pipelines::environment::v1alpha1::DeleteEnvironmentRequest* Arena::
 template<> ::pipelines::environment::v1alpha1::DeleteEnvironmentResponse* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::DeleteEnvironmentResponse>(Arena*);
 template<> ::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::GetByNameEnvironmentRequest>(Arena*);
 template<> ::pipelines::environment::v1alpha1::GetByNameEnvironmentResponse* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::GetByNameEnvironmentResponse>(Arena*);
+template<> ::pipelines::environment::v1alpha1::GetEnvironmentByNameRequest* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::GetEnvironmentByNameRequest>(Arena*);
+template<> ::pipelines::environment::v1alpha1::GetEnvironmentByNameResponse* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::GetEnvironmentByNameResponse>(Arena*);
 template<> ::pipelines::environment::v1alpha1::GetOneEnvironmentRequest* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::GetOneEnvironmentRequest>(Arena*);
 template<> ::pipelines::environment::v1alpha1::GetOneEnvironmentResponse* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::GetOneEnvironmentResponse>(Arena*);
 template<> ::pipelines::environment::v1alpha1::ListAllEnvironmentRequest* Arena::CreateMaybeMessage<::pipelines::environment::v1alpha1::ListAllEnvironmentRequest>(Arena*);
@@ -2580,6 +2588,298 @@ class ListAllEnvironmentResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class GetEnvironmentByNameRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.environment.v1alpha1.GetEnvironmentByNameRequest) */ {
+ public:
+  inline GetEnvironmentByNameRequest() : GetEnvironmentByNameRequest(nullptr) {}
+  ~GetEnvironmentByNameRequest() override;
+  explicit constexpr GetEnvironmentByNameRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetEnvironmentByNameRequest(const GetEnvironmentByNameRequest& from);
+  GetEnvironmentByNameRequest(GetEnvironmentByNameRequest&& from) noexcept
+    : GetEnvironmentByNameRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetEnvironmentByNameRequest& operator=(const GetEnvironmentByNameRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetEnvironmentByNameRequest& operator=(GetEnvironmentByNameRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetEnvironmentByNameRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetEnvironmentByNameRequest* internal_default_instance() {
+    return reinterpret_cast<const GetEnvironmentByNameRequest*>(
+               &_GetEnvironmentByNameRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(GetEnvironmentByNameRequest& a, GetEnvironmentByNameRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetEnvironmentByNameRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetEnvironmentByNameRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetEnvironmentByNameRequest* New() const final {
+    return new GetEnvironmentByNameRequest();
+  }
+
+  GetEnvironmentByNameRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetEnvironmentByNameRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetEnvironmentByNameRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetEnvironmentByNameRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetEnvironmentByNameRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.environment.v1alpha1.GetEnvironmentByNameRequest";
+  }
+  protected:
+  explicit GetEnvironmentByNameRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEnvironmentNameFieldNumber = 1,
+  };
+  // string environment_name = 1 [json_name = "environmentName"];
+  void clear_environment_name();
+  const std::string& environment_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_environment_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_environment_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_environment_name();
+  void set_allocated_environment_name(std::string* environment_name);
+  private:
+  const std::string& _internal_environment_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_environment_name(const std::string& value);
+  std::string* _internal_mutable_environment_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.GetEnvironmentByNameRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr environment_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetEnvironmentByNameResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pipelines.environment.v1alpha1.GetEnvironmentByNameResponse) */ {
+ public:
+  inline GetEnvironmentByNameResponse() : GetEnvironmentByNameResponse(nullptr) {}
+  ~GetEnvironmentByNameResponse() override;
+  explicit constexpr GetEnvironmentByNameResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetEnvironmentByNameResponse(const GetEnvironmentByNameResponse& from);
+  GetEnvironmentByNameResponse(GetEnvironmentByNameResponse&& from) noexcept
+    : GetEnvironmentByNameResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetEnvironmentByNameResponse& operator=(const GetEnvironmentByNameResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetEnvironmentByNameResponse& operator=(GetEnvironmentByNameResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetEnvironmentByNameResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetEnvironmentByNameResponse* internal_default_instance() {
+    return reinterpret_cast<const GetEnvironmentByNameResponse*>(
+               &_GetEnvironmentByNameResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(GetEnvironmentByNameResponse& a, GetEnvironmentByNameResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetEnvironmentByNameResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetEnvironmentByNameResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetEnvironmentByNameResponse* New() const final {
+    return new GetEnvironmentByNameResponse();
+  }
+
+  GetEnvironmentByNameResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetEnvironmentByNameResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetEnvironmentByNameResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const GetEnvironmentByNameResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetEnvironmentByNameResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pipelines.environment.v1alpha1.GetEnvironmentByNameResponse";
+  }
+  protected:
+  explicit GetEnvironmentByNameResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEnvironmentFieldNumber = 1,
+  };
+  // .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+  bool has_environment() const;
+  private:
+  bool _internal_has_environment() const;
+  public:
+  void clear_environment();
+  const ::pipelines::environment::v1alpha1::Environment& environment() const;
+  PROTOBUF_MUST_USE_RESULT ::pipelines::environment::v1alpha1::Environment* release_environment();
+  ::pipelines::environment::v1alpha1::Environment* mutable_environment();
+  void set_allocated_environment(::pipelines::environment::v1alpha1::Environment* environment);
+  private:
+  const ::pipelines::environment::v1alpha1::Environment& _internal_environment() const;
+  ::pipelines::environment::v1alpha1::Environment* _internal_mutable_environment();
+  public:
+  void unsafe_arena_set_allocated_environment(
+      ::pipelines::environment::v1alpha1::Environment* environment);
+  ::pipelines::environment::v1alpha1::Environment* unsafe_arena_release_environment();
+
+  // @@protoc_insertion_point(class_scope:pipelines.environment.v1alpha1.GetEnvironmentByNameResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::pipelines::environment::v1alpha1::Environment* environment_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pipelines_2fenvironment_2fv1alpha1_2fenvironment_5fapi_2eproto;
+};
 // ===================================================================
 
 
@@ -3971,9 +4271,153 @@ ListAllEnvironmentResponse::environment() const {
   return environment_;
 }
 
+// -------------------------------------------------------------------
+
+// GetEnvironmentByNameRequest
+
+// string environment_name = 1 [json_name = "environmentName"];
+inline void GetEnvironmentByNameRequest::clear_environment_name() {
+  environment_name_.ClearToEmpty();
+}
+inline const std::string& GetEnvironmentByNameRequest::environment_name() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.GetEnvironmentByNameRequest.environment_name)
+  return _internal_environment_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetEnvironmentByNameRequest::set_environment_name(ArgT0&& arg0, ArgT... args) {
+ 
+ environment_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:pipelines.environment.v1alpha1.GetEnvironmentByNameRequest.environment_name)
+}
+inline std::string* GetEnvironmentByNameRequest::mutable_environment_name() {
+  std::string* _s = _internal_mutable_environment_name();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.GetEnvironmentByNameRequest.environment_name)
+  return _s;
+}
+inline const std::string& GetEnvironmentByNameRequest::_internal_environment_name() const {
+  return environment_name_.Get();
+}
+inline void GetEnvironmentByNameRequest::_internal_set_environment_name(const std::string& value) {
+  
+  environment_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* GetEnvironmentByNameRequest::_internal_mutable_environment_name() {
+  
+  return environment_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* GetEnvironmentByNameRequest::release_environment_name() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.GetEnvironmentByNameRequest.environment_name)
+  return environment_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void GetEnvironmentByNameRequest::set_allocated_environment_name(std::string* environment_name) {
+  if (environment_name != nullptr) {
+    
+  } else {
+    
+  }
+  environment_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), environment_name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.GetEnvironmentByNameRequest.environment_name)
+}
+
+// -------------------------------------------------------------------
+
+// GetEnvironmentByNameResponse
+
+// .pipelines.environment.v1alpha1.Environment environment = 1 [json_name = "environment"];
+inline bool GetEnvironmentByNameResponse::_internal_has_environment() const {
+  return this != internal_default_instance() && environment_ != nullptr;
+}
+inline bool GetEnvironmentByNameResponse::has_environment() const {
+  return _internal_has_environment();
+}
+inline const ::pipelines::environment::v1alpha1::Environment& GetEnvironmentByNameResponse::_internal_environment() const {
+  const ::pipelines::environment::v1alpha1::Environment* p = environment_;
+  return p != nullptr ? *p : reinterpret_cast<const ::pipelines::environment::v1alpha1::Environment&>(
+      ::pipelines::environment::v1alpha1::_Environment_default_instance_);
+}
+inline const ::pipelines::environment::v1alpha1::Environment& GetEnvironmentByNameResponse::environment() const {
+  // @@protoc_insertion_point(field_get:pipelines.environment.v1alpha1.GetEnvironmentByNameResponse.environment)
+  return _internal_environment();
+}
+inline void GetEnvironmentByNameResponse::unsafe_arena_set_allocated_environment(
+    ::pipelines::environment::v1alpha1::Environment* environment) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(environment_);
+  }
+  environment_ = environment;
+  if (environment) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pipelines.environment.v1alpha1.GetEnvironmentByNameResponse.environment)
+}
+inline ::pipelines::environment::v1alpha1::Environment* GetEnvironmentByNameResponse::release_environment() {
+  
+  ::pipelines::environment::v1alpha1::Environment* temp = environment_;
+  environment_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::pipelines::environment::v1alpha1::Environment* GetEnvironmentByNameResponse::unsafe_arena_release_environment() {
+  // @@protoc_insertion_point(field_release:pipelines.environment.v1alpha1.GetEnvironmentByNameResponse.environment)
+  
+  ::pipelines::environment::v1alpha1::Environment* temp = environment_;
+  environment_ = nullptr;
+  return temp;
+}
+inline ::pipelines::environment::v1alpha1::Environment* GetEnvironmentByNameResponse::_internal_mutable_environment() {
+  
+  if (environment_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pipelines::environment::v1alpha1::Environment>(GetArenaForAllocation());
+    environment_ = p;
+  }
+  return environment_;
+}
+inline ::pipelines::environment::v1alpha1::Environment* GetEnvironmentByNameResponse::mutable_environment() {
+  ::pipelines::environment::v1alpha1::Environment* _msg = _internal_mutable_environment();
+  // @@protoc_insertion_point(field_mutable:pipelines.environment.v1alpha1.GetEnvironmentByNameResponse.environment)
+  return _msg;
+}
+inline void GetEnvironmentByNameResponse::set_allocated_environment(::pipelines::environment::v1alpha1::Environment* environment) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(environment_);
+  }
+  if (environment) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(environment));
+    if (message_arena != submessage_arena) {
+      environment = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, environment, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  environment_ = environment;
+  // @@protoc_insertion_point(field_set_allocated:pipelines.environment.v1alpha1.GetEnvironmentByNameResponse.environment)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

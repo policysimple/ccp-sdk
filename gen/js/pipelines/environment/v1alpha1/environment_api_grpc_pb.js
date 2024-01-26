@@ -93,6 +93,28 @@ function deserialize_pipelines_environment_v1alpha1_GetByNameEnvironmentResponse
   return pipelines_environment_v1alpha1_environment_api_pb.GetByNameEnvironmentResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_environment_v1alpha1_GetEnvironmentByNameRequest(arg) {
+  if (!(arg instanceof pipelines_environment_v1alpha1_environment_api_pb.GetEnvironmentByNameRequest)) {
+    throw new Error('Expected argument of type pipelines.environment.v1alpha1.GetEnvironmentByNameRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_environment_v1alpha1_GetEnvironmentByNameRequest(buffer_arg) {
+  return pipelines_environment_v1alpha1_environment_api_pb.GetEnvironmentByNameRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_environment_v1alpha1_GetEnvironmentByNameResponse(arg) {
+  if (!(arg instanceof pipelines_environment_v1alpha1_environment_api_pb.GetEnvironmentByNameResponse)) {
+    throw new Error('Expected argument of type pipelines.environment.v1alpha1.GetEnvironmentByNameResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_environment_v1alpha1_GetEnvironmentByNameResponse(buffer_arg) {
+  return pipelines_environment_v1alpha1_environment_api_pb.GetEnvironmentByNameResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_environment_v1alpha1_GetOneEnvironmentRequest(arg) {
   if (!(arg instanceof pipelines_environment_v1alpha1_environment_api_pb.GetOneEnvironmentRequest)) {
     throw new Error('Expected argument of type pipelines.environment.v1alpha1.GetOneEnvironmentRequest');
@@ -270,6 +292,17 @@ var EnvironmentAPIServiceService = exports.EnvironmentAPIServiceService = {
     requestDeserialize: deserialize_pipelines_environment_v1alpha1_ListAllEnvironmentRequest,
     responseSerialize: serialize_pipelines_environment_v1alpha1_ListAllEnvironmentResponse,
     responseDeserialize: deserialize_pipelines_environment_v1alpha1_ListAllEnvironmentResponse,
+  },
+  getEnvironmentByName: {
+    path: '/pipelines.environment.v1alpha1.EnvironmentAPIService/GetEnvironmentByName',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_environment_v1alpha1_environment_api_pb.GetEnvironmentByNameRequest,
+    responseType: pipelines_environment_v1alpha1_environment_api_pb.GetEnvironmentByNameResponse,
+    requestSerialize: serialize_pipelines_environment_v1alpha1_GetEnvironmentByNameRequest,
+    requestDeserialize: deserialize_pipelines_environment_v1alpha1_GetEnvironmentByNameRequest,
+    responseSerialize: serialize_pipelines_environment_v1alpha1_GetEnvironmentByNameResponse,
+    responseDeserialize: deserialize_pipelines_environment_v1alpha1_GetEnvironmentByNameResponse,
   },
 };
 

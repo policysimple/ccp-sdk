@@ -94,6 +94,16 @@ public final class EnvironmentAPIProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -146,41 +156,50 @@ public final class EnvironmentAPIProto {
       "nvironmentRequest\"k\n\032ListAllEnvironmentR" +
       "esponse\022M\n\013environment\030\001 \003(\0132+.pipelines" +
       ".environment.v1alpha1.EnvironmentR\013envir" +
-      "onment2\220\t\n\025EnvironmentAPIService\022\210\001\n\021Cre" +
-      "ateEnvironment\0228.pipelines.environment.v" +
-      "1alpha1.CreateEnvironmentRequest\0329.pipel" +
-      "ines.environment.v1alpha1.CreateEnvironm" +
-      "entResponse\022\210\001\n\021GetOneEnvironment\0228.pipe" +
-      "lines.environment.v1alpha1.GetOneEnviron" +
-      "mentRequest\0329.pipelines.environment.v1al" +
-      "pha1.GetOneEnvironmentResponse\022\210\001\n\021Updat" +
-      "eEnvironment\0228.pipelines.environment.v1a" +
-      "lpha1.UpdateEnvironmentRequest\0329.pipelin" +
-      "es.environment.v1alpha1.UpdateEnvironmen" +
-      "tResponse\022\202\001\n\017ListEnvironment\0226.pipeline" +
-      "s.environment.v1alpha1.ListEnvironmentRe" +
-      "quest\0327.pipelines.environment.v1alpha1.L" +
-      "istEnvironmentResponse\022\210\001\n\021DeleteEnviron" +
-      "ment\0228.pipelines.environment.v1alpha1.De" +
-      "leteEnvironmentRequest\0329.pipelines.envir" +
-      "onment.v1alpha1.DeleteEnvironmentRespons" +
-      "e\022\221\001\n\024GetByNameEnvironment\022;.pipelines.e" +
-      "nvironment.v1alpha1.GetByNameEnvironment" +
-      "Request\032<.pipelines.environment.v1alpha1" +
-      ".GetByNameEnvironmentResponse\022\243\001\n\032Create" +
-      "VclusterOrganization\022A.pipelines.environ" +
-      "ment.v1alpha1.CreateVclusterOrganization" +
-      "Request\032B.pipelines.environment.v1alpha1" +
-      ".CreateVclusterOrganizationResponse\022\213\001\n\022" +
-      "ListAllEnvironment\0229.pipelines.environme" +
-      "nt.v1alpha1.ListAllEnvironmentRequest\032:." +
-      "pipelines.environment.v1alpha1.ListAllEn" +
-      "vironmentResponseB\312\001\n(io.cuemby.pipeline" +
-      "s.environment.v1alpha1B\023EnvironmentAPIPr" +
-      "otoP\001Z?github.com/cuemby/ccp-sdk/gen/go/" +
-      "pipelines/environment/v1alpha1\242\002\003PPX\252\002\036P" +
-      "ipelines.Environment.V1Alpha1\312\002\036Pipeline" +
-      "s\\Environment\\V1Alpha1b\006proto3"
+      "onment\"H\n\033GetEnvironmentByNameRequest\022)\n" +
+      "\020environment_name\030\001 \001(\tR\017environmentName" +
+      "\"m\n\034GetEnvironmentByNameResponse\022M\n\013envi" +
+      "ronment\030\001 \001(\0132+.pipelines.environment.v1" +
+      "alpha1.EnvironmentR\013environment2\244\n\n\025Envi" +
+      "ronmentAPIService\022\210\001\n\021CreateEnvironment\022" +
+      "8.pipelines.environment.v1alpha1.CreateE" +
+      "nvironmentRequest\0329.pipelines.environmen" +
+      "t.v1alpha1.CreateEnvironmentResponse\022\210\001\n" +
+      "\021GetOneEnvironment\0228.pipelines.environme" +
+      "nt.v1alpha1.GetOneEnvironmentRequest\0329.p" +
+      "ipelines.environment.v1alpha1.GetOneEnvi" +
+      "ronmentResponse\022\210\001\n\021UpdateEnvironment\0228." +
+      "pipelines.environment.v1alpha1.UpdateEnv" +
+      "ironmentRequest\0329.pipelines.environment." +
+      "v1alpha1.UpdateEnvironmentResponse\022\202\001\n\017L" +
+      "istEnvironment\0226.pipelines.environment.v" +
+      "1alpha1.ListEnvironmentRequest\0327.pipelin" +
+      "es.environment.v1alpha1.ListEnvironmentR" +
+      "esponse\022\210\001\n\021DeleteEnvironment\0228.pipeline" +
+      "s.environment.v1alpha1.DeleteEnvironment" +
+      "Request\0329.pipelines.environment.v1alpha1" +
+      ".DeleteEnvironmentResponse\022\221\001\n\024GetByName" +
+      "Environment\022;.pipelines.environment.v1al" +
+      "pha1.GetByNameEnvironmentRequest\032<.pipel" +
+      "ines.environment.v1alpha1.GetByNameEnvir" +
+      "onmentResponse\022\243\001\n\032CreateVclusterOrganiz" +
+      "ation\022A.pipelines.environment.v1alpha1.C" +
+      "reateVclusterOrganizationRequest\032B.pipel" +
+      "ines.environment.v1alpha1.CreateVcluster" +
+      "OrganizationResponse\022\213\001\n\022ListAllEnvironm" +
+      "ent\0229.pipelines.environment.v1alpha1.Lis" +
+      "tAllEnvironmentRequest\032:.pipelines.envir" +
+      "onment.v1alpha1.ListAllEnvironmentRespon" +
+      "se\022\221\001\n\024GetEnvironmentByName\022;.pipelines." +
+      "environment.v1alpha1.GetEnvironmentByNam" +
+      "eRequest\032<.pipelines.environment.v1alpha" +
+      "1.GetEnvironmentByNameResponseB\312\001\n(io.cu" +
+      "emby.pipelines.environment.v1alpha1B\023Env" +
+      "ironmentAPIProtoP\001Z?github.com/cuemby/cc" +
+      "p-sdk/gen/go/pipelines/environment/v1alp" +
+      "ha1\242\002\003PPX\252\002\036Pipelines.Environment.V1Alph" +
+      "a1\312\002\036Pipelines\\Environment\\V1Alpha1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -282,6 +301,18 @@ public final class EnvironmentAPIProto {
     internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_environment_v1alpha1_ListAllEnvironmentResponse_descriptor,
+        new java.lang.String[] { "Environment", });
+    internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameRequest_descriptor,
+        new java.lang.String[] { "EnvironmentName", });
+    internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_environment_v1alpha1_GetEnvironmentByNameResponse_descriptor,
         new java.lang.String[] { "Environment", });
     io.cuemby.pipelines.environment.v1alpha1.EnvironmentProto.getDescriptor();
   }

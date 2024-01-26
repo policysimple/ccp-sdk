@@ -120,4 +120,17 @@ class EnvironmentAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Environment\V1Alpha1\GetEnvironmentByNameRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetEnvironmentByName(\Pipelines\Environment\V1Alpha1\GetEnvironmentByNameRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.environment.v1alpha1.EnvironmentAPIService/GetEnvironmentByName',
+        $argument,
+        ['\Pipelines\Environment\V1Alpha1\GetEnvironmentByNameResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
