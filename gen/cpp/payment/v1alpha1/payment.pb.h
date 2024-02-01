@@ -892,11 +892,13 @@ class Subscription final :
     kSubscriptionIdFieldNumber = 1,
     kSubscriptionItemIdFieldNumber = 2,
     kInvoiceIdFieldNumber = 3,
-    kPriceCpuFieldNumber = 4,
-    kPriceBytesFieldNumber = 5,
-    kPricePipelineFieldNumber = 6,
-    kCurrencyFieldNumber = 7,
-    kIntervalFieldNumber = 8,
+    kPriceXsmallFieldNumber = 4,
+    kPriceSmallFieldNumber = 5,
+    kPriceMediumFieldNumber = 6,
+    kPriceLargeFieldNumber = 7,
+    kPriceXlargeFieldNumber = 8,
+    kCurrencyFieldNumber = 9,
+    kIntervalFieldNumber = 10,
   };
   // string subscription_id = 1 [json_name = "subscriptionId"];
   void clear_subscription_id();
@@ -940,49 +942,77 @@ class Subscription final :
   std::string* _internal_mutable_invoice_id();
   public:
 
-  // string price_cpu = 4 [json_name = "priceCpu"];
-  void clear_price_cpu();
-  const std::string& price_cpu() const;
+  // string price_xsmall = 4 [json_name = "priceXsmall"];
+  void clear_price_xsmall();
+  const std::string& price_xsmall() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_price_cpu(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_price_cpu();
-  PROTOBUF_MUST_USE_RESULT std::string* release_price_cpu();
-  void set_allocated_price_cpu(std::string* price_cpu);
+  void set_price_xsmall(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_price_xsmall();
+  PROTOBUF_MUST_USE_RESULT std::string* release_price_xsmall();
+  void set_allocated_price_xsmall(std::string* price_xsmall);
   private:
-  const std::string& _internal_price_cpu() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_cpu(const std::string& value);
-  std::string* _internal_mutable_price_cpu();
+  const std::string& _internal_price_xsmall() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_xsmall(const std::string& value);
+  std::string* _internal_mutable_price_xsmall();
   public:
 
-  // string price_bytes = 5 [json_name = "priceBytes"];
-  void clear_price_bytes();
-  const std::string& price_bytes() const;
+  // string price_small = 5 [json_name = "priceSmall"];
+  void clear_price_small();
+  const std::string& price_small() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_price_bytes(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_price_bytes();
-  PROTOBUF_MUST_USE_RESULT std::string* release_price_bytes();
-  void set_allocated_price_bytes(std::string* price_bytes);
+  void set_price_small(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_price_small();
+  PROTOBUF_MUST_USE_RESULT std::string* release_price_small();
+  void set_allocated_price_small(std::string* price_small);
   private:
-  const std::string& _internal_price_bytes() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_bytes(const std::string& value);
-  std::string* _internal_mutable_price_bytes();
+  const std::string& _internal_price_small() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_small(const std::string& value);
+  std::string* _internal_mutable_price_small();
   public:
 
-  // string price_pipeline = 6 [json_name = "pricePipeline"];
-  void clear_price_pipeline();
-  const std::string& price_pipeline() const;
+  // string price_medium = 6 [json_name = "priceMedium"];
+  void clear_price_medium();
+  const std::string& price_medium() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_price_pipeline(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_price_pipeline();
-  PROTOBUF_MUST_USE_RESULT std::string* release_price_pipeline();
-  void set_allocated_price_pipeline(std::string* price_pipeline);
+  void set_price_medium(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_price_medium();
+  PROTOBUF_MUST_USE_RESULT std::string* release_price_medium();
+  void set_allocated_price_medium(std::string* price_medium);
   private:
-  const std::string& _internal_price_pipeline() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_pipeline(const std::string& value);
-  std::string* _internal_mutable_price_pipeline();
+  const std::string& _internal_price_medium() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_medium(const std::string& value);
+  std::string* _internal_mutable_price_medium();
   public:
 
-  // string currency = 7 [json_name = "currency"];
+  // string price_large = 7 [json_name = "priceLarge"];
+  void clear_price_large();
+  const std::string& price_large() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_price_large(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_price_large();
+  PROTOBUF_MUST_USE_RESULT std::string* release_price_large();
+  void set_allocated_price_large(std::string* price_large);
+  private:
+  const std::string& _internal_price_large() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_large(const std::string& value);
+  std::string* _internal_mutable_price_large();
+  public:
+
+  // string price_xlarge = 8 [json_name = "priceXlarge"];
+  void clear_price_xlarge();
+  const std::string& price_xlarge() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_price_xlarge(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_price_xlarge();
+  PROTOBUF_MUST_USE_RESULT std::string* release_price_xlarge();
+  void set_allocated_price_xlarge(std::string* price_xlarge);
+  private:
+  const std::string& _internal_price_xlarge() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_price_xlarge(const std::string& value);
+  std::string* _internal_mutable_price_xlarge();
+  public:
+
+  // string currency = 9 [json_name = "currency"];
   void clear_currency();
   const std::string& currency() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -996,7 +1026,7 @@ class Subscription final :
   std::string* _internal_mutable_currency();
   public:
 
-  // string interval = 8 [json_name = "interval"];
+  // string interval = 10 [json_name = "interval"];
   void clear_interval();
   const std::string& interval() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1020,9 +1050,11 @@ class Subscription final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subscription_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subscription_item_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr invoice_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_cpu_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_bytes_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_pipeline_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_xsmall_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_small_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_medium_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_large_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_xlarge_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr currency_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr interval_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -5707,145 +5739,237 @@ inline void Subscription::set_allocated_invoice_id(std::string* invoice_id) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.invoice_id)
 }
 
-// string price_cpu = 4 [json_name = "priceCpu"];
-inline void Subscription::clear_price_cpu() {
-  price_cpu_.ClearToEmpty();
+// string price_xsmall = 4 [json_name = "priceXsmall"];
+inline void Subscription::clear_price_xsmall() {
+  price_xsmall_.ClearToEmpty();
 }
-inline const std::string& Subscription::price_cpu() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.price_cpu)
-  return _internal_price_cpu();
+inline const std::string& Subscription::price_xsmall() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.price_xsmall)
+  return _internal_price_xsmall();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Subscription::set_price_cpu(ArgT0&& arg0, ArgT... args) {
+void Subscription::set_price_xsmall(ArgT0&& arg0, ArgT... args) {
  
- price_cpu_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.price_cpu)
+ price_xsmall_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.price_xsmall)
 }
-inline std::string* Subscription::mutable_price_cpu() {
-  std::string* _s = _internal_mutable_price_cpu();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.price_cpu)
+inline std::string* Subscription::mutable_price_xsmall() {
+  std::string* _s = _internal_mutable_price_xsmall();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.price_xsmall)
   return _s;
 }
-inline const std::string& Subscription::_internal_price_cpu() const {
-  return price_cpu_.Get();
+inline const std::string& Subscription::_internal_price_xsmall() const {
+  return price_xsmall_.Get();
 }
-inline void Subscription::_internal_set_price_cpu(const std::string& value) {
+inline void Subscription::_internal_set_price_xsmall(const std::string& value) {
   
-  price_cpu_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  price_xsmall_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Subscription::_internal_mutable_price_cpu() {
+inline std::string* Subscription::_internal_mutable_price_xsmall() {
   
-  return price_cpu_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return price_xsmall_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Subscription::release_price_cpu() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.price_cpu)
-  return price_cpu_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Subscription::release_price_xsmall() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.price_xsmall)
+  return price_xsmall_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Subscription::set_allocated_price_cpu(std::string* price_cpu) {
-  if (price_cpu != nullptr) {
+inline void Subscription::set_allocated_price_xsmall(std::string* price_xsmall) {
+  if (price_xsmall != nullptr) {
     
   } else {
     
   }
-  price_cpu_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_cpu,
+  price_xsmall_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_xsmall,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_cpu)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_xsmall)
 }
 
-// string price_bytes = 5 [json_name = "priceBytes"];
-inline void Subscription::clear_price_bytes() {
-  price_bytes_.ClearToEmpty();
+// string price_small = 5 [json_name = "priceSmall"];
+inline void Subscription::clear_price_small() {
+  price_small_.ClearToEmpty();
 }
-inline const std::string& Subscription::price_bytes() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.price_bytes)
-  return _internal_price_bytes();
+inline const std::string& Subscription::price_small() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.price_small)
+  return _internal_price_small();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Subscription::set_price_bytes(ArgT0&& arg0, ArgT... args) {
+void Subscription::set_price_small(ArgT0&& arg0, ArgT... args) {
  
- price_bytes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.price_bytes)
+ price_small_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.price_small)
 }
-inline std::string* Subscription::mutable_price_bytes() {
-  std::string* _s = _internal_mutable_price_bytes();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.price_bytes)
+inline std::string* Subscription::mutable_price_small() {
+  std::string* _s = _internal_mutable_price_small();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.price_small)
   return _s;
 }
-inline const std::string& Subscription::_internal_price_bytes() const {
-  return price_bytes_.Get();
+inline const std::string& Subscription::_internal_price_small() const {
+  return price_small_.Get();
 }
-inline void Subscription::_internal_set_price_bytes(const std::string& value) {
+inline void Subscription::_internal_set_price_small(const std::string& value) {
   
-  price_bytes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  price_small_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Subscription::_internal_mutable_price_bytes() {
+inline std::string* Subscription::_internal_mutable_price_small() {
   
-  return price_bytes_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return price_small_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Subscription::release_price_bytes() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.price_bytes)
-  return price_bytes_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Subscription::release_price_small() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.price_small)
+  return price_small_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Subscription::set_allocated_price_bytes(std::string* price_bytes) {
-  if (price_bytes != nullptr) {
+inline void Subscription::set_allocated_price_small(std::string* price_small) {
+  if (price_small != nullptr) {
     
   } else {
     
   }
-  price_bytes_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_bytes,
+  price_small_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_small,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_bytes)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_small)
 }
 
-// string price_pipeline = 6 [json_name = "pricePipeline"];
-inline void Subscription::clear_price_pipeline() {
-  price_pipeline_.ClearToEmpty();
+// string price_medium = 6 [json_name = "priceMedium"];
+inline void Subscription::clear_price_medium() {
+  price_medium_.ClearToEmpty();
 }
-inline const std::string& Subscription::price_pipeline() const {
-  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.price_pipeline)
-  return _internal_price_pipeline();
+inline const std::string& Subscription::price_medium() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.price_medium)
+  return _internal_price_medium();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void Subscription::set_price_pipeline(ArgT0&& arg0, ArgT... args) {
+void Subscription::set_price_medium(ArgT0&& arg0, ArgT... args) {
  
- price_pipeline_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.price_pipeline)
+ price_medium_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.price_medium)
 }
-inline std::string* Subscription::mutable_price_pipeline() {
-  std::string* _s = _internal_mutable_price_pipeline();
-  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.price_pipeline)
+inline std::string* Subscription::mutable_price_medium() {
+  std::string* _s = _internal_mutable_price_medium();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.price_medium)
   return _s;
 }
-inline const std::string& Subscription::_internal_price_pipeline() const {
-  return price_pipeline_.Get();
+inline const std::string& Subscription::_internal_price_medium() const {
+  return price_medium_.Get();
 }
-inline void Subscription::_internal_set_price_pipeline(const std::string& value) {
+inline void Subscription::_internal_set_price_medium(const std::string& value) {
   
-  price_pipeline_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  price_medium_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* Subscription::_internal_mutable_price_pipeline() {
+inline std::string* Subscription::_internal_mutable_price_medium() {
   
-  return price_pipeline_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return price_medium_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* Subscription::release_price_pipeline() {
-  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.price_pipeline)
-  return price_pipeline_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* Subscription::release_price_medium() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.price_medium)
+  return price_medium_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void Subscription::set_allocated_price_pipeline(std::string* price_pipeline) {
-  if (price_pipeline != nullptr) {
+inline void Subscription::set_allocated_price_medium(std::string* price_medium) {
+  if (price_medium != nullptr) {
     
   } else {
     
   }
-  price_pipeline_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_pipeline,
+  price_medium_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_medium,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_pipeline)
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_medium)
 }
 
-// string currency = 7 [json_name = "currency"];
+// string price_large = 7 [json_name = "priceLarge"];
+inline void Subscription::clear_price_large() {
+  price_large_.ClearToEmpty();
+}
+inline const std::string& Subscription::price_large() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.price_large)
+  return _internal_price_large();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Subscription::set_price_large(ArgT0&& arg0, ArgT... args) {
+ 
+ price_large_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.price_large)
+}
+inline std::string* Subscription::mutable_price_large() {
+  std::string* _s = _internal_mutable_price_large();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.price_large)
+  return _s;
+}
+inline const std::string& Subscription::_internal_price_large() const {
+  return price_large_.Get();
+}
+inline void Subscription::_internal_set_price_large(const std::string& value) {
+  
+  price_large_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Subscription::_internal_mutable_price_large() {
+  
+  return price_large_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Subscription::release_price_large() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.price_large)
+  return price_large_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Subscription::set_allocated_price_large(std::string* price_large) {
+  if (price_large != nullptr) {
+    
+  } else {
+    
+  }
+  price_large_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_large,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_large)
+}
+
+// string price_xlarge = 8 [json_name = "priceXlarge"];
+inline void Subscription::clear_price_xlarge() {
+  price_xlarge_.ClearToEmpty();
+}
+inline const std::string& Subscription::price_xlarge() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.price_xlarge)
+  return _internal_price_xlarge();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Subscription::set_price_xlarge(ArgT0&& arg0, ArgT... args) {
+ 
+ price_xlarge_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.price_xlarge)
+}
+inline std::string* Subscription::mutable_price_xlarge() {
+  std::string* _s = _internal_mutable_price_xlarge();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.price_xlarge)
+  return _s;
+}
+inline const std::string& Subscription::_internal_price_xlarge() const {
+  return price_xlarge_.Get();
+}
+inline void Subscription::_internal_set_price_xlarge(const std::string& value) {
+  
+  price_xlarge_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Subscription::_internal_mutable_price_xlarge() {
+  
+  return price_xlarge_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Subscription::release_price_xlarge() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.price_xlarge)
+  return price_xlarge_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Subscription::set_allocated_price_xlarge(std::string* price_xlarge) {
+  if (price_xlarge != nullptr) {
+    
+  } else {
+    
+  }
+  price_xlarge_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), price_xlarge,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.price_xlarge)
+}
+
+// string currency = 9 [json_name = "currency"];
 inline void Subscription::clear_currency() {
   currency_.ClearToEmpty();
 }
@@ -5891,7 +6015,7 @@ inline void Subscription::set_allocated_currency(std::string* currency) {
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.currency)
 }
 
-// string interval = 8 [json_name = "interval"];
+// string interval = 10 [json_name = "interval"];
 inline void Subscription::clear_interval() {
   interval_.ClearToEmpty();
 }
