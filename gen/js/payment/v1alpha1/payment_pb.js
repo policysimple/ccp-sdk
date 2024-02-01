@@ -1530,11 +1530,13 @@ proto.payment.v1alpha1.Subscription.toObject = function(includeInstance, msg) {
     subscriptionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     subscriptionItemId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     invoiceId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    priceCpu: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    priceBytes: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    pricePipeline: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    currency: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    interval: jspb.Message.getFieldWithDefault(msg, 8, "")
+    priceXsmall: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    priceSmall: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    priceMedium: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    priceLarge: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    priceXlarge: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    currency: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    interval: jspb.Message.getFieldWithDefault(msg, 10, "")
   };
 
   if (includeInstance) {
@@ -1585,21 +1587,29 @@ proto.payment.v1alpha1.Subscription.deserializeBinaryFromReader = function(msg, 
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPriceCpu(value);
+      msg.setPriceXsmall(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPriceBytes(value);
+      msg.setPriceSmall(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPricePipeline(value);
+      msg.setPriceMedium(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCurrency(value);
+      msg.setPriceLarge(value);
       break;
     case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPriceXlarge(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCurrency(value);
+      break;
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setInterval(value);
       break;
@@ -1653,38 +1663,52 @@ proto.payment.v1alpha1.Subscription.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getPriceCpu();
+  f = message.getPriceXsmall();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getPriceBytes();
+  f = message.getPriceSmall();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getPricePipeline();
+  f = message.getPriceMedium();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getCurrency();
+  f = message.getPriceLarge();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getInterval();
+  f = message.getPriceXlarge();
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getCurrency();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getInterval();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -1746,10 +1770,10 @@ proto.payment.v1alpha1.Subscription.prototype.setInvoiceId = function(value) {
 
 
 /**
- * optional string price_cpu = 4;
+ * optional string price_xsmall = 4;
  * @return {string}
  */
-proto.payment.v1alpha1.Subscription.prototype.getPriceCpu = function() {
+proto.payment.v1alpha1.Subscription.prototype.getPriceXsmall = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -1758,16 +1782,16 @@ proto.payment.v1alpha1.Subscription.prototype.getPriceCpu = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Subscription} returns this
  */
-proto.payment.v1alpha1.Subscription.prototype.setPriceCpu = function(value) {
+proto.payment.v1alpha1.Subscription.prototype.setPriceXsmall = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string price_bytes = 5;
+ * optional string price_small = 5;
  * @return {string}
  */
-proto.payment.v1alpha1.Subscription.prototype.getPriceBytes = function() {
+proto.payment.v1alpha1.Subscription.prototype.getPriceSmall = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1776,16 +1800,16 @@ proto.payment.v1alpha1.Subscription.prototype.getPriceBytes = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Subscription} returns this
  */
-proto.payment.v1alpha1.Subscription.prototype.setPriceBytes = function(value) {
+proto.payment.v1alpha1.Subscription.prototype.setPriceSmall = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string price_pipeline = 6;
+ * optional string price_medium = 6;
  * @return {string}
  */
-proto.payment.v1alpha1.Subscription.prototype.getPricePipeline = function() {
+proto.payment.v1alpha1.Subscription.prototype.getPriceMedium = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -1794,16 +1818,16 @@ proto.payment.v1alpha1.Subscription.prototype.getPricePipeline = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Subscription} returns this
  */
-proto.payment.v1alpha1.Subscription.prototype.setPricePipeline = function(value) {
+proto.payment.v1alpha1.Subscription.prototype.setPriceMedium = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string currency = 7;
+ * optional string price_large = 7;
  * @return {string}
  */
-proto.payment.v1alpha1.Subscription.prototype.getCurrency = function() {
+proto.payment.v1alpha1.Subscription.prototype.getPriceLarge = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -1812,16 +1836,16 @@ proto.payment.v1alpha1.Subscription.prototype.getCurrency = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Subscription} returns this
  */
-proto.payment.v1alpha1.Subscription.prototype.setCurrency = function(value) {
+proto.payment.v1alpha1.Subscription.prototype.setPriceLarge = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string interval = 8;
+ * optional string price_xlarge = 8;
  * @return {string}
  */
-proto.payment.v1alpha1.Subscription.prototype.getInterval = function() {
+proto.payment.v1alpha1.Subscription.prototype.getPriceXlarge = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -1830,8 +1854,44 @@ proto.payment.v1alpha1.Subscription.prototype.getInterval = function() {
  * @param {string} value
  * @return {!proto.payment.v1alpha1.Subscription} returns this
  */
-proto.payment.v1alpha1.Subscription.prototype.setInterval = function(value) {
+proto.payment.v1alpha1.Subscription.prototype.setPriceXlarge = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string currency = 9;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Subscription.prototype.getCurrency = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Subscription} returns this
+ */
+proto.payment.v1alpha1.Subscription.prototype.setCurrency = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string interval = 10;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Subscription.prototype.getInterval = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Subscription} returns this
+ */
+proto.payment.v1alpha1.Subscription.prototype.setInterval = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
