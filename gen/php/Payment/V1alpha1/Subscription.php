@@ -26,33 +26,45 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $invoice_id = '';
     /**
-     * Generated from protobuf field <code>string price_xsmall = 4 [json_name = "priceXsmall"];</code>
+     * Generated from protobuf field <code>string price_cpu = 4 [json_name = "priceCpu"];</code>
      */
-    protected $price_xsmall = '';
+    protected $price_cpu = '';
     /**
-     * Generated from protobuf field <code>string price_small = 5 [json_name = "priceSmall"];</code>
+     * Generated from protobuf field <code>string price_bytes = 5 [json_name = "priceBytes"];</code>
      */
-    protected $price_small = '';
+    protected $price_bytes = '';
     /**
-     * Generated from protobuf field <code>string price_medium = 6 [json_name = "priceMedium"];</code>
+     * Generated from protobuf field <code>string price_pipeline = 6 [json_name = "pricePipeline"];</code>
      */
-    protected $price_medium = '';
+    protected $price_pipeline = '';
     /**
-     * Generated from protobuf field <code>string price_large = 7 [json_name = "priceLarge"];</code>
-     */
-    protected $price_large = '';
-    /**
-     * Generated from protobuf field <code>string price_xlarge = 8 [json_name = "priceXlarge"];</code>
-     */
-    protected $price_xlarge = '';
-    /**
-     * Generated from protobuf field <code>string currency = 9 [json_name = "currency"];</code>
+     * Generated from protobuf field <code>string currency = 7 [json_name = "currency"];</code>
      */
     protected $currency = '';
     /**
-     * Generated from protobuf field <code>string interval = 10 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>string interval = 8 [json_name = "interval"];</code>
      */
     protected $interval = '';
+    /**
+     * Generated from protobuf field <code>string price_xsmall = 9 [json_name = "priceXsmall"];</code>
+     */
+    protected $price_xsmall = '';
+    /**
+     * Generated from protobuf field <code>string price_small = 10 [json_name = "priceSmall"];</code>
+     */
+    protected $price_small = '';
+    /**
+     * Generated from protobuf field <code>string price_medium = 11 [json_name = "priceMedium"];</code>
+     */
+    protected $price_medium = '';
+    /**
+     * Generated from protobuf field <code>string price_large = 12 [json_name = "priceLarge"];</code>
+     */
+    protected $price_large = '';
+    /**
+     * Generated from protobuf field <code>string price_xlarge = 13 [json_name = "priceXlarge"];</code>
+     */
+    protected $price_xlarge = '';
 
     /**
      * Constructor.
@@ -63,13 +75,16 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *     @type string $subscription_id
      *     @type string $subscription_item_id
      *     @type string $invoice_id
+     *     @type string $price_cpu
+     *     @type string $price_bytes
+     *     @type string $price_pipeline
+     *     @type string $currency
+     *     @type string $interval
      *     @type string $price_xsmall
      *     @type string $price_small
      *     @type string $price_medium
      *     @type string $price_large
      *     @type string $price_xlarge
-     *     @type string $currency
-     *     @type string $interval
      * }
      */
     public function __construct($data = NULL) {
@@ -144,117 +159,73 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price_xsmall = 4 [json_name = "priceXsmall"];</code>
+     * Generated from protobuf field <code>string price_cpu = 4 [json_name = "priceCpu"];</code>
      * @return string
      */
-    public function getPriceXsmall()
+    public function getPriceCpu()
     {
-        return $this->price_xsmall;
+        return $this->price_cpu;
     }
 
     /**
-     * Generated from protobuf field <code>string price_xsmall = 4 [json_name = "priceXsmall"];</code>
+     * Generated from protobuf field <code>string price_cpu = 4 [json_name = "priceCpu"];</code>
      * @param string $var
      * @return $this
      */
-    public function setPriceXsmall($var)
+    public function setPriceCpu($var)
     {
         GPBUtil::checkString($var, True);
-        $this->price_xsmall = $var;
+        $this->price_cpu = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string price_small = 5 [json_name = "priceSmall"];</code>
+     * Generated from protobuf field <code>string price_bytes = 5 [json_name = "priceBytes"];</code>
      * @return string
      */
-    public function getPriceSmall()
+    public function getPriceBytes()
     {
-        return $this->price_small;
+        return $this->price_bytes;
     }
 
     /**
-     * Generated from protobuf field <code>string price_small = 5 [json_name = "priceSmall"];</code>
+     * Generated from protobuf field <code>string price_bytes = 5 [json_name = "priceBytes"];</code>
      * @param string $var
      * @return $this
      */
-    public function setPriceSmall($var)
+    public function setPriceBytes($var)
     {
         GPBUtil::checkString($var, True);
-        $this->price_small = $var;
+        $this->price_bytes = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string price_medium = 6 [json_name = "priceMedium"];</code>
+     * Generated from protobuf field <code>string price_pipeline = 6 [json_name = "pricePipeline"];</code>
      * @return string
      */
-    public function getPriceMedium()
+    public function getPricePipeline()
     {
-        return $this->price_medium;
+        return $this->price_pipeline;
     }
 
     /**
-     * Generated from protobuf field <code>string price_medium = 6 [json_name = "priceMedium"];</code>
+     * Generated from protobuf field <code>string price_pipeline = 6 [json_name = "pricePipeline"];</code>
      * @param string $var
      * @return $this
      */
-    public function setPriceMedium($var)
+    public function setPricePipeline($var)
     {
         GPBUtil::checkString($var, True);
-        $this->price_medium = $var;
+        $this->price_pipeline = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string price_large = 7 [json_name = "priceLarge"];</code>
-     * @return string
-     */
-    public function getPriceLarge()
-    {
-        return $this->price_large;
-    }
-
-    /**
-     * Generated from protobuf field <code>string price_large = 7 [json_name = "priceLarge"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPriceLarge($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->price_large = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string price_xlarge = 8 [json_name = "priceXlarge"];</code>
-     * @return string
-     */
-    public function getPriceXlarge()
-    {
-        return $this->price_xlarge;
-    }
-
-    /**
-     * Generated from protobuf field <code>string price_xlarge = 8 [json_name = "priceXlarge"];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPriceXlarge($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->price_xlarge = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string currency = 9 [json_name = "currency"];</code>
+     * Generated from protobuf field <code>string currency = 7 [json_name = "currency"];</code>
      * @return string
      */
     public function getCurrency()
@@ -263,7 +234,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string currency = 9 [json_name = "currency"];</code>
+     * Generated from protobuf field <code>string currency = 7 [json_name = "currency"];</code>
      * @param string $var
      * @return $this
      */
@@ -276,7 +247,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string interval = 10 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>string interval = 8 [json_name = "interval"];</code>
      * @return string
      */
     public function getInterval()
@@ -285,7 +256,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string interval = 10 [json_name = "interval"];</code>
+     * Generated from protobuf field <code>string interval = 8 [json_name = "interval"];</code>
      * @param string $var
      * @return $this
      */
@@ -293,6 +264,116 @@ class Subscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->interval = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_xsmall = 9 [json_name = "priceXsmall"];</code>
+     * @return string
+     */
+    public function getPriceXsmall()
+    {
+        return $this->price_xsmall;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_xsmall = 9 [json_name = "priceXsmall"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPriceXsmall($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->price_xsmall = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_small = 10 [json_name = "priceSmall"];</code>
+     * @return string
+     */
+    public function getPriceSmall()
+    {
+        return $this->price_small;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_small = 10 [json_name = "priceSmall"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPriceSmall($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->price_small = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_medium = 11 [json_name = "priceMedium"];</code>
+     * @return string
+     */
+    public function getPriceMedium()
+    {
+        return $this->price_medium;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_medium = 11 [json_name = "priceMedium"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPriceMedium($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->price_medium = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_large = 12 [json_name = "priceLarge"];</code>
+     * @return string
+     */
+    public function getPriceLarge()
+    {
+        return $this->price_large;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_large = 12 [json_name = "priceLarge"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPriceLarge($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->price_large = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_xlarge = 13 [json_name = "priceXlarge"];</code>
+     * @return string
+     */
+    public function getPriceXlarge()
+    {
+        return $this->price_xlarge;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_xlarge = 13 [json_name = "priceXlarge"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPriceXlarge($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->price_xlarge = $var;
 
         return $this;
     }

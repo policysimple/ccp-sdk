@@ -36,13 +36,16 @@ message Subscription {
   string subscription_id =1;
   string subscription_item_id =2;
   string invoice_id = 3;
-  string price_xsmall =4;
-  string price_small =5;
-  string price_medium =6;
-  string price_large =7;
-  string price_xlarge =8;
-  string currency =9;
-  string interval =10;   
+  string price_cpu =4;
+  string price_bytes =5;
+  string price_pipeline =6;
+  string currency =7;
+  string interval =8;   
+  string price_xsmall =9;
+  string price_small =10;
+  string price_medium =11;
+  string price_large =12;
+  string price_xlarge =13;
 }
 
 message Payment {
