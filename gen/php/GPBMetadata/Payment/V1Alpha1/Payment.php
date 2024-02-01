@@ -16,7 +16,7 @@ class Payment
         }
         $pool->internalAddGeneratedFile(
             '
-Ã
+¨
 payment/v1alpha1/payment.protopayment.v1alpha1"Û
 Customer
 id (	Rid
@@ -47,22 +47,26 @@ updated_at (	R	updatedAtB
 subscription	 (2.payment.v1alpha1.SubscriptionRsubscription
 status
  (Rstatus!
-is_suspended (RisSuspended"ë
+is_suspended (RisSuspended"Ð
 Subscription\'
 subscription_id (	RsubscriptionId0
 subscription_item_id (	RsubscriptionItemId
 
-invoice_id (	R	invoiceId!
-price_xsmall (	RpriceXsmall
-price_small (	R
+invoice_id (	R	invoiceId
+	price_cpu (	RpriceCpu
+price_bytes (	R
+priceBytes%
+price_pipeline (	RpricePipeline
+currency (	Rcurrency
+interval (	Rinterval!
+price_xsmall	 (	RpriceXsmall
+price_small
+ (	R
 priceSmall!
-price_medium (	RpriceMedium
-price_large (	R
+price_medium (	RpriceMedium
+price_large (	R
 priceLarge!
-price_xlarge (	RpriceXlarge
-currency	 (	Rcurrency
-interval
- (	Rinterval"·
+price_xlarge (	RpriceXlarge"·
 Payment
 card_id (	RcardId
 default (Rdefault

@@ -67,13 +67,16 @@ constexpr Subscription::Subscription(
   : subscription_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , subscription_item_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , invoice_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , price_cpu_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , price_bytes_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , price_pipeline_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , currency_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , interval_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , price_xsmall_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , price_small_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , price_medium_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , price_large_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , price_xlarge_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , currency_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , interval_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , price_xlarge_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct SubscriptionDefaultTypeInternal {
   constexpr SubscriptionDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -394,13 +397,16 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_payment_2fv1alpha1_2fpayment_2
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, subscription_id_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, subscription_item_id_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, invoice_id_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, price_cpu_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, price_bytes_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, price_pipeline_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, currency_),
+  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, interval_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, price_xsmall_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, price_small_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, price_medium_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, price_large_),
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, price_xlarge_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, currency_),
-  PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Subscription, interval_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::payment::v1alpha1::Payment, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -562,24 +568,24 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::payment::v1alpha1::Customer)},
   { 16, -1, sizeof(::payment::v1alpha1::Project)},
   { 32, -1, sizeof(::payment::v1alpha1::Subscription)},
-  { 47, -1, sizeof(::payment::v1alpha1::Payment)},
-  { 58, -1, sizeof(::payment::v1alpha1::Card)},
-  { 70, -1, sizeof(::payment::v1alpha1::Invoice)},
-  { 81, -1, sizeof(::payment::v1alpha1::Biling)},
-  { 100, -1, sizeof(::payment::v1alpha1::SubscriptionItems)},
-  { 109, -1, sizeof(::payment::v1alpha1::SubscriptionItemsList)},
-  { 115, -1, sizeof(::payment::v1alpha1::InvoiceList)},
-  { 121, -1, sizeof(::payment::v1alpha1::CustomerList)},
-  { 127, -1, sizeof(::payment::v1alpha1::BilingList)},
-  { 133, -1, sizeof(::payment::v1alpha1::SubscriptionList)},
-  { 139, -1, sizeof(::payment::v1alpha1::CardList)},
-  { 145, -1, sizeof(::payment::v1alpha1::PaymentList)},
-  { 151, -1, sizeof(::payment::v1alpha1::ProjectList)},
-  { 157, -1, sizeof(::payment::v1alpha1::ProjectBilling)},
-  { 169, -1, sizeof(::payment::v1alpha1::ProjectBillingList)},
-  { 175, -1, sizeof(::payment::v1alpha1::BlockChain)},
-  { 189, -1, sizeof(::payment::v1alpha1::Budget)},
-  { 197, -1, sizeof(::payment::v1alpha1::Webhook)},
+  { 50, -1, sizeof(::payment::v1alpha1::Payment)},
+  { 61, -1, sizeof(::payment::v1alpha1::Card)},
+  { 73, -1, sizeof(::payment::v1alpha1::Invoice)},
+  { 84, -1, sizeof(::payment::v1alpha1::Biling)},
+  { 103, -1, sizeof(::payment::v1alpha1::SubscriptionItems)},
+  { 112, -1, sizeof(::payment::v1alpha1::SubscriptionItemsList)},
+  { 118, -1, sizeof(::payment::v1alpha1::InvoiceList)},
+  { 124, -1, sizeof(::payment::v1alpha1::CustomerList)},
+  { 130, -1, sizeof(::payment::v1alpha1::BilingList)},
+  { 136, -1, sizeof(::payment::v1alpha1::SubscriptionList)},
+  { 142, -1, sizeof(::payment::v1alpha1::CardList)},
+  { 148, -1, sizeof(::payment::v1alpha1::PaymentList)},
+  { 154, -1, sizeof(::payment::v1alpha1::ProjectList)},
+  { 160, -1, sizeof(::payment::v1alpha1::ProjectBilling)},
+  { 172, -1, sizeof(::payment::v1alpha1::ProjectBillingList)},
+  { 178, -1, sizeof(::payment::v1alpha1::BlockChain)},
+  { 192, -1, sizeof(::payment::v1alpha1::Budget)},
+  { 200, -1, sizeof(::payment::v1alpha1::Webhook)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -629,80 +635,82 @@ const char descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto[] PROT
   "ated_at\030\010 \001(\tR\tupdatedAt\022B\n\014subscription"
   "\030\t \001(\0132\036.payment.v1alpha1.SubscriptionR\014"
   "subscription\022\026\n\006status\030\n \001(\010R\006status\022!\n\014"
-  "is_suspended\030\013 \001(\010R\013isSuspended\"\353\002\n\014Subs"
+  "is_suspended\030\013 \001(\010R\013isSuspended\"\320\003\n\014Subs"
   "cription\022\'\n\017subscription_id\030\001 \001(\tR\016subsc"
   "riptionId\0220\n\024subscription_item_id\030\002 \001(\tR"
   "\022subscriptionItemId\022\035\n\ninvoice_id\030\003 \001(\tR"
-  "\tinvoiceId\022!\n\014price_xsmall\030\004 \001(\tR\013priceX"
-  "small\022\037\n\013price_small\030\005 \001(\tR\npriceSmall\022!"
-  "\n\014price_medium\030\006 \001(\tR\013priceMedium\022\037\n\013pri"
-  "ce_large\030\007 \001(\tR\npriceLarge\022!\n\014price_xlar"
-  "ge\030\010 \001(\tR\013priceXlarge\022\032\n\010currency\030\t \001(\tR"
-  "\010currency\022\032\n\010interval\030\n \001(\tR\010interval\"\267\001"
-  "\n\007Payment\022\027\n\007card_id\030\001 \001(\tR\006cardId\022\030\n\007de"
-  "fault\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007e"
-  "nabled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\ntoken_ca"
-  "rd\030\005 \001(\tR\ttokenCard\022*\n\004card\030\006 \001(\0132\026.paym"
-  "ent.v1alpha1.CardR\004card\"\266\001\n\004Card\022\016\n\002id\030\001"
-  " \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022(\n\020card"
-  "_holder_name\030\003 \001(\tR\016cardHolderName\022\032\n\010ex"
-  "pmonth\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR"
-  "\007expyear\022\020\n\003cvc\030\006 \001(\tR\003cvc\022\024\n\005brand\030\007 \001("
-  "\tR\005brand\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006"
-  "amount\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(\tR\006pe"
-  "riod\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022\022\n\004da"
-  "te\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007product"
-  "\"\340\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ninvoice_i"
-  "d\030\002 \001(\tR\tinvoiceId\022!\n\014account_name\030\003 \001(\t"
-  "R\013accountName\022\036\n\ntotalusage\030\004 \001(\003R\ntotal"
-  "usage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n\003ram\030\006 \001(\001R\003ra"
-  "m\022\032\n\010pipeline\030\007 \001(\001R\010pipeline\022\024\n\005month\030\010"
-  " \001(\tR\005month\022\022\n\004year\030\t \001(\tR\004year\022\026\n\006amoun"
-  "t\030\n \001(\003R\006amount\022\026\n\006period\030\013 \001(\tR\006period\022"
-  "\034\n\tstatuspay\030\014 \001(\tR\tstatuspay\022\022\n\004date\030\r "
-  "\001(\tR\004date\022\030\n\007product\030\016 \001(\tR\007product\"\217\001\n\021"
-  "SubscriptionItems\022\016\n\002id\030\001 \001(\tR\002id\0220\n\024sub"
-  "scription_item_id\030\002 \001(\tR\022subscriptionIte"
-  "mId\022\031\n\010price_id\030\003 \001(\tR\007priceId\022\035\n\nproduc"
-  "t_id\030\004 \001(\tR\tproductId\"R\n\025SubscriptionIte"
-  "msList\0229\n\005items\030\001 \003(\0132#.payment.v1alpha1"
-  ".SubscriptionItemsR\005items\">\n\013InvoiceList"
-  "\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Invoi"
-  "ceR\005items\"@\n\014CustomerList\0220\n\005items\030\001 \003(\013"
-  "2\032.payment.v1alpha1.CustomerR\005items\"<\n\nB"
-  "ilingList\022.\n\005items\030\001 \003(\0132\030.payment.v1alp"
-  "ha1.BilingR\005items\"H\n\020SubscriptionList\0224\n"
-  "\005items\030\001 \003(\0132\036.payment.v1alpha1.Subscrip"
-  "tionR\005items\"8\n\010CardList\022,\n\005items\030\001 \003(\0132\026"
-  ".payment.v1alpha1.CardR\005items\">\n\013Payment"
-  "List\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.P"
-  "aymentR\005items\">\n\013ProjectList\022/\n\005items\030\001 "
-  "\003(\0132\031.payment.v1alpha1.ProjectR\005items\"\266\001"
-  "\n\016ProjectBilling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproj"
-  "ect_id\030\002 \001(\tR\tprojectId\022!\n\014project_name\030"
-  "\003 \001(\tR\013projectName\022\022\n\004plan\030\004 \001(\tR\004plan\022\020"
-  "\n\003ram\030\005 \001(\tR\003ram\022\020\n\003cpu\030\006 \001(\tR\003cpu\022\032\n\010pi"
-  "peline\030\007 \001(\tR\010pipeline\"L\n\022ProjectBilling"
-  "List\0226\n\005items\030\001 \003(\0132 .payment.v1alpha1.P"
-  "rojectBillingR\005items\"\337\002\n\nBlockChain\022#\n\rb"
-  "lockchain_id\030\001 \001(\tR\014blockchainId\022\'\n\017bloc"
-  "kchain_name\030\002 \001(\tR\016blockchainName\022\'\n\017blo"
-  "ckchain_type\030\003 \001(\tR\016blockchainType\022\035\n\npr"
-  "oject_id\030\004 \001(\tR\tprojectId\022B\n\014subscriptio"
-  "n\030\005 \001(\0132\036.payment.v1alpha1.SubscriptionR"
-  "\014subscription\022\035\n\ncreated_at\030\006 \001(\tR\tcreat"
-  "edAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022\026\n\006s"
-  "tatus\030\010 \001(\010R\006status\022!\n\014is_suspended\030\t \001("
-  "\010R\013isSuspended\"b\n\006Budget\022\022\n\004plan\030\001 \001(\tR\004"
-  "plan\022\037\n\013budget_time\030\002 \001(\tR\nbudgetTime\022#\n"
-  "\rbudget_amount\030\003 \001(\tR\014budgetAmount\"\035\n\007We"
-  "bhook\022\022\n\004data\030\001 \001(\tR\004dataB8Z6github.com/"
-  "cuemby/ccp-payment-service/payment/v1alp"
-  "ha1b\006proto3"
+  "\tinvoiceId\022\033\n\tprice_cpu\030\004 \001(\tR\010priceCpu\022"
+  "\037\n\013price_bytes\030\005 \001(\tR\npriceBytes\022%\n\016pric"
+  "e_pipeline\030\006 \001(\tR\rpricePipeline\022\032\n\010curre"
+  "ncy\030\007 \001(\tR\010currency\022\032\n\010interval\030\010 \001(\tR\010i"
+  "nterval\022!\n\014price_xsmall\030\t \001(\tR\013priceXsma"
+  "ll\022\037\n\013price_small\030\n \001(\tR\npriceSmall\022!\n\014p"
+  "rice_medium\030\013 \001(\tR\013priceMedium\022\037\n\013price_"
+  "large\030\014 \001(\tR\npriceLarge\022!\n\014price_xlarge\030"
+  "\r \001(\tR\013priceXlarge\"\267\001\n\007Payment\022\027\n\007card_i"
+  "d\030\001 \001(\tR\006cardId\022\030\n\007default\030\002 \001(\010R\007defaul"
+  "t\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005alias\030\004 \001"
+  "(\tR\005alias\022\035\n\ntoken_card\030\005 \001(\tR\ttokenCard"
+  "\022*\n\004card\030\006 \001(\0132\026.payment.v1alpha1.CardR\004"
+  "card\"\266\001\n\004Card\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006number\030"
+  "\002 \001(\tR\006number\022(\n\020card_holder_name\030\003 \001(\tR"
+  "\016cardHolderName\022\032\n\010expmonth\030\004 \001(\tR\010expmo"
+  "nth\022\030\n\007expyear\030\005 \001(\tR\007expyear\022\020\n\003cvc\030\006 \001"
+  "(\tR\003cvc\022\024\n\005brand\030\007 \001(\tR\005brand\"\225\001\n\007Invoic"
+  "e\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amoun"
+  "t\022\026\n\006period\030\003 \001(\tR\006period\022\034\n\tstatuspay\030\004"
+  " \001(\tR\tstatuspay\022\022\n\004date\030\005 \001(\tR\004date\022\030\n\007p"
+  "roduct\030\006 \001(\tR\007product\"\340\002\n\006Biling\022\016\n\002id\030\001"
+  " \001(\tR\002id\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoiceId\022"
+  "!\n\014account_name\030\003 \001(\tR\013accountName\022\036\n\nto"
+  "talusage\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 \001(\001R"
+  "\003cpu\022\020\n\003ram\030\006 \001(\001R\003ram\022\032\n\010pipeline\030\007 \001(\001"
+  "R\010pipeline\022\024\n\005month\030\010 \001(\tR\005month\022\022\n\004year"
+  "\030\t \001(\tR\004year\022\026\n\006amount\030\n \001(\003R\006amount\022\026\n\006"
+  "period\030\013 \001(\tR\006period\022\034\n\tstatuspay\030\014 \001(\tR"
+  "\tstatuspay\022\022\n\004date\030\r \001(\tR\004date\022\030\n\007produc"
+  "t\030\016 \001(\tR\007product\"\217\001\n\021SubscriptionItems\022\016"
+  "\n\002id\030\001 \001(\tR\002id\0220\n\024subscription_item_id\030\002"
+  " \001(\tR\022subscriptionItemId\022\031\n\010price_id\030\003 \001"
+  "(\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\tR\tproduct"
+  "Id\"R\n\025SubscriptionItemsList\0229\n\005items\030\001 \003"
+  "(\0132#.payment.v1alpha1.SubscriptionItemsR"
+  "\005items\">\n\013InvoiceList\022/\n\005items\030\001 \003(\0132\031.p"
+  "ayment.v1alpha1.InvoiceR\005items\"@\n\014Custom"
+  "erList\0220\n\005items\030\001 \003(\0132\032.payment.v1alpha1"
+  ".CustomerR\005items\"<\n\nBilingList\022.\n\005items\030"
+  "\001 \003(\0132\030.payment.v1alpha1.BilingR\005items\"H"
+  "\n\020SubscriptionList\0224\n\005items\030\001 \003(\0132\036.paym"
+  "ent.v1alpha1.SubscriptionR\005items\"8\n\010Card"
+  "List\022,\n\005items\030\001 \003(\0132\026.payment.v1alpha1.C"
+  "ardR\005items\">\n\013PaymentList\022/\n\005items\030\001 \003(\013"
+  "2\031.payment.v1alpha1.PaymentR\005items\">\n\013Pr"
+  "ojectList\022/\n\005items\030\001 \003(\0132\031.payment.v1alp"
+  "ha1.ProjectR\005items\"\266\001\n\016ProjectBilling\022\016\n"
+  "\002id\030\001 \001(\tR\002id\022\035\n\nproject_id\030\002 \001(\tR\tproje"
+  "ctId\022!\n\014project_name\030\003 \001(\tR\013projectName\022"
+  "\022\n\004plan\030\004 \001(\tR\004plan\022\020\n\003ram\030\005 \001(\tR\003ram\022\020\n"
+  "\003cpu\030\006 \001(\tR\003cpu\022\032\n\010pipeline\030\007 \001(\tR\010pipel"
+  "ine\"L\n\022ProjectBillingList\0226\n\005items\030\001 \003(\013"
+  "2 .payment.v1alpha1.ProjectBillingR\005item"
+  "s\"\337\002\n\nBlockChain\022#\n\rblockchain_id\030\001 \001(\tR"
+  "\014blockchainId\022\'\n\017blockchain_name\030\002 \001(\tR\016"
+  "blockchainName\022\'\n\017blockchain_type\030\003 \001(\tR"
+  "\016blockchainType\022\035\n\nproject_id\030\004 \001(\tR\tpro"
+  "jectId\022B\n\014subscription\030\005 \001(\0132\036.payment.v"
+  "1alpha1.SubscriptionR\014subscription\022\035\n\ncr"
+  "eated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated_at\030"
+  "\007 \001(\tR\tupdatedAt\022\026\n\006status\030\010 \001(\010R\006status"
+  "\022!\n\014is_suspended\030\t \001(\010R\013isSuspended\"b\n\006B"
+  "udget\022\022\n\004plan\030\001 \001(\tR\004plan\022\037\n\013budget_time"
+  "\030\002 \001(\tR\nbudgetTime\022#\n\rbudget_amount\030\003 \001("
+  "\tR\014budgetAmount\"\035\n\007Webhook\022\022\n\004data\030\001 \001(\t"
+  "R\004dataB8Z6github.com/cuemby/ccp-payment-"
+  "service/payment/v1alpha1b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_payment_2fv1alpha1_2fpayment_2eproto = {
-  false, false, 3651, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
+  false, false, 3752, descriptor_table_protodef_payment_2fv1alpha1_2fpayment_2eproto, "payment/v1alpha1/payment.proto", 
   &descriptor_table_payment_2fv1alpha1_2fpayment_2eproto_once, nullptr, 0, 21,
   schemas, file_default_instances, TableStruct_payment_2fv1alpha1_2fpayment_2eproto::offsets,
   file_level_metadata_payment_2fv1alpha1_2fpayment_2eproto, file_level_enum_descriptors_payment_2fv1alpha1_2fpayment_2eproto, file_level_service_descriptors_payment_2fv1alpha1_2fpayment_2eproto,
@@ -1943,6 +1951,31 @@ Subscription::Subscription(const Subscription& from)
     invoice_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_invoice_id(), 
       GetArenaForAllocation());
   }
+  price_cpu_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_price_cpu().empty()) {
+    price_cpu_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_price_cpu(), 
+      GetArenaForAllocation());
+  }
+  price_bytes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_price_bytes().empty()) {
+    price_bytes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_price_bytes(), 
+      GetArenaForAllocation());
+  }
+  price_pipeline_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_price_pipeline().empty()) {
+    price_pipeline_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_price_pipeline(), 
+      GetArenaForAllocation());
+  }
+  currency_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_currency().empty()) {
+    currency_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_currency(), 
+      GetArenaForAllocation());
+  }
+  interval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_interval().empty()) {
+    interval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_interval(), 
+      GetArenaForAllocation());
+  }
   price_xsmall_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_price_xsmall().empty()) {
     price_xsmall_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_price_xsmall(), 
@@ -1968,16 +2001,6 @@ Subscription::Subscription(const Subscription& from)
     price_xlarge_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_price_xlarge(), 
       GetArenaForAllocation());
   }
-  currency_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_currency().empty()) {
-    currency_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_currency(), 
-      GetArenaForAllocation());
-  }
-  interval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_interval().empty()) {
-    interval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_interval(), 
-      GetArenaForAllocation());
-  }
   // @@protoc_insertion_point(copy_constructor:payment.v1alpha1.Subscription)
 }
 
@@ -1985,13 +2008,16 @@ inline void Subscription::SharedCtor() {
 subscription_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 subscription_item_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 invoice_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+price_cpu_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+price_bytes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+price_pipeline_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+currency_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+interval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 price_xsmall_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 price_small_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 price_medium_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 price_large_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 price_xlarge_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-currency_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-interval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Subscription::~Subscription() {
@@ -2006,13 +2032,16 @@ inline void Subscription::SharedDtor() {
   subscription_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   subscription_item_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   invoice_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  price_cpu_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  price_bytes_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  price_pipeline_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  currency_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  interval_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   price_xsmall_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   price_small_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   price_medium_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   price_large_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   price_xlarge_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  currency_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  interval_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Subscription::ArenaDtor(void* object) {
@@ -2034,13 +2063,16 @@ void Subscription::Clear() {
   subscription_id_.ClearToEmpty();
   subscription_item_id_.ClearToEmpty();
   invoice_id_.ClearToEmpty();
+  price_cpu_.ClearToEmpty();
+  price_bytes_.ClearToEmpty();
+  price_pipeline_.ClearToEmpty();
+  currency_.ClearToEmpty();
+  interval_.ClearToEmpty();
   price_xsmall_.ClearToEmpty();
   price_small_.ClearToEmpty();
   price_medium_.ClearToEmpty();
   price_large_.ClearToEmpty();
   price_xlarge_.ClearToEmpty();
-  currency_.ClearToEmpty();
-  interval_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2077,66 +2109,93 @@ const char* Subscription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string price_xsmall = 4 [json_name = "priceXsmall"];
+      // string price_cpu = 4 [json_name = "priceCpu"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_price_xsmall();
+          auto str = _internal_mutable_price_cpu();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_xsmall"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_cpu"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string price_small = 5 [json_name = "priceSmall"];
+      // string price_bytes = 5 [json_name = "priceBytes"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_price_small();
+          auto str = _internal_mutable_price_bytes();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_small"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_bytes"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string price_medium = 6 [json_name = "priceMedium"];
+      // string price_pipeline = 6 [json_name = "pricePipeline"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
-          auto str = _internal_mutable_price_medium();
+          auto str = _internal_mutable_price_pipeline();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_medium"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_pipeline"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string price_large = 7 [json_name = "priceLarge"];
+      // string currency = 7 [json_name = "currency"];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          auto str = _internal_mutable_price_large();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_large"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string price_xlarge = 8 [json_name = "priceXlarge"];
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
-          auto str = _internal_mutable_price_xlarge();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_xlarge"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string currency = 9 [json_name = "currency"];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           auto str = _internal_mutable_currency();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.currency"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string interval = 10 [json_name = "interval"];
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+      // string interval = 8 [json_name = "interval"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_interval();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.interval"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string price_xsmall = 9 [json_name = "priceXsmall"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          auto str = _internal_mutable_price_xsmall();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_xsmall"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string price_small = 10 [json_name = "priceSmall"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          auto str = _internal_mutable_price_small();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_small"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string price_medium = 11 [json_name = "priceMedium"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          auto str = _internal_mutable_price_medium();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_medium"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string price_large = 12 [json_name = "priceLarge"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          auto str = _internal_mutable_price_large();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_large"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string price_xlarge = 13 [json_name = "priceXlarge"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          auto str = _internal_mutable_price_xlarge();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "payment.v1alpha1.Subscription.price_xlarge"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2199,74 +2258,104 @@ failure:
         3, this->_internal_invoice_id(), target);
   }
 
-  // string price_xsmall = 4 [json_name = "priceXsmall"];
-  if (!this->_internal_price_xsmall().empty()) {
+  // string price_cpu = 4 [json_name = "priceCpu"];
+  if (!this->_internal_price_cpu().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_price_xsmall().data(), static_cast<int>(this->_internal_price_xsmall().length()),
+      this->_internal_price_cpu().data(), static_cast<int>(this->_internal_price_cpu().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.Subscription.price_xsmall");
+      "payment.v1alpha1.Subscription.price_cpu");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_price_xsmall(), target);
+        4, this->_internal_price_cpu(), target);
   }
 
-  // string price_small = 5 [json_name = "priceSmall"];
-  if (!this->_internal_price_small().empty()) {
+  // string price_bytes = 5 [json_name = "priceBytes"];
+  if (!this->_internal_price_bytes().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_price_small().data(), static_cast<int>(this->_internal_price_small().length()),
+      this->_internal_price_bytes().data(), static_cast<int>(this->_internal_price_bytes().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.Subscription.price_small");
+      "payment.v1alpha1.Subscription.price_bytes");
     target = stream->WriteStringMaybeAliased(
-        5, this->_internal_price_small(), target);
+        5, this->_internal_price_bytes(), target);
   }
 
-  // string price_medium = 6 [json_name = "priceMedium"];
-  if (!this->_internal_price_medium().empty()) {
+  // string price_pipeline = 6 [json_name = "pricePipeline"];
+  if (!this->_internal_price_pipeline().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_price_medium().data(), static_cast<int>(this->_internal_price_medium().length()),
+      this->_internal_price_pipeline().data(), static_cast<int>(this->_internal_price_pipeline().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.Subscription.price_medium");
+      "payment.v1alpha1.Subscription.price_pipeline");
     target = stream->WriteStringMaybeAliased(
-        6, this->_internal_price_medium(), target);
+        6, this->_internal_price_pipeline(), target);
   }
 
-  // string price_large = 7 [json_name = "priceLarge"];
-  if (!this->_internal_price_large().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_price_large().data(), static_cast<int>(this->_internal_price_large().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.Subscription.price_large");
-    target = stream->WriteStringMaybeAliased(
-        7, this->_internal_price_large(), target);
-  }
-
-  // string price_xlarge = 8 [json_name = "priceXlarge"];
-  if (!this->_internal_price_xlarge().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_price_xlarge().data(), static_cast<int>(this->_internal_price_xlarge().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "payment.v1alpha1.Subscription.price_xlarge");
-    target = stream->WriteStringMaybeAliased(
-        8, this->_internal_price_xlarge(), target);
-  }
-
-  // string currency = 9 [json_name = "currency"];
+  // string currency = 7 [json_name = "currency"];
   if (!this->_internal_currency().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_currency().data(), static_cast<int>(this->_internal_currency().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "payment.v1alpha1.Subscription.currency");
     target = stream->WriteStringMaybeAliased(
-        9, this->_internal_currency(), target);
+        7, this->_internal_currency(), target);
   }
 
-  // string interval = 10 [json_name = "interval"];
+  // string interval = 8 [json_name = "interval"];
   if (!this->_internal_interval().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_interval().data(), static_cast<int>(this->_internal_interval().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "payment.v1alpha1.Subscription.interval");
     target = stream->WriteStringMaybeAliased(
-        10, this->_internal_interval(), target);
+        8, this->_internal_interval(), target);
+  }
+
+  // string price_xsmall = 9 [json_name = "priceXsmall"];
+  if (!this->_internal_price_xsmall().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_price_xsmall().data(), static_cast<int>(this->_internal_price_xsmall().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Subscription.price_xsmall");
+    target = stream->WriteStringMaybeAliased(
+        9, this->_internal_price_xsmall(), target);
+  }
+
+  // string price_small = 10 [json_name = "priceSmall"];
+  if (!this->_internal_price_small().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_price_small().data(), static_cast<int>(this->_internal_price_small().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Subscription.price_small");
+    target = stream->WriteStringMaybeAliased(
+        10, this->_internal_price_small(), target);
+  }
+
+  // string price_medium = 11 [json_name = "priceMedium"];
+  if (!this->_internal_price_medium().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_price_medium().data(), static_cast<int>(this->_internal_price_medium().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Subscription.price_medium");
+    target = stream->WriteStringMaybeAliased(
+        11, this->_internal_price_medium(), target);
+  }
+
+  // string price_large = 12 [json_name = "priceLarge"];
+  if (!this->_internal_price_large().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_price_large().data(), static_cast<int>(this->_internal_price_large().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Subscription.price_large");
+    target = stream->WriteStringMaybeAliased(
+        12, this->_internal_price_large(), target);
+  }
+
+  // string price_xlarge = 13 [json_name = "priceXlarge"];
+  if (!this->_internal_price_xlarge().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_price_xlarge().data(), static_cast<int>(this->_internal_price_xlarge().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "payment.v1alpha1.Subscription.price_xlarge");
+    target = stream->WriteStringMaybeAliased(
+        13, this->_internal_price_xlarge(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2306,53 +2395,74 @@ size_t Subscription::ByteSizeLong() const {
         this->_internal_invoice_id());
   }
 
-  // string price_xsmall = 4 [json_name = "priceXsmall"];
-  if (!this->_internal_price_xsmall().empty()) {
+  // string price_cpu = 4 [json_name = "priceCpu"];
+  if (!this->_internal_price_cpu().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_price_xsmall());
+        this->_internal_price_cpu());
   }
 
-  // string price_small = 5 [json_name = "priceSmall"];
-  if (!this->_internal_price_small().empty()) {
+  // string price_bytes = 5 [json_name = "priceBytes"];
+  if (!this->_internal_price_bytes().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_price_small());
+        this->_internal_price_bytes());
   }
 
-  // string price_medium = 6 [json_name = "priceMedium"];
-  if (!this->_internal_price_medium().empty()) {
+  // string price_pipeline = 6 [json_name = "pricePipeline"];
+  if (!this->_internal_price_pipeline().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_price_medium());
+        this->_internal_price_pipeline());
   }
 
-  // string price_large = 7 [json_name = "priceLarge"];
-  if (!this->_internal_price_large().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_price_large());
-  }
-
-  // string price_xlarge = 8 [json_name = "priceXlarge"];
-  if (!this->_internal_price_xlarge().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_price_xlarge());
-  }
-
-  // string currency = 9 [json_name = "currency"];
+  // string currency = 7 [json_name = "currency"];
   if (!this->_internal_currency().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_currency());
   }
 
-  // string interval = 10 [json_name = "interval"];
+  // string interval = 8 [json_name = "interval"];
   if (!this->_internal_interval().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_interval());
+  }
+
+  // string price_xsmall = 9 [json_name = "priceXsmall"];
+  if (!this->_internal_price_xsmall().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_price_xsmall());
+  }
+
+  // string price_small = 10 [json_name = "priceSmall"];
+  if (!this->_internal_price_small().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_price_small());
+  }
+
+  // string price_medium = 11 [json_name = "priceMedium"];
+  if (!this->_internal_price_medium().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_price_medium());
+  }
+
+  // string price_large = 12 [json_name = "priceLarge"];
+  if (!this->_internal_price_large().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_price_large());
+  }
+
+  // string price_xlarge = 13 [json_name = "priceXlarge"];
+  if (!this->_internal_price_xlarge().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_price_xlarge());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2392,6 +2502,21 @@ void Subscription::MergeFrom(const Subscription& from) {
   if (!from._internal_invoice_id().empty()) {
     _internal_set_invoice_id(from._internal_invoice_id());
   }
+  if (!from._internal_price_cpu().empty()) {
+    _internal_set_price_cpu(from._internal_price_cpu());
+  }
+  if (!from._internal_price_bytes().empty()) {
+    _internal_set_price_bytes(from._internal_price_bytes());
+  }
+  if (!from._internal_price_pipeline().empty()) {
+    _internal_set_price_pipeline(from._internal_price_pipeline());
+  }
+  if (!from._internal_currency().empty()) {
+    _internal_set_currency(from._internal_currency());
+  }
+  if (!from._internal_interval().empty()) {
+    _internal_set_interval(from._internal_interval());
+  }
   if (!from._internal_price_xsmall().empty()) {
     _internal_set_price_xsmall(from._internal_price_xsmall());
   }
@@ -2406,12 +2531,6 @@ void Subscription::MergeFrom(const Subscription& from) {
   }
   if (!from._internal_price_xlarge().empty()) {
     _internal_set_price_xlarge(from._internal_price_xlarge());
-  }
-  if (!from._internal_currency().empty()) {
-    _internal_set_currency(from._internal_currency());
-  }
-  if (!from._internal_interval().empty()) {
-    _internal_set_interval(from._internal_interval());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2447,6 +2566,31 @@ void Subscription::InternalSwap(Subscription* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &price_cpu_, GetArenaForAllocation(),
+      &other->price_cpu_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &price_bytes_, GetArenaForAllocation(),
+      &other->price_bytes_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &price_pipeline_, GetArenaForAllocation(),
+      &other->price_pipeline_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &currency_, GetArenaForAllocation(),
+      &other->currency_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &interval_, GetArenaForAllocation(),
+      &other->interval_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &price_xsmall_, GetArenaForAllocation(),
       &other->price_xsmall_, other->GetArenaForAllocation()
   );
@@ -2469,16 +2613,6 @@ void Subscription::InternalSwap(Subscription* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &price_xlarge_, GetArenaForAllocation(),
       &other->price_xlarge_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &currency_, GetArenaForAllocation(),
-      &other->currency_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &interval_, GetArenaForAllocation(),
-      &other->interval_, other->GetArenaForAllocation()
   );
 }
 
