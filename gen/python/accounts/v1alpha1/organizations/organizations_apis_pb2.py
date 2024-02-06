@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizations',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n8accounts/v1alpha1/organizations/organizations_apis.proto\x12\"accounts.v1alpha1.organizations.v1\x1a\x33\x61\x63\x63ounts/v1alpha1/organizations/organizations.proto2\xfd\x05\n\x13OrganizationService\x12\x93\x01\n\x12\x43reateOrganization\x12=.accounts.v1alpha1.organizations.v1.CreateOrganizationRequest\x1a>.accounts.v1alpha1.organizations.v1.CreateOrganizationResponse\x12\x8d\x01\n\x10ListOrganization\x12;.accounts.v1alpha1.organizations.v1.ListOrganizationRequest\x1a<.accounts.v1alpha1.organizations.v1.ListOrganizationResponse\x12\x93\x01\n\x12GetOneOrganization\x12=.accounts.v1alpha1.organizations.v1.GetOneOrganizationRequest\x1a>.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse\x12\x93\x01\n\x12UpdateOrganization\x12=.accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest\x1a>.accounts.v1alpha1.organizations.v1.UpdateOrganizationResponse\x12\x93\x01\n\x12\x44\x65leteOrganization\x12=.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest\x1a>.accounts.v1alpha1.organizations.v1.DeleteOrganizationResponseBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsb\x06proto3'
+  serialized_pb=b'\n8accounts/v1alpha1/organizations/organizations_apis.proto\x12\"accounts.v1alpha1.organizations.v1\x1a\x33\x61\x63\x63ounts/v1alpha1/organizations/organizations.proto2\xc0\x07\n\x13OrganizationService\x12\x93\x01\n\x12\x43reateOrganization\x12=.accounts.v1alpha1.organizations.v1.CreateOrganizationRequest\x1a>.accounts.v1alpha1.organizations.v1.CreateOrganizationResponse\x12\x8d\x01\n\x10ListOrganization\x12;.accounts.v1alpha1.organizations.v1.ListOrganizationRequest\x1a<.accounts.v1alpha1.organizations.v1.ListOrganizationResponse\x12\x93\x01\n\x12GetOneOrganization\x12=.accounts.v1alpha1.organizations.v1.GetOneOrganizationRequest\x1a>.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponse\x12\x93\x01\n\x12UpdateOrganization\x12=.accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest\x1a>.accounts.v1alpha1.organizations.v1.UpdateOrganizationResponse\x12\x93\x01\n\x12\x44\x65leteOrganization\x12=.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest\x1a>.accounts.v1alpha1.organizations.v1.DeleteOrganizationResponse\x12\xc0\x01\n!UpdateOrganizationUserPermissions\x12L.accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest\x1aM.accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponseBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_organizations_dot_organizations__pb2.DESCRIPTOR,])
 
@@ -39,7 +39,7 @@ _ORGANIZATIONSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=150,
-  serialized_end=915,
+  serialized_end=1110,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateOrganization',
@@ -88,6 +88,16 @@ _ORGANIZATIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=accounts_dot_v1alpha1_dot_organizations_dot_organizations__pb2._DELETEORGANIZATIONREQUEST,
     output_type=accounts_dot_v1alpha1_dot_organizations_dot_organizations__pb2._DELETEORGANIZATIONRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateOrganizationUserPermissions',
+    full_name='accounts.v1alpha1.organizations.v1.OrganizationService.UpdateOrganizationUserPermissions',
+    index=5,
+    containing_service=None,
+    input_type=accounts_dot_v1alpha1_dot_organizations_dot_organizations__pb2._UPDATEORGANIZATIONUSERPERMISSIONSREQUEST,
+    output_type=accounts_dot_v1alpha1_dot_organizations_dot_organizations__pb2._UPDATEORGANIZATIONUSERPERMISSIONSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

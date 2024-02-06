@@ -26,6 +26,7 @@ static const char* OrganizationService_method_names[] = {
   "/accounts.v1alpha1.organizations.v1.OrganizationService/GetOneOrganization",
   "/accounts.v1alpha1.organizations.v1.OrganizationService/UpdateOrganization",
   "/accounts.v1alpha1.organizations.v1.OrganizationService/DeleteOrganization",
+  "/accounts.v1alpha1.organizations.v1.OrganizationService/UpdateOrganizationUserPermissions",
 };
 
 std::unique_ptr< OrganizationService::Stub> OrganizationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -40,6 +41,7 @@ OrganizationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>
   , rpcmethod_GetOneOrganization_(OrganizationService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateOrganization_(OrganizationService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteOrganization_(OrganizationService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateOrganizationUserPermissions_(OrganizationService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status OrganizationService::Stub::CreateOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::CreateOrganizationRequest& request, ::accounts::v1alpha1::organizations::v1::CreateOrganizationResponse* response) {
@@ -122,6 +124,22 @@ void OrganizationService::Stub::experimental_async::DeleteOrganization(::grpc::C
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteOrganization_, context, request, false);
 }
 
+::grpc::Status OrganizationService::Stub::UpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateOrganizationUserPermissions_, context, request, response);
+}
+
+void OrganizationService::Stub::experimental_async::UpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateOrganizationUserPermissions_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>* OrganizationService::Stub::AsyncUpdateOrganizationUserPermissionsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOrganizationUserPermissions_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>* OrganizationService::Stub::PrepareAsyncUpdateOrganizationUserPermissionsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOrganizationUserPermissions_, context, request, false);
+}
+
 OrganizationService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrganizationService_method_names[0],
@@ -148,6 +166,11 @@ OrganizationService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrganizationService::Service, ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest, ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>(
           std::mem_fn(&OrganizationService::Service::DeleteOrganization), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrganizationService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrganizationService::Service, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>(
+          std::mem_fn(&OrganizationService::Service::UpdateOrganizationUserPermissions), this)));
 }
 
 OrganizationService::Service::~Service() {
@@ -182,6 +205,13 @@ OrganizationService::Service::~Service() {
 }
 
 ::grpc::Status OrganizationService::Service::DeleteOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrganizationService::Service::UpdateOrganizationUserPermissions(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
