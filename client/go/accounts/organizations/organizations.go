@@ -149,9 +149,9 @@ func UpdateOrganizationUserPermissions(req *accountpkgv1.UpdateOrganizationUserP
 
 	response, err := client.UpdateOrganizationUserPermissions(ctx, req)
 	if err != nil {
-		bylogs.LogErr("UpdateOrganizationUserPermissions Client Sdk", err)
+		bylogs.LogErr("UpdateOrganizationUserPermissions Client Sdk: ", err)
 		return nil, fmt.Errorf("[UpdateOrganizationUserPermissions] %w", err)
 	}
-	bylogs.LogInfo("UpdateOrganizationUserPermissions Client Sdk", "Success")
+	bylogs.LogInfo("UpdateOrganizationUserPermissions Client Sdk: ", "Success")
 	return response, nil
 }
