@@ -34,7 +34,7 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2forganizations_2forgan
   "\n8accounts/v1alpha1/organizations/organi"
   "zations_apis.proto\022\"accounts.v1alpha1.or"
   "ganizations.v1\0323accounts/v1alpha1/organi"
-  "zations/organizations.proto2\375\005\n\023Organiza"
+  "zations/organizations.proto2\300\007\n\023Organiza"
   "tionService\022\223\001\n\022CreateOrganization\022=.acc"
   "ounts.v1alpha1.organizations.v1.CreateOr"
   "ganizationRequest\032>.accounts.v1alpha1.or"
@@ -53,16 +53,21 @@ const char descriptor_table_protodef_accounts_2fv1alpha1_2forganizations_2forgan
   "ponse\022\223\001\n\022DeleteOrganization\022=.accounts."
   "v1alpha1.organizations.v1.DeleteOrganiza"
   "tionRequest\032>.accounts.v1alpha1.organiza"
-  "tions.v1.DeleteOrganizationResponseBBZ@g"
-  "ithub.com/cuemby/ccp-sdk/gen/go/accounts"
-  "/v1alpha1/organizationsb\006proto3"
+  "tions.v1.DeleteOrganizationResponse\022\300\001\n!"
+  "UpdateOrganizationUserPermissions\022L.acco"
+  "unts.v1alpha1.organizations.v1.UpdateOrg"
+  "anizationUserPermissionsRequest\032M.accoun"
+  "ts.v1alpha1.organizations.v1.UpdateOrgan"
+  "izationUserPermissionsResponseBBZ@github"
+  ".com/cuemby/ccp-sdk/gen/go/accounts/v1al"
+  "pha1/organizationsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto_deps[1] = {
   &::descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto = {
-  false, false, 991, descriptor_table_protodef_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto, "accounts/v1alpha1/organizations/organizations_apis.proto", 
+  false, false, 1186, descriptor_table_protodef_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto, "accounts/v1alpha1/organizations/organizations_apis.proto", 
   &descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto_once, descriptor_table_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto::offsets,
   nullptr, file_level_enum_descriptors_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto, file_level_service_descriptors_accounts_2fv1alpha1_2forganizations_2forganizations_5fapis_2eproto,

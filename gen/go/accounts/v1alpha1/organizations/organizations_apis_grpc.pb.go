@@ -24,6 +24,7 @@ type OrganizationServiceClient interface {
 	GetOneOrganization(ctx context.Context, in *GetOneOrganizationRequest, opts ...grpc.CallOption) (*GetOneOrganizationResponse, error)
 	UpdateOrganization(ctx context.Context, in *UpdateOrganizationRequest, opts ...grpc.CallOption) (*UpdateOrganizationResponse, error)
 	DeleteOrganization(ctx context.Context, in *DeleteOrganizationRequest, opts ...grpc.CallOption) (*DeleteOrganizationResponse, error)
+	UpdateOrganizationUserPermissions(ctx context.Context, in *UpdateOrganizationUserPermissionsRequest, opts ...grpc.CallOption) (*UpdateOrganizationUserPermissionsResponse, error)
 }
 
 type organizationServiceClient struct {
@@ -79,6 +80,15 @@ func (c *organizationServiceClient) DeleteOrganization(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *organizationServiceClient) UpdateOrganizationUserPermissions(ctx context.Context, in *UpdateOrganizationUserPermissionsRequest, opts ...grpc.CallOption) (*UpdateOrganizationUserPermissionsResponse, error) {
+	out := new(UpdateOrganizationUserPermissionsResponse)
+	err := c.cc.Invoke(ctx, "/accounts.v1alpha1.organizations.v1.OrganizationService/UpdateOrganizationUserPermissions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OrganizationServiceServer is the server API for OrganizationService service.
 // All implementations should embed UnimplementedOrganizationServiceServer
 // for forward compatibility
@@ -89,6 +99,7 @@ type OrganizationServiceServer interface {
 	GetOneOrganization(context.Context, *GetOneOrganizationRequest) (*GetOneOrganizationResponse, error)
 	UpdateOrganization(context.Context, *UpdateOrganizationRequest) (*UpdateOrganizationResponse, error)
 	DeleteOrganization(context.Context, *DeleteOrganizationRequest) (*DeleteOrganizationResponse, error)
+	UpdateOrganizationUserPermissions(context.Context, *UpdateOrganizationUserPermissionsRequest) (*UpdateOrganizationUserPermissionsResponse, error)
 }
 
 // UnimplementedOrganizationServiceServer should be embedded to have forward compatible implementations.
@@ -109,6 +120,9 @@ func (UnimplementedOrganizationServiceServer) UpdateOrganization(context.Context
 }
 func (UnimplementedOrganizationServiceServer) DeleteOrganization(context.Context, *DeleteOrganizationRequest) (*DeleteOrganizationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrganization not implemented")
+}
+func (UnimplementedOrganizationServiceServer) UpdateOrganizationUserPermissions(context.Context, *UpdateOrganizationUserPermissionsRequest) (*UpdateOrganizationUserPermissionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrganizationUserPermissions not implemented")
 }
 
 // UnsafeOrganizationServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -212,6 +226,24 @@ func _OrganizationService_DeleteOrganization_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OrganizationService_UpdateOrganizationUserPermissions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateOrganizationUserPermissionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrganizationServiceServer).UpdateOrganizationUserPermissions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/accounts.v1alpha1.organizations.v1.OrganizationService/UpdateOrganizationUserPermissions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrganizationServiceServer).UpdateOrganizationUserPermissions(ctx, req.(*UpdateOrganizationUserPermissionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OrganizationService_ServiceDesc is the grpc.ServiceDesc for OrganizationService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -238,6 +270,10 @@ var OrganizationService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteOrganization",
 			Handler:    _OrganizationService_DeleteOrganization_Handler,
+		},
+		{
+			MethodName: "UpdateOrganizationUserPermissions",
+			Handler:    _OrganizationService_UpdateOrganizationUserPermissions_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

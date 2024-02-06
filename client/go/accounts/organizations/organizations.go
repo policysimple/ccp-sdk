@@ -136,3 +136,22 @@ func UpdateOrganization(req *accountpkgv1.UpdateOrganizationRequest) (*accountpk
 	bylogs.LogInfo("UpdateOrganization Client Sdk", "Success")
 	return response, nil
 }
+
+func UpdateOrganizationUserPermissions(req *accountpkgv1.UpdateOrganizationUserPermissionsRequest) (*accountpkgv1.UpdateOrganizationUserPermissionsResponse, error) {
+	bylogs.LogInfo("UpdateOrganizationUserPermissions Client Sdk")
+	d, err := time.ParseDuration(accountServiceTimeout)
+	if err != nil {
+		return nil, err
+	}
+
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err := client.UpdateOrganizationUserPermissions(ctx, req)
+	if err != nil {
+		bylogs.LogErr("UpdateOrganizationUserPermissions Client Sdk", err)
+		return nil, fmt.Errorf("[UpdateOrganizationUserPermissions] %w", err)
+	}
+	bylogs.LogInfo("UpdateOrganizationUserPermissions Client Sdk", "Success")
+	return response, nil
+}

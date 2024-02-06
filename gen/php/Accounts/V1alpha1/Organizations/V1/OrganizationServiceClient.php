@@ -82,4 +82,17 @@ class OrganizationServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Accounts\V1alpha1\Organizations\V1\UpdateOrganizationUserPermissionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UpdateOrganizationUserPermissions(\Accounts\V1alpha1\Organizations\V1\UpdateOrganizationUserPermissionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/accounts.v1alpha1.organizations.v1.OrganizationService/UpdateOrganizationUserPermissions',
+        $argument,
+        ['\Accounts\V1alpha1\Organizations\V1\UpdateOrganizationUserPermissionsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

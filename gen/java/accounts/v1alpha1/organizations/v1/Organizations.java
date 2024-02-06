@@ -11308,6 +11308,1409 @@ public final class Organizations {
 
   }
 
+  public interface UpdateOrganizationUserPermissionsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
+
+    /**
+     * <code>uint32 user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    int getUserId();
+
+    /**
+     * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+     * @return A list containing the permissions.
+     */
+    java.util.List<java.lang.Integer> getPermissionsList();
+    /**
+     * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+     * @return The count of permissions.
+     */
+    int getPermissionsCount();
+    /**
+     * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+     * @param index The index of the element to return.
+     * @return The permissions at the given index.
+     */
+    int getPermissions(int index);
+  }
+  /**
+   * Protobuf type {@code accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest}
+   */
+  public static final class UpdateOrganizationUserPermissionsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest)
+      UpdateOrganizationUserPermissionsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateOrganizationUserPermissionsRequest.newBuilder() to construct.
+    private UpdateOrganizationUserPermissionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateOrganizationUserPermissionsRequest() {
+      organizationId_ = "";
+      permissions_ = emptyIntList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateOrganizationUserPermissionsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateOrganizationUserPermissionsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationId_ = s;
+              break;
+            }
+            case 16: {
+
+              userId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                permissions_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              permissions_.addInt(input.readInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                permissions_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                permissions_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          permissions_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest.class, accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest.Builder.class);
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object organizationId_;
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private int userId_;
+    /**
+     * <code>uint32 user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public int getUserId() {
+      return userId_;
+    }
+
+    public static final int PERMISSIONS_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.IntList permissions_;
+    /**
+     * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+     * @return A list containing the permissions.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getPermissionsList() {
+      return permissions_;
+    }
+    /**
+     * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+     * @return The count of permissions.
+     */
+    public int getPermissionsCount() {
+      return permissions_.size();
+    }
+    /**
+     * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+     * @param index The index of the element to return.
+     * @return The permissions at the given index.
+     */
+    public int getPermissions(int index) {
+      return permissions_.getInt(index);
+    }
+    private int permissionsMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+      }
+      if (userId_ != 0) {
+        output.writeUInt32(2, userId_);
+      }
+      if (getPermissionsList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(permissionsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < permissions_.size(); i++) {
+        output.writeInt32NoTag(permissions_.getInt(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+      }
+      if (userId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, userId_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < permissions_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(permissions_.getInt(i));
+        }
+        size += dataSize;
+        if (!getPermissionsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        permissionsMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest)) {
+        return super.equals(obj);
+      }
+      accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest other = (accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest) obj;
+
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (!getPermissionsList()
+          .equals(other.getPermissionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      if (getPermissionsCount() > 0) {
+        hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getPermissionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest)
+        accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest.class, accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest.Builder.class);
+      }
+
+      // Construct using accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        organizationId_ = "";
+
+        userId_ = 0;
+
+        permissions_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest getDefaultInstanceForType() {
+        return accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest build() {
+        accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest buildPartial() {
+        accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest result = new accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest(this);
+        int from_bitField0_ = bitField0_;
+        result.organizationId_ = organizationId_;
+        result.userId_ = userId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          permissions_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.permissions_ = permissions_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest) {
+          return mergeFrom((accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest other) {
+        if (other == accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest.getDefaultInstance()) return this;
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
+        }
+        if (other.getUserId() != 0) {
+          setUserId(other.getUserId());
+        }
+        if (!other.permissions_.isEmpty()) {
+          if (permissions_.isEmpty()) {
+            permissions_ = other.permissions_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePermissionsIsMutable();
+            permissions_.addAll(other.permissions_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object organizationId_ = "";
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The organizationId.
+       */
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int userId_ ;
+      /**
+       * <code>uint32 user_id = 2 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      @java.lang.Override
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>uint32 user_id = 2 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(int value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 user_id = 2 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList permissions_ = emptyIntList();
+      private void ensurePermissionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          permissions_ = mutableCopy(permissions_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+       * @return A list containing the permissions.
+       */
+      public java.util.List<java.lang.Integer>
+          getPermissionsList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(permissions_) : permissions_;
+      }
+      /**
+       * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+       * @return The count of permissions.
+       */
+      public int getPermissionsCount() {
+        return permissions_.size();
+      }
+      /**
+       * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+       * @param index The index of the element to return.
+       * @return The permissions at the given index.
+       */
+      public int getPermissions(int index) {
+        return permissions_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+       * @param index The index to set the value at.
+       * @param value The permissions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermissions(
+          int index, int value) {
+        ensurePermissionsIsMutable();
+        permissions_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+       * @param value The permissions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermissions(int value) {
+        ensurePermissionsIsMutable();
+        permissions_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+       * @param values The permissions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPermissions(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensurePermissionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, permissions_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPermissions() {
+        permissions_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest)
+    private static final accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest();
+    }
+
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateOrganizationUserPermissionsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateOrganizationUserPermissionsRequest>() {
+      @java.lang.Override
+      public UpdateOrganizationUserPermissionsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateOrganizationUserPermissionsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateOrganizationUserPermissionsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateOrganizationUserPermissionsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateOrganizationUserPermissionsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+  }
+  /**
+   * Protobuf type {@code accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse}
+   */
+  public static final class UpdateOrganizationUserPermissionsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse)
+      UpdateOrganizationUserPermissionsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateOrganizationUserPermissionsResponse.newBuilder() to construct.
+    private UpdateOrganizationUserPermissionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateOrganizationUserPermissionsResponse() {
+      msg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateOrganizationUserPermissionsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateOrganizationUserPermissionsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse.class, accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse.Builder.class);
+    }
+
+    public static final int MSG_FIELD_NUMBER = 1;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse)) {
+        return super.equals(obj);
+      }
+      accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse other = (accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse) obj;
+
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse)
+        accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse.class, accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse.Builder.class);
+      }
+
+      // Construct using accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        msg_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return accounts.v1alpha1.organizations.v1.Organizations.internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse getDefaultInstanceForType() {
+        return accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse build() {
+        accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse buildPartial() {
+        accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse result = new accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse(this);
+        result.msg_ = msg_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse) {
+          return mergeFrom((accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse other) {
+        if (other == accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse.getDefaultInstance()) return this;
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse)
+    private static final accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse();
+    }
+
+    public static accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateOrganizationUserPermissionsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateOrganizationUserPermissionsResponse>() {
+      @java.lang.Override
+      public UpdateOrganizationUserPermissionsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateOrganizationUserPermissionsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateOrganizationUserPermissionsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateOrganizationUserPermissionsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public accounts.v1alpha1.organizations.v1.Organizations.UpdateOrganizationUserPermissionsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accounts_v1alpha1_organizations_v1_CreateOrganizationRequest_descriptor;
   private static final 
@@ -11368,6 +12771,16 @@ public final class Organizations {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_accounts_v1alpha1_organizations_v1_ProjectOrganization_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -11417,9 +12830,14 @@ public final class Organizations {
       "\022\024\n\005image\030\007 \001(\tR\005image\022\016\n\002id\030\010 \001(\rR\002id\"q" +
       "\n\023ProjectOrganization\022\022\n\004name\030\002 \001(\tR\004nam" +
       "e\022\024\n\005image\030\003 \001(\tR\005image\022 \n\013description\030\004" +
-      " \001(\tR\013description\022\016\n\002id\030\005 \001(\tR\002idBBZ@git" +
-      "hub.com/cuemby/ccp-sdk/gen/go/accounts/v" +
-      "1alpha1/organizationsb\006proto3"
+      " \001(\tR\013description\022\016\n\002id\030\005 \001(\tR\002id\"\216\001\n(Up" +
+      "dateOrganizationUserPermissionsRequest\022\'" +
+      "\n\017organization_id\030\001 \001(\tR\016organizationId\022" +
+      "\027\n\007user_id\030\002 \001(\rR\006userId\022 \n\013permissions\030" +
+      "\003 \003(\005R\013permissions\"=\n)UpdateOrganization" +
+      "UserPermissionsResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
+      "gBBZ@github.com/cuemby/ccp-sdk/gen/go/ac" +
+      "counts/v1alpha1/organizationsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11498,6 +12916,18 @@ public final class Organizations {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accounts_v1alpha1_organizations_v1_ProjectOrganization_descriptor,
         new java.lang.String[] { "Name", "Image", "Description", "Id", });
+    internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest_descriptor,
+        new java.lang.String[] { "OrganizationId", "UserId", "Permissions", });
+    internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse_descriptor,
+        new java.lang.String[] { "Msg", });
     accounts.v1alpha1.Accounts.getDescriptor();
   }
 

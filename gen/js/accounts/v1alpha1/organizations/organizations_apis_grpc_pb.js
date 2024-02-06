@@ -114,6 +114,28 @@ function deserialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationRespon
   return accounts_v1alpha1_organizations_organizations_pb.UpdateOrganizationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest(arg) {
+  if (!(arg instanceof accounts_v1alpha1_organizations_organizations_pb.UpdateOrganizationUserPermissionsRequest)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest(buffer_arg) {
+  return accounts_v1alpha1_organizations_organizations_pb.UpdateOrganizationUserPermissionsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse(arg) {
+  if (!(arg instanceof accounts_v1alpha1_organizations_organizations_pb.UpdateOrganizationUserPermissionsResponse)) {
+    throw new Error('Expected argument of type accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse(buffer_arg) {
+  return accounts_v1alpha1_organizations_organizations_pb.UpdateOrganizationUserPermissionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var OrganizationServiceService = exports.OrganizationServiceService = {
   // /Organization
@@ -171,6 +193,17 @@ var OrganizationServiceService = exports.OrganizationServiceService = {
     requestDeserialize: deserialize_accounts_v1alpha1_organizations_v1_DeleteOrganizationRequest,
     responseSerialize: serialize_accounts_v1alpha1_organizations_v1_DeleteOrganizationResponse,
     responseDeserialize: deserialize_accounts_v1alpha1_organizations_v1_DeleteOrganizationResponse,
+  },
+  updateOrganizationUserPermissions: {
+    path: '/accounts.v1alpha1.organizations.v1.OrganizationService/UpdateOrganizationUserPermissions',
+    requestStream: false,
+    responseStream: false,
+    requestType: accounts_v1alpha1_organizations_organizations_pb.UpdateOrganizationUserPermissionsRequest,
+    responseType: accounts_v1alpha1_organizations_organizations_pb.UpdateOrganizationUserPermissionsResponse,
+    requestSerialize: serialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest,
+    requestDeserialize: deserialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsRequest,
+    responseSerialize: serialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse,
+    responseDeserialize: deserialize_accounts_v1alpha1_organizations_v1_UpdateOrganizationUserPermissionsResponse,
   },
 };
 

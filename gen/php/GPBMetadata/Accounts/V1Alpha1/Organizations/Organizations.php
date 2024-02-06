@@ -17,7 +17,7 @@ class Organizations
         \GPBMetadata\Accounts\V1Alpha1\Accounts::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‹
+Û
 3accounts/v1alpha1/organizations/organizations.proto"accounts.v1alpha1.organizations.v1"€
 CreateOrganizationRequest
 name (	Rname
@@ -69,7 +69,13 @@ first_name (	R	firstName
 name (	Rname
 image (	Rimage 
 description (	Rdescription
-id (	RidBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsbproto3'
+id (	Rid"Ž
+(UpdateOrganizationUserPermissionsRequest\'
+organization_id (	RorganizationId
+user_id (RuserId 
+permissions (Rpermissions"=
+)UpdateOrganizationUserPermissionsResponse
+msg (	RmsgBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsbproto3'
         , true);
 
         static::$is_initialized = true;

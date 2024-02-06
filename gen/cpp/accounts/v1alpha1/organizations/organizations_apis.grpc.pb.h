@@ -74,6 +74,13 @@ class OrganizationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>> PrepareAsyncDeleteOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>>(PrepareAsyncDeleteOrganizationRaw(context, request, cq));
     }
+    virtual ::grpc::Status UpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>> AsyncUpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>>(AsyncUpdateOrganizationUserPermissionsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>> PrepareAsyncUpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>>(PrepareAsyncUpdateOrganizationUserPermissionsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -83,6 +90,7 @@ class OrganizationService final {
       virtual void GetOneOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::GetOneOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::GetOneOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -96,6 +104,8 @@ class OrganizationService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse>* PrepareAsyncUpdateOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>* AsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>* PrepareAsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>* AsyncUpdateOrganizationUserPermissionsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>* PrepareAsyncUpdateOrganizationUserPermissionsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -135,6 +145,13 @@ class OrganizationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>> PrepareAsyncDeleteOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>>(PrepareAsyncDeleteOrganizationRaw(context, request, cq));
     }
+    ::grpc::Status UpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>> AsyncUpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>>(AsyncUpdateOrganizationUserPermissionsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>> PrepareAsyncUpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>>(PrepareAsyncUpdateOrganizationUserPermissionsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -143,6 +160,7 @@ class OrganizationService final {
       void GetOneOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::GetOneOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::GetOneOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteOrganization(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateOrganizationUserPermissions(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -164,11 +182,14 @@ class OrganizationService final {
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse>* PrepareAsyncUpdateOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>* AsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>* PrepareAsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>* AsyncUpdateOrganizationUserPermissionsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>* PrepareAsyncUpdateOrganizationUserPermissionsRaw(::grpc::ClientContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateOrganization_;
     const ::grpc::internal::RpcMethod rpcmethod_ListOrganization_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOneOrganization_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateOrganization_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteOrganization_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateOrganizationUserPermissions_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -182,6 +203,7 @@ class OrganizationService final {
     virtual ::grpc::Status GetOneOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::GetOneOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::GetOneOrganizationResponse* response);
     virtual ::grpc::Status UpdateOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse* response);
     virtual ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse* response);
+    virtual ::grpc::Status UpdateOrganizationUserPermissions(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateOrganization : public BaseClass {
@@ -283,7 +305,27 @@ class OrganizationService final {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<Service > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateOrganizationUserPermissions : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_UpdateOrganizationUserPermissions() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_UpdateOrganizationUserPermissions() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateOrganizationUserPermissions(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateOrganizationUserPermissions(::grpc::ServerContext* context, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::grpc::ServerAsyncResponseWriter< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateOrganization<WithAsyncMethod_ListOrganization<WithAsyncMethod_GetOneOrganization<WithAsyncMethod_UpdateOrganization<WithAsyncMethod_DeleteOrganization<WithAsyncMethod_UpdateOrganizationUserPermissions<Service > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateOrganization : public BaseClass {
    private:
@@ -365,6 +407,23 @@ class OrganizationService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteOrganization(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest* request, ::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateOrganizationUserPermissions : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_UpdateOrganizationUserPermissions() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_UpdateOrganizationUserPermissions() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateOrganizationUserPermissions(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -470,6 +529,26 @@ class OrganizationService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_UpdateOrganizationUserPermissions : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_UpdateOrganizationUserPermissions() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_UpdateOrganizationUserPermissions() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateOrganizationUserPermissions(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateOrganizationUserPermissions(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateOrganization : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -569,9 +648,29 @@ class OrganizationService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteOrganization(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::organizations::v1::DeleteOrganizationRequest,::accounts::v1alpha1::organizations::v1::DeleteOrganizationResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<Service > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateOrganizationUserPermissions : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_UpdateOrganizationUserPermissions() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>(std::bind(&WithStreamedUnaryMethod_UpdateOrganizationUserPermissions<BaseClass>::StreamedUpdateOrganizationUserPermissions, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_UpdateOrganizationUserPermissions() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateOrganizationUserPermissions(::grpc::ServerContext* context, const ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* request, ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateOrganizationUserPermissions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest,::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_UpdateOrganizationUserPermissions<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<Service > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateOrganization<WithStreamedUnaryMethod_ListOrganization<WithStreamedUnaryMethod_GetOneOrganization<WithStreamedUnaryMethod_UpdateOrganization<WithStreamedUnaryMethod_DeleteOrganization<WithStreamedUnaryMethod_UpdateOrganizationUserPermissions<Service > > > > > > StreamedService;
 };
 
 }  // namespace v1
