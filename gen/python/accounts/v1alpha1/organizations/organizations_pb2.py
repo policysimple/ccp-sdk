@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizations',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3accounts/v1alpha1/organizations/organizations.proto\x12\"accounts.v1alpha1.organizations.v1\x1a accounts/v1alpha1/accounts.proto\"\x80\x01\n\x19\x43reateOrganizationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"\x19\n\x17ListOrganizationRequest\"D\n\x19GetOneOrganizationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\"\x90\x01\n\x19UpdateOrganizationRequest\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x04 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x05 \x01(\tR\x0eorganizationId\"]\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\x8e\x03\n\x1aGetOneOrganizationResponse\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12S\n\x08projects\x18\x04 \x03(\x0b\x32\x37.accounts.v1alpha1.organizations.v1.ProjectOrganizationR\x08projects\x12\x44\n\x07members\x18\x05 \x03(\x0b\x32*.accounts.v1alpha1.organizations.v1.MemberR\x07members\x12 \n\x0b\x64\x65scription\x18\x06 \x01(\tR\x0b\x64\x65scription\x12\x31\n\x05owner\x18\x07 \x01(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05owner\x12\x12\n\x04slug\x18\t \x01(\tR\x04slug\x12\x0e\n\x02id\x18\n \x01(\tR\x02id\x12\x32\n\x15status_payment_method\x18\x0b \x01(\x08R\x13statusPaymentMethod\"a\n\x18ListOrganizationResponse\x12\x45\n\rorganizations\x18\x01 \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\"p\n\x1a\x43reateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x30\n\x14role_id_organization\x18\x06 \x01(\tR\x12roleIdOrganization\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02id\".\n\x1aUpdateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\".\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"\xd4\x01\n\x06Member\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x32\n\x05roles\x18\x06 \x03(\x0b\x32\x1c.accounts.v1alpha1.MemberRolR\x05roles\x12\x14\n\x05image\x18\x07 \x01(\tR\x05image\x12\x0e\n\x02id\x18\x08 \x01(\rR\x02id\"q\n\x13ProjectOrganization\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02idBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsb\x06proto3'
+  serialized_pb=b'\n3accounts/v1alpha1/organizations/organizations.proto\x12\"accounts.v1alpha1.organizations.v1\x1a accounts/v1alpha1/accounts.proto\"\x80\x01\n\x19\x43reateOrganizationRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05image\x18\x02 \x01(\tR\x05image\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\"\x19\n\x17ListOrganizationRequest\"D\n\x19GetOneOrganizationRequest\x12\'\n\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\"\x90\x01\n\x19UpdateOrganizationRequest\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12 \n\x0b\x64\x65scription\x18\x03 \x01(\tR\x0b\x64\x65scription\x12\x14\n\x05image\x18\x04 \x01(\tR\x05image\x12\'\n\x0forganization_id\x18\x05 \x01(\tR\x0eorganizationId\"]\n\x19\x44\x65leteOrganizationRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\"\x8e\x03\n\x1aGetOneOrganizationResponse\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12S\n\x08projects\x18\x04 \x03(\x0b\x32\x37.accounts.v1alpha1.organizations.v1.ProjectOrganizationR\x08projects\x12\x44\n\x07members\x18\x05 \x03(\x0b\x32*.accounts.v1alpha1.organizations.v1.MemberR\x07members\x12 \n\x0b\x64\x65scription\x18\x06 \x01(\tR\x0b\x64\x65scription\x12\x31\n\x05owner\x18\x07 \x01(\x0b\x32\x1b.accounts.v1alpha1.UserListR\x05owner\x12\x12\n\x04slug\x18\t \x01(\tR\x04slug\x12\x0e\n\x02id\x18\n \x01(\tR\x02id\x12\x32\n\x15status_payment_method\x18\x0b \x01(\x08R\x13statusPaymentMethod\"a\n\x18ListOrganizationResponse\x12\x45\n\rorganizations\x18\x01 \x03(\x0b\x32\x1f.accounts.v1alpha1.OrganizationR\rorganizations\"p\n\x1a\x43reateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\x12\x30\n\x14role_id_organization\x18\x06 \x01(\tR\x12roleIdOrganization\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02id\".\n\x1aUpdateOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\".\n\x1a\x44\x65leteOrganizationResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msg\"\xd4\x01\n\x06Member\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n\nfirst_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n\tlast_name\x18\x04 \x01(\tR\x08lastName\x12\x1b\n\tis_active\x18\x05 \x01(\x08R\x08isActive\x12\x32\n\x05roles\x18\x06 \x03(\x0b\x32\x1c.accounts.v1alpha1.MemberRolR\x05roles\x12\x14\n\x05image\x18\x07 \x01(\tR\x05image\x12\x0e\n\x02id\x18\x08 \x01(\rR\x02id\"q\n\x13ProjectOrganization\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n\x05image\x18\x03 \x01(\tR\x05image\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tR\x0b\x64\x65scription\x12\x0e\n\x02id\x18\x05 \x01(\tR\x02id\"\x8e\x01\n(UpdateOrganizationUserPermissionsRequest\x12\'\n\x0forganization_id\x18\x01 \x01(\tR\x0eorganizationId\x12\x17\n\x07user_id\x18\x02 \x01(\rR\x06userId\x12 \n\x0bpermissions\x18\x03 \x03(\x05R\x0bpermissions\"=\n)UpdateOrganizationUserPermissionsResponse\x12\x10\n\x03msg\x18\x01 \x01(\tR\x03msgBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsb\x06proto3'
   ,
   dependencies=[accounts_dot_v1alpha1_dot_accounts__pb2.DESCRIPTOR,])
 
@@ -585,6 +585,84 @@ _PROJECTORGANIZATION = _descriptor.Descriptor(
   serialized_end=1633,
 )
 
+
+_UPDATEORGANIZATIONUSERPERMISSIONSREQUEST = _descriptor.Descriptor(
+  name='UpdateOrganizationUserPermissionsRequest',
+  full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='organization_id', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.organization_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='organizationId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.user_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='userId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='permissions', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.permissions', index=2,
+      number=3, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='permissions', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1636,
+  serialized_end=1778,
+)
+
+
+_UPDATEORGANIZATIONUSERPERMISSIONSRESPONSE = _descriptor.Descriptor(
+  name='UpdateOrganizationUserPermissionsResponse',
+  full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='msg', full_name='accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse.msg', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='msg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1780,
+  serialized_end=1841,
+)
+
 _GETONEORGANIZATIONRESPONSE.fields_by_name['projects'].message_type = _PROJECTORGANIZATION
 _GETONEORGANIZATIONRESPONSE.fields_by_name['members'].message_type = _MEMBER
 _GETONEORGANIZATIONRESPONSE.fields_by_name['owner'].message_type = accounts_dot_v1alpha1_dot_accounts__pb2._USERLIST
@@ -602,6 +680,8 @@ DESCRIPTOR.message_types_by_name['UpdateOrganizationResponse'] = _UPDATEORGANIZA
 DESCRIPTOR.message_types_by_name['DeleteOrganizationResponse'] = _DELETEORGANIZATIONRESPONSE
 DESCRIPTOR.message_types_by_name['Member'] = _MEMBER
 DESCRIPTOR.message_types_by_name['ProjectOrganization'] = _PROJECTORGANIZATION
+DESCRIPTOR.message_types_by_name['UpdateOrganizationUserPermissionsRequest'] = _UPDATEORGANIZATIONUSERPERMISSIONSREQUEST
+DESCRIPTOR.message_types_by_name['UpdateOrganizationUserPermissionsResponse'] = _UPDATEORGANIZATIONUSERPERMISSIONSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateOrganizationRequest = _reflection.GeneratedProtocolMessageType('CreateOrganizationRequest', (_message.Message,), {
@@ -687,6 +767,20 @@ ProjectOrganization = _reflection.GeneratedProtocolMessageType('ProjectOrganizat
   # @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.ProjectOrganization)
   })
 _sym_db.RegisterMessage(ProjectOrganization)
+
+UpdateOrganizationUserPermissionsRequest = _reflection.GeneratedProtocolMessageType('UpdateOrganizationUserPermissionsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEORGANIZATIONUSERPERMISSIONSREQUEST,
+  '__module__' : 'accounts.v1alpha1.organizations.organizations_pb2'
+  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest)
+  })
+_sym_db.RegisterMessage(UpdateOrganizationUserPermissionsRequest)
+
+UpdateOrganizationUserPermissionsResponse = _reflection.GeneratedProtocolMessageType('UpdateOrganizationUserPermissionsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEORGANIZATIONUSERPERMISSIONSRESPONSE,
+  '__module__' : 'accounts.v1alpha1.organizations.organizations_pb2'
+  # @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse)
+  })
+_sym_db.RegisterMessage(UpdateOrganizationUserPermissionsResponse)
 
 
 DESCRIPTOR._options = None

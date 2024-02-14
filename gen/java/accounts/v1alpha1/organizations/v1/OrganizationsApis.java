@@ -26,7 +26,7 @@ public final class OrganizationsApis {
       "\n8accounts/v1alpha1/organizations/organi" +
       "zations_apis.proto\022\"accounts.v1alpha1.or" +
       "ganizations.v1\0323accounts/v1alpha1/organi" +
-      "zations/organizations.proto2\375\005\n\023Organiza" +
+      "zations/organizations.proto2\300\007\n\023Organiza" +
       "tionService\022\223\001\n\022CreateOrganization\022=.acc" +
       "ounts.v1alpha1.organizations.v1.CreateOr" +
       "ganizationRequest\032>.accounts.v1alpha1.or" +
@@ -45,9 +45,14 @@ public final class OrganizationsApis {
       "ponse\022\223\001\n\022DeleteOrganization\022=.accounts." +
       "v1alpha1.organizations.v1.DeleteOrganiza" +
       "tionRequest\032>.accounts.v1alpha1.organiza" +
-      "tions.v1.DeleteOrganizationResponseBBZ@g" +
-      "ithub.com/cuemby/ccp-sdk/gen/go/accounts" +
-      "/v1alpha1/organizationsb\006proto3"
+      "tions.v1.DeleteOrganizationResponse\022\300\001\n!" +
+      "UpdateOrganizationUserPermissions\022L.acco" +
+      "unts.v1alpha1.organizations.v1.UpdateOrg" +
+      "anizationUserPermissionsRequest\032M.accoun" +
+      "ts.v1alpha1.organizations.v1.UpdateOrgan" +
+      "izationUserPermissionsResponseBBZ@github" +
+      ".com/cuemby/ccp-sdk/gen/go/accounts/v1al" +
+      "pha1/organizationsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

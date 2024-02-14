@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>accounts.v1alpha1.organizations.v1.UpdateOrganizationPermissionsRequest</code>
+ * Generated from protobuf message <code>accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest</code>
  */
-class UpdateOrganizationPermissionsRequest extends \Google\Protobuf\Internal\Message
+class UpdateOrganizationUserPermissionsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string organization_id = 1 [json_name = "organizationId"];</code>
@@ -22,7 +22,7 @@ class UpdateOrganizationPermissionsRequest extends \Google\Protobuf\Internal\Mes
      */
     protected $user_id = 0;
     /**
-     * Generated from protobuf field <code>repeated string permissions = 3 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
      */
     private $permissions;
 
@@ -34,7 +34,7 @@ class UpdateOrganizationPermissionsRequest extends \Google\Protobuf\Internal\Mes
      *
      *     @type string $organization_id
      *     @type int $user_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $permissions
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $permissions
      * }
      */
     public function __construct($data = NULL) {
@@ -87,7 +87,7 @@ class UpdateOrganizationPermissionsRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>repeated string permissions = 3 [json_name = "permissions"];</code>
+     * Generated from protobuf field <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPermissions()
@@ -96,13 +96,13 @@ class UpdateOrganizationPermissionsRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Generated from protobuf field <code>repeated string permissions = 3 [json_name = "permissions"];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated int32 permissions = 3 [json_name = "permissions"];</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPermissions($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::INT32);
         $this->permissions = $arr;
 
         return $this;

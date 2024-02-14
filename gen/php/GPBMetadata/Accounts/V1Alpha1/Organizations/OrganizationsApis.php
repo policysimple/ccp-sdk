@@ -17,14 +17,15 @@ class OrganizationsApis
         \GPBMetadata\Accounts\V1Alpha1\Organizations\Organizations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-™
-8accounts/v1alpha1/organizations/organizations_apis.proto"accounts.v1alpha1.organizations.v12˝
+Ì
+8accounts/v1alpha1/organizations/organizations_apis.proto"accounts.v1alpha1.organizations.v12¿
 OrganizationServiceì
 CreateOrganization=.accounts.v1alpha1.organizations.v1.CreateOrganizationRequest>.accounts.v1alpha1.organizations.v1.CreateOrganizationResponseç
 ListOrganization;.accounts.v1alpha1.organizations.v1.ListOrganizationRequest<.accounts.v1alpha1.organizations.v1.ListOrganizationResponseì
 GetOneOrganization=.accounts.v1alpha1.organizations.v1.GetOneOrganizationRequest>.accounts.v1alpha1.organizations.v1.GetOneOrganizationResponseì
 UpdateOrganization=.accounts.v1alpha1.organizations.v1.UpdateOrganizationRequest>.accounts.v1alpha1.organizations.v1.UpdateOrganizationResponseì
-DeleteOrganization=.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest>.accounts.v1alpha1.organizations.v1.DeleteOrganizationResponseBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsbproto3'
+DeleteOrganization=.accounts.v1alpha1.organizations.v1.DeleteOrganizationRequest>.accounts.v1alpha1.organizations.v1.DeleteOrganizationResponse¿
+!UpdateOrganizationUserPermissionsL.accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequestM.accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponseBBZ@github.com/cuemby/ccp-sdk/gen/go/accounts/v1alpha1/organizationsbproto3'
         , true);
 
         static::$is_initialized = true;

@@ -99,3 +99,12 @@ message ProjectOrganization {
     string id =5;
 }
 
+message UpdateOrganizationUserPermissionsRequest {
+    string organization_id= 1;
+    uint32 user_id = 2;
+    repeated int32 permissions =3;
+}
+
+message UpdateOrganizationUserPermissionsResponse {
+    string msg = 1;
+}

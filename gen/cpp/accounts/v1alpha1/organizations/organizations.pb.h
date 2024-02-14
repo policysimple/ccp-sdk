@@ -47,7 +47,7 @@ struct TableStruct_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -94,6 +94,12 @@ extern UpdateOrganizationRequestDefaultTypeInternal _UpdateOrganizationRequest_d
 class UpdateOrganizationResponse;
 struct UpdateOrganizationResponseDefaultTypeInternal;
 extern UpdateOrganizationResponseDefaultTypeInternal _UpdateOrganizationResponse_default_instance_;
+class UpdateOrganizationUserPermissionsRequest;
+struct UpdateOrganizationUserPermissionsRequestDefaultTypeInternal;
+extern UpdateOrganizationUserPermissionsRequestDefaultTypeInternal _UpdateOrganizationUserPermissionsRequest_default_instance_;
+class UpdateOrganizationUserPermissionsResponse;
+struct UpdateOrganizationUserPermissionsResponseDefaultTypeInternal;
+extern UpdateOrganizationUserPermissionsResponseDefaultTypeInternal _UpdateOrganizationUserPermissionsResponse_default_instance_;
 }  // namespace v1
 }  // namespace organizations
 }  // namespace v1alpha1
@@ -111,6 +117,8 @@ template<> ::accounts::v1alpha1::organizations::v1::Member* Arena::CreateMaybeMe
 template<> ::accounts::v1alpha1::organizations::v1::ProjectOrganization* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::ProjectOrganization>(Arena*);
 template<> ::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::UpdateOrganizationRequest>(Arena*);
 template<> ::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::UpdateOrganizationResponse>(Arena*);
+template<> ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsRequest>(Arena*);
+template<> ::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse* Arena::CreateMaybeMessage<::accounts::v1alpha1::organizations::v1::UpdateOrganizationUserPermissionsResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace accounts {
 namespace v1alpha1 {
@@ -2248,6 +2256,330 @@ class ProjectOrganization final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto;
 };
+// -------------------------------------------------------------------
+
+class UpdateOrganizationUserPermissionsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest) */ {
+ public:
+  inline UpdateOrganizationUserPermissionsRequest() : UpdateOrganizationUserPermissionsRequest(nullptr) {}
+  ~UpdateOrganizationUserPermissionsRequest() override;
+  explicit constexpr UpdateOrganizationUserPermissionsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateOrganizationUserPermissionsRequest(const UpdateOrganizationUserPermissionsRequest& from);
+  UpdateOrganizationUserPermissionsRequest(UpdateOrganizationUserPermissionsRequest&& from) noexcept
+    : UpdateOrganizationUserPermissionsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateOrganizationUserPermissionsRequest& operator=(const UpdateOrganizationUserPermissionsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateOrganizationUserPermissionsRequest& operator=(UpdateOrganizationUserPermissionsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateOrganizationUserPermissionsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateOrganizationUserPermissionsRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateOrganizationUserPermissionsRequest*>(
+               &_UpdateOrganizationUserPermissionsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(UpdateOrganizationUserPermissionsRequest& a, UpdateOrganizationUserPermissionsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateOrganizationUserPermissionsRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateOrganizationUserPermissionsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateOrganizationUserPermissionsRequest* New() const final {
+    return new UpdateOrganizationUserPermissionsRequest();
+  }
+
+  UpdateOrganizationUserPermissionsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateOrganizationUserPermissionsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateOrganizationUserPermissionsRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateOrganizationUserPermissionsRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateOrganizationUserPermissionsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest";
+  }
+  protected:
+  explicit UpdateOrganizationUserPermissionsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPermissionsFieldNumber = 3,
+    kOrganizationIdFieldNumber = 1,
+    kUserIdFieldNumber = 2,
+  };
+  // repeated int32 permissions = 3 [json_name = "permissions"];
+  int permissions_size() const;
+  private:
+  int _internal_permissions_size() const;
+  public:
+  void clear_permissions();
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_permissions(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      _internal_permissions() const;
+  void _internal_add_permissions(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      _internal_mutable_permissions();
+  public:
+  ::PROTOBUF_NAMESPACE_ID::int32 permissions(int index) const;
+  void set_permissions(int index, ::PROTOBUF_NAMESPACE_ID::int32 value);
+  void add_permissions(::PROTOBUF_NAMESPACE_ID::int32 value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      permissions() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      mutable_permissions();
+
+  // string organization_id = 1 [json_name = "organizationId"];
+  void clear_organization_id();
+  const std::string& organization_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_organization_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_organization_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_organization_id();
+  void set_allocated_organization_id(std::string* organization_id);
+  private:
+  const std::string& _internal_organization_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_organization_id(const std::string& value);
+  std::string* _internal_mutable_organization_id();
+  public:
+
+  // uint32 user_id = 2 [json_name = "userId"];
+  void clear_user_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 user_id() const;
+  void set_user_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_user_id() const;
+  void _internal_set_user_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > permissions_;
+  mutable std::atomic<int> _permissions_cached_byte_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr organization_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 user_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateOrganizationUserPermissionsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse) */ {
+ public:
+  inline UpdateOrganizationUserPermissionsResponse() : UpdateOrganizationUserPermissionsResponse(nullptr) {}
+  ~UpdateOrganizationUserPermissionsResponse() override;
+  explicit constexpr UpdateOrganizationUserPermissionsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UpdateOrganizationUserPermissionsResponse(const UpdateOrganizationUserPermissionsResponse& from);
+  UpdateOrganizationUserPermissionsResponse(UpdateOrganizationUserPermissionsResponse&& from) noexcept
+    : UpdateOrganizationUserPermissionsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateOrganizationUserPermissionsResponse& operator=(const UpdateOrganizationUserPermissionsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateOrganizationUserPermissionsResponse& operator=(UpdateOrganizationUserPermissionsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateOrganizationUserPermissionsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateOrganizationUserPermissionsResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdateOrganizationUserPermissionsResponse*>(
+               &_UpdateOrganizationUserPermissionsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(UpdateOrganizationUserPermissionsResponse& a, UpdateOrganizationUserPermissionsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateOrganizationUserPermissionsResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateOrganizationUserPermissionsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateOrganizationUserPermissionsResponse* New() const final {
+    return new UpdateOrganizationUserPermissionsResponse();
+  }
+
+  UpdateOrganizationUserPermissionsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateOrganizationUserPermissionsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UpdateOrganizationUserPermissionsResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const UpdateOrganizationUserPermissionsResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateOrganizationUserPermissionsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse";
+  }
+  protected:
+  explicit UpdateOrganizationUserPermissionsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 1,
+  };
+  // string msg = 1 [json_name = "msg"];
+  void clear_msg();
+  const std::string& msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_msg();
+  PROTOBUF_MUST_USE_RESULT std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // @@protoc_insertion_point(class_scope:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2fv1alpha1_2forganizations_2forganizations_2eproto;
+};
 // ===================================================================
 
 
@@ -3937,9 +4269,180 @@ inline void ProjectOrganization::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.organizations.v1.ProjectOrganization.id)
 }
 
+// -------------------------------------------------------------------
+
+// UpdateOrganizationUserPermissionsRequest
+
+// string organization_id = 1 [json_name = "organizationId"];
+inline void UpdateOrganizationUserPermissionsRequest::clear_organization_id() {
+  organization_id_.ClearToEmpty();
+}
+inline const std::string& UpdateOrganizationUserPermissionsRequest::organization_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.organization_id)
+  return _internal_organization_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateOrganizationUserPermissionsRequest::set_organization_id(ArgT0&& arg0, ArgT... args) {
+ 
+ organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.organization_id)
+}
+inline std::string* UpdateOrganizationUserPermissionsRequest::mutable_organization_id() {
+  std::string* _s = _internal_mutable_organization_id();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.organization_id)
+  return _s;
+}
+inline const std::string& UpdateOrganizationUserPermissionsRequest::_internal_organization_id() const {
+  return organization_id_.Get();
+}
+inline void UpdateOrganizationUserPermissionsRequest::_internal_set_organization_id(const std::string& value) {
+  
+  organization_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateOrganizationUserPermissionsRequest::_internal_mutable_organization_id() {
+  
+  return organization_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateOrganizationUserPermissionsRequest::release_organization_id() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.organization_id)
+  return organization_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateOrganizationUserPermissionsRequest::set_allocated_organization_id(std::string* organization_id) {
+  if (organization_id != nullptr) {
+    
+  } else {
+    
+  }
+  organization_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), organization_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.organization_id)
+}
+
+// uint32 user_id = 2 [json_name = "userId"];
+inline void UpdateOrganizationUserPermissionsRequest::clear_user_id() {
+  user_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 UpdateOrganizationUserPermissionsRequest::_internal_user_id() const {
+  return user_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 UpdateOrganizationUserPermissionsRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.user_id)
+  return _internal_user_id();
+}
+inline void UpdateOrganizationUserPermissionsRequest::_internal_set_user_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  user_id_ = value;
+}
+inline void UpdateOrganizationUserPermissionsRequest::set_user_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_user_id(value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.user_id)
+}
+
+// repeated int32 permissions = 3 [json_name = "permissions"];
+inline int UpdateOrganizationUserPermissionsRequest::_internal_permissions_size() const {
+  return permissions_.size();
+}
+inline int UpdateOrganizationUserPermissionsRequest::permissions_size() const {
+  return _internal_permissions_size();
+}
+inline void UpdateOrganizationUserPermissionsRequest::clear_permissions() {
+  permissions_.Clear();
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 UpdateOrganizationUserPermissionsRequest::_internal_permissions(int index) const {
+  return permissions_.Get(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 UpdateOrganizationUserPermissionsRequest::permissions(int index) const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.permissions)
+  return _internal_permissions(index);
+}
+inline void UpdateOrganizationUserPermissionsRequest::set_permissions(int index, ::PROTOBUF_NAMESPACE_ID::int32 value) {
+  permissions_.Set(index, value);
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.permissions)
+}
+inline void UpdateOrganizationUserPermissionsRequest::_internal_add_permissions(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  permissions_.Add(value);
+}
+inline void UpdateOrganizationUserPermissionsRequest::add_permissions(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_add_permissions(value);
+  // @@protoc_insertion_point(field_add:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.permissions)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+UpdateOrganizationUserPermissionsRequest::_internal_permissions() const {
+  return permissions_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+UpdateOrganizationUserPermissionsRequest::permissions() const {
+  // @@protoc_insertion_point(field_list:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.permissions)
+  return _internal_permissions();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+UpdateOrganizationUserPermissionsRequest::_internal_mutable_permissions() {
+  return &permissions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+UpdateOrganizationUserPermissionsRequest::mutable_permissions() {
+  // @@protoc_insertion_point(field_mutable_list:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsRequest.permissions)
+  return _internal_mutable_permissions();
+}
+
+// -------------------------------------------------------------------
+
+// UpdateOrganizationUserPermissionsResponse
+
+// string msg = 1 [json_name = "msg"];
+inline void UpdateOrganizationUserPermissionsResponse::clear_msg() {
+  msg_.ClearToEmpty();
+}
+inline const std::string& UpdateOrganizationUserPermissionsResponse::msg() const {
+  // @@protoc_insertion_point(field_get:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse.msg)
+  return _internal_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UpdateOrganizationUserPermissionsResponse::set_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse.msg)
+}
+inline std::string* UpdateOrganizationUserPermissionsResponse::mutable_msg() {
+  std::string* _s = _internal_mutable_msg();
+  // @@protoc_insertion_point(field_mutable:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse.msg)
+  return _s;
+}
+inline const std::string& UpdateOrganizationUserPermissionsResponse::_internal_msg() const {
+  return msg_.Get();
+}
+inline void UpdateOrganizationUserPermissionsResponse::_internal_set_msg(const std::string& value) {
+  
+  msg_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* UpdateOrganizationUserPermissionsResponse::_internal_mutable_msg() {
+  
+  return msg_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* UpdateOrganizationUserPermissionsResponse::release_msg() {
+  // @@protoc_insertion_point(field_release:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse.msg)
+  return msg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void UpdateOrganizationUserPermissionsResponse::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:accounts.v1alpha1.organizations.v1.UpdateOrganizationUserPermissionsResponse.msg)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

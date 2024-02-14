@@ -12,5 +12,5 @@ service OrganizationService {
     rpc GetOneOrganization(GetOneOrganizationRequest) returns (GetOneOrganizationResponse);
     rpc UpdateOrganization(UpdateOrganizationRequest) returns (UpdateOrganizationResponse);
     rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse);
-
+    rpc UpdateOrganizationUserPermissions(UpdateOrganizationUserPermissionsRequest) returns (UpdateOrganizationUserPermissionsResponse);
 }
