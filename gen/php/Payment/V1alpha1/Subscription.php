@@ -53,6 +53,14 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string interval = 10 [json_name = "interval"];</code>
      */
     protected $interval = '';
+    /**
+     * Generated from protobuf field <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+     */
+    protected $trial_date_end = '';
+    /**
+     * Generated from protobuf field <code>bool is_trial = 12 [json_name = "isTrial"];</code>
+     */
+    protected $is_trial = false;
 
     /**
      * Constructor.
@@ -70,6 +78,8 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *     @type string $price_xlarge
      *     @type string $currency
      *     @type string $interval
+     *     @type string $trial_date_end
+     *     @type bool $is_trial
      * }
      */
     public function __construct($data = NULL) {
@@ -293,6 +303,50 @@ class Subscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->interval = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+     * @return string
+     */
+    public function getTrialDateEnd()
+    {
+        return $this->trial_date_end;
+    }
+
+    /**
+     * Generated from protobuf field <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTrialDateEnd($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->trial_date_end = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_trial = 12 [json_name = "isTrial"];</code>
+     * @return bool
+     */
+    public function getIsTrial()
+    {
+        return $this->is_trial;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_trial = 12 [json_name = "isTrial"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsTrial($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_trial = $var;
 
         return $this;
     }

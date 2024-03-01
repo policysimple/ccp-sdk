@@ -4827,6 +4827,24 @@ public final class PaymentOuterClass {
      */
     com.google.protobuf.ByteString
         getIntervalBytes();
+
+    /**
+     * <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+     * @return The trialDateEnd.
+     */
+    java.lang.String getTrialDateEnd();
+    /**
+     * <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+     * @return The bytes for trialDateEnd.
+     */
+    com.google.protobuf.ByteString
+        getTrialDateEndBytes();
+
+    /**
+     * <code>bool is_trial = 12 [json_name = "isTrial"];</code>
+     * @return The isTrial.
+     */
+    boolean getIsTrial();
   }
   /**
    * Protobuf type {@code payment.v1alpha1.Subscription}
@@ -4851,6 +4869,7 @@ public final class PaymentOuterClass {
       priceXlarge_ = "";
       currency_ = "";
       interval_ = "";
+      trialDateEnd_ = "";
     }
 
     @java.lang.Override
@@ -4941,6 +4960,17 @@ public final class PaymentOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               interval_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              trialDateEnd_ = s;
+              break;
+            }
+            case 96: {
+
+              isTrial_ = input.readBool();
               break;
             }
             default: {
@@ -5355,6 +5385,55 @@ public final class PaymentOuterClass {
       }
     }
 
+    public static final int TRIAL_DATE_END_FIELD_NUMBER = 11;
+    private volatile java.lang.Object trialDateEnd_;
+    /**
+     * <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+     * @return The trialDateEnd.
+     */
+    @java.lang.Override
+    public java.lang.String getTrialDateEnd() {
+      java.lang.Object ref = trialDateEnd_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trialDateEnd_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+     * @return The bytes for trialDateEnd.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTrialDateEndBytes() {
+      java.lang.Object ref = trialDateEnd_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        trialDateEnd_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_TRIAL_FIELD_NUMBER = 12;
+    private boolean isTrial_;
+    /**
+     * <code>bool is_trial = 12 [json_name = "isTrial"];</code>
+     * @return The isTrial.
+     */
+    @java.lang.Override
+    public boolean getIsTrial() {
+      return isTrial_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5399,6 +5478,12 @@ public final class PaymentOuterClass {
       if (!getIntervalBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, interval_);
       }
+      if (!getTrialDateEndBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, trialDateEnd_);
+      }
+      if (isTrial_ != false) {
+        output.writeBool(12, isTrial_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5438,6 +5523,13 @@ public final class PaymentOuterClass {
       if (!getIntervalBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, interval_);
       }
+      if (!getTrialDateEndBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, trialDateEnd_);
+      }
+      if (isTrial_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isTrial_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5473,6 +5565,10 @@ public final class PaymentOuterClass {
           .equals(other.getCurrency())) return false;
       if (!getInterval()
           .equals(other.getInterval())) return false;
+      if (!getTrialDateEnd()
+          .equals(other.getTrialDateEnd())) return false;
+      if (getIsTrial()
+          != other.getIsTrial()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5504,6 +5600,11 @@ public final class PaymentOuterClass {
       hash = (53 * hash) + getCurrency().hashCode();
       hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getInterval().hashCode();
+      hash = (37 * hash) + TRIAL_DATE_END_FIELD_NUMBER;
+      hash = (53 * hash) + getTrialDateEnd().hashCode();
+      hash = (37 * hash) + IS_TRIAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsTrial());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5657,6 +5758,10 @@ public final class PaymentOuterClass {
 
         interval_ = "";
 
+        trialDateEnd_ = "";
+
+        isTrial_ = false;
+
         return this;
       }
 
@@ -5693,6 +5798,8 @@ public final class PaymentOuterClass {
         result.priceXlarge_ = priceXlarge_;
         result.currency_ = currency_;
         result.interval_ = interval_;
+        result.trialDateEnd_ = trialDateEnd_;
+        result.isTrial_ = isTrial_;
         onBuilt();
         return result;
       }
@@ -5780,6 +5887,13 @@ public final class PaymentOuterClass {
         if (!other.getInterval().isEmpty()) {
           interval_ = other.interval_;
           onChanged();
+        }
+        if (!other.getTrialDateEnd().isEmpty()) {
+          trialDateEnd_ = other.trialDateEnd_;
+          onChanged();
+        }
+        if (other.getIsTrial() != false) {
+          setIsTrial(other.getIsTrial());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6566,6 +6680,113 @@ public final class PaymentOuterClass {
   checkByteStringIsUtf8(value);
         
         interval_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object trialDateEnd_ = "";
+      /**
+       * <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+       * @return The trialDateEnd.
+       */
+      public java.lang.String getTrialDateEnd() {
+        java.lang.Object ref = trialDateEnd_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          trialDateEnd_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+       * @return The bytes for trialDateEnd.
+       */
+      public com.google.protobuf.ByteString
+          getTrialDateEndBytes() {
+        java.lang.Object ref = trialDateEnd_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          trialDateEnd_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+       * @param value The trialDateEnd to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrialDateEnd(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        trialDateEnd_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTrialDateEnd() {
+        
+        trialDateEnd_ = getDefaultInstance().getTrialDateEnd();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string trial_date_end = 11 [json_name = "trialDateEnd"];</code>
+       * @param value The bytes for trialDateEnd to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrialDateEndBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        trialDateEnd_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isTrial_ ;
+      /**
+       * <code>bool is_trial = 12 [json_name = "isTrial"];</code>
+       * @return The isTrial.
+       */
+      @java.lang.Override
+      public boolean getIsTrial() {
+        return isTrial_;
+      }
+      /**
+       * <code>bool is_trial = 12 [json_name = "isTrial"];</code>
+       * @param value The isTrial to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsTrial(boolean value) {
+        
+        isTrial_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_trial = 12 [json_name = "isTrial"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsTrial() {
+        
+        isTrial_ = false;
         onChanged();
         return this;
       }
@@ -25526,7 +25747,7 @@ public final class PaymentOuterClass {
       "ated_at\030\010 \001(\tR\tupdatedAt\022B\n\014subscription" +
       "\030\t \001(\0132\036.payment.v1alpha1.SubscriptionR\014" +
       "subscription\022\026\n\006status\030\n \001(\010R\006status\022!\n\014" +
-      "is_suspended\030\013 \001(\010R\013isSuspended\"\353\002\n\014Subs" +
+      "is_suspended\030\013 \001(\010R\013isSuspended\"\254\003\n\014Subs" +
       "cription\022\'\n\017subscription_id\030\001 \001(\tR\016subsc" +
       "riptionId\0220\n\024subscription_item_id\030\002 \001(\tR" +
       "\022subscriptionItemId\022\035\n\ninvoice_id\030\003 \001(\tR" +
@@ -25535,67 +25756,68 @@ public final class PaymentOuterClass {
       "\n\014price_medium\030\006 \001(\tR\013priceMedium\022\037\n\013pri" +
       "ce_large\030\007 \001(\tR\npriceLarge\022!\n\014price_xlar" +
       "ge\030\010 \001(\tR\013priceXlarge\022\032\n\010currency\030\t \001(\tR" +
-      "\010currency\022\032\n\010interval\030\n \001(\tR\010interval\"\267\001" +
-      "\n\007Payment\022\027\n\007card_id\030\001 \001(\tR\006cardId\022\030\n\007de" +
-      "fault\030\002 \001(\010R\007default\022\030\n\007enabled\030\003 \001(\010R\007e" +
-      "nabled\022\024\n\005alias\030\004 \001(\tR\005alias\022\035\n\ntoken_ca" +
-      "rd\030\005 \001(\tR\ttokenCard\022*\n\004card\030\006 \001(\0132\026.paym" +
-      "ent.v1alpha1.CardR\004card\"\266\001\n\004Card\022\016\n\002id\030\001" +
-      " \001(\tR\002id\022\026\n\006number\030\002 \001(\tR\006number\022(\n\020card" +
-      "_holder_name\030\003 \001(\tR\016cardHolderName\022\032\n\010ex" +
-      "pmonth\030\004 \001(\tR\010expmonth\022\030\n\007expyear\030\005 \001(\tR" +
-      "\007expyear\022\020\n\003cvc\030\006 \001(\tR\003cvc\022\024\n\005brand\030\007 \001(" +
-      "\tR\005brand\"\225\001\n\007Invoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006" +
-      "amount\030\002 \001(\003R\006amount\022\026\n\006period\030\003 \001(\tR\006pe" +
-      "riod\022\034\n\tstatuspay\030\004 \001(\tR\tstatuspay\022\022\n\004da" +
-      "te\030\005 \001(\tR\004date\022\030\n\007product\030\006 \001(\tR\007product" +
-      "\"\340\002\n\006Biling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\ninvoice_i" +
-      "d\030\002 \001(\tR\tinvoiceId\022!\n\014account_name\030\003 \001(\t" +
-      "R\013accountName\022\036\n\ntotalusage\030\004 \001(\003R\ntotal" +
-      "usage\022\020\n\003cpu\030\005 \001(\001R\003cpu\022\020\n\003ram\030\006 \001(\001R\003ra" +
-      "m\022\032\n\010pipeline\030\007 \001(\001R\010pipeline\022\024\n\005month\030\010" +
-      " \001(\tR\005month\022\022\n\004year\030\t \001(\tR\004year\022\026\n\006amoun" +
-      "t\030\n \001(\003R\006amount\022\026\n\006period\030\013 \001(\tR\006period\022" +
-      "\034\n\tstatuspay\030\014 \001(\tR\tstatuspay\022\022\n\004date\030\r " +
-      "\001(\tR\004date\022\030\n\007product\030\016 \001(\tR\007product\"\217\001\n\021" +
-      "SubscriptionItems\022\016\n\002id\030\001 \001(\tR\002id\0220\n\024sub" +
-      "scription_item_id\030\002 \001(\tR\022subscriptionIte" +
-      "mId\022\031\n\010price_id\030\003 \001(\tR\007priceId\022\035\n\nproduc" +
-      "t_id\030\004 \001(\tR\tproductId\"R\n\025SubscriptionIte" +
-      "msList\0229\n\005items\030\001 \003(\0132#.payment.v1alpha1" +
-      ".SubscriptionItemsR\005items\">\n\013InvoiceList" +
-      "\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.Invoi" +
-      "ceR\005items\"@\n\014CustomerList\0220\n\005items\030\001 \003(\013" +
-      "2\032.payment.v1alpha1.CustomerR\005items\"<\n\nB" +
-      "ilingList\022.\n\005items\030\001 \003(\0132\030.payment.v1alp" +
-      "ha1.BilingR\005items\"H\n\020SubscriptionList\0224\n" +
-      "\005items\030\001 \003(\0132\036.payment.v1alpha1.Subscrip" +
-      "tionR\005items\"8\n\010CardList\022,\n\005items\030\001 \003(\0132\026" +
-      ".payment.v1alpha1.CardR\005items\">\n\013Payment" +
-      "List\022/\n\005items\030\001 \003(\0132\031.payment.v1alpha1.P" +
-      "aymentR\005items\">\n\013ProjectList\022/\n\005items\030\001 " +
-      "\003(\0132\031.payment.v1alpha1.ProjectR\005items\"\266\001" +
-      "\n\016ProjectBilling\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproj" +
-      "ect_id\030\002 \001(\tR\tprojectId\022!\n\014project_name\030" +
-      "\003 \001(\tR\013projectName\022\022\n\004plan\030\004 \001(\tR\004plan\022\020" +
-      "\n\003ram\030\005 \001(\tR\003ram\022\020\n\003cpu\030\006 \001(\tR\003cpu\022\032\n\010pi" +
-      "peline\030\007 \001(\tR\010pipeline\"L\n\022ProjectBilling" +
-      "List\0226\n\005items\030\001 \003(\0132 .payment.v1alpha1.P" +
-      "rojectBillingR\005items\"\337\002\n\nBlockChain\022#\n\rb" +
-      "lockchain_id\030\001 \001(\tR\014blockchainId\022\'\n\017bloc" +
-      "kchain_name\030\002 \001(\tR\016blockchainName\022\'\n\017blo" +
-      "ckchain_type\030\003 \001(\tR\016blockchainType\022\035\n\npr" +
-      "oject_id\030\004 \001(\tR\tprojectId\022B\n\014subscriptio" +
-      "n\030\005 \001(\0132\036.payment.v1alpha1.SubscriptionR" +
-      "\014subscription\022\035\n\ncreated_at\030\006 \001(\tR\tcreat" +
-      "edAt\022\035\n\nupdated_at\030\007 \001(\tR\tupdatedAt\022\026\n\006s" +
-      "tatus\030\010 \001(\010R\006status\022!\n\014is_suspended\030\t \001(" +
-      "\010R\013isSuspended\"b\n\006Budget\022\022\n\004plan\030\001 \001(\tR\004" +
-      "plan\022\037\n\013budget_time\030\002 \001(\tR\nbudgetTime\022#\n" +
-      "\rbudget_amount\030\003 \001(\tR\014budgetAmount\"\035\n\007We" +
-      "bhook\022\022\n\004data\030\001 \001(\tR\004dataB8Z6github.com/" +
-      "cuemby/ccp-payment-service/payment/v1alp" +
-      "ha1b\006proto3"
+      "\010currency\022\032\n\010interval\030\n \001(\tR\010interval\022$\n" +
+      "\016trial_date_end\030\013 \001(\tR\014trialDateEnd\022\031\n\010i" +
+      "s_trial\030\014 \001(\010R\007isTrial\"\267\001\n\007Payment\022\027\n\007ca" +
+      "rd_id\030\001 \001(\tR\006cardId\022\030\n\007default\030\002 \001(\010R\007de" +
+      "fault\022\030\n\007enabled\030\003 \001(\010R\007enabled\022\024\n\005alias" +
+      "\030\004 \001(\tR\005alias\022\035\n\ntoken_card\030\005 \001(\tR\ttoken" +
+      "Card\022*\n\004card\030\006 \001(\0132\026.payment.v1alpha1.Ca" +
+      "rdR\004card\"\266\001\n\004Card\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006num" +
+      "ber\030\002 \001(\tR\006number\022(\n\020card_holder_name\030\003 " +
+      "\001(\tR\016cardHolderName\022\032\n\010expmonth\030\004 \001(\tR\010e" +
+      "xpmonth\022\030\n\007expyear\030\005 \001(\tR\007expyear\022\020\n\003cvc" +
+      "\030\006 \001(\tR\003cvc\022\024\n\005brand\030\007 \001(\tR\005brand\"\225\001\n\007In" +
+      "voice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006a" +
+      "mount\022\026\n\006period\030\003 \001(\tR\006period\022\034\n\tstatusp" +
+      "ay\030\004 \001(\tR\tstatuspay\022\022\n\004date\030\005 \001(\tR\004date\022" +
+      "\030\n\007product\030\006 \001(\tR\007product\"\340\002\n\006Biling\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022\035\n\ninvoice_id\030\002 \001(\tR\tinvoic" +
+      "eId\022!\n\014account_name\030\003 \001(\tR\013accountName\022\036" +
+      "\n\ntotalusage\030\004 \001(\003R\ntotalusage\022\020\n\003cpu\030\005 " +
+      "\001(\001R\003cpu\022\020\n\003ram\030\006 \001(\001R\003ram\022\032\n\010pipeline\030\007" +
+      " \001(\001R\010pipeline\022\024\n\005month\030\010 \001(\tR\005month\022\022\n\004" +
+      "year\030\t \001(\tR\004year\022\026\n\006amount\030\n \001(\003R\006amount" +
+      "\022\026\n\006period\030\013 \001(\tR\006period\022\034\n\tstatuspay\030\014 " +
+      "\001(\tR\tstatuspay\022\022\n\004date\030\r \001(\tR\004date\022\030\n\007pr" +
+      "oduct\030\016 \001(\tR\007product\"\217\001\n\021SubscriptionIte" +
+      "ms\022\016\n\002id\030\001 \001(\tR\002id\0220\n\024subscription_item_" +
+      "id\030\002 \001(\tR\022subscriptionItemId\022\031\n\010price_id" +
+      "\030\003 \001(\tR\007priceId\022\035\n\nproduct_id\030\004 \001(\tR\tpro" +
+      "ductId\"R\n\025SubscriptionItemsList\0229\n\005items" +
+      "\030\001 \003(\0132#.payment.v1alpha1.SubscriptionIt" +
+      "emsR\005items\">\n\013InvoiceList\022/\n\005items\030\001 \003(\013" +
+      "2\031.payment.v1alpha1.InvoiceR\005items\"@\n\014Cu" +
+      "stomerList\0220\n\005items\030\001 \003(\0132\032.payment.v1al" +
+      "pha1.CustomerR\005items\"<\n\nBilingList\022.\n\005it" +
+      "ems\030\001 \003(\0132\030.payment.v1alpha1.BilingR\005ite" +
+      "ms\"H\n\020SubscriptionList\0224\n\005items\030\001 \003(\0132\036." +
+      "payment.v1alpha1.SubscriptionR\005items\"8\n\010" +
+      "CardList\022,\n\005items\030\001 \003(\0132\026.payment.v1alph" +
+      "a1.CardR\005items\">\n\013PaymentList\022/\n\005items\030\001" +
+      " \003(\0132\031.payment.v1alpha1.PaymentR\005items\">" +
+      "\n\013ProjectList\022/\n\005items\030\001 \003(\0132\031.payment.v" +
+      "1alpha1.ProjectR\005items\"\266\001\n\016ProjectBillin" +
+      "g\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nproject_id\030\002 \001(\tR\tp" +
+      "rojectId\022!\n\014project_name\030\003 \001(\tR\013projectN" +
+      "ame\022\022\n\004plan\030\004 \001(\tR\004plan\022\020\n\003ram\030\005 \001(\tR\003ra" +
+      "m\022\020\n\003cpu\030\006 \001(\tR\003cpu\022\032\n\010pipeline\030\007 \001(\tR\010p" +
+      "ipeline\"L\n\022ProjectBillingList\0226\n\005items\030\001" +
+      " \003(\0132 .payment.v1alpha1.ProjectBillingR\005" +
+      "items\"\337\002\n\nBlockChain\022#\n\rblockchain_id\030\001 " +
+      "\001(\tR\014blockchainId\022\'\n\017blockchain_name\030\002 \001" +
+      "(\tR\016blockchainName\022\'\n\017blockchain_type\030\003 " +
+      "\001(\tR\016blockchainType\022\035\n\nproject_id\030\004 \001(\tR" +
+      "\tprojectId\022B\n\014subscription\030\005 \001(\0132\036.payme" +
+      "nt.v1alpha1.SubscriptionR\014subscription\022\035" +
+      "\n\ncreated_at\030\006 \001(\tR\tcreatedAt\022\035\n\nupdated" +
+      "_at\030\007 \001(\tR\tupdatedAt\022\026\n\006status\030\010 \001(\010R\006st" +
+      "atus\022!\n\014is_suspended\030\t \001(\010R\013isSuspended\"" +
+      "b\n\006Budget\022\022\n\004plan\030\001 \001(\tR\004plan\022\037\n\013budget_" +
+      "time\030\002 \001(\tR\nbudgetTime\022#\n\rbudget_amount\030" +
+      "\003 \001(\tR\014budgetAmount\"\035\n\007Webhook\022\022\n\004data\030\001" +
+      " \001(\tR\004dataB8Z6github.com/cuemby/ccp-paym" +
+      "ent-service/payment/v1alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -25618,7 +25840,7 @@ public final class PaymentOuterClass {
     internal_static_payment_v1alpha1_Subscription_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_Subscription_descriptor,
-        new java.lang.String[] { "SubscriptionId", "SubscriptionItemId", "InvoiceId", "PriceXsmall", "PriceSmall", "PriceMedium", "PriceLarge", "PriceXlarge", "Currency", "Interval", });
+        new java.lang.String[] { "SubscriptionId", "SubscriptionItemId", "InvoiceId", "PriceXsmall", "PriceSmall", "PriceMedium", "PriceLarge", "PriceXlarge", "Currency", "Interval", "TrialDateEnd", "IsTrial", });
     internal_static_payment_v1alpha1_Payment_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_payment_v1alpha1_Payment_fieldAccessorTable = new

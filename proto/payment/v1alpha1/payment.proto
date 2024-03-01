@@ -42,7 +42,9 @@ message Subscription {
   string price_large =7;
   string price_xlarge =8;
   string currency =9;
-  string interval =10;   
+  string interval =10;
+  string trial_date_end =11;
+  bool is_trial =12;
 }
 
 message Payment {
