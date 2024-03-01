@@ -1536,7 +1536,9 @@ proto.payment.v1alpha1.Subscription.toObject = function(includeInstance, msg) {
     priceLarge: jspb.Message.getFieldWithDefault(msg, 7, ""),
     priceXlarge: jspb.Message.getFieldWithDefault(msg, 8, ""),
     currency: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    interval: jspb.Message.getFieldWithDefault(msg, 10, "")
+    interval: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    trialDateEnd: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    isTrial: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
   };
 
   if (includeInstance) {
@@ -1612,6 +1614,14 @@ proto.payment.v1alpha1.Subscription.deserializeBinaryFromReader = function(msg, 
     case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setInterval(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTrialDateEnd(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsTrial(value);
       break;
     default:
       reader.skipField();
@@ -1709,6 +1719,20 @@ proto.payment.v1alpha1.Subscription.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeString(
       10,
+      f
+    );
+  }
+  f = message.getTrialDateEnd();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getIsTrial();
+  if (f) {
+    writer.writeBool(
+      12,
       f
     );
   }
@@ -1892,6 +1916,42 @@ proto.payment.v1alpha1.Subscription.prototype.getInterval = function() {
  */
 proto.payment.v1alpha1.Subscription.prototype.setInterval = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string trial_date_end = 11;
+ * @return {string}
+ */
+proto.payment.v1alpha1.Subscription.prototype.getTrialDateEnd = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.payment.v1alpha1.Subscription} returns this
+ */
+proto.payment.v1alpha1.Subscription.prototype.setTrialDateEnd = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional bool is_trial = 12;
+ * @return {boolean}
+ */
+proto.payment.v1alpha1.Subscription.prototype.getIsTrial = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.payment.v1alpha1.Subscription} returns this
+ */
+proto.payment.v1alpha1.Subscription.prototype.setIsTrial = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 

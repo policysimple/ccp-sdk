@@ -899,6 +899,8 @@ class Subscription final :
     kPriceXlargeFieldNumber = 8,
     kCurrencyFieldNumber = 9,
     kIntervalFieldNumber = 10,
+    kTrialDateEndFieldNumber = 11,
+    kIsTrialFieldNumber = 12,
   };
   // string subscription_id = 1 [json_name = "subscriptionId"];
   void clear_subscription_id();
@@ -1040,6 +1042,29 @@ class Subscription final :
   std::string* _internal_mutable_interval();
   public:
 
+  // string trial_date_end = 11 [json_name = "trialDateEnd"];
+  void clear_trial_date_end();
+  const std::string& trial_date_end() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_trial_date_end(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_trial_date_end();
+  PROTOBUF_MUST_USE_RESULT std::string* release_trial_date_end();
+  void set_allocated_trial_date_end(std::string* trial_date_end);
+  private:
+  const std::string& _internal_trial_date_end() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_trial_date_end(const std::string& value);
+  std::string* _internal_mutable_trial_date_end();
+  public:
+
+  // bool is_trial = 12 [json_name = "isTrial"];
+  void clear_is_trial();
+  bool is_trial() const;
+  void set_is_trial(bool value);
+  private:
+  bool _internal_is_trial() const;
+  void _internal_set_is_trial(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:payment.v1alpha1.Subscription)
  private:
   class _Internal;
@@ -1057,6 +1082,8 @@ class Subscription final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr price_xlarge_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr currency_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr interval_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trial_date_end_;
+  bool is_trial_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_payment_2fv1alpha1_2fpayment_2eproto;
 };
@@ -6059,6 +6086,72 @@ inline void Subscription::set_allocated_interval(std::string* interval) {
   interval_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), interval,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.interval)
+}
+
+// string trial_date_end = 11 [json_name = "trialDateEnd"];
+inline void Subscription::clear_trial_date_end() {
+  trial_date_end_.ClearToEmpty();
+}
+inline const std::string& Subscription::trial_date_end() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.trial_date_end)
+  return _internal_trial_date_end();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Subscription::set_trial_date_end(ArgT0&& arg0, ArgT... args) {
+ 
+ trial_date_end_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.trial_date_end)
+}
+inline std::string* Subscription::mutable_trial_date_end() {
+  std::string* _s = _internal_mutable_trial_date_end();
+  // @@protoc_insertion_point(field_mutable:payment.v1alpha1.Subscription.trial_date_end)
+  return _s;
+}
+inline const std::string& Subscription::_internal_trial_date_end() const {
+  return trial_date_end_.Get();
+}
+inline void Subscription::_internal_set_trial_date_end(const std::string& value) {
+  
+  trial_date_end_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Subscription::_internal_mutable_trial_date_end() {
+  
+  return trial_date_end_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Subscription::release_trial_date_end() {
+  // @@protoc_insertion_point(field_release:payment.v1alpha1.Subscription.trial_date_end)
+  return trial_date_end_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Subscription::set_allocated_trial_date_end(std::string* trial_date_end) {
+  if (trial_date_end != nullptr) {
+    
+  } else {
+    
+  }
+  trial_date_end_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), trial_date_end,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:payment.v1alpha1.Subscription.trial_date_end)
+}
+
+// bool is_trial = 12 [json_name = "isTrial"];
+inline void Subscription::clear_is_trial() {
+  is_trial_ = false;
+}
+inline bool Subscription::_internal_is_trial() const {
+  return is_trial_;
+}
+inline bool Subscription::is_trial() const {
+  // @@protoc_insertion_point(field_get:payment.v1alpha1.Subscription.is_trial)
+  return _internal_is_trial();
+}
+inline void Subscription::_internal_set_is_trial(bool value) {
+  
+  is_trial_ = value;
+}
+inline void Subscription::set_is_trial(bool value) {
+  _internal_set_is_trial(value);
+  // @@protoc_insertion_point(field_set:payment.v1alpha1.Subscription.is_trial)
 }
 
 // -------------------------------------------------------------------
