@@ -31,7 +31,8 @@ service RuntimeAPIService{
     rpc ChangeStatusRuntimeAndApplication(ChangeStatusRuntimeAndApplicationRequest) returns (ChangeStatusRuntimeAndApplicationResponse) {};
     rpc UpdateApplicationChanges(UpdateApplicationChangesRequest) returns (UpdateApplicationChangesResponse) {};
     rpc MakeRollbackRuntime(MakeRollbackRuntimeRequest) returns (MakeRollbackRuntimeResponse) {};
-    
+    rpc DeleteRuntimesByProject(DeleteRuntimesByProjectRequest) returns (DeleteRuntimesByProjectResponse) {};
+
 }
 
 message CreateRuntimeRequest {
@@ -211,6 +212,19 @@ message MakeRollbackRuntimeRequest {
 }
 
 message MakeRollbackRuntimeResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message DeleteRuntimesByProjectRequest {
+    string application_id = 1;
+    string name_application = 2;
+    string integration_id = 3;
+    string project_id = 4;
+    string organization_id = 5;
+}
+
+message DeleteRuntimesByProjectResponse {
     string msg = 1;
     string error = 2;
 }

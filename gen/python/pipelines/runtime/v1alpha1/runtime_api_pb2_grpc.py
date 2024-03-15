@@ -94,6 +94,11 @@ class RuntimeAPIServiceStub(object):
         request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.MakeRollbackRuntimeRequest.SerializeToString,
         response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.MakeRollbackRuntimeResponse.FromString,
         )
+    self.DeleteRuntimesByProject = channel.unary_unary(
+        '/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByProject',
+        request_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.DeleteRuntimesByProjectRequest.SerializeToString,
+        response_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.DeleteRuntimesByProjectResponse.FromString,
+        )
 
 
 class RuntimeAPIServiceServicer(object):
@@ -212,6 +217,13 @@ class RuntimeAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def DeleteRuntimesByProject(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_RuntimeAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -294,6 +306,11 @@ def add_RuntimeAPIServiceServicer_to_server(servicer, server):
           servicer.MakeRollbackRuntime,
           request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.MakeRollbackRuntimeRequest.FromString,
           response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.MakeRollbackRuntimeResponse.SerializeToString,
+      ),
+      'DeleteRuntimesByProject': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteRuntimesByProject,
+          request_deserializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.DeleteRuntimesByProjectRequest.FromString,
+          response_serializer=pipelines_dot_runtime_dot_v1alpha1_dot_runtime__api__pb2.DeleteRuntimesByProjectResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

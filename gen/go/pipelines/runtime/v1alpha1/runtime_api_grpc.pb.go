@@ -34,6 +34,7 @@ type RuntimeAPIServiceClient interface {
 	ChangeStatusRuntimeAndApplication(ctx context.Context, in *ChangeStatusRuntimeAndApplicationRequest, opts ...grpc.CallOption) (*ChangeStatusRuntimeAndApplicationResponse, error)
 	UpdateApplicationChanges(ctx context.Context, in *UpdateApplicationChangesRequest, opts ...grpc.CallOption) (*UpdateApplicationChangesResponse, error)
 	MakeRollbackRuntime(ctx context.Context, in *MakeRollbackRuntimeRequest, opts ...grpc.CallOption) (*MakeRollbackRuntimeResponse, error)
+	DeleteRuntimesByProject(ctx context.Context, in *DeleteRuntimesByProjectRequest, opts ...grpc.CallOption) (*DeleteRuntimesByProjectResponse, error)
 }
 
 type runtimeAPIServiceClient struct {
@@ -188,6 +189,15 @@ func (c *runtimeAPIServiceClient) MakeRollbackRuntime(ctx context.Context, in *M
 	return out, nil
 }
 
+func (c *runtimeAPIServiceClient) DeleteRuntimesByProject(ctx context.Context, in *DeleteRuntimesByProjectRequest, opts ...grpc.CallOption) (*DeleteRuntimesByProjectResponse, error) {
+	out := new(DeleteRuntimesByProjectResponse)
+	err := c.cc.Invoke(ctx, "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByProject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RuntimeAPIServiceServer is the server API for RuntimeAPIService service.
 // All implementations should embed UnimplementedRuntimeAPIServiceServer
 // for forward compatibility
@@ -208,6 +218,7 @@ type RuntimeAPIServiceServer interface {
 	ChangeStatusRuntimeAndApplication(context.Context, *ChangeStatusRuntimeAndApplicationRequest) (*ChangeStatusRuntimeAndApplicationResponse, error)
 	UpdateApplicationChanges(context.Context, *UpdateApplicationChangesRequest) (*UpdateApplicationChangesResponse, error)
 	MakeRollbackRuntime(context.Context, *MakeRollbackRuntimeRequest) (*MakeRollbackRuntimeResponse, error)
+	DeleteRuntimesByProject(context.Context, *DeleteRuntimesByProjectRequest) (*DeleteRuntimesByProjectResponse, error)
 }
 
 // UnimplementedRuntimeAPIServiceServer should be embedded to have forward compatible implementations.
@@ -261,6 +272,9 @@ func (UnimplementedRuntimeAPIServiceServer) UpdateApplicationChanges(context.Con
 }
 func (UnimplementedRuntimeAPIServiceServer) MakeRollbackRuntime(context.Context, *MakeRollbackRuntimeRequest) (*MakeRollbackRuntimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MakeRollbackRuntime not implemented")
+}
+func (UnimplementedRuntimeAPIServiceServer) DeleteRuntimesByProject(context.Context, *DeleteRuntimesByProjectRequest) (*DeleteRuntimesByProjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteRuntimesByProject not implemented")
 }
 
 // UnsafeRuntimeAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -562,6 +576,24 @@ func _RuntimeAPIService_MakeRollbackRuntime_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RuntimeAPIService_DeleteRuntimesByProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRuntimesByProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RuntimeAPIServiceServer).DeleteRuntimesByProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByProject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RuntimeAPIServiceServer).DeleteRuntimesByProject(ctx, req.(*DeleteRuntimesByProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // RuntimeAPIService_ServiceDesc is the grpc.ServiceDesc for RuntimeAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -632,6 +664,10 @@ var RuntimeAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MakeRollbackRuntime",
 			Handler:    _RuntimeAPIService_MakeRollbackRuntime_Handler,
+		},
+		{
+			MethodName: "DeleteRuntimesByProject",
+			Handler:    _RuntimeAPIService_DeleteRuntimesByProject_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

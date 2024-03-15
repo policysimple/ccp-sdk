@@ -248,6 +248,27 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::WebHookResponse>> PrepareAsyncWebHook(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::WebHookResponse>>(PrepareAsyncWebHookRaw(context, request, cq));
     }
+    virtual ::grpc::Status GetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>> AsyncGetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>>(AsyncGetProjectTrialEndSubscriptionRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>> PrepareAsyncGetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>>(PrepareAsyncGetProjectTrialEndSubscriptionRaw(context, request, cq));
+    }
+    virtual ::grpc::Status GetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionByProjectResponse>> AsyncGetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionByProjectResponse>>(AsyncGetSubscriptionByProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionByProjectResponse>> PrepareAsyncGetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionByProjectResponse>>(PrepareAsyncGetSubscriptionByProjectRaw(context, request, cq));
+    }
+    virtual ::grpc::Status HandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::HandleSubscriptionEventsResponse>> AsyncHandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::HandleSubscriptionEventsResponse>>(AsyncHandleSubscriptionEventsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::HandleSubscriptionEventsResponse>> PrepareAsyncHandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::HandleSubscriptionEventsResponse>>(PrepareAsyncHandleSubscriptionEventsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -289,6 +310,9 @@ class PaymentAPIService final {
       virtual void BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
       // WebHook
       virtual void WebHook(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest* request, ::payment::v1alpha1::WebHookResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void HandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -350,6 +374,12 @@ class PaymentAPIService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::BlockChainSubscriptionResponse>* PrepareAsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::WebHookResponse>* AsyncWebHookRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::WebHookResponse>* PrepareAsyncWebHookRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>* AsyncGetProjectTrialEndSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>* PrepareAsyncGetProjectTrialEndSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionByProjectResponse>* AsyncGetSubscriptionByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::GetSubscriptionByProjectResponse>* PrepareAsyncGetSubscriptionByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::HandleSubscriptionEventsResponse>* AsyncHandleSubscriptionEventsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::payment::v1alpha1::HandleSubscriptionEventsResponse>* PrepareAsyncHandleSubscriptionEventsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -557,6 +587,27 @@ class PaymentAPIService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::WebHookResponse>> PrepareAsyncWebHook(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::WebHookResponse>>(PrepareAsyncWebHookRaw(context, request, cq));
     }
+    ::grpc::Status GetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>> AsyncGetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>>(AsyncGetProjectTrialEndSubscriptionRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>> PrepareAsyncGetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>>(PrepareAsyncGetProjectTrialEndSubscriptionRaw(context, request, cq));
+    }
+    ::grpc::Status GetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionByProjectResponse>> AsyncGetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionByProjectResponse>>(AsyncGetSubscriptionByProjectRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionByProjectResponse>> PrepareAsyncGetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionByProjectResponse>>(PrepareAsyncGetSubscriptionByProjectRaw(context, request, cq));
+    }
+    ::grpc::Status HandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::HandleSubscriptionEventsResponse>> AsyncHandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::HandleSubscriptionEventsResponse>>(AsyncHandleSubscriptionEventsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::HandleSubscriptionEventsResponse>> PrepareAsyncHandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::HandleSubscriptionEventsResponse>>(PrepareAsyncHandleSubscriptionEventsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -589,6 +640,9 @@ class PaymentAPIService final {
       void StopProject(::grpc::ClientContext* context, const ::payment::v1alpha1::StopProjectRequest* request, ::payment::v1alpha1::StopProjectResponse* response, std::function<void(::grpc::Status)>) override;
       void BlockChainSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
       void WebHook(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest* request, ::payment::v1alpha1::WebHookResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void HandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -658,6 +712,12 @@ class PaymentAPIService final {
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::BlockChainSubscriptionResponse>* PrepareAsyncBlockChainSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::WebHookResponse>* AsyncWebHookRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::WebHookResponse>* PrepareAsyncWebHookRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::WebHookRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>* AsyncGetProjectTrialEndSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>* PrepareAsyncGetProjectTrialEndSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionByProjectResponse>* AsyncGetSubscriptionByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionByProjectResponse>* PrepareAsyncGetSubscriptionByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::HandleSubscriptionEventsResponse>* AsyncHandleSubscriptionEventsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::HandleSubscriptionEventsResponse>* PrepareAsyncHandleSubscriptionEventsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateCustomer_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateSubscription_;
     const ::grpc::internal::RpcMethod rpcmethod_CreatePayment_;
@@ -687,6 +747,9 @@ class PaymentAPIService final {
     const ::grpc::internal::RpcMethod rpcmethod_StopProject_;
     const ::grpc::internal::RpcMethod rpcmethod_BlockChainSubscription_;
     const ::grpc::internal::RpcMethod rpcmethod_WebHook_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetProjectTrialEndSubscription_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetSubscriptionByProject_;
+    const ::grpc::internal::RpcMethod rpcmethod_HandleSubscriptionEvents_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -732,6 +795,9 @@ class PaymentAPIService final {
     virtual ::grpc::Status BlockChainSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::BlockChainSubscriptionRequest* request, ::payment::v1alpha1::BlockChainSubscriptionResponse* response);
     // WebHook
     virtual ::grpc::Status WebHook(::grpc::ServerContext* context, const ::payment::v1alpha1::WebHookRequest* request, ::payment::v1alpha1::WebHookResponse* response);
+    virtual ::grpc::Status GetProjectTrialEndSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response);
+    virtual ::grpc::Status GetSubscriptionByProject(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response);
+    virtual ::grpc::Status HandleSubscriptionEvents(::grpc::ServerContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateCustomer : public BaseClass {
@@ -1313,7 +1379,67 @@ class PaymentAPIService final {
       ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateCustomer<WithAsyncMethod_CreateSubscription<WithAsyncMethod_CreatePayment<WithAsyncMethod_CreateCard<WithAsyncMethod_CreateInvoice<WithAsyncMethod_GetOrganization<WithAsyncMethod_GetSubscription<WithAsyncMethod_GetPayment<WithAsyncMethod_GetCustomer<WithAsyncMethod_GetBilingMonth<WithAsyncMethod_GetPayments<WithAsyncMethod_ListProjects<WithAsyncMethod_ListPayment<WithAsyncMethod_ListSubscriptionItems<WithAsyncMethod_ListCustomers<WithAsyncMethod_ListProjectById<WithAsyncMethod_UpdateSubscription<WithAsyncMethod_SetDefaultPaymentMethod<WithAsyncMethod_DeleteProject<WithAsyncMethod_DeletePayment<WithAsyncMethod_CancelSubscription<WithAsyncMethod_DeleteCustomer<WithAsyncMethod_InvoiceFilter<WithAsyncMethod_ConsumeByProject<WithAsyncMethod_CreateProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_StopProject<WithAsyncMethod_BlockChainSubscription<WithAsyncMethod_WebHook<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetProjectTrialEndSubscription : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetProjectTrialEndSubscription() {
+      ::grpc::Service::MarkMethodAsync(29);
+    }
+    ~WithAsyncMethod_GetProjectTrialEndSubscription() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetProjectTrialEndSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetProjectTrialEndSubscription(::grpc::ServerContext* context, ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetSubscriptionByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetSubscriptionByProject() {
+      ::grpc::Service::MarkMethodAsync(30);
+    }
+    ~WithAsyncMethod_GetSubscriptionByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetSubscriptionByProject(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetSubscriptionByProject(::grpc::ServerContext* context, ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::GetSubscriptionByProjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_HandleSubscriptionEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_HandleSubscriptionEvents() {
+      ::grpc::Service::MarkMethodAsync(31);
+    }
+    ~WithAsyncMethod_HandleSubscriptionEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HandleSubscriptionEvents(::grpc::ServerContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestHandleSubscriptionEvents(::grpc::ServerContext* context, ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::grpc::ServerAsyncResponseWriter< ::payment::v1alpha1::HandleSubscriptionEventsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateCustomer<WithAsyncMethod_CreateSubscription<WithAsyncMethod_CreatePayment<WithAsyncMethod_CreateCard<WithAsyncMethod_CreateInvoice<WithAsyncMethod_GetOrganization<WithAsyncMethod_GetSubscription<WithAsyncMethod_GetPayment<WithAsyncMethod_GetCustomer<WithAsyncMethod_GetBilingMonth<WithAsyncMethod_GetPayments<WithAsyncMethod_ListProjects<WithAsyncMethod_ListPayment<WithAsyncMethod_ListSubscriptionItems<WithAsyncMethod_ListCustomers<WithAsyncMethod_ListProjectById<WithAsyncMethod_UpdateSubscription<WithAsyncMethod_SetDefaultPaymentMethod<WithAsyncMethod_DeleteProject<WithAsyncMethod_DeletePayment<WithAsyncMethod_CancelSubscription<WithAsyncMethod_DeleteCustomer<WithAsyncMethod_InvoiceFilter<WithAsyncMethod_ConsumeByProject<WithAsyncMethod_CreateProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_StopProject<WithAsyncMethod_BlockChainSubscription<WithAsyncMethod_WebHook<WithAsyncMethod_GetProjectTrialEndSubscription<WithAsyncMethod_GetSubscriptionByProject<WithAsyncMethod_HandleSubscriptionEvents<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateCustomer : public BaseClass {
    private:
@@ -1803,6 +1929,57 @@ class PaymentAPIService final {
     }
     // disable synchronous version of this method
     ::grpc::Status WebHook(::grpc::ServerContext* context, const ::payment::v1alpha1::WebHookRequest* request, ::payment::v1alpha1::WebHookResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetProjectTrialEndSubscription : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetProjectTrialEndSubscription() {
+      ::grpc::Service::MarkMethodGeneric(29);
+    }
+    ~WithGenericMethod_GetProjectTrialEndSubscription() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetProjectTrialEndSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetSubscriptionByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetSubscriptionByProject() {
+      ::grpc::Service::MarkMethodGeneric(30);
+    }
+    ~WithGenericMethod_GetSubscriptionByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetSubscriptionByProject(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_HandleSubscriptionEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_HandleSubscriptionEvents() {
+      ::grpc::Service::MarkMethodGeneric(31);
+    }
+    ~WithGenericMethod_HandleSubscriptionEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HandleSubscriptionEvents(::grpc::ServerContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2388,6 +2565,66 @@ class PaymentAPIService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetProjectTrialEndSubscription : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetProjectTrialEndSubscription() {
+      ::grpc::Service::MarkMethodRaw(29);
+    }
+    ~WithRawMethod_GetProjectTrialEndSubscription() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetProjectTrialEndSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetProjectTrialEndSubscription(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetSubscriptionByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetSubscriptionByProject() {
+      ::grpc::Service::MarkMethodRaw(30);
+    }
+    ~WithRawMethod_GetSubscriptionByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetSubscriptionByProject(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetSubscriptionByProject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_HandleSubscriptionEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_HandleSubscriptionEvents() {
+      ::grpc::Service::MarkMethodRaw(31);
+    }
+    ~WithRawMethod_HandleSubscriptionEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status HandleSubscriptionEvents(::grpc::ServerContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestHandleSubscriptionEvents(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateCustomer : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -2967,9 +3204,69 @@ class PaymentAPIService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedWebHook(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::WebHookRequest,::payment::v1alpha1::WebHookResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_ListCustomers<WithStreamedUnaryMethod_ListProjectById<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<WithStreamedUnaryMethod_WebHook<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetProjectTrialEndSubscription : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetProjectTrialEndSubscription() {
+      ::grpc::Service::MarkMethodStreamed(29,
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>(std::bind(&WithStreamedUnaryMethod_GetProjectTrialEndSubscription<BaseClass>::StreamedGetProjectTrialEndSubscription, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetProjectTrialEndSubscription() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetProjectTrialEndSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetProjectTrialEndSubscription(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest,::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetSubscriptionByProject : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetSubscriptionByProject() {
+      ::grpc::Service::MarkMethodStreamed(30,
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::GetSubscriptionByProjectRequest, ::payment::v1alpha1::GetSubscriptionByProjectResponse>(std::bind(&WithStreamedUnaryMethod_GetSubscriptionByProject<BaseClass>::StreamedGetSubscriptionByProject, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetSubscriptionByProject() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetSubscriptionByProject(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetSubscriptionByProject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::GetSubscriptionByProjectRequest,::payment::v1alpha1::GetSubscriptionByProjectResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_HandleSubscriptionEvents : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_HandleSubscriptionEvents() {
+      ::grpc::Service::MarkMethodStreamed(31,
+        new ::grpc::internal::StreamedUnaryHandler< ::payment::v1alpha1::HandleSubscriptionEventsRequest, ::payment::v1alpha1::HandleSubscriptionEventsResponse>(std::bind(&WithStreamedUnaryMethod_HandleSubscriptionEvents<BaseClass>::StreamedHandleSubscriptionEvents, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_HandleSubscriptionEvents() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status HandleSubscriptionEvents(::grpc::ServerContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedHandleSubscriptionEvents(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::payment::v1alpha1::HandleSubscriptionEventsRequest,::payment::v1alpha1::HandleSubscriptionEventsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_ListCustomers<WithStreamedUnaryMethod_ListProjectById<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<WithStreamedUnaryMethod_WebHook<WithStreamedUnaryMethod_GetProjectTrialEndSubscription<WithStreamedUnaryMethod_GetSubscriptionByProject<WithStreamedUnaryMethod_HandleSubscriptionEvents<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_ListCustomers<WithStreamedUnaryMethod_ListProjectById<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<WithStreamedUnaryMethod_WebHook<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateCustomer<WithStreamedUnaryMethod_CreateSubscription<WithStreamedUnaryMethod_CreatePayment<WithStreamedUnaryMethod_CreateCard<WithStreamedUnaryMethod_CreateInvoice<WithStreamedUnaryMethod_GetOrganization<WithStreamedUnaryMethod_GetSubscription<WithStreamedUnaryMethod_GetPayment<WithStreamedUnaryMethod_GetCustomer<WithStreamedUnaryMethod_GetBilingMonth<WithStreamedUnaryMethod_GetPayments<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_ListPayment<WithStreamedUnaryMethod_ListSubscriptionItems<WithStreamedUnaryMethod_ListCustomers<WithStreamedUnaryMethod_ListProjectById<WithStreamedUnaryMethod_UpdateSubscription<WithStreamedUnaryMethod_SetDefaultPaymentMethod<WithStreamedUnaryMethod_DeleteProject<WithStreamedUnaryMethod_DeletePayment<WithStreamedUnaryMethod_CancelSubscription<WithStreamedUnaryMethod_DeleteCustomer<WithStreamedUnaryMethod_InvoiceFilter<WithStreamedUnaryMethod_ConsumeByProject<WithStreamedUnaryMethod_CreateProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_StopProject<WithStreamedUnaryMethod_BlockChainSubscription<WithStreamedUnaryMethod_WebHook<WithStreamedUnaryMethod_GetProjectTrialEndSubscription<WithStreamedUnaryMethod_GetSubscriptionByProject<WithStreamedUnaryMethod_HandleSubscriptionEvents<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1alpha1

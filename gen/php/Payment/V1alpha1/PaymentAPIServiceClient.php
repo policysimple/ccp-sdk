@@ -402,4 +402,43 @@ class PaymentAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Payment\V1alpha1\GetProjectTrialEndSubscriptionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetProjectTrialEndSubscription(\Payment\V1alpha1\GetProjectTrialEndSubscriptionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetProjectTrialEndSubscription',
+        $argument,
+        ['\Payment\V1alpha1\GetProjectTrialEndSubscriptionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Payment\V1alpha1\GetSubscriptionByProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetSubscriptionByProject(\Payment\V1alpha1\GetSubscriptionByProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/GetSubscriptionByProject',
+        $argument,
+        ['\Payment\V1alpha1\GetSubscriptionByProjectResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Payment\V1alpha1\HandleSubscriptionEventsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function HandleSubscriptionEvents(\Payment\V1alpha1\HandleSubscriptionEventsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/payment.v1alpha1.PaymentAPIService/HandleSubscriptionEvents',
+        $argument,
+        ['\Payment\V1alpha1\HandleSubscriptionEventsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

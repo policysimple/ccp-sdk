@@ -159,6 +159,21 @@ class PaymentAPIServiceStub(object):
         request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.WebHookRequest.SerializeToString,
         response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.WebHookResponse.FromString,
         )
+    self.GetProjectTrialEndSubscription = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/GetProjectTrialEndSubscription',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetProjectTrialEndSubscriptionRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetProjectTrialEndSubscriptionResponse.FromString,
+        )
+    self.GetSubscriptionByProject = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/GetSubscriptionByProject',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetSubscriptionByProjectRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetSubscriptionByProjectResponse.FromString,
+        )
+    self.HandleSubscriptionEvents = channel.unary_unary(
+        '/payment.v1alpha1.PaymentAPIService/HandleSubscriptionEvents',
+        request_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.HandleSubscriptionEventsRequest.SerializeToString,
+        response_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.HandleSubscriptionEventsResponse.FromString,
+        )
 
 
 class PaymentAPIServiceServicer(object):
@@ -368,6 +383,27 @@ class PaymentAPIServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetProjectTrialEndSubscription(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetSubscriptionByProject(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def HandleSubscriptionEvents(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_PaymentAPIServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -515,6 +551,21 @@ def add_PaymentAPIServiceServicer_to_server(servicer, server):
           servicer.WebHook,
           request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.WebHookRequest.FromString,
           response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.WebHookResponse.SerializeToString,
+      ),
+      'GetProjectTrialEndSubscription': grpc.unary_unary_rpc_method_handler(
+          servicer.GetProjectTrialEndSubscription,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetProjectTrialEndSubscriptionRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetProjectTrialEndSubscriptionResponse.SerializeToString,
+      ),
+      'GetSubscriptionByProject': grpc.unary_unary_rpc_method_handler(
+          servicer.GetSubscriptionByProject,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetSubscriptionByProjectRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.GetSubscriptionByProjectResponse.SerializeToString,
+      ),
+      'HandleSubscriptionEvents': grpc.unary_unary_rpc_method_handler(
+          servicer.HandleSubscriptionEvents,
+          request_deserializer=payment_dot_v1alpha1_dot_payment__api__pb2.HandleSubscriptionEventsRequest.FromString,
+          response_serializer=payment_dot_v1alpha1_dot_payment__api__pb2.HandleSubscriptionEventsResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

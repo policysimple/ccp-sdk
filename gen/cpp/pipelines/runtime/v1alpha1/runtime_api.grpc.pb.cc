@@ -36,6 +36,7 @@ static const char* RuntimeAPIService_method_names[] = {
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/ChangeStatusRuntimeAndApplication",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/UpdateApplicationChanges",
   "/pipelines.runtime.v1alpha1.RuntimeAPIService/MakeRollbackRuntime",
+  "/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByProject",
 };
 
 std::unique_ptr< RuntimeAPIService::Stub> RuntimeAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -61,6 +62,7 @@ RuntimeAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_ChangeStatusRuntimeAndApplication_(RuntimeAPIService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateApplicationChanges_(RuntimeAPIService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_MakeRollbackRuntime_(RuntimeAPIService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteRuntimesByProject_(RuntimeAPIService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RuntimeAPIService::Stub::GetRuntime(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::GetRuntimeRequest& request, ::pipelines::runtime::v1alpha1::GetRuntimeResponse* response) {
@@ -319,6 +321,22 @@ void RuntimeAPIService::Stub::experimental_async::MakeRollbackRuntime(::grpc::Cl
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>::Create(channel_.get(), cq, rpcmethod_MakeRollbackRuntime_, context, request, false);
 }
 
+::grpc::Status RuntimeAPIService::Stub::DeleteRuntimesByProject(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectRequest& request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteRuntimesByProject_, context, request, response);
+}
+
+void RuntimeAPIService::Stub::experimental_async::DeleteRuntimesByProject(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteRuntimesByProject_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectResponse>* RuntimeAPIService::Stub::AsyncDeleteRuntimesByProjectRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRuntimesByProject_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectResponse>* RuntimeAPIService::Stub::PrepareAsyncDeleteRuntimesByProjectRaw(::grpc::ClientContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRuntimesByProject_, context, request, false);
+}
+
 RuntimeAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RuntimeAPIService_method_names[0],
@@ -400,6 +418,11 @@ RuntimeAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse>(
           std::mem_fn(&RuntimeAPIService::Service::MakeRollbackRuntime), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RuntimeAPIService_method_names[16],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RuntimeAPIService::Service, ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectRequest, ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectResponse>(
+          std::mem_fn(&RuntimeAPIService::Service::DeleteRuntimesByProject), this)));
 }
 
 RuntimeAPIService::Service::~Service() {
@@ -511,6 +534,13 @@ RuntimeAPIService::Service::~Service() {
 }
 
 ::grpc::Status RuntimeAPIService::Service::MakeRollbackRuntime(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeRequest* request, ::pipelines::runtime::v1alpha1::MakeRollbackRuntimeResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RuntimeAPIService::Service::DeleteRuntimesByProject(::grpc::ServerContext* context, const ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectRequest* request, ::pipelines::runtime::v1alpha1::DeleteRuntimesByProjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;
