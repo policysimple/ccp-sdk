@@ -137,6 +137,28 @@ function deserialize_pipelines_runtime_v1alpha1_DeleteRuntimesByEnvironmentRespo
   return pipelines_runtime_v1alpha1_runtime_api_pb.DeleteRuntimesByEnvironmentResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectRequest(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.DeleteRuntimesByProjectRequest)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.DeleteRuntimesByProjectRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectRequest(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.DeleteRuntimesByProjectRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectResponse(arg) {
+  if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.DeleteRuntimesByProjectResponse)) {
+    throw new Error('Expected argument of type pipelines.runtime.v1alpha1.DeleteRuntimesByProjectResponse');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectResponse(buffer_arg) {
+  return pipelines_runtime_v1alpha1_runtime_api_pb.DeleteRuntimesByProjectResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_pipelines_runtime_v1alpha1_GetRuntimeRequest(arg) {
   if (!(arg instanceof pipelines_runtime_v1alpha1_runtime_api_pb.GetRuntimeRequest)) {
     throw new Error('Expected argument of type pipelines.runtime.v1alpha1.GetRuntimeRequest');
@@ -534,6 +556,17 @@ var RuntimeAPIServiceService = exports.RuntimeAPIServiceService = {
     requestDeserialize: deserialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeRequest,
     responseSerialize: serialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeResponse,
     responseDeserialize: deserialize_pipelines_runtime_v1alpha1_MakeRollbackRuntimeResponse,
+  },
+  deleteRuntimesByProject: {
+    path: '/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByProject',
+    requestStream: false,
+    responseStream: false,
+    requestType: pipelines_runtime_v1alpha1_runtime_api_pb.DeleteRuntimesByProjectRequest,
+    responseType: pipelines_runtime_v1alpha1_runtime_api_pb.DeleteRuntimesByProjectResponse,
+    requestSerialize: serialize_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectRequest,
+    requestDeserialize: deserialize_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectRequest,
+    responseSerialize: serialize_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectResponse,
+    responseDeserialize: deserialize_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectResponse,
   },
 };
 

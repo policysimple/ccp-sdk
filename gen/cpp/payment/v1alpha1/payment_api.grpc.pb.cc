@@ -48,6 +48,9 @@ static const char* PaymentAPIService_method_names[] = {
   "/payment.v1alpha1.PaymentAPIService/StopProject",
   "/payment.v1alpha1.PaymentAPIService/BlockChainSubscription",
   "/payment.v1alpha1.PaymentAPIService/WebHook",
+  "/payment.v1alpha1.PaymentAPIService/GetProjectTrialEndSubscription",
+  "/payment.v1alpha1.PaymentAPIService/GetSubscriptionByProject",
+  "/payment.v1alpha1.PaymentAPIService/HandleSubscriptionEvents",
 };
 
 std::unique_ptr< PaymentAPIService::Stub> PaymentAPIService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -86,6 +89,9 @@ PaymentAPIService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_StopProject_(PaymentAPIService_method_names[26], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_BlockChainSubscription_(PaymentAPIService_method_names[27], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_WebHook_(PaymentAPIService_method_names[28], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetProjectTrialEndSubscription_(PaymentAPIService_method_names[29], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetSubscriptionByProject_(PaymentAPIService_method_names[30], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_HandleSubscriptionEvents_(PaymentAPIService_method_names[31], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PaymentAPIService::Stub::CreateCustomer(::grpc::ClientContext* context, const ::payment::v1alpha1::CreateCustomerRequest& request, ::payment::v1alpha1::CreateCustomerResponse* response) {
@@ -552,6 +558,54 @@ void PaymentAPIService::Stub::experimental_async::WebHook(::grpc::ClientContext*
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::WebHookResponse>::Create(channel_.get(), cq, rpcmethod_WebHook_, context, request, false);
 }
 
+::grpc::Status PaymentAPIService::Stub::GetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetProjectTrialEndSubscription_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::GetProjectTrialEndSubscription(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProjectTrialEndSubscription_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>* PaymentAPIService::Stub::AsyncGetProjectTrialEndSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>::Create(channel_.get(), cq, rpcmethod_GetProjectTrialEndSubscription_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>* PaymentAPIService::Stub::PrepareAsyncGetProjectTrialEndSubscriptionRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>::Create(channel_.get(), cq, rpcmethod_GetProjectTrialEndSubscription_, context, request, false);
+}
+
+::grpc::Status PaymentAPIService::Stub::GetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetSubscriptionByProject_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::GetSubscriptionByProject(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetSubscriptionByProject_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionByProjectResponse>* PaymentAPIService::Stub::AsyncGetSubscriptionByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::GetSubscriptionByProjectResponse>::Create(channel_.get(), cq, rpcmethod_GetSubscriptionByProject_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::GetSubscriptionByProjectResponse>* PaymentAPIService::Stub::PrepareAsyncGetSubscriptionByProjectRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::GetSubscriptionByProjectResponse>::Create(channel_.get(), cq, rpcmethod_GetSubscriptionByProject_, context, request, false);
+}
+
+::grpc::Status PaymentAPIService::Stub::HandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_HandleSubscriptionEvents_, context, request, response);
+}
+
+void PaymentAPIService::Stub::experimental_async::HandleSubscriptionEvents(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_HandleSubscriptionEvents_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::HandleSubscriptionEventsResponse>* PaymentAPIService::Stub::AsyncHandleSubscriptionEventsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::HandleSubscriptionEventsResponse>::Create(channel_.get(), cq, rpcmethod_HandleSubscriptionEvents_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::payment::v1alpha1::HandleSubscriptionEventsResponse>* PaymentAPIService::Stub::PrepareAsyncHandleSubscriptionEventsRaw(::grpc::ClientContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::payment::v1alpha1::HandleSubscriptionEventsResponse>::Create(channel_.get(), cq, rpcmethod_HandleSubscriptionEvents_, context, request, false);
+}
+
 PaymentAPIService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PaymentAPIService_method_names[0],
@@ -698,6 +752,21 @@ PaymentAPIService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::WebHookRequest, ::payment::v1alpha1::WebHookResponse>(
           std::mem_fn(&PaymentAPIService::Service::WebHook), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[29],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse>(
+          std::mem_fn(&PaymentAPIService::Service::GetProjectTrialEndSubscription), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[30],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::GetSubscriptionByProjectRequest, ::payment::v1alpha1::GetSubscriptionByProjectResponse>(
+          std::mem_fn(&PaymentAPIService::Service::GetSubscriptionByProject), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PaymentAPIService_method_names[31],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PaymentAPIService::Service, ::payment::v1alpha1::HandleSubscriptionEventsRequest, ::payment::v1alpha1::HandleSubscriptionEventsResponse>(
+          std::mem_fn(&PaymentAPIService::Service::HandleSubscriptionEvents), this)));
 }
 
 PaymentAPIService::Service::~Service() {
@@ -900,6 +969,27 @@ PaymentAPIService::Service::~Service() {
 }
 
 ::grpc::Status PaymentAPIService::Service::WebHook(::grpc::ServerContext* context, const ::payment::v1alpha1::WebHookRequest* request, ::payment::v1alpha1::WebHookResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::GetProjectTrialEndSubscription(::grpc::ServerContext* context, const ::payment::v1alpha1::GetProjectTrialEndSubscriptionRequest* request, ::payment::v1alpha1::GetProjectTrialEndSubscriptionResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::GetSubscriptionByProject(::grpc::ServerContext* context, const ::payment::v1alpha1::GetSubscriptionByProjectRequest* request, ::payment::v1alpha1::GetSubscriptionByProjectResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PaymentAPIService::Service::HandleSubscriptionEvents(::grpc::ServerContext* context, const ::payment::v1alpha1::HandleSubscriptionEventsRequest* request, ::payment::v1alpha1::HandleSubscriptionEventsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

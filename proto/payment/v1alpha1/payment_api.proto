@@ -54,6 +54,11 @@ service PaymentAPIService{
 
     //WebHook
     rpc WebHook(WebHookRequest) returns (WebHookResponse){};
+
+    rpc GetProjectTrialEndSubscription(GetProjectTrialEndSubscriptionRequest) returns (GetProjectTrialEndSubscriptionResponse) {};
+    rpc GetSubscriptionByProject(GetSubscriptionByProjectRequest) returns (GetSubscriptionByProjectResponse) {};
+    rpc HandleSubscriptionEvents(HandleSubscriptionEventsRequest) returns (HandleSubscriptionEventsResponse) {};
+
 }
 
 message StopProjectRequest{
@@ -373,5 +378,38 @@ message ListProjectByIdRequest {
 
 message ListProjectByIdResponse {
     payment.v1alpha1.Project project = 1;
+    string error = 2;
+}
+
+message GetProjectTrialEndSubscriptionRequest {
+    string subscription_id = 1;
+    string project_id = 2;
+    string organization_id =3;
+    string customer_id =4;
+}
+
+message GetProjectTrialEndSubscriptionResponse {
+    string msg = 1;
+    string error = 2;
+}
+
+message GetSubscriptionByProjectRequest {
+    string project_id = 1;
+}
+
+message GetSubscriptionByProjectResponse {
+    payment.v1alpha1.Project project = 1;
+    string error = 2;
+}
+
+message HandleSubscriptionEventsRequest {
+    string subscription_id = 1;
+    string customer_id = 2;
+    string trail_end_date = 3;
+    string event_type = 4;
+}
+
+message HandleSubscriptionEventsResponse {
+    string msg = 1;
     string error = 2;
 }

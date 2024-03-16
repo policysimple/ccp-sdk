@@ -56,6 +56,9 @@ type PaymentAPIServiceClient interface {
 	BlockChainSubscription(ctx context.Context, in *BlockChainSubscriptionRequest, opts ...grpc.CallOption) (*BlockChainSubscriptionResponse, error)
 	//WebHook
 	WebHook(ctx context.Context, in *WebHookRequest, opts ...grpc.CallOption) (*WebHookResponse, error)
+	GetProjectTrialEndSubscription(ctx context.Context, in *GetProjectTrialEndSubscriptionRequest, opts ...grpc.CallOption) (*GetProjectTrialEndSubscriptionResponse, error)
+	GetSubscriptionByProject(ctx context.Context, in *GetSubscriptionByProjectRequest, opts ...grpc.CallOption) (*GetSubscriptionByProjectResponse, error)
+	HandleSubscriptionEvents(ctx context.Context, in *HandleSubscriptionEventsRequest, opts ...grpc.CallOption) (*HandleSubscriptionEventsResponse, error)
 }
 
 type paymentAPIServiceClient struct {
@@ -327,6 +330,33 @@ func (c *paymentAPIServiceClient) WebHook(ctx context.Context, in *WebHookReques
 	return out, nil
 }
 
+func (c *paymentAPIServiceClient) GetProjectTrialEndSubscription(ctx context.Context, in *GetProjectTrialEndSubscriptionRequest, opts ...grpc.CallOption) (*GetProjectTrialEndSubscriptionResponse, error) {
+	out := new(GetProjectTrialEndSubscriptionResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetProjectTrialEndSubscription", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *paymentAPIServiceClient) GetSubscriptionByProject(ctx context.Context, in *GetSubscriptionByProjectRequest, opts ...grpc.CallOption) (*GetSubscriptionByProjectResponse, error) {
+	out := new(GetSubscriptionByProjectResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/GetSubscriptionByProject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *paymentAPIServiceClient) HandleSubscriptionEvents(ctx context.Context, in *HandleSubscriptionEventsRequest, opts ...grpc.CallOption) (*HandleSubscriptionEventsResponse, error) {
+	out := new(HandleSubscriptionEventsResponse)
+	err := c.cc.Invoke(ctx, "/payment.v1alpha1.PaymentAPIService/HandleSubscriptionEvents", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PaymentAPIServiceServer is the server API for PaymentAPIService service.
 // All implementations should embed UnimplementedPaymentAPIServiceServer
 // for forward compatibility
@@ -369,6 +399,9 @@ type PaymentAPIServiceServer interface {
 	BlockChainSubscription(context.Context, *BlockChainSubscriptionRequest) (*BlockChainSubscriptionResponse, error)
 	//WebHook
 	WebHook(context.Context, *WebHookRequest) (*WebHookResponse, error)
+	GetProjectTrialEndSubscription(context.Context, *GetProjectTrialEndSubscriptionRequest) (*GetProjectTrialEndSubscriptionResponse, error)
+	GetSubscriptionByProject(context.Context, *GetSubscriptionByProjectRequest) (*GetSubscriptionByProjectResponse, error)
+	HandleSubscriptionEvents(context.Context, *HandleSubscriptionEventsRequest) (*HandleSubscriptionEventsResponse, error)
 }
 
 // UnimplementedPaymentAPIServiceServer should be embedded to have forward compatible implementations.
@@ -461,6 +494,15 @@ func (UnimplementedPaymentAPIServiceServer) BlockChainSubscription(context.Conte
 }
 func (UnimplementedPaymentAPIServiceServer) WebHook(context.Context, *WebHookRequest) (*WebHookResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WebHook not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) GetProjectTrialEndSubscription(context.Context, *GetProjectTrialEndSubscriptionRequest) (*GetProjectTrialEndSubscriptionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetProjectTrialEndSubscription not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) GetSubscriptionByProject(context.Context, *GetSubscriptionByProjectRequest) (*GetSubscriptionByProjectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSubscriptionByProject not implemented")
+}
+func (UnimplementedPaymentAPIServiceServer) HandleSubscriptionEvents(context.Context, *HandleSubscriptionEventsRequest) (*HandleSubscriptionEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method HandleSubscriptionEvents not implemented")
 }
 
 // UnsafePaymentAPIServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -996,6 +1038,60 @@ func _PaymentAPIService_WebHook_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PaymentAPIService_GetProjectTrialEndSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProjectTrialEndSubscriptionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).GetProjectTrialEndSubscription(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/GetProjectTrialEndSubscription",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).GetProjectTrialEndSubscription(ctx, req.(*GetProjectTrialEndSubscriptionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PaymentAPIService_GetSubscriptionByProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSubscriptionByProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).GetSubscriptionByProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/GetSubscriptionByProject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).GetSubscriptionByProject(ctx, req.(*GetSubscriptionByProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PaymentAPIService_HandleSubscriptionEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HandleSubscriptionEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PaymentAPIServiceServer).HandleSubscriptionEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/payment.v1alpha1.PaymentAPIService/HandleSubscriptionEvents",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PaymentAPIServiceServer).HandleSubscriptionEvents(ctx, req.(*HandleSubscriptionEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // PaymentAPIService_ServiceDesc is the grpc.ServiceDesc for PaymentAPIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1118,6 +1214,18 @@ var PaymentAPIService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "WebHook",
 			Handler:    _PaymentAPIService_WebHook_Handler,
+		},
+		{
+			MethodName: "GetProjectTrialEndSubscription",
+			Handler:    _PaymentAPIService_GetProjectTrialEndSubscription_Handler,
+		},
+		{
+			MethodName: "GetSubscriptionByProject",
+			Handler:    _PaymentAPIService_GetSubscriptionByProject_Handler,
+		},
+		{
+			MethodName: "HandleSubscriptionEvents",
+			Handler:    _PaymentAPIService_HandleSubscriptionEvents_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

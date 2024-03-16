@@ -293,3 +293,20 @@ func MakeRollbackRuntime(in *runtimepkgv1.MakeRollbackRuntimeRequest) (response 
 	}
 	return response, nil
 }
+
+func DeleteRuntimesByProject(in *runtimepkgv1.DeleteRuntimesByProjectRequest) (response *runtimepkgv1.DeleteRuntimesByProjectResponse, err error) {
+	d, err := time.ParseDuration(runtimeServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+	defer cancel()
+
+	response, err = client.DeleteRuntimesByProject(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error deleting runtimes by project", err)
+		return nil, fmt.Errorf("[DeleteRuntimesByProject] %w", err)
+	}
+	return response, nil
+}

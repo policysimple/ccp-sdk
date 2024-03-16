@@ -224,4 +224,17 @@ class RuntimeAPIServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Pipelines\Runtime\V1Alpha1\DeleteRuntimesByProjectRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteRuntimesByProject(\Pipelines\Runtime\V1Alpha1\DeleteRuntimesByProjectRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/pipelines.runtime.v1alpha1.RuntimeAPIService/DeleteRuntimesByProject',
+        $argument,
+        ['\Pipelines\Runtime\V1Alpha1\DeleteRuntimesByProjectResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

@@ -47679,6 +47679,4817 @@ public final class PaymentApi {
 
   }
 
+  public interface GetProjectTrialEndSubscriptionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payment.v1alpha1.GetProjectTrialEndSubscriptionRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+     * @return The subscriptionId.
+     */
+    java.lang.String getSubscriptionId();
+    /**
+     * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+     * @return The bytes for subscriptionId.
+     */
+    com.google.protobuf.ByteString
+        getSubscriptionIdBytes();
+
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
+
+    /**
+     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    java.lang.String getOrganizationId();
+    /**
+     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationIdBytes();
+
+    /**
+     * <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * @return The customerId.
+     */
+    java.lang.String getCustomerId();
+    /**
+     * <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * @return The bytes for customerId.
+     */
+    com.google.protobuf.ByteString
+        getCustomerIdBytes();
+  }
+  /**
+   * Protobuf type {@code payment.v1alpha1.GetProjectTrialEndSubscriptionRequest}
+   */
+  public static final class GetProjectTrialEndSubscriptionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:payment.v1alpha1.GetProjectTrialEndSubscriptionRequest)
+      GetProjectTrialEndSubscriptionRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetProjectTrialEndSubscriptionRequest.newBuilder() to construct.
+    private GetProjectTrialEndSubscriptionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetProjectTrialEndSubscriptionRequest() {
+      subscriptionId_ = "";
+      projectId_ = "";
+      organizationId_ = "";
+      customerId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetProjectTrialEndSubscriptionRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetProjectTrialEndSubscriptionRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subscriptionId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              customerId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest.class, payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest.Builder.class);
+    }
+
+    public static final int SUBSCRIPTION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object subscriptionId_;
+    /**
+     * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+     * @return The subscriptionId.
+     */
+    @java.lang.Override
+    public java.lang.String getSubscriptionId() {
+      java.lang.Object ref = subscriptionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subscriptionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+     * @return The bytes for subscriptionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSubscriptionIdBytes() {
+      java.lang.Object ref = subscriptionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subscriptionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object projectId_;
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 2 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORGANIZATION_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object organizationId_;
+    /**
+     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+     * @return The organizationId.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+     * @return The bytes for organizationId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CUSTOMER_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object customerId_;
+    /**
+     * <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * @return The customerId.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomerId() {
+      java.lang.Object ref = customerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string customer_id = 4 [json_name = "customerId"];</code>
+     * @return The bytes for customerId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomerIdBytes() {
+      java.lang.Object ref = customerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getSubscriptionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subscriptionId_);
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
+      }
+      if (!getOrganizationIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, organizationId_);
+      }
+      if (!getCustomerIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, customerId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getSubscriptionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subscriptionId_);
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
+      }
+      if (!getOrganizationIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, organizationId_);
+      }
+      if (!getCustomerIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, customerId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest)) {
+        return super.equals(obj);
+      }
+      payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest other = (payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest) obj;
+
+      if (!getSubscriptionId()
+          .equals(other.getSubscriptionId())) return false;
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+      if (!getCustomerId()
+          .equals(other.getCustomerId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SUBSCRIPTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSubscriptionId().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+      hash = (37 * hash) + CUSTOMER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code payment.v1alpha1.GetProjectTrialEndSubscriptionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:payment.v1alpha1.GetProjectTrialEndSubscriptionRequest)
+        payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest.class, payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest.Builder.class);
+      }
+
+      // Construct using payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        subscriptionId_ = "";
+
+        projectId_ = "";
+
+        organizationId_ = "";
+
+        customerId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest getDefaultInstanceForType() {
+        return payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest build() {
+        payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest buildPartial() {
+        payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest result = new payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest(this);
+        result.subscriptionId_ = subscriptionId_;
+        result.projectId_ = projectId_;
+        result.organizationId_ = organizationId_;
+        result.customerId_ = customerId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest) {
+          return mergeFrom((payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest other) {
+        if (other == payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest.getDefaultInstance()) return this;
+        if (!other.getSubscriptionId().isEmpty()) {
+          subscriptionId_ = other.subscriptionId_;
+          onChanged();
+        }
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
+        }
+        if (!other.getOrganizationId().isEmpty()) {
+          organizationId_ = other.organizationId_;
+          onChanged();
+        }
+        if (!other.getCustomerId().isEmpty()) {
+          customerId_ = other.customerId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object subscriptionId_ = "";
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @return The subscriptionId.
+       */
+      public java.lang.String getSubscriptionId() {
+        java.lang.Object ref = subscriptionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subscriptionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @return The bytes for subscriptionId.
+       */
+      public com.google.protobuf.ByteString
+          getSubscriptionIdBytes() {
+        java.lang.Object ref = subscriptionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          subscriptionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @param value The subscriptionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubscriptionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        subscriptionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSubscriptionId() {
+        
+        subscriptionId_ = getDefaultInstance().getSubscriptionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @param value The bytes for subscriptionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubscriptionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        subscriptionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 2 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object organizationId_ = "";
+      /**
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+       * @return The organizationId.
+       */
+      public java.lang.String getOrganizationId() {
+        java.lang.Object ref = organizationId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+       * @return The bytes for organizationId.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationIdBytes() {
+        java.lang.Object ref = organizationId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+       * @param value The organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganizationId() {
+        
+        organizationId_ = getDefaultInstance().getOrganizationId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string organization_id = 3 [json_name = "organizationId"];</code>
+       * @param value The bytes for organizationId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object customerId_ = "";
+      /**
+       * <code>string customer_id = 4 [json_name = "customerId"];</code>
+       * @return The customerId.
+       */
+      public java.lang.String getCustomerId() {
+        java.lang.Object ref = customerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string customer_id = 4 [json_name = "customerId"];</code>
+       * @return The bytes for customerId.
+       */
+      public com.google.protobuf.ByteString
+          getCustomerIdBytes() {
+        java.lang.Object ref = customerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string customer_id = 4 [json_name = "customerId"];</code>
+       * @param value The customerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        customerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string customer_id = 4 [json_name = "customerId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomerId() {
+        
+        customerId_ = getDefaultInstance().getCustomerId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string customer_id = 4 [json_name = "customerId"];</code>
+       * @param value The bytes for customerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        customerId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:payment.v1alpha1.GetProjectTrialEndSubscriptionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:payment.v1alpha1.GetProjectTrialEndSubscriptionRequest)
+    private static final payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest();
+    }
+
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetProjectTrialEndSubscriptionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetProjectTrialEndSubscriptionRequest>() {
+      @java.lang.Override
+      public GetProjectTrialEndSubscriptionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetProjectTrialEndSubscriptionRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetProjectTrialEndSubscriptionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetProjectTrialEndSubscriptionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetProjectTrialEndSubscriptionResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payment.v1alpha1.GetProjectTrialEndSubscriptionResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
+  }
+  /**
+   * Protobuf type {@code payment.v1alpha1.GetProjectTrialEndSubscriptionResponse}
+   */
+  public static final class GetProjectTrialEndSubscriptionResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:payment.v1alpha1.GetProjectTrialEndSubscriptionResponse)
+      GetProjectTrialEndSubscriptionResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetProjectTrialEndSubscriptionResponse.newBuilder() to construct.
+    private GetProjectTrialEndSubscriptionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetProjectTrialEndSubscriptionResponse() {
+      msg_ = "";
+      error_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetProjectTrialEndSubscriptionResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetProjectTrialEndSubscriptionResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse.class, payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse.Builder.class);
+    }
+
+    public static final int MSG_FIELD_NUMBER = 1;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
+      }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse)) {
+        return super.equals(obj);
+      }
+      payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse other = (payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse) obj;
+
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code payment.v1alpha1.GetProjectTrialEndSubscriptionResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:payment.v1alpha1.GetProjectTrialEndSubscriptionResponse)
+        payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse.class, payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse.Builder.class);
+      }
+
+      // Construct using payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        msg_ = "";
+
+        error_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse getDefaultInstanceForType() {
+        return payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse build() {
+        payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse buildPartial() {
+        payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse result = new payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse(this);
+        result.msg_ = msg_;
+        result.error_ = error_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse) {
+          return mergeFrom((payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse other) {
+        if (other == payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse.getDefaultInstance()) return this;
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:payment.v1alpha1.GetProjectTrialEndSubscriptionResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:payment.v1alpha1.GetProjectTrialEndSubscriptionResponse)
+    private static final payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse();
+    }
+
+    public static payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetProjectTrialEndSubscriptionResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetProjectTrialEndSubscriptionResponse>() {
+      @java.lang.Override
+      public GetProjectTrialEndSubscriptionResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetProjectTrialEndSubscriptionResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetProjectTrialEndSubscriptionResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetProjectTrialEndSubscriptionResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public payment.v1alpha1.PaymentApi.GetProjectTrialEndSubscriptionResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetSubscriptionByProjectRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payment.v1alpha1.GetSubscriptionByProjectRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
+  }
+  /**
+   * Protobuf type {@code payment.v1alpha1.GetSubscriptionByProjectRequest}
+   */
+  public static final class GetSubscriptionByProjectRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:payment.v1alpha1.GetSubscriptionByProjectRequest)
+      GetSubscriptionByProjectRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetSubscriptionByProjectRequest.newBuilder() to construct.
+    private GetSubscriptionByProjectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetSubscriptionByProjectRequest() {
+      projectId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetSubscriptionByProjectRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetSubscriptionByProjectRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest.class, payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest.Builder.class);
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object projectId_;
+    /**
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project_id = 1 [json_name = "projectId"];</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest)) {
+        return super.equals(obj);
+      }
+      payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest other = (payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest) obj;
+
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code payment.v1alpha1.GetSubscriptionByProjectRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:payment.v1alpha1.GetSubscriptionByProjectRequest)
+        payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest.class, payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest.Builder.class);
+      }
+
+      // Construct using payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        projectId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest getDefaultInstanceForType() {
+        return payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest build() {
+        payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest buildPartial() {
+        payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest result = new payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest(this);
+        result.projectId_ = projectId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest) {
+          return mergeFrom((payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest other) {
+        if (other == payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest.getDefaultInstance()) return this;
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project_id = 1 [json_name = "projectId"];</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:payment.v1alpha1.GetSubscriptionByProjectRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:payment.v1alpha1.GetSubscriptionByProjectRequest)
+    private static final payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest();
+    }
+
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetSubscriptionByProjectRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetSubscriptionByProjectRequest>() {
+      @java.lang.Override
+      public GetSubscriptionByProjectRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetSubscriptionByProjectRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetSubscriptionByProjectRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetSubscriptionByProjectRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public payment.v1alpha1.PaymentApi.GetSubscriptionByProjectRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetSubscriptionByProjectResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payment.v1alpha1.GetSubscriptionByProjectResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @return Whether the project field is set.
+     */
+    boolean hasProject();
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @return The project.
+     */
+    payment.v1alpha1.PaymentOuterClass.Project getProject();
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     */
+    payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder();
+
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
+  }
+  /**
+   * Protobuf type {@code payment.v1alpha1.GetSubscriptionByProjectResponse}
+   */
+  public static final class GetSubscriptionByProjectResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:payment.v1alpha1.GetSubscriptionByProjectResponse)
+      GetSubscriptionByProjectResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetSubscriptionByProjectResponse.newBuilder() to construct.
+    private GetSubscriptionByProjectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetSubscriptionByProjectResponse() {
+      error_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetSubscriptionByProjectResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetSubscriptionByProjectResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              payment.v1alpha1.PaymentOuterClass.Project.Builder subBuilder = null;
+              if (project_ != null) {
+                subBuilder = project_.toBuilder();
+              }
+              project_ = input.readMessage(payment.v1alpha1.PaymentOuterClass.Project.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(project_);
+                project_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse.class, payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse.Builder.class);
+    }
+
+    public static final int PROJECT_FIELD_NUMBER = 1;
+    private payment.v1alpha1.PaymentOuterClass.Project project_;
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @return Whether the project field is set.
+     */
+    @java.lang.Override
+    public boolean hasProject() {
+      return project_ != null;
+    }
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     * @return The project.
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.Project getProject() {
+      return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+    }
+    /**
+     * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+     */
+    @java.lang.Override
+    public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+      return getProject();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (project_ != null) {
+        output.writeMessage(1, getProject());
+      }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (project_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getProject());
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse)) {
+        return super.equals(obj);
+      }
+      payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse other = (payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse) obj;
+
+      if (hasProject() != other.hasProject()) return false;
+      if (hasProject()) {
+        if (!getProject()
+            .equals(other.getProject())) return false;
+      }
+      if (!getError()
+          .equals(other.getError())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasProject()) {
+        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+        hash = (53 * hash) + getProject().hashCode();
+      }
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code payment.v1alpha1.GetSubscriptionByProjectResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:payment.v1alpha1.GetSubscriptionByProjectResponse)
+        payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse.class, payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse.Builder.class);
+      }
+
+      // Construct using payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (projectBuilder_ == null) {
+          project_ = null;
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
+        error_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse getDefaultInstanceForType() {
+        return payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse build() {
+        payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse buildPartial() {
+        payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse result = new payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse(this);
+        if (projectBuilder_ == null) {
+          result.project_ = project_;
+        } else {
+          result.project_ = projectBuilder_.build();
+        }
+        result.error_ = error_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse) {
+          return mergeFrom((payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse other) {
+        if (other == payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse.getDefaultInstance()) return this;
+        if (other.hasProject()) {
+          mergeProject(other.getProject());
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private payment.v1alpha1.PaymentOuterClass.Project project_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> projectBuilder_;
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       * @return Whether the project field is set.
+       */
+      public boolean hasProject() {
+        return projectBuilder_ != null || project_ != null;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       * @return The project.
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project getProject() {
+        if (projectBuilder_ == null) {
+          return project_ == null ? payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+        } else {
+          return projectBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public Builder setProject(payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          project_ = value;
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public Builder setProject(
+          payment.v1alpha1.PaymentOuterClass.Project.Builder builderForValue) {
+        if (projectBuilder_ == null) {
+          project_ = builderForValue.build();
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public Builder mergeProject(payment.v1alpha1.PaymentOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (project_ != null) {
+            project_ =
+              payment.v1alpha1.PaymentOuterClass.Project.newBuilder(project_).mergeFrom(value).buildPartial();
+          } else {
+            project_ = value;
+          }
+          onChanged();
+        } else {
+          projectBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public Builder clearProject() {
+        if (projectBuilder_ == null) {
+          project_ = null;
+          onChanged();
+        } else {
+          project_ = null;
+          projectBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.Project.Builder getProjectBuilder() {
+        
+        onChanged();
+        return getProjectFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      public payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder getProjectOrBuilder() {
+        if (projectBuilder_ != null) {
+          return projectBuilder_.getMessageOrBuilder();
+        } else {
+          return project_ == null ?
+              payment.v1alpha1.PaymentOuterClass.Project.getDefaultInstance() : project_;
+        }
+      }
+      /**
+       * <code>.payment.v1alpha1.Project project = 1 [json_name = "project"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder> 
+          getProjectFieldBuilder() {
+        if (projectBuilder_ == null) {
+          projectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              payment.v1alpha1.PaymentOuterClass.Project, payment.v1alpha1.PaymentOuterClass.Project.Builder, payment.v1alpha1.PaymentOuterClass.ProjectOrBuilder>(
+                  getProject(),
+                  getParentForChildren(),
+                  isClean());
+          project_ = null;
+        }
+        return projectBuilder_;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:payment.v1alpha1.GetSubscriptionByProjectResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:payment.v1alpha1.GetSubscriptionByProjectResponse)
+    private static final payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse();
+    }
+
+    public static payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetSubscriptionByProjectResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetSubscriptionByProjectResponse>() {
+      @java.lang.Override
+      public GetSubscriptionByProjectResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetSubscriptionByProjectResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetSubscriptionByProjectResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetSubscriptionByProjectResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public payment.v1alpha1.PaymentApi.GetSubscriptionByProjectResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface HandleSubscriptionEventsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payment.v1alpha1.HandleSubscriptionEventsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+     * @return The subscriptionId.
+     */
+    java.lang.String getSubscriptionId();
+    /**
+     * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+     * @return The bytes for subscriptionId.
+     */
+    com.google.protobuf.ByteString
+        getSubscriptionIdBytes();
+
+    /**
+     * <code>string customer_id = 2 [json_name = "customerId"];</code>
+     * @return The customerId.
+     */
+    java.lang.String getCustomerId();
+    /**
+     * <code>string customer_id = 2 [json_name = "customerId"];</code>
+     * @return The bytes for customerId.
+     */
+    com.google.protobuf.ByteString
+        getCustomerIdBytes();
+
+    /**
+     * <code>string trail_end_date = 3 [json_name = "trailEndDate"];</code>
+     * @return The trailEndDate.
+     */
+    java.lang.String getTrailEndDate();
+    /**
+     * <code>string trail_end_date = 3 [json_name = "trailEndDate"];</code>
+     * @return The bytes for trailEndDate.
+     */
+    com.google.protobuf.ByteString
+        getTrailEndDateBytes();
+
+    /**
+     * <code>string event_type = 4 [json_name = "eventType"];</code>
+     * @return The eventType.
+     */
+    java.lang.String getEventType();
+    /**
+     * <code>string event_type = 4 [json_name = "eventType"];</code>
+     * @return The bytes for eventType.
+     */
+    com.google.protobuf.ByteString
+        getEventTypeBytes();
+  }
+  /**
+   * Protobuf type {@code payment.v1alpha1.HandleSubscriptionEventsRequest}
+   */
+  public static final class HandleSubscriptionEventsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:payment.v1alpha1.HandleSubscriptionEventsRequest)
+      HandleSubscriptionEventsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HandleSubscriptionEventsRequest.newBuilder() to construct.
+    private HandleSubscriptionEventsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HandleSubscriptionEventsRequest() {
+      subscriptionId_ = "";
+      customerId_ = "";
+      trailEndDate_ = "";
+      eventType_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new HandleSubscriptionEventsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HandleSubscriptionEventsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subscriptionId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              customerId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              trailEndDate_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              eventType_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest.class, payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest.Builder.class);
+    }
+
+    public static final int SUBSCRIPTION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object subscriptionId_;
+    /**
+     * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+     * @return The subscriptionId.
+     */
+    @java.lang.Override
+    public java.lang.String getSubscriptionId() {
+      java.lang.Object ref = subscriptionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subscriptionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+     * @return The bytes for subscriptionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSubscriptionIdBytes() {
+      java.lang.Object ref = subscriptionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subscriptionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CUSTOMER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object customerId_;
+    /**
+     * <code>string customer_id = 2 [json_name = "customerId"];</code>
+     * @return The customerId.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomerId() {
+      java.lang.Object ref = customerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string customer_id = 2 [json_name = "customerId"];</code>
+     * @return The bytes for customerId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomerIdBytes() {
+      java.lang.Object ref = customerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TRAIL_END_DATE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object trailEndDate_;
+    /**
+     * <code>string trail_end_date = 3 [json_name = "trailEndDate"];</code>
+     * @return The trailEndDate.
+     */
+    @java.lang.Override
+    public java.lang.String getTrailEndDate() {
+      java.lang.Object ref = trailEndDate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trailEndDate_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string trail_end_date = 3 [json_name = "trailEndDate"];</code>
+     * @return The bytes for trailEndDate.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTrailEndDateBytes() {
+      java.lang.Object ref = trailEndDate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        trailEndDate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EVENT_TYPE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object eventType_;
+    /**
+     * <code>string event_type = 4 [json_name = "eventType"];</code>
+     * @return The eventType.
+     */
+    @java.lang.Override
+    public java.lang.String getEventType() {
+      java.lang.Object ref = eventType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        eventType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string event_type = 4 [json_name = "eventType"];</code>
+     * @return The bytes for eventType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEventTypeBytes() {
+      java.lang.Object ref = eventType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        eventType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getSubscriptionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subscriptionId_);
+      }
+      if (!getCustomerIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, customerId_);
+      }
+      if (!getTrailEndDateBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, trailEndDate_);
+      }
+      if (!getEventTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, eventType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getSubscriptionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subscriptionId_);
+      }
+      if (!getCustomerIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, customerId_);
+      }
+      if (!getTrailEndDateBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, trailEndDate_);
+      }
+      if (!getEventTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, eventType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest)) {
+        return super.equals(obj);
+      }
+      payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest other = (payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest) obj;
+
+      if (!getSubscriptionId()
+          .equals(other.getSubscriptionId())) return false;
+      if (!getCustomerId()
+          .equals(other.getCustomerId())) return false;
+      if (!getTrailEndDate()
+          .equals(other.getTrailEndDate())) return false;
+      if (!getEventType()
+          .equals(other.getEventType())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SUBSCRIPTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSubscriptionId().hashCode();
+      hash = (37 * hash) + CUSTOMER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerId().hashCode();
+      hash = (37 * hash) + TRAIL_END_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getTrailEndDate().hashCode();
+      hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getEventType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code payment.v1alpha1.HandleSubscriptionEventsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:payment.v1alpha1.HandleSubscriptionEventsRequest)
+        payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest.class, payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest.Builder.class);
+      }
+
+      // Construct using payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        subscriptionId_ = "";
+
+        customerId_ = "";
+
+        trailEndDate_ = "";
+
+        eventType_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest getDefaultInstanceForType() {
+        return payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest build() {
+        payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest buildPartial() {
+        payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest result = new payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest(this);
+        result.subscriptionId_ = subscriptionId_;
+        result.customerId_ = customerId_;
+        result.trailEndDate_ = trailEndDate_;
+        result.eventType_ = eventType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest) {
+          return mergeFrom((payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest other) {
+        if (other == payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest.getDefaultInstance()) return this;
+        if (!other.getSubscriptionId().isEmpty()) {
+          subscriptionId_ = other.subscriptionId_;
+          onChanged();
+        }
+        if (!other.getCustomerId().isEmpty()) {
+          customerId_ = other.customerId_;
+          onChanged();
+        }
+        if (!other.getTrailEndDate().isEmpty()) {
+          trailEndDate_ = other.trailEndDate_;
+          onChanged();
+        }
+        if (!other.getEventType().isEmpty()) {
+          eventType_ = other.eventType_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object subscriptionId_ = "";
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @return The subscriptionId.
+       */
+      public java.lang.String getSubscriptionId() {
+        java.lang.Object ref = subscriptionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subscriptionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @return The bytes for subscriptionId.
+       */
+      public com.google.protobuf.ByteString
+          getSubscriptionIdBytes() {
+        java.lang.Object ref = subscriptionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          subscriptionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @param value The subscriptionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubscriptionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        subscriptionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSubscriptionId() {
+        
+        subscriptionId_ = getDefaultInstance().getSubscriptionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subscription_id = 1 [json_name = "subscriptionId"];</code>
+       * @param value The bytes for subscriptionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubscriptionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        subscriptionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object customerId_ = "";
+      /**
+       * <code>string customer_id = 2 [json_name = "customerId"];</code>
+       * @return The customerId.
+       */
+      public java.lang.String getCustomerId() {
+        java.lang.Object ref = customerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string customer_id = 2 [json_name = "customerId"];</code>
+       * @return The bytes for customerId.
+       */
+      public com.google.protobuf.ByteString
+          getCustomerIdBytes() {
+        java.lang.Object ref = customerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string customer_id = 2 [json_name = "customerId"];</code>
+       * @param value The customerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        customerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string customer_id = 2 [json_name = "customerId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomerId() {
+        
+        customerId_ = getDefaultInstance().getCustomerId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string customer_id = 2 [json_name = "customerId"];</code>
+       * @param value The bytes for customerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        customerId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object trailEndDate_ = "";
+      /**
+       * <code>string trail_end_date = 3 [json_name = "trailEndDate"];</code>
+       * @return The trailEndDate.
+       */
+      public java.lang.String getTrailEndDate() {
+        java.lang.Object ref = trailEndDate_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          trailEndDate_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string trail_end_date = 3 [json_name = "trailEndDate"];</code>
+       * @return The bytes for trailEndDate.
+       */
+      public com.google.protobuf.ByteString
+          getTrailEndDateBytes() {
+        java.lang.Object ref = trailEndDate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          trailEndDate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string trail_end_date = 3 [json_name = "trailEndDate"];</code>
+       * @param value The trailEndDate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrailEndDate(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        trailEndDate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string trail_end_date = 3 [json_name = "trailEndDate"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTrailEndDate() {
+        
+        trailEndDate_ = getDefaultInstance().getTrailEndDate();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string trail_end_date = 3 [json_name = "trailEndDate"];</code>
+       * @param value The bytes for trailEndDate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrailEndDateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        trailEndDate_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object eventType_ = "";
+      /**
+       * <code>string event_type = 4 [json_name = "eventType"];</code>
+       * @return The eventType.
+       */
+      public java.lang.String getEventType() {
+        java.lang.Object ref = eventType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          eventType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string event_type = 4 [json_name = "eventType"];</code>
+       * @return The bytes for eventType.
+       */
+      public com.google.protobuf.ByteString
+          getEventTypeBytes() {
+        java.lang.Object ref = eventType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          eventType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string event_type = 4 [json_name = "eventType"];</code>
+       * @param value The eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        eventType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string event_type = 4 [json_name = "eventType"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEventType() {
+        
+        eventType_ = getDefaultInstance().getEventType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string event_type = 4 [json_name = "eventType"];</code>
+       * @param value The bytes for eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        eventType_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:payment.v1alpha1.HandleSubscriptionEventsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:payment.v1alpha1.HandleSubscriptionEventsRequest)
+    private static final payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest();
+    }
+
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HandleSubscriptionEventsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<HandleSubscriptionEventsRequest>() {
+      @java.lang.Override
+      public HandleSubscriptionEventsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HandleSubscriptionEventsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HandleSubscriptionEventsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HandleSubscriptionEventsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public payment.v1alpha1.PaymentApi.HandleSubscriptionEventsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface HandleSubscriptionEventsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:payment.v1alpha1.HandleSubscriptionEventsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
+  }
+  /**
+   * Protobuf type {@code payment.v1alpha1.HandleSubscriptionEventsResponse}
+   */
+  public static final class HandleSubscriptionEventsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:payment.v1alpha1.HandleSubscriptionEventsResponse)
+      HandleSubscriptionEventsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HandleSubscriptionEventsResponse.newBuilder() to construct.
+    private HandleSubscriptionEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HandleSubscriptionEventsResponse() {
+      msg_ = "";
+      error_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new HandleSubscriptionEventsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HandleSubscriptionEventsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              error_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse.class, payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse.Builder.class);
+    }
+
+    public static final int MSG_FIELD_NUMBER = 1;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 1 [json_name = "msg"];</code>
+     * @return The bytes for msg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object error_;
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
+      }
+      if (!getErrorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
+      }
+      if (!getErrorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse)) {
+        return super.equals(obj);
+      }
+      payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse other = (payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse) obj;
+
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code payment.v1alpha1.HandleSubscriptionEventsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:payment.v1alpha1.HandleSubscriptionEventsResponse)
+        payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse.class, payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse.Builder.class);
+      }
+
+      // Construct using payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        msg_ = "";
+
+        error_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return payment.v1alpha1.PaymentApi.internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse getDefaultInstanceForType() {
+        return payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse build() {
+        payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse buildPartial() {
+        payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse result = new payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse(this);
+        result.msg_ = msg_;
+        result.error_ = error_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse) {
+          return mergeFrom((payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse other) {
+        if (other == payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse.getDefaultInstance()) return this;
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 1 [json_name = "msg"];</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        
+        error_ = getDefaultInstance().getError();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        error_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:payment.v1alpha1.HandleSubscriptionEventsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:payment.v1alpha1.HandleSubscriptionEventsResponse)
+    private static final payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse();
+    }
+
+    public static payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HandleSubscriptionEventsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<HandleSubscriptionEventsResponse>() {
+      @java.lang.Override
+      public HandleSubscriptionEventsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HandleSubscriptionEventsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HandleSubscriptionEventsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HandleSubscriptionEventsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public payment.v1alpha1.PaymentApi.HandleSubscriptionEventsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_payment_v1alpha1_StopProjectRequest_descriptor;
   private static final 
@@ -47979,6 +52790,36 @@ public final class PaymentApi {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_payment_v1alpha1_ListProjectByIdResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -48153,85 +52994,113 @@ public final class PaymentApi {
       " \001(\tR\016organizationId\022\035\n\nproject_id\030\002 \001(\t" +
       "R\tprojectId\"d\n\027ListProjectByIdResponse\0223" +
       "\n\007project\030\001 \001(\0132\031.payment.v1alpha1.Proje" +
-      "ctR\007project\022\024\n\005error\030\002 \001(\tR\005error2\313\027\n\021Pa" +
-      "ymentAPIService\022e\n\016CreateCustomer\022\'.paym" +
-      "ent.v1alpha1.CreateCustomerRequest\032(.pay" +
-      "ment.v1alpha1.CreateCustomerResponse\"\000\022q" +
-      "\n\022CreateSubscription\022+.payment.v1alpha1." +
-      "CreateSubscriptionRequest\032,.payment.v1al" +
-      "pha1.CreateSubscriptionResponse\"\000\022b\n\rCre" +
-      "atePayment\022&.payment.v1alpha1.CreatePaym" +
-      "entRequest\032\'.payment.v1alpha1.CreatePaym" +
-      "entResponse\"\000\022Y\n\nCreateCard\022#.payment.v1" +
-      "alpha1.CreateCardRequest\032$.payment.v1alp" +
-      "ha1.CreateCardResponse\"\000\022b\n\rCreateInvoic" +
-      "e\022&.payment.v1alpha1.CreateInvoiceReques" +
-      "t\032\'.payment.v1alpha1.CreateInvoiceRespon" +
-      "se\"\000\022h\n\017GetOrganization\022(.payment.v1alph" +
-      "a1.GetOrganizationRequest\032).payment.v1al" +
-      "pha1.GetOrganizationResponse\"\000\022h\n\017GetSub" +
-      "scription\022(.payment.v1alpha1.GetSubscrip" +
-      "tionRequest\032).payment.v1alpha1.GetSubscr" +
-      "iptionResponse\"\000\022Y\n\nGetPayment\022#.payment" +
-      ".v1alpha1.GetPaymentRequest\032$.payment.v1" +
-      "alpha1.GetPaymentResponse\"\000\022\\\n\013GetCustom" +
-      "er\022$.payment.v1alpha1.GetCustomerRequest" +
-      "\032%.payment.v1alpha1.GetCustomerResponse\"" +
-      "\000\022e\n\016GetBilingMonth\022\'.payment.v1alpha1.G" +
-      "etBilingMonthRequest\032(.payment.v1alpha1." +
-      "GetBilingMonthResponse\"\000\022\\\n\013GetPayments\022" +
-      "$.payment.v1alpha1.GetPaymentsRequest\032%." +
-      "payment.v1alpha1.GetPaymentsResponse\"\000\022_" +
-      "\n\014ListProjects\022%.payment.v1alpha1.ListPr" +
-      "ojectsRequest\032&.payment.v1alpha1.ListPro" +
-      "jectsResponse\"\000\022\\\n\013ListPayment\022$.payment" +
-      ".v1alpha1.ListPaymentRequest\032%.payment.v" +
-      "1alpha1.ListPaymentResponse\"\000\022z\n\025ListSub" +
-      "scriptionItems\022..payment.v1alpha1.ListSu" +
-      "bscriptionItemsRequest\032/.payment.v1alpha" +
-      "1.ListSubscriptionItemsResponse\"\000\022b\n\rLis" +
-      "tCustomers\022&.payment.v1alpha1.ListCustom" +
-      "ersRequest\032\'.payment.v1alpha1.ListCustom" +
-      "ersResponse\"\000\022h\n\017ListProjectById\022(.payme" +
-      "nt.v1alpha1.ListProjectByIdRequest\032).pay" +
-      "ment.v1alpha1.ListProjectByIdResponse\"\000\022" +
-      "q\n\022UpdateSubscription\022+.payment.v1alpha1" +
-      ".UpdateSubscriptionRequest\032,.payment.v1a" +
-      "lpha1.UpdateSubscriptionResponse\"\000\022\200\001\n\027S" +
-      "etDefaultPaymentMethod\0220.payment.v1alpha" +
-      "1.SetDefaultPaymentMethodRequest\0321.payme" +
-      "nt.v1alpha1.SetDefaultPaymentMethodRespo" +
-      "nse\"\000\022b\n\rDeleteProject\022&.payment.v1alpha" +
-      "1.DeleteProjectRequest\032\'.payment.v1alpha" +
-      "1.DeleteProjectResponse\"\000\022b\n\rDeletePayme" +
-      "nt\022&.payment.v1alpha1.DeletePaymentReque" +
-      "st\032\'.payment.v1alpha1.DeletePaymentRespo" +
-      "nse\"\000\022q\n\022CancelSubscription\022+.payment.v1" +
-      "alpha1.CancelSubscriptionRequest\032,.payme" +
-      "nt.v1alpha1.CancelSubscriptionResponse\"\000" +
-      "\022e\n\016DeleteCustomer\022\'.payment.v1alpha1.De" +
-      "leteCustomerRequest\032(.payment.v1alpha1.D" +
-      "eleteCustomerResponse\"\000\022b\n\rInvoiceFilter" +
-      "\022&.payment.v1alpha1.InvoiceFilterRequest" +
-      "\032\'.payment.v1alpha1.InvoiceFilterRespons" +
-      "e\"\000\022k\n\020ConsumeByProject\022).payment.v1alph" +
-      "a1.ConsumeByProjectRequest\032*.payment.v1a" +
-      "lpha1.ConsumeByProjectResponse\"\000\022b\n\rCrea" +
-      "teProject\022&.payment.v1alpha1.CreateProje" +
-      "ctRequest\032\'.payment.v1alpha1.CreateProje" +
-      "ctResponse\"\000\022b\n\rUpdateProject\022&.payment." +
-      "v1alpha1.UpdateProjectRequest\032\'.payment." +
-      "v1alpha1.UpdateProjectResponse\"\000\022\\\n\013Stop" +
-      "Project\022$.payment.v1alpha1.StopProjectRe" +
-      "quest\032%.payment.v1alpha1.StopProjectResp" +
-      "onse\"\000\022}\n\026BlockChainSubscription\022/.payme" +
-      "nt.v1alpha1.BlockChainSubscriptionReques" +
-      "t\0320.payment.v1alpha1.BlockChainSubscript" +
-      "ionResponse\"\000\022P\n\007WebHook\022 .payment.v1alp" +
-      "ha1.WebHookRequest\032!.payment.v1alpha1.We" +
-      "bHookResponse\"\000B8Z6github.com/cuemby/ccp" +
-      "-payment-service/payment/v1alpha1b\006proto" +
-      "3"
+      "ctR\007project\022\024\n\005error\030\002 \001(\tR\005error\"\271\001\n%Ge" +
+      "tProjectTrialEndSubscriptionRequest\022\'\n\017s" +
+      "ubscription_id\030\001 \001(\tR\016subscriptionId\022\035\n\n" +
+      "project_id\030\002 \001(\tR\tprojectId\022\'\n\017organizat" +
+      "ion_id\030\003 \001(\tR\016organizationId\022\037\n\013customer" +
+      "_id\030\004 \001(\tR\ncustomerId\"P\n&GetProjectTrial" +
+      "EndSubscriptionResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
+      "g\022\024\n\005error\030\002 \001(\tR\005error\"@\n\037GetSubscripti" +
+      "onByProjectRequest\022\035\n\nproject_id\030\001 \001(\tR\t" +
+      "projectId\"m\n GetSubscriptionByProjectRes" +
+      "ponse\0223\n\007project\030\001 \001(\0132\031.payment.v1alpha" +
+      "1.ProjectR\007project\022\024\n\005error\030\002 \001(\tR\005error" +
+      "\"\260\001\n\037HandleSubscriptionEventsRequest\022\'\n\017" +
+      "subscription_id\030\001 \001(\tR\016subscriptionId\022\037\n" +
+      "\013customer_id\030\002 \001(\tR\ncustomerId\022$\n\016trail_" +
+      "end_date\030\003 \001(\tR\014trailEndDate\022\035\n\nevent_ty" +
+      "pe\030\004 \001(\tR\teventType\"J\n HandleSubscriptio" +
+      "nEventsResponse\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005err" +
+      "or\030\002 \001(\tR\005error2\357\032\n\021PaymentAPIService\022e\n" +
+      "\016CreateCustomer\022\'.payment.v1alpha1.Creat" +
+      "eCustomerRequest\032(.payment.v1alpha1.Crea" +
+      "teCustomerResponse\"\000\022q\n\022CreateSubscripti" +
+      "on\022+.payment.v1alpha1.CreateSubscription" +
+      "Request\032,.payment.v1alpha1.CreateSubscri" +
+      "ptionResponse\"\000\022b\n\rCreatePayment\022&.payme" +
+      "nt.v1alpha1.CreatePaymentRequest\032\'.payme" +
+      "nt.v1alpha1.CreatePaymentResponse\"\000\022Y\n\nC" +
+      "reateCard\022#.payment.v1alpha1.CreateCardR" +
+      "equest\032$.payment.v1alpha1.CreateCardResp" +
+      "onse\"\000\022b\n\rCreateInvoice\022&.payment.v1alph" +
+      "a1.CreateInvoiceRequest\032\'.payment.v1alph" +
+      "a1.CreateInvoiceResponse\"\000\022h\n\017GetOrganiz" +
+      "ation\022(.payment.v1alpha1.GetOrganization" +
+      "Request\032).payment.v1alpha1.GetOrganizati" +
+      "onResponse\"\000\022h\n\017GetSubscription\022(.paymen" +
+      "t.v1alpha1.GetSubscriptionRequest\032).paym" +
+      "ent.v1alpha1.GetSubscriptionResponse\"\000\022Y" +
+      "\n\nGetPayment\022#.payment.v1alpha1.GetPayme" +
+      "ntRequest\032$.payment.v1alpha1.GetPaymentR" +
+      "esponse\"\000\022\\\n\013GetCustomer\022$.payment.v1alp" +
+      "ha1.GetCustomerRequest\032%.payment.v1alpha" +
+      "1.GetCustomerResponse\"\000\022e\n\016GetBilingMont" +
+      "h\022\'.payment.v1alpha1.GetBilingMonthReque" +
+      "st\032(.payment.v1alpha1.GetBilingMonthResp" +
+      "onse\"\000\022\\\n\013GetPayments\022$.payment.v1alpha1" +
+      ".GetPaymentsRequest\032%.payment.v1alpha1.G" +
+      "etPaymentsResponse\"\000\022_\n\014ListProjects\022%.p" +
+      "ayment.v1alpha1.ListProjectsRequest\032&.pa" +
+      "yment.v1alpha1.ListProjectsResponse\"\000\022\\\n" +
+      "\013ListPayment\022$.payment.v1alpha1.ListPaym" +
+      "entRequest\032%.payment.v1alpha1.ListPaymen" +
+      "tResponse\"\000\022z\n\025ListSubscriptionItems\022..p" +
+      "ayment.v1alpha1.ListSubscriptionItemsReq" +
+      "uest\032/.payment.v1alpha1.ListSubscription" +
+      "ItemsResponse\"\000\022b\n\rListCustomers\022&.payme" +
+      "nt.v1alpha1.ListCustomersRequest\032\'.payme" +
+      "nt.v1alpha1.ListCustomersResponse\"\000\022h\n\017L" +
+      "istProjectById\022(.payment.v1alpha1.ListPr" +
+      "ojectByIdRequest\032).payment.v1alpha1.List" +
+      "ProjectByIdResponse\"\000\022q\n\022UpdateSubscript" +
+      "ion\022+.payment.v1alpha1.UpdateSubscriptio" +
+      "nRequest\032,.payment.v1alpha1.UpdateSubscr" +
+      "iptionResponse\"\000\022\200\001\n\027SetDefaultPaymentMe" +
+      "thod\0220.payment.v1alpha1.SetDefaultPaymen" +
+      "tMethodRequest\0321.payment.v1alpha1.SetDef" +
+      "aultPaymentMethodResponse\"\000\022b\n\rDeletePro" +
+      "ject\022&.payment.v1alpha1.DeleteProjectReq" +
+      "uest\032\'.payment.v1alpha1.DeleteProjectRes" +
+      "ponse\"\000\022b\n\rDeletePayment\022&.payment.v1alp" +
+      "ha1.DeletePaymentRequest\032\'.payment.v1alp" +
+      "ha1.DeletePaymentResponse\"\000\022q\n\022CancelSub" +
+      "scription\022+.payment.v1alpha1.CancelSubsc" +
+      "riptionRequest\032,.payment.v1alpha1.Cancel" +
+      "SubscriptionResponse\"\000\022e\n\016DeleteCustomer" +
+      "\022\'.payment.v1alpha1.DeleteCustomerReques" +
+      "t\032(.payment.v1alpha1.DeleteCustomerRespo" +
+      "nse\"\000\022b\n\rInvoiceFilter\022&.payment.v1alpha" +
+      "1.InvoiceFilterRequest\032\'.payment.v1alpha" +
+      "1.InvoiceFilterResponse\"\000\022k\n\020ConsumeByPr" +
+      "oject\022).payment.v1alpha1.ConsumeByProjec" +
+      "tRequest\032*.payment.v1alpha1.ConsumeByPro" +
+      "jectResponse\"\000\022b\n\rCreateProject\022&.paymen" +
+      "t.v1alpha1.CreateProjectRequest\032\'.paymen" +
+      "t.v1alpha1.CreateProjectResponse\"\000\022b\n\rUp" +
+      "dateProject\022&.payment.v1alpha1.UpdatePro" +
+      "jectRequest\032\'.payment.v1alpha1.UpdatePro" +
+      "jectResponse\"\000\022\\\n\013StopProject\022$.payment." +
+      "v1alpha1.StopProjectRequest\032%.payment.v1" +
+      "alpha1.StopProjectResponse\"\000\022}\n\026BlockCha" +
+      "inSubscription\022/.payment.v1alpha1.BlockC" +
+      "hainSubscriptionRequest\0320.payment.v1alph" +
+      "a1.BlockChainSubscriptionResponse\"\000\022P\n\007W" +
+      "ebHook\022 .payment.v1alpha1.WebHookRequest" +
+      "\032!.payment.v1alpha1.WebHookResponse\"\000\022\225\001" +
+      "\n\036GetProjectTrialEndSubscription\0227.payme" +
+      "nt.v1alpha1.GetProjectTrialEndSubscripti" +
+      "onRequest\0328.payment.v1alpha1.GetProjectT" +
+      "rialEndSubscriptionResponse\"\000\022\203\001\n\030GetSub" +
+      "scriptionByProject\0221.payment.v1alpha1.Ge" +
+      "tSubscriptionByProjectRequest\0322.payment." +
+      "v1alpha1.GetSubscriptionByProjectRespons" +
+      "e\"\000\022\203\001\n\030HandleSubscriptionEvents\0221.payme" +
+      "nt.v1alpha1.HandleSubscriptionEventsRequ" +
+      "est\0322.payment.v1alpha1.HandleSubscriptio" +
+      "nEventsResponse\"\000B8Z6github.com/cuemby/c" +
+      "cp-payment-service/payment/v1alpha1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -48599,6 +53468,42 @@ public final class PaymentApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_v1alpha1_ListProjectByIdResponse_descriptor,
         new java.lang.String[] { "Project", "Error", });
+    internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(60);
+    internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionRequest_descriptor,
+        new java.lang.String[] { "SubscriptionId", "ProjectId", "OrganizationId", "CustomerId", });
+    internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(61);
+    internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_GetProjectTrialEndSubscriptionResponse_descriptor,
+        new java.lang.String[] { "Msg", "Error", });
+    internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_descriptor =
+      getDescriptor().getMessageTypes().get(62);
+    internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_GetSubscriptionByProjectRequest_descriptor,
+        new java.lang.String[] { "ProjectId", });
+    internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_descriptor =
+      getDescriptor().getMessageTypes().get(63);
+    internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_GetSubscriptionByProjectResponse_descriptor,
+        new java.lang.String[] { "Project", "Error", });
+    internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(64);
+    internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_HandleSubscriptionEventsRequest_descriptor,
+        new java.lang.String[] { "SubscriptionId", "CustomerId", "TrailEndDate", "EventType", });
+    internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(65);
+    internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_v1alpha1_HandleSubscriptionEventsResponse_descriptor,
+        new java.lang.String[] { "Msg", "Error", });
     com.google.protobuf.EmptyProto.getDescriptor();
     payment.v1alpha1.PaymentOuterClass.getDescriptor();
   }

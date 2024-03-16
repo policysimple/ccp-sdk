@@ -554,3 +554,57 @@ func ListProjectById(in *paymentpkgv1.ListProjectByIdRequest) (response *payment
 	}
 	return response, nil
 }
+
+func GetProjectTrialEndSubscription(in *paymentpkgv1.GetProjectTrialEndSubscriptionRequest) (response *paymentpkgv1.GetProjectTrialEndSubscriptionResponse, err error) {
+	fmt.Println("GetProjectTrialEndSubscription")
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+
+	defer cancel()
+	response, err = client.GetProjectTrialEndSubscription(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error GetProjectTrialEndSubscription", err)
+		return nil, fmt.Errorf("%s: %w", "Error GetProjectTrialEndSubscription", err)
+	}
+	return response, nil
+}
+
+func GetSubscriptionByProject(in *paymentpkgv1.GetSubscriptionByProjectRequest) (response *paymentpkgv1.GetSubscriptionByProjectResponse, err error) {
+	fmt.Println("GetSubscriptionByProject")
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+
+	defer cancel()
+	response, err = client.GetSubscriptionByProject(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error GetSubscriptionByProject", err)
+		return nil, fmt.Errorf("%s: %w", "Error GetSubscriptionByProject", err)
+	}
+	return response, nil
+}
+
+func HandleSubscriptionEvents(in *paymentpkgv1.HandleSubscriptionEventsRequest) (response *paymentpkgv1.HandleSubscriptionEventsResponse, err error) {
+	fmt.Println("HandleSubscriptionEvents")
+	d, err := time.ParseDuration(paymentServiceTimeout)
+	if err != nil {
+		return
+	}
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(d))
+
+	defer cancel()
+	response, err = client.HandleSubscriptionEvents(ctx, in)
+
+	if err != nil {
+		log.Printf("%s: %v", "Error HandleSubscriptionEvents", err)
+		return nil, fmt.Errorf("%s: %w", "Error HandleSubscriptionEvents", err)
+	}
+	return response, nil
+}

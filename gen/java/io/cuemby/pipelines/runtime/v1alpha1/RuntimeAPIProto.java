@@ -179,6 +179,16 @@ public final class RuntimeAPIProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pipelines_runtime_v1alpha1_MakeRollbackRuntimeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -295,70 +305,81 @@ public final class RuntimeAPIProto {
       "me_id\030\004 \001(\tR\truntimeId\022\031\n\010tag_name\030\005 \001(\t" +
       "R\007tagName\"E\n\033MakeRollbackRuntimeResponse" +
       "\022\020\n\003msg\030\001 \001(\tR\003msg\022\024\n\005error\030\002 \001(\tR\005error" +
-      "2\235\022\n\021RuntimeAPIService\022m\n\nGetRuntime\022-.p" +
-      "ipelines.runtime.v1alpha1.GetRuntimeRequ" +
-      "est\032..pipelines.runtime.v1alpha1.GetRunt" +
-      "imeResponse\"\000\022v\n\rCreateRuntime\0220.pipelin" +
-      "es.runtime.v1alpha1.CreateRuntimeRequest" +
-      "\0321.pipelines.runtime.v1alpha1.CreateRunt" +
-      "imeResponse\"\000\022v\n\rUpdateRuntime\0220.pipelin" +
-      "es.runtime.v1alpha1.UpdateRuntimeRequest" +
-      "\0321.pipelines.runtime.v1alpha1.UpdateRunt" +
-      "imeResponse\"\000\022\243\001\n\034UpdateResponseMessageR" +
-      "untime\022?.pipelines.runtime.v1alpha1.Upda" +
-      "teResponseMessageRuntimeRequest\032@.pipeli" +
-      "nes.runtime.v1alpha1.UpdateResponseMessa" +
-      "geRuntimeResponse\"\000\022\270\001\n#ResponseMessageD" +
-      "eleteRuntimeByAppId\022F.pipelines.runtime." +
-      "v1alpha1.ResponseMessageDeleteRuntimeByA" +
-      "ppIdRequest\032G.pipelines.runtime.v1alpha1" +
-      ".ResponseMessageDeleteRuntimeByAppIdResp" +
-      "onse\"\000\022v\n\rDeleteRuntime\0220.pipelines.runt" +
-      "ime.v1alpha1.DeleteRuntimeRequest\0321.pipe" +
-      "lines.runtime.v1alpha1.DeleteRuntimeResp" +
-      "onse\"\000\022\240\001\n\033DeleteRuntimesByApplication\022>" +
-      ".pipelines.runtime.v1alpha1.DeleteRuntim" +
-      "esByApplicationRequest\032?.pipelines.runti" +
-      "me.v1alpha1.DeleteRuntimesByApplicationR" +
-      "esponse\"\000\022\240\001\n\033DeleteRuntimesByEnvironmen" +
-      "t\022>.pipelines.runtime.v1alpha1.DeleteRun" +
-      "timesByEnvironmentRequest\032?.pipelines.ru" +
-      "ntime.v1alpha1.DeleteRuntimesByEnvironme" +
-      "ntResponse\"\000\022s\n\014ListRuntimes\022/.pipelines" +
-      ".runtime.v1alpha1.ListRuntimesRequest\0320." +
-      "pipelines.runtime.v1alpha1.ListRuntimesR" +
-      "esponse\"\000\022y\n\016RebuildRuntime\0221.pipelines." +
-      "runtime.v1alpha1.RebuildRuntimeRequest\0322" +
-      ".pipelines.runtime.v1alpha1.RebuildRunti" +
-      "meResponse\"\000\022\213\001\n\024AlreadyExistsRuntime\0227." +
+      "\"\341\001\n\036DeleteRuntimesByProjectRequest\022%\n\016a" +
+      "pplication_id\030\001 \001(\tR\rapplicationId\022)\n\020na" +
+      "me_application\030\002 \001(\tR\017nameApplication\022%\n" +
+      "\016integration_id\030\003 \001(\tR\rintegrationId\022\035\n\n" +
+      "project_id\030\004 \001(\tR\tprojectId\022\'\n\017organizat" +
+      "ion_id\030\005 \001(\tR\016organizationId\"I\n\037DeleteRu" +
+      "ntimesByProjectResponse\022\020\n\003msg\030\001 \001(\tR\003ms" +
+      "g\022\024\n\005error\030\002 \001(\tR\005error2\264\023\n\021RuntimeAPISe" +
+      "rvice\022m\n\nGetRuntime\022-.pipelines.runtime." +
+      "v1alpha1.GetRuntimeRequest\032..pipelines.r" +
+      "untime.v1alpha1.GetRuntimeResponse\"\000\022v\n\r" +
+      "CreateRuntime\0220.pipelines.runtime.v1alph" +
+      "a1.CreateRuntimeRequest\0321.pipelines.runt" +
+      "ime.v1alpha1.CreateRuntimeResponse\"\000\022v\n\r" +
+      "UpdateRuntime\0220.pipelines.runtime.v1alph" +
+      "a1.UpdateRuntimeRequest\0321.pipelines.runt" +
+      "ime.v1alpha1.UpdateRuntimeResponse\"\000\022\243\001\n" +
+      "\034UpdateResponseMessageRuntime\022?.pipeline" +
+      "s.runtime.v1alpha1.UpdateResponseMessage" +
+      "RuntimeRequest\032@.pipelines.runtime.v1alp" +
+      "ha1.UpdateResponseMessageRuntimeResponse" +
+      "\"\000\022\270\001\n#ResponseMessageDeleteRuntimeByApp" +
+      "Id\022F.pipelines.runtime.v1alpha1.Response" +
+      "MessageDeleteRuntimeByAppIdRequest\032G.pip" +
+      "elines.runtime.v1alpha1.ResponseMessageD" +
+      "eleteRuntimeByAppIdResponse\"\000\022v\n\rDeleteR" +
+      "untime\0220.pipelines.runtime.v1alpha1.Dele" +
+      "teRuntimeRequest\0321.pipelines.runtime.v1a" +
+      "lpha1.DeleteRuntimeResponse\"\000\022\240\001\n\033Delete" +
+      "RuntimesByApplication\022>.pipelines.runtim" +
+      "e.v1alpha1.DeleteRuntimesByApplicationRe" +
+      "quest\032?.pipelines.runtime.v1alpha1.Delet" +
+      "eRuntimesByApplicationResponse\"\000\022\240\001\n\033Del" +
+      "eteRuntimesByEnvironment\022>.pipelines.run" +
+      "time.v1alpha1.DeleteRuntimesByEnvironmen" +
+      "tRequest\032?.pipelines.runtime.v1alpha1.De" +
+      "leteRuntimesByEnvironmentResponse\"\000\022s\n\014L" +
+      "istRuntimes\022/.pipelines.runtime.v1alpha1" +
+      ".ListRuntimesRequest\0320.pipelines.runtime" +
+      ".v1alpha1.ListRuntimesResponse\"\000\022y\n\016Rebu" +
+      "ildRuntime\0221.pipelines.runtime.v1alpha1." +
+      "RebuildRuntimeRequest\0322.pipelines.runtim" +
+      "e.v1alpha1.RebuildRuntimeResponse\"\000\022\213\001\n\024" +
+      "AlreadyExistsRuntime\0227.pipelines.runtime" +
+      ".v1alpha1.AlreadyExistsRuntimeRequest\0328." +
       "pipelines.runtime.v1alpha1.AlreadyExists" +
-      "RuntimeRequest\0328.pipelines.runtime.v1alp" +
-      "ha1.AlreadyExistsRuntimeResponse\"\000\022\227\001\n\030G" +
-      "etRuntimesInLast24Hours\022;.pipelines.runt" +
-      "ime.v1alpha1.GetRuntimesInLast24HoursReq" +
-      "uest\032<.pipelines.runtime.v1alpha1.GetRun" +
-      "timesInLast24HoursResponse\"\000\022\227\001\n\030GetRunt" +
-      "imesByApplication\022;.pipelines.runtime.v1" +
-      "alpha1.GetRuntimesByApplicationRequest\032<" +
-      ".pipelines.runtime.v1alpha1.GetRuntimesB" +
-      "yApplicationResponse\"\000\022\262\001\n!ChangeStatusR" +
-      "untimeAndApplication\022D.pipelines.runtime" +
-      ".v1alpha1.ChangeStatusRuntimeAndApplicat" +
-      "ionRequest\032E.pipelines.runtime.v1alpha1." +
-      "ChangeStatusRuntimeAndApplicationRespons" +
-      "e\"\000\022\227\001\n\030UpdateApplicationChanges\022;.pipel" +
-      "ines.runtime.v1alpha1.UpdateApplicationC" +
-      "hangesRequest\032<.pipelines.runtime.v1alph" +
-      "a1.UpdateApplicationChangesResponse\"\000\022\210\001" +
-      "\n\023MakeRollbackRuntime\0226.pipelines.runtim" +
-      "e.v1alpha1.MakeRollbackRuntimeRequest\0327." +
-      "pipelines.runtime.v1alpha1.MakeRollbackR" +
-      "untimeResponse\"\000B\260\001\n$io.cuemby.pipelines" +
-      ".runtime.v1alpha1B\017RuntimeAPIProtoP\001Z5gi" +
-      "thub.com/cuemby/ccp-runtime-service/runt" +
-      "imev1alpha1\242\002\003PPX\252\002\032Pipelines.Runtime.V1" +
-      "Alpha1\312\002\032Pipelines\\Runtime\\V1Alpha1b\006pro" +
-      "to3"
+      "RuntimeResponse\"\000\022\227\001\n\030GetRuntimesInLast2" +
+      "4Hours\022;.pipelines.runtime.v1alpha1.GetR" +
+      "untimesInLast24HoursRequest\032<.pipelines." +
+      "runtime.v1alpha1.GetRuntimesInLast24Hour" +
+      "sResponse\"\000\022\227\001\n\030GetRuntimesByApplication" +
+      "\022;.pipelines.runtime.v1alpha1.GetRuntime" +
+      "sByApplicationRequest\032<.pipelines.runtim" +
+      "e.v1alpha1.GetRuntimesByApplicationRespo" +
+      "nse\"\000\022\262\001\n!ChangeStatusRuntimeAndApplicat" +
+      "ion\022D.pipelines.runtime.v1alpha1.ChangeS" +
+      "tatusRuntimeAndApplicationRequest\032E.pipe" +
+      "lines.runtime.v1alpha1.ChangeStatusRunti" +
+      "meAndApplicationResponse\"\000\022\227\001\n\030UpdateApp" +
+      "licationChanges\022;.pipelines.runtime.v1al" +
+      "pha1.UpdateApplicationChangesRequest\032<.p" +
+      "ipelines.runtime.v1alpha1.UpdateApplicat" +
+      "ionChangesResponse\"\000\022\210\001\n\023MakeRollbackRun" +
+      "time\0226.pipelines.runtime.v1alpha1.MakeRo" +
+      "llbackRuntimeRequest\0327.pipelines.runtime" +
+      ".v1alpha1.MakeRollbackRuntimeResponse\"\000\022" +
+      "\224\001\n\027DeleteRuntimesByProject\022:.pipelines." +
+      "runtime.v1alpha1.DeleteRuntimesByProject" +
+      "Request\032;.pipelines.runtime.v1alpha1.Del" +
+      "eteRuntimesByProjectResponse\"\000B\260\001\n$io.cu" +
+      "emby.pipelines.runtime.v1alpha1B\017Runtime" +
+      "APIProtoP\001Z5github.com/cuemby/ccp-runtim" +
+      "e-service/runtimev1alpha1\242\002\003PPX\252\002\032Pipeli" +
+      "nes.Runtime.V1Alpha1\312\002\032Pipelines\\Runtime" +
+      "\\V1Alpha1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -562,6 +583,18 @@ public final class RuntimeAPIProto {
     internal_static_pipelines_runtime_v1alpha1_MakeRollbackRuntimeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pipelines_runtime_v1alpha1_MakeRollbackRuntimeResponse_descriptor,
+        new java.lang.String[] { "Msg", "Error", });
+    internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectRequest_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectRequest_descriptor,
+        new java.lang.String[] { "ApplicationId", "NameApplication", "IntegrationId", "ProjectId", "OrganizationId", });
+    internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectResponse_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pipelines_runtime_v1alpha1_DeleteRuntimesByProjectResponse_descriptor,
         new java.lang.String[] { "Msg", "Error", });
     io.cuemby.pipelines.runtime.v1alpha1.RuntimeProto.getDescriptor();
   }
