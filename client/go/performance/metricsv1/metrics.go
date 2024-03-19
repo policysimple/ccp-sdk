@@ -27,7 +27,11 @@ func init() {
 			metricsServiceTimeout = "30s"
 		}
 		metricsServiceUri = os.Getenv("PERFORMANCE_METRICS_SERVICE_URI")
-		con, err := grpc.Dial(metricsServiceUri, grpc.WithTransportCredentials(insecure.NewCredentials()))
+		maxMsgSize := 10485760
+		con, err := grpc.Dial(
+			metricsServiceUri,
+			grpc.WithInsecure(),
+				grpc.WithDefaultCallOptions(grpc.MaxCallRecvMsgSize(maxMsgSize), grpc.MaxCallSendMsgSize(maxMsgSize)))
 		if err != nil {
 			panic(err)
 		}
